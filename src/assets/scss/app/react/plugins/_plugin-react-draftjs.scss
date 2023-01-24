@@ -1,0 +1,53 @@
+$guide-height: 75px;
+.draft-editor-container {
+  border: 1px solid lighten($black, 5%);
+  border-radius: $input-border-radius-lg;
+  padding: $input-padding-vertical $input-padding-horizontal;
+  color: $white;
+  min-height: 200px;
+  hr {
+    border-color: lighten($black, 5%);
+    margin: $input-padding-vertical 0;
+  }
+  &.editor-disabled {
+    background-color: $black-states;
+    color: #9ca3b0;
+    cursor: not-allowed;
+  }
+  .alignment-container {
+    width: auto;
+    block-size: fit-content;
+  }
+  .resize-container {
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  .resize-bar {
+    height: $guide-height;
+    width: 3px;
+  }
+  img {
+    pointer-events: none;
+  }
+  .resize-guides-container {
+    height: $guide-height;
+    left: 0;
+  }
+  .resize-guide {
+    width: 1px;
+    height: $guide-height;
+    background-color: lighten($black, 5%);
+    transition: background 0.3s ease-in-out;
+  }
+  .mention-suggestions {
+    border: 1px solid lighten($black, 5%);
+    background-color: $black-states;
+    overflow-y: scroll;
+    max-height: 160px;
+    width: 225px;
+    z-index: 999;
+  }
+}
+.draft-toolbar-button-separator {
+  color: lighten($black, 5%);
+}

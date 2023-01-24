@@ -1,0 +1,59 @@
+// Weight and italics
+
+.fw-light {
+  font-weight: $font-weight-light;
+}
+.fw-normal {
+  font-weight: $font-weight-normal;
+}
+.fw-bold {
+  font-weight: $font-weight-bold;
+}
+.fw-extra-bold {
+  font-weight: $font-weight-extra-bold;
+}
+
+// Text decorations
+
+.text-underline {
+  text-decoration: underline;
+}
+.text-through {
+  text-decoration: line-through;
+}
+
+// Line heights
+
+.lh-100 {
+  line-height: 1;
+}
+.lh-110 {
+  line-height: 1.1;
+}
+.lh-120 {
+  line-height: 1.2;
+}
+.lh-130 {
+  line-height: 1.3;
+}
+.lh-140 {
+  line-height: 1.4;
+}
+.lh-150 {
+  line-height: 1.5;
+}
+.lh-160 {
+  line-height: 1.6;
+}
+.lh-170 {
+  line-height: 1.7;
+}
+.lh-180 {
+  line-height: 1.8;
+}
+
+//Contextual colors
+
+.text-muted {
+  color: $text-muted !important;
+}

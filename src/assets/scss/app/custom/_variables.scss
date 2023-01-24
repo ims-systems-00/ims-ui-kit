@@ -1,0 +1,133 @@
+// color system
+
+// following colors are given custom names from iMS Systems and used to override default colors
+$gray-100: #f6f9fc !default;
+$gray-200: #e9ecef !default;
+$gray-300: #e3e3e3 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default; // Line footer color
+$gray-700: #525f7f !default; // Line p color
+$gray-800: #32325d !default; // Line heading color
+$gray-900: #212529 !default;
+$black: #000000 !default;
+$white: #ffffff !default;
+$primary: #1d8bf8 !default;
+$primary-dark: #1e66d2 !default;
+$primary-light: #bcdfff !default;
+$secondary: #6c757d !default;
+$secondary-dark: #54595e !default;
+$secondary-light: #abb5be !default;
+$secondary-extra-light: #f6f8fa !default;
+$success: #28a745 !default;
+$danger: #ed3447 !default;
+$permission: #439eed !default;
+$warning: #ffc107 !default;
+$info: #17a2b8 !default;
+$type-dark: #152536 !default;
+$type-medium: #6c757d !default;
+$type-light: #ced4da !default;
+$stroke-regular: #ced4da !default;
+$stroke-light: #dee2e6 !default;
+
+// bootstrap colors
+$blue: $primary !default;
+$indigo: $permission !default;
+$purple: $primary-dark !default;
+$pink: $danger !default;
+$red: $danger !default;
+$orange: $warning !default;
+$yellow: $warning !default;
+$green: $success !default;
+$teal: $success !default;
+$cyan: $permission !default;
+
+// Spacing
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
+
+// Fonts
+
+$font-family-base: "Poppins", sans-serif !default;
+$font-family-alt: "Poppins", sans-serif !default;
+
+$font-size-dash: 0.875rem !default;
+
+$font-size-base: $font-size-dash !default; // Assumes the browser default, typically `16px`
+$font-size-xl: ($font-size-base * 1.428);
+$font-size-lg: ($font-size-base * 1.142);
+$font-size-sm: ($font-size-base * 0.85714286);
+$font-size-xs: ($font-size-base * 0.714);
+
+$h1-font-size: $font-size-base * 2.35714285 !default; //2.1875rem
+$h2-font-size: $font-size-base * 1.9285714 !default;
+$h3-font-size: $font-size-base * 1.642857 !default;
+$h4-font-size: $font-size-base * 1.2142857 !default;
+$h5-font-size: $font-size-base * 0.9285714 !default;
+$h6-font-size: $font-size-base * 0.8571428 !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 600 !default;
+$font-weight-extra-bold: 700 !default;
+
+$font-paragraph: 1rem !default;
+
+$font-weight-base: $font-weight-normal !default;
+$shape-height-base: 1.428571 !default;
+
+$headings-margin-bottom: ($spacer / 2);
+$headings-font-family: inherit !default;
+$headings-font-weight: $font-weight-normal !default;
+$headings-line-height: 1.2 !default;
+$headings-color: $type-dark !default;
+
+$heading-letter-spacing: 0.025em !default;
+$heading-font-size: 0.95rem !default;
+$heading-font-weight: $headings-font-weight !default;
+
+$heading-title-letter-spacing: 0.025em !default;
+$heading-title-font-size: 1.375rem !default;
+$heading-title-font-weight: $font-weight-bold !default;
+$heading-section-letter-spacing: 0.025em !default;
+$heading-section-font-size: 1.375rem !default;
+$heading-section-font-weight: $font-weight-bold !default;
+$display1-size: 3.3rem !default;
+$display2-size: 2.75rem !default;
+$display3-size: 2.1875rem !default;
+$display4-size: 1.6275rem !default;
+
+$paragraph-font-size: 0.625rem !default;
+$paragraph-font-weight: 300 !default;
+$paragraph-line-height: 1.7 !default;
+
+$lead-font-size: ($paragraph-font-size * 1.25);
+$lead-font-weight: 300 !default;
+
+$small-font-size: 80% !default;
+
+$text-muted: $type-light !default;
+
+$blockquote-small-color: $type-light !default;
+$blockquote-font-size: ($font-size-base * 1.1);
+
+$hr-border-color: rgba($black, 0.1);
+// $hr-border-width: $border-width !default;
+
+$mark-padding: 0.2em !default;
+
+$dt-font-weight: $font-weight-bold !default;
+
+$list-inline-padding: 0.5rem !default;
+
+$mark-bg: #fcf8e3 !default;
+
+$hr-margin-y: $spacer * 2 !default;
