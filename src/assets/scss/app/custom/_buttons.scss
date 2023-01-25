@@ -33,3 +33,10 @@
     }
   }
 }
+
+.btn-secondary {
+  @include btn-bg($secondary-dark, $secondary);
+}
+.btn-outline-secondary {
+  @include btn-outline($secondary-dark);
+}
