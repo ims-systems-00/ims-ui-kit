@@ -1,4 +1,4 @@
-import DefaultBtn from "../DefaultBtn";
+import Examples from "../Examples.jsx";
 export default {
   title: "components/Buttons",
   parameters: {
@@ -12,6 +12,8 @@ All our text are customised from the default bootstrap texts. Only the customise
     },
   },
 };
-export const DefaultButton = DefaultBtn;
+export const Buttons = Examples;
 export { default as PrimaryButton } from "../PrimaryBtn";
 export { default as SecondaryButton } from "../SecondaryBtn";
+export { default as LightButton } from "../LightBtn";
+export { default as DarkButton } from "../DarkBtn";

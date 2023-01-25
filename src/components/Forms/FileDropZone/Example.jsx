@@ -6,7 +6,7 @@ const Example = ({}) => {
       <Input type="text" />
       <br />
       <FileDropZone hint="Your customised hit here." />
-      <Button>Submit</Button>
+      <Button color="primary" outline>Submit</Button>
     </>
   );
 };

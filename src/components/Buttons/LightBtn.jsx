@@ -1,20 +1,20 @@
 import React from "react";
 import { Button } from "reactstrap";
 
-const SecondaryBtn = ({}) => {
+const LightBtn = ({}) => {
   return (
     <>
-      <Button>Secondary Button</Button>
+      <Button color="light">Light Button</Button>
     </>
   );
 };
 
-export default SecondaryBtn;
-SecondaryBtn.parameters = {
+export default LightBtn;
+LightBtn.parameters = {
   docs: {
     description: {
       story: `
-It is secondary button
+It is Light button
 `,
     },
   },
