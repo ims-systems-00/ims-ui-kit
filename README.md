@@ -1,3 +1,9 @@
+# About this repo
+
+He have listed all our design system files where. This deisgn system is exported for various products of iMS Systems. Change in this deisgn system would reflect change accross all products of iMS Systems. The design system
+is a customised version of bootstrap so bootstrap customisation docs and guidelines are followed for building the
+components for the system.
+
 # Contribution guidelines
 
 ### Master branch
