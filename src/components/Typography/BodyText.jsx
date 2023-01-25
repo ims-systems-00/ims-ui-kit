@@ -1,16 +1,6 @@
-import PropTypes from "prop-types";
-/**
- * Typography container, most of the font with available size and colors listed bellow,
- * it is recomended to use the tags and classes likewise how it's shown in the examples.
- */
-const Typography = ({}) => {
+const BodyText = (props) => {
   return (
     <>
-      <h1>h1. this a iMS Headline </h1>
-      <h2>h2. this a iMS Headline </h2>
-      <h3>h3. this a iMS Headline </h3>
-      <h4>h4. this a iMS Headline </h4>
-      <br></br>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
         minima voluptas nemo qui eveniet earum deleniti. Doloremque earum quo
@@ -34,5 +24,13 @@ const Typography = ({}) => {
     </>
   );
 };
-Typography.propTypes = {};
-export default Typography;
+export default BodyText;
+BodyText.parameters = {
+  docs: {
+    description: {
+      story: `
+Followings are some examples of how to use body texts in the UI.
+`,
+    },
+  },
+};

@@ -1,9 +1,17 @@
-import React from "react";
-import Typography from "../Typography";
+import Examples from "../Examples";
 export default {
   title: "components/Typography",
-  component: Typography,
+  parameters: {
+    docs: {
+      description: {
+        component: `
+[Bootstrap Text](https://getbootstrap.com/docs/5.3/utilities/text/)
+All our text are customised from the default bootstrap texts. Only the customised portions are listed here.
+        `,
+      },
+    },
+  },
 };
-const Template = (args) => <Typography {...args} />;
-export const Default = Template.bind({});
-Default.args = {};
+export const Typography = Examples;
+export { default as Headers } from "../Headers";
+export { default as BodyText } from "../BodyText";
