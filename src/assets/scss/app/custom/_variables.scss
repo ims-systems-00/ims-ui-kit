@@ -464,3 +464,14 @@ $hr-margin-y: $spacer * 2 !default;
 //     "border-color": var(--#{$prefix}danger),
 //   )
 // ) !default;
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+) !default;
+// scss-docs-end theme-colors-map
