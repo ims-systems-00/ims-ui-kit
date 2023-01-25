@@ -1,13 +1,9 @@
+import FileDropZone from "../FileDropZone/FileDropZone";
 export default {
   title: "components/Forms",
-  parameters: {
-    docs: {
-      description: {
-        component: `
-[Bootstrap Forms](https://getbootstrap.com/docs/5.3/utilities/text/)
-        `,
-      },
-    },
-  },
+  component: FileDropZone,
 };
-export { default as FileDropZone } from "../FileDropZone";
+const Template = (args) => <FileDropZone {...args} />;
+export const DropZone = Template;
+DropZone.args = {};
+export { default as Hint } from "../FileDropZone/Example";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PorpTypes from "prop-types";
+import PropTypes from "prop-types";
 import { useDropzone } from "react-dropzone";
 import { Card, CardBody, Col, Progress, Row, Spinner } from "reactstrap";
 function bytesToSize(bytes) {
@@ -41,9 +41,12 @@ function Attachment({ file, name, onDelete, ...props }) {
     </Col>
   );
 }
-
+/**
+ * File drop zone can be used in any form elements along with other bootstrap forms. Allows users to
+ * direct file drag and drop from their machine or just simply select ability by clicking anywhere on it
+ */
 export default function FileDropZone({
-  onLoad = () => {},
+  onSelected = () => {},
   hint = "Drag 'n' drop, or click to select files",
   ...props
 }) {
@@ -59,11 +62,8 @@ export default function FileDropZone({
     [selectedFiles]
   );
   React.useEffect(() => {
-    onLoad(selectedFiles);
+    onSelected(selectedFiles);
   }, [selectedFiles]);
-  React.useEffect(() => {
-    props.clearAll && setSelectedFiles([]);
-  }, [props.clearAll]);
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     ...(props.acceptedFileTypes && { accept: props.acceptedFileTypes }),
@@ -76,7 +76,7 @@ export default function FileDropZone({
     );
   return (
     <section>
-      <div {...getRootProps({ className: "Filedropzone" })}>
+      <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
         <p>{hint}</p>
       </div>
@@ -95,3 +95,19 @@ export default function FileDropZone({
     </section>
   );
 }
+FileDropZone.propTypes = {
+  /** `hint` is a place holder or hint for users in the dropzone.  */
+  hint: PropTypes.string,
+  /**
+   * `onSelected` is fired when files are loaded from users system and provides files in the args.
+   */
+  onSelected: PropTypes.func,
+  /**
+   * `noMultiple` tells wheter or not multiple file selection is allowed or not.
+   */
+  noMultiple: PropTypes.bool,
+  /**
+   * `disabled` disables file selection.
+   */
+  disabled: PropTypes.bool,
+};
