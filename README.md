@@ -1,6 +1,6 @@
 # About this repo
 
-He have listed all our design system files where. This deisgn system is exported for various products of iMS Systems. Change in this deisgn system would reflect change accross all products of iMS Systems. The design system
+Here have listed all our design system files where. This deisgn system is exported for various products of iMS Systems. Change in this deisgn system would reflect change accross all products of iMS Systems. The design system
 is a customised version of bootstrap so bootstrap customisation docs and guidelines are followed for building the
 components for the system.
 
@@ -8,7 +8,7 @@ components for the system.
 
 ### Master branch
 
-Our `master` branche is the three main branche through which codes are tested and pushed through live `environment`. Any contribution needs to follow a proper `git-flow` to integrate your codes to these branches for testing and deployments.
+Our `master` branche is the main branche through which codes are tested and pushed through live `environment`. Any contribution needs to follow a proper `git-flow` to integrate your codes to these branches for testing and deployments.
 
 ### Work branch
 
