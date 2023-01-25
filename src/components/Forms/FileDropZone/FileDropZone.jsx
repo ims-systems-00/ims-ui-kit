@@ -17,7 +17,7 @@ function Attachment({ file, name, onDelete, ...props }) {
   let [uploading, setUploading] = useState({ status: false, progress: 0 });
   return (
     <Col md="4">
-      <Card className="card-attachments border border-default">
+      <Card className="">
         <CardBody>
           <h5 className="mb-1">
             <i className="tim-icons icon-paper" /> {file.path}{" "}
@@ -26,7 +26,7 @@ function Attachment({ file, name, onDelete, ...props }) {
             {!processing.action ? (
               <i
                 onClick={(e) => onDelete(file)}
-                className="tim-icons icon-simple-remove text-danger"
+                className="tim-icons icon-simple-remove"
               />
             ) : (
               <Spinner color="text-damger" size={"sm"} />
