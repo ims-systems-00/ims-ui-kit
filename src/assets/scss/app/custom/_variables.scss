@@ -133,6 +133,21 @@ $mark-bg: #fcf8e3 !default;
 
 $hr-margin-y: $spacer * 2 !default;
 
+// Tables
+
+$table-cell-padding-y: 0.753rem !default;
+$table-cell-padding-x: 1.5rem !default;
+
+$table-striped-order: even !default;
+$table-striped-columns-order: odd !default;
+
+// $table-striped-color: $type-medium !default;
+// $table-striped-bg-factor: 0.05 !default;
+$table-caption-color: $type-medium !default;
+$table-striped-bg: $secondary-extra-light !default;
+$table-hover-bg: #bfdcf9 !default;
+// $table-accent-bg: #bfdcf9 !default;
+
 // Buttons + Forms
 
 // TODO : Shall remove all the unnecessary variable overrides once we achive the piases design for form elements

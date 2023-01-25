@@ -1,0 +1,16 @@
+.table {
+  border: 2px solid var(--#{$prefix}table-border-color);
+  -webkit-border-radius: 5px;
+  border-radius: 5px !important;
+  color: $type-dark;
+}
+.table > thead {
+  background-color: $secondary-extra-light;
+  color: $type-dark;
+}
+.table-hover {
+  > tbody > tr:hover > * {
+    background-color: $table-hover-bg;
+    // color: var(--#{$prefix}table-hover-color);
+  }
+}
