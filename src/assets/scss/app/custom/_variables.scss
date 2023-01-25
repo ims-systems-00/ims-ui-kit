@@ -29,7 +29,8 @@ $type-medium: #6c757d !default;
 $type-light: #ced4da !default;
 $stroke-regular: #ced4da !default;
 $stroke-light: #dee2e6 !default;
-
+$background-primary: #ffffff !default;
+$background-secondary: #ced4da !default;
 // bootstrap colors
 $blue: $primary !default;
 $indigo: $permission !default;
@@ -132,7 +133,6 @@ $mark-bg: #fcf8e3 !default;
 
 $hr-margin-y: $spacer * 2 !default;
 
-
 // Buttons + Forms
 
 // TODO : Shall remove all the unnecessary variable overrides once we achive the piases design for form elements
@@ -159,7 +159,6 @@ $hr-margin-y: $spacer * 2 !default;
 
 // $input-btn-border-width:      var(--#{$prefix}border-width) !default;
 // // scss-docs-end input-btn-variables
-
 
 // // Buttons
 // //
@@ -210,7 +209,6 @@ $hr-margin-y: $spacer * 2 !default;
 // $btn-active-border-shade-amount:  25% !default;
 // $btn-active-border-tint-amount:   10% !default;
 // // scss-docs-end btn-variables
-
 
 // // Forms
 
