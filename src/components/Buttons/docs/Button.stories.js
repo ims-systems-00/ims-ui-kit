@@ -17,3 +17,4 @@ export { default as PrimaryButton } from "../PrimaryBtn";
 export { default as SecondaryButton } from "../SecondaryBtn";
 export { default as LightButton } from "../LightBtn";
 export { default as DarkButton } from "../DarkBtn";
+export { default as LinkButton } from "../LinkBtn";

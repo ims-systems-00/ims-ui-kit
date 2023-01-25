@@ -5,6 +5,10 @@ const PrimaryBtn = ({}) => {
   return (
     <>
       <Button color="primary">Primary Button</Button>
+      <br /> <br />
+      <Button outline color="primary">
+        Primary Button
+      </Button>
     </>
   );
 };

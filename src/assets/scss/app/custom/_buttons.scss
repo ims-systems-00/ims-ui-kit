@@ -1,14 +1,35 @@
 .btn {
   cursor: pointer;
-  margin: 3px;
 }
 
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
     @if $color == "light" {
-      @include btn-styles($black);
+      @include btn-color($type-dark);
+      @include btn-border($stroke-regular);
     } @else {
-      @include btn-styles($white);
+      @include btn-color($white);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-link.btn-link-#{$color} {
+    @if $color == "light" {
+      @include btn-color($type-dark);
+    } @else {
+      @include btn-color($value);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @if $color == "light" {
+      @include btn-border($stroke-regular);
+      @include btn-color($type-dark);
+    } @else {
+      @include btn-outline($value);
     }
   }
 }

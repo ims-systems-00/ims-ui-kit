@@ -1,10 +1,14 @@
 import React from "react";
-import { Button } from "reactstrap";
+import { Button, DropdownToggle } from "reactstrap";
 
 const LightBtn = ({}) => {
   return (
     <>
       <Button color="light">Light Button</Button>
+      <br /> <br />
+      <Button outline color="light">
+        Light Button
+      </Button>
     </>
   );
 };

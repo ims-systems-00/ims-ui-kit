@@ -5,6 +5,8 @@ const SecondaryBtn = ({}) => {
   return (
     <>
       <Button>Secondary Button</Button>
+      <br /> <br />
+      <Button outline>Secondary Button</Button>
     </>
   );
 };

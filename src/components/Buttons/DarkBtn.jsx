@@ -5,6 +5,10 @@ const DarkBtn = ({}) => {
   return (
     <>
       <Button color="dark">Dark Button</Button>
+      <br /> <br />
+      <Button outline color="dark">
+        Dark Button
+      </Button>
     </>
   );
 };
