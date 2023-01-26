@@ -1,0 +1,23 @@
+.table {
+  border: 1px solid $stroke-regular;
+  -webkit-border-radius: 5px !important;
+  border-radius: 5px !important;
+  color: $type-dark;
+}
+.table > tbody > tr > td {
+  color: $table-color;
+}
+.table > thead {
+  background-color: $secondary-extra-light;
+  color: $type-dark;
+}
+.table-hover {
+  > tbody > tr:hover > * {
+    background-color: $table-hover-bg;
+    // color: var(--#{$prefix}table-hover-color);
+  }
+}
+.table-active {
+  background-color: $table-active-bg;
+  color: var(--#{$prefix}table-active-color);
+}
