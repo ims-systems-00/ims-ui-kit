@@ -2,22 +2,33 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Button } from "reactstrap";
 
-const BtnBase = ({ sicon, eicon, children, ...rest }) => {
+let BtnBaseProps = Object.assign(
+  {
+    leftIcon: "",
+    rightIcon: "",
+  },
+  Button.prototype.props
+);
+
+/**
+ *
+ * @param {BtnBaseProps} props
+ * @returns
+ */
+const BtnBase = (props) => {
   return (
-    <Button {...rest}>
-      {sicon ? <i className={sicon + " mr-2"} /> : null}
-      {children}
-      {eicon ? <i className={eicon + " ml-2"} /> : null}
+    <Button {...props}>
+      {props.leftIcon ? <i className={sicon + " mr-2"} /> : null}
+      {props.children}
+      {props.rightIcon ? <i className={eicon + " ml-2"} /> : null}
     </Button>
   );
 };
+
 BtnBase.propTypes = {
-  sicon: PropTypes.string,
-  eicon: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-  ]),
+  leftIcon: PropTypes.string,
+  rightIcon: PropTypes.string,
+  ...Button.propTypes,
 };
 
 export default BtnBase;
