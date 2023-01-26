@@ -18,3 +18,4 @@ export { default as SecondaryButton } from "../SecondaryBtn";
 export { default as DangerButton } from "../DangerBtn";
 export { default as DarkButton } from "../DarkBtn";
 export { default as LinkButton } from "../LinkBtn";
+export { default as IconButton } from "../IconBtn";
