@@ -28,7 +28,7 @@ const BtnBase = (props) => {
 BtnBase.propTypes = {
   leftIcon: PropTypes.string,
   rightIcon: PropTypes.string,
-  ...Button.propTypes,
+  ...(Button.propTypes && Button.propTypes),
 };
 
 export default BtnBase;
