@@ -6,16 +6,15 @@ const IconBtn = ({}) => {
     <>
       <Button leftIcon="fa-solid fa-house">Left Icon Button</Button>
       <br /> <br />
-      <Button
-        leftIcon="fa-solid fa-house"
-        rightIcon="fa-solid fa-house"
-      >
+      <Button leftIcon="fa-solid fa-house" rightIcon="fa-solid fa-house">
         Icon Button
       </Button>
       <br /> <br />
-      <Button rightIcon="fa-solid fa-house">Right Icon Button</Button>
+      <Button rightIcon="fa-solid fa-house" color="danger">
+        Right Icon Button
+      </Button>
       <br /> <br />
-      <Button leftIcon="fa-solid fa-house" outline>
+      <Button leftIcon="fa-solid fa-house" outline color="danger">
         Left Icon Button
       </Button>
       <br /> <br />
