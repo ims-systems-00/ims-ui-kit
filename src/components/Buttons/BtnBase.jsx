@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Button } from "reactstrap";
+import classNames from "classnames";
 
 let BtnBaseProps = Object.assign(
   {
@@ -18,9 +19,9 @@ let BtnBaseProps = Object.assign(
 const BtnBase = (props) => {
   return (
     <Button {...props}>
-      {props.leftIcon ? <i className={sicon + " mr-2"} /> : null}
-      {props.children}
-      {props.rightIcon ? <i className={eicon + " ml-2"} /> : null}
+      {props.leftIcon ? <i className={classNames(props.leftIcon)} /> : null}{" "}
+      {props.children}{" "}
+      {props.rightIcon ? <i className={classNames(props.rightIcon)} /> : null}
     </Button>
   );
 };
