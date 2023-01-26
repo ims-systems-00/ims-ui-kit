@@ -1,5 +1,6 @@
 import React from "react";
 import { Table } from "reactstrap";
+import PropTypes from "prop-types";
 
 const Tables = ({ children }) => {
   return (
@@ -8,7 +9,6 @@ const Tables = ({ children }) => {
         <thead>
           <tr>
             <th>
-              {" "}
               <i class="fa-solid fa-arrow-up-long"></i>
               <i class="fa-solid fa-arrow-down-long mr-2"></i>Name
             </th>
@@ -48,4 +48,7 @@ const Tables = ({ children }) => {
   );
 };
 
+Tables.propTypes = {
+  children: PropTypes.node,
+};
 export default Tables;
