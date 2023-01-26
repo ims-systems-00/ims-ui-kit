@@ -135,7 +135,6 @@ $blockquote-small-color: $type-light !default;
 $blockquote-font-size: ($font-size-base * 1.1);
 
 $hr-border-color: rgba($black, 0.1);
-// $hr-border-width: $border-width !default;
 
 $mark-padding: 0.2em !default;
 
@@ -146,6 +145,23 @@ $list-inline-padding: 0.5rem !default;
 $mark-bg: #fcf8e3 !default;
 
 $hr-margin-y: $spacer * 2 !default;
+
+// Tables
+
+$table-color: $secondary-light !default;
+
+$table-th-font-weight: null !default;
+
+$table-striped-color: $secondary-light !default;
+$table-striped-bg-factor: 0.05 !default;
+$table-striped-bg: $secondary-extra-light !default;
+
+$table-active-bg-factor: 0.1 !default;
+$table-active-bg: $primary !default;
+
+$table-hover-color: $primary !default;
+$table-hover-bg-factor: 0.075 !default;
+$table-hover-bg: rgba($primary, $table-hover-bg-factor) !default;
 
 // Buttons + Forms
 
