@@ -1,7 +1,5 @@
 .btn {
   cursor: pointer;
-  @include btn-icon-margin(4px, 4px);
-  @include btn-icon-padding(1.5px, 2px);
 }
 
 @each $color, $value in $theme-colors {

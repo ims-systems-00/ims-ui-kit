@@ -82,14 +82,4 @@
   }
 }
 
-@mixin btn-icon-margin($left: 0, $right: 0) {
-  i {
-    margin-left: $left;
-    margin-right: $right;
-  }
-}
-@mixin btn-icon-padding($vertical: 0, $horizontal: 0) {
-  i {
-    padding: $vertical $horizontal;
-  }
-}
+

@@ -4,30 +4,29 @@ import Button from "../Buttons/BtnBase";
 const IconBtn = ({}) => {
   return (
     <>
-      <Button sicon="fa-solid fa-house">Left Icon Button</Button>
+      <Button leftIcon="fa-solid fa-house">Left Icon Button</Button>
       <br /> <br />
-      <Button
-        sicon="tim-icons icon-trash-simple"
-        eicon="tim-icons icon-trash-simple"
-      >
+      <Button leftIcon="fa-solid fa-house" rightIcon="fa-solid fa-house">
         Icon Button
       </Button>
       <br /> <br />
-      <Button eicon="tim-icons icon-trash-simple">Right Icon Button</Button>
+      <Button rightIcon="fa-solid fa-house" color="danger">
+        Right Icon Button
+      </Button>
       <br /> <br />
-      <Button sicon="tim-icons icon-trash-simple" outline>
+      <Button leftIcon="fa-solid fa-house" outline color="danger">
         Left Icon Button
       </Button>
       <br /> <br />
       <Button
-        sicon="tim-icons icon-trash-simple"
-        eicon="tim-icons icon-trash-simple"
+        leftIcon="fa-solid fa-house"
+        rightIcon="fa-solid fa-house"
         outline
       >
         Icon Button
       </Button>
       <br /> <br />
-      <Button eicon="tim-icons icon-trash-simple" outline>
+      <Button rightIcon="fa-solid fa-house" outline>
         Right Icon Button
       </Button>
     </>
