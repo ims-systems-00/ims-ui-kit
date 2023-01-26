@@ -33,10 +33,48 @@
     }
   }
 }
-
-.btn-secondary {
-  @include btn-bg($secondary-dark, $secondary);
+.btn-primary,
+.btn-info,
+.btn-success {
+  @include btn-bg($primary, $primary-dark);
 }
-.btn-outline-secondary {
-  @include btn-outline($secondary-dark);
+
+.btn-secondary,
+.btn-light {
+  @include btn-bg($secondary-extra-light, $stroke-light);
+  @include btn-color($type-medium);
+  @include btn-border($stroke-regular);
+}
+
+.btn-danger,
+.btn-warning {
+  @include btn-bg($danger, $danger);
+  @include btn-border($danger);
+}
+
+.btn-outline-primary,
+.btn-outline-info,
+.btn-outline-success {
+  @include btn-outline($primary, $primary-dark);
+}
+
+.btn-outline-secondary,
+.btn-outline-light {
+  @include btn-outline($stroke-regular, $stroke-light);
+  @include btn-color($type-medium);
+  @include btn-border($stroke-regular);
+}
+
+.btn-outline-danger,
+.btn-outline-warning {
+  @include btn-outline($danger);
+}
+
+.btn-dark {
+  @include btn-bg($type-dark, $type-dark);
+  @include btn-border($type-dark);
+}
+
+.btn-outline-dark {
+  @include btn-outline($type-dark);
 }

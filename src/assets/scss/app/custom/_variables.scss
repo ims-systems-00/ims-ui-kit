@@ -24,9 +24,9 @@ $danger: #ed3447 !default;
 $permission: #439eed !default;
 $warning: #ffc107 !default;
 $info: #17a2b8 !default;
-$type-dark: #152536 !default;
-$type-medium: #6c757d !default;
-$type-light: #ced4da !default;
+$type-dark: #152536 !default; //typography-heading
+$type-medium: #6c757d !default; //typography-body
+$type-light: #ced4da !default; //typography-light
 $stroke-dark: #152536 !default;
 $stroke-regular: #ced4da !default;
 $stroke-light: #dee2e6 !default;

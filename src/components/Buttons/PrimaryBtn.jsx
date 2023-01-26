@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "reactstrap";
+import Button from "../Buttons/BtnBase";
 
 const PrimaryBtn = ({}) => {
   return (
@@ -8,6 +8,18 @@ const PrimaryBtn = ({}) => {
       <br /> <br />
       <Button outline color="primary">
         Primary Button
+      </Button>
+      <br /> <br />
+      <Button color="success">Success Button</Button>
+      <br /> <br />
+      <Button outline color="success">
+        Primary Button
+      </Button>
+      <br /> <br />
+      <Button color="info">Info Button</Button>
+      <br /> <br />
+      <Button outline color="info">
+        Info Button
       </Button>
     </>
   );
