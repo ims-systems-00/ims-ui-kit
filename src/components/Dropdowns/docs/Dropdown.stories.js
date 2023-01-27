@@ -1,9 +1,7 @@
-import Dropdown from "../DropdownBase";
-import DropdownToggle from "../DropdownBtnBase";
-
+import Example from "../Example";
 export default {
   title: "components/Dropdowns",
-  component: Dropdown,
+  component: Example,
   parameters: {
     docs: {
       description: {
@@ -15,16 +13,17 @@ All our dropdowns are customised from the default bootstrap dropdowns. Only the 
     },
   },
 };
-export const Dropdowns = Dropdown;
-
+export const Dropdowns = Example;
 Dropdowns.args = {
-  children: (
-    <>
-      <DropdownToggle caret>Dropdown</DropdownToggle>
-    </>
-  ),
+  children: <></>,
   isOpen: false,
   toggle: () => {},
+  direction: "down",
+  size: "md",
+  color: "primary",
+  caret: true,
+  startIcon: "fa-solid fa-home",
+  endIcon: "fa-solid fa-home",
 };
 
 export { default as DropdownRegularButton } from "../DropdownBtnVariants/DropdownBtnsRegular";
