@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Buttons/BtnBase";
 
-const LinkBtn = () => {
+const LinkBtn = ({}) => {
   return (
     <>
       <Button color="link">Default Link Button</Button>
