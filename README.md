@@ -12,4 +12,4 @@ Our `master` branche is the main branche through which codes are tested and push
 
 ### Work branch
 
-Any new **work-branch** needs to be created from **master**. Once stable codes are ready, create a pull request to test your codes and reviewed by others.
+Any new **work-branch** needs to be created from **master**. Once stable codes are ready, create a pull request to test your codes and reviewed by others. 
