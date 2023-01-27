@@ -1,8 +1,9 @@
 import "assets/css/nucleo-icons.css";
 import "assets/css/ims-icons.css";
 import "react-notifications-component/dist/theme.css";
-import "assets/scss/app.scss";
 import "assets/css/font-awesome-icons.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "assets/scss/app.scss";
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

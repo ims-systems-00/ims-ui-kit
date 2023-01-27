@@ -19,9 +19,13 @@ let BtnBaseProps = Object.assign(
 const BtnBase = (props) => {
   return (
     <Button {...props}>
-      {props.leftIcon ? <i className={classNames(props.leftIcon)} /> : null}{" "}
-      {props.children}{" "}
-      {props.rightIcon ? <i className={classNames(props.rightIcon)} /> : null}
+      {props.leftIcon ? (
+        <i className={classNames(props.leftIcon, "me-2")} />
+      ) : null}
+      {props.children}
+      {props.rightIcon ? (
+        <i className={classNames(props.rightIcon, "ms-2")} />
+      ) : null}
     </Button>
   );
 };
