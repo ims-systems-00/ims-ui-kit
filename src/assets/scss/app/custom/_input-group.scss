@@ -22,3 +22,52 @@
   outline: none !important;
   box-shadow: none !important;
 }
+
+.form-check-input[type="checkbox"] {
+  border-radius: 2px;
+  box-shadow: none;
+}
+.form-check-input:checked[type="checkbox"] {
+  background-color: $permission;
+  background-image: url(../../../img/checkbox.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 8px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.unselected-checkbox {
+  .form-check-input:checked[type="checkbox"] {
+    background-color: transparent;
+
+    background-image: url(../../../img/unselected-checkbox.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.form-check-input[type="radio"] {
+  border-radius: 50%;
+  box-shadow: none;
+}
+.form-check-input:checked[type="radio"] {
+  background-color: transparent;
+  background-image: url(../../../img/selected-radio.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.unselected-radio {
+  .form-check-input:checked[type="radio"] {
+    background-color: transparent;
+    background-image: url(../../../img/unselected-radio.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s ease-in-out;
+  }
+}

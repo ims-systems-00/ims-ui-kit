@@ -1,9 +1,50 @@
-import React from 'react'
+import classNames from "classnames";
+import React from "react";
+import { FormGroup, Input, Label } from "reactstrap";
+import PropTypes from "prop-types";
 
-const ImsInputRadio = () => {
+let ImsInputRadioProps = Object.assign({}, Input.prototype.props);
+
+/**
+ *
+ * @param {ImsInputRadioProps} props
+ * @returns
+ */
+
+const ImsRadioCheckbox = ({
+  label,
+  mandatory = false,
+  onChange,
+  unselected = false,
+  ...rest
+}) => {
   return (
-    <div>ImsInputRadio</div>
-  )
-}
+    <>
+      <FormGroup
+        check
+        className={classNames("", {
+          "unselected-radio": unselected,
+        })}
+      >
+        <Input type="radio" {...rest} />{" "}
+        <Label check>
+          {label} {mandatory ? <span className="text-danger">*</span> : ""}
+        </Label>
+      </FormGroup>
+    </>
+  );
+};
 
-export default ImsInputRadio
+ImsRadioCheckbox.propTypes = {
+  ...(ImsInputRadioProps || {}),
+  /** Label for the input */
+  label: PropTypes.string,
+  /** Mandatory input */
+  mandatory: PropTypes.bool,
+  /** Unselected checkbox */
+  unselected: PropTypes.bool,
+  /** Input Props */
+  ...Input.propTypes,
+};
+
+export default ImsRadioCheckbox;
