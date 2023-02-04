@@ -1,6 +1,15 @@
 import classNames from "classnames";
 import React from "react";
 import { Col, FormGroup, Input, Label, Row } from "reactstrap";
+import PropTypes from "prop-types";
+
+let ImsInputTextProps = Object.assign({}, Input.prototype.props);
+
+/**
+ *
+ * @param {ImsInputTextProps} props
+ * @returns
+ */
 
 const ImsInputText = ({
   leftIcon = "",
@@ -10,11 +19,12 @@ const ImsInputText = ({
   label,
   type = "text",
   mandatory = false,
-  error = false,
+  error = "",
   valid = false,
   onChange,
   labelCol = "12",
   inputCol = "12",
+  value,
   ...rest
 }) => {
   const textInputRef = React.useRef(null);
@@ -63,6 +73,7 @@ const ImsInputText = ({
                 onFocus={() => handleFocus(true)}
                 onBlur={() => handleFocus(false)}
                 type={type}
+                value={value}
                 {...rest}
               />
               {rightIcon && (
@@ -80,6 +91,41 @@ const ImsInputText = ({
       </Row>
     </>
   );
+};
+
+ImsInputText.propTypes = {
+  ...(ImsInputTextProps && ImsInputTextProps),
+  /** Left Icon */
+  leftIcon: PropTypes.string,
+  /** Right Icon */
+  rightIcon: PropTypes.string,
+  /** Left Icon Style */
+  leftIconStyle: PropTypes.string,
+  /** Right Icon Style */
+  rightIconStyle: PropTypes.string,
+  /** Label */
+  label: PropTypes.string,
+  /** Type */
+  type: PropTypes.string,
+  /** Mandatory */
+  mandatory: PropTypes.bool,
+  /** Error */
+  error: PropTypes.string,
+  /** Valid */
+  valid: PropTypes.bool,
+  /** On Change */
+  onChange: PropTypes.func,
+  /** Label Column */
+  labelCol: PropTypes.string,
+  /** Input Column */
+  inputCol: PropTypes.string,
+  /** Value */
+  value: PropTypes.string,
+  /** Placeholder */
+  placeholder: PropTypes.string,
+
+  /** Input Props */
+  ...Input.propTypes,
 };
 
 export default ImsInputText;

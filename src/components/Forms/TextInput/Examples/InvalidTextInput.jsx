@@ -7,7 +7,7 @@ const InvalidTextInput = ({}) => {
       label="Invalid Label"
       placeholder="Placeholder"
       onChange={(e) => console.log(e.target.value)}
-      error
+      error="This is an error"
     />
   );
 };
