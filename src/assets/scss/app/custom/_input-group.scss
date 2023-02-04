@@ -1,0 +1,24 @@
+.ims-input {
+  cursor: text;
+  border: 1px solid $stroke-regular;
+  border-radius: 4px;
+}
+.ims-input.ims-input-focused {
+  border: 1px solid $primary;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.ims-input.ims-input-focused.ims-input-error,
+.ims-input.ims-input-error {
+  border: 1px solid $danger;
+}
+.ims-input.ims-input-focused.ims-input-success,
+.ims-input.ims-input-success {
+  border: 1px solid $success;
+}
+
+.ims-text-input.form-control:focus {
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}

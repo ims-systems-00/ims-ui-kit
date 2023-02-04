@@ -1,10 +1,10 @@
 import React from 'react'
 import ImsInputText from '../ImsInputText'
 
-const SimpleInputText = () => {
+const SimpleInputText = ({}) => {
   return (
     <ImsInputText
-        label="Label"
+        label="Regular Label"
         placeholder="Placeholder"
         onChange={(e) => console.log(e.target.value)}
     />
