@@ -17,3 +17,4 @@ export { default as SimpleInputText } from "../TextInput/Examples/SimpleInputTex
 export { default as TextInputWithIcon } from "../TextInput/Examples/TextInputWithIcon";
 export { default as ValidTextInput } from "../TextInput/Examples/ValidTextInput";
 export { default as InvalidTextInput } from "../TextInput/Examples/InvalidTextInput";
+export { default as SizeVariantsTextInput } from "../TextInput/Examples/TextInputSizes.jsx";
