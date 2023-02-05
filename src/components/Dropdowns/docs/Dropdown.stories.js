@@ -29,3 +29,5 @@ Dropdowns.args = {
 export { default as DropdownRegularButton } from "../DropdownBtnVariants/DropdownBtnsRegular";
 export { default as DropdownIconButton } from "../DropdownBtnVariants/DropdownBtnIcon";
 export { default as DropdownButtonWithIcon } from "../DropdownBtnVariants/DropdownBtnWithIcon";
+export { default as RegularMenu } from "../DropdownMenuVariants/RegularMenu";
+export { default as ActionMenu } from "../DropdownMenuVariants/ActionMenu";
