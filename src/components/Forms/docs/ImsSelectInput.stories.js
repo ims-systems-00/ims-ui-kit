@@ -1,7 +1,7 @@
 import ReactSelect from "../ImsSelectInput/ReactSelectBase";
 
 export default {
-  title: "components/ReactSelect",
+  title: "components/Forms/ReactSelect",
   component: ReactSelect,
 };
 const Template = (args) => <ReactSelect {...args} />;

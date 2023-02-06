@@ -1,6 +1,6 @@
 import FileDropZone from "../FileDropZone/FileDropZone";
 export default {
-  title: "components/Forms",
+  title: "components/Forms/FileDropZone",
   component: FileDropZone,
 };
 const Template = (args) => <FileDropZone {...args} />;
