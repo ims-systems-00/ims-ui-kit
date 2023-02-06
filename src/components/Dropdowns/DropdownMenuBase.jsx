@@ -10,16 +10,7 @@ let DropdownMenuBaseProps = Object.assign({}, DropdownMenu.prototype.props);
  * @returns
  */
 const DropdownMenuBase = ({ ...props }) => {
-  return (
-    <DropdownMenu
-      {...props}
-      className={classNames("", {
-        "action-menu": props.action,
-      })}
-    >
-      {props.children}
-    </DropdownMenu>
-  );
+  return <DropdownMenu {...props}>{props.children}</DropdownMenu>;
 };
 
 DropdownMenuBase.propTypes = {
