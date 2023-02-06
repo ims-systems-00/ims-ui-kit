@@ -20,7 +20,7 @@ const BadgeBase = ({ children, color, ...rest }) => {
   return (
     <Badge
       color={color}
-      className={classNames("", {
+      className={classNames(rest.className, {
         "bg-secondary bg-pending": color === "pending",
       })}
       {...rest}
