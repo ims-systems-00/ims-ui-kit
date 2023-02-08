@@ -6,3 +6,5 @@ export default {
 const Template = (args) => <FileDropZone {...args} />;
 export const DropZone = Template;
 DropZone.args = {};
+
+
