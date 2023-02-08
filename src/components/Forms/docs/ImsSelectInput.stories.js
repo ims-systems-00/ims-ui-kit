@@ -27,4 +27,5 @@ ImsSelect.args = {
   isInvalid: false,
   isRequired: false,
   isReadOnly: false,
+  size: "",
 };

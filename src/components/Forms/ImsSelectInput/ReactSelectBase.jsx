@@ -1,31 +1,12 @@
 import React from "react";
 import ReactSelect from "react-select";
 import PropTypes from "prop-types";
-import IndicatorSeparator from "./SelectComponents/IndicatorSeparator";
+import { style } from "./utility";
 
-const ReactSelectBase = ({ height = 36, ...rest }) => {
-  const style = {
-    control: (provided, state) => ({
-      ...provided,
-      height: `${height}px`,
-      border: `1px solid ${state.isFocused ? "#1D8BF8" : "#CED4DA"}`,
-      boxShadow: state.isFocused ? "0 0 0 1px #1D8BF8" : "none",
-      "&:hover": {
-        borderColor: `${state.isFocused ? "#1D8BF8" : "#CED4DA"}`,
-      },
-    }),
-  };
-
+const ReactSelectBase = ({ ...rest }) => {
   return (
     <>
-      <ReactSelect
-        styles={style}
-        components={{
-          IndicatorSeparator,
-          ...(rest.components || {}),
-        }}
-        {...rest}
-      />
+      <ReactSelect styles={style(rest)} {...rest} />
     </>
   );
 };
@@ -54,6 +35,7 @@ ReactSelect.propTypes = {
   isControlled: PropTypes.bool,
   isFocusedOption: PropTypes.bool,
   isHidden: PropTypes.bool,
+  size: PropTypes.oneOf(["sm", "lg"]),
 };
 
 export default ReactSelectBase;
