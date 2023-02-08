@@ -3,13 +3,26 @@ import ReactSelect from "react-select";
 import PropTypes from "prop-types";
 import IndicatorSeparator from "./SelectComponents/IndicatorSeparator";
 
-const ReactSelectBase = ({ ...rest }) => {
+const ReactSelectBase = ({ height = 36, ...rest }) => {
+  const style = {
+    control: (provided, state) => ({
+      ...provided,
+      height: `${height}px`,
+      border: `1px solid ${state.isFocused ? "#1D8BF8" : "#CED4DA"}`,
+      boxShadow: state.isFocused ? "0 0 0 1px #1D8BF8" : "none",
+      "&:hover": {
+        borderColor: `${state.isFocused ? "#1D8BF8" : "#CED4DA"}`,
+      },
+    }),
+  };
+
   return (
     <>
       <ReactSelect
+        styles={style}
         components={{
           IndicatorSeparator,
-          ...rest.components || {},
+          ...(rest.components || {}),
         }}
         {...rest}
       />
