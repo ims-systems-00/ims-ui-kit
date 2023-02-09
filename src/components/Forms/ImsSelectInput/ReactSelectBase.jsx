@@ -6,7 +6,12 @@ import { style } from "./utility";
 const ReactSelectBase = ({ ...rest }) => {
   return (
     <>
-      <ReactSelect styles={style(rest)} {...rest} />
+      <ReactSelect
+        className="ims-select"
+        classNamePrefix="ims-select"
+        styles={style(rest)}
+        {...rest}
+      />
     </>
   );
 };
