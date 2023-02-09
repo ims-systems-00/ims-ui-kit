@@ -79,3 +79,7 @@
 .btn-outline-dark {
   @include btn-outline($type-dark);
 }
+.btn-icon{
+  background-color: transparent !important;
+  border: none !important;
+}

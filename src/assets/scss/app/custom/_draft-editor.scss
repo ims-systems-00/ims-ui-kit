@@ -1,0 +1,70 @@
+$guide-height: 75px;
+.draft-editor-container {
+  padding: $input-padding-y $input-padding-x;
+  min-height: 200px;
+  background-color: $input-focus-bg;
+  border-radius: $input-border-radius;
+  border: 1px solid $input-border-color;
+  .toolbar-separator {
+    border-bottom: 1px solid $input-border-color;
+  }
+  hr {
+    margin: $input-padding-y 0;
+    background-color: $input-border-color;
+    height: 1px;
+    border: none;
+    opacity: 1;
+  }
+  &.editor-disabled {
+    background-color: $input-disabled-bg;
+    cursor: not-allowed;
+  }
+  .alignment-container {
+    width: auto;
+    block-size: fit-content;
+  }
+  .resize-container {
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  .resize-focused {
+  }
+  .resize-bar {
+    height: $guide-height;
+    width: 3px;
+  }
+  img {
+    pointer-events: none;
+  }
+  .resize-guides-container {
+    height: $guide-height;
+    left: 0;
+  }
+  .resize-guide {
+    width: 1px;
+    height: $guide-height;
+    background-color: $input-border-color;
+    transition: background 0.3s ease-in-out;
+  }
+  .mention-suggestions {
+    border: 1px solid lighten($black, 5%);
+    background-color: $input-disabled-bg;
+    overflow-y: scroll;
+    max-height: 160px;
+    width: 225px;
+    z-index: 999;
+  }
+}
+.draft-toolbar-button-separator {
+  color: $input-border-color;
+}
+.public-DraftStyleDefault-pre {
+  background-color: $gray-100;
+  border-radius: $border-radius;
+  padding: $btn-padding-y $btn-padding-y;
+  pre {
+    padding: 0;
+    margin: 0;
+  }
+}
