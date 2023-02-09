@@ -19,7 +19,7 @@ ImsSelect.args = {
   isSearchable: true,
   isMulti: true,
   isRtl: false,
-  isOptionDisabled: false,
+  // isOptionDisabled: false,
   isOptionSelected: false,
   isFocused: false,
   isMenuOpen: false,
@@ -34,3 +34,4 @@ export { default as SelectSizes } from "../ImsSelectInput/Examples/SelectSizes";
 export { default as CreatableSelect } from "../ImsSelectInput/Examples/CreatableSelect";
 export { default as EmailSelect } from "../ImsSelectInput/Examples/EmailSelect";
 export { default as UserSelect } from "../ImsSelectInput/Examples/UserSelect";
+export { default as SearchSelect } from "../ImsSelectInput/Examples/SearchSelect";

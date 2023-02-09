@@ -1,6 +1,7 @@
 import React from "react";
 import ImsCreatableSelect from "../CreatableSelectBase";
 import options from "./options.js";
+import { disableInvalidEmail } from "../utility";
 
 const EmailSelect = ({}) => {
   return (
@@ -9,7 +10,7 @@ const EmailSelect = ({}) => {
         isMulti
         options={options}
         placeholder="Creatable Email Select"
-        email
+        isOptionDisabled={(option) => disableInvalidEmail(option)}
       />
     </>
   );

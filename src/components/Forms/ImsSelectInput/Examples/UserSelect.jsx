@@ -1,6 +1,7 @@
 import React from "react";
 import ImsCreatableSelect from "../CreatableSelectBase";
 import options from "./options.js";
+import { disableValidEmail } from "../utility.js";
 
 const UserSelect = ({}) => {
   return (
@@ -10,7 +11,7 @@ const UserSelect = ({}) => {
         options={options}
         placeholder="Creatable User Select"
         word="Add this user"
-        user
+        isOptionDisabled={(option) => disableValidEmail(option)}
       />
     </>
   );

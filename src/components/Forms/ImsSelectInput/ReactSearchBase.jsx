@@ -1,38 +1,40 @@
 import React from "react";
-import CreatableSelect from "react-select/creatable";
+import AsyncSelect from "react-select/async";
 import PropTypes from "prop-types";
-import {
-  style,
-  formatCreateLabel,
-} from "./utility";
+import { style } from "./utility";
 
-const CreatableSelectBase = ({
-  word = "Add",
-  email = false,
-  user = false,
-  ...rest
-}) => {
+const ReactSearchBase = ({ ...rest }) => {
+  const [menuIsOpen, setMenuIsOpen] = React.useState(false);
+  const onInputChange = (value) => {
+    if (value.length > 0) {
+      setMenuIsOpen(true);
+    } else {
+      setMenuIsOpen(false);
+    }
+  };
   return (
     <>
-      <CreatableSelect
-        // className="react-select"
-        // classNamePrefix="react-select"
+      <AsyncSelect
+        className="ims-select"
+        classNamePrefix="ims-select"
         styles={style(rest)}
-        formatCreateLabel={(inputValue) => formatCreateLabel(word, inputValue)}
+        loadOptions={rest.loadOptions}
+        onInputChange={onInputChange}
+        menuIsOpen={menuIsOpen}
         {...rest}
       />
     </>
   );
 };
 
-CreatableSelect.propTypes = {
+ReactSearchBase.propTypes = {
   // ...ReactSelect.propTypes,
   isClearable: PropTypes.bool,
   isSearchable: PropTypes.bool,
   isDisabled: PropTypes.bool,
   isMulti: PropTypes.bool,
   isRtl: PropTypes.bool,
-  isOptionDisabled: PropTypes.func,
+//   isOptionDisabled: PropTypes.func,
   isOptionSelected: PropTypes.func,
   isOptionFocused: PropTypes.func,
   isFocused: PropTypes.bool,
@@ -53,4 +55,4 @@ CreatableSelect.propTypes = {
   word: PropTypes.string,
 };
 
-export default CreatableSelectBase;
+export default ReactSearchBase;

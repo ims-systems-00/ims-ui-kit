@@ -35,14 +35,18 @@ const style = (rest) => {
 const formatCreateLabel = (word, inputValue) => {
   return `${word} "${inputValue}"`;
 };
-const disableInvalidEmail = (inputValue) => {
-  return !emailRegex.test(inputValue.value);
+const disableInvalidEmail = (option) => {
+  return !emailRegex.test(option.value);
 };
-const disableValidEmail = (inputValue) => {
-  return emailRegex.test(inputValue.value);
+const disableValidEmail = (option) => {
+  return emailRegex.test(option.value);
 };
-
-export { style, formatCreateLabel, disableValidEmail, disableInvalidEmail };
+export {
+  style,
+  formatCreateLabel,
+  disableValidEmail,
+  disableInvalidEmail,
+};
 
 const emailRegex = RegExp(
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

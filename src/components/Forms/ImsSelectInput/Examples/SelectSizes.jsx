@@ -2,6 +2,7 @@ import React from "react";
 import options from "./options.js";
 import ImsSelect from "../ReactSelectBase";
 import ImsInputText from "../../TextInput/ImsInputText";
+import { Input, InputGroup, InputGroupText } from "reactstrap";
 
 const SelectSizes = ({}) => {
   return (
@@ -23,6 +24,15 @@ const SelectSizes = ({}) => {
       />
       <br /> <br />
       <ImsInputText placeholder="Regular Text Input" />
+      <br /> <br />
+      <Input />
+      <br></br>
+      <InputGroup size="lg">
+        <InputGroupText>@lg</InputGroupText>
+        <Input />
+        <InputGroupText>@lg</InputGroupText>
+      </InputGroup>
+      <br />
     </>
   );
 };
