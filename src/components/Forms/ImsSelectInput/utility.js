@@ -3,7 +3,7 @@ export const style = (rest) => {
     control: (provided, state) => ({
       ...provided,
       minHeight:
-        rest.size === "sm" ? "29px" : rest.size === "lg" ? "46px" : "36px",
+        rest.size === "sm" ? "32px" : rest.size === "lg" ? "40px" : "36px",
       border: `1px solid ${state.isFocused ? "#1D8BF8" : "#CED4DA"}`,
       boxShadow: state.isFocused ? "0 0 0 1px #1D8BF8" : "none",
       "&:hover": {
@@ -27,7 +27,7 @@ export const style = (rest) => {
     indicatorsContainer: (provided, state) => ({
       ...provided,
       height:
-        rest.size === "sm" ? "29px" : rest.size === "lg" ? "46px" : "36px",
+        rest.size === "sm" ? "32px" : rest.size === "lg" ? "40px" : "36px",
     }),
   };
 };

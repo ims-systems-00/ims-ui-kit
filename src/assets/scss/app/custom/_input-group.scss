@@ -2,6 +2,15 @@
   cursor: text;
   border: 1px solid $stroke-regular;
   border-radius: 4px;
+  .form-control {
+    min-height: 36px;
+  }
+  .form-control.form-control-lg {
+    min-height: 40px;
+  }
+  .form-control.form-control-sm {
+    min-height: 32px;
+  }
 }
 .ims-input.ims-input-focused {
   border: 1px solid $primary;

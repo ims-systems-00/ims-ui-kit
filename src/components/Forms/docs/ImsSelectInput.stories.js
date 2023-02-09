@@ -29,3 +29,5 @@ ImsSelect.args = {
   isReadOnly: false,
   size: "",
 };
+
+export { default as SelectSizes } from "../ImsSelectInput/Examples/SelectSizes";
