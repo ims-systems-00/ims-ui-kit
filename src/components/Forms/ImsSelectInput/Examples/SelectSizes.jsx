@@ -1,6 +1,7 @@
 import React from "react";
 import options from "./options.js";
 import ImsSelect from "../ReactSelectBase";
+import ImsInputText from "../../TextInput/ImsInputText";
 
 const SelectSizes = ({}) => {
   return (
@@ -20,6 +21,8 @@ const SelectSizes = ({}) => {
         size="sm"
         placeholder="Small Select"
       />
+      <br /> <br />
+      <ImsInputText placeholder="Regular Text Input" />
     </>
   );
 };

@@ -1,22 +1,40 @@
 import React from "react";
-import ReactSelect from "react-select";
+import CreatableSelect from "react-select/creatable";
 import PropTypes from "prop-types";
-import { style } from "./utility";
+import {
+  style,
+  formatCreateLabel,
+  disableInvalidEmail,
+  disableValidEmail,
+} from "./utility";
 
-const ReactSelectBase = ({ ...rest }) => {
+const CreatableSelectBase = ({
+  word = "Add",
+  email = false,
+  user = false,
+  ...rest
+}) => {
   return (
     <>
-      <ReactSelect
+      <CreatableSelect
         className="ims-select"
         classNamePrefix="ims-select"
         styles={style(rest)}
+        formatCreateLabel={(inputValue) => formatCreateLabel(word, inputValue)}
+        isOptionDisabled={
+          email && !user
+            ? (option) => disableInvalidEmail(option)
+            : user && !email
+            ? (option) => disableValidEmail(option, user)
+            : !email && !user && rest.isOptionDisabled
+        }
         {...rest}
       />
     </>
   );
 };
 
-ReactSelect.propTypes = {
+CreatableSelect.propTypes = {
   // ...ReactSelect.propTypes,
   isClearable: PropTypes.bool,
   isSearchable: PropTypes.bool,
@@ -44,4 +62,4 @@ ReactSelect.propTypes = {
   word: PropTypes.string,
 };
 
-export default ReactSelectBase;
+export default CreatableSelectBase;
