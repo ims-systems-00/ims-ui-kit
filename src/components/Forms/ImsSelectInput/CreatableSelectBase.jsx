@@ -1,22 +1,18 @@
-import React from "react";
-import CreatableSelect from "react-select/creatable";
 import PropTypes from "prop-types";
+import CreatableSelect from "react-select/creatable";
 import {
-  style,
-  formatCreateLabel,
+  formatCreateLabel, style
 } from "./utility";
 
 const CreatableSelectBase = ({
   leftPhrase = "Add",
-  email = false,
-  user = false,
   ...rest
 }) => {
   return (
     <>
       <CreatableSelect
-        // className="react-select"
-        // classNamePrefix="react-select"
+        className="react-select"
+        classNamePrefix="react-select"
         styles={style(rest)}
         formatCreateLabel={(inputValue) => formatCreateLabel(leftPhrase, inputValue)}
         {...rest}

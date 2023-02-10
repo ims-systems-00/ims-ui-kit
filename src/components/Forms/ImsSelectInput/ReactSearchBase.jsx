@@ -1,9 +1,9 @@
+import PropTypes from "prop-types";
 import React from "react";
 import AsyncSelect from "react-select/async";
-import PropTypes from "prop-types";
 import { style } from "./utility";
 
-const ReactSearchBase = ({ ...rest }) => {
+const ReactSearchBase = ({ loadOptions, ...rest }) => {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
   const onInputChange = (value) => {
     if (value.length > 0) {
@@ -15,10 +15,10 @@ const ReactSearchBase = ({ ...rest }) => {
   return (
     <>
       <AsyncSelect
-        className="ims-select"
-        classNamePrefix="ims-select"
+        className="react-select"
+        classNamePrefix="react-select"
         styles={style(rest)}
-        loadOptions={rest.loadOptions}
+        loadOptions={loadOptions}
         onInputChange={onInputChange}
         menuIsOpen={menuIsOpen}
         {...rest}
@@ -34,7 +34,7 @@ ReactSearchBase.propTypes = {
   isDisabled: PropTypes.bool,
   isMulti: PropTypes.bool,
   isRtl: PropTypes.bool,
-//   isOptionDisabled: PropTypes.func,
+  //   isOptionDisabled: PropTypes.func,
   isOptionSelected: PropTypes.func,
   isOptionFocused: PropTypes.func,
   isFocused: PropTypes.bool,

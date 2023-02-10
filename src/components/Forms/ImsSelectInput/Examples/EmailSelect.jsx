@@ -1,7 +1,6 @@
-import React from "react";
 import ImsCreatableSelect from "../CreatableSelectBase";
-import options from "./options.js";
 import { disableInvalidEmail } from "../utility";
+import options from "./options.js";
 
 const EmailSelect = ({}) => {
   return (

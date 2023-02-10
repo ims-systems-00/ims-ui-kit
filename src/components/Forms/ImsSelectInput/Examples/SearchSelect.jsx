@@ -1,4 +1,3 @@
-import React from "react";
 import ReactSearch from "../ReactSearchBase";
 
 const SearchSelect = () => {

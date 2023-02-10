@@ -1,8 +1,5 @@
-import React from "react";
-import options from "./options.js";
 import ImsSelect from "../ReactSelectBase";
-import ImsInputText from "../../TextInput/ImsInputText";
-import { Input, InputGroup, InputGroupText } from "reactstrap";
+import options from "./options.js";
 
 const SelectSizes = ({}) => {
   return (

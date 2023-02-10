@@ -1,14 +1,13 @@
-import React from "react";
-import ReactSelect from "react-select";
 import PropTypes from "prop-types";
+import ReactSelect from "react-select";
 import { style } from "./utility";
 
 const ReactSelectBase = ({ ...rest }) => {
   return (
     <>
       <ReactSelect
-        className="ims-select"
-        classNamePrefix="ims-select"
+        className="react-select"
+        classNamePrefix="react-select"
         styles={style(rest)}
         {...rest}
       />
