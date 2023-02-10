@@ -183,8 +183,8 @@ export default function useTextEditor(config) {
   };
   const handleToolClick = (tool, e) => {
     e.preventDefault();
+    if (!editorState.getSelection().getHasFocus()) return null;
     if (!tool?.element) return null;
-    editorRef.current.editor?.focus();
     _buttonHandlers[tool.element](tool.style);
   };
   const handleDroppedFiles = (selection, files) => _handleFiles(files);
