@@ -10,7 +10,7 @@ const UserSelect = ({}) => {
         isMulti
         options={options}
         placeholder="Creatable User Select"
-        word="Add this user"
+        leftPhrase="Add this user"
         isOptionDisabled={(option) => disableValidEmail(option)}
       />
     </>

@@ -23,16 +23,6 @@ const SelectSizes = ({}) => {
         placeholder="Small Select"
       />
       <br /> <br />
-      <ImsInputText placeholder="Regular Text Input" />
-      <br /> <br />
-      <Input />
-      <br></br>
-      <InputGroup size="lg">
-        <InputGroupText>@lg</InputGroupText>
-        <Input />
-        <InputGroupText>@lg</InputGroupText>
-      </InputGroup>
-      <br />
     </>
   );
 };

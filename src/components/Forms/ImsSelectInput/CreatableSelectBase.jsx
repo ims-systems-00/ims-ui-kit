@@ -7,7 +7,7 @@ import {
 } from "./utility";
 
 const CreatableSelectBase = ({
-  word = "Add",
+  leftPhrase = "Add",
   email = false,
   user = false,
   ...rest
@@ -18,7 +18,7 @@ const CreatableSelectBase = ({
         // className="react-select"
         // classNamePrefix="react-select"
         styles={style(rest)}
-        formatCreateLabel={(inputValue) => formatCreateLabel(word, inputValue)}
+        formatCreateLabel={(inputValue) => formatCreateLabel(leftPhrase, inputValue)}
         {...rest}
       />
     </>
