@@ -40,7 +40,7 @@ export default function Mention(props) {
       {retriveEntityData() ? (
         <a
           href={"/admin/users/" + retriveEntityData()._id}
-          className="text-success"
+          className="text-primary"
         >
           {retriveEntityData().name}
         </a>

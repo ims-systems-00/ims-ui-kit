@@ -15,4 +15,17 @@ All our text are customised from the default bootstrap texts. Only the customise
 };
 export const Default = Texteditor;
 
-Default.args = {};
+Default.args = {
+  mentionSuggestions: [
+    {
+      _id: "182973aSJLsddkhsd",
+      name: "Reyad Hossain",
+      profileImageUrl: "https://picsum.photos/200/300",
+    },
+    {
+      _id: "182973sadadkhsd",
+      name: "Samin israr",
+      profileImageUrl: "https://picsum.photos/200/300",
+    },
+  ],
+};

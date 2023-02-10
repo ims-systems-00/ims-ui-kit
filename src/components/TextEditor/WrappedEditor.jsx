@@ -4,11 +4,13 @@ import { TextEditorContext } from "./Context";
 import ToolBar from "./Toolbar";
 import classnames from "classnames";
 export default function WrappedEditor(props) {
-  const { forceFocusEditorEnd } = React.useContext(TextEditorContext);
+  const { forceFocusEditorEnd, focusedForEditing } =
+    React.useContext(TextEditorContext);
   return (
     <div
       className={classnames("draft-editor-container d-flex flex-column", {
         "editor-disabled": props.readOnly,
+        "editor-active": focusedForEditing,
       })}
     >
       {!props.readOnly && (

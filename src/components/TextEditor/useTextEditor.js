@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   EditorState,
   RichUtils,
@@ -25,10 +25,7 @@ export default function useTextEditor(config) {
   const [editorState, setEditorState] = React.useState(
     EditorState.createEmpty(compositeDecorator)
   );
-  console.log(
-    "editor selection anchor offset",
-    editorState.getSelection().getAnchorOffset()
-  );
+  const [focusedForEditing, setFocusedForEditing] = useState(false);
   const [
     computedPosForMentionSuggestions,
     setComputedPosForMentionSuggestions,
@@ -39,6 +36,8 @@ export default function useTextEditor(config) {
    * the following effect block handles if the component is being
    * controlled by outside values.
    */
+  const activateEditor = () => setFocusedForEditing(true);
+  const deactivateEditor = () => setFocusedForEditing(false);
   React.useEffect(() => {
     let currentContent;
     try {
@@ -118,7 +117,8 @@ export default function useTextEditor(config) {
   const handleEditorStateChange = (editorState) => {
     const contentState = editorState.getCurrentContent();
     setEditorState(editorState);
-    // config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
+    // console.log(JSON.stringify(convertToRaw(contentState)))
+    config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
   };
   const handleKeyCommand = (command, editorState) => {
     let newState = RichUtils.handleKeyCommand(editorState, command);
@@ -242,6 +242,7 @@ export default function useTextEditor(config) {
     editorRef,
     editorState,
     computedPosForMentionSuggestions,
+    focusedForEditing,
     getFileInputProps,
     generateLink,
     handleDroppedFiles,
@@ -252,5 +253,7 @@ export default function useTextEditor(config) {
     forceFocusEditorEnd,
     updateComputedPosForMentionSuggestions,
     handleMentionSelect,
+    activateEditor,
+    deactivateEditor,
   };
 }

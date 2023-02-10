@@ -7,7 +7,7 @@ export default function MentionSuggestions({ suggestions, ...rest }) {
     <>
       {suggestions.length ? (
         <div
-          className="mention-suggestions position-absolute mt-4 p-2 rounded shadow-sm"
+          className="mention-suggestions position-absolute mt-4 p-2 shadow-md"
           style={{ ...computedPosForMentionSuggestions }}
         >
           {suggestions.map((suggestion, index) => {

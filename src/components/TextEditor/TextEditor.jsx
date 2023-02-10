@@ -10,6 +10,8 @@ export default function TextEditor({ readOnly = false, ...props }) {
     handleDroppedFiles,
     handlePastedFiles,
     handleKeyCommand,
+    activateEditor,
+    deactivateEditor,
   } = React.useContext(TextEditorContext);
   return (
     <>
@@ -24,6 +26,8 @@ export default function TextEditor({ readOnly = false, ...props }) {
         handleDroppedFiles={handleDroppedFiles}
         handlePastedFiles={handlePastedFiles}
         readOnly={readOnly}
+        onFocus={activateEditor}
+        onBlur={deactivateEditor}
       />
     </>
   );
