@@ -21,7 +21,7 @@ export default function ToolBar(props) {
                   // type="button"
                   className={"btn btn-icon text-muted m-0"}
                   key={tool?.style}
-                  onClick={(e) => handleToolClick(tool)}
+                  onMouseDown={(e) => handleToolClick(tool, e)}
                 >
                   {tool.icon ? (
                     <i

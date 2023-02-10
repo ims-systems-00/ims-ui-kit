@@ -181,8 +181,10 @@ export default function useTextEditor(config) {
       _atomicEntityController[command]();
     },
   };
-  const handleToolClick = (tool) => {
+  const handleToolClick = (tool, e) => {
+    e.preventDefault();
     if (!tool?.element) return null;
+    editorRef.current.editor?.focus();
     _buttonHandlers[tool.element](tool.style);
   };
   const handleDroppedFiles = (selection, files) => _handleFiles(files);
@@ -235,6 +237,7 @@ export default function useTextEditor(config) {
   };
   const forceFocusEditorEnd = (e) => {
     e?.preventDefault && e.preventDefault();
+    if (focusedForEditing) return;
     editorRef.current.editor?.focus();
     handleEditorStateChange(EditorState.moveFocusToEnd(editorState));
   };
