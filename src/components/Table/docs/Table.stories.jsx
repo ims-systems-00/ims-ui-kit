@@ -1,50 +1,21 @@
-import { Table } from "reactstrap";
-import Tables from "../Tables";
-
+import ImsSimpleTable from "../ImsSimpleTable";
+import data from "../data.json";
 export default {
   title: "components/Table",
-  component: Tables,
+  component: ImsSimpleTable,
+  parameters: {
+    docs: {
+      description: {
+        component: `This component is built for quick rendering of simple tablular data the data. This the simplest version of iMS Systems tables`,
+      },
+    },
+  },
 };
 
-const Template = (args) => <Tables {...args} />;
+const Template = (args) => <ImsSimpleTable {...args} />;
 export const Default = Template.bind({});
 Default.args = {
-  children: (
-    <Table striped hover>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Modified by</th>
-          <th>Last modified</th>
-          <th>File size</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Devs team salary</td>
-          <td>Abdullah al rafee</td>
-          <td>Jun, 03, 2022</td>
-          <td>320kb</td>
-        </tr>
-        <tr>
-          <td>Ops team salary</td>
-          <td>Nurul Haque</td>
-          <td>Jun, 03, 2022</td>
-          <td>320kb</td>
-        </tr>
-        <tr>
-          <td>Ops team salary</td>
-          <td>Nurul Haque</td>
-          <td>Jun, 03, 2022</td>
-          <td>320kb</td>
-        </tr>
-        <tr>
-          <td>Ops team salary</td>
-          <td>Nurul Haque</td>
-          <td>Jun, 03, 2022</td>
-          <td>320kb</td>
-        </tr>
-      </tbody>
-    </Table>
-  ),
+  thead: data.thead,
+  tbody: data.tbody,
 };
+export { default as TableInaCard } from "../TableInaCard";
