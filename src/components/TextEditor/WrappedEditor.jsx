@@ -24,7 +24,7 @@ export default function WrappedEditor(props) {
        * following portion helps to focus on the actual text area
        * when unedited remaing area is clicked.
        */}
-      <div className="flex-grow-1" onClick={forceFocusEditorEnd}></div>
+      <div className="flex-grow-1" onMouseDown={forceFocusEditorEnd}></div>
     </div>
   );
 }
