@@ -1,35 +1,10 @@
-.ims-input {
-  cursor: text;
-  border: 1px solid $stroke-regular;
-  border-radius: 4px;
-}
-.ims-input.ims-input-focused {
-  border: 1px solid $primary;
-  transition: border-color 0.2s ease-in-out;
-}
-
-.ims-input.ims-input-focused.ims-input-error,
-.ims-input.ims-input-error {
-  border: 1px solid $danger;
-}
-.ims-input.ims-input-focused.ims-input-success,
-.ims-input.ims-input-success {
-  border: 1px solid $success;
-}
-
-.ims-text-input.form-control:focus {
-  border-color: transparent !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
 .form-check-input[type="checkbox"] {
   border-radius: 2px;
   box-shadow: none;
 }
 .form-check-input:checked[type="checkbox"] {
   background-color: $permission;
-  background-image: url(../../../img/checkbox.svg);
+  background-image: url(../../../../img/checkbox.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 8px;
@@ -41,7 +16,7 @@
   .form-check-input:checked[type="checkbox"] {
     background-color: transparent;
 
-    background-image: url(../../../img/unselected-checkbox.svg);
+    background-image: url(../../../../img/unselected-checkbox.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -55,7 +30,7 @@
 }
 .form-check-input:checked[type="radio"] {
   background-color: transparent;
-  background-image: url(../../../img/selected-radio.svg);
+  background-image: url(../../../../img/selected-radio.svg);
   background-repeat: no-repeat;
   background-position: center;
   border: none;
@@ -65,7 +40,7 @@
 .unselected-radio {
   .form-check-input:checked[type="radio"] {
     background-color: transparent;
-    background-image: url(../../../img/unselected-radio.svg);
+    background-image: url(../../../../img/unselected-radio.svg);
     background-repeat: no-repeat;
     background-position: center;
     transition: all 0.3s ease-in-out;

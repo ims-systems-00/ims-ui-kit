@@ -1,34 +1,10 @@
-.form-control:focus {
-  box-shadow: none;
-  border-color: $primary;
-}
 
-.input-group {
-  .input-group-text {
-    transition: border-color 0.15s linear;
-    cursor: text;
-    input[type="checkbox"],
-    input[type="radio"],
-    button {
-      cursor: pointer;
-    }
-  }
-  .input-group-text:first-child {
-    background-color: transparent;
-  }
-  .input-group-text:last-child {
-    background-color: transparent;
-  }
-  .form-control:not(:first-child) {
-    border-left: none;
-  }
-  .form-control:not(:last-child) {
-    border-right: none;
-  }
-}
-.input-group:focus-within {
-  .input-group-text {
-    border-color: $primary !important;
-    transition: border-color 0.15s linear;
-  }
-}
+@import "forms/labels";
+@import "forms/form-text";
+@import "forms/form-control";
+@import "forms/form-select";
+@import "forms/form-check";
+@import "forms/form-range";
+@import "forms/floating-labels";
+@import "forms/input-group";
+@import "forms/validation";
