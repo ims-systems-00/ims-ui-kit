@@ -13,6 +13,8 @@ InputText.args = {
   value: "",
 };
 
+export { default as DefaultInputText } from "../TextInput/Examples/DefaultInputText";
+export { default as GroupInputText } from "../TextInput/Examples/GroupInputText";
 export { default as SimpleInputText } from "../TextInput/Examples/SimpleInputText";
 export { default as TextInputWithIcon } from "../TextInput/Examples/TextInputWithIcon";
 export { default as ValidTextInput } from "../TextInput/Examples/ValidTextInput";
