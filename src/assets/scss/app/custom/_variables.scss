@@ -507,3 +507,5 @@ $table-hover-bg: rgba($primary, $table-hover-bg-factor) !default;
 //     "border-color": var(--#{$prefix}danger),
 //   )
 // ) !default;
+$general-transition-time: 300ms !default;
+$transition-ease: ease 0s;

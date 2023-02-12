@@ -136,10 +136,10 @@
       height: 20px;
     }
     .rdtDay {
-      color: $dark-gray;
+      color: $secondary-dark;
       &.rdtOld,
       &.rdtNew {
-        color: $default;
+        color: $secondary-dark;
         font-weight: 300;
       }
     }
@@ -334,7 +334,7 @@ td.rdtYear:hover {
   cursor: pointer;
   display: block;
   border-radius: 50%;
-  color: $medium-gray;
+  color: $secondary-light;
   -webkit-transition: all 60ms ease-in;
   -moz-transition: all 60ms ease-in;
   -o-transition: all 60ms ease-in;

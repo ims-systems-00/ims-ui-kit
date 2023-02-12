@@ -52,7 +52,7 @@
 
       .btn[data-action="togglePeriod"]:hover,
       .separator {
-        color: $dark-gray !important;
+        color: $secondary-dark !important;
       }
     }
   }
@@ -60,7 +60,7 @@
     .month,
     .year,
     .decade {
-      color: $dark-gray;
+      color: $secondary-dark;
 
       &.active {
         color: $white;
@@ -163,7 +163,7 @@
   font-size: 1.5em;
   margin: 3px;
   border-radius: 50%;
-  color: $dark-gray;
+  color: $secondary-dark;
 }
 .bootstrap-datetimepicker-widget button[data-action] {
   width: 38px;
@@ -292,7 +292,7 @@
   border-radius: 50%;
   margin: 0 auto;
   z-index: -1;
-  color: $dark-gray;
+  color: $secondary-dark;
   position: relative;
   font-weight: 300;
   font-size: 14px;
@@ -305,7 +305,7 @@
   cursor: pointer;
 }
 .bootstrap-datetimepicker-widget table td.old > div, .bootstrap-datetimepicker-widget table td.new > div {
-  color: $default;
+  color: $secondary-dark;
 }
 .bootstrap-datetimepicker-widget table td.today > div:before {
   content: '';
@@ -392,13 +392,13 @@ input.datetimepicker[data-color] + .bootstrap-datetimepicker-widget{
     .separator,
     table td.minute > div,
     table td.hour > div{
-        color: $dark-gray;
+        color: $secondary-dark;
     }
 
 
 
     table th.dow{
-        color: $opacity-8;
+        color: $secondary-light;
     }
 
     table td.old > div,
@@ -420,12 +420,12 @@ input.datetimepicker[data-color] + .bootstrap-datetimepicker-widget{
     table td.minute:hover > div,
     table td.second:hover > div,
     table td span:hover{
-        background: $opacity-2;
+        background: $secondary-dark;
     }
 
     table thead tr:first-child th:hover span,
     table thead tr:first-child th.picker-switch:hover{
-        background-color: $opacity-2;
+        background-color: $secondary-dark;
     }
 }
 

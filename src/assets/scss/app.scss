@@ -87,7 +87,7 @@
 
 // Vendor / Plugins
 
-// @import "app/custom/vendor/plugin-datetimepicker.scss";
+@import "app/custom/vendor/plugin-datetimepicker.scss";
 // @import "app/custom/vendor/plugin-nouislider.scss";
 // @import "app/custom/vendor/plugin-fullcalendar.scss";
 // @import "app/custom/vendor/plugin-sweetalert2.scss";
@@ -126,4 +126,4 @@
 @import "app/custom/cards/card-invoice";
 
 // React Differences
-// @import "app/react/react-differences";
+@import "app/react/react-differences";
