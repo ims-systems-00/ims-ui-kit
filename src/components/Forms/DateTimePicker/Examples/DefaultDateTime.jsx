@@ -1,7 +1,6 @@
-import React from 'react'
 import DateTime from '../DateTimeBase'
 
-const DefaultDateTime = () => {
+const DefaultDateTime = ({}) => {
   return (
     <>
     <DateTime/>
