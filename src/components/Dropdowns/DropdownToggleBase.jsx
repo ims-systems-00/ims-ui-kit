@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { DropdownToggle } from "reactstrap";
 
-let DropdownBtnBaseProps = Object.assign(
+let DropdownToogleBaseProps = Object.assign(
   {
     startIcon: "",
     endIcon: "",
@@ -14,11 +14,11 @@ let DropdownBtnBaseProps = Object.assign(
 
 /**
  *
- * @param {DropdownBtnBaseProps} props
+ * @param {DropdownToogleBaseProps} props
  * @returns
  */
 
-const DropdownBtnBase = ({ caret, ...props }) => {
+const DropdownToogleBase = ({ caret, ...props }) => {
   return (
     <>
       <DropdownToggle
@@ -35,11 +35,11 @@ const DropdownBtnBase = ({ caret, ...props }) => {
   );
 };
 
-DropdownBtnBase.propTypes = {
+DropdownToogleBase.propTypes = {
   startIcon: PropTypes.string,
   endIcon: PropTypes.string,
   caret: PropTypes.bool,
   ...(DropdownToggle.propTypes && DropdownToggle.propTypes),
 };
 
-export default DropdownBtnBase;
+export default DropdownToogleBase;

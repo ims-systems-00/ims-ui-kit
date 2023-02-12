@@ -1,6 +1,6 @@
 import React from "react";
 import Dropdown from "../DropdownBase";
-import DropdownToggle from "../DropdownBtnBase";
+import DropdownToggle from "../DropdownToggleBase";
 
 const DropdownBtnIcon = ({}) => {
   return (

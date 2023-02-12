@@ -1,6 +1,6 @@
 {
-  "name": "ims-uti-kit",
-  "version": "1.1.0",
+  "name": "ims-ui-kit",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@draft-js-plugins/editor": "^4.1.3",
@@ -95,5 +95,13 @@
   ],
   "browser": {
     "joi": "joi-browser"
-  }
+  },
+  "description": "Here we have listed all our design system files where. This deisgn system is exported for various products of iMS Systems. Change in this deisgn system would reflect change accross all products of iMS Systems. The design system\r is a customised version of bootstrap so bootstrap customisation docs and guidelines are followed for building the\r components for the system.",
+  "main": "./src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@imssystems:ims-systems-00/ims-ui-kit.git"
+  },
+  "author": "ims-systems-00",
+  "license": "ISC"
 }
