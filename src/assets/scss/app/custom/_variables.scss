@@ -529,3 +529,10 @@ $table-hover-bg: rgba($primary, $table-hover-bg-factor) !default;
 
 // scss-docs-start card-variables
 $card-cap-bg: $secondary-extra-light !default;
+
+// Sidebar
+
+$sidebar-width: 260px;
+$sidebar-transition: 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+$sidebar-box-shadow: 0px 2px 22px 0 rgba(0, 0, 0, 0.2),
+  0px 2px 30px 0 rgba(0, 0, 0, 0.35);
