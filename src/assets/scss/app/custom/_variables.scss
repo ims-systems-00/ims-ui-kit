@@ -55,6 +55,23 @@ $theme-colors: (
   "light": $secondary-extra-light,
   "dark": $stroke-dark,
 ) !default;
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-color: $type-medium !default;
+$body-bg: $white !default;
+
+// scss-docs-start border-variables
+$border-color: $stroke-regular !default;
+$border-color-translucent: $stroke-regular !default;
+
+// scss-docs-start box-shadow-variables
+// $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+// $box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+// $box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
+// $box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
+// scss-docs-end box-shadow-variables
 
 $input-btn-padding-y: 0.375rem !default;
 $input-btn-padding-x: 1rem !default;
@@ -163,11 +180,11 @@ $hr-margin-y: $spacer * 2 !default;
 
 // Tables
 
-$table-color: $secondary-light !default;
+$table-color: $type-medium !default;
 
 $table-th-font-weight: null !default;
 
-$table-striped-color: $secondary-light !default;
+$table-striped-color: $type-medium !default;
 $table-striped-bg-factor: 0.05 !default;
 $table-striped-bg: $secondary-extra-light !default;
 
@@ -509,3 +526,8 @@ $table-hover-bg: rgba($primary, $table-hover-bg-factor) !default;
 // ) !default;
 $general-transition-time: 300ms !default;
 $transition-ease: ease 0s;
+
+// Cards
+
+// scss-docs-start card-variables
+$card-cap-bg: $secondary-extra-light !default;

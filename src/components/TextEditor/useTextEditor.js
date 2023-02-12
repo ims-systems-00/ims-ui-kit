@@ -237,7 +237,6 @@ export default function useTextEditor(config) {
   };
   const forceFocusEditorEnd = (e) => {
     e?.preventDefault && e.preventDefault();
-    if (focusedForEditing) return;
     editorRef.current.editor?.focus();
     handleEditorStateChange(EditorState.moveFocusToEnd(editorState));
   };
