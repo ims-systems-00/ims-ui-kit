@@ -1,6 +1,6 @@
 {
   "name": "ims-ui-kit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "source": "src/index.js",
   "exports": {
     "import": "./dist/ims-ui-kit.modern.js",
@@ -74,7 +74,7 @@
     "typescript": "4.9.4"
   },
   "scripts": {
-    "build": "microbundle",
+    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react && node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss dist/css/app.min.css --output-style compressed",
     "test": "env-cmd -f ./.env.local react-scripts test",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook",
