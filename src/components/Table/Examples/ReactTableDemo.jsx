@@ -11,24 +11,28 @@ const ReactTableDemo = ({}) => {
             age: 26,
             email: "tan@gmail.com",
             phone: "1234567890",
+            // actions: <span>Click</span>,
           },
           {
             name: "Tanner Linsley",
             age: 26,
             email: "tan@gmail.com",
             phone: "1234567890",
+            // actions: <span>Click</span>,
           },
           {
             name: "Tanner Linsley",
             age: 26,
             email: "tan@gmail.com",
             phone: "1234567890",
+            // actions: <span>Click</span>,
           },
           {
             name: "Tanner Linsley",
             age: 26,
             email: "tan@gmail.com",
             phone: "1234567890",
+            // actions: <span>Click</span>,
           },
         ]}
         columns={[

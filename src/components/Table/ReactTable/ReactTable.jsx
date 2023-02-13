@@ -35,6 +35,7 @@ function Table({
     totalPages: 2,
     totalResults: 0,
   },
+  ...props
 }) {
   const {
     getTableProps,
@@ -282,9 +283,9 @@ function Table({
                                     actions={row.original.actions}
                                     checkedIds={checkedIds}
                                   /> */}
-                                  {prop.actions && (
+                                  {props.actions && (
                                     <td className="text-right">
-                                      {prop.actions}
+                                      {props.actions}
                                     </td>
                                   )}
                                 </div>
