@@ -19,3 +19,4 @@ Default.args = {
   tbody: data.tbody,
 };
 export { default as TableInaCard } from "../TableInaCard";
+// export { default as ReactTable } from "../Examples/ReactTableDemo";

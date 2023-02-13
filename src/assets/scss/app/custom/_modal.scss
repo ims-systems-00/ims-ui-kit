@@ -1,0 +1,17 @@
+.modal-view {
+  .modal-dialog {
+    max-width: 80%;
+    .modal-content {
+      max-height: 90vh;
+      min-height: 45vh;
+      overflow-y: scroll;
+    }
+  }
+}
+@include media-breakpoint-down(md) {
+  .modal-view {
+    .modal-dialog {
+      max-width: 100%;
+    }
+  }
+}
