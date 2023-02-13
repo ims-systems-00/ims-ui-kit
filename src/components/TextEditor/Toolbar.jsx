@@ -18,7 +18,7 @@ export default function ToolBar(props) {
               return (
                 <Button
                   title={tool?.label}
-                  // type="button"
+                  type="button"
                   className={"btn btn-icon text-muted m-0"}
                   key={tool?.style}
                   onMouseDown={(e) => handleToolClick(tool, e)}
