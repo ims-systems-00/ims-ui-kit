@@ -1,9 +1,10 @@
 {
   "name": "ims-ui-kit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "source": "src/index.js",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "main": "./dist/ims-ui-kit.cjs",
   "module": "./dist/ims-ui-kit.module.js",
