@@ -2,11 +2,10 @@
   "name": "ims-ui-kit",
   "version": "1.0.3",
   "source": "src/index.js",
-  "exports": {
-    "import": "./dist/ims-ui-kit.modern.js",
-    "require": "./dist/ims-ui-kit.cjs",
-    "default": "./dist/ims-ui-kit.modern.js"
-  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "main": "./dist/ims-ui-kit.cjs",
   "module": "./dist/ims-ui-kit.module.js",
   "unpkg": "./dist/ims-ui-kit.umd.js",
