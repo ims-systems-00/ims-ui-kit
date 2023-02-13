@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   EditorState,
   RichUtils,
@@ -21,15 +21,15 @@ const compositeDecorator = new CompositeDecorator([
   textLinkDecorator,
 ]);
 export default function useTextEditor(config) {
-  const editorRef = React.useRef(null);
-  const [editorState, setEditorState] = React.useState(
+  const editorRef = useRef(null);
+  const [editorState, setEditorState] = useState(
     EditorState.createEmpty(compositeDecorator)
   );
   const [focusedForEditing, setFocusedForEditing] = useState(false);
   const [
     computedPosForMentionSuggestions,
     setComputedPosForMentionSuggestions,
-  ] = React.useState({ display: "none" });
+  ] = useState({ display: "none" });
   const updateComputedPosForMentionSuggestions = (position) =>
     setComputedPosForMentionSuggestions(position);
   /**
@@ -38,7 +38,7 @@ export default function useTextEditor(config) {
    */
   const activateEditor = () => setFocusedForEditing(true);
   const deactivateEditor = () => setFocusedForEditing(false);
-  React.useEffect(() => {
+  useEffect(() => {
     let currentContent;
     try {
       if (typeof config.value === "string") {
@@ -79,7 +79,7 @@ export default function useTextEditor(config) {
     }
     return handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
   }, [config.value]);
-  const fileInput = React.useRef(null);
+  const fileInput = useRef(null);
   const _openFilePrompt = () => fileInput.current.click();
   const _createAtomicBlockEntity = (command, data) => {
     const contentState = editorState.getCurrentContent();
