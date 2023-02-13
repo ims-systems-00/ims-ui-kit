@@ -16,7 +16,6 @@
 }
 .sidebar,
 .off-canvas-sidebar {
-  @include linear-gradient($primary-states, $primary);
   height: calc(100vh - 90px);
   width: 230px;
   position: fixed;
@@ -25,6 +24,7 @@
   z-index: 1;
   background-size: cover;
   background-position: center center;
+  background-color: $primary;
   display: block;
   box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.6);
   margin-top: 82px;
@@ -32,7 +32,7 @@
   border-radius: 5px;
 
   .sidebar-wrapper {
-    width: $full-width;
+    width: 100%;
     min-height: 100%;
     max-height: calc(100vh - 705px);
     z-index: 4;
@@ -64,7 +64,7 @@
           display: block;
           line-height: 23px;
           z-index: 1;
-          color: $opacity-8;
+          //   color: $opacity-8;
         }
 
         .sidebar-mini-icon {
@@ -80,7 +80,7 @@
           z-index: 1;
           display: inherit;
           line-height: 24px;
-          color: $opacity-8;
+          //   color: $opacity-8;
         }
 
         i {
@@ -146,7 +146,7 @@
 
       > a {
         margin: 10px 15px 0;
-        border-radius: $btn-round-radius;
+        border-radius: $border-radius;
         color: $white;
         display: block;
         text-decoration: none;
@@ -253,7 +253,7 @@
       line-height: 30px;
       width: 34px;
       text-align: center;
-      color: $opacity-8;
+      //   color: $opacity-8;
       position: relative;
     }
   }
@@ -262,7 +262,7 @@
     position: absolute;
     z-index: 1;
     height: 100%;
-    width: $full-width;
+    width: 100%;
     display: block;
     top: 0;
     left: 0;
@@ -272,7 +272,7 @@
     &:after {
       position: absolute;
       z-index: 3;
-      width: $full-width;
+      width: 100%;
       height: 100%;
       content: "";
       display: block;
@@ -283,7 +283,7 @@
 
   .logo {
     position: relative;
-    padding: $padding-base-vertical $padding-base-horizontal 1rem;
+    padding: $input-btn-padding-y $input-btn-padding-x 1rem;
     z-index: 4;
 
     a.logo-mini,
@@ -313,7 +313,7 @@
       right: 15px;
       height: 1px;
       width: calc(100% - 30px);
-      background: $opacity-5;
+      //   background: $opacity-5;
     }
 
     p {
@@ -327,7 +327,7 @@
 
     .simple-text {
       text-transform: uppercase;
-      padding: $padding-base-vertical 0;
+      padding: $input-padding-y 0;
       display: block;
       white-space: nowrap;
       font-size: $font-size-base;
@@ -355,25 +355,21 @@
   }
 
   &[data="blue"] {
-    @include linear-gradient($info-states, $info);
     &:before {
       border-bottom-color: $info;
     }
   }
   &[data="green"] {
-    @include linear-gradient($success-states, $success);
     &:before {
       border-bottom-color: $success;
     }
   }
   &[data="orange"] {
-    @include linear-gradient($warning-states, $warning);
     &:before {
       border-bottom-color: $warning;
     }
   }
   &[data="red"] {
-    @include linear-gradient($danger-states, $danger);
     &:before {
       border-bottom-color: $danger;
     }
@@ -391,7 +387,7 @@
       right: 15px;
       height: 1px;
       width: calc(100% - 30px);
-      background: $opacity-5;
+      //   background: $opacity-5;
     }
 
     .photo {
@@ -403,18 +399,17 @@
       margin-right: 10px;
       border-radius: 50%;
       margin-left: 23px;
-      box-shadow: $box-shadow-raised;
       @extend .animation-transition-general;
 
       img {
-        width: $full-width;
+        width: 100%;
       }
     }
 
     a {
       color: $white;
       text-decoration: none;
-      padding: $padding-base-vertical 15px;
+      padding: $input-padding-y 15px;
       white-space: nowrap;
       @extend .animation-transition-general;
     }
@@ -464,10 +459,9 @@
 .main-panel {
   position: relative;
   float: right;
-  width: $full-width;
+  width: 100%;
   min-height: 100vh;
   border-top: 2px solid $primary;
-  background: linear-gradient($background-black, $background-states-black);
 
   @include transitions(0.5s, cubic-bezier(0.685, 0.0473, 0.346, 1));
 
@@ -526,7 +520,6 @@
     color-stop(60%, #204065),
     to(#2a5788)
   );
-  background: linear-gradient(to right, #0c2646 0%, #204065 60%, #2a5788 100%);
   position: relative;
   overflow: hidden;
 
@@ -536,7 +529,7 @@
     }
     .category {
       max-width: 600px;
-      color: $opacity-5;
+      //   color: $opacity-5;
       margin: 0 auto;
       font-size: 13px;
 
@@ -685,8 +678,6 @@
     .sidebar {
       display: block;
       z-index: 1030;
-      box-shadow: $sidebar-box-shadow;
-
       .logo {
         a.logo-normal {
           opacity: 0;
