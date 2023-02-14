@@ -1,10 +1,8 @@
 .footer {
   padding: 24px 30px;
-
   [class*="container-"] {
     padding: 0;
   }
-
   .nav {
     display: inline-block;
     float: left;
@@ -12,7 +10,6 @@
     padding: 0;
     list-style: none;
   }
-
   .nav-item {
     display: inline-block;
 
@@ -20,14 +17,12 @@
       padding-left: 0;
     }
   }
-
   .nav-link {
-    color: $white;
+    color: $type-medium;
     padding: $padding-base-vertical;
     font-size: $font-size-sm;
     text-transform: uppercase;
     text-decoration: none;
-
     &:hover {
       text-decoration: none;
     }
@@ -41,9 +36,8 @@
   .copyright {
     font-size: $font-size-sm;
     line-height: 1.8;
-    color: $white;
+    color: $type-medium;
   }
-
   &:after {
     display: table;
     clear: both;
@@ -55,7 +49,6 @@
   .footer {
     padding-left: 30px;
     text-align: center;
-
     .copyright {
       text-align: right;
     }
@@ -79,7 +72,6 @@
       margin-bottom: 5px;
       float: none;
     }
-
     .copyright {
       text-align: center;
     }
@@ -101,7 +93,6 @@
   .footer {
     padding-left: 30px !important;
     text-align: center;
-
     .copyright {
       float: right;
       margin-top: 5px;
