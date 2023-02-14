@@ -1,4 +1,4 @@
-import { TextEditorContext } from "components/TextEditor/Context";
+import { TextEditorContext } from "../../../Context";
 import { useContext } from "react";
 import Entry from "./Entry";
 export default function MentionSuggestions({ suggestions, ...rest }) {

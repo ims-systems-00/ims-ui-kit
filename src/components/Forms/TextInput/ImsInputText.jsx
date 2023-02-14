@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 let ImsInputTextProps = Object.assign({}, Input.prototype.props);
 
 /**
- *
  * @param {ImsInputTextProps} props
  * @returns
  */

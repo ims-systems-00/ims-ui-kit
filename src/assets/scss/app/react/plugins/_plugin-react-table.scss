@@ -67,7 +67,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  .col-resizer{
+  .col-resizer {
     display: inline-block;
     width: 20px;
     height: 100%;
@@ -76,12 +76,12 @@
     top: 0;
     transform: translateX(50%);
     z-index: 1;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
-  .col-resizer:hover{
-    border-right: 12px solid $info;
+  .col-resizer:hover {
+    border-right: 12px solid $primary;
   }
-  .col-resizer.active{
+  .col-resizer.active {
     border-right: 12px solid $info;
   }
 }
@@ -101,7 +101,7 @@
   border-color: #2b3553;
   background-color: transparent;
   border-radius: 0.4285rem;
-  color: rgba(255, 255, 255, 0.8);
+  // color: rgba(255, 255, 255, 0.8);
   line-height: normal;
   font-size: 0.8571em;
   transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out,
@@ -117,10 +117,10 @@
     background: transparent;
     box-shadow: none;
     outline: 0 !important;
-    color: rgba(255, 255, 255, 0.8);
+    // color: rgba(255, 255, 255, 0.8);
   }
   option {
-    color: $gray-800;
+    // color: $gray-800;
   }
 }
 .ReactTable .rt-thead .rt-tr {
@@ -233,9 +233,11 @@
 }
 .ReactTable .rt-tbody .rt-tr-group:last-child {
   border-bottom: 0;
+  text-align: right;
 }
 .ReactTable .rt-tbody .rt-td:last-child {
   border-right: 0;
+  text-align: right;
 }
 .ReactTable .rt-tbody .rt-expandable {
   cursor: pointer;
@@ -284,13 +286,13 @@
 }
 .ReactTable .rt-tbody .rt-tr,
 .ReactTable .rt-thead.-filters .rt-tr {
-  border-top: 1px solid #dee2e6;
-  border-color: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid $stroke-regular;
+  // border-color: rgba(255, 255, 255, 0.1);
 }
 .ReactTable .rt-td {
-  padding: 12px 7px;
+  padding: 7px;
   vertical-align: middle;
-  color: rgba(255, 255, 255, 0.7) !important;
+  // color: rgba(255, 255, 255, 0.7) !important;
 }
 .ReactTable .rt-th.-hidden,
 .ReactTable .rt-td.-hidden {
@@ -354,12 +356,14 @@
 }
 .ReactTable .rt-tfoot .rt-td:last-child {
   border-right: 0;
+  text-align: right;
 }
 .ReactTable.-striped .rt-tr.-odd {
-  background: rgba(0, 0, 0, 0.03);
+  background: $secondary-extra-light;
 }
 .ReactTable.-highlight .rt-tbody .rt-tr:not(.-padRow):hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba($primary, $table-hover-bg-factor);
+  color: $primary;
 }
 .ReactTable .-pagination {
   z-index: 1;
@@ -377,18 +381,17 @@
   padding: 3px;
 }
 .ReactTable .-pagination .-btn {
-  border-width: $border-thick;
+  border-width: $border-radius-lg;
   font-weight: $btn-font-weight;
   font-size: $btn-font-size-lg;
-  line-height: $line-height;
+  // line-height: $line-height;
   border: none;
   position: relative;
   overflow: hidden;
   margin: 4px 1px;
   border-radius: $border-radius-lg;
-  padding: $padding-btn-vertical $padding-btn-horizontal;
+  padding: $input-btn-padding-y $input-btn-padding-x;
   cursor: pointer;
-  @include btn-styles($info, $info-states);
   width: 100%;
   outline: none !important;
 }
@@ -397,7 +400,7 @@
   cursor: not-allowed;
 }
 .ReactTable .-pagination .-btn:not([disabled]):hover {
-  color: #fff;
+  // color: #fff;
 }
 .ReactTable .-pagination .-previous,
 .ReactTable .-pagination .-next {
@@ -470,7 +473,7 @@
   z-index: 1;
   pointer-events: none;
   padding: 20px;
-  color: rgba(0, 0, 0, 0.5);
+  // color: rgba(0, 0, 0, 0.5);
 }
 .ReactTable .-loading {
   display: block;
@@ -493,7 +496,7 @@
   top: 50%;
   left: 0;
   font-size: 15px;
-  color: rgba(0, 0, 0, 0.6);
+  // color: rgba(0, 0, 0, 0.6);
   -webkit-transform: translateY(-52%);
   transform: translateY(-52%);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -526,5 +529,5 @@
   text-transform: uppercase;
   font-weight: 700;
   border: 0;
-  color: rgba(255, 255, 255, 0.7);
+  // color: rgba(255, 255, 255, 0.7);
 }

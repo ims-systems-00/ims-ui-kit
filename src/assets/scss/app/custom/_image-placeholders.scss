@@ -1,0 +1,56 @@
+.img-placeholder {
+  color: $white;
+  background-color: $gray-500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-paragraph;
+  border-radius: 5px;
+  height: 48px;
+  width: 48px;
+}
+
+.img-placeholder img {
+  width: 100%;
+  border-radius: 5px !important;
+}
+
+.img-placeholder + .img-placeholder-content {
+  display: inline-block;
+  margin-left: 0.75rem;
+}
+.img-placeholder-lg {
+  width: 58px;
+  height: 58px;
+  font-size: $font-size-sm;
+}
+
+.img-placeholder-sm {
+  width: 38px;
+  height: 38px;
+  font-size: $font-size-sm;
+}
+
+.img-placeholder-xs {
+  width: 25px;
+  height: 25px;
+  font-size: $font-size-sm;
+}
+
+// Overlapped img-placeholders
+
+.img-placeholder-group {
+  .img-placeholder {
+    position: relative;
+    z-index: 2;
+    border: 2px solid $card-bg;
+
+    &:hover {
+      z-index: 3;
+    }
+  }
+
+  .img-placeholder + .img-placeholder {
+    margin-left: -1rem;
+  }
+}

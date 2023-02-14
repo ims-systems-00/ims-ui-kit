@@ -1,6 +1,6 @@
 import React from "react";
 import Dropdown from "../DropdownBase";
-import DropdownBtn from "../DropdownBtnBase";
+import DropdownBtn from "../DropdownToggleBase";
 import DropdownMenu from "../DropdownMenuBase";
 import DropdownItem from "../DropdownItemBase";
 

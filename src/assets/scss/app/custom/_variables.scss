@@ -55,6 +55,64 @@ $theme-colors: (
   "light": $secondary-extra-light,
   "dark": $stroke-dark,
 ) !default;
+
+$facebook: #3b5998 !default;
+$facebook-states: darken($facebook, 5%) !default;
+$twitter: #55acee !default;
+$twitter-states: darken($twitter, 5%) !default;
+$google-plus: #dd4b39 !default;
+$google-plus-states: darken($google-plus, 5%) !default;
+$instagram: #125688 !default;
+$instagram-states: lighten($instagram, 6%) !default;
+$linkedin: #0077b5 !default;
+$linkedin-states: darken($linkedin, 5%) !default;
+$pinterest: #cc2127 !default;
+$pinterest-states: lighten($pinterest, 6%) !default;
+$youtube: #e52d27 !default;
+$youtube-states: lighten($youtube, 6%) !default;
+$dribbble: #ea4c89 !default;
+$dribbble-states: lighten($dribbble, 6%) !default;
+$github: #333333 !default;
+$github-states: #ccc !default;
+$reddit: #ff4500 !default;
+$reddit-states: lighten($reddit, 6%) !default;
+$tumblr: #35465c !default;
+$tumblr-states: lighten($tumblr, 6%) !default;
+$behance: #1769ff !default;
+$behance-states: lighten($behance, 6%) !default;
+
+$brand-colors: () !default;
+$brand-colors: map-merge(
+  (
+    "facebook": $facebook,
+    "twitter": $twitter,
+    "google-plus": $google-plus,
+    "instagram": $instagram,
+    "pinterest": $pinterest,
+    "youtube": $youtube,
+    "dribbble": $dribbble,
+    "github": $github,
+    "reddit": $reddit,
+    "behance": $behance,
+    "tumblr": $tumblr,
+    "linkedin": $linkedin,
+  ),
+  $brand-colors
+);
+
+/*     brand Colors              */
+$brand-primary: $primary !default;
+$brand-info: $info !default;
+$brand-success: $success !default;
+$brand-warning: $warning !default;
+$brand-danger: $danger !default;
+$brand-inverse: $black !default;
+
+$topbar-x: topbar-x !default;
+$topbar-back: topbar-back !default;
+$bottombar-x: bottombar-x !default;
+$bottombar-back: bottombar-back !default;
+
 // Body
 //
 // Settings for the `<body>` element.
@@ -86,6 +144,15 @@ $border-radius-lg: 0.335rem !default;
 $border-radius-xl: 0.67rem !default;
 $border-radius-xxl: 1.34rem !default;
 $border-radius-pill: 50rem !default;
+
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow-md: 0 0.125rem 0.25rem rgba($black, 0.1);
+$box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175);
+
+$dropdown-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.125);
+$box-shadow-raised: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+$box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1);
 
 // scss-docs-end theme-colors-map
 
@@ -176,7 +243,22 @@ $list-inline-padding: 0.5rem !default;
 
 $mark-bg: #fcf8e3 !default;
 
-$hr-margin-y: $spacer * 2 !default;
+// $hr-margin-y: $spacer * 2 !default;
+
+$padding-base-vertical: 0.5rem !default;
+$padding-base-horizontal: 0.7rem !default;
+$margin-base-vertical: 15px !default;
+
+// Icons
+
+$icon-size: 2.375rem !default;
+$icon-size-regular: 2.375rem !default;
+$icon-font-size-regular: 0.9375rem !default;
+$icon-font-size-sm: 0.6875rem !default;
+$icon-size-sm: 1.875rem !default;
+$icon-font-size-lg: 1.325rem !default;
+$icon-size-lg: 3.6rem !default;
+$icon-size-xl: 5rem !default;
 
 // Tables
 
@@ -531,3 +613,16 @@ $transition-ease: ease 0s;
 
 // scss-docs-start card-variables
 $card-cap-bg: $secondary-extra-light !default;
+
+// Sidebar
+
+$sidebar-width: 260px;
+$sidebar-transition: 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+$sidebar-box-shadow: 0px 2px 22px 0 rgba(0, 0, 0, 0.2),
+  0px 2px 30px 0 rgba(0, 0, 0, 0.35);
+
+// need to remove later
+$fast-transition-time: 150ms !default;
+$general-transition-time: 150ms !default;
+$general-transition-time: 300ms !default;
+$transition-ease: ease 0s;

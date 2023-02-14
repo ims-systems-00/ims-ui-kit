@@ -1,6 +1,6 @@
 import React from "react";
 import Dropdown from "./DropdownBase";
-import DropdownToggle from "./DropdownBtnBase";
+import DropdownToggle from "./DropdownToggleBase";
 import DropdownMenu from "./DropdownMenuBase";
 import DropdownItem from "./DropdownItemBase";
 import propTypes from "prop-types";
