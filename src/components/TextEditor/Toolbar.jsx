@@ -19,23 +19,23 @@ export default function ToolBar(props) {
                 <Button
                   title={tool?.label}
                   type="button"
-                  className={"btn btn-icon text-muted m-0"}
+                  className={"btn btn-icon text-muted mr-1"}
                   key={tool?.style}
                   onMouseDown={(e) => handleToolClick(tool, e)}
                 >
                   {tool.icon ? (
                     <i
                       className={classNames(tool.icon, {
-                        "text-primary": false,
-                        // editorState
-                        //   .getCurrentInlineStyle()
-                        //   .has(tool?.style) ||
-                        // editorState
-                        //   ?.getCurrentContent()
-                        //   .getBlockForKey(
-                        //     editorState?.getSelection().getStartKey()
-                        //   )
-                        //   .getType() === tool?.style,
+                        "text-primary":
+                          editorState
+                            .getCurrentInlineStyle()
+                            .has(tool?.style) ||
+                          editorState
+                            ?.getCurrentContent()
+                            .getBlockForKey(
+                              editorState?.getSelection().getStartKey()
+                            )
+                            .getType() === tool?.style,
                       })}
                     />
                   ) : (
