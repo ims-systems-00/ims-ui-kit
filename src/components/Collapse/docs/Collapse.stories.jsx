@@ -1,4 +1,4 @@
-import Collapse from "../Examples/UncontrolledCollapses";
+import Collapse from "../Examples/DefaultCollase";
 export default {
   title: "components/Collapse",
   component: Collapse,
@@ -15,3 +15,7 @@ All our collapse are customised from the default bootstrap collapse. Only the cu
 };
 
 export const Collapses = Collapse;
+
+Collapses.args = {};
+
+export { default as UncontrolledCollapse } from "../Examples/UncontrolledCollapses";

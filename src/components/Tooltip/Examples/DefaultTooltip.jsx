@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Tooltip } from "reactstrap";
 
-const DefaultTooltip = () => {
+const DefaultTooltip = ({}) => {
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const toggle = () => setTooltipOpen(!tooltipOpen);
   return (
