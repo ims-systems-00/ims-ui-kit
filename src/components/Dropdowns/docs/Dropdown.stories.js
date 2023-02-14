@@ -31,3 +31,5 @@ export { default as DropdownIconButton } from "../DropdownBtnVariants/DropdownBt
 export { default as DropdownButtonWithIcon } from "../DropdownBtnVariants/DropdownBtnWithIcon";
 export { default as RegularMenu } from "../DropdownMenuVariants/RegularMenu";
 export { default as ActionMenu } from "../DropdownMenuVariants/ActionMenu";
+export { default as UncontrolledDropdown } from "../Examples/UncontrolledDropdowns";
+export { default as UncontrolledButtonDropdown } from "../Examples/UncontrolledButtonDropdowns";

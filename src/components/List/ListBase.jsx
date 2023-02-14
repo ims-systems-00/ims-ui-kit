@@ -1,6 +1,6 @@
 import { List } from "reactstrap";
 
-let ListBaseProps = Object.assign({}, List.prototype.props);
+let ListBaseProps = Object.assign({}, List.prototype?.props);
 
 /**
  *
