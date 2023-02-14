@@ -1,0 +1,32 @@
+.pdf-wrapper {
+  height: 85vh;
+  overflow: hidden;
+}
+.pdf-viewer-toolbar {
+  border-bottom: 1px solid $stroke-regular;
+}
+.pdf-viewer-sidebar {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: pointer;
+  border-right: 1px solid $stroke-regular;
+}
+.pdf-viewer-sidebar::-webkit-scrollbar,
+.pdf-viewer-main-pannel::-webkit-scrollbar {
+}
+.pdf-viewer-sidebar::-webkit-scrollbar-track,
+.pdf-viewer-main-pannel::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.pdf-viewer-sidebar::-webkit-scrollbar-thumb,
+.pdf-viewer-main-pannel::-webkit-scrollbar-thumb {
+  border: none;
+}
+.pdf-viewer-main-pannel {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.pdf-page-jump {
+  display: inline;
+  width: auto;
+}
