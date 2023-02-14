@@ -1,7 +1,7 @@
 import React from "react";
 import { TabContent } from "reactstrap";
 
-let TabContentBaseProps = Object.assign({}, TabContent.prototype.props);
+let TabContentBaseProps = Object.assign({}, TabContent.prototype?.props);
 
 /**
  *

@@ -1,6 +1,6 @@
 import { TabPane } from "reactstrap";
 
-let TabPaneBaseProps = Object.assign({}, TabPane.prototype.props);
+let TabPaneBaseProps = Object.assign({}, TabPane.prototype?.props);
 
 /**
  *
