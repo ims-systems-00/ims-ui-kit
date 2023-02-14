@@ -1,6 +1,5 @@
-import React from "react";
 import { Card, CardBody } from "reactstrap";
-import Button from "../../Buttons/BtnBase";
+import Button from "../../Buttons/ButtonBase";
 import UncontrolledCollapse from "../UncontrolledCollapseBase";
 
 const UncontrolledCollapses = ({}) => {
