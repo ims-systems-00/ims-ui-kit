@@ -13,7 +13,7 @@ const ActionMenu = ({}) => {
         <DropdownBtn outline className="border border-0 rounded-pill">
           <i className="fa-solid fa-home" />
         </DropdownBtn>
-        <DropdownMenu action>
+        <DropdownMenu>
           <DropdownItem leftIcon="fa-solid fa-home">Item 1</DropdownItem>
           <DropdownItem
             leftIcon="fa-solid fa-user"
