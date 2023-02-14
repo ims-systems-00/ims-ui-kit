@@ -13,3 +13,5 @@ export { default as TextEditor } from "./components/TextEditor/Index";
 export { default as Pagination } from "./components/Pagination/PaginationBase";
 export { default as PaginationItem } from "./components/Pagination/PaginationItemBase";
 export { default as PaginationLink } from "./components/Pagination/PaginationLinkBase";
+export { default as TabContent } from "./components/TabPane/TabContentBase";
+export { default as TabPane } from "./components/TabPane/TabPaneBase";
