@@ -2,12 +2,12 @@ import { ListInlineItem } from "reactstrap";
 
 let ListInlineItemBaseProps = Object.assign(
   {},
-  ListInlineItemBase.prototype.props
+  ListInlineItem.prototype.props
 );
 
 /**
  *
- * @param {ListInlineItemBaseProp} props
+ * @param {ListInlineItemBaseProps} props
  * @returns
  */
 

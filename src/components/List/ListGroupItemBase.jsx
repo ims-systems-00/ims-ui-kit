@@ -1,14 +1,11 @@
 import React from "react";
 import { ListGroupItem } from "reactstrap";
 
-let ListGroupItemBaseProps = Object.assign(
-  {},
-  ListGroupItemBase.prototype.props
-);
+let ListGroupItemBaseProps = Object.assign({}, ListGroupItem.prototype.props);
 
 /**
  *
- * @param {ListGroupItemBaseProp} props
+ * @param {ListGroupItemBaseProps} props
  * @returns
  */
 
