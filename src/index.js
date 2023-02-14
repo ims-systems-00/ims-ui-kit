@@ -18,3 +18,5 @@ export { default as ListGroup } from "./components/List/ListGroupBase";
 export { default as ListGroupItem } from "./components/List/ListGroupItemBase";
 export { default as ListGroupItemHeading } from "./components/List/ListGroupItemHeadingBase";
 export { default as ListGroupItemText } from "./components/List/ListGroupItemTextBase";
+export { default as TabContent } from "./components/TabPane/TabContentBase";
+export { default as TabPane } from "./components/TabPane/TabPaneBase";
