@@ -1,0 +1,23 @@
+.pagination {
+  .page-item {
+    .page-link {
+      border: 1px solid $stroke-light;
+    }
+  }
+  .page-item.active {
+    .page-link {
+      border: 1px solid transparent;
+    }
+  }
+}
+.pagination-separated {
+  .pagination {
+    .page-item {
+      margin-left: 3px;
+      margin-right: 3px;
+      .page-link {
+        border-radius: 5px;
+      }
+    }
+  }
+}
