@@ -192,8 +192,7 @@
     border: 1px solid rgba($type-medium, 0.5);
     color: $black;
     &.editor-disabled {
-      background: $secondary;
-      border-color: rgba($type-medium, 0.3);
+      border-color: none;
     }
     hr {
       border-color: rgba($type-medium, 0.5);
