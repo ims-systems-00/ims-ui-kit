@@ -1,6 +1,6 @@
 import React from "react";
 import Fade from "../FadeBase";
-import Button from "../../Buttons/BtnBase";
+import Button from "../../Buttons/ButtonBase";
 import { useState } from "react";
 
 const DefaultFade = ({}) => {
