@@ -79,7 +79,7 @@
     transition: 0.3s ease-in-out;
   }
   .col-resizer:hover {
-    border-right: 12px solid $info;
+    border-right: 12px solid $primary;
   }
   .col-resizer.active {
     border-right: 12px solid $info;
@@ -233,9 +233,11 @@
 }
 .ReactTable .rt-tbody .rt-tr-group:last-child {
   border-bottom: 0;
+  text-align: right;
 }
 .ReactTable .rt-tbody .rt-td:last-child {
   border-right: 0;
+  text-align: right;
 }
 .ReactTable .rt-tbody .rt-expandable {
   cursor: pointer;
@@ -284,11 +286,11 @@
 }
 .ReactTable .rt-tbody .rt-tr,
 .ReactTable .rt-thead.-filters .rt-tr {
-  border-top: 1px solid #dee2e6;
-  border-color: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid $stroke-regular;
+  // border-color: rgba(255, 255, 255, 0.1);
 }
 .ReactTable .rt-td {
-  padding: 12px 7px;
+  padding: 7px;
   vertical-align: middle;
   // color: rgba(255, 255, 255, 0.7) !important;
 }
@@ -354,12 +356,14 @@
 }
 .ReactTable .rt-tfoot .rt-td:last-child {
   border-right: 0;
+  text-align: right;
 }
 .ReactTable.-striped .rt-tr.-odd {
-  background: rgba(0, 0, 0, 0.03);
+  background: $secondary-extra-light;
 }
 .ReactTable.-highlight .rt-tbody .rt-tr:not(.-padRow):hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba($primary, $table-hover-bg-factor);
+  color: $primary;
 }
 .ReactTable .-pagination {
   z-index: 1;

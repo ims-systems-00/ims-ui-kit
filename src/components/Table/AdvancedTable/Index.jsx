@@ -15,7 +15,7 @@ function Table({
   columns,
   data,
   renderRowSubComponent,
-  className,
+  className = "-highlight -striped ",
   handleSearch = () => {},
   handleFilter = () => {},
   handlePagination = () => {},
