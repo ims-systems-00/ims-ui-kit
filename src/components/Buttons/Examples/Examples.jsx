@@ -1,4 +1,3 @@
-import React from "react";
 import DarkBtn from "./DarkBtn";
 import LinkBtn from "./LinkBtn";
 import PrimaryBtn from "./PrimaryBtn";

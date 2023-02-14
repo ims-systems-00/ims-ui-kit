@@ -1,5 +1,4 @@
-import React from "react";
-import Button from "../Buttons/BtnBase";
+import Button from "../ButtonBase";
 
 const LightBtn = ({}) => {
   return (
