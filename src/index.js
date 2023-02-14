@@ -8,9 +8,6 @@ export { default as DropdownItem } from "./components/Dropdowns/DropdownItemBase
 export { default as SimpleTable } from "./components/Table/ImsSimpleTable";
 export { default as AdvancedTable } from "./components/Table/AdvancedTable/Index";
 export { default as TextEditor } from "./components/TextEditor/Index";
-export { default as Pagination } from "./components/Pagination/PaginationBase";
-export { default as PaginationItem } from "./components/Pagination/PaginationItemBase";
-export { default as PaginationLink } from "./components/Pagination/PaginationLinkBase";
 export { default as DropdownMenu } from "./components/Dropdowns/DropdownMenuBase";
 export { default as DropdownToggle } from "./components/Dropdowns/DropdownToggleBase";
 export { default as ListBase } from "./components/List/ListBase";
@@ -28,9 +25,5 @@ export { default as NavLink } from "./components/Nav/NavLinkBase";
 export { default as Pagination } from "./components/Pagination/PaginationBase";
 export { default as PaginationItem } from "./components/Pagination/PaginationItemBase";
 export { default as PaginationLink } from "./components/Pagination/PaginationLinkBase";
-export { default as AdvancedTable } from "./components/Table/AdvancedTable";
-export { default as SimpleTable } from "./components/Table/ImsSimpleTable";
 export { default as TabContent } from "./components/TabPane/TabContentBase";
 export { default as TabPane } from "./components/TabPane/TabPaneBase";
-export { default as TextEditor } from "./components/TextEditor/Index";
-
