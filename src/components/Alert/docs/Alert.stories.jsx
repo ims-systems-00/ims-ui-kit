@@ -1,4 +1,4 @@
-import Alert from "../UncontrolledAlertBase";
+import Alert from "../Examples/DefaultAlert";
 export default {
   title: "components/Alert",
   component: Alert,
@@ -14,7 +14,6 @@ All our alerts are customised from the default bootstrap alerts. Only the custom
   },
 };
 export const Alerts = Alert;
-Alerts.args = {
-  children: "This is an alert",
-};
-export { default as UncontrolledAlerts } from "../UncontrolledAlertBase";
+Alerts.args = {};
+
+export { default as UncontrolledAlert } from "../Examples/UncontrolledAlerts";

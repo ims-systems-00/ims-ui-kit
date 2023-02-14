@@ -3,7 +3,7 @@ import { UncontrolledAlert } from "reactstrap";
 
 let UncontrolledAlertBaseProps = Object.assign(
   {},
-  UncontrolledAlert.prototype.props
+  UncontrolledAlert.prototype?.props
 );
 
 /**
@@ -11,8 +11,8 @@ let UncontrolledAlertBaseProps = Object.assign(
  * @returns
  * */
 
-const UncontrolledAlertBase = ({ chilren, ...rest }) => {
-  return <UncontrolledAlert {...rest}>{chilren}</UncontrolledAlert>;
+const UncontrolledAlertBase = ({ children, ...rest }) => {
+  return <UncontrolledAlert {...rest}>{children}</UncontrolledAlert>;
 };
 
 UncontrolledAlertBase.propTypes = {

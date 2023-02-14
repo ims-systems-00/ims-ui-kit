@@ -1,11 +1,15 @@
 import React from "react";
 import { Card, CardBody } from "reactstrap";
+import Button from "../../Buttons/BtnBase";
 import UncontrolledCollapse from "../UncontrolledCollapseBase";
 
-const UncontrolledCollapses = () => {
+const UncontrolledCollapses = ({}) => {
   return (
-    <>
-      <UncontrolledCollapse>
+    <div>
+      <Button color="primary" id="toggler" style={{ marginBottom: "1rem" }}>
+        Toggle
+      </Button>
+      <UncontrolledCollapse toggler="#toggler">
         <Card>
           <CardBody>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
@@ -15,7 +19,7 @@ const UncontrolledCollapses = () => {
           </CardBody>
         </Card>
       </UncontrolledCollapse>
-    </>
+    </div>
   );
 };
 
