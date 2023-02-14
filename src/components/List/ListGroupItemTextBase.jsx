@@ -2,7 +2,7 @@ import { ListGroupItemText } from "reactstrap";
 
 let ListGroupItemTextBaseProps = Object.assign(
   {},
-  ListGroupItemText.prototype.props
+  ListGroupItemText.prototype?.props
 );
 
 /**

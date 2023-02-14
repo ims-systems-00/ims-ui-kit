@@ -1,6 +1,6 @@
 import Texteditor from "../Index";
 export default {
-  title: "components/TextEdior",
+  title: "components/TextEditor",
   component: Texteditor,
   parameters: {
     docs: {
