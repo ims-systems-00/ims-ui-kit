@@ -15,8 +15,5 @@ InputText.args = {
 
 export { default as DefaultInputText } from "../TextInput/Examples/DefaultInputText";
 export { default as GroupInputText } from "../TextInput/Examples/GroupInputText";
-export { default as SimpleInputText } from "../TextInput/Examples/SimpleInputText";
-export { default as TextInputWithIcon } from "../TextInput/Examples/TextInputWithIcon";
-export { default as ValidTextInput } from "../TextInput/Examples/ValidTextInput";
 export { default as InvalidTextInput } from "../TextInput/Examples/InvalidTextInput";
 export { default as SizeVariantsTextInput } from "../TextInput/Examples/TextInputSizes.jsx";
