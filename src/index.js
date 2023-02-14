@@ -8,4 +8,5 @@ export { default as DropdownToggle } from "./components/Dropdowns/DropdownToggle
 export { default as DropdownMenu } from "./components/Dropdowns/DropdownMenuBase";
 export { default as DropdownItem } from "./components/Dropdowns/DropdownItemBase";
 export { default as SimpleTable } from "./components/Table/ImsSimpleTable";
+export { default as AdvancedTable } from "./components/Table/AdvancedTable";
 export { default as TextEditor } from "./components/TextEditor/Index";
