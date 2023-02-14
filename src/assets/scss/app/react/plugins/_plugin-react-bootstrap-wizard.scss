@@ -144,7 +144,7 @@
     width: 106px;
     height: 106px;
     background-color: #999999;
-    border: 1px solid $light-gray;
+    border: 1px solid $secondary;
     color: #ffffff;
     border-radius: 50%;
     margin: 5px auto;
@@ -228,9 +228,9 @@
       height: 116px;
       width: 116px;
       border-radius: 50%;
-      color: $default;
+      color: $type-medium;
       margin: 0 auto 20px;
-      border: 1px solid $light-gray;
+      border: 1px solid $secondary;
       transition: all 0.2s;
       -webkit-transition: all 0.2s;
     }

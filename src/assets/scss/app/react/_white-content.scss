@@ -31,13 +31,13 @@
         }
         &.react-select__multi-value {
           color: #9ca3b0;
-          background-color: $light-gray;
+          background-color: $secondary;
           border: 1px solid #e3e3e3;
         }
       }
       .react-select__control--is-disabled {
         color: #9ca3b0;
-        background-color: $light-gray;
+        background-color: $secondary;
       }
     }
   }
@@ -58,14 +58,14 @@
         &.react-select__option--is-focused {
           &,
           &:active {
-            background-color: $opacity-gray-8;
+            // background-color: $opacity-gray-8;
           }
         }
       }
       &.react-select__option--is-focused {
         &,
         &:active {
-          background-color: $opacity-gray-8;
+          // background-color: $opacity-gray-8;
         }
       }
     }
@@ -123,7 +123,7 @@
     color: $black;
   }
   .rbc-toolbar .rbc-toolbar-label {
-    color: $black-states;
+    color: $type-medium;
   }
   .rbc-header,
   .rbc-header > a,
@@ -131,11 +131,11 @@
   .rbc-header > a:visited,
   .rbc-header > a:hover,
   .rbc-time-gutter.rbc-time-column {
-    color: $default;
+    color: $type-medium;
   }
   .card {
     .map-title {
-      color: $black-states;
+      color: $type-medium;
     }
   }
   .nav-pills .nav-item .nav-link:not(.active) {
@@ -189,23 +189,23 @@
     }
   }
   .draft-editor-container {
-    border: 1px solid rgba($black-states, 0.5);
+    border: 1px solid rgba($type-medium, 0.5);
     color: $black;
     &.editor-disabled {
-      background: $light-gray;
-      border-color: rgba($black-states, 0.3);
+      background: $secondary;
+      border-color: rgba($type-medium, 0.3);
     }
     hr {
-      border-color: rgba($black-states, 0.5);
+      border-color: rgba($type-medium, 0.5);
     }
     .draft-toolbar-button-separator {
-      color: rgba($black-states, 0.5);
+      color: rgba($type-medium, 0.5);
     }
     .resize-guide {
-      background-color: rgba($black-states, 0.5);
+      background-color: rgba($type-medium, 0.5);
     }
     .mention-suggestions {
-      border: 1px solid rgba($black-states, 0.5);
+      border: 1px solid rgba($type-medium, 0.5);
       background-color: $white;
     }
   }

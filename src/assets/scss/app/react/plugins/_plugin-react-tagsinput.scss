@@ -73,7 +73,7 @@
       }
     }
 
-    @include badge-variant($default);
+    @include badge-variant($primary);
     &.primary {
       @include badge-variant($primary);
     }

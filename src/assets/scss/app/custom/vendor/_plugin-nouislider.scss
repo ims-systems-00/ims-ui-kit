@@ -130,7 +130,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   border-radius: 3px;
 }
 .noUi-connect {
-  background: $default;
+  background: $secondary;
   border-radius: 3px;
   -webkit-transition: background 450ms;
 	transition: background 450ms;
@@ -318,7 +318,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
         }
 
 		&.noUi-target {
-			background-color: $primary-opacity;
+			// background-color: $primary-opacity;
 		}
 
 		& .noUi-handle {
@@ -349,7 +349,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
         }
 
         &.noUi-target {
-			background-color: $success-opacity;
+			// background-color: $success-opacity;
 		}
 
 		& .noUi-handle {

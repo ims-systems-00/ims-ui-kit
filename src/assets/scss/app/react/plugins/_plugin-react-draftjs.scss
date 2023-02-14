@@ -2,12 +2,12 @@ $guide-height: 75px;
 .draft-editor-container {
   border: 1px solid lighten($black, 5%);
   border-radius: $input-border-radius-lg;
-  padding: $input-padding-vertical $input-padding-horizontal;
-  color: $white;
+  padding: $input-padding-y $input-padding-x;
+  color: $type-medium;
   min-height: 200px;
   hr {
     border-color: lighten($black, 5%);
-    margin: $input-padding-vertical 0;
+    margin: $input-padding-y 0;
   }
   &.editor-disabled {
     color: #9ca3b0;
@@ -40,7 +40,7 @@ $guide-height: 75px;
   }
   .mention-suggestions {
     border: 1px solid lighten($black, 5%);
-    background-color: $black-states;
+    background-color: $white;
     overflow-y: scroll;
     max-height: 160px;
     width: 225px;

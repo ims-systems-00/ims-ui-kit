@@ -89,14 +89,14 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
         &.react-select__option--is-focused {
           &,
           &:active {
-            background-color: $black-stat;
+            // background-color: $black-stat;
           }
         }
       }
       &.react-select__option--is-focused {
         &,
         &:active {
-          background-color: $black-stat;
+          // background-color: $black-stat;
         }
       }
       &.react-select__option--is-disabled {
@@ -196,7 +196,7 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
           content: "";
         }
         &:hover:after {
-          border-top-color: $link-disabled;
+          // border-top-color: $link-disabled;
         }
         & > * {
           display: none;
@@ -271,8 +271,8 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     .react-select__multi-value {
       border: 1px solid $primary;
       .react-select__multi-value__remove {
-        color: $primary-opacity;
-        border-left: 1px solid $primary-opacity;
+        color: $type-medium;
+        border-left: 1px solid $primary;
         &:hover {
           color: $primary;
           background-color: transparent;
@@ -298,8 +298,8 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     .react-select__multi-value {
       border: 1px solid $success;
       .react-select__multi-value__remove {
-        color: $success-opacity;
-        border-left: 1px solid $success-opacity;
+        color: $success;
+        border-left: 1px solid $success;
         &:hover {
           color: $success;
           background-color: transparent;
@@ -325,8 +325,8 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     .react-select__multi-value {
       border: 1px solid $info;
       .react-select__multi-value__remove {
-        color: $info-opacity;
-        border-left: 1px solid $info-opacity;
+        color: $info;
+        border-left: 1px solid $info;
         &:hover {
           color: $info;
           background-color: transparent;
@@ -352,8 +352,8 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     .react-select__multi-value {
       border: 1px solid $warning;
       .react-select__multi-value__remove {
-        color: $warning-opacity;
-        border-left: 1px solid $warning-opacity;
+        color: $warning;
+        border-left: 1px solid $warning;
         &:hover {
           color: $warning;
           background-color: transparent;
@@ -379,8 +379,8 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     .react-select__multi-value {
       border: 1px solid $danger;
       .react-select__multi-value__remove {
-        color: $danger-opacity;
-        border-left: 1px solid $danger-opacity;
+        color: $danger;
+        border-left: 1px solid $danger;
         &:hover {
           color: $danger;
           background-color: transparent;
@@ -392,8 +392,8 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     border: 1px solid $stroke-regular;
     .react-select__multi-value__remove {
       position: relative;
-      color: $opacity-gray-8;
-      border-left: 1px solid $opacity-gray-8;
+      color: $type-medium;
+      border-left: 1px solid $stroke-regular;
       &:hover {
         color: $type-medium;
         background-color: transparent;
@@ -407,13 +407,13 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
       }
       &.react-select__multi-value {
         color: #9ca3b0;
-        background-color: $black-stat;
+        // background-color: $black-stat;
         border: 1px solid #e3e3e3;
       }
     }
     .react-select__control--is-disabled {
       color: #9ca3b0;
-      background-color: $black-stat;
+      // background-color: $black-stat;
     }
   }
   .react-select__menu-list {
