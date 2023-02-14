@@ -89,14 +89,14 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
         &.react-select__option--is-focused {
           &,
           &:active {
-            background-color: $black-states;
+            background-color: $black-stat;
           }
         }
       }
       &.react-select__option--is-focused {
         &,
         &:active {
-          background-color: $black-states;
+          background-color: $black-stat;
         }
       }
       &.react-select__option--is-disabled {
@@ -158,7 +158,7 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     //   }
     // }
     .react-select__placeholder {
-      color: $dark-gray;
+      color: $type-medium;
       line-height: normal;
       font-size: 0.8571em;
       top: 48%;
@@ -389,13 +389,13 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     }
   }
   .react-select__multi-value {
-    border: 1px solid $dark-gray;
+    border: 1px solid $stroke-regular;
     .react-select__multi-value__remove {
       position: relative;
       color: $opacity-gray-8;
       border-left: 1px solid $opacity-gray-8;
       &:hover {
-        color: $dark-gray;
+        color: $type-medium;
         background-color: transparent;
       }
     }
@@ -407,13 +407,13 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
       }
       &.react-select__multi-value {
         color: #9ca3b0;
-        background-color: $black-states;
+        background-color: $black-stat;
         border: 1px solid #e3e3e3;
       }
     }
     .react-select__control--is-disabled {
       color: #9ca3b0;
-      background-color: $black-states;
+      background-color: $black-stat;
     }
   }
   .react-select__menu-list {

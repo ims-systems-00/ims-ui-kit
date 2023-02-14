@@ -878,10 +878,10 @@ tr:first-child>td>.fc-day-grid-event {
     opacity: .7;
     color: $white;
     padding: 7px 20px;
-		background: $transparent-bg;
+		background: transparent;
 		border: 1px solid lighten($black,5%);
 		&:hover, &:focus, &:active:hover {
-			background-color: $transparent-bg !important;
+			background-color: transparent !important;
 			background-image: none !important;
       opacity: 1;
 		}

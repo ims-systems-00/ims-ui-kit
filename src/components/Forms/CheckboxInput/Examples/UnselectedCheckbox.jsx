@@ -5,7 +5,7 @@ const UnselectedCheckbox = ({}) => {
   return (
     <>
       <ImsCheckBox unselected mandatory label="Unselected unchecked" />
-      <ImsCheckBox unselected checked label="Unselected checked" />
+      <ImsCheckBox unselected defaultChecked label="Unselected checked" />
     </>
   );
 };

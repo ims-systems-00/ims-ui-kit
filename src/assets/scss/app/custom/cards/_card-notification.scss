@@ -1,0 +1,31 @@
+.card-notification {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  box-shadow: none;
+  .card-img {
+    margin: 0px;
+    padding: 0px;
+    width: 12%;
+  }
+  .card-description {
+    width: 88%;
+  }
+  h6 {
+    text-transform: none;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .card-notification {
+    .card-img {
+      width: 18%;
+    }
+    .card-description {
+      width: 80%;
+    }
+    .card-status-indicator {
+      width: 2%;
+    }
+  }
+}

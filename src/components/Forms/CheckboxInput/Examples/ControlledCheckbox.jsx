@@ -13,7 +13,7 @@ const ControlledCheckbox = ({}) => {
         mandatory
         label="Controlled Settings"
         onClick={handleCheckedChange}
-        checked={checked}
+        defaultChecked={checked}
       />
     </>
   );

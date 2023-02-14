@@ -73,7 +73,7 @@
   .react-select__control {
     &,
     &:hover {
-      border: 1px solid lighten($dark-gray, 5%);
+      border: 1px solid $stroke-regular;
     }
   }
   .ReactTable .rt-table {

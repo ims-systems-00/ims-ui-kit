@@ -8,13 +8,13 @@ const CheckedRadioCheckbox = ({}) => {
       <Form>
         <legend>Checked Radio</legend>
         <ImsRadioCheckbox name="radio1" label="Default Radio" />
-        <ImsRadioCheckbox name="radio1" checked label="Default Radio 2" />
+        <ImsRadioCheckbox name="radio1" defaultChecked label="Default Radio 2" />
         <legend>Unselected Radio</legend>
         <ImsRadioCheckbox name="radio2" unselected label="Unselected Radio 3" />
         <ImsRadioCheckbox
           name="radio2"
           unselected
-          checked
+          defaultChecked
           label="Unselected Radio 4"
         />
       </Form>

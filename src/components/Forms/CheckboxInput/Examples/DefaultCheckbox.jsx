@@ -5,7 +5,7 @@ const DefaultCheckbox = ({}) => {
   return (
     <>
       <ImsCheckBox label="Default checked" />
-      <ImsCheckBox checked label="Default Checked" />
+      <ImsCheckBox defaultChecked label="Default Checked" />
     </>
   );
 };
