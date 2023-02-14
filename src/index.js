@@ -20,3 +20,10 @@ export { default as ListGroupItemHeading } from "./components/List/ListGroupItem
 export { default as ListGroupItemText } from "./components/List/ListGroupItemTextBase";
 export { default as TabContent } from "./components/TabPane/TabContentBase";
 export { default as TabPane } from "./components/TabPane/TabPaneBase";
+export { default as Nav } from "./components/Nav/NavBase";
+export { default as NavItem } from "./components/Nav/NavItemBase";
+export { default as NavLink } from "./components/Nav/NavLinkBase";
+export { default as Navbar } from "./components/Nav/NavbarBase";
+export { default as NavbarBrand } from "./components/Nav/NavbarBrandBase";
+export { default as NavbarToggler } from "./components/Nav/NavbarTogglerBase";
+export { default as NavbarText } from "./components/Nav/NavbarTextBase";
