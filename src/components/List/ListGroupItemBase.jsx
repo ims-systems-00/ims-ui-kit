@@ -1,7 +1,7 @@
 import React from "react";
 import { ListGroupItem } from "reactstrap";
 
-let ListGroupItemBaseProps = Object.assign({}, ListGroupItem.prototype.props);
+let ListGroupItemBaseProps = Object.assign({}, ListGroupItem.prototype?.props);
 
 /**
  *

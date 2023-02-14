@@ -3,7 +3,7 @@ import { ListGroupItemHeading } from "reactstrap";
 
 let ListGroupItemHeadingBaseProps = Object.assign(
   {},
-  ListGroupItemHeading.prototype.props
+  ListGroupItemHeading.prototype?.props
 );
 
 /**
