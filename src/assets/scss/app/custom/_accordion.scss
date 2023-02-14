@@ -1,0 +1,11 @@
+.accordion-title {
+    cursor: pointer;
+  }
+  .accordion-title-separator {
+    background-color: lighten($black, 5%);
+    transition: 0.3s ease-in;
+  }
+  .accordion-title-separator-active {
+    background-color: transparent;
+  }
+  

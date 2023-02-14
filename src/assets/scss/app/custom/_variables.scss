@@ -145,6 +145,15 @@ $border-radius-xl: 0.67rem !default;
 $border-radius-xxl: 1.34rem !default;
 $border-radius-pill: 50rem !default;
 
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow-md: 0 0.125rem 0.25rem rgba($black, 0.1);
+$box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175);
+
+$dropdown-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.125);
+$box-shadow-raised: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+$box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1);
+
 // scss-docs-end theme-colors-map
 
 // Spacing
@@ -235,6 +244,21 @@ $list-inline-padding: 0.5rem !default;
 $mark-bg: #fcf8e3 !default;
 
 // $hr-margin-y: $spacer * 2 !default;
+
+$padding-base-vertical: 0.5rem !default;
+$padding-base-horizontal: 0.7rem !default;
+$margin-base-vertical: 15px !default;
+
+// Icons
+
+$icon-size: 2.375rem !default;
+$icon-size-regular: 2.375rem !default;
+$icon-font-size-regular: 0.9375rem !default;
+$icon-font-size-sm: 0.6875rem !default;
+$icon-size-sm: 1.875rem !default;
+$icon-font-size-lg: 1.325rem !default;
+$icon-size-lg: 3.6rem !default;
+$icon-size-xl: 5rem !default;
 
 // Tables
 
