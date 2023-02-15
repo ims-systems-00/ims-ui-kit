@@ -238,6 +238,7 @@
 .ReactTable .rt-tbody .rt-td:last-child {
   border-right: 0;
   text-align: right;
+  overflow: visible;
 }
 .ReactTable .rt-tbody .rt-expandable {
   cursor: pointer;

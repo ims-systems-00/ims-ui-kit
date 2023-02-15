@@ -1,3 +1,9 @@
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import ImsAdvancedTable from "../AdvancedTable/Index";
 export default {
   title: "components/AdvancedTable",
@@ -19,25 +25,73 @@ Default.args = {
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
-      actions: <button>T</button>,
+      actions: (
+        <>
+          <UncontrolledDropdown direction="right">
+            <DropdownToggle>
+              <i className="fa-solid fa-home" />
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>hello</DropdownItem>
+              <DropdownItem>world</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </>
+      ),
     },
     {
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
-      actions: <button>T</button>,
+      actions: (
+        <>
+          <UncontrolledDropdown>
+            <DropdownToggle>
+              <i className="fa-solid fa-home" />
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>hello</DropdownItem>
+              <DropdownItem>world</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </>
+      ),
     },
     {
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
-      actions: <button>T</button>,
+      actions: (
+        <>
+          <UncontrolledDropdown>
+            <DropdownToggle>
+              <i className="fa-solid fa-home" />
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>hello</DropdownItem>
+              <DropdownItem>world</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </>
+      ),
     },
     {
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
-      actions: <button>T</button>,
+      actions: (
+        <>
+          <UncontrolledDropdown>
+            <DropdownToggle>
+              <i className="fa-solid fa-home" />
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>hello</DropdownItem>
+              <DropdownItem>world</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </>
+      ),
     },
   ],
   columns: [
