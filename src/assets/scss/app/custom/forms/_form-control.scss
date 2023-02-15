@@ -1,6 +1,6 @@
 .form-control:focus {
   box-shadow: none;
-  border-color: $primary;
+  border: 2px solid $primary;
 }
 .signaturearea {
   .form-group {

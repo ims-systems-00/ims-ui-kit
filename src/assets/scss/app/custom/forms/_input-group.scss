@@ -23,7 +23,10 @@
 }
 .input-group:focus-within {
   .input-group-text {
+    border-width: 2px;
+    border-right: none;
     border-color: $primary !important;
     transition: border-color 0.15s linear;
+    color: $primary;
   }
 }
