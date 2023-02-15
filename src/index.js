@@ -27,3 +27,5 @@ export { default as PaginationItem } from "./components/Pagination/PaginationIte
 export { default as PaginationLink } from "./components/Pagination/PaginationLinkBase";
 export { default as TabContent } from "./components/TabPane/TabContentBase";
 export { default as TabPane } from "./components/TabPane/TabPaneBase";
+export { default as UncontrolledAlert } from "./components/Alert/UncontrolledAlertBase";
+export { default as Alert } from "./components/Alert/AlertBase";
