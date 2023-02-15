@@ -3,7 +3,7 @@ import Modal from "../ModalBase";
 import ModalHeader from "../ModalHeaderBase";
 import ModalBody from "../ModalBodyBase";
 import ModalFooter from "../ModalFooterBase";
-import Button from "../../Buttons/BtnBase";
+import Button from "../../Buttons/ButtonBase";
 
 const DefaultModal = ({ children, ...rest }) => {
   const [modal, setModal] = React.useState(false);

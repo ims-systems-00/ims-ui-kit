@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import TabContent from "../TabContentBase";
-import TabPane from "../TabPaneBase";
+import classNames from "classnames";
+import { useState } from "react";
+import { Card, CardText, CardTitle, Col, Row } from "reactstrap";
+import Button from "../../Buttons/ButtonBase";
 import Nav from "../../Nav/NavBase";
 import NavItem from "../../Nav/NavItemBase";
 import NavLink from "../../Nav/NavLinkBase";
-import Button from "../../Buttons/BtnBase";
-import { Card, CardText, CardTitle, Col, Row } from "reactstrap";
-import classNames from "classnames";
+import TabContent from "../TabContentBase";
+import TabPane from "../TabPaneBase";
 
 function DefaultTabpane(props) {
   const [activeTab, setActiveTab] = useState("1");
