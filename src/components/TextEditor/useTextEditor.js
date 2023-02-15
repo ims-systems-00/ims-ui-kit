@@ -63,18 +63,23 @@ export default function useTextEditor(config) {
         );
     }
     if (config.value || currentContent) {
+      // EditorState.set(editorState, {
+      //   currentContent: convertFromRaw(currentContent),
+      //   /**
+      //    * following solution is implemented to get the direction map for the editor
+      //    * with current content. Draftjs has got an issue with direction map.
+      //    * see issue : https://github.com/facebook/draft-js/issues/1820
+      //    */
+      //   directionMap: EditorState.createWithContent(
+      //     convertFromRaw(currentContent)
+      //   ).getDirectionMap(),
+      // })
       return handleEditorStateChange(
-        EditorState.set(editorState, {
-          currentContent: convertFromRaw(currentContent),
-          /**
-           * following solution is implemented to get the direction map for the editor
-           * with current content. Draftjs has got an issue with direction map.
-           * see issue : https://github.com/facebook/draft-js/issues/1820
-           */
-          directionMap: EditorState.createWithContent(
-            convertFromRaw(currentContent)
-          ).getDirectionMap(),
-        })
+        EditorState.push(
+          editorState,
+          convertFromRaw(currentContent),
+          "change-block-data"
+        )
       );
     }
     return handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
@@ -241,7 +246,6 @@ export default function useTextEditor(config) {
     handleEditorStateChange(EditorState.moveFocusToEnd(editorState));
   };
   const isToolActive = (tool) => {
-    return false;
     return (
       editorState.getCurrentInlineStyle().has(tool?.style) ||
       editorState
