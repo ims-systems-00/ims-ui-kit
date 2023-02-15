@@ -14,7 +14,6 @@
       // Top section of the modal w/ title and dismiss
       label {
         font-size: 0.75rem;
-        color: rgba($white, 0.6);
       }
       .modal-header {
         border-bottom: none;
@@ -52,7 +51,7 @@
       }
       // Footer (for actions)
       .modal-footer {
-        border-top: 0;
+        border-top: 1px solid $stroke-regular;
         -webkit-justify-content: space-between; /* Safari 6.1+ */
         justify-content: space-between;
 
