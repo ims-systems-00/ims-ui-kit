@@ -4,6 +4,7 @@
   .dropdown-item {
     white-space: nowrap;
     overflow: hidden;
+    color: $type-medium;
   }
   .dropdown-item:hover {
     background-color: $primary-light;
