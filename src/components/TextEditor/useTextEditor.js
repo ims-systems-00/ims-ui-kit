@@ -63,26 +63,23 @@ export default function useTextEditor(config) {
         );
     }
     if (config.value || currentContent) {
+      const selection = editorState.getSelection();
+      // const newstate = EditorState.set(editorState, {
+      //   currentContent: convertFromRaw(currentContent),
+      //   /**
+      //    * following solution is implemented to get the direction map for the editor
+      //    * with current content. Draftjs has got an issue with direction map.
+      //    * see issue : https://github.com/facebook/draft-js/issues/1820
+      //    */
+      //   directionMap: EditorState.createWithContent(
+      //     convertFromRaw(currentContent)
+      //   ).getDirectionMap(),
+      // });
       return handleEditorStateChange(
-        EditorState.set(
-          EditorState.moveFocusToEnd(
-            EditorState.push(
-              editorState,
-              convertFromRaw(currentContent),
-              "insert-fragment"
-            )
-          ),
-          {
-            currentContent: convertFromRaw(currentContent),
-            /**
-             * following solution is implemented to get the direction map for the editor
-             * with current content. Draftjs has got an issue with direction map.
-             * see issue : https://github.com/facebook/draft-js/issues/1820
-             */
-            directionMap: EditorState.createWithContent(
-              convertFromRaw(currentContent)
-            ).getDirectionMap(),
-          }
+        EditorState.push(
+          editorState,
+          convertFromRaw(currentContent),
+          "insert-fragment"
         )
       );
     }
@@ -250,6 +247,16 @@ export default function useTextEditor(config) {
     handleEditorStateChange(EditorState.moveFocusToEnd(editorState));
   };
   const isToolActive = (tool) => {
+    // const newstate = EditorState.createWithContent(
+    //   editorState.getCurrentContent()
+    // );
+    // return (
+    //   newstate.getCurrentInlineStyle().has(tool?.style) ||
+    //   newstate
+    //     ?.getCurrentContent()
+    //     .getBlockForKey(newstate?.getSelection().getStartKey())
+    //     .getType() === tool?.style
+    // );
     return (
       editorState.getCurrentInlineStyle().has(tool?.style) ||
       editorState
