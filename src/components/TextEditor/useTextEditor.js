@@ -122,7 +122,18 @@ export default function useTextEditor(config) {
    */
   const handleEditorStateChange = (editorState) => {
     const contentState = editorState.getCurrentContent();
-    setEditorState(editorState);
+    setEditorState(
+      EditorState.set(editorState, {
+        currentContent: contentState,
+        /**
+         * following solution is implemented to get the direction map for the editor
+         * with current content. Draftjs has got an issue with direction map.
+         * see issue : https://github.com/facebook/draft-js/issues/1820
+         */
+        directionMap:
+          EditorState.createWithContent(contentState).getDirectionMap(),
+      })
+    );
     console.log(JSON.stringify(convertToRaw(contentState)));
     config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
   };
