@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import CardHeader from "../CardHeaderBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/CardHeader",
+  component: CardHeader,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = CardHeader;
 
 Default.args = {
   children: "Click Here",

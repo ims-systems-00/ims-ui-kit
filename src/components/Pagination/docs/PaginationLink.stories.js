@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import PaginationLink from "../PaginationLinkBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/PaginationLink",
+  component: PaginationLink,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = PaginationLink;
 
 Default.args = {
   children: "Click Here",

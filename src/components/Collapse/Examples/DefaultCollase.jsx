@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Collapse } from "reactstrap";
 import Button from "../../Buttons/BtnBase";
 import Card from "../../Cards/CardBase";

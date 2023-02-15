@@ -1,4 +1,3 @@
-import React from "react";
 import { Dropdown } from "reactstrap";
 let DropdownBaseProps = Object.assign({}, Dropdown.prototype.props);
 

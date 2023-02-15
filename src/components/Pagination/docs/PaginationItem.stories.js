@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import PaginationItem from "../PaginationItemBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/PaginationItem",
+  component: PaginationItem,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = PaginationItem;
 
 Default.args = {
   children: "Click Here",

@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import Navbar from "../NavbarBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/Navbar",
+  component: Navbar,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = Navbar;
 
 Default.args = {
   children: "Click Here",

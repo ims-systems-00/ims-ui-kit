@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import NavLink from "../NavLinkBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/NavLink",
+  component: NavLink,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = NavLink;
 
 Default.args = {
   children: "Click Here",

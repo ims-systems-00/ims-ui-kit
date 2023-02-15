@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import DropdownToggle from "../DropdownToggleBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/DropdownToggle",
+  component: DropdownToggle,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = DropdownToggle;
 
 Default.args = {
   children: "Click Here",

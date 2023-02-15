@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import DropdownItem from "../DropdownItemBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/DropdownItem",
+  component: DropdownItem,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = DropdownItem;
 
 Default.args = {
   children: "Click Here",

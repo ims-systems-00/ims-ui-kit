@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import TabContent from "../TabContentBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/TabContent",
+  component: TabContent,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = TabContent;
 
 Default.args = {
   children: "Click Here",

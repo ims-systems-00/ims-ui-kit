@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import ListGroup from "../ListGroupBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/ListGroup",
+  component: ListGroup,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = ListGroup;
 
 Default.args = {
   children: "Click Here",

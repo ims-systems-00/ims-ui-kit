@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import NavbarText from "../NavbarTextBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/NavbarText",
+  component: NavbarText,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = NavbarText;
 
 Default.args = {
   children: "Click Here",

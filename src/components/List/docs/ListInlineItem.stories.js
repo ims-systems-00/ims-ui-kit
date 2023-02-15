@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import LisInlineItem from "../ListInlineItemBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/LisInlineItem",
+  component: LisInlineItem,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = LisInlineItem;
 
 Default.args = {
   children: "Click Here",

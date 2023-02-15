@@ -1,7 +1,7 @@
-import Card from "../CardBase"
+import CardFooter from "../CardFooterBase"
 export default {
-  title: "components/Card",
-  component: Card,
+  title: "components/CardFooter",
+  component: CardFooter,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Card;
+export const Default = CardFooter;
 
 Default.args = {
   children: "Click Here",

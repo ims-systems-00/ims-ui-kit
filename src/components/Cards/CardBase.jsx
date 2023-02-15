@@ -1,7 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { Card } from "reactstrap";
-import classNames from "classnames";
 
 let CardBaseProps = Object.assign({}, Card.prototype.props);
 
