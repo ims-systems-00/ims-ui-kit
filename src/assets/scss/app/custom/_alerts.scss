@@ -1,82 +1,30 @@
-// .alert {
-//   border: 0;
+.alert {
+  border: 0;
+  &.alert-success {
+    background-color: lighten($success, 30%);
+  }
+  &.alert-danger {
+    background-color: lighten($danger, 30%);
+  }
+  i.fa,
+  i.tim-icons {
+    font-size: $font-paragraph;
+  }
+  &.alert-with-icon {
+    padding-left: 65px;
+  }
+}
 
-//   .alert-link {
-//   }
-
-//   &.alert-success {
-//     background-color: darken($success, 10%);
-//   }
-
-//   i.fa,
-//   i.tim-icons {
-//     font-size: $font-paragraph;
-//   }
-
-//   .close {
-//     opacity: 0.9;
-//     text-shadow: none;
-//     line-height: 0;
-//     outline: 0;
-//   }
-
-//   span[data-notify="icon"] {
-//     font-size: 22px;
-//     display: block;
-//     left: 19px;
-//     position: absolute;
-//     top: 50%;
-//     margin-top: -11px;
-//   }
-
-//   button.close {
-//     position: absolute;
-//     right: 15px;
-//     top: 50%;
-//     margin-top: -13px;
-//     width: 25px;
-//     height: 25px;
-//     padding: 3px;
-//   }
-
-//   .close ~ span {
-//     display: block;
-//     max-width: 89%;
-//   }
-
-//   &.alert-with-icon {
-//     padding-left: 65px;
-//   }
-// }
-
-// .alert-dismissible {
-//   .close {
-//     top: 50%;
-//     right: $alert-padding-x;
-//     padding: 0;
-//     transform: translateY(-50%);
-//     opacity: 1;
-
-//     &:hover,
-//     &:focus {
-//       opacity: 1 !important;
-//     }
-
-//     @include media-breakpoint-down(xs) {
-//       top: 1rem;
-//       right: 0.5rem;
-//     }
-
-//     & > span:not(.sr-only) {
-//       font-size: 1.5rem;
-//       background-color: transparent;
-//     }
-
-//     &:hover,
-//     &:focus {
-//       & > span:not(.sr-only) {
-//         background-color: transparent;
-//       }
-//     }
-//   }
-// }
+.alert-dismissible {
+  padding-right: $alert-dismissible-padding-r;
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $stretched-link-z-index + 1;
+    padding: $alert-padding-y * 1.25 $alert-padding-x;
+    background-color: none;
+    border: none;
+    outline: none;
+  }
+}
