@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import {
   DropdownItem,
   DropdownMenu,
@@ -110,4 +111,10 @@ Default.args = {
       filterable: false,
     },
   ],
+  // rowProps: (props) => ({
+  //   onClick: () => console.log(props),
+  //   className: classNames(props.className, {
+  //     "stripped-indicator-info-4": true,
+  //   }),
+  // }),
 };

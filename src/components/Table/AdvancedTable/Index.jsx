@@ -15,6 +15,7 @@ function Table({
   columns,
   data,
   renderRowSubComponent,
+  rowProps = () => ({}),
   className = "-highlight -striped ",
   handleSearch = () => {},
   handleFilter = () => {},
@@ -98,14 +99,24 @@ function Table({
           <tbody {...getTableBodyProps()} className="rt-tbody">
             {page.map((row, i) => {
               prepareRow(row);
+              const rowStyel = classnames(
+                "rt-tr",
+                { " -odd": i % 2 === 0 },
+                { " -even": i % 2 === 1 }
+              );
               return (
                 <React.Fragment key={row.getRowProps()?.key}>
                   <tr
-                    {...row.getRowProps()}
-                    className={classnames(
-                      "rt-tr",
-                      { " -odd": i % 2 === 0 },
-                      { " -even": i % 2 === 1 }
+                    /**
+                     * in the follwing we are muting row object and putting classNames
+                     * this is a custom property added to get control from outside
+                     */
+                    className={rowStyel}
+                    {...row.getRowProps(
+                      rowProps({
+                        ...row,
+                        className: rowStyel,
+                      })
                     )}
                   >
                     {row.cells.map((cell) => {
