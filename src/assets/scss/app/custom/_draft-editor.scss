@@ -20,7 +20,7 @@ $guide-height: 75px;
     border: 2px solid $primary;
   }
   &.editor-disabled {
-    background-color: $input-disabled-bg;
+    border: none;
     cursor: not-allowed;
   }
   .alignment-container {

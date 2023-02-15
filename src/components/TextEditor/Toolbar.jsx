@@ -6,7 +6,7 @@ import { Button } from "reactstrap";
 import FilePicker from "./FilePicker";
 import classNames from "classnames";
 export default function ToolBar(props) {
-  const { getFileInputProps, editorState, handleToolClick } =
+  const { getFileInputProps, isToolActive, handleToolClick } =
     React.useContext(TextEditorContext);
   return (
     <>
@@ -26,16 +26,7 @@ export default function ToolBar(props) {
                   {tool.icon ? (
                     <i
                       className={classNames(tool.icon, {
-                        "text-primary":
-                          editorState
-                            .getCurrentInlineStyle()
-                            .has(tool?.style) ||
-                          editorState
-                            ?.getCurrentContent()
-                            .getBlockForKey(
-                              editorState?.getSelection().getStartKey()
-                            )
-                            .getType() === tool?.style,
+                        "text-primary": isToolActive(tool),
                       })}
                     />
                   ) : (
