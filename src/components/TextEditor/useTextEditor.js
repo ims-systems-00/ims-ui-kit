@@ -84,7 +84,7 @@ export default function useTextEditor(config) {
       );
     }
     return handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
-  }, [config.value]);
+  }, []);
   const fileInput = useRef(null);
   const _openFilePrompt = () => fileInput.current.click();
   const _createAtomicBlockEntity = (command, data) => {
