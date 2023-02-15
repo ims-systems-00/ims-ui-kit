@@ -12,7 +12,7 @@
       padding: 10px 10px 0 0;
       resize: none;
       border: none;
-      border-bottom: 1px solid rgba($black-states, 0.5);
+      border-bottom: 1px solid $stroke-regular;
       border-radius: 0;
       line-height: 2;
       padding: 0;
@@ -27,7 +27,7 @@
   }
   .form-control {
     border: none;
-    border-bottom: 1px solid rgba($black-states, 0.5);
+    border-bottom: 1px solid $stroke-regular;
     border-radius: 0;
   }
 }
