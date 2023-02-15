@@ -1,4 +1,4 @@
-import Button from "../Buttons/BtnBase";
+import Button from "../ButtonBase";
 
 const SecondaryBtn = ({}) => {
   return (

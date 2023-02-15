@@ -2,7 +2,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import { Button } from "reactstrap";
 
-let BtnBaseProps = Object.assign(
+let ButtonBaseProps = Object.assign(
   {
     leftIcon: "",
     rightIcon: "",
@@ -12,10 +12,10 @@ let BtnBaseProps = Object.assign(
 
 /**
  *
- * @param {BtnBaseProps} props
+ * @param {ButtonBaseProps} props
  * @returns
  */
-const BtnBase = (props) => {
+const ButtonBase = (props) => {
   return (
     <Button {...props}>
       {props.leftIcon ? (
@@ -29,10 +29,10 @@ const BtnBase = (props) => {
   );
 };
 
-BtnBase.propTypes = {
+ButtonBase.propTypes = {
   leftIcon: PropTypes.string,
   rightIcon: PropTypes.string,
   ...(Button.propTypes && Button.propTypes),
 };
 
-export default BtnBase;
+export default ButtonBase;

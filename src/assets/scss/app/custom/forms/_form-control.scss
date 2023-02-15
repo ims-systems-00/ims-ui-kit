@@ -2,29 +2,32 @@
   box-shadow: none;
   border-color: $primary;
 }
-.ims-input {
-  cursor: text;
-  border: 1px solid $stroke-regular;
-  border-radius: 4px;
+.signaturearea {
+  .form-group {
+    textarea {
+      max-width: 100%;
+      font-size: 70px;
+      height: 150px;
+      text-align: center;
+      padding: 10px 10px 0 0;
+      resize: none;
+      border: none;
+      border-bottom: 1px solid $stroke-regular;
+      border-radius: 0;
+      line-height: 2;
+      padding: 0;
+      margin: 0;
+      &:focus,
+      &:active {
+        border-left: none;
+        border-top: none;
+        border-right: none;
+      }
+    }
+  }
+  .form-control {
+    border: none;
+    border-bottom: 1px solid $stroke-regular;
+    border-radius: 0;
+  }
 }
-.ims-input.ims-input-focused {
-  border: 1px solid $primary;
-  transition: border-color 0.2s ease-in-out;
-}
-
-.ims-input.ims-input-focused.ims-input-error,
-.ims-input.ims-input-error {
-  border: 1px solid $danger;
-}
-.ims-input.ims-input-focused.ims-input-success,
-.ims-input.ims-input-success {
-  border: 1px solid $success;
-}
-
-.ims-text-input.form-control:focus {
-  border-color: transparent !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Collapse } from "reactstrap";
-import Button from "../../Buttons/BtnBase";
+import Button from "../../Buttons/ButtonBase";
 import Card from "../../Cards/CardBase";
 import CardBody from "../../Cards/CardBodyBase";
 

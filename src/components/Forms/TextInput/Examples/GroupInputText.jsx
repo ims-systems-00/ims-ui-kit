@@ -1,8 +1,6 @@
-import React from "react";
-import InputGroupText from "../InputGroupTextBase";
-import InputGroup from "../InputGroupBase";
 import Input from "../InputBase";
-import Button from "components/Buttons/BtnBase";
+import InputGroup from "../InputGroupBase";
+import InputGroupText from "../InputGroupTextBase";
 
 const GroupInputText = ({}) => {
   return (

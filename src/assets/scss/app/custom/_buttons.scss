@@ -84,3 +84,8 @@
   border: none !important;
   box-shadow: none !important;
 }
+// btn-block removed from bootstrap 5 get rid of this class in the project asap
+.btn-block{
+  display: block;
+  width: 100%;
+}

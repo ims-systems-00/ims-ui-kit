@@ -63,22 +63,27 @@ export default function useTextEditor(config) {
         );
     }
     if (config.value || currentContent) {
+      // EditorState.set(editorState, {
+      //   currentContent: convertFromRaw(currentContent),
+      //   /**
+      //    * following solution is implemented to get the direction map for the editor
+      //    * with current content. Draftjs has got an issue with direction map.
+      //    * see issue : https://github.com/facebook/draft-js/issues/1820
+      //    */
+      //   directionMap: EditorState.createWithContent(
+      //     convertFromRaw(currentContent)
+      //   ).getDirectionMap(),
+      // })
       return handleEditorStateChange(
-        EditorState.set(editorState, {
-          currentContent: convertFromRaw(currentContent),
-          /**
-           * following solution is implemented to get the direction map for the editor
-           * with current content. Draftjs has got an issue with direction map.
-           * see issue : https://github.com/facebook/draft-js/issues/1820
-           */
-          directionMap: EditorState.createWithContent(
-            convertFromRaw(currentContent)
-          ).getDirectionMap(),
-        })
+        EditorState.push(
+          editorState,
+          convertFromRaw(currentContent),
+          "change-block-data"
+        )
       );
     }
     return handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
-  }, [config.value]);
+  }, []);
   const fileInput = useRef(null);
   const _openFilePrompt = () => fileInput.current.click();
   const _createAtomicBlockEntity = (command, data) => {
@@ -117,7 +122,7 @@ export default function useTextEditor(config) {
   const handleEditorStateChange = (editorState) => {
     const contentState = editorState.getCurrentContent();
     setEditorState(editorState);
-    // console.log(JSON.stringify(convertToRaw(contentState)))
+    // console.log(JSON.stringify(convertToRaw(contentState)));
     config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
   };
   const handleKeyCommand = (command, editorState) => {
@@ -240,6 +245,15 @@ export default function useTextEditor(config) {
     editorRef.current.editor?.focus();
     handleEditorStateChange(EditorState.moveFocusToEnd(editorState));
   };
+  const isToolActive = (tool) => {
+    return (
+      editorState.getCurrentInlineStyle().has(tool?.style) ||
+      editorState
+        ?.getCurrentContent()
+        .getBlockForKey(editorState?.getSelection().getStartKey())
+        .getType() === tool?.style
+    );
+  };
   return {
     editorRef,
     editorState,
@@ -257,5 +271,6 @@ export default function useTextEditor(config) {
     handleMentionSelect,
     activateEditor,
     deactivateEditor,
+    isToolActive,
   };
 }

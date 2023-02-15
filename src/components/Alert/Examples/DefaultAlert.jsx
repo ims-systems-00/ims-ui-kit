@@ -1,5 +1,5 @@
-import { Alert } from "reactstrap";
-
+import React from "react";
+import Alert from "../AlertBase";
 const DefaultAlert = ({}) => {
   return (
     <>
