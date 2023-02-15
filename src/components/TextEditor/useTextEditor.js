@@ -122,7 +122,7 @@ export default function useTextEditor(config) {
   const handleEditorStateChange = (editorState) => {
     const contentState = editorState.getCurrentContent();
     setEditorState(editorState);
-    console.log(JSON.stringify(convertToRaw(contentState)));
+    // console.log(JSON.stringify(convertToRaw(contentState)));
     config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
   };
   const handleKeyCommand = (command, editorState) => {
