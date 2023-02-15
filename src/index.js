@@ -27,3 +27,6 @@ export { default as PaginationItem } from "./components/Pagination/PaginationIte
 export { default as PaginationLink } from "./components/Pagination/PaginationLinkBase";
 export { default as TabContent } from "./components/TabPane/TabContentBase";
 export { default as TabPane } from "./components/TabPane/TabPaneBase";
+export { default as Row } from "./components/Grid/RowBase"
+export { default as Col } from "./components/Grid/ColBase"
+
