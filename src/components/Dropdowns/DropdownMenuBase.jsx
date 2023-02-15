@@ -1,5 +1,3 @@
-import classNames from "classnames";
-import React from "react";
 import { DropdownMenu } from "reactstrap";
 
 let DropdownMenuBaseProps = Object.assign({}, DropdownMenu.prototype.props);

@@ -1,5 +1,10 @@
 .btn {
   cursor: pointer;
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    color: $white;
+  }
 }
 
 @each $color, $value in $theme-colors {
@@ -85,7 +90,7 @@
   box-shadow: none !important;
 }
 // btn-block removed from bootstrap 5 get rid of this class in the project asap
-.btn-block{
+.btn-block {
   display: block;
   width: 100%;
 }

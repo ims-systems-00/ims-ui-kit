@@ -1,5 +1,4 @@
 .dropdown-menu {
-  border: 1px solid $stroke-regular !important;
   min-width: 177px !important;
   .dropdown-item {
     white-space: nowrap;
@@ -8,7 +7,6 @@
   }
   .dropdown-item:hover {
     background-color: $primary-light;
-    color: $type-dark;
   }
   .dropdown-item:focus {
     background-color: $primary-dark;
