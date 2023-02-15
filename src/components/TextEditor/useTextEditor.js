@@ -64,23 +64,25 @@ export default function useTextEditor(config) {
     }
     if (config.value || currentContent) {
       return handleEditorStateChange(
-        // EditorState.set(editorState, {
-        //   currentContent: convertFromRaw(currentContent),
-        //   /**
-        //    * following solution is implemented to get the direction map for the editor
-        //    * with current content. Draftjs has got an issue with direction map.
-        //    * see issue : https://github.com/facebook/draft-js/issues/1820
-        //    */
-        //   directionMap: EditorState.createWithContent(
-        //     convertFromRaw(currentContent)
-        //   ).getDirectionMap(),
-        // })
-        EditorState.moveFocusToEnd(
-          EditorState.push(
-            editorState,
-            convertFromRaw(currentContent),
-            "insert-fragment"
-          )
+        EditorState.set(
+          EditorState.moveFocusToEnd(
+            EditorState.push(
+              editorState,
+              convertFromRaw(currentContent),
+              "insert-fragment"
+            )
+          ),
+          {
+            currentContent: convertFromRaw(currentContent),
+            /**
+             * following solution is implemented to get the direction map for the editor
+             * with current content. Draftjs has got an issue with direction map.
+             * see issue : https://github.com/facebook/draft-js/issues/1820
+             */
+            directionMap: EditorState.createWithContent(
+              convertFromRaw(currentContent)
+            ).getDirectionMap(),
+          }
         )
       );
     }
