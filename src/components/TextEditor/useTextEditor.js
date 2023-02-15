@@ -75,10 +75,12 @@ export default function useTextEditor(config) {
         //     convertFromRaw(currentContent)
         //   ).getDirectionMap(),
         // })
-        EditorState.push(
-          editorState,
-          convertFromRaw(currentContent),
-          "insert-fragment"
+        EditorState.moveFocusToEnd(
+          EditorState.push(
+            editorState,
+            convertFromRaw(currentContent),
+            "insert-fragment"
+          )
         )
       );
     }
