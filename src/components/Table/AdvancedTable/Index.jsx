@@ -8,9 +8,7 @@ import {
   useResizeColumns,
   useSortBy,
   useTable,
-  useBlockLayout,
 } from "react-table";
-import { useSticky } from "react-table-sticky";
 import FilterAndSearch from "./FilterAndSearch";
 import Pagination from "./Pagination";
 function Table({
@@ -51,8 +49,6 @@ function Table({
     useExpanded,
     usePagination,
     useResizeColumns,
-    useBlockLayout,
-    useSticky,
     useFlexLayout
   );
   return (
