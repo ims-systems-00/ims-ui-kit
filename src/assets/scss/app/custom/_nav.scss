@@ -1,0 +1,13 @@
+// Pills
+.nav-pills {
+  .nav-link {
+    &:hover {
+      color: $primary-dark;
+    }
+  }
+  .nav-link.active,
+  .show > .nav-link {
+    color: $primary-dark;
+    background-color: $primary-light;
+  }
+}
