@@ -8,12 +8,10 @@ import InputBase from "components/Forms/TextInput/InputBase";
 const SelectWithIcon = () => {
   return (
     <InputGroup>
-      <InputGroupText >
+      <InputGroupText>
         <i className="fa-solid fa-home" />
       </InputGroupText>
-      <ReactSelect
-      size="lg"
-       options={options} placeholder="Select with icon" />
+      <ReactSelect options={options} placeholder="Select with icon" />
     </InputGroup>
   );
 };
