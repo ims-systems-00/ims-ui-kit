@@ -111,10 +111,18 @@ Default.args = {
       filterable: false,
     },
   ],
-  // rowProps: (props) => ({
-  //   onClick: () => console.log(props),
-  //   className: classNames(props.className, {
-  //     "stripped-indicator-info-4": true,
-  //   }),
-  // }),
+  /**
+   * this row props function must return an object that constains
+   * component props allowed by react dom.
+   */
+  rowProps: (props) => ({
+    onClick: () => {},
+    className: classNames(props.className, {
+      /**
+       * you can check props.values to implement custom logic for
+       * apllying custom classes
+       */
+      "stripped-indicator-info-4": true,
+    }),
+  }),
 };
