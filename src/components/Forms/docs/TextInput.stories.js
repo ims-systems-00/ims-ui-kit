@@ -1,4 +1,4 @@
-import ImsInputText from "../TextInput/ImsFormElements/ImsInputText";
+import ImsInputText from "../ImsFormElements/ImsInputText";
 
 export default {
   title: "components/Forms/TextInput",

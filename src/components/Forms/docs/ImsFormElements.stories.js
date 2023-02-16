@@ -1,13 +1,13 @@
-import ImsInputText from "../TextInput/ImsFormElements/ImsInputText";
+import ImsTextInput from "../ImsFormElements/ImsInputText";
 
 export default {
   title: "components/Forms/ImsFormElements",
-  component: ImsInputText,
+  component: ImsTextInput,
 };
 const Template = (args) => <ImsInputText {...args} />;
-export const InputText = Template;
+export const ImsInputText = Template;
 
-InputText.args = {
+ImsInputText.args = {
   label: "Label Text",
   placeholder: "Placeholder Text",
   value: "",

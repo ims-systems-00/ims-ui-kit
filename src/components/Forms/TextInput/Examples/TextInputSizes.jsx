@@ -1,4 +1,4 @@
-import ImsInputText from "../ImsFormElements/ImsInputText";
+import ImsInputText from "../../ImsFormElements/ImsInputText";
 
 const TextInputSizes = ({}) => {
   return (
