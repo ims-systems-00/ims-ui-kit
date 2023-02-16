@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-import React from "react";
-import { Col, FormFeedback, FormGroup, Label } from "reactstrap";
-import Input from "../TextInput/InputBase";
+import { Col, FormGroup, Label } from "reactstrap";
+import Input from "../InputBase";
 
 let ImsInputTextProps = Object.assign({}, Input.prototype.props);
 
@@ -14,8 +13,6 @@ const ImsInputText = ({
   label,
   mandatory = false,
   error = "",
-  labelCol = "12",
-  inputCol = "12",
   feedbackText = "",
   ...rest
 }) => {
@@ -23,13 +20,13 @@ const ImsInputText = ({
     <>
       <FormGroup row>
         {label && (
-          <Col sm={labelCol}>
+          <Col sm="12">
             <Label>
               {label} {mandatory ? <span className="text-danger">*</span> : ""}
             </Label>
           </Col>
         )}
-        <Col sm={inputCol}>
+        <Col sm="12">
           <Input invalid={error} {...rest} />
           {error && <label className="text-danger">{error}</label>}
         </Col>

@@ -1,5 +1,4 @@
-import React from "react";
-import ImsInputText from "../ImsInputText";
+import ImsInputText from "../ImsFormElements/ImsInputText";
 
 const InvalidTextInput = ({}) => {
   return (
