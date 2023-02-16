@@ -35,3 +35,4 @@ export { default as CreatableSelect } from "../ImsSelectInput/Examples/Creatable
 export { default as EmailSelect } from "../ImsSelectInput/Examples/EmailSelect";
 export { default as UserSelect } from "../ImsSelectInput/Examples/UserSelect";
 export { default as SearchSelect } from "../ImsSelectInput/Examples/SearchSelect";
+export { default as SelectWithIcon } from "../ImsSelectInput/Examples/SelectWithIcon";
