@@ -1,5 +1,8 @@
 .btn {
   cursor: pointer;
+  &:hover {
+    box-shadow: $box-shadow-sm;
+  }
   &:disabled,
   &.disabled,
   fieldset:disabled & {
