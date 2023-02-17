@@ -12,3 +12,4 @@ ImsInputText.args = {};
 
 export { default as ImsInputTextWithIcon } from "../ImsFormElements/Examples/ImsInputTextWithIcon";
 export { default as ImsInputSelect } from "../ImsFormElements/Examples/ImsInputSelect";
+export { default as ImsInputSelectWithIcon } from "../ImsFormElements/Examples/ImsInputSelectWithIcon";
