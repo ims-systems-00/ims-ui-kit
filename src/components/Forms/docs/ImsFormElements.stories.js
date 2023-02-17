@@ -1,14 +1,13 @@
-import ImsTextInput from "../ImsFormElements/ImsInputText";
+import { Input } from "reactstrap";
+import ImsInputTextDemo from "../ImsFormElements/Examples/ImsInputTextDemo";
 
 export default {
   title: "components/Forms/ImsFormElements",
-  component: ImsTextInput,
+  component: ImsInputTextDemo,
 };
-const Template = (args) => <ImsInputText {...args} />;
+const Template = (args) => <ImsInputTextDemo {...args} />;
 export const ImsInputText = Template;
 
-ImsInputText.args = {
-  label: "Label Text",
-  placeholder: "Placeholder Text",
-  value: "",
-};
+ImsInputText.args = {};
+
+export { default as ImsInputTextWithIcon } from "../ImsFormElements/Examples/ImsInputTextWithIcon";
