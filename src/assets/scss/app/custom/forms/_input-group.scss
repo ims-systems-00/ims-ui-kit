@@ -10,6 +10,7 @@
   }
   .input-group-text:first-child {
     background-color: transparent;
+    padding-right: 2px;
   }
   .input-group-text:last-child {
     background-color: transparent;
@@ -18,7 +19,6 @@
   .form-control:not(:first-child),
   .form-select:not(:first-child) {
     border-left: none;
-    padding-left: 0;
   }
   .form-control:not(:last-child),
   .form-select:not(:last-child) {
