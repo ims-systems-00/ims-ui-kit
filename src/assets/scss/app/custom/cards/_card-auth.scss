@@ -20,7 +20,6 @@
         position: relative;
         font-size: 5em;
         font-weight: 900;
-        color: $black;
         text-transform: lowercase;
         margin-left: -5px;
         z-index: 1;
@@ -44,18 +43,9 @@
     }
 
     &.card-plain {
-      @include input-coloured-bg(
-        $opacity-5,
-        $white,
-        $white,
-        $transparent-bg,
-        $opacity-1,
-        $opacity-2
-      );
       .input-group-addon,
       .form-group.no-border .input-group-addon,
       .input-group.no-border .input-group-addon {
-        color: $opacity-8;
       }
     }
     &.card-white {
@@ -67,22 +57,16 @@
         }
       }
 
-      @include form-control-placeholder(rgba($black, 0.4), 1);
       .has-danger {
         .form-control,
         .input-group-prepend .input-group-text {
-          border-color: $danger-states;
         }
       }
 
       .input-group-prepend .input-group-text {
-        border-color: rgba($black-states, 0.2);
-        color: $black-states;
       }
 
       .form-control {
-        color: $black;
-        border-color: rgba($black-states, 0.2);
         &:focus {
           border-color: $primary;
         }
@@ -95,11 +79,9 @@
         .form-control + .input-group-append .input-group-text,
         .input-group-prepend .input-group-text,
         .input-group-append .input-group-text {
-          background-color: $opacity-gray-3;
           &:focus,
           &:active,
           &:active {
-            background-color: $opacity-gray-5;
           }
         }
 
@@ -107,7 +89,7 @@
           &:focus {
             & + .input-group-prepend .input-group-text,
             & + .input-group-append .input-group-text {
-              background-color: $transparent-bg;
+              background-color: transparent;
             }
           }
         }
@@ -116,15 +98,12 @@
       .input-group[disabled] {
         .input-group-prepend .input-group-text,
         .input-group-append .input-group-text {
-          background-color: $black;
         }
       }
 
       .form-control[disabled],
       .form-control[readonly],
       fieldset[disabled] .form-control {
-        background: $light-gray;
-        border-color: rgba($black-states, 0.3);
       }
 
       .input-group-focus {
@@ -138,7 +117,6 @@
         &.no-border {
           .input-group-prepend .input-group-text,
           .input-group-append .input-group-text {
-            background-color: $opacity-gray-5;
           }
         }
       }
@@ -153,7 +131,6 @@
       .has-danger .form-control:focus,
       .has-success.input-group-focus .input-group-append .input-group-text,
       .has-success.input-group-focus .input-group-prepend .input-group-text {
-        border-color: $danger-states;
       }
 
       .has-success .form-control:focus,
@@ -270,7 +247,6 @@
   &.lock-page,
   &.register-page {
     min-height: 100vh;
-    background: radial-gradient($background-black, $background-states-black);
   }
 }
 
