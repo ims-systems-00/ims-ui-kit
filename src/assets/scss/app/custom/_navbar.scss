@@ -263,7 +263,7 @@
       width: 22px;
       height: 1px;
       border-radius: 1px;
-      background: $white;
+      background: $stroke-regular;
 
       &.navbar-kebab {
         height: 4px;
@@ -472,7 +472,7 @@
     width: 22px;
     height: 1px;
     border-radius: 1px;
-    background: $white;
+    background: $stroke-regular;
   }
   .navbar .navbar-toggler-bar + .navbar-toggler-bar {
     margin-top: 7px;
