@@ -11,3 +11,4 @@ export const ImsInputText = Template;
 ImsInputText.args = {};
 
 export { default as ImsInputTextWithIcon } from "../ImsFormElements/Examples/ImsInputTextWithIcon";
+export { default as ImsInputSelect } from "../ImsFormElements/Examples/ImsInputSelect";

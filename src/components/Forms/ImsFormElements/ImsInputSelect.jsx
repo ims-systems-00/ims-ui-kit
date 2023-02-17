@@ -1,9 +1,50 @@
-import React from 'react'
+import Select from "../ImsSelectInput/ReactSelectBase";
+import { Col, FormGroup, Label } from "reactstrap";
 
-const ImsInputSelect = () => {
+const ImsInputSelect = ({
+  label,
+  error,
+  name,
+  onChange = () => {},
+  mandatory = false,
+  ...rest
+}) => {
+  const handleChange = (changes) => {
+    if (!changes) {
+      let currentTarget = {
+        name,
+        value: [],
+      };
+      onChange({ currentTarget });
+    } else if (Array.isArray(changes)) {
+      let currentTarget = {
+        name,
+        value: changes, //changes.map(item => item.value)
+      };
+      onChange({ currentTarget });
+    } else {
+      let currentTarget = {
+        name,
+        value: changes, //changes.value
+      };
+      onChange({ currentTarget });
+    }
+  };
   return (
-    <div>ImsInputSelect</div>
-  )
-}
+    <>
+      <FormGroup row>
+        <Col sm="12">
+          <Label>
+            {label} {mandatory ? <span className="text-danger">*</span> : ""}
+          </Label>
+        </Col>
+        <Col sm="12">
+          <Select {...rest} onChange={handleChange} />
+          {error && <label className="text-danger">{error}</label>}
+        </Col>
+      </FormGroup>
+    </>
+  );
+};
 
-export default ImsInputSelect
+export default ImsInputSelect;
