@@ -1,14 +1,21 @@
-.popover {
-  border: 0;
+.folder-navigation {
+  .popover-header {
+    font-weight: $font-weight-bold;
+    background: $white;
+    border-radius: 5px 5px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px 12px 20px !important;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  .popover-body {
+    padding: 12px 20px 12px 20px !important;
+  }
+  .popover-footer {
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  }
 }
-
-.popover-header {
-  font-weight: $font-weight-bold;
-}
-
-// Alternative colors
-// @each $color, $value in $theme-colors {
-//   .popover-#{$color} {
-//     @include popover-variant($value);
-//   }
-// }

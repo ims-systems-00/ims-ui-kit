@@ -147,9 +147,9 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
       color: $white;
     }
 
-    .popover .popover-header {
-      color: hsla(0, 0%, 71%, 0.6);
-    }
+    // .popover .popover-header {
+    //   color: $white;
+    // }
 
     .popover-body {
       p {
