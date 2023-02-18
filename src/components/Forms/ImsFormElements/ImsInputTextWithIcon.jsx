@@ -9,7 +9,6 @@ const ImsInputTextWithIcon = ({
   icon,
   type = "text",
   mandatory = false,
-  options,
   error,
   defaultOpt,
   ...props
@@ -29,19 +28,6 @@ const ImsInputTextWithIcon = ({
             <InputGroupText>
               <i className={`${icon}`} />
             </InputGroupText>
-            {options ? (
-              <Input type="select" onChange={(e) => onChange(e)} {...props}>
-                <option value={"undefined"}>{defaultOpt}</option>
-                {options &&
-                  options.map((item, i) => (
-                    <option key={item.value} value={item.value}>
-                      {item.placeHolder}
-                    </option>
-                  ))}
-              </Input>
-            ) : (
-              <Input type={type} onChange={(e) => onChange(e)} {...props} />
-            )}
           </InputGroup>
           {error && (
             <label className="text-danger">
