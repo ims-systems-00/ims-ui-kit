@@ -1,12 +1,12 @@
-export { default as Accordion } from "./components/Accordion/AccordionBase"
-export { default as AccordionBody } from "./components/Accordion/AccordionBodyBase"
-export { default as AccordionHeader } from "./components/Accordion/AccordionHeaderBase"
-export { default as AccordionItem } from "./components/Accordion/AccordionItemBase"
-export { default as UncontrolledAccordion } from "./components/Accordion/UncontrolledAccordionBase"
-export { default as Alert } from "./components/Alert/AlertBase"
-export { default as UncontrolledAlert } from "./components/Alert/UncontrolledAlertBase"
-export { default as Breadcrumb } from "./components/Breadcrumb/BreadcrumbBase"
-export { default as BreadcrumbItem } from "./components/Breadcrumb/BreadcrumbItemBase"
+export { default as Accordion } from "./components/Accordion/AccordionBase";
+export { default as AccordionBody } from "./components/Accordion/AccordionBodyBase";
+export { default as AccordionHeader } from "./components/Accordion/AccordionHeaderBase";
+export { default as AccordionItem } from "./components/Accordion/AccordionItemBase";
+export { default as UncontrolledAccordion } from "./components/Accordion/UncontrolledAccordionBase";
+export { default as Alert } from "./components/Alert/AlertBase";
+export { default as UncontrolledAlert } from "./components/Alert/UncontrolledAlertBase";
+export { default as Breadcrumb } from "./components/Breadcrumb/BreadcrumbBase";
+export { default as BreadcrumbItem } from "./components/Breadcrumb/BreadcrumbItemBase";
 export { default as Button } from "./components/Buttons/ButtonBase";
 export { default as ButtonDropdown } from "./components/Buttons/ButtonDropdownBase";
 export { default as ButtonGroup } from "./components/Buttons/ButtonGroupBase";
@@ -25,7 +25,6 @@ export { default as DropdownToggle } from "./components/Dropdowns/DropdownToggle
 export { default as UncontrolledButtonDropdown } from "./components/Dropdowns/UncontrolledButtonDropdownBase";
 export { default as UncontrolledDropdown } from "./components/Dropdowns/UncontrolledDropdownBase";
 export { default as Fade } from "./components/Fade/FadeBase";
-export { default as Checkbox } from "./components/Forms/CheckboxInput/ImsInputCheck";
 export { default as FileDropzone } from "./components/Forms/FileDropZone/FileDropZone";
 export { default as RadioCheckbox } from "./components/Forms/RadioInput/ImsInputRadio";
 export { default as TextInput } from "./components/Forms/TextInput/InputBase";
@@ -65,6 +64,5 @@ export { default as ToastHeader } from "./components/Toast/ToastHeaderBase";
 export { default as Tooltip } from "./components/Tooltip/UncontrolledTooltipBase";
 export { default as TabContent } from "./components/TabPane/TabContentBase";
 export { default as TabPane } from "./components/TabPane/TabPaneBase";
-export { default as Row } from "./components/Grid/RowBase"
-export { default as Col } from "./components/Grid/ColBase"
-
+export { default as Row } from "./components/Grid/RowBase";
+export { default as Col } from "./components/Grid/ColBase";
