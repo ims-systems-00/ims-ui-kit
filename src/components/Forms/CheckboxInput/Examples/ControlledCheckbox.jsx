@@ -1,5 +1,5 @@
 import React from "react";
-import ImsCheckBox from "../ImsInputCheck";
+import ImsCheckBox from "../../ImsFormElements/ImsInputCheck";
 
 const ControlledCheckbox = ({}) => {
   const [checked, setChecked] = React.useState(true);

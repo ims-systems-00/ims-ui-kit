@@ -17,3 +17,4 @@ export { default as ImsInputTime } from "../ImsFormElements/Examples/ImsInputTim
 export { default as ImsInputDate } from "../ImsFormElements/Examples/ImsInputDate";
 export { default as ImsDropZone } from "../ImsFormElements/Examples/ImsInputFileDropzone";
 export { default as ImsInputRadio } from "../ImsFormElements/Examples/ImsInputRadio";
+export { default as ImsInputCheckbox } from "../ImsFormElements/Examples/ImsInputCheck";

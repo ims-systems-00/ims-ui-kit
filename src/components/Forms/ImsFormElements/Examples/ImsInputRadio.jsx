@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ImsInputRadioBase from "../ImsInputRadio";
 
-const ImsInputRadio = () => {
+const ImsInputRadio = ({}) => {
   const [radio, setRadio] = useState("Option 2");
   return (
     <>

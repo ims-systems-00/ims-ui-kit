@@ -1,5 +1,4 @@
-import React from "react";
-import ImsCheckBox from "../ImsInputCheck";
+import ImsCheckBox from "../../ImsFormElements/ImsInputCheck";
 
 const UnselectedCheckbox = ({}) => {
   return (
