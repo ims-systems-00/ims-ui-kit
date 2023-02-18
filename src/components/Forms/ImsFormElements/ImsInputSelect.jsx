@@ -40,7 +40,11 @@ const ImsInputSelect = ({
         </Col>
         <Col sm="12">
           <Select {...rest} onChange={handleChange} />
-          {error && <label className="text-danger">{error}</label>}
+          {error && (
+            <label className="text-danger">
+              <small>{error}</small>
+            </label>
+          )}
         </Col>
       </FormGroup>
     </>

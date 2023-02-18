@@ -44,7 +44,11 @@ const ImsInputTextWithIcon = ({
               <Input type={type} onChange={(e) => onChange(e)} {...props} />
             )}
           </InputGroup>
-          {error && <label className="text-danger">{error}</label>}
+          {error && (
+            <label className="text-danger">
+              <small>{error}</small>
+            </label>
+          )}
         </Col>
       </FormGroup>
     </>

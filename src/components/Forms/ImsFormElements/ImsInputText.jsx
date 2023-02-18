@@ -28,7 +28,11 @@ const ImsInputText = ({
         )}
         <Col sm="12">
           <Input invalid={error} {...rest} />
-          {error && <label className="text-danger">{error}</label>}
+          {error && (
+            <label className="text-danger">
+              <small>{error}</small>
+            </label>
+          )}
         </Col>
       </FormGroup>
     </>
