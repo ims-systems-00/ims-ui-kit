@@ -1,7 +1,5 @@
-import React from "react";
-import { Col, FormGroup, Label, Row } from "reactstrap";
 import ReactDatetime from "react-datetime";
-import ReactDateTime from "../DateTimePicker/DateTimeBase";
+import { Col, FormGroup, Label } from "reactstrap";
 
 const ImsInputTime = ({ label, name, value, onChange, error, disabled }) => {
   return (

@@ -1,5 +1,5 @@
-import Select from "../ImsSelectInput/ReactSelectBase";
 import { Col, FormGroup, Label } from "reactstrap";
+import Select from "../ImsSelectInput/ReactSelectBase";
 
 const ImsInputSelect = ({
   label,

@@ -14,7 +14,6 @@ const ImsInputTextWithIcon = ({
   defaultOpt,
   ...props
 }) => {
-  console.log("ImsInputTextWithIcon", icon);
   return (
     <>
       <FormGroup row>

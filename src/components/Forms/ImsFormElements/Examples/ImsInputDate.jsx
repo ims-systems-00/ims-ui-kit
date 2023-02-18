@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ImsInputDateBase from "../ImsInputDate";
 
-const ImsInputDate = () => {
+const ImsInputDate = ({}) => {
   const [date, setDate] = useState("");
   return (
     <>
@@ -11,7 +11,6 @@ const ImsInputDate = () => {
         label="Label Text"
         onChange={(e) => {
           setDate(e.currentTarget.value);
-          console.log(e.currentTarget.value);
         }}
       />
     </>

@@ -1,7 +1,7 @@
 import React from "react";
 import ImsInputDropZone from "../ImsInputDropZone";
 
-const ImsInputFileDropzone = () => {
+const ImsInputFileDropzone = ({}) => {
   return (
     <>
       <h2>File Dropzone</h2>
