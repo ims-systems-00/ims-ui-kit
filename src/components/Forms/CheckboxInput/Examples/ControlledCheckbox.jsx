@@ -1,5 +1,5 @@
 import React from "react";
-import ImsCheckBox from "../ImsInputCheck";
+import ImsInputCheck from "../../ImsFormElements/ImsInputCheck";
 
 const ControlledCheckbox = ({}) => {
   const [checked, setChecked] = React.useState(true);
@@ -8,7 +8,7 @@ const ControlledCheckbox = ({}) => {
   };
   return (
     <>
-      <ImsCheckBox
+      <ImsInputCheck
         unselected
         mandatory
         label="Controlled Settings"

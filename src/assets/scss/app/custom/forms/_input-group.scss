@@ -10,21 +10,24 @@
   }
   .input-group-text:first-child {
     background-color: transparent;
+    padding-right: 2px;
   }
   .input-group-text:last-child {
     background-color: transparent;
-  }
-  .form-control:not(:first-child) {
     border-left: none;
   }
-  .form-control:not(:last-child) {
+  .form-control:not(:first-child),
+  .form-select:not(:first-child) {
+    border-left: none;
+  }
+  .form-control:not(:last-child),
+  .form-select:not(:last-child) {
     border-right: none;
   }
 }
 .input-group:focus-within {
   .input-group-text {
     border-width: 2px;
-    border-right: none;
     border-color: $primary !important;
     transition: border-color 0.15s linear;
     color: $primary;

@@ -1,11 +1,10 @@
-import React from "react";
-import ImsCheckBox from "../ImsInputCheck";
+import ImsInputCheck from "../../ImsFormElements/ImsInputCheck";
 
 const UnselectedCheckbox = ({}) => {
   return (
     <>
-      <ImsCheckBox unselected mandatory label="Unselected unchecked" />
-      <ImsCheckBox unselected defaultChecked label="Unselected checked" />
+      <ImsInputCheck unselected mandatory label="Unselected unchecked" />
+      <ImsInputCheck unselected defaultChecked label="Unselected checked" />
     </>
   );
 };
