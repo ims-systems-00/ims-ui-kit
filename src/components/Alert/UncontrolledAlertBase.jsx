@@ -1,4 +1,3 @@
-import React from "react";
 import { UncontrolledAlert } from "reactstrap";
 
 let UncontrolledAlertBaseProps = Object.assign(

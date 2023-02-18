@@ -13,7 +13,7 @@ const ToastBodyBase = ({ children, ...rest }) => {
 };
 
 ToastBodyBase.propTypes = {
-  ...(ToastBodyBase.propTypes && ToastBodyBase.propTypes),
+  ...(ToastBody.propTypes && ToastBody.propTypes),
 };
 
 export default ToastBodyBase;

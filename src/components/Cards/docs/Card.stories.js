@@ -1,7 +1,7 @@
-import Example from "../Example";
+import Card from "../CardBase"
 export default {
   title: "components/Card",
-  component: Example,
+  component: Card,
   parameters: {
     docs: {
       description: {
@@ -10,7 +10,7 @@ export default {
     },
   },
 };
-export const Default = Example;
+export const Default = Card;
 
 Default.args = {
   children: "Click Here",

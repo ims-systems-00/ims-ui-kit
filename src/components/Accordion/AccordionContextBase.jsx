@@ -1,7 +1,10 @@
-import React from "react";
+import React from 'react';
 
-const AccordionContextBase = () => {
-  return <div>AccordionContextBase</div>;
-};
-
-export default AccordionContextBase;
+/**
+ * AccordionContext
+ * {
+ *  toggle: PropTypes.func.isRequired,
+ *  openId: PropTypes.string,
+ * }
+ */
+export const AccordionContext = React.createContext({});
