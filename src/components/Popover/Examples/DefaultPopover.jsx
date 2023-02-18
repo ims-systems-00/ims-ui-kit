@@ -1,11 +1,10 @@
 import ListGroup from "components/List/ListGroupBase";
 import { useState } from "react";
-import CloseBtn from "components/Buttons/Examples/CloseBtn";
+import CloseBtn from "components/Buttons/CloseButtonBase";
 import Button from "../../Buttons/ButtonBase";
 import ListGroupItem from "../../List/ListGroupItemBase";
 import Popover from "../PopoverBase";
 import PopoverBody from "../PopoverBodyBase";
-import PopoverFooter from "../PopoverFooterBase";
 import PopoverHeader from "../PopoverHeaderBase";
 
 const DefaultPopover = () => {
@@ -22,34 +21,32 @@ const DefaultPopover = () => {
         isOpen={popoverOpen}
         target="Popover1"
         toggle={toggle}
+        placement="bottom"
       >
         <PopoverHeader>
           Popover Title
-          <CloseBtn />
+          <CloseBtn onClick={toggle} />
         </PopoverHeader>
         <PopoverBody>
           <ListGroup>
-            <ListGroupItem action active href="#" tag="a">
+            <ListGroupItem action active>
               Cras justo odio
             </ListGroupItem>
-            <ListGroupItem action href="#" tag="a">
+            <ListGroupItem action>
               Dapibus ac facilisis in morbi leo risus
             </ListGroupItem>
-            <ListGroupItem action href="#" tag="a">
+            <ListGroupItem action>
               Morbi leo risus dapibus ac facilisis in
             </ListGroupItem>
-            <ListGroupItem action href="#" tag="a">
+            <ListGroupItem action>
               Porta ac consectetur ac vestibulum at eros
-            </ListGroupItem>
-            <ListGroupItem action disabled href="#" tag="a">
-              Vestibulum at eros porta ac consectetur ac
             </ListGroupItem>
           </ListGroup>
         </PopoverBody>
-        <PopoverFooter className="popover-footer">
+        <PopoverHeader>
           <i className="fa-solid fa-house"></i>
           <Button size="sm">Move Here</Button>
-        </PopoverFooter>
+        </PopoverHeader>
       </Popover>
     </div>
   );

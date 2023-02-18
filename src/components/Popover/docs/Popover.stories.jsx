@@ -17,5 +17,3 @@ All our popovers are customised from the default bootstrap popovers. Only the cu
 
 export const Popover = (args) => <DefaultPopover {...args} />;
 Popover.args = {};
-
-export { default as DefaultPopover } from "../Examples/DefaultPopover";
