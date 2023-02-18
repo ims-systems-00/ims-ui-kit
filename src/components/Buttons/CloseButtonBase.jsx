@@ -10,7 +10,7 @@ let CloseButtonBaseProps = Object.assign({}, CloseButton.prototype?.props);
  */
 
 const CloseButtonBase = ({ children, ...rest }) => {
-  return <CloseButton>{children}</CloseButton>;
+  return <CloseButton {...rest}>{children}</CloseButton>;
 };
 
 CloseButtonBase.propTypes = {
