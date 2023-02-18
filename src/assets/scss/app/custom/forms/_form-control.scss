@@ -2,6 +2,12 @@
   box-shadow: none;
   border: 2px solid $primary;
 }
+textarea.form-control {
+  &:focus,
+  &:active {
+    border: 2px solid $primary;
+  }
+}
 .signaturearea {
   .form-group {
     textarea {
