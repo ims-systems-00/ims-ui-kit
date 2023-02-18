@@ -14,4 +14,5 @@ export { default as ImsInputTextWithIcon } from "../ImsFormElements/Examples/Ims
 export { default as ImsInputSelect } from "../ImsFormElements/Examples/ImsInputSelect";
 export { default as ImsInputSelectWithIcon } from "../ImsFormElements/Examples/ImsInputSelectWithIcon";
 export { default as ImsInputTime } from "../ImsFormElements/Examples/ImsInputTime";
-export {default as ImsInputDate} from "../ImsFormElements/Examples/ImsInputDate";
+export { default as ImsInputDate } from "../ImsFormElements/Examples/ImsInputDate";
+export { default as ImsDropZone } from "../ImsFormElements/Examples/ImsInputFileDropzone";
