@@ -13,7 +13,7 @@ const AccordionBase = ({ children, ...rest }) => {
 };
 
 AccordionBase.propTypes = {
-  ...(AccordionBase.propTypes && AccordionBase.propTypes),
+  ...(Accordion.propTypes && Accordion.propTypes),
 };
 
 export default AccordionBase;

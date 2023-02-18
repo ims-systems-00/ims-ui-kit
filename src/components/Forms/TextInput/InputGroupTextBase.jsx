@@ -2,6 +2,14 @@ import React from "react";
 import { InputGroupText } from "reactstrap";
 import { handleGroupFocus } from "./utility";
 
+let InputGroupTextBaseProps = Object.assign({}, InputGroupText.prototype.props);
+
+/**
+ *
+ * @param {InputGroupTextBaseProps} props
+ * @returns
+ */
+
 const InputGroupTextBase = ({ children, onClick, ...rest }) => {
   return (
     <InputGroupText
@@ -14,6 +22,10 @@ const InputGroupTextBase = ({ children, onClick, ...rest }) => {
       {children}
     </InputGroupText>
   );
+};
+
+InputGroupTextBase.propTypes = {
+  ...(InputGroupText.propTypes && InputGroupText.propTypes),
 };
 
 export default InputGroupTextBase;

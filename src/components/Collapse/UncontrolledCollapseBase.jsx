@@ -1,4 +1,3 @@
-import React from "react";
 import { UncontrolledCollapse } from "reactstrap";
 
 let UncontrolledCollapseBaseProps = Object.assign(

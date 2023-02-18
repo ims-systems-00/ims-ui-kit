@@ -13,7 +13,7 @@ const AlertBase = ({ children, ...rest }) => {
 };
 
 AlertBase.propTypes = {
-  ...(AlertBase.propTypes && AlertBase.propTypes),
+  ...(Alert.propTypes && Alert.propTypes),
 };
 
 export default AlertBase;
