@@ -54,6 +54,7 @@ export { default as NavbarToggler } from "./components/Nav/NavbarTogglerBase";
 export { default as Nav } from "./components/Nav/NavBase";
 export { default as NavItem } from "./components/Nav/NavItemBase";
 export { default as NavLink } from "./components/Nav/NavLinkBase";
+export { default as Progress } from "./components/Progress/ProgressBase";
 export { default as Pagination } from "./components/Pagination/PaginationBase";
 export { default as PaginationItem } from "./components/Pagination/PaginationItemBase";
 export { default as PaginationLink } from "./components/Pagination/PaginationLinkBase";
