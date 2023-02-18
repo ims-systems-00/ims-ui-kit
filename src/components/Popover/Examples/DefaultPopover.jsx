@@ -6,10 +6,8 @@ import ListGroupItem from "../../List/ListGroupItemBase";
 import Popover from "../PopoverBase";
 import PopoverBody from "../PopoverBodyBase";
 import PopoverHeader from "../PopoverHeaderBase";
-
 const DefaultPopover = () => {
   const [popoverOpen, setPopoverOpen] = useState(false);
-
   const toggle = () => setPopoverOpen(!popoverOpen);
   return (
     <div>
@@ -25,17 +23,15 @@ const DefaultPopover = () => {
       >
         <PopoverHeader>
           Popover Title
-          <CloseBtn onClick={toggle} />
+          <CloseBtn className="pull-right" onClick={toggle} />
         </PopoverHeader>
         <PopoverBody>
           <ListGroup>
-            <ListGroupItem action active>
-              Cras justo odio
-            </ListGroupItem>
+            <ListGroupItem action>Cras justo odio</ListGroupItem>
             <ListGroupItem action>
               Dapibus ac facilisis in morbi leo risus
             </ListGroupItem>
-            <ListGroupItem action>
+            <ListGroupItem action active>
               Morbi leo risus dapibus ac facilisis in
             </ListGroupItem>
             <ListGroupItem action>
@@ -43,10 +39,13 @@ const DefaultPopover = () => {
             </ListGroupItem>
           </ListGroup>
         </PopoverBody>
-        <PopoverHeader>
+        <div className="p-2">
+          {" "}
           <i className="fa-solid fa-house"></i>
-          <Button size="sm">Move Here</Button>
-        </PopoverHeader>
+          <Button className="pull-right" size="sm">
+            Move Here
+          </Button>
+        </div>
       </Popover>
     </div>
   );
