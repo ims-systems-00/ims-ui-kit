@@ -892,3 +892,32 @@
     }
   }
 }
+.notification-bar {
+}
+.notification-bar {
+  height: 100vh;
+  width: 400px;
+  position: fixed;
+  z-index: 1060;
+  top: 0;
+  right: -400px;
+  transition: 0.5s ease;
+  background-color: $white;
+  box-shadow: $box-shadow-lg;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.notification-bar::-webkit-scrollbar {
+  display: none;
+}
+.notification-bar.visible {
+  right: 0 !important;
+}
+@include media-breakpoint-down(md) {
+  .notification-bar {
+    width: 100%;
+  }
+}
