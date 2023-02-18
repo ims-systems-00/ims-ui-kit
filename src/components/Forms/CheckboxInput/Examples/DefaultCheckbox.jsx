@@ -1,10 +1,10 @@
-import ImsCheckBox from "../../ImsFormElements/ImsInputCheck";
+import ImsInputCheck from "../../ImsFormElements/ImsInputCheck";
 
 const DefaultCheckbox = ({}) => {
   return (
     <>
-      <ImsCheckBox label="Default checked" />
-      <ImsCheckBox defaultChecked label="Default Checked" />
+      <ImsInputCheck label="Default checked" />
+      <ImsInputCheck defaultChecked label="Default Checked" />
     </>
   );
 };

@@ -1,7 +1,6 @@
 import classNames from "classnames";
-import React from "react";
-import { FormGroup, Input, Label} from "reactstrap";
 import PropTypes from "prop-types";
+import { FormGroup, Input, Label } from "reactstrap";
 
 let ImsInputCheckProps = Object.assign({}, Input.prototype.props);
 
@@ -11,7 +10,7 @@ let ImsInputCheckProps = Object.assign({}, Input.prototype.props);
  * @returns
  */
 
-const ImsCheckBox = ({
+const ImsInputCheck = ({
   label,
   mandatory = false,
   onChange,
@@ -35,7 +34,7 @@ const ImsCheckBox = ({
   );
 };
 
-ImsCheckBox.propTypes = {
+ImsInputCheck.propTypes = {
   ...(ImsInputCheckProps || {}),
   /** Label for the input */
   label: PropTypes.string,
@@ -47,4 +46,4 @@ ImsCheckBox.propTypes = {
   ...Input.propTypes,
 };
 
-export default ImsCheckBox;
+export default ImsInputCheck;

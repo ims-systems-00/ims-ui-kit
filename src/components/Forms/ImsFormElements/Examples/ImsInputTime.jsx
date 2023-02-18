@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ImsInputTimeBase from "../ImsInputTime";
 
-const ImsInputTime = () => {
+const ImsInputTime = ({}) => {
   const [time, setTime] = useState("");
   return (
     <>

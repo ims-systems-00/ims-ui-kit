@@ -1,10 +1,10 @@
-import ImsCheckBox from "../ImsFormElements/ImsInputCheck";
+import ImsInputCheck from "../ImsFormElements/ImsInputCheck";
 
 export default {
   title: "components/Forms/Checkbox",
-  component: ImsCheckBox,
+  component: ImsInputCheck,
 };
-const Template = (args) => <ImsCheckBox {...args} />;
+const Template = (args) => <ImsInputCheck {...args} />;
 export const CheckboxInput = Template;
 
 CheckboxInput.args = {
