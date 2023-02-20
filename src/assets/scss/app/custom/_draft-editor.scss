@@ -22,6 +22,7 @@ $guide-height: 75px;
   &.editor-disabled {
     border: none;
     cursor: not-allowed;
+    min-height: 0 !important;
   }
   .alignment-container {
     width: auto;
