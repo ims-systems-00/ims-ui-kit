@@ -47,13 +47,13 @@ export { default as UncontrolledCarousel } from "./components/Carousel/Uncontrol
 export { default as CarouselControl } from "./components/Carousel/CarouselControlBase";
 export { default as CarouselCaption } from "./components/Carousel/CarouselCaptionBase";
 export { default as CarouselItem } from "./components/Carousel/CarouselItemBase";
-export { default as CarouselIndicators} from "./components/Carousel/CarouselIndicatorsBase";
-export { default as Popover} from "./components/Popper/PopoverBase";
-export { default as PopperContent} from "./components/Popper/PopperContentBase";
-export { default as PopperTargetHelper} from "./components/Popper/PopperTargetHelperBase";
-export { default as PopoverHeader} from "./components/Popper/PopoverHeaderBase";
-export { default as PopoverBody} from "./components/Popper/PopoverBodyBase";
-export { default as UncontrolledPopover} from "./components/Popper/UncontrolledPopoverBase";
+export { default as CarouselIndicators } from "./components/Carousel/CarouselIndicatorsBase";
+export { default as Popover } from "./components/Popper/PopoverBase";
+export { default as PopperContent } from "./components/Popper/PopperContentBase";
+export { default as PopperTargetHelper } from "./components/Popper/PopperTargetHelperBase";
+export { default as PopoverHeader } from "./components/Popper/PopoverHeaderBase";
+export { default as PopoverBody } from "./components/Popper/PopoverBodyBase";
+export { default as UncontrolledPopover } from "./components/Popper/UncontrolledPopoverBase";
 export { default as Modal } from "./components/Modal/ModalBase";
 export { default as ModalBody } from "./components/Modal/ModalBodyBase";
 export { default as ModalFooter } from "./components/Modal/ModalFooterBase";
@@ -75,7 +75,7 @@ export { default as FormGroup } from "./components/Forms/FormGroupBase";
 export { default as Input } from "./components/Forms/Inputs/InputBase";
 export { default as InputGroup } from "./components/Forms/Inputs/InputGroupBase";
 export { default as InputGroupText } from "./components/Forms/Inputs/InputGroupTextBase";
-export { default as Label } from "./components/Forms/Inputs/Label";
+export { default as Label } from "./components/Forms/Inputs/LabelBase";
 export { default as Media } from "./components/Forms/Inputs/MediaBase";
 export { default as Offcanvas } from "./components/Forms/Inputs/OffcanvasBase";
 export { default as OffcanvasBody } from "./components/Forms/Inputs/OffcanvasBodyBase";
@@ -94,8 +94,7 @@ export { default as Collapse } from "./components/Collapse/UncontrolledCollapseB
 export { default as Progress } from "./components/Progress/ProgressBase";
 export { default as Spinner } from "./components/Spinner/SpinnerBase";
 export { default as Placeholder } from "./components/Placeholder/PlaceholderBase";
-export { default as PlaceholderButton } from "./components/Placeholder/PlaceholderButton";
-
+export { default as PlaceholderButton } from "./components/Placeholder/PlaceholderButtonBase";
 
 export { default as FileDropzone } from "./components/Forms/FileDropZone/FileDropZone";
 export { default as ImsInputCheck } from "./components/Forms/ImsFormElements/ImsInputCheck";
@@ -110,7 +109,4 @@ export { default as ImsInputTime } from "./components/Forms/ImsFormElements/ImsI
 export { default as ImsTextEditor } from "./components/Forms/ImsFormElements/ImsTextEditor";
 export { default as RadioCheckbox } from "./components/Forms/RadioInput/ImsInputRadio";
 export { default as TextInput } from "./components/Forms/TextInput/InputBase";
-export { default as InputGroup } from "./components/Forms/TextInput/InputGroupBase";
-export { default as InputGroupText } from "./components/Forms/TextInput/InputGroupTextBase";
-
 export { default as TextEditor } from "./components/TextEditor/Index";
