@@ -1,5 +1,4 @@
 import { Col, FormGroup, Label } from "reactstrap";
-import Input from "../TextInput/InputBase";
 import InputGroup from "../TextInput/InputGroupBase";
 import InputGroupText from "../TextInput/InputGroupTextBase";
 
