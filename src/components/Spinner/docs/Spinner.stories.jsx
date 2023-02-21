@@ -1,4 +1,5 @@
 import Spinner from "../SpinnerBase";
+import Example from "../Example";
 
 export default {
   title: "components/Spinner",
@@ -16,3 +17,4 @@ All our spinner are customised from the default bootstrap spinner. Only the cust
 };
 
 export const Spinners = Spinner;
+export const ExampleWithText = Example;

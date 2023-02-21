@@ -9,7 +9,7 @@ let ProgressBaseProps = Object.assign({}, Progress.prototype.props);
  * @returns
  */
 const ProgressBase = (props) => {
-  return <Progress {...props}></Progress>;
+  return <Progress {...props}/>;
 };
 
 ProgressBase.propTypes = {

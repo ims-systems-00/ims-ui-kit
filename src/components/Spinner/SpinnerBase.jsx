@@ -9,7 +9,7 @@ let SpinnerBaseProps = Object.assign({}, Spinner.prototype.props);
  * */
 
 const SpinnerBase = ({ children, ...rest }) => {
-  return <Spinner {...rest}></Spinner>;
+  return <Spinner {...rest}/>;
 };
 
 SpinnerBase.propTypes = {
