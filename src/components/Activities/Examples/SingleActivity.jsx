@@ -1,7 +1,7 @@
 import Activity from "../ActivityBase";
-import Button from "components/Buttons/ButtonBase";
+import Button from "../../Buttons/ButtonBase";
 import React from "react";
-import TextEditor from "components/TextEditor/Index";
+import TextEditor from "../../TextEditor/Index";
 
 const SingleComment = ({}) => {
   const activity = (
