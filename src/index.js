@@ -111,3 +111,4 @@ export { default as ImsTextEditor } from "./components/Forms/ImsFormElements/Ims
 export { default as RadioCheckbox } from "./components/Forms/RadioInput/ImsInputRadio";
 export { default as TextInput } from "./components/Forms/TextInput/InputBase";
 export { default as TextEditor } from "./components/TextEditor/Index";
+export { default as Activity } from "./components/Activities/ActivityBase";
