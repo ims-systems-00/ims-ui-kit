@@ -74,7 +74,6 @@ export { default as FormText } from "./components/Forms/FormTextBase";
 export { default as FormGroup } from "./components/Forms/FormGroupBase";
 export { default as Input } from "./components/Forms/Inputs/InputBase";
 export { default as InputGroup } from "./components/Forms/Inputs/InputGroupBase";
-export { default as InputGroupAddon } from "./components/Forms/Inputs/InputGroupAddonBase";
 export { default as InputGroupText } from "./components/Forms/Inputs/InputGroupTextBase";
 export { default as Label } from "./components/Forms/Inputs/LabelBase";
 export { default as Media } from "./components/Forms/Inputs/MediaBase";
