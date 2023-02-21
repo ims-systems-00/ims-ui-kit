@@ -1,6 +1,5 @@
 import React from "react";
 import ImsTextEditorBase from "../ImsTextEditor";
-
 const ImsTextEditor = ({}) => {
   return (
     <>

@@ -85,7 +85,9 @@ export default function useTextEditor(config) {
     return handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
   }, []);
   useEffect(() => {
+    console.log(config.value);
     if (!config.value) {
+      console.log("reset", config.value);
       handleEditorStateChange(
         EditorState.createWithContent(ContentState.createFromText(""))
       );
