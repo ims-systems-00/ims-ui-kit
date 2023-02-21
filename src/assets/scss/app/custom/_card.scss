@@ -2,3 +2,18 @@
   margin-bottom: 20px;
   box-shadow: $box-shadow-md;
 }
+
+.comment:not(:first-child) {
+  .card-body {
+    min-height: 25px !important;
+  }
+}
+.comment:after {
+  content: "" !important;
+  position: absolute !important;
+  top: 62px !important;
+  left: -21px !important;
+  width: 3px !important;
+  height: calc(100% - 65px) !important;
+  background-color: $gray-300 !important;
+}
