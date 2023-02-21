@@ -1,7 +1,7 @@
-import Card from "components/Cards/CardBase";
-import CardBody from "components/Cards/CardBodyBase";
-import CardFooter from "components/Cards/CardFooterBase";
-import CardHeader from "components/Cards/CardHeaderBase";
+import Card from "../Cards/CardBase";
+import CardBody from "../Cards/CardBodyBase";
+import CardFooter from "../Cards/CardFooterBase";
+import CardHeader from "../Cards/CardHeaderBase";
 
 const ActivityBase = ({
   avatar,
