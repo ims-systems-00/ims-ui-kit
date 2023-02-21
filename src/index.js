@@ -74,6 +74,7 @@ export { default as FormText } from "./components/Forms/FormTextBase";
 export { default as FormGroup } from "./components/Forms/FormGroupBase";
 export { default as Input } from "./components/Forms/Inputs/InputBase";
 export { default as InputGroup } from "./components/Forms/Inputs/InputGroupBase";
+export { default as InputGroupAddon } from "./components/Forms/Inputs/InputGroupAddonBase";
 export { default as InputGroupText } from "./components/Forms/Inputs/InputGroupTextBase";
 export { default as Label } from "./components/Forms/Inputs/LabelBase";
 export { default as Media } from "./components/Forms/Inputs/MediaBase";
@@ -90,7 +91,8 @@ export { default as UncontrolledAlert } from "./components/Alert/UncontrolledAle
 export { default as Toast } from "./components/Toast/ToastBase";
 export { default as ToastBody } from "./components/Toast/ToastBodyBase";
 export { default as ToastHeader } from "./components/Toast/ToastHeaderBase";
-export { default as Collapse } from "./components/Collapse/UncontrolledCollapseBase";
+export { default as Collapse } from "./components/Collapse/CollapseBase";
+export { default as UncontrolledCollapse } from "./components/Collapse/UncontrolledCollapseBase";
 export { default as Progress } from "./components/Progress/ProgressBase";
 export { default as Spinner } from "./components/Spinner/SpinnerBase";
 export { default as Placeholder } from "./components/Placeholder/PlaceholderBase";

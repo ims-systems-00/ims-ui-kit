@@ -1,7 +1,7 @@
-import Collapse from "../Examples/DefaultCollase";
+import UncontrolledCollapse from "../Examples/DefaultCollapse";
 export default {
-  title: "components/Collapse",
-  component: Collapse,
+  title: "components/UncontrolledCollapse",
+  component: UncontrolledCollapse,
   parameters: {
     docs: {
       description: {
@@ -14,7 +14,7 @@ All our collapse are customised from the default bootstrap collapse. Only the cu
   },
 };
 
-export const Collapses = Collapse;
+export const Collapses = UncontrolledCollapse;
 
 Collapses.args = {};
 
