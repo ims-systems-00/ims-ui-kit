@@ -5,7 +5,7 @@ import { Table } from "reactstrap";
 
 const ImsSimpleTable = (props) => {
   return (
-    <Table striped hover>
+    <Table striped hover {...props}>
       <thead>
         <tr>
           {props.thead.map((prop, key) => {
