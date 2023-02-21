@@ -84,6 +84,13 @@ export default function useTextEditor(config) {
     }
     return handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
   }, []);
+  useEffect(() => {
+    if (!config.value) {
+      handleEditorStateChange(
+        EditorState.createWithContent(ContentState.createFromText(""))
+      );
+    }
+  }, [config.value]);
   const fileInput = useRef(null);
   const _openFilePrompt = () => fileInput.current.click();
   const _createAtomicBlockEntity = (command, data) => {
