@@ -280,3 +280,10 @@ code {
 .stripped-indicator-danger-4 {
   border-left: 3px solid $red-400 !important;
 }
+.fixed-layout {
+  background-image: url("../../../img/details-bg.svg");
+  background-size: cover;
+  background-position: top;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
