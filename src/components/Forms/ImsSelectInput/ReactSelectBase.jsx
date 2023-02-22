@@ -1,11 +1,18 @@
 import PropTypes from "prop-types";
 import ReactSelect from "react-select";
 
-const ReactSelectBase = ({ ...rest }) => {
+const ReactSelectBase = ({ onChange = () => {}, ...rest }) => {
   return (
     <ReactSelect
       classNamePrefix="react-select"
       className="react-select"
+      onChange={(selected) => {
+        rest.isMulti &&
+        selected.length &&
+        selected.find((o) => o.value === "all")
+          ? onChange(rest.options?.slice(1))
+          : onChange(selected || null);
+      }}
       {...rest}
     />
   );

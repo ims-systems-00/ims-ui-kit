@@ -9,6 +9,7 @@ export const ImsSelect = Template;
 ImsSelect.args = {
   defaultValue: { value: "chocolate", label: "Chocolate" },
   options: [
+    { value: "all", label: "Select all" },
     { value: "chocolate", label: "Chocolate" },
     { value: "strawberry", label: "Strawberry" },
     { value: "vanilla", label: "Vanilla" },
