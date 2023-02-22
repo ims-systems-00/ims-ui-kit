@@ -14,21 +14,21 @@ const ActivityBase = ({
 }) => {
   return (
     <Card className="bg-transparent border-0 shadow-none comment ms-5 ml-5 mb-0">
-      <CardHeader className="bg-transparent border-0 shadow-none">
+      <CardHeader className="bg-transparent border-0 shadow-none pb-0">
         <div className="d-flex">
           <div className="avatar-container">
             <img src={avatar} alt="avatar" className="avatar mt-1 ms-3 ml-3" />
           </div>
           <div>
             <p className="m-0">{name}</p>
-            {subHeading && <small className="mb-1">{subHeading}</small>}
+            {subHeading && <h6 className="mb-1 text-muted">{subHeading}</h6>}
           </div>
         </div>
       </CardHeader>
-      <CardBody className="bg-transparent border-0 shadow-none pt-2 ">
+      <CardBody className="bg-transparent border-0 shadow-none p-0 ">
         {activity}
       </CardBody>
-      <CardFooter className="bg-transparent border-0 shadow-none pt-0">
+      <CardFooter className="bg-transparent border-0 shadow-none pt-2">
         {footer}
       </CardFooter>
     </Card>
