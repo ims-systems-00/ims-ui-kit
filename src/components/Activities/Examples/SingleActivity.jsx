@@ -79,6 +79,11 @@ const SingleComment = ({}) => {
   return (
     <React.Fragment>
       <Activity
+        name={activity2}
+        subHeading="Created this repository 2 days ago"
+        avatar="https://fastly.picsum.photos/id/952/200/300.jpg?hmac=TxmAKrqJEDerU9Oz17usv5fHJ4ibYOWOvLK4Q3Z0ytc"
+      />
+      <Activity
         name="Abdullah Al Rafee"
         avatar="https://fastly.picsum.photos/id/19/200/300.jpg?hmac=znGSIxHtiP0JiLTKW6bT7HlcfagMutcHfeZyNkglQFM"
         subHeading="Created this repository 2 days ago"
@@ -94,11 +99,7 @@ const SingleComment = ({}) => {
           </React.Fragment>
         }
       />
-      <Activity
-        name={activity2}
-        subHeading="Created this repository 2 days ago"
-        avatar="https://fastly.picsum.photos/id/952/200/300.jpg?hmac=TxmAKrqJEDerU9Oz17usv5fHJ4ibYOWOvLK4Q3Z0ytc"
-      />
+
       <Activity
         name="Samin Israr Ravi"
         avatar="https://fastly.picsum.photos/id/853/200/300.jpg?hmac=-vUTO-GMdNHJbNIJrZtC4jsw0ybpHVgCrtWkg1DZugg"
