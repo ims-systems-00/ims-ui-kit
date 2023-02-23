@@ -3,12 +3,12 @@
   box-shadow: $box-shadow-md;
 }
 
-.comment:not(:first-child) {
+.activity {
   .card-body {
     min-height: 25px !important;
   }
 }
-.comment:after {
+.activity:after {
   content: "" !important;
   position: absolute !important;
   top: 62px !important;
