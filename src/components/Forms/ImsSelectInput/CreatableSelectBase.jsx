@@ -13,7 +13,6 @@ const CreatableSelectBase = ({
       <CreatableSelect
         className="react-select"
         classNamePrefix="react-select"
-        styles={style(rest)}
         formatCreateLabel={(inputValue) => formatCreateLabel(leftPhrase, inputValue)}
         {...rest}
       />

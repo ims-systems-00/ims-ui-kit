@@ -17,7 +17,6 @@ const ReactSearchBase = ({ loadOptions, ...rest }) => {
       <AsyncSelect
         className="react-select"
         classNamePrefix="react-select"
-        styles={style(rest)}
         loadOptions={loadOptions}
         onInputChange={onInputChange}
         menuIsOpen={menuIsOpen}
