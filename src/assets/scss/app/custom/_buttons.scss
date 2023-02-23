@@ -1,7 +1,11 @@
 .btn {
   cursor: pointer;
-  &:hover {
-    box-shadow: $box-shadow-sm;
+  &:hover,
+  &:focus:active {
+    box-shadow: $box-shadow-md;
+  }
+  &:focus {
+    box-shadow: none;
   }
   &:disabled,
   &.disabled,
@@ -27,6 +31,15 @@
       @include btn-color($type-dark);
     } @else {
       @include btn-color($value);
+    }
+  }
+}
+@each $color, $value in $theme-colors {
+  .btn-link.btn-link-#{$color}:hover {
+    @if $color == "light" {
+      @include btn-color(darken($type-dark, 10%));
+    } @else {
+      @include btn-color(darken($value, 10%));
     }
   }
 }
@@ -86,6 +99,15 @@
 
 .btn-outline-dark {
   @include btn-outline($type-dark);
+}
+.btn-link {
+  text-decoration: none;
+}
+.btn-link:hover {
+  text-decoration: none;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
 }
 .btn-icon {
   background-color: transparent !important;
