@@ -115,3 +115,4 @@ export { default as RadioCheckbox } from "./components/Forms/RadioInput/ImsInput
 export { default as TextInput } from "./components/Forms/TextInput/InputBase";
 export { default as TextEditor } from "./components/TextEditor/Index";
 export { default as Activity } from "./components/Activities/ActivityBase";
+export { default as ImsCard } from "./components/Cards/ImsCard";
