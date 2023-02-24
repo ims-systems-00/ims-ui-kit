@@ -30,3 +30,4 @@ export { default as ToggleButton } from "../Examples/BtnToggle";
 export { default as ButtonToolbar } from "../Examples/BtnToolbar";
 export { default as CloseButton } from "../Examples/CloseBtn";
 export { default as ButtonDropdown } from "../Examples/BtnDropDown";
+export {default as DisabledButton} from "../Examples/DisabledButton";
