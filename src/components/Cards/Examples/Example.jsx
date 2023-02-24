@@ -1,8 +1,8 @@
 import React from "react";
-import Card from "./CardBase";
-import CardHeader from "./CardHeaderBase";
-import CardBody from "./CardBodyBase";
-import CardFooter from "./CardFooterBase";
+import Card from "../CardBase";
+import CardHeader from "../CardHeaderBase";
+import CardBody from "../CardBodyBase";
+import CardFooter from "../CardFooterBase";
 
 const Examples = ({}) => {
   return (
