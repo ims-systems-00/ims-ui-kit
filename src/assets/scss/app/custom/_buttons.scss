@@ -59,6 +59,10 @@
 .btn-success {
   @include btn-bg($primary, $primary-dark);
   @include btn-border($primary);
+  &.disabled {
+    background-color: $primary;
+    border-color: $primary;
+  }
 }
 
 .btn-secondary,
@@ -66,18 +70,31 @@
   @include btn-bg($secondary-extra-light, $stroke-light);
   @include btn-color($type-medium);
   @include btn-border($stroke-regular);
+  &.disabled {
+    background-color: $secondary-extra-light;
+    color: $type-medium;
+    border-color: $stroke-regular;
+  }
 }
 
 .btn-danger,
 .btn-warning {
   @include btn-bg($danger, $danger);
   @include btn-border($danger);
+  &.disabled {
+    background-color: $danger;
+    border-color: $danger;
+  }
 }
 
 .btn-outline-primary,
 .btn-outline-info,
 .btn-outline-success {
   @include btn-outline($primary, $primary-dark);
+  &.disabled {
+    border-color: $primary;
+    color: $primary;
+  }
 }
 
 .btn-outline-secondary,
@@ -85,11 +102,19 @@
   @include btn-outline($stroke-regular, $stroke-light);
   @include btn-color($type-medium);
   @include btn-border($stroke-regular);
+  &.disabled {
+    border-color: $stroke-regular;
+    color: $type-medium;
+  }
 }
 
 .btn-outline-danger,
 .btn-outline-warning {
   @include btn-outline($danger);
+  &.disabled {
+    border-color: $danger;
+    color: $danger;
+  }
 }
 
 .btn-dark {
