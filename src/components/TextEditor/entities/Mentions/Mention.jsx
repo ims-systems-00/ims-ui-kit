@@ -59,13 +59,13 @@ export default function Mention(props) {
                 .toLowerCase()
             )
         )}
-        onSelect={({ name, profileImageUrl, _id }) => {
+        onSelect={({ name, profileImageSrc, _id }) => {
           let userName = "@" + name.split(" ").join("_");
           handleMentionSelect(
             props.contentState,
             props.blockKey,
             { start: props.start, end: props.end },
-            { mention: userName + " ", profileImageUrl, _id, name } // adding a trailing whitespace to create a smooth experience
+            { mention: userName + " ", profileImageSrc, _id, name } // adding a trailing whitespace to create a smooth experience
           );
           updateComputedPosForMentionSuggestions(hideSuggestions());
         }}

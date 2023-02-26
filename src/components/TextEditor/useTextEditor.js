@@ -88,9 +88,7 @@ export default function useTextEditor(config) {
     // console.log(config.value);
     if (!config.value) {
       // console.log("reset", config.value);
-      handleEditorStateChange(
-        EditorState.createWithContent(ContentState.createFromText(""))
-      );
+      handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
     }
   }, [config.value]);
   const fileInput = useRef(null);

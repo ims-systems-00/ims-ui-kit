@@ -18,12 +18,12 @@ const ImsTextEditor = ({}) => {
           {
             _id: "182973aSJLsddkhsd",
             name: "Reyad Hossain",
-            profileImageUrl: "https://picsum.photos/200/300",
+            profileImageSrc: "https://picsum.photos/200/300",
           },
           {
             _id: "182973sadadkhsd",
             name: "Samin israr",
-            profileImageUrl: "https://picsum.photos/200/300",
+            profileImageSrc: "https://picsum.photos/200/300",
           },
         ]}
         linkGeneratorFn={() => "https://picsum.photos/200/300"}
