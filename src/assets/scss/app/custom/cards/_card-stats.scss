@@ -39,6 +39,17 @@
     }
   }
 
+  .doc-info-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    i {
+      color: $white;
+      font-size: 2rem;
+      padding: 9px;
+    }
+  }
+
   .numbers {
     text-align: right;
     .card-title {
