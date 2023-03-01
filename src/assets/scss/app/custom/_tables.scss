@@ -2,4 +2,11 @@
   > thead {
     color: $type-dark !important;
   }
+  > tbody > tr {
+    cursor: pointer;
+  }
+}
+.table-striped > tbody > tr.table-active > * {
+  --bs-table-accent-bg: var(--bs-table-active-bg);
+  color: $table-active-color;
 }
