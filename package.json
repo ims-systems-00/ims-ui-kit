@@ -1,6 +1,6 @@
 {
   "name": "ims-ui-kit",
-  "version": "1.0.97",
+  "version": "1.0.98",
   "source": "src/index.js",
   "files": [
     "dist",
