@@ -2,4 +2,24 @@
   > thead {
     color: $type-dark !important;
   }
+  > tbody {
+    > tr:active {
+      > td {
+        color: $white !important;
+        background-color: $table-active-bg;
+      }
+    }
+  }
+}
+
+.table-active {
+  color: $white !important;
+  background-color: $table-active-bg;
+}
+
+.table-hover {
+  > tbody > tr:hover {
+    color: $table-hover-color;
+    background-color: $white;
+  }
 }
