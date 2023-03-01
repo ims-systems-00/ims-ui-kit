@@ -4,8 +4,14 @@ import classnames from "classnames";
 import { Table } from "reactstrap";
 
 const ImsSimpleTable = (props) => {
+  const [selectedRow, setSelectedRow] = React.useState(null);
+
+  const handleRowClick = (e) => {
+    const index = e.currentTarget.rowIndex - 1;
+    setSelectedRow(index);
+  };
   return (
-    <Table striped hover {...props}>
+    <Table hover {...props}>
       <thead>
         <tr>
           {props.thead.map((prop, key) => {
@@ -26,9 +32,13 @@ const ImsSimpleTable = (props) => {
         {props.tbody.map((prop, key) => {
           return (
             <tr
+              onClick={handleRowClick}
               className={classnames({
-                [prop.className]: prop.className !== undefined,
+                "table-active": selectedRow === key,
               })}
+              // className={classnames({
+              //   [prop.className]: prop.className !== undefined,
+              // })}
               key={key}
             >
               {prop.data.map((data, k) => {
