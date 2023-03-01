@@ -1,3 +1,9 @@
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 export const data = {
   thead: [
     {
@@ -26,6 +32,17 @@ export const data = {
           item: "12/02/24",
         },
       ],
+      actions: (
+        <UncontrolledDropdown direction="right">
+          <DropdownToggle>
+            <i className="fa-solid fa-home" />
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem>hello</DropdownItem>
+            <DropdownItem>world</DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+      ),
     },
     {
       data: [

@@ -5,7 +5,7 @@ import { data } from "./data.js";
 const TableInaCard = ({ children }) => {
   return (
     <Card>
-      <ImsSimpleTable thead={data.thead} tbody={data.tbody} />
+      <ImsSimpleTable active striped thead={data.thead} tbody={data.tbody} />
     </Card>
   );
 };

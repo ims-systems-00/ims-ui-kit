@@ -11,5 +11,8 @@
   color: $table-active-color;
 }
 tr.table-active {
-  // override here...
+  .dropdown > button {
+    color: $white;
+    background-color: transparent;
+  }
 }

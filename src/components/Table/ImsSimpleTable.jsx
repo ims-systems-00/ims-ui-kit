@@ -10,7 +10,7 @@ const ImsSimpleTable = ({ onRowClick = () => {}, active, ...props }) => {
     setSelectedRow(index);
   };
   return (
-    <Table striped hover {...props}>
+    <Table hover {...props}>
       <thead>
         <tr>
           {props.thead.map((prop, key) => {
