@@ -19,9 +19,7 @@
 
 .table-hover {
   > tbody > tr:hover {
-    background-color: $blue;
-    td {
-      color: $white !important;
-    }
+    color: $table-hover-color;
+    background-color: $white;
   }
 }
