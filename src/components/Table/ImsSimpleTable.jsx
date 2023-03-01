@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Table } from "reactstrap";
 
-const ImsSimpleTable = ({ onRowClick = () => {}, ...props }) => {
+const ImsSimpleTable = ({ onRowClick = () => {}, active, ...props }) => {
   const [selectedRow, setSelectedRow] = React.useState(null);
   const handleActiveRow = (e) => {
     const index = e.currentTarget.rowIndex - 1;
@@ -36,7 +36,8 @@ const ImsSimpleTable = ({ onRowClick = () => {}, ...props }) => {
                 onRowClick(e);
               }}
               className={classnames({
-                "table-active": selectedRow === key,
+                /** allow row active feature only if sepcified in the prop */
+                "table-active": active && selectedRow === key,
               })}
               key={key}
             >
@@ -84,6 +85,7 @@ ImsSimpleTable.propTypes = {
       actions: PropTypes.node,
     })
   ).isRequired,
+  active: PropTypes.bool,
 };
 
 export default ImsSimpleTable;

@@ -1,5 +1,5 @@
 import ImsSimpleTable from "../ImsSimpleTable";
-import data from "../data.json";
+import { data } from "../data.js";
 export default {
   title: "components/Table",
   component: ImsSimpleTable,

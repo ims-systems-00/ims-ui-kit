@@ -10,3 +10,6 @@
   --bs-table-accent-bg: var(--bs-table-active-bg);
   color: $table-active-color;
 }
+tr.table-active {
+  // override here...
+}

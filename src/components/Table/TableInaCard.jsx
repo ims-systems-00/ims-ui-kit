@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "reactstrap";
 import ImsSimpleTable from "./ImsSimpleTable";
-import data from "./data.json";
+import { data } from "./data.js";
 const TableInaCard = ({ children }) => {
   return (
     <Card>
