@@ -6,6 +6,7 @@ $guide-height: 75px;
   border-radius: $input-border-radius;
   border: 1px solid $input-border-color;
   transition: 0.1s ease;
+  color: $type-medium;
   .toolbar-separator {
     border-bottom: 1px solid $input-border-color;
   }
