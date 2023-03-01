@@ -5,8 +5,7 @@ import { Table } from "reactstrap";
 
 const ImsSimpleTable = ({ onRowClick = () => {}, ...props }) => {
   const [selectedRow, setSelectedRow] = React.useState(null);
-  const handleRowClick = (e) => {
-    onRowClick(e);
+  const handleActiveRow = (e) => {
     const index = e.currentTarget.rowIndex - 1;
     setSelectedRow(index);
   };
@@ -29,10 +28,13 @@ const ImsSimpleTable = ({ onRowClick = () => {}, ...props }) => {
         </tr>
       </thead>
       <tbody>
-        {props.tbody.map((prop, key) => {
+        {props.tbody.map(({ onRowClick = function () {}, ...prop }, key) => {
           return (
             <tr
-              onClick={handleRowClick}
+              onClick={(e) => {
+                handleActiveRow(e);
+                onRowClick(e);
+              }}
               className={classnames({
                 "table-active": selectedRow === key,
               })}
@@ -82,7 +84,6 @@ ImsSimpleTable.propTypes = {
       actions: PropTypes.node,
     })
   ).isRequired,
-  onRowClick: PropTypes.func,
 };
 
 export default ImsSimpleTable;
