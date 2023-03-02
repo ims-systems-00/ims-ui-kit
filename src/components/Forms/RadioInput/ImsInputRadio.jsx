@@ -14,7 +14,6 @@ let ImsInputRadioProps = Object.assign({}, Input.prototype.props);
 const ImsRadioCheckbox = ({
   label,
   mandatory = false,
-  onChange,
   unselected = false,
   ...rest
 }) => {
