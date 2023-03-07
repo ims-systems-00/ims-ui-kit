@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 let PaginationBaseProps = Object.assign(
   {
-    separated: false,
+    separated: PropTypes.bool,
   },
   Pagination.prototype.props
 );
@@ -15,12 +15,10 @@ let PaginationBaseProps = Object.assign(
  * @returns
  */
 
-const PaginationBase = ({ children, separated, ...rest }) => {
+const PaginationBase = ({ children, ...rest }) => {
   return (
     <Pagination
-      className={classNames(rest.className, {
-        "pagination-separated": separated,
-      })}
+      className={classNames(`pagination-separated ${rest.className}`, {})}
       {...rest}
     >
       {children}

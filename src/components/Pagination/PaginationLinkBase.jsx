@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import Button from "components/Buttons/ButtonBase";
 import React from "react";
 import { PaginationLink } from "reactstrap";
 
@@ -9,13 +10,12 @@ let PaginationLinkBaseProps = Object.assign({}, PaginationLink.prototype.props);
  * @returns
  */
 
-const PaginationLinkBase = ({ children, link, ...rest }) => {
-  if (link) {
-    //in case of react router, we need to send Link tag as children
-    return <span className="page-link">{children}</span>;
-  } else {
-    return <PaginationLink {...rest}>{children}</PaginationLink>;
-  }
+const PaginationLinkBase = ({ children, ...rest }) => {
+  return (
+    <Button className={classNames(`page-link ${rest.className}`, {})} {...rest}>
+      {children}
+    </Button>
+  );
 };
 
 PaginationLinkBase.propTypes = {

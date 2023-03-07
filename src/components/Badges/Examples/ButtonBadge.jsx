@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../Buttons/BtnBase";
+import Button from "../../Buttons/ButtonBase";
 import Badge from "../BadgeBase";
 
 const ButtonBadge = ({}) => {

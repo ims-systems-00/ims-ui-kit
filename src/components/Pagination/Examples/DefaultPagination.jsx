@@ -7,41 +7,25 @@ const DefaultPagination = ({}) => {
   return (
     <Pagination>
       <PaginationItem>
-        <PaginationLink first href="#"></PaginationLink>
-      </PaginationItem>
-      <PaginationItem>
-        <PaginationLink previous href="#">
-          <span aria-hidden="true" className="visually-hidden">
-            {"<"}
-          </span>
-          <span class="">Prev</span>
-        </PaginationLink>
+        <PaginationLink>Prev</PaginationLink>
       </PaginationItem>
       <PaginationItem active>
-        <PaginationLink href="#">1</PaginationLink>
+        <PaginationLink>1</PaginationLink>
       </PaginationItem>
       <PaginationItem>
-        <PaginationLink href="#">2</PaginationLink>
+        <PaginationLink>2</PaginationLink>
       </PaginationItem>
       <PaginationItem>
-        <PaginationLink href="#">3</PaginationLink>
+        <PaginationLink>3</PaginationLink>
       </PaginationItem>
       <PaginationItem>
-        <PaginationLink href="#">4</PaginationLink>
+        <PaginationLink>4</PaginationLink>
       </PaginationItem>
       <PaginationItem>
-        <PaginationLink href="#">5</PaginationLink>
+        <PaginationLink>5</PaginationLink>
       </PaginationItem>
       <PaginationItem>
-        <PaginationLink next href="#">
-          <span aria-hidden="true" className="visually-hidden">
-            {">"}
-          </span>
-          <span class="">Next</span>
-        </PaginationLink>
-      </PaginationItem>
-      <PaginationItem>
-        <PaginationLink href="#" last />
+        <PaginationLink>Next</PaginationLink>
       </PaginationItem>
     </Pagination>
   );

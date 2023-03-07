@@ -18,7 +18,4 @@ export const Paginations = DefaultPagination;
 
 Paginations.args = {};
 
-export { default as SeparatedPagination } from "../Examples/SeparatedPagination";
 export { default as PaginationWithIcon } from "../Examples/PaginationWithIcon";
-export { default as IndividualPagination } from "../Examples/IndividualPagination";
-export { default as RouterPagination } from "../Examples/RouterPagination";
