@@ -16,3 +16,27 @@ tr.table-active {
     background-color: transparent;
   }
 }
+.table-linear {
+  &.table {
+    width: 100%;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    th,
+    td {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      transition: 0.3s ease;
+      flex: 150 0 auto;
+      min-width: 0px;
+      max-width: 250px;
+      vertical-align: middle;
+      &:last-child {
+        text-align: right;
+        overflow: visible;
+      }
+    }
+  }
+}

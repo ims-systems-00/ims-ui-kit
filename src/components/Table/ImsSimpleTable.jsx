@@ -3,14 +3,25 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Table } from "reactstrap";
 
-const ImsSimpleTable = ({ onRowClick = () => {}, active, ...props }) => {
+const ImsSimpleTable = ({
+  onRowClick = () => {},
+  active,
+  linear,
+  ...props
+}) => {
   const [selectedRow, setSelectedRow] = React.useState(null);
   const handleActiveRow = (e) => {
     const index = e.currentTarget.rowIndex - 1;
     setSelectedRow(index);
   };
   return (
-    <Table hover {...props}>
+    <Table
+      hover
+      {...props}
+      className={classnames(props.className, {
+        "table-linear": linear,
+      })}
+    >
       <thead>
         <tr>
           {props.thead.map((prop, key) => {
