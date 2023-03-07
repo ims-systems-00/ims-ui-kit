@@ -79,7 +79,7 @@
 
 .btn-danger,
 .btn-warning {
-  @include btn-bg($danger, $danger);
+  @include btn-bg($danger, $danger-dark);
   @include btn-border($danger);
   &.disabled {
     background-color: $danger;

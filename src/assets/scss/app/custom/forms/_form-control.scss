@@ -38,3 +38,22 @@ textarea.form-control {
     border-radius: 0;
   }
 }
+.ims-input.ims-input-focused {
+  border: 2px solid $primary;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.ims-input.ims-input-focused.ims-input-error,
+.ims-input.ims-input-error {
+  border: 2px solid $danger;
+}
+.ims-input.ims-input-focused.ims-input-success,
+.ims-input.ims-input-success {
+  border: 2px solid $success;
+}
+
+.ims-text-input.form-control:focus {
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
