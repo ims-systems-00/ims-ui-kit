@@ -19,7 +19,7 @@ const ImsSimpleTable = ({
       hover
       {...props}
       className={classnames(props.className, {
-        "table-linear": true,
+        "table-linear": linear,
       })}
     >
       <thead>

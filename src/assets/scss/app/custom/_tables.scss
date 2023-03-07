@@ -35,6 +35,7 @@ tr.table-active {
       vertical-align: middle;
       &:last-child {
         text-align: right;
+        overflow: visible;
       }
     }
   }
