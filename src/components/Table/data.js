@@ -18,15 +18,19 @@ export const data = {
       text: "Date",
       className: "",
     },
+    {
+      text: "Actions",
+      className: "",
+    },
   ],
   tbody: [
     {
       data: [
         {
-          item: "Employee managemeent policy",
+          item: "Employee managemeent policy Employee managemeent policy Employee managemeent policy Employee managemeent policy",
         },
         {
-          item: "Reyad Hossain",
+          item: "Reyad Hossain Employee managemeent policy",
         },
         {
           item: "12/02/24",
@@ -56,6 +60,17 @@ export const data = {
           item: "12/02/24",
         },
       ],
+      actions: (
+        <UncontrolledDropdown direction="right">
+          <DropdownToggle>
+            <i className="fa-solid fa-home" />
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem>hello</DropdownItem>
+            <DropdownItem>world</DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+      ),
     },
     {
       data: [
@@ -69,6 +84,17 @@ export const data = {
           item: "12/02/24",
         },
       ],
+      actions: (
+        <UncontrolledDropdown direction="right">
+          <DropdownToggle>
+            <i className="fa-solid fa-home" />
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem>hello</DropdownItem>
+            <DropdownItem>world</DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+      ),
     },
     {
       data: [
@@ -82,6 +108,17 @@ export const data = {
           item: "12/02/24",
         },
       ],
+      actions: (
+        <UncontrolledDropdown direction="right">
+          <DropdownToggle>
+            <i className="fa-solid fa-home" />
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem>hello</DropdownItem>
+            <DropdownItem>world</DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+      ),
     },
   ],
 };
