@@ -130,7 +130,30 @@ export default function useTextEditor(config) {
     const contentState = editorState.getCurrentContent();
     setEditorState(editorState);
     // console.log(JSON.stringify(convertToRaw(contentState)));
-    config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
+    //check if contentState has text or entity or block data to decide if we should send data to parent component or not to avoid unnecessary re-rendering
+    // config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
+    if (
+      convertToRaw(contentState).blocks.every(
+        (block) => block.text.trim() === ""
+      ) &&
+      Object.values(convertToRaw(contentState).entityMap).length === 0
+    ) {
+      config.onDataStructureChange({
+        blocks: [
+          {
+            key: "9gm3s",
+            text: "",
+            type: "unstyled",
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [],
+            data: {},
+          },
+        ],
+      });
+    } else {
+      config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
+    }
   };
   const handleKeyCommand = (command, editorState) => {
     let newState = RichUtils.handleKeyCommand(editorState, command);

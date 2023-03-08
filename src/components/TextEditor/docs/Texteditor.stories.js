@@ -279,3 +279,5 @@ ReadOnlyMode.args = {
     },
   }),
 };
+
+export { default as RichTextExample } from "../Examples/TextEditorExample";
