@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import defaultAvatar from "assets/img/default-avatar.png";
+// import defaultAvatar from "assets/img/default-avatar.png";
 export default function Entry({
   name,
   profileImageSrc,
@@ -13,7 +13,13 @@ export default function Entry({
   return (
     <div className="d-flex align-items-center">
       <div className="avatar mb-1">
-        <img src={profileImageSrc || defaultAvatar} alt={name} />
+        <img
+          src={
+            profileImageSrc ||
+            "https://assets.imssystems.tech/images/system/avatar-placeholder.jpg"
+          }
+          alt={name}
+        />
       </div>
       <div onClick={handleSelect} className="btn btn-link p-2 mb-1">
         {name}

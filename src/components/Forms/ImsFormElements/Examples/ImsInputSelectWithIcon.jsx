@@ -1,4 +1,4 @@
-import options from "components/Forms/ImsSelectInput/Examples/options";
+// import options from "components/Forms/ImsSelectInput/Examples/options";
 import ImsInputSelectWithIcon from "../ImsInputSelectWithIcon";
 
 const ImsInputSelectWithIconDemo = ({}) => {
@@ -8,7 +8,11 @@ const ImsInputSelectWithIconDemo = ({}) => {
         label="Label Text"
         icon="fa-solid fa-home"
         onChange={(e) => console.log(e)}
-        options={options}
+        options={[
+          { value: "1", label: "Option 1" },
+          { value: "2", label: "Option 2" },
+          { value: "3", label: "Option 3" },
+        ]}
         defaultOpt="Select Option"
       />
     </>

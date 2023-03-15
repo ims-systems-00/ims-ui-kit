@@ -22,7 +22,7 @@ $guide-height: 75px;
   }
   &.editor-disabled {
     border: none;
-    cursor: not-allowed;
+    cursor: text;
     min-height: 0 !important;
   }
   .alignment-container {

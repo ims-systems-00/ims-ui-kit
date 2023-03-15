@@ -1,5 +1,5 @@
 import React from "react";
-import noImagePlaceHolder from "assets/img/default-avatar.png";
+// import noImagePlaceHolder from "assets/img/default-avatar.png";
 export default function usePreRenderProcessing(config) {
   let [link, setLink] = React.useState(config.src);
   React.useEffect(() => {
@@ -7,7 +7,7 @@ export default function usePreRenderProcessing(config) {
       /**
        * we are trying to generate the link with some meta data as a second step
        * if src is not provided. if the data can't generate link it will render
-       * the empty placeholder. this feature is usefull if someone wants to generate 
+       * the empty placeholder. this feature is usefull if someone wants to generate
        * image src/link based on runtime thorugh a backend server.
        */
       if (!config.src) {
@@ -21,7 +21,9 @@ export default function usePreRenderProcessing(config) {
             );
           setLink(link);
         } catch (err) {
-          setLink(noImagePlaceHolder);
+          setLink(
+            "https://assets.imssystems.tech/images/system/avatar-placeholder.jpg"
+          );
           console.log(err);
         }
       }
