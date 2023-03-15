@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import Button from "components/Buttons/ButtonBase";
+import Button from "../Buttons/ButtonBase";
 import React from "react";
 import { PaginationLink } from "reactstrap";
 
