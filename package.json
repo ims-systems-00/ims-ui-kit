@@ -3,8 +3,7 @@
   "version": "1.0.111",
   "source": "src/index.js",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "./dist/ims-ui-kit.cjs",
   "module": "./dist/ims-ui-kit.module.js",
