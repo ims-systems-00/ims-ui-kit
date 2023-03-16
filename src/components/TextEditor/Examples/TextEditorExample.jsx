@@ -1,5 +1,6 @@
 import React from "react";
 import TextEditor from "../Index";
+import Button from "../../Buttons/ButtonBase";
 
 const TextEditorExample = () => {
   const [data, setData] = React.useState({
@@ -38,6 +39,14 @@ const TextEditorExample = () => {
           },
         ]}
       />
+      <Button
+        disabled={!data.value}
+        onClick={() => {
+          console.log("data", data.value);
+        }}
+      >
+        Send
+      </Button>
     </div>
   );
 };
