@@ -138,19 +138,21 @@ export default function useTextEditor(config) {
       ) &&
       Object.values(convertToRaw(contentState).entityMap).length === 0
     ) {
-      config.onDataStructureChange({
-        blocks: [
-          {
-            key: "9gm3s",
-            text: "",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
-          },
-        ],
-      });
+      config.onDataStructureChange(
+        JSON.stringify({
+          blocks: [
+            {
+              key: "9gm3s",
+              text: "",
+              type: "unstyled",
+              depth: 0,
+              inlineStyleRanges: [],
+              entityRanges: [],
+              data: {},
+            },
+          ],
+        })
+      );
     } else {
       config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
     }
