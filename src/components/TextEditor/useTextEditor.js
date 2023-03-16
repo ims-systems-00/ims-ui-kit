@@ -138,21 +138,26 @@ export default function useTextEditor(config) {
       ) &&
       Object.values(convertToRaw(contentState).entityMap).length === 0
     ) {
-      config.onDataStructureChange({
-        blocks: [
-          {
-            key: "9gm3s",
-            text: "",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
-          },
-        ],
-      });
+      config.onDataStructureChange("");
     } else {
       config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
+      //this will set cursor to the end of the editor
+      setTimeout(() => {
+        const selection = editorState.getSelection();
+        const newSelection = selection.merge({
+          anchorKey: selection.getAnchorKey(),
+          anchorOffset: selection.getAnchorOffset(),
+          focusKey: selection.getFocusKey(),
+          focusOffset: selection.getFocusOffset(),
+          isBackward: false,
+          hasFocus: true,
+        });
+        const newEditorState = EditorState.forceSelection(
+          editorState,
+          newSelection
+        );
+        setEditorState(newEditorState);
+      }, 0);
     }
   };
   const handleKeyCommand = (command, editorState) => {
