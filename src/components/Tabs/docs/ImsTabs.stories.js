@@ -1,6 +1,6 @@
-import Nav from "../NavBase";
-import NavItem from "../NavItemBase";
-import NavLink from "../NavLinkBase";
+import Nav from "../../Nav/NavBase";
+import NavItem from "../../Nav/NavItemBase";
+import NavLink from "../../Nav/NavLinkBase";
 export default {
   title: "components/Tabs",
   component: Nav,
