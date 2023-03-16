@@ -138,7 +138,23 @@ export default function useTextEditor(config) {
       ) &&
       Object.values(convertToRaw(contentState).entityMap).length === 0
     ) {
-      config.onDataStructureChange("");
+      config.onDataStructureChange(" ");
+      /**
+       * {
+        blocks: [
+          {
+            key: "9gm3s",
+            text: "",
+            type: "unstyled",
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [],
+            data: {},
+          },
+        ],
+        entityMap: {},
+      }
+       */
     } else {
       config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
       //this will set cursor to the end of the editor
