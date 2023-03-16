@@ -39,7 +39,14 @@ const TextEditorExample = () => {
           },
         ]}
       />
-      {/* <Button>Send</Button> */}
+      <Button
+        disabled={!data.value}
+        onClick={() => {
+          console.log("data", data.value);
+        }}
+      >
+        Send
+      </Button>
     </div>
   );
 };
