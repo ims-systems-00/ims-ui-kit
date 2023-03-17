@@ -129,36 +129,36 @@ export default function useTextEditor(config) {
   const handleEditorStateChange = (editorState) => {
     const contentState = editorState.getCurrentContent();
     setEditorState(editorState);
-    // console.log(JSON.stringify(convertToRaw(contentState)));
-    //check if contentState has text or entity or block data to decide if we should send data to parent component or not to avoid unnecessary re-rendering
-    // config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
-    if (
-      convertToRaw(contentState).blocks.every(
-        (block) => block.text.trim() === ""
-      ) &&
-      Object.values(convertToRaw(contentState).entityMap).length === 0
-    ) {
-      config.onDataStructureChange("");
-    } else {
-      config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
-      //this will set cursor to the end of the editor
-      setTimeout(() => {
-        const selection = editorState.getSelection();
-        const newSelection = selection.merge({
-          anchorKey: selection.getAnchorKey(),
-          anchorOffset: selection.getAnchorOffset(),
-          focusKey: selection.getFocusKey(),
-          focusOffset: selection.getFocusOffset(),
-          isBackward: false,
-          hasFocus: true,
-        });
-        const newEditorState = EditorState.forceSelection(
-          editorState,
-          newSelection
-        );
-        setEditorState(newEditorState);
-      }, 0);
-    }
+    console.log(JSON.stringify(convertToRaw(contentState)));
+    // check if contentState has text or entity or block data to decide if we should send data to parent component or not to avoid unnecessary re-rendering
+    config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
+    // if (
+    //   convertToRaw(contentState).blocks.every(
+    //     (block) => block.text.trim() === ""
+    //   ) &&
+    //   Object.values(convertToRaw(contentState).entityMap).length === 0
+    // ) {
+    //   config.onDataStructureChange("");
+    // } else {
+    //   config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
+    //   //this will set cursor to the end of the editor
+    //   setTimeout(() => {
+    //     const selection = editorState.getSelection();
+    //     const newSelection = selection.merge({
+    //       anchorKey: selection.getAnchorKey(),
+    //       anchorOffset: selection.getAnchorOffset(),
+    //       focusKey: selection.getFocusKey(),
+    //       focusOffset: selection.getFocusOffset(),
+    //       isBackward: false,
+    //       hasFocus: true,
+    //     });
+    //     const newEditorState = EditorState.forceSelection(
+    //       editorState,
+    //       newSelection
+    //     );
+    //     setEditorState(newEditorState);
+    //   }, 0);
+    // }
   };
   const handleKeyCommand = (command, editorState) => {
     let newState = RichUtils.handleKeyCommand(editorState, command);
