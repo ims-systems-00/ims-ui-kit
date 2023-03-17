@@ -40,7 +40,7 @@ const TextEditorExample = () => {
         ]}
       />
       <Button
-        disabled={!data.value}
+        disabled={data.value && !data.value.trim()}
         onClick={() => {
           console.log("data", data.value);
         }}
