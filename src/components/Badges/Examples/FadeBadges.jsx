@@ -8,8 +8,6 @@ const FadeBadges = ({}) => {
       <br /> <br />
       <Badge fade="info">Info</Badge>
       <br /> <br />
-      <Badge>Default </Badge>
-      <br /> <br />
       <Badge fade="secondary">Secondary</Badge>
       <br /> <br />
       <Badge fade="success">Success</Badge>
@@ -17,8 +15,6 @@ const FadeBadges = ({}) => {
       <Badge fade="danger">Danger</Badge>
       <br /> <br />
       <Badge fade="warning">Warning</Badge>
-      <br /> <br />
-      <Badge fade="light">Light</Badge>
       <br /> <br />
       <Badge fade="dark">Dark</Badge>
       <br /> <br />
