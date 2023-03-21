@@ -74,7 +74,7 @@
   },
   "scripts": {
     "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react && node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss dist/css/app.min.css --output-style compressed",
-    "test": "env-cmd -f ./.env.local react-scripts test",
+    "test": "react-scripts test",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook",
     "eject": "react-scripts eject",
