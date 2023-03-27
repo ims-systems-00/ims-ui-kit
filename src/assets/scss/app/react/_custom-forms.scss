@@ -7,7 +7,7 @@
       height: 22px;
       width: 45px;
       border: none;
-      background-image: url("../../../img/darken-night-sky-full-of-stars-fantasy-animation-made-of-magical-sparkly-light-particles-flickering-on-a-purple-blue-gradient-background_bajacpz7x_thumbnail-full01.png");
+
       background-position: center center;
       background-size: cover;
     }
@@ -20,7 +20,6 @@
   }
   .custom-control-input:checked {
     ~ .custom-control-label::before {
-      background-image: url("../../../img/night-sky-full-of-stars-fantasy-animation-made-of-magical-sparkly-light-particles-flickering-on-a-purple-blue-gradient-background_bajacpz7x_thumbnail-full01.png");
     }
     ~ .custom-control-label::after {
       background-color: $white;
