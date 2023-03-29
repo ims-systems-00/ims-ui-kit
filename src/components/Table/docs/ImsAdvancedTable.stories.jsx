@@ -6,6 +6,7 @@ import {
   UncontrolledDropdown,
 } from "reactstrap";
 import { ImsInputCheck } from "../../../index";
+import Badge from "../../Badges/BadgeBase";
 import ImsAdvancedTable from "../AdvancedTable/Index";
 export default {
   title: "components/AdvancedTable",
@@ -32,6 +33,7 @@ Default.args = {
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
+      status: <Badge fade="info">Accepted</Badge>,
       actions: (
         <div>
           <UncontrolledDropdown direction="right">
@@ -61,6 +63,12 @@ Default.args = {
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
+      status: (
+        <Badge fade="danger">
+          <i className="fa-solid fa-ban me-1" />
+          Open
+        </Badge>
+      ),
       actions: (
         <>
           <UncontrolledDropdown>
@@ -90,6 +98,7 @@ Default.args = {
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
+      status: <Badge fade="success">Completed</Badge>,
       actions: (
         <>
           <UncontrolledDropdown>
@@ -119,6 +128,7 @@ Default.args = {
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
+      status: <Badge fade="pending">Pending</Badge>,
       actions: (
         <>
           <UncontrolledDropdown>
@@ -161,6 +171,10 @@ Default.args = {
     {
       Header: "Title",
       accessor: "title",
+    },
+    {
+      Header: "Status",
+      accessor: "status",
     },
     {
       Header: "Actions",
