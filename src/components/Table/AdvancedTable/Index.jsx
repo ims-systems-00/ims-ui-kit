@@ -70,7 +70,7 @@ function Table({
                   <th
                     {...column.getHeaderProps(column.getSortByToggleProps())}
                     className={classnames("rt-th rt-resizable-header", {
-                      "-cursor-pointer": headerGroup.headers.length - 1 !== key,
+                      "-cursor-pointer": column.canSort,
                       "-sort-asc": column.isSorted && !column.isSortedDesc,
                       "-sort-desc": column.isSorted && column.isSortedDesc,
                     })}

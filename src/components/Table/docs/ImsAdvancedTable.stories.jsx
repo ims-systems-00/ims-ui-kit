@@ -5,6 +5,7 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from "reactstrap";
+import { ImsInputCheck } from "../../../index";
 import ImsAdvancedTable from "../AdvancedTable/Index";
 export default {
   title: "components/AdvancedTable",
@@ -23,14 +24,54 @@ export const Default = Template.bind({});
 Default.args = {
   data: [
     {
+      checkbox: (
+        <>
+          <ImsInputCheck />
+        </>
+      ),
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
       actions: (
-        <>
+        <div>
           <UncontrolledDropdown direction="right">
-            <DropdownToggle>
-              <i className="fa-solid fa-home" />
+            <DropdownToggle
+              className="rounded-circle p-0 "
+              style={{
+                width: "30px",
+                height: "30px",
+              }}
+            >
+              <i class="fa-solid fa-ellipsis" />
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>hello</DropdownItem>
+              <DropdownItem>world</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </div>
+      ),
+    },
+    {
+      checkbox: (
+        <>
+          <ImsInputCheck />
+        </>
+      ),
+      id: "asd8917239asdh",
+      ID: "INC-23",
+      title: "Hello world this is me",
+      actions: (
+        <>
+          <UncontrolledDropdown>
+            <DropdownToggle
+              className="rounded-circle p-0 "
+              style={{
+                width: "30px",
+                height: "30px",
+              }}
+            >
+              <i class="fa-solid fa-ellipsis" />
             </DropdownToggle>
             <DropdownMenu>
               <DropdownItem>hello</DropdownItem>
@@ -41,14 +82,25 @@ Default.args = {
       ),
     },
     {
+      checkbox: (
+        <>
+          <ImsInputCheck />
+        </>
+      ),
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
       actions: (
         <>
           <UncontrolledDropdown>
-            <DropdownToggle>
-              <i className="fa-solid fa-home" />
+            <DropdownToggle
+              className="rounded-circle p-0 "
+              style={{
+                width: "30px",
+                height: "30px",
+              }}
+            >
+              <i class="fa-solid fa-ellipsis" />
             </DropdownToggle>
             <DropdownMenu>
               <DropdownItem>hello</DropdownItem>
@@ -59,32 +111,25 @@ Default.args = {
       ),
     },
     {
-      id: "asd8917239asdh",
-      ID: "INC-23",
-      title: "Hello world this is me",
-      actions: (
+      checkbox: (
         <>
-          <UncontrolledDropdown>
-            <DropdownToggle>
-              <i className="fa-solid fa-home" />
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem>hello</DropdownItem>
-              <DropdownItem>world</DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
+          <ImsInputCheck />
         </>
       ),
-    },
-    {
       id: "asd8917239asdh",
       ID: "INC-23",
       title: "Hello world this is me",
       actions: (
         <>
           <UncontrolledDropdown>
-            <DropdownToggle>
-              <i className="fa-solid fa-home" />
+            <DropdownToggle
+              className="rounded-circle p-0 "
+              style={{
+                width: "30px",
+                height: "30px",
+              }}
+            >
+              <i class="fa-solid fa-ellipsis" />
             </DropdownToggle>
             <DropdownMenu>
               <DropdownItem>hello</DropdownItem>
@@ -97,7 +142,20 @@ Default.args = {
   ],
   columns: [
     {
-      Header: "Reference",
+      Header: (
+        <>
+          <ImsInputCheck />
+        </>
+      ),
+      accessor: "checkbox",
+      width: 25,
+      sortable: false,
+      filterable: false,
+      disableSortBy: true,
+      disableFilters: true,
+    },
+    {
+      Header: "REFERENCE",
       accessor: "ID",
     },
     {
@@ -109,6 +167,8 @@ Default.args = {
       accessor: "actions",
       sortable: false,
       filterable: false,
+      disableSortBy: true,
+      disableFilters: true,
     },
   ],
   /**
@@ -122,7 +182,7 @@ Default.args = {
        * you can check props.values to implement custom logic for
        * apllying custom classes
        */
-      "stripped-indicator-info-4": true,
+      // "stripped-indicator-info-4": true,
     }),
   }),
 };
