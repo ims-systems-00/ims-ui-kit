@@ -3,9 +3,19 @@
   background-color: $bg;
 
   &[href] {
-   
   }
-  .tagsinput-remove-link{
-      color: $white;
+  .tagsinput-remove-link {
+    color: $white;
   }
+}
+
+@mixin badge-outline-variant($color) {
+  border: 1px solid $color !important;
+  background-color: transparent !important;
+  color: $color !important;
+}
+
+@mixin badge-fade-variant($color, $bg) {
+  background-color: $bg !important;
+  color: $color !important;
 }
