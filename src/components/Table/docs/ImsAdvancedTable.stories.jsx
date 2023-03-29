@@ -23,8 +23,24 @@ export const Default = Template.bind({});
 Default.args = {
   data: [
     {
+      // checkbox: (
+      //   <>
+      //     <input type="checkbox" />
+      //   </>
+      // ),
       id: "asd8917239asdh",
-      ID: "INC-23",
+      ID: (
+        <>
+          <input type="checkbox" />
+          <span
+            style={{
+              marginLeft: "20px",
+            }}
+          >
+            INC-23
+          </span>
+        </>
+      ),
       title: "Hello world this is me",
       actions: (
         <>
@@ -41,8 +57,24 @@ Default.args = {
       ),
     },
     {
+      // checkbox: (
+      //   <>
+      //     <input type="checkbox" />
+      //   </>
+      // ),
       id: "asd8917239asdh",
-      ID: "INC-23",
+      ID: (
+        <>
+          <input type="checkbox" />
+          <span
+            style={{
+              marginLeft: "20px",
+            }}
+          >
+            INC-23
+          </span>
+        </>
+      ),
       title: "Hello world this is me",
       actions: (
         <>
@@ -59,8 +91,24 @@ Default.args = {
       ),
     },
     {
+      // checkbox: (
+      //   <>
+      //     <input type="checkbox" />
+      //   </>
+      // ),
       id: "asd8917239asdh",
-      ID: "INC-23",
+      ID: (
+        <>
+          <input type="checkbox" />
+          <span
+            style={{
+              marginLeft: "20px",
+            }}
+          >
+            INC-23
+          </span>
+        </>
+      ),
       title: "Hello world this is me",
       actions: (
         <>
@@ -77,8 +125,24 @@ Default.args = {
       ),
     },
     {
+      // checkbox: (
+      //   <>
+      //     <input type="checkbox" />
+      //   </>
+      // ),
       id: "asd8917239asdh",
-      ID: "INC-23",
+      ID: (
+        <>
+          <input type="checkbox" />
+          <span
+            style={{
+              marginLeft: "20px",
+            }}
+          >
+            INC-23
+          </span>
+        </>
+      ),
       title: "Hello world this is me",
       actions: (
         <>
@@ -96,8 +160,42 @@ Default.args = {
     },
   ],
   columns: [
+    // {
+    //   Header: () => (
+    //     <input
+    //       style={{
+    //         cursor: "pointer",
+    //       }}
+    //       className="ms-1"
+    //       type="checkbox"
+    //     />
+    //   ),
+    //   accessor: "checkbox",
+    //   sortable: false,
+    //   filterable: false,
+    //   disableSortBy: true,
+    //   disableFilters: true,
+    //   width: 20,
+    // },
     {
-      Header: "Reference",
+      Header: () => (
+        <div className="d-flex align-items-center">
+          <input
+            style={{
+              cursor: "pointer",
+            }}
+            className="ms-1 "
+            type="checkbox"
+          />{" "}
+          <span
+            style={{
+              marginLeft: "20px",
+            }}
+          >
+            REFERENCE
+          </span>
+        </div>
+      ),
       accessor: "ID",
     },
     {
@@ -109,6 +207,8 @@ Default.args = {
       accessor: "actions",
       sortable: false,
       filterable: false,
+      disableSortBy: true,
+      disableFilters: true,
     },
   ],
   /**
