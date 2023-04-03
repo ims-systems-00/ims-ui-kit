@@ -37,13 +37,7 @@ Default.args = {
       actions: (
         <div>
           <UncontrolledDropdown direction="right">
-            <DropdownToggle
-              className="rounded-circle p-0 "
-              style={{
-                width: "30px",
-                height: "30px",
-              }}
-            >
+            <DropdownToggle className="rounded-circle p-0 table-actions">
               <i class="fa-solid fa-ellipsis" />
             </DropdownToggle>
             <DropdownMenu>
@@ -72,13 +66,7 @@ Default.args = {
       actions: (
         <>
           <UncontrolledDropdown>
-            <DropdownToggle
-              className="rounded-circle p-0 "
-              style={{
-                width: "30px",
-                height: "30px",
-              }}
-            >
+            <DropdownToggle className="rounded-circle p-0 table-actions">
               <i class="fa-solid fa-ellipsis" />
             </DropdownToggle>
             <DropdownMenu>
@@ -102,13 +90,7 @@ Default.args = {
       actions: (
         <>
           <UncontrolledDropdown>
-            <DropdownToggle
-              className="rounded-circle p-0 "
-              style={{
-                width: "30px",
-                height: "30px",
-              }}
-            >
+            <DropdownToggle className="rounded-circle p-0 table-actions">
               <i class="fa-solid fa-ellipsis" />
             </DropdownToggle>
             <DropdownMenu>
@@ -132,13 +114,7 @@ Default.args = {
       actions: (
         <>
           <UncontrolledDropdown>
-            <DropdownToggle
-              className="rounded-circle p-0 "
-              style={{
-                width: "30px",
-                height: "30px",
-              }}
-            >
+            <DropdownToggle className="rounded-circle p-0 table-actions">
               <i class="fa-solid fa-ellipsis" />
             </DropdownToggle>
             <DropdownMenu>
