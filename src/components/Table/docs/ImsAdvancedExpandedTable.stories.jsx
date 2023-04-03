@@ -7,10 +7,10 @@ import {
 } from "reactstrap";
 import { ImsInputCheck } from "../../../index";
 import Badge from "../../Badges/BadgeBase";
-import ImsVisualTable from "../VisualTable/Index";
+import ImsExpandedTable from "../AdvancedExpandedTable/Index";
 export default {
-  title: "components/ImsVisualTable",
-  component: ImsVisualTable,
+  title: "components/AdvanceExpandedTable",
+  component: ImsExpandedTable,
   parameters: {
     docs: {
       description: {
@@ -20,7 +20,7 @@ export default {
   },
 };
 
-const Template = (args) => <ImsVisualTable {...args} />;
+const Template = (args) => <ImsExpandedTable {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   data: [
