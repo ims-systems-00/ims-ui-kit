@@ -1,0 +1,46 @@
+.visual-table {
+  .ReactTable .rt-thead .rt-tr {
+    text-align: center;
+    min-height: 3.1rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    background-color: $secondary-extra-light;
+  }
+  .ReactTable .rt-thead .rt-resizable-header {
+    overflow: hidden;
+    color: $gray-600;
+    font-weight: 400 !important;
+  }
+  .ReactTable .rt-tbody {
+    color: $type-dark;
+  }
+  .ReactTable .rt-tbody .rt-tr,
+  .ReactTable .rt-thead.-filters .rt-tr {
+    border-bottom: 1px solid $stroke-regular;
+    border-top: none;
+    min-height: 86px;
+    // border-color: rgba(255, 255, 255, 0.1);
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+  .ReactTable.-striped .rt-tr.-odd {
+    background: transparent !important;
+  }
+  .ReactTable .rt-thead .rt-th {
+    border-bottom-width: 1px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 0;
+    input[type="checkbox"] {
+      height: 14px;
+      width: 14px;
+      position: relative;
+      top: 6px;
+      left: 2px;
+    }
+  }
+  i {
+    padding-top: 5px;
+  }
+}
