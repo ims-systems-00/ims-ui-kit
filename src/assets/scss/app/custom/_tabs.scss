@@ -32,7 +32,8 @@
 .nav.nav-tabs.nav-tabs-outline {
   .nav-item {
     .nav-link {
-      border-bottom: 1px solid $secondary;
+      // border-bottom: 1px solid $secondary;
+      padding: 1px 5px;
     }
     .nav-link:hover {
       border-bottom: 1px solid $primary;
@@ -43,14 +44,14 @@
   }
   .nav-item:not(:first-child),
   .nav-item:not(:last-child) {
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
   .nav-item:first-child {
-    margin-left: 12px;
+    margin-left: 4px;
   }
   .nav-item:last-child {
-    margin-right: 12px;
+    margin-right: 4px;
   }
 }
 .nav.nav-tabs.nav-tabs-primary,
