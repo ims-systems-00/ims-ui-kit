@@ -3,7 +3,7 @@ import PanelTab from "../PanelTab";
 import PanelTabs from "../PanelTabs";
 import PanelWindow from "../PanelWindow";
 
-const TabsExample = () => {
+const TabsExample = ({}) => {
   const [tabValue, setTabValue] = React.useState(1);
 
   const handleChange = (event, newTabValue) => {
