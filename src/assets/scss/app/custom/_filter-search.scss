@@ -7,7 +7,7 @@
   input[type="text"]:focus {
     width: 256px;
   }
-  .search-container {
+  .table-search-container {
     display: flex;
     border: 1px solid $stroke-regular;
     border-radius: 4px;
@@ -29,17 +29,17 @@
     .filter-search {
       margin-bottom: 10px;
     }
-    .filter.create {
+    .filter.create-filer {
       flex: 1;
     }
-    .create {
+    .create-filer {
       flex: 1;
       padding-right: 0 !important;
     }
     .create-filter-wrapper {
       gap: 10px !important;
     }
-    .create button {
+    .create-filer button {
       width: 100%;
     }
   }

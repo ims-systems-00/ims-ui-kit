@@ -1,11 +1,13 @@
 import classNames from "classnames";
+import React from "react";
 import {
+  Button,
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
+  ImsInputCheck,
   UncontrolledDropdown,
-} from "reactstrap";
-import { ImsInputCheck } from "../../../index";
+} from "../../../index";
 import Badge from "../../Badges/BadgeBase";
 import ImsExpandedTable from "../AdvancedExpandedTable/Index";
 export default {
@@ -175,4 +177,28 @@ Default.args = {
       // "stripped-indicator-info-4": true,
     }),
   }),
+  filters: ["All Units", "Internal", "External"],
+  handleFilter: (e) => {
+    console.log(e);
+  },
+  handleSearch: (e) => {
+    console.log(e);
+  },
+  title: "Hardware Mangment",
+  createBtn: (
+    <React.Fragment>
+      <Button
+        color="secondary"
+        outline
+        size="md"
+        className="shadow-sm--hover"
+        onClick={() => {
+          alert("Create A New Ticket");
+        }}
+      >
+        <i class="fa-solid fa-edit pe-2 py-0" />
+        Create
+      </Button>
+    </React.Fragment>
+  ),
 };

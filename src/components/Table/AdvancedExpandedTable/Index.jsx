@@ -17,6 +17,7 @@ function Table({
   renderRowSubComponent,
   rowProps = () => ({}),
   className = "-highlight -striped ",
+  handleCreate = () => {},
   handleSearch = () => {},
   handleFilter = () => {},
   handlePagination = () => {},
@@ -31,6 +32,7 @@ function Table({
     totalPages: 2,
     totalResults: 17,
   },
+  ...props
 }) {
   const {
     getTableProps,
@@ -61,6 +63,8 @@ function Table({
               filters={filters}
               onFilter={(filter) => handleFilter(filter)}
               onSearch={(search) => handleSearch(search)}
+              onClick={() => handleCreate()}
+              {...props}
             />
           </div>
           <table {...getTableProps()} className="rt-table ">
