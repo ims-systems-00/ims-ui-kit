@@ -116,3 +116,6 @@ export { default as TextInput } from "./components/Forms/TextInput/InputBase";
 export { default as TextEditor } from "./components/TextEditor/Index";
 export { default as Activity } from "./components/Activities/ActivityBase";
 export { default as ImsCard } from "./components/Cards/ImsCard";
+export {default as PanelWindow} from "./components/Panel/PanelWindow"
+export {default as PanelTab} from "./components/Panel/PanelTab"
+export {default as PanelTabs} from "./components/Panel/PanelTabs"
