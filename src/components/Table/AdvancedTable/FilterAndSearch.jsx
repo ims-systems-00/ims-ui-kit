@@ -1,11 +1,12 @@
 import React from "react";
-import Select from "react-select";
 import {
   Button,
   Col,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
   Input,
-  InputGroup,
-  InputGroupAddon,
   Row,
 } from "reactstrap";
 import useDebounce from "./useDebounce";
@@ -17,44 +18,88 @@ const FilterAndSearch = ({
 }) => {
   let [searchString, setSearchString] = React.useState("");
   const debouncedSearchString = useDebounce(searchString, 500);
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const toggle = () => setDropdownOpen(!dropdownOpen);
   React.useEffect(() => {
     onSearch({ value: { clientSearch: debouncedSearchString } });
   }, [debouncedSearchString]);
   return (
-    <Row>
-      <Col md="3">
-        <Select
-          className="react-select default m-0 w-100"
-          classNamePrefix="react-select"
-          name="singleSelect"
-          onChange={(value) => {
-            onFilter(value);
-          }}
-          defaultValue={filters.find((item) => item.default)}
-          options={filters}
-          placeholder={"Select filter"}
-        />
-      </Col>
-      <Col md="6">
-        <InputGroup>
-          <Input
-            onChange={(e) => setSearchString(e.currentTarget.value.toString())}
-            placeholder="Search item"
-          />
-          {/* <InputGroupAddon addonType="append">
-            <Button
-              type="button"
-              className="btn-simple text-info m-0 p-2"
-              onClick={(e) =>
-                onSearch({ value: { clientSearch: searchString } })
-              }
-            >
-              <i className="tim-icons icon-zoom-split " />
-            </Button>
-          </InputGroupAddon> */}
-        </InputGroup>
-      </Col>
-    </Row>
+    <div className="filter-search">
+      <Row className="d-lg-flex justify-around align-items-center px-lg-4 py-4">
+        <Col md="4" sm="12">
+          <h3>Hardware</h3>
+        </Col>
+        <Col md="8" sm="12">
+          <div className="d-flex justify-content-lg-end justify-content-md-end action-container">
+            <div className="pe-3">
+              <Button
+                color="secondary"
+                outline
+                size="md"
+                className="shadow-sm--hover"
+              >
+                <i class="fa-solid fa-bolt pe-2 py-0" />
+                Create
+              </Button>
+            </div>
+            <div className="pe-3">
+              <Dropdown
+                onChange={(value) => {
+                  onFilter(value);
+                }}
+                defaultValue={filters.find((item) => item.default)}
+                isOpen={dropdownOpen}
+                toggle={toggle}
+              >
+                <DropdownToggle color="secondary" outline size="md">
+                  <i class="fa-solid fa-bolt pe-2 py-0 shadow-sm--hover" />
+                  Filter
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem>
+                    <Button
+                      size="sm"
+                      className="btn-icon d-flex align-items-center"
+                    >
+                      <span className="fw-bold">All Units</span>
+                    </Button>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <Button
+                      size="sm"
+                      className="btn-icon d-flex align-items-center"
+                    >
+                      <span className="fw-bold">Internal</span>
+                    </Button>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <Button
+                      size="sm"
+                      className="btn-icon d-flex align-items-center"
+                    >
+                      <span className="fw-bold">External</span>
+                    </Button>
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+            <div className="search-container shadow-sm--hover">
+              <span>
+                <i className="tim-icons icon-zoom-split" />
+              </span>
+              <Input
+                onChange={(e) =>
+                  setSearchString(e.currentTarget.value.toString())
+                }
+                placeholder="Search"
+                className="border-0"
+                type="text"
+              ></Input>
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </div>
   );
 };
 
