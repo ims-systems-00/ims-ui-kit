@@ -29,5 +29,18 @@
     .filter-search {
       margin-bottom: 10px;
     }
+    .filter.create {
+      flex: 1;
+    }
+    .create {
+      flex: 1;
+      padding-right: 0 !important;
+    }
+    .create-filter-wrapper {
+      gap: 10px !important;
+    }
+    .create button {
+      width: 100%;
+    }
   }
 }

@@ -31,57 +31,64 @@ const FilterAndSearch = ({
         </Col>
         <Col md="8" sm="12">
           <div className="d-flex justify-content-lg-end justify-content-md-end action-container">
-            <div className="pe-3">
-              <Button
-                color="secondary"
-                outline
-                size="md"
-                className="shadow-sm--hover"
-              >
-                <i class="fa-solid fa-bolt pe-2 py-0" />
-                Create
-              </Button>
-            </div>
-            <div className="pe-3">
-              <Dropdown
-                onChange={(value) => {
-                  onFilter(value);
-                }}
-                defaultValue={filters.find((item) => item.default)}
-                isOpen={dropdownOpen}
-                toggle={toggle}
-              >
-                <DropdownToggle color="secondary" outline size="md">
-                  <i class="fa-solid fa-bolt pe-2 py-0 shadow-sm--hover" />
-                  Filter
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>
-                    <Button
-                      size="sm"
-                      className="btn-icon d-flex align-items-center"
-                    >
-                      <span className="fw-bold">All Units</span>
-                    </Button>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <Button
-                      size="sm"
-                      className="btn-icon d-flex align-items-center"
-                    >
-                      <span className="fw-bold">Internal</span>
-                    </Button>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <Button
-                      size="sm"
-                      className="btn-icon d-flex align-items-center"
-                    >
-                      <span className="fw-bold">External</span>
-                    </Button>
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
+            <div className="d-flex create-filter-wrapper">
+              <div className="pe-3 create">
+                <Button
+                  color="secondary"
+                  outline
+                  size="md"
+                  className="shadow-sm--hover"
+                >
+                  <i class="fa-solid fa-bolt pe-2 py-0" />
+                  Create
+                </Button>
+              </div>
+              <div className="pe-3 create">
+                <Dropdown
+                  onChange={(value) => {
+                    onFilter(value);
+                  }}
+                  defaultValue={filters.find((item) => item.default)}
+                  isOpen={dropdownOpen}
+                  toggle={toggle}
+                >
+                  <DropdownToggle
+                    className="filter"
+                    color="secondary"
+                    outline
+                    size="md"
+                  >
+                    <i class="fa-solid fa-bolt pe-2 py-0 shadow-sm--hover" />
+                    Filter
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem>
+                      <Button
+                        size="sm"
+                        className="btn-icon d-flex align-items-center"
+                      >
+                        <span className="fw-bold">All Units</span>
+                      </Button>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <Button
+                        size="sm"
+                        className="btn-icon d-flex align-items-center"
+                      >
+                        <span className="fw-bold">Internal</span>
+                      </Button>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <Button
+                        size="sm"
+                        className="btn-icon d-flex align-items-center"
+                      >
+                        <span className="fw-bold">External</span>
+                      </Button>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
             </div>
             <div className="search-container shadow-sm--hover">
               <span>
