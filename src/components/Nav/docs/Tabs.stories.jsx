@@ -12,7 +12,9 @@ DefaultTab.args = {
   children: (
     <>
       <NavItem>
-        <NavLink active href="#">Tab 1</NavLink>
+        <NavLink active href="#">
+          Tab 1
+        </NavLink>
       </NavItem>
       <NavItem>
         <NavLink href="#">Tab 2</NavLink>
@@ -24,5 +26,5 @@ DefaultTab.args = {
   ),
 };
 
-export { default as FullTabs } from "../Examples/FullTabs";
-export { default as IndividualTabs } from "../Examples/IndividualTabs";
+export { default as Tabs } from "../Examples/TabsVariants";
+export { default as TabPanel } from "../Examples/TabsPanelExample";
