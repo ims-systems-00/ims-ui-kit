@@ -2,12 +2,9 @@
   display: none; /* Safari and Chrome */
 }
 
-.nav.nav-tabs.nav-tabs-full.nav-tabs-full-1,
-.nav.nav-tabs.nav-tabs-full.nav-tabs-full-2,
-.nav.nav-tabs.nav-tabs-full.nav-tabs-full-3,
-.nav.nav-tabs.nav-tabs-individual.nav-tabs-individual-1,
-.nav.nav-tabs.nav-tabs-individual.nav-tabs-individual-2,
-.nav.nav-tabs.nav-tabs-individual.nav-tabs-individual-3 {
+.nav.nav-tabs.nav-tabs-primary,
+.nav.nav-tabs.nav-tabs-secondary,
+.nav.nav-tabs.nav-tabs-outline {
   border: none;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -32,11 +29,11 @@
   }
 }
 
-.nav.nav-tabs.nav-tabs-full.nav-tabs-full-1,
-.nav.nav-tabs.nav-tabs-individual.nav-tabs-individual-1 {
+.nav.nav-tabs.nav-tabs-outline {
   .nav-item {
     .nav-link {
-      border-bottom: 1px solid $secondary;
+      // border-bottom: 1px solid $secondary;
+      padding: 1px 5px;
     }
     .nav-link:hover {
       border-bottom: 1px solid $primary;
@@ -47,20 +44,18 @@
   }
   .nav-item:not(:first-child),
   .nav-item:not(:last-child) {
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
   .nav-item:first-child {
-    margin-left: 12px;
+    margin-left: 4px;
   }
   .nav-item:last-child {
-    margin-right: 12px;
+    margin-right: 4px;
   }
 }
-.nav.nav-tabs.nav-tabs-full.nav-tabs-full-2,
-.nav.nav-tabs.nav-tabs-full.nav-tabs-full-3,
-.nav.nav-tabs.nav-tabs-individual.nav-tabs-individual-2,
-.nav.nav-tabs.nav-tabs-individual.nav-tabs-individual-3 {
+.nav.nav-tabs.nav-tabs-primary,
+.nav.nav-tabs.nav-tabs-secondary {
   background-color: $secondary-extra-light;
   padding: 4px;
   height: 53px;
@@ -95,10 +90,8 @@
     margin-right: 5px;
   }
 }
-.nav.nav-tabs.nav-tabs-full.nav-tabs-full-3,
-.nav.nav-tabs.nav-tabs-individual.nav-tabs-individual-3 {
+.nav.nav-tabs.nav-tabs-secondary {
   .nav-item {
-    
     .nav-link:hover {
       box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
     }
@@ -106,10 +99,4 @@
       box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
     }
   }
-}
-.nav.nav-tabs.nav-tabs-individual.nav-tabs-individual-2,
-.nav.nav-tabs.nav-tabs-individual.nav-tabs-individual-3 {
-  background-color: transparent;
-  border: none;
-  overflow: visible;
 }

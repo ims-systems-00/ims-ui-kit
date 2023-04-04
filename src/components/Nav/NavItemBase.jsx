@@ -1,19 +1,19 @@
-import React from "react";
 import { NavItem } from "reactstrap";
 
-let NavItemBaseProps = Object.assign({}, NavItem.prototype.props);
+let NavItemProps = Object.assign({}, NavItem.prototype.props);
 
 /**
  *
- * @param {NavItemBaseProps} props
+ * @param {NavItemProps} props
  * @returns
  */
+
 const NavItemBase = ({ children, ...rest }) => {
   return <NavItem {...rest}>{children}</NavItem>;
 };
 
+export default NavItemBase;
+
 NavItemBase.propTypes = {
   ...(NavItem.propTypes && NavItem.propTypes),
 };
-
-export default NavItemBase;
