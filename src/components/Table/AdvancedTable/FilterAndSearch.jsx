@@ -24,8 +24,8 @@ const FilterAndSearch = ({
     onSearch({ value: { clientSearch: debouncedSearchString } });
   }, [debouncedSearchString]);
   return (
-    <div className="filter-search">
-      <Row className="d-lg-flex justify-around align-items-center px-lg-4 py-4">
+    <React.Fragment>
+      <Row className="filter-search d-lg-flex justify-around align-items-center px-lg-4 py-4">
         <Col md="4" sm="12">
           <h3>Hardware</h3>
         </Col>
@@ -39,7 +39,7 @@ const FilterAndSearch = ({
                   size="md"
                   className="shadow-sm--hover"
                 >
-                  <i class="fa-solid fa-bolt pe-2 py-0" />
+                  <i class="fa-solid fa-edit pe-2 py-0" />
                   Create
                 </Button>
               </div>
@@ -58,7 +58,7 @@ const FilterAndSearch = ({
                     outline
                     size="md"
                   >
-                    <i class="fa-solid fa-bolt pe-2 py-0 shadow-sm--hover" />
+                    <i class="fa-solid fa-filter pe-2 py-0 shadow-sm--hover" />
                     Filter
                   </DropdownToggle>
                   <DropdownMenu>
@@ -91,9 +91,7 @@ const FilterAndSearch = ({
               </div>
             </div>
             <div className="search-container shadow-sm--hover">
-              <span>
-                <i className="tim-icons icon-zoom-split" />
-              </span>
+              <i className="fa-solid fa-search" />
               <Input
                 onChange={(e) =>
                   setSearchString(e.currentTarget.value.toString())
@@ -106,7 +104,7 @@ const FilterAndSearch = ({
           </div>
         </Col>
       </Row>
-    </div>
+    </React.Fragment>
   );
 };
 
