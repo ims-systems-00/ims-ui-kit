@@ -49,7 +49,7 @@ const FilterAndSearch = ({
                       outline
                       size="md"
                     >
-                      <i class="fa-solid fa-filter me-2 p-0 shadow-sm--hover" />
+                      <i class="fa-solid fa-filter me-2 mr-2 p-0 shadow-sm--hover" />
                       {filterLabel ? filterLabel : "Filter"}
                     </DropdownToggle>
                     <DropdownMenu>
