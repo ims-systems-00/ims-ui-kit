@@ -10,6 +10,7 @@ import {
 } from "../../../index";
 import Badge from "../../Badges/BadgeBase";
 import ImsExpandedTable from "../AdvancedExpandedTable/Index";
+import filters from "../filters";
 export default {
   title: "components/AdvanceExpandedTable",
   component: ImsExpandedTable,
@@ -177,7 +178,7 @@ Default.args = {
       // "stripped-indicator-info-4": true,
     }),
   }),
-  filters: ["All Units", "Internal", "External"],
+  filters: filters,
   handleFilter: (e) => {
     console.log(e);
   },
