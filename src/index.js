@@ -28,7 +28,7 @@ export { default as AccordionBody } from "./components/Accordion/AccordionBodyBa
 export { default as AccordionHeader } from "./components/Accordion/AccordionHeaderBase";
 export { default as AccordionItem } from "./components/Accordion/AccordionItemBase";
 export { default as UncontrolledAccordion } from "./components/Accordion/UncontrolledAccordionBase";
-export { default as Badge } from "./components/Badge/BadgeBase";
+export { default as Badge } from "./components/Badges/BadgeBase";
 export { default as Card } from "./components/Cards/CardBase";
 export { default as CardBody } from "./components/Cards/CardBodyBase";
 export { default as CardColumns } from "./components/Cards/CardColumnsBase";
