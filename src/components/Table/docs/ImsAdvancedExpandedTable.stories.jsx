@@ -62,7 +62,7 @@ Default.args = {
       title: "Hello world this is me",
       status: (
         <Badge fade="danger">
-          <i className="fa-solid fa-ban me-1" />
+          <i className="fa-solid fa-ban me-1 p-0" />
           Open
         </Badge>
       ),
