@@ -17,6 +17,8 @@ const FilterAndSearch = ({
   filters = [],
   createBtn = null,
   title = "",
+  filterable = true,
+  searchable = true,
 }) => {
   let [filterLabel, setFilterLabel] = React.useState("");
   let [searchString, setSearchString] = React.useState("");
@@ -36,36 +38,38 @@ const FilterAndSearch = ({
           <div className="d-flex justify-content-lg-end justify-content-md-end action-container">
             <div className="d-flex create-filter-wrapper">
               {createBtn && (
-                <div className="me-3 mr-3 create-filer">{createBtn}</div>
+                <div className="me-md-3 mr-md-3 create-filer">{createBtn}</div>
               )}
-              <div className="me-3 mr-3 create-filer">
-                <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                  <DropdownToggle
-                    className="filter"
-                    color="secondary"
-                    outline
-                    size="md"
-                  >
-                    <i class="fa-solid fa-filter me-2 mr-3  shadow-sm--hover" />
-                    {filterLabel ? filterLabel : "Filter"}
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    {filters &&
-                      filters.length > 0 &&
-                      filters.map((filter) => (
-                        <DropdownItem
-                          onClick={() => {
-                            setFilterLabel(filter.label);
-                            onFilter(filter);
-                          }}
-                          className="d-flex align-items-center fw-bold my-2"
-                        >
-                          {filter.label}
-                        </DropdownItem>
-                      ))}
-                  </DropdownMenu>
-                </Dropdown>
-              </div>
+              {filterable && (
+                <div className="me-md-3 mr-md-3 create-filer">
+                  <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                    <DropdownToggle
+                      className="filter"
+                      color="secondary"
+                      outline
+                      size="md"
+                    >
+                      <i class="fa-solid fa-filter me-2 p-0 shadow-sm--hover" />
+                      {filterLabel ? filterLabel : "Filter"}
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      {filters &&
+                        filters.length > 0 &&
+                        filters.map((filter) => (
+                          <DropdownItem
+                            onClick={() => {
+                              setFilterLabel(filter.label);
+                              onFilter(filter);
+                            }}
+                            className="d-flex align-items-center fw-bold my-2"
+                          >
+                            {filter.label}
+                          </DropdownItem>
+                        ))}
+                    </DropdownMenu>
+                  </Dropdown>
+                </div>
+              )}
             </div>
             <div className="table-search-container shadow-sm--hover">
               <i className="fa-solid fa-search my-auto ms-3 ml-3 p-0" />

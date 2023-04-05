@@ -197,7 +197,7 @@ Default.args = {
           alert("Create A New Ticket");
         }}
       >
-        <i class="fa-solid fa-edit pe-2 py-0" />
+        <i class="fa-solid fa-edit me-2 p-0" />
         Create
       </Button>
     </React.Fragment>
