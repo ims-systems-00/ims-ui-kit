@@ -39,14 +39,7 @@ const FilterAndSearch = ({
                 <div className="me-3 mr-3 create-filer">{createBtn}</div>
               )}
               <div className="me-3 mr-3 create-filer">
-                <Dropdown
-                  onChange={(value) => {
-                    onFilter(value);
-                  }}
-                  defaultValue={filters.find((item) => item.default)}
-                  isOpen={dropdownOpen}
-                  toggle={toggle}
-                >
+                <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                   <DropdownToggle
                     className="filter"
                     color="secondary"
