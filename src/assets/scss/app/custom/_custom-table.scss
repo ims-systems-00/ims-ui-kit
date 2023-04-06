@@ -7,10 +7,10 @@
     background-color: $secondary-extra-light;
   }
   .ReactTable .rt-td {
-    font-size: $font-size-lg !important;
+    font-size: 1rem !important;
   }
   .ReactTable .rt-td .badge {
-    font-size: $font-size-sm !important;
+    font-size: 0.75rem !important;
     font-weight: $font-weight-normal !important;
   }
   .ReactTable .rt-thead .rt-resizable-header {
@@ -39,7 +39,7 @@
   }
   .ReactTable .rt-thead .rt-th {
     border-bottom-width: 1px;
-    font-size: $font-size-sm !important;
+    font-size: 12px;
     text-transform: uppercase;
     font-weight: 700;
     border: 0;
