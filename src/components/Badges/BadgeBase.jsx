@@ -20,7 +20,6 @@ let BadgeBaseProps = Object.assign(
  */
 
 const BadgeBase = ({ children, color, outline, fade, ...rest }) => {
-  console.log(outline);
   return (
     <Badge
       color={color}
