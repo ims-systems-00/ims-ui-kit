@@ -9,7 +9,7 @@ import {
   useSortBy,
   useTable,
 } from "react-table";
-import FilterAndSearch from "../AdvancedTable/FilterAndSearch";
+import FilterAndSearch from "./FilterAndSearch";
 import Pagination from "../AdvancedTable/Pagination";
 function Table({
   columns,
