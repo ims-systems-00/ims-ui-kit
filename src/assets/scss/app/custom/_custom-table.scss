@@ -19,7 +19,6 @@
     border-bottom: 1px solid $stroke-regular;
     border-top: none;
     min-height: 86px;
-    // border-color: rgba(255, 255, 255, 0.1);
     padding-left: 1.3rem;
     padding-right: 1.3rem;
   }
@@ -33,7 +32,7 @@
   .ReactTable .rt-thead .rt-th {
     border-bottom-width: 1px;
     font-size: 12px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 700;
     border: 0;
     input[type="checkbox"] {

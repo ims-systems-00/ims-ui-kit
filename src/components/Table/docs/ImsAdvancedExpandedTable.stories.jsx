@@ -144,7 +144,7 @@ Default.args = {
       disableFilters: true,
     },
     {
-      Header: "REFERENCE",
+      Header: "Reference",
       accessor: "ID",
     },
     {

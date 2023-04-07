@@ -1,17 +1,17 @@
 .filter-search {
   input[type="text"] {
-    width: 80px;
+    width: 5.625rem;
     background-color: transparent;
     transition: width 0.4s ease-in-out;
   }
   input[type="text"]:focus {
-    width: 256px;
+    width: 16rem;
   }
   .table-search-container {
     display: flex;
     border: 1px solid $stroke-regular;
     border-radius: 4px;
-    min-width: 20px;
+    min-width: 1.25px;
   }
 }
 
