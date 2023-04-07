@@ -129,7 +129,6 @@ export default function useTextEditor(config) {
   const handleEditorStateChange = (editorState) => {
     const contentState = editorState.getCurrentContent();
     setEditorState(editorState);
-    console.log(JSON.stringify(convertToRaw(contentState)));
     // check if contentState has text or entity or block data to decide if we should send data to parent component or not to avoid unnecessary re-rendering
     config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
     // if (
