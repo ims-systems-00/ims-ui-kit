@@ -11,7 +11,6 @@ const ImsInputTime = ({}) => {
         label="Label Text"
         onChange={(e) => {
           setTime(e.currentTarget.value);
-          console.log(e.currentTarget.value);
         }}
       />
     </>

@@ -57,11 +57,11 @@ export const handleCreateLink = (editorState) => {
         editorStateWithTextLinkEntity,
         newSelectionState
       );
-      console.log(
-        newSelectionState.getAnchorOffset(),
-        "editor selection anchor offset after link insert:",
-        editorStateWithNewSelection.getSelection().getAnchorOffset()
-      );
+      // console.log(
+      //   newSelectionState.getAnchorOffset(),
+      //   "editor selection anchor offset after link insert:",
+      //   editorStateWithNewSelection.getSelection().getAnchorOffset()
+      // );
       return editorStateWithNewSelection;
     }
   }

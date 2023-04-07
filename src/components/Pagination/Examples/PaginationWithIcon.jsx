@@ -38,7 +38,7 @@ const SeparatedPagination = ({}) => {
         <PaginationItem>
           <PaginationLink
             onClick={() => {
-              console.log("Clicked Previous Page");
+              // console.log("Clicked Previous Page");
             }}
           >
             «
@@ -47,7 +47,7 @@ const SeparatedPagination = ({}) => {
         <PaginationItem active>
           <PaginationLink
             onClick={() => {
-              console.log("Clicked Page 1");
+              // console.log("Clicked Page 1");
             }}
           >
             1
@@ -56,7 +56,7 @@ const SeparatedPagination = ({}) => {
         <PaginationItem>
           <PaginationLink
             onClick={() => {
-              console.log("Clicked Page 2");
+              // console.log("Clicked Page 2");
             }}
           >
             2
@@ -65,7 +65,7 @@ const SeparatedPagination = ({}) => {
         <PaginationItem>
           <PaginationLink
             onClick={() => {
-              console.log("Clicked Page 3");
+              // console.log("Clicked Page 3");
             }}
           >
             3
@@ -74,7 +74,7 @@ const SeparatedPagination = ({}) => {
         <PaginationItem>
           <PaginationLink
             onClick={() => {
-              console.log("Clicked Page 4");
+              // console.log("Clicked Page 4");
             }}
           >
             4
@@ -83,7 +83,7 @@ const SeparatedPagination = ({}) => {
         <PaginationItem>
           <PaginationLink
             onClick={() => {
-              console.log("Clicked Page 5");
+              // console.log("Clicked Page 5");
             }}
           >
             5
@@ -92,7 +92,7 @@ const SeparatedPagination = ({}) => {
         <PaginationItem>
           <PaginationLink
             onClick={() => {
-              console.log("Clicked Next Page");
+              // console.log("Clicked Next Page");
             }}
           >
             »

@@ -13,7 +13,7 @@ const TextEditorExample = () => {
     },
     errors: {},
   });
-  console.log("data", data);
+  // console.log("data", data);
   return (
     <div>
       <TextEditor
@@ -42,7 +42,7 @@ const TextEditorExample = () => {
       <Button
         disabled={data.value && !data.value.trim()}
         onClick={() => {
-          console.log("data", data.value);
+          // console.log("data", data.value);
         }}
       >
         Send
