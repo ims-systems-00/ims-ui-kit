@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   Col,
   Dropdown,
   DropdownItem,
@@ -14,11 +13,11 @@ import useDebounce from "./useDebounce";
 const FilterAndSearch = ({
   onFilter = () => {},
   onSearch = () => {},
+  isSearchable,
+  isFilterable,
   filters = [],
-  createBtn = null,
+  tableToolbar,
   title = "",
-  filterable = true,
-  searchable = true,
 }) => {
   let [filterLabel, setFilterLabel] = React.useState("");
   let [searchString, setSearchString] = React.useState("");
@@ -32,15 +31,17 @@ const FilterAndSearch = ({
     <React.Fragment>
       <Row className="filter-search d-lg-flex justify-around align-items-center px-lg-4 my-4">
         <Col md="4" sm="12">
-          <h3>{title}</h3>
+          {title && <h3>{title}</h3>}
         </Col>
         <Col md="8" sm="12">
           <div className="d-flex justify-content-lg-end justify-content-md-end action-container">
             <div className="d-flex create-filter-wrapper">
-              {createBtn && (
-                <div className="me-md-3 mr-md-3 create-filer">{createBtn}</div>
+              {tableToolbar && (
+                <div className="me-md-3 mr-md-3 create-filer">
+                  {tableToolbar}
+                </div>
               )}
-              {filterable && (
+              {isFilterable && (
                 <div className="me-md-3 mr-md-3 create-filer">
                   <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle
@@ -71,17 +72,19 @@ const FilterAndSearch = ({
                 </div>
               )}
             </div>
-            <div className="table-search-container shadow-sm--hover">
-              <i className="fa-solid fa-search my-auto ms-3 ml-3 p-0" />
-              <Input
-                onChange={(e) =>
-                  setSearchString(e.currentTarget.value.toString())
-                }
-                placeholder="Search"
-                className="border-0"
-                type="text"
-              ></Input>
-            </div>
+            {isSearchable && (
+              <div className="table-search-container shadow-sm--hover">
+                <i className="fa-solid fa-search my-auto ms-3 ml-3 p-0" />
+                <Input
+                  onChange={(e) =>
+                    setSearchString(e.currentTarget.value.toString())
+                  }
+                  placeholder="Search"
+                  className="border-0"
+                  type="text"
+                ></Input>
+              </div>
+            )}
           </div>
         </Col>
       </Row>
