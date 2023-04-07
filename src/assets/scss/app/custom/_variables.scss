@@ -181,23 +181,26 @@ $spacers: (
 $font-family-base: "Poppins", sans-serif !default;
 $font-family-alt: "Poppins", sans-serif !default;
 
-$font-size-dash: 0.875rem !default;
+$font-size-dash: 1rem !default;
 
 $font-size-base: $font-size-dash !default; // Assumes the browser default, typically `16px`
 $font-size-xl: ($font-size-base * 1.428);
 $font-size-lg: ($font-size-base * 1.142);
+$font-size-md: ($font-size-base * 0.875);
 $font-size-sm: ($font-size-base * 0.85714286);
 $font-size-xs: ($font-size-base * 0.714);
+$font-size-xxs: ($font-size-base * 0.625);
 
-$h1-font-size: $font-size-base * 2.35714285 !default; //2.1875rem
-$h2-font-size: $font-size-base * 1.9285714 !default;
-$h3-font-size: $font-size-base * 1.642857 !default;
-$h4-font-size: $font-size-base * 1.2142857 !default;
+$h1-font-size: $font-size-base * 3rem !default; //3rem
+$h2-font-size: $font-size-base * 2rem !default;
+$h3-font-size: $font-size-base * 1.5rem !default;
+$h4-font-size: $font-size-base * 1.25 !default;
 $h5-font-size: $font-size-base * 0.9285714 !default;
 $h6-font-size: $font-size-base * 0.8571428 !default;
 
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
 $font-weight-bold: 600 !default;
 $font-weight-extra-bold: 700 !default;
 
@@ -222,10 +225,6 @@ $heading-title-font-weight: $font-weight-bold !default;
 $heading-section-letter-spacing: 0.025em !default;
 $heading-section-font-size: 1.375rem !default;
 $heading-section-font-weight: $font-weight-bold !default;
-$display1-size: 3.3rem !default;
-$display2-size: 2.75rem !default;
-$display3-size: 2.1875rem !default;
-$display4-size: 1.6275rem !default;
 
 $paragraph-font-size: 0.625rem !default;
 $paragraph-font-weight: 300 !default;
