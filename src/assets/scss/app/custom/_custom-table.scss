@@ -6,6 +6,13 @@
     padding-right: 1.3rem;
     background-color: $secondary-extra-light;
   }
+  .ReactTable .rt-td {
+    font-size: 1rem !important;
+  }
+  .ReactTable .rt-td .badge {
+    font-size: 0.75rem !important;
+    font-weight: $font-weight-normal !important;
+  }
   .ReactTable .rt-thead .rt-resizable-header {
     overflow: hidden;
     color: $gray-600;
