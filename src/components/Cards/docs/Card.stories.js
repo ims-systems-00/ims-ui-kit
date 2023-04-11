@@ -1,4 +1,4 @@
-import Card from "../CardBase"
+import Card from "../CardBase";
 export default {
   title: "components/Card",
   component: Card,
@@ -15,3 +15,5 @@ export const Default = Card;
 Default.args = {
   children: "Click Here",
 };
+
+export { default as CardPrimary } from "../Examples/CardPrimary";
