@@ -191,12 +191,12 @@ $font-size-sm: ($font-size-base * 0.85714286);
 $font-size-xs: ($font-size-base * 0.714);
 $font-size-xxs: ($font-size-base * 0.625);
 
-$h1-font-size: $font-size-base * 3rem !default; //3rem
-$h2-font-size: $font-size-base * 2rem !default;
-$h3-font-size: $font-size-base * 1.5rem !default;
-$h4-font-size: $font-size-base * 1.25 !default;
-$h5-font-size: $font-size-base * 0.9285714 !default;
-$h6-font-size: $font-size-base * 0.8571428 !default;
+$h1-font-size: ($font-size-base * 3) !default; //3rem
+$h2-font-size: ($font-size-base * 2) !default;
+$h3-font-size: ($font-size-base * 1.5) !default;
+$h4-font-size: ($font-size-base * 1.25) !default;
+$h5-font-size: ($font-size-base * 1.25) !default;
+$h6-font-size: ($font-size-base * 1.25) !default;
 
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
@@ -209,11 +209,16 @@ $font-paragraph: 1rem !default;
 $font-weight-base: $font-weight-normal !default;
 $shape-height-base: 1.428571 !default;
 
-$headings-margin-bottom: ($spacer / 2);
+// $headings-margin-bottom: ($spacer / 2);
+$headings-margin-bottom: 0;
 $headings-font-family: inherit !default;
 $headings-font-weight: $font-weight-normal !default;
-$headings-line-height: 1.2 !default;
 $headings-color: $type-dark !default;
+$h1-line-height: 72px !default;
+$h2-line-height: 48px !default;
+$h3-line-height: 36px !default;
+$h4-line-height: 30px !default;
+
 
 $heading-letter-spacing: 0.025em !default;
 $heading-font-size: 0.95rem !default;
@@ -226,7 +231,18 @@ $heading-section-letter-spacing: 0.025em !default;
 $heading-section-font-size: 1.375rem !default;
 $heading-section-font-weight: $font-weight-bold !default;
 
-$paragraph-font-size: 0.625rem !default;
+$subtitle-font-size-primary: $font-size-base !default;
+$subtitle-font-size-secondary: ($font-size-base * 0.875) !default;
+
+$body-font-size-primary: $font-size-base !default;
+$body-font-size-secondary: ($font-size-base * 0.875) !default;
+
+$caption-font-size: ($font-size-base * 0.75) !default;
+$overline-font-size: ($font-size-base * 0.625) !default;
+
+$btn-font-size: ($font-size-base * 0.875) !default;
+
+$paragraph-font-size: $font-size-base !default;
 $paragraph-font-weight: 300 !default;
 $paragraph-line-height: 1.7 !default;
 

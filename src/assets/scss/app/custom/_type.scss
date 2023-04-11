@@ -22,40 +22,6 @@ a {
     margin-top: -10px;
   }
 }
-.subtitle-1 {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-base;
-}
-.subtitle-2 {
-  font-weight: $font-weight-medium;
-  font-size: $font-size-md;
-}
-.body-1 {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-base;
-}
-
-.body-2 {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-md;
-}
-
-button {
-  font-weight: $font-weight-medium;
-  font-size: $font-size-md;
-  // text-transform: uppercase;
-}
-
-.caption {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-xs;
-}
-
-.overline {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-xxs;
-}
-
 blockquote {
   padding: 2.5rem $btn-padding-x $btn-padding-y $btn-padding-x;
   font-family: cursive;

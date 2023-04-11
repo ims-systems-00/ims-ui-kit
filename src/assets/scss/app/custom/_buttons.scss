@@ -144,3 +144,9 @@
   display: block;
   width: 100%;
 }
+button {
+  font-weight: $font-weight-medium;
+  font-size: $btn-font-size;
+  text-transform: uppercase;
+  color: $type-dark;
+}
