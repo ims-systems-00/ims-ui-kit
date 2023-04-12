@@ -14,19 +14,23 @@ export default function WrappedEditor(props) {
       })}
     >
       {!props.readOnly && (
-        <div>
+        <div className="bg-light toolbar">
           <ToolBar {...props} />
-          <hr></hr>
+          {/* <hr></hr> */}
         </div>
       )}
-      <TextEditor {...props} />
-      {/**
-       * following portion helps to focus on the actual text area
-       * when unedited remaing area is clicked.
-       */}
-      {!props.readOnly && (
-        <div className="flex-grow-1" onMouseDown={forceFocusEditorEnd}></div>
-      )}
+      <div className="m-3 bg-light input-area d-flex flex-column">
+        <div className="px-3 pt-3">
+          <TextEditor {...props} />
+        </div>
+        {/**
+         * following portion helps to focus on the actual text area
+         * when unedited remaing area is clicked.
+         */}
+        {!props.readOnly && (
+          <div className="flex-grow-1" onMouseDown={forceFocusEditorEnd}></div>
+        )}
+      </div>
     </div>
   );
 }

@@ -1,12 +1,23 @@
 $guide-height: 75px;
 .draft-editor-container {
-  padding: $input-padding-y $input-padding-x;
-  min-height: 200px;
+  padding: 0;
   background-color: $input-focus-bg;
   border-radius: $input-border-radius;
   border: 1px solid $input-border-color;
   transition: 0.1s ease;
   color: $type-medium;
+  .toolbar {
+    border-bottom: 1px solid $input-border-color !important;
+  }
+  .text-toolbar-btn {
+    margin: 12px 16px !important;
+    padding: 4px !important;
+  }
+  .input-area {
+    min-height: 170px !important;
+    border: 1px solid $input-border-color;
+    border-radius: $input-border-radius;
+  }
   .toolbar-separator {
     border-bottom: 1px solid $input-border-color;
   }

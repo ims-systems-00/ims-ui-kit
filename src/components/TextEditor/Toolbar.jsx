@@ -6,8 +6,12 @@ import { Button } from "reactstrap";
 import FilePicker from "./FilePicker";
 import classNames from "classnames";
 export default function ToolBar(props) {
-  const { getFileInputProps, isToolActive, handleToolClick } =
-    React.useContext(TextEditorContext);
+  const {
+    getFileInputProps,
+    isToolActive,
+    handleToolClick,
+    focusedForEditing,
+  } = React.useContext(TextEditorContext);
   return (
     <>
       <FilePicker {...getFileInputProps()} />
@@ -20,7 +24,11 @@ export default function ToolBar(props) {
                   title={tool?.label}
                   type="button"
                   color="link"
-                  className={" text-muted mr-1"}
+                  className={classNames("text-toolbar-btn", {
+                    "text-muted": !focusedForEditing,
+                    "text-secondary": focusedForEditing,
+                    "text-primary": isToolActive(tool) && focusedForEditing,
+                  })}
                   key={tool?.style}
                   onMouseDown={(e) => handleToolClick(tool, e)}
                 >
