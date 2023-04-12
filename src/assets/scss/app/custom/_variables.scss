@@ -137,11 +137,11 @@ $input-btn-padding-x-lg: 1.2rem !default;
 // $input-group-addon-padding-x: 0.75rem !default;
 
 $border-radius: 0.25rem !default;
-$border-radius-sm: 0.167rem !default;
-$border-radius-lg: 0.335rem !default;
-$border-radius-xl: 0.67rem !default;
-$border-radius-xxl: 1.34rem !default;
-$border-radius-pill: 50rem !default;
+$border-radius-sm: 0.5rem !default;
+$border-radius-lg: 0.75rem !default;
+$border-radius-xl: 1rem !default;
+// $border-radius-xxl: 1.34rem !default;
+// $border-radius-pill: 50rem !default;
 
 $box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
 $box-shadow-md: 0 0.125rem 0.25rem rgba($black, 0.1);
@@ -406,9 +406,9 @@ $table-hover-bg: rgba($primary, $table-hover-bg-factor) !default;
 // $input-border-width:                    $input-btn-border-width !default;
 // $input-box-shadow:                      $box-shadow-inset !default;
 
-// $input-border-radius:                   $border-radius !default;
-// $input-border-radius-sm:                $border-radius-sm !default;
-// $input-border-radius-lg:                $border-radius-lg !default;
+$input-border-radius:                   $border-radius !default;
+$input-border-radius-sm:                $border-radius-sm !default;
+$input-border-radius-lg:                $border-radius-lg !default;
 
 // $input-focus-bg:                        $input-bg !default;
 // $input-focus-border-color:              tint-color($component-active-bg, 50%) !default;
