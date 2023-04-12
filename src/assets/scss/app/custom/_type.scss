@@ -22,40 +22,6 @@ a {
     margin-top: -10px;
   }
 }
-.subtitle-1 {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-base;
-}
-.subtitle-2 {
-  font-weight: $font-weight-medium;
-  font-size: $font-size-md;
-}
-.body-1 {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-base;
-}
-
-.body-2 {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-md;
-}
-
-button {
-  font-weight: $font-weight-medium;
-  font-size: $font-size-md;
-  // text-transform: uppercase;
-}
-
-.caption {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-xs;
-}
-
-.overline {
-  font-weight: $font-weight-normal;
-  font-size: $font-size-xxs;
-}
-
 blockquote {
   padding: 2.5rem $btn-padding-x $btn-padding-y $btn-padding-x;
   font-family: cursive;
@@ -70,4 +36,72 @@ blockquote {
 }
 pre {
   font-size: $font-size-sm;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+h1 {
+  font-size: $h1-font-size;
+  font-weight: $font-weight-normal;
+  line-height: $h1-line-height;
+}
+h2 {
+  font-size: $h2-font-size;
+  font-weight: $font-weight-normal;
+  line-height: $h2-line-height;
+}
+h3 {
+  font-size: $h3-font-size;
+  font-weight: $font-weight-medium;
+  line-height: $h3-line-height;
+}
+h4,
+h5,
+h6 {
+  font-size: $h4-font-size;
+  font-weight: $font-weight-medium;
+  line-height: $h4-line-height;
+}
+p {
+  font-size: $paragraph-font-size;
+}
+
+.subtitle-primary {
+  font-size: $subtitle-font-size-primary;
+  font-weight: $font-weight-normal;
+}
+
+.subtitle-secondary {
+  font-size: $subtitle-font-size-secondary;
+  font-weight: $font-weight-medium;
+}
+
+.body-primary {
+  font-size: $body-font-size-primary;
+  font-weight: $font-weight-normal;
+  color: $type-medium;
+}
+
+.body-secondary {
+  font-size: $body-font-size-secondary;
+  font-weight: $font-weight-normal;
+  color: $type-medium;
+}
+.caption {
+  font-weight: $font-weight-normal;
+  font-size: $caption-font-size;
+  color: $type-dark;
+}
+
+.overline {
+  font-weight: $font-weight-normal;
+  font-size: $overline-font-size;
+  color: $type-dark;
 }

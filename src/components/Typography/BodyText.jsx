@@ -2,6 +2,8 @@ const BodyText = (props) => {
   return (
     <>
       <p>
+        Paragraph Tag:
+        <br />
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
         minima voluptas nemo qui eveniet earum deleniti. Doloremque earum quo
         reiciendis eius quae saepe voluptatem veniam repellendus. Quidem ipsam
@@ -12,6 +14,8 @@ const BodyText = (props) => {
       </p>
       <br></br>
       <p className="text-muted">
+        Muted Paragraph Tag:
+        <br />
         this is an example of muted text, this is an example of muted text, this
         is an example of muted text, this is an example of muted text,this is an
         example of muted text, this is an example of muted text, this is an
@@ -21,6 +25,18 @@ const BodyText = (props) => {
         example of muted text, this is an example of muted text,this is an
         example of muted text
       </p>
+      <br /> <br />
+      <p className="subtitle-primary">
+        Subtitle Primary:
+        <br />
+        this is an example of subtitle primary, this is an example of subtitle
+      </p>
+      <br />
+      <span className="subtitle-secondary">
+        Subtitle secondary:
+        <br />
+        this is an example of subtitle primary, this is an example of subtitle
+      </span>
     </>
   );
 };
