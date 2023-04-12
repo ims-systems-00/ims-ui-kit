@@ -16,4 +16,4 @@ Default.args = {
   children: "Click Here",
 };
 
-export { default as CardPrimary } from "../Examples/CardPrimary";
+export { default as DashboardCards } from "../Examples/DashboardCards";

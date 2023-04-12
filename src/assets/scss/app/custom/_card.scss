@@ -21,7 +21,9 @@
 .card-variant-primary.card,
 .card-variant-secondary.card,
 .card-variant-light.card,
-.card-gradient {
+.card-gradient,
+.card-variant-outline.card,
+.card-variant-active.card {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
   border-radius: 16px;
   border: none;
@@ -45,6 +47,15 @@
   }
 }
 
+.card-variant-active.card {
+  background-color: $primary-light;
+}
+
+.card-variant-outline.card {
+  box-shadow: none;
+  background-color: transparent;
+}
+
 .card-variant-light.card {
   background-color: $white;
 }
@@ -55,6 +66,14 @@
 
 .card-variant-secondary:hover,
 .card-variant-light:hover {
+  box-shadow: $box-shadow-lg;
+}
+
+.card-variant-outline.card:hover {
+  background-color: $type-light;
+}
+
+.card-variant-active.card:hover {
   box-shadow: $box-shadow-lg;
 }
 
@@ -78,4 +97,19 @@
     rgba(214, 51, 132, 0.2) 0deg,
     rgba(214, 51, 132, 0.1) 360deg
   ) !important;
+}
+.card-hover-none.card-variant-primary.card:hover,
+.card-hover-none.card-variant-secondary:hover,
+.card-hover-none.card-variantØ-light:hover,
+.card-hover-none.card-variant-outline.card:hover,
+.card-hover-none.card-variant-active.card:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card-hover-none.card-variant-primary.card:hover {
+  background-color: $secondary-extra-light;
+}
+.card-hover-none.card-variant-outline.card:hover {
+  background-color: transparent;
+  box-shadow: none;
 }
