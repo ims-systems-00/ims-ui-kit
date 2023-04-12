@@ -12,6 +12,7 @@ const CardBase = (props) => {
   return (
     <Card
       className={classNames(props.className, {
+        "card-variant-list ": props.variant === "list",
         "card-variant-active": props.variant === "active",
         "card-variant-active card-hover-none":
           props.variant === "active" && props.hover === false,

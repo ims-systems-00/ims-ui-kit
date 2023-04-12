@@ -39,6 +39,14 @@ const DashboardCards = ({}) => {
         </CardBody>
         <CardFooter>Footer</CardFooter>
       </Card>
+      <Card variant="list">
+        <CardHeader>List Card</CardHeader>
+        <CardBody>
+          This is a primary card. Use this to show important information to the
+          user.
+        </CardBody>
+        <CardFooter>Footer</CardFooter>
+      </Card>
       <Card variant="gradient" color="primary">
         <CardHeader>Gradient Primary Card</CardHeader>
         <CardBody>
