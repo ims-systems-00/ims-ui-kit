@@ -4,7 +4,7 @@ import { TextEditorContext } from "./Context";
 import ToolBar from "./Toolbar";
 import classnames from "classnames";
 export default function WrappedEditor(props) {
-  const { readOnly, forceFocusEditorEnd, focusedForEditing } =
+  const { forceFocusEditorEnd, focusedForEditing } =
     React.useContext(TextEditorContext);
   return (
     <div
@@ -19,8 +19,16 @@ export default function WrappedEditor(props) {
           {/* <hr></hr> */}
         </div>
       )}
-      <div className="m-3 bg-light input-area d-flex flex-column">
-        <div className="px-3 pt-3">
+      <div
+        className={classnames("", {
+          "d-flex flex-column input-area bg-light m-3": !props.readOnly,
+        })}
+      >
+        <div
+          className={classnames("", {
+            "px-3 pt-3": !props.readOnly,
+          })}
+        >
           <TextEditor {...props} />
         </div>
         {/**
