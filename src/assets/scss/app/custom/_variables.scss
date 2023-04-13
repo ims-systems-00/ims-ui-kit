@@ -181,22 +181,22 @@ $spacers: (
 $font-family-base: "Poppins", sans-serif !default;
 $font-family-alt: "Poppins", sans-serif !default;
 
-$font-size-dash: 1rem !default;
+$font-size-dash: 0.875rem !default;
 
 $font-size-base: $font-size-dash !default; // Assumes the browser default, typically `16px`
-$font-size-xl: ($font-size-base * 1.428);
+// $font-size-xl: ($font-size-base * 1.4285);
 $font-size-lg: ($font-size-base * 1.142);
-$font-size-md: ($font-size-base * 0.875);
+$font-size-md: ($font-size-base * 1);
 $font-size-sm: ($font-size-base * 0.85714286);
 $font-size-xs: ($font-size-base * 0.714);
 $font-size-xxs: ($font-size-base * 0.625);
 
-$h1-font-size: ($font-size-base * 3) !default; //3rem
-$h2-font-size: ($font-size-base * 2) !default;
-$h3-font-size: ($font-size-base * 1.5) !default;
-$h4-font-size: ($font-size-base * 1.25) !default;
-$h5-font-size: ($font-size-base * 1.25) !default;
-$h6-font-size: ($font-size-base * 1.25) !default;
+$h1-font-size: ($font-size-base * 3.428) !default; //3rem
+$h2-font-size: ($font-size-base * 2.285) !default;
+$h3-font-size: ($font-size-base * 1.714) !default;
+$h4-font-size: ($font-size-base * 1.14285) !default;
+$h5-font-size: ($font-size-base * 1.14285) !default;
+$h6-font-size: ($font-size-base * 1.14285) !default;
 
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
