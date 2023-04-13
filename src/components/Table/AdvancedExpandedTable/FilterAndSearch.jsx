@@ -80,7 +80,7 @@ const FilterAndSearch = ({
                     setSearchString(e.currentTarget.value.toString())
                   }
                   placeholder="Search"
-                  className="border-0 table-search-input"
+                  className="border-0 table-search-input py-1"
                   type="text"
                 ></Input>
               </div>
