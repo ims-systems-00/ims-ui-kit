@@ -1,21 +1,10 @@
 import React from "react";
-import { TabPane, TabContent } from "../../index";
-
-const PanelWindow = ({ children, value, index, ...props }) => {
+import { TabPane } from "reactstrap";
+const PanelWindow = ({ children, tabId }) => {
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`ims-tabpanel-${index}`}
-      aria-labelledby={`ims-tab-${index}`}
-      {...props}
-    >
-      {value === index && (
-        <TabContent>
-          <TabPane>{children}</TabPane>
-        </TabContent>
-      )}
-    </div>
+    <React.Fragment>
+      <TabPane tabId={tabId}>{children}</TabPane>
+    </React.Fragment>
   );
 };
 
