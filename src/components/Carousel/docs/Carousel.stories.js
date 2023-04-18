@@ -1,7 +1,8 @@
-import Carousel from "../CarouselBase"
+import DefaultCarousel from "../Example/DefaultCarousel";
+
 export default {
   title: "components/Carousel",
-  component: Carousel,
+  component: DefaultCarousel,
   parameters: {
     docs: {
       description: {
@@ -10,8 +11,8 @@ export default {
     },
   },
 };
-export const Default = Carousel;
+export const Default = DefaultCarousel;
 
-Default.args = {
-  children: "Click Here",
-};
+Default.args = {};
+
+export { default as ImsCarousel } from "../Example/ImsCarouselExample";

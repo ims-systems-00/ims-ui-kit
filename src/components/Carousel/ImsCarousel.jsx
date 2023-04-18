@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function DashboardCarousel({ children }) {
+export default function ImsCarousel({ children }) {
   const swiperRef = useRef(null);
 
   const handlePrev = () => {

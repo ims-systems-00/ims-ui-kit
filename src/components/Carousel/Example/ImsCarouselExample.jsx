@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, CardBody } from '../../../index';
-import DashboardCarousel from '../DashboardCarousel';
+import ImsCarousel from '../ImsCarousel';
 
 const DashboardCarouselExample = ({}) => {
   return (
-    <DashboardCarousel>
+    <ImsCarousel>
       <Card>
         <CardBody>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
@@ -47,7 +47,7 @@ const DashboardCarouselExample = ({}) => {
           voluptatibus odio praesentium iure? Commodi reiciendis at eveniet.
         </CardBody>
       </Card>
-    </DashboardCarousel>
+    </ImsCarousel>
   );
 }
 

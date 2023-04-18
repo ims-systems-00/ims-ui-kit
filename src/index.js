@@ -120,3 +120,4 @@ export { default as ImsCard } from "./components/Cards/ImsCard";
 export { default as PanelWindow } from "./components/Panel/PanelWindow";
 export { default as PanelTab } from "./components/Panel/PanelTab";
 export { default as PanelTabs } from "./components/Panel/PanelTabs";
+export { default as ImsCarousel } from "./components/Carousel/ImsCarousel";
