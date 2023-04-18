@@ -2,6 +2,7 @@ import Activity from "../ActivityBase";
 import Button from "../../Buttons/ButtonBase";
 import React from "react";
 import TextEditor from "../../TextEditor/Index";
+import ReplyActivity from "../ReplyActiviy";
 
 const SingleComment = ({}) => {
   const activity = (
@@ -90,12 +91,7 @@ const SingleComment = ({}) => {
         activity={activity}
         footer={
           <React.Fragment>
-            <Button outline size="sm">
-              Reply
-            </Button>
-            <Button outline size="sm">
-              Edit
-            </Button>
+            <ReplyActivity />
           </React.Fragment>
         }
       />
@@ -107,12 +103,7 @@ const SingleComment = ({}) => {
         activity={activity3}
         footer={
           <React.Fragment>
-            <Button outline size="sm">
-              Reply
-            </Button>
-            <Button outline size="sm">
-              Edit
-            </Button>
+            <ReplyActivity />
           </React.Fragment>
         }
       />
@@ -132,6 +123,7 @@ const SingleComment = ({}) => {
           </React.Fragment>
         }
       />
+      {/* <ReplyActivity /> */}
     </React.Fragment>
   );
 };
