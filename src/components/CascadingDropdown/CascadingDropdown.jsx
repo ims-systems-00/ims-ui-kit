@@ -7,7 +7,7 @@ const countries = {
   Australia: ["Sydney", "Melbourne", "Brisbane"],
 };
 
-const CascadingDropdown = ({ cities = {} }) => {
+const CascadingDropdown = () => {
   const [selectedCountry, setSelectedCountry] = React.useState("");
   const [selectedCity, setSelectedCity] = React.useState("");
   const [cityOptions, setCityOptions] = React.useState([]);
@@ -15,7 +15,7 @@ const CascadingDropdown = ({ cities = {} }) => {
   const handleCountryChange = (country) => {
     setSelectedCountry(country);
     setSelectedCity("");
-    setCityOptions(cities[country] || []);
+    setCityOptions(countries[country] || []);
   };
 
   const handleCityChange = (city) => setSelectedCity(city);
