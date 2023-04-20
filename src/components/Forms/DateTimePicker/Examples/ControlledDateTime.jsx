@@ -17,6 +17,7 @@ const ControlledDateTime = ({}) => {
           required: true,
           name: "date",
         }}
+        closeOnSelect={true}
       />
       <br /> <br />
       <h4>

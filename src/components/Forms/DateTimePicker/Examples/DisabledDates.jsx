@@ -9,35 +9,39 @@ import {
   disableFutureWithCurrentDays,
   disablePastDays,
   disablePastWithCurrentDays,
-  disablePastWithFutureDays
+  disablePastWithFutureDays,
 } from "../utility";
 
 const DisabledDays = ({}) => {
   return (
     <>
       <h4>Only Pas Dates Disabled</h4>
-      <DateTime isValidDate={disablePastDays} />
+      <DateTime isValidDate={disablePastDays} closeOnSelect={true} />
       <br /> <br />
       <h4>Both Past and Current Days Disabled</h4>
-      <DateTime isValidDate={disablePastWithCurrentDays} />
+      <DateTime isValidDate={disablePastWithCurrentDays} closeOnSelect={true} />
       <br /> <br />
       <h4>Only Future Dates Disabled</h4>
-      <DateTime isValidDate={disableFutureDays} />
+      <DateTime isValidDate={disableFutureDays} closeOnSelect={true} />
       <br /> <br />
       <h4>Both Future and Current Days Disabled</h4>
-      <DateTime isValidDate={disableFutureWithCurrentDays} />
+      <DateTime
+        isValidDate={disableFutureWithCurrentDays}
+        closeOnSelect={true}
+      />
       <br /> <br />
       <h4>Both Past and Future Days Disabled</h4>
-      <DateTime isValidDate={disablePastWithFutureDays} />
+      <DateTime isValidDate={disablePastWithFutureDays} closeOnSelect={true} />
       <br /> <br />
       <h4>Only Current Date Disabled</h4>
-      <DateTime isValidDate={disableCurrentDate} />
+      <DateTime isValidDate={disableCurrentDate} closeOnSelect={true} />
       <br /> <br />
       <h4>Disable Days Before "From Date"</h4>
       <DateTime
         isValidDate={(current) =>
           disableDaysBeforeFromDate(current, "2023-02-18")
         }
+        closeOnSelect={true}
       />
       <br /> <br />
       <h4>Disable Days Before "From Date" and Including the "From Date"</h4>
@@ -45,11 +49,13 @@ const DisabledDays = ({}) => {
         isValidDate={(current) =>
           disableDaysBeforeFromDateInclusive(current, "2023-02-18")
         }
+        closeOnSelect={true}
       />
       <br /> <br />
       <h4>Disable Days After "To Date"</h4>
       <DateTime
         isValidDate={(current) => disableDaysAfterToDate(current, "2023-02-18")}
+        closeOnSelect={true}
       />
       <br /> <br />
       <h4>Disable Days After "To Date" and Including the "To Date"</h4>
@@ -59,6 +65,7 @@ const DisabledDays = ({}) => {
             disablePastDays: true,
           })
         }
+        closeOnSelect={true}
       />
       <br /> <br />
       <h4>
@@ -70,6 +77,7 @@ const DisabledDays = ({}) => {
           disableDaysAfterToDateInclusive(current, "2023-02-18") &&
           disablePastDays(current)
         }
+        closeOnSelect={true}
       />
       <br /> <br />
       <h4>
@@ -81,6 +89,7 @@ const DisabledDays = ({}) => {
           disableDaysAfterToDateInclusive(current, "2023-02-18") &&
           disablePastWithCurrentDays(current)
         }
+        closeOnSelect={true}
       />
       <br /> <br />
     </>

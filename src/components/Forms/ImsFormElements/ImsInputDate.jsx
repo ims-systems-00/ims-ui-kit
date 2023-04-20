@@ -9,6 +9,7 @@ const ImsInputDate = ({
   error,
   mandatory = false,
   disabled,
+  closeOnSelect,
 }) => {
   return (
     <FormGroup row>
@@ -37,6 +38,7 @@ const ImsInputDate = ({
             }
           }}
           timeFormat={false}
+          closeOnSelect={closeOnSelect}
           dateFormat={"D/M/YYYY"}
         />
         {error && (
