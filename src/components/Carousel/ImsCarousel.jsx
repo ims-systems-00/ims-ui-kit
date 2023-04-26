@@ -5,7 +5,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function ImsCarousel({ children }) {
+export default function ImsCarousel({
+  children,
+  slidesPerView = 3,
+  spaceBetween = 30,
+}) {
   const swiperRef = useRef(null);
 
   const handlePrev = () => {
@@ -44,14 +48,18 @@ export default function ImsCarousel({ children }) {
       <Swiper
         ref={swiperRef}
         slidesPerView={
-          window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3
+          window.innerWidth < 768
+            ? 1
+            : window.innerWidth < 992
+            ? 2
+            : slidesPerView
         }
-        spaceBetween={30}
+        spaceBetween={spaceBetween}
         grabCursor={true}
         mousewheel={true}
         navigation={true}
         modules={[Mousewheel, Navigation]}
-        className="mySwiper"
+        className="ims-swiper-carousel"
       >
         {React.Children.map(children, (child) => (
           <SwiperSlide>{child}</SwiperSlide>
