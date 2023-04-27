@@ -9,6 +9,7 @@ export default function ImsCarousel({
   children,
   slidesPerView = 3,
   spaceBetween = 30,
+  navigation = false,
 }) {
   const swiperRef = useRef(null);
 
@@ -36,15 +37,17 @@ export default function ImsCarousel({
   }, []);
 
   return (
-    <>
-      <div className="my-2 d-flex justify-content-end align-items-center">
-        <Button outline className="border-0" onClick={handlePrev}>
-          <i class="fa-solid fa-angle-left p-0"></i>
-        </Button>
-        <Button outline className="border-0" onClick={handleNext}>
-          <i class="fa-solid fa-angle-right p-0"></i>
-        </Button>
-      </div>
+    <React.Fragment>
+      {navigation && (
+        <div className="my-2 d-flex justify-content-end align-items-center">
+          <Button outline className="border-0" onClick={handlePrev}>
+            <i class="fa-solid fa-angle-left p-0"></i>
+          </Button>
+          <Button outline className="border-0" onClick={handleNext}>
+            <i class="fa-solid fa-angle-right p-0"></i>
+          </Button>
+        </div>
+      )}
       <Swiper
         ref={swiperRef}
         slidesPerView={
@@ -65,6 +68,6 @@ export default function ImsCarousel({
           <SwiperSlide>{child}</SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </React.Fragment>
   );
 }
