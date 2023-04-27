@@ -5,7 +5,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function ImsCarousel({ children }) {
+export default function ImsCarousel({
+  children,
+  slidesPerView = 3,
+  spaceBetween = 30,
+  navigation = false,
+}) {
   const swiperRef = useRef(null);
 
   const handlePrev = () => {
@@ -32,31 +37,37 @@ export default function ImsCarousel({ children }) {
   }, []);
 
   return (
-    <>
-      <div className="my-2 d-flex justify-content-end align-items-center">
-        <Button outline className="border-0" onClick={handlePrev}>
-          <i class="fa-solid fa-angle-left p-0"></i>
-        </Button>
-        <Button outline className="border-0" onClick={handleNext}>
-          <i class="fa-solid fa-angle-right p-0"></i>
-        </Button>
-      </div>
+    <React.Fragment>
+      {navigation && (
+        <div className="my-2 d-flex justify-content-end align-items-center">
+          <Button outline className="border-0" onClick={handlePrev}>
+            <i class="fa-solid fa-angle-left p-0"></i>
+          </Button>
+          <Button outline className="border-0" onClick={handleNext}>
+            <i class="fa-solid fa-angle-right p-0"></i>
+          </Button>
+        </div>
+      )}
       <Swiper
         ref={swiperRef}
         slidesPerView={
-          window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3
+          window.innerWidth < 768
+            ? 1
+            : window.innerWidth < 992
+            ? 2
+            : slidesPerView
         }
-        spaceBetween={30}
+        spaceBetween={spaceBetween}
         grabCursor={true}
         mousewheel={true}
         navigation={true}
         modules={[Mousewheel, Navigation]}
-        className="mySwiper"
+        className="ims-swiper-carousel"
       >
         {React.Children.map(children, (child) => (
           <SwiperSlide>{child}</SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </React.Fragment>
   );
 }
