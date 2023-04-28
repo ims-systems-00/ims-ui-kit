@@ -58,6 +58,11 @@ const FilterAndSearch = ({
                         filters.length > 0 &&
                         filters.map((filter) => (
                           <DropdownItem
+                            style={{
+                              fontWeight: "500",
+                              fontSize: "14px",
+                              color: "#152536",
+                            }}
                             onClick={() => {
                               setFilterLabel(filter.label);
                               onFilter(filter);
