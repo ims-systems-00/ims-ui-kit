@@ -14,7 +14,14 @@ const ImsTextEditor = ({
     <FormGroup row>
       {label && (
         <Col sm="12">
-          <Label>{label}</Label>
+          <Label
+            style={{
+              fontSize: "16px",
+            }}
+            className="text-dark"
+          >
+            {label}
+          </Label>
         </Col>
       )}
       <Col sm="12">

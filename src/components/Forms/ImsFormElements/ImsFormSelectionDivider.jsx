@@ -5,7 +5,14 @@ const ImsFormSectionDivider = ({ label, dividerText, isHorizontal }) => {
     <>
       <FormGroup row>
         <Col sm="12">
-          <Label className="text-success">{label}</Label>
+          <Label
+            style={{
+              fontSize: "16px",
+            }}
+            className="text-dark"
+          >
+            {label}
+          </Label>
         </Col>
         <Col sm="12">
           <h5 className="form-control border-0 text-warning">{dividerText}</h5>

@@ -6,7 +6,14 @@ const ImsInputTime = ({ label, name, value, onChange, error, disabled }) => {
     <>
       <FormGroup row>
         <Col sm="12">
-          <Label>{label}</Label>
+          <Label
+            style={{
+              fontSize: "16px",
+            }}
+            className="text-dark"
+          >
+            {label}
+          </Label>
         </Col>
         <Col sm="12">
           <ReactDatetime
