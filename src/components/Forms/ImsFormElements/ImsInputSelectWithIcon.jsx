@@ -37,7 +37,12 @@ const ImsInputSelectWithIcon = ({
     <>
       <FormGroup row>
         <Col sm="12">
-          <Label>
+          <Label
+            style={{
+              fontSize: "16px",
+            }}
+            className="text-dark"
+          >
             {label} {mandatory ? <span className="text-danger">*</span> : ""}
           </Label>
         </Col>

@@ -26,7 +26,13 @@ const ImsInputCheck = ({
         })}
       >
         <Input type="checkbox" {...rest} />{" "}
-        <Label check>
+        <Label
+          style={{
+            fontSize: "16px",
+          }}
+          className="text-dark"
+          check
+        >
           {label} {mandatory ? <span className="text-danger">*</span> : ""}
         </Label>
       </FormGroup>
