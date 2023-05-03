@@ -1,17 +1,17 @@
-.nav-tabs::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
-}
+// .nav-tabs::-webkit-scrollbar {
+//   display: none; /* Safari and Chrome */
+// }
 
 .nav.nav-tabs.nav-tabs-primary,
 .nav.nav-tabs.nav-tabs-secondary,
 .nav.nav-tabs.nav-tabs-outline {
   border: none;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  // overflow-x: auto;
   overflow-y: hidden;
-  min-height: 53px;
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+  min-height: 53px !important;
+  // max-width: 100%;
+  // -ms-overflow-style: none; /* Internet Explorer 10+ */
+  // scrollbar-width: none; /* Firefox */
   .nav-item {
     cursor: pointer;
     .nav-link {
@@ -58,7 +58,7 @@
 .nav.nav-tabs.nav-tabs-secondary {
   background-color: $secondary-extra-light;
   padding: 4px;
-  height: 53px;
+  // height: 53px;
   width: fit-content;
   max-width: 100%;
   border: 1px solid $stroke-regular;
