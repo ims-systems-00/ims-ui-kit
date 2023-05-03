@@ -76,6 +76,7 @@ const FilterAndSearch = ({
               <div className="table-search-container shadow-sm--hover">
                 <i className="fa-solid fa-search my-auto ms-3 ml-3 p-0" />
                 <Input
+                  size={"sm"}
                   onChange={(e) =>
                     setSearchString(e.currentTarget.value.toString())
                   }
