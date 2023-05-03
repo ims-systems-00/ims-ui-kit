@@ -6,7 +6,7 @@
     "dist",
     "src"
   ],
-  "main": "./dist/ims-ui-kit.cjs",
+"main": "./dist/ims-ui-kit.cjs",
   "module": "./dist/ims-ui-kit.module.js",
   "unpkg": "./dist/ims-ui-kit.umd.js",
   "dependencies": {
