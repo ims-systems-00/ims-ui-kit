@@ -27,7 +27,7 @@ const NavBase = ({ children, variant = "primary", ...rest }) => {
       })}
       {...rest}
     >
-      <Row className="gx-0 gy-3">{children}</Row>
+      {children}
     </Nav>
   );
 };

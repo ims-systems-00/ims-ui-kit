@@ -3,6 +3,7 @@ import Nav from "../Nav/NavBase";
 import TabContent from "../TabPane/TabContentBase";
 import PanelWindow from "./PanelWindow";
 import PanelTab from "./PanelTab";
+import { Row } from "reactstrap";
 
 const PanelTabs = ({ children, activeTab = 0, variant, ...props }) => {
   const [value, setValue] = React.useState(activeTab);
@@ -15,15 +16,17 @@ const PanelTabs = ({ children, activeTab = 0, variant, ...props }) => {
     <React.Fragment>
       <div className="panel-tabs">
         <Nav tabs variant={variant && variant}>
-          {React.Children.map(children, (child, index) => {
-            if (child.type === PanelTab)
-              return React.cloneElement(child, {
-                onClick: (e) => handleChange(e, index),
-                active: index === value,
-                index: index,
-                ...props,
-              });
-          })}
+          <Row className="gx-0 gy-3">
+            {React.Children.map(children, (child, index) => {
+              if (child.type === PanelTab)
+                return React.cloneElement(child, {
+                  onClick: (e) => handleChange(e, index),
+                  active: index === value,
+                  index: index,
+                  ...props,
+                });
+            })}
+          </Row>
         </Nav>
         <TabContent activeTab={value} className="panel-windows" {...props}>
           {React.Children.map(children, (child, index) => {

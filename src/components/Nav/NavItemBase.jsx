@@ -9,11 +9,7 @@ let NavItemProps = Object.assign({}, NavItem.prototype.props);
  */
 
 const NavItemBase = ({ children, ...rest }) => {
-  return (
-    <Col>
-      <NavItem {...rest}>{children}</NavItem>
-    </Col>
-  );
+  return <NavItem {...rest}>{children}</NavItem>;
 };
 
 export default NavItemBase;
