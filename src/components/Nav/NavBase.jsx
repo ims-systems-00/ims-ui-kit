@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { Nav } from "reactstrap";
+import { Nav, Row } from "reactstrap";
 
 const NavBase = ({ children, variant = "primary", ...rest }) => {
   let NavBaseProps = Object.assign(
@@ -27,7 +27,7 @@ const NavBase = ({ children, variant = "primary", ...rest }) => {
       })}
       {...rest}
     >
-      {children}
+      <Row className="gx-0 gy-3">{children}</Row>
     </Nav>
   );
 };

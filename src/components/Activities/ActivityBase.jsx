@@ -20,8 +20,12 @@ const ActivityBase = ({
             <img src={avatar} alt="avatar" className="avatar mt-1 ms-3 ml-3" />
           </div>
           <div>
-            <p className="m-0">{name}</p>
-            {subHeading && <h6 className="mb-1 text-muted">{subHeading}</h6>}
+            <p className="m-0 font-size-body-2 text-type-dark">{name}</p>
+            {subHeading && (
+              <h6 className="mb-1  font-size-caption text-type-medium">
+                {subHeading}
+              </h6>
+            )}
           </div>
         </div>
       </CardHeader>

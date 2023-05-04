@@ -1,4 +1,4 @@
-import { NavItem } from "reactstrap";
+import { Col, NavItem } from "reactstrap";
 
 let NavItemProps = Object.assign({}, NavItem.prototype.props);
 
@@ -9,7 +9,11 @@ let NavItemProps = Object.assign({}, NavItem.prototype.props);
  */
 
 const NavItemBase = ({ children, ...rest }) => {
-  return <NavItem {...rest}>{children}</NavItem>;
+  return (
+    <Col>
+      <NavItem {...rest}>{children}</NavItem>
+    </Col>
+  );
 };
 
 export default NavItemBase;
