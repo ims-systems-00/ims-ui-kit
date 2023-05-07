@@ -16,7 +16,15 @@ const ImsInputRadio = ({
     <React.Fragment>
       <FormGroup check row>
         <Col sm="12">
-          <Label sm="12">{label}</Label>
+          <Label
+            style={{
+              fontSize: "16px",
+            }}
+            className="text-dark"
+            sm="12"
+          >
+            {label}
+          </Label>
         </Col>
         <Col sm="12">
           <div

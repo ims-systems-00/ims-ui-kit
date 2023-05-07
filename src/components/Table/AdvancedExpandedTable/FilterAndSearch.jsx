@@ -58,6 +58,11 @@ const FilterAndSearch = ({
                         filters.length > 0 &&
                         filters.map((filter) => (
                           <DropdownItem
+                            style={{
+                              fontWeight: "500",
+                              fontSize: "14px",
+                              color: "#152536",
+                            }}
                             onClick={() => {
                               setFilterLabel(filter.label);
                               onFilter(filter);
@@ -76,6 +81,7 @@ const FilterAndSearch = ({
               <div className="table-search-container shadow-sm--hover">
                 <i className="fa-solid fa-search my-auto ms-3 ml-3 p-0" />
                 <Input
+                  size={"sm"}
                   onChange={(e) =>
                     setSearchString(e.currentTarget.value.toString())
                   }

@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { Nav } from "reactstrap";
+import { Nav, Row } from "reactstrap";
 
 const NavBase = ({ children, variant = "primary", ...rest }) => {
   let NavBaseProps = Object.assign(

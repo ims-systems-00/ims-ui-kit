@@ -6,7 +6,7 @@ import PanelWindow from "../PanelWindow";
 const TabsExample = ({}) => {
   return (
     <React.Fragment>
-      <PanelTabs activeTab={1}>
+      <PanelTabs activeTab={1} variant={"outline"} >
         <PanelTab>
           <i className="fa-solid fa-house me-2"></i>
           Overview
@@ -36,7 +36,7 @@ const TabsExample = ({}) => {
           <h1>Hello Activity</h1>
         </PanelWindow>
         <PanelWindow tabId={3}>
-          <h1>Hello Life Cycle</h1>
+          <h1>Hello Life Cycle..</h1>
         </PanelWindow>
       </PanelTabs>
     </React.Fragment>

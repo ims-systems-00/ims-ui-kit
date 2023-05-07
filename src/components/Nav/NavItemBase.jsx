@@ -1,4 +1,4 @@
-import { NavItem } from "reactstrap";
+import { Col, NavItem } from "reactstrap";
 
 let NavItemProps = Object.assign({}, NavItem.prototype.props);
 

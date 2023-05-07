@@ -13,6 +13,9 @@
     border-radius: 4px;
     min-width: 1.25px;
   }
+  .table-search-input:focus::placeholder {
+    color: $stroke-regular;
+  }
 }
 
 // media query for small screens
