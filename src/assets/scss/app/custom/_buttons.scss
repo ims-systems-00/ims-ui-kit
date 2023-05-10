@@ -77,13 +77,39 @@
   }
 }
 
-.btn-danger,
-.btn-warning {
+.btn-danger {
   @include btn-bg($danger, $danger-dark);
   @include btn-border($danger);
   &.disabled {
     background-color: $danger;
     border-color: $danger;
+  }
+}
+
+.btn-permission {
+  @include btn-bg($permission, $permission-dark);
+  @include btn-border($permission);
+  &.disabled {
+    background-color: $permission;
+    border-color: $permission;
+  }
+}
+
+.btn-escalate {
+  @include btn-bg($escalate, $escalate-dark);
+  @include btn-border($escalate);
+  &.disabled {
+    background-color: $escalate;
+    border-color: $escalate;
+  }
+}
+
+.btn-warning {
+  @include btn-bg($warning, $warning-dark);
+  @include btn-border($warning);
+  &.disabled {
+    background-color: $warning;
+    border-color: $warning;
   }
 }
 
@@ -108,12 +134,34 @@
   }
 }
 
-.btn-outline-danger,
-.btn-outline-warning {
+.btn-outline-danger {
   @include btn-outline($danger);
   &.disabled {
     border-color: $danger;
     color: $danger;
+  }
+}
+.btn-outline-warning {
+  @include btn-outline($warning);
+  &.disabled {
+    border-color: $warning;
+    color: $warning;
+  }
+}
+
+.btn-outline-permission {
+  @include btn-outline($permission);
+  &.disabled {
+    border-color: $permission;
+    color: $permission;
+  }
+}
+
+.btn-outline-escalate {
+  @include btn-outline($escalate);
+  &.disabled {
+    border-color: $escalate;
+    color: $escalate;
   }
 }
 
@@ -144,4 +192,3 @@
   display: block;
   width: 100%;
 }
-

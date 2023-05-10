@@ -191,7 +191,7 @@ Default.args = {
   tableToolbar: (
     <React.Fragment>
       <Button
-        color="secondary"
+        color="permission"
         outline
         size="md"
         className="shadow-sm--hover"
