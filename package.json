@@ -1,13 +1,13 @@
 {
   "name": "ims-ui-kit",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "source": "src/index.js",
   "files": [
     "dist",
     "src"
   ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.module.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.modern.js",
   "unpkg": "./dist/index.umd.js",
   "dependencies": {
     "@draft-js-plugins/editor": "^4.1.3",
