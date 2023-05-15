@@ -1,12 +1,11 @@
 import { Carousel } from "reactstrap";
 
-
 let CarouselBaseProps = Object.assign({}, Carousel.prototype.props);
 
 /**
  *
  * @param {CarouselBaseProps} props
- * @returns
+ * @returns {JSX.Element}
  */
 const CarouselBase = (props) => {
   return <Carousel {...props}>{props.children}</Carousel>;
