@@ -64,9 +64,14 @@ export default function ImsCarousel({
         modules={[Mousewheel, Navigation]}
         className="ims-swiper-carousel"
       >
-        {React.Children.map(children, (child) => (
-          <SwiperSlide>{child}</SwiperSlide>
-        ))}
+        {React.Children.map(children, (child) => {
+          if (child) {
+            return <SwiperSlide>{child}</SwiperSlide>;
+          } else {
+            // Return null if the condition is not met
+            return null;
+          }
+        })}
       </Swiper>
     </React.Fragment>
   );

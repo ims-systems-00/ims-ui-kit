@@ -26,6 +26,18 @@ const TabsExample = ({}) => {
           <i className="fa-solid fa-address-book me-2"></i>
           Life Cycle
         </PanelTab>
+        <PanelTab>
+          <i className="fa-solid fa-address-book me-2"></i>
+          Life 
+        </PanelTab>
+        <PanelTab>
+          <i className="fa-solid fa-address-book me-2"></i>
+           Cycle
+        </PanelTab>
+        <PanelTab>
+          <i className="fa-solid fa-address-book me-2"></i>
+          Test
+        </PanelTab>
         <PanelWindow tabId={0}>
           <h1>Hello Overview</h1>
         </PanelWindow>

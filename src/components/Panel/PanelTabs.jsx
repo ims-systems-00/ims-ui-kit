@@ -16,7 +16,7 @@ const PanelTabs = ({ children, activeTab = 0, variant, ...props }) => {
     <React.Fragment>
       <div className="panel-tabs">
         <Nav tabs variant={variant && variant}>
-          <Row className="gx-0 gy-3">
+          <div className="d-flex gx-0 gy-3">
             {React.Children.map(children, (child, index) => {
               if (child.type === PanelTab)
                 return React.cloneElement(child, {
@@ -26,7 +26,7 @@ const PanelTabs = ({ children, activeTab = 0, variant, ...props }) => {
                   ...props,
                 });
             })}
-          </Row>
+          </div>
         </Nav>
         <TabContent activeTab={value} className="panel-windows" {...props}>
           {React.Children.map(children, (child, index) => {
