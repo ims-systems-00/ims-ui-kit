@@ -29,20 +29,20 @@ const FilterAndSearch = ({
   }, [debouncedSearchString]);
   return (
     <React.Fragment>
-      <Row className="filter-search d-lg-flex pt-4 mb-4">
-        <Col md="4" xl="4" sm="12">
+      <Row className="filter-search d-lg-flex justify-around align-items-center px-lg-4 my-4">
+        <Col md="4" sm="12">
           {title && <h4>{title}</h4>}
         </Col>
-        <Col md="8" xl="8" sm="12">
-          <div className="d-flex justify-content-lg-end justify-content-md-start action-container">
+        <Col md="8" sm="12">
+          <div className="d-flex justify-content-lg-end justify-content-md-end action-container">
             <div className="d-flex create-filter-wrapper">
               {tableToolbar && (
-                <div className="me-3 mr-3 create-filer">
+                <div className="me-md-3 mr-md-3 create-filer">
                   {tableToolbar}
                 </div>
               )}
               {isFilterable && (
-                <div className="me-3 mr-3 create-filer">
+                <div className="me-md-3 mr-md-3 create-filer">
                   <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle
                       className="filter"
