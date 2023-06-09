@@ -38,7 +38,8 @@ export default function useTextEditor(config) {
    */
   const activateEditor = () => setFocusedForEditing(true);
   const deactivateEditor = () => setFocusedForEditing(false);
-  useEffect(() => {
+
+  function stateController() {
     let currentContent;
     try {
       if (typeof config.value === "string") {
@@ -63,17 +64,6 @@ export default function useTextEditor(config) {
         );
     }
     if (config.value || currentContent) {
-      // EditorState.set(editorState, {
-      //   currentContent: convertFromRaw(currentContent),
-      //   /**
-      //    * following solution is implemented to get the direction map for the editor
-      //    * with current content. Draftjs has got an issue with direction map.
-      //    * see issue : https://github.com/facebook/draft-js/issues/1820
-      //    */
-      //   directionMap: EditorState.createWithContent(
-      //     convertFromRaw(currentContent)
-      //   ).getDirectionMap(),
-      // })
       return handleEditorStateChange(
         EditorState.push(
           editorState,
@@ -83,10 +73,15 @@ export default function useTextEditor(config) {
       );
     }
     return handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
+  }
+  useEffect(() => {
+    stateController();
   }, []);
   useEffect(() => {
+    if (config.readOnly) {
+      return stateController();
+    }
     if (!config.value) {
-      // console.log("reset", config.value);
       handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
     }
   }, [config.value]);
