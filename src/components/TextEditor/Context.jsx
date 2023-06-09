@@ -7,6 +7,7 @@ const TextEditorContextProvider = ({ children, ...rest }) => {
     linkGeneratorFn: rest.linkGeneratorFn,
     onDataStructureChange: rest.onDataStructureChange || function () {},
     value: rest.value || null,
+    readOnly: rest.readOnly,
   });
   return (
     <TextEditorContext.Provider
