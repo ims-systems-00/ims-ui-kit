@@ -125,3 +125,4 @@ export { default as RadialProgressBar } from "./components/Progress/Radial/Radia
 export { DrawerRight } from "./components/Drawer/index";
 export { DrawerOpener } from "./components/Drawer/index";
 export { DrawerContextProvider } from "./components/Drawer/index";
+export { useDrawer } from "./components/Drawer/index";

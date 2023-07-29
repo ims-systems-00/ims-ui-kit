@@ -1,4 +1,6 @@
-import { Button, Col, Row } from "ims-ui-kit";
+import Button from "../Buttons/ButtonBase";
+import Col from "../Grid/ColBase";
+import Row from "../Grid/RowBase";
 import React, { useEffect, useState } from "react";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
