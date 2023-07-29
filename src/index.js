@@ -122,3 +122,6 @@ export { default as PanelTab } from "./components/Panel/PanelTab";
 export { default as PanelTabs } from "./components/Panel/PanelTabs";
 export { default as ImsCarousel } from "./components/Carousel/ImsCarousel";
 export { default as RadialProgressBar } from "./components/Progress/Radial/RadialProgressBar";
+export { DrawerRight } from "./components/Drawer/index";
+export { DrawerOpener } from "./components/Drawer/index";
+export { DrawerContextProvider } from "./components/Drawer/index";
