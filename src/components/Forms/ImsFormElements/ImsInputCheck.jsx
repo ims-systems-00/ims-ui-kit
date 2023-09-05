@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { FormGroup, Input, Label } from "reactstrap";
+import { Col, FormGroup, Input, Label } from "reactstrap";
 
 let ImsInputCheckProps = Object.assign({}, Input.prototype.props);
 
@@ -40,8 +40,6 @@ const ImsInputCheck = ({
         </Label>
         </Col>
           <Col sm="12">
-            <Select {...rest} onChange={handleChange} />
-
             {error && (
               <p>
                 <label className="text-danger">

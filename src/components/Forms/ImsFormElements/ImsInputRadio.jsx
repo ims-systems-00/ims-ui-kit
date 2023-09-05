@@ -56,8 +56,6 @@ const ImsInputRadio = ({
           </div>
         </Col>
         <Col sm="12">
-          <Select {...rest} onChange={handleChange} />
-
           {error && (
             <p>
               <label className="text-danger">
