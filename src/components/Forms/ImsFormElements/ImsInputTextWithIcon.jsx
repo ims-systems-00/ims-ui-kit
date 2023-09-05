@@ -10,6 +10,7 @@ const ImsInputTextWithIcon = ({
   mandatory = false,
   error,
   defaultOpt,
+  helperText,
   ...props
 }) => {
   return (
@@ -34,10 +35,13 @@ const ImsInputTextWithIcon = ({
             </InputGroupText>
           </InputGroup>
           {error && (
-            <label className="text-danger">
-              <small>{error}</small>
-            </label>
+            <p>
+              <label className="text-danger">
+                <small>{error}</small>
+              </label>
+            </p>
           )}
+          {helperText && <small>{helperText}</small>}
         </Col>
       </FormGroup>
     </>

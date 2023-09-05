@@ -15,6 +15,8 @@ const ImsInputCheck = ({
   mandatory = false,
   onChange,
   unselected = false,
+  error,
+  helperText,
   ...rest
 }) => {
   return (
@@ -25,6 +27,7 @@ const ImsInputCheck = ({
           "unselected-checkbox": unselected,
         })}
       >
+        <Col md="12">
         <Input type="checkbox" {...rest} />{" "}
         <Label
           style={{
@@ -35,6 +38,19 @@ const ImsInputCheck = ({
         >
           {label} {mandatory ? <span className="text-danger">*</span> : ""}
         </Label>
+        </Col>
+          <Col sm="12">
+            <Select {...rest} onChange={handleChange} />
+
+            {error && (
+              <p>
+                <label className="text-danger">
+                  <small>{error}</small>
+                </label>
+              </p>
+            )}
+            {helperText && <small>{helperText}</small>}
+          </Col>
       </FormGroup>
     </>
   );

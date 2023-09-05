@@ -1,7 +1,15 @@
 import ReactDatetime from "react-datetime";
 import { Col, FormGroup, Label } from "reactstrap";
 
-const ImsInputTime = ({ label, name, value, onChange, error, disabled }) => {
+const ImsInputTime = ({
+  label,
+  name,
+  value,
+  onChange,
+  error,
+  disabled,
+  helperText,
+}) => {
   return (
     <>
       <FormGroup row>
@@ -39,11 +47,14 @@ const ImsInputTime = ({ label, name, value, onChange, error, disabled }) => {
             }}
             className="text-dark"
           />
-          {error && (
-            <label className="text-danger">
-              <small>{error}</small>
-            </label>
+        {error && (
+            <p>
+              <label className="text-danger">
+                <small>{error}</small>
+              </label>
+            </p>
           )}
+          {helperText && <small>{helperText}</small>}
         </Col>
       </FormGroup>
     </>
