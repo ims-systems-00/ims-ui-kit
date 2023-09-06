@@ -28,27 +28,30 @@ const ImsInputCheck = ({
         })}
       >
         <Col md="12">
-        <Input type="checkbox" {...rest} />{" "}
-        <Label
-          style={{
-            fontSize: "16px",
-          }}
-          className="text-dark"
-          check
-        >
-          {label} {mandatory ? <span className="text-danger">*</span> : ""}
-        </Label>
+          <Input type="checkbox" {...rest} />{" "}
+          <Label
+            style={{
+              fontSize: "16px",
+            }}
+            className="text-dark"
+            check
+          >
+            {label} {mandatory ? <span className="text-danger">*</span> : ""}
+          </Label>
         </Col>
-          <Col sm="12">
-            {error && (
-              <p>
-                <label className="text-danger">
-                  <small>{error}</small>
-                </label>
-              </p>
-            )}
-            {helperText && <small>{helperText}</small>}
-          </Col>
+        <Col sm="12">
+          {error && (
+            <label className="text-danger">
+              <small>{error}</small>
+            </label>
+          )}
+          {helperText && (
+            <label>
+              {" "}
+              <small>{helperText}</small>
+            </label>
+          )}
+        </Col>
       </FormGroup>
     </>
   );

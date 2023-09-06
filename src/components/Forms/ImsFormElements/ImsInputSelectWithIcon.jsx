@@ -56,13 +56,15 @@ const ImsInputSelectWithIcon = ({
           </InputGroup>
 
           {error && (
-            <p>
-              <label className="text-danger">
-                <small>{error}</small>
-              </label>
-            </p>
+            <label className="text-danger">
+              <small>{error}</small>
+            </label>
           )}
-          {helperText && <small>{helperText}</small>}
+          {helperText && (
+            <label>
+              <small>{helperText}</small>
+            </label>
+          )}
         </Col>
       </FormGroup>
     </>

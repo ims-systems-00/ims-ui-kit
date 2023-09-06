@@ -36,13 +36,16 @@ const ImsTextEditor = ({
         />
 
         {error && (
-          <p>
-            <label className="text-danger">
-              <small>{error}</small>
-            </label>
-          </p>
+          <label className="text-danger">
+            <small>{error}</small>
+          </label>
         )}
-        {helperText && <small>{helperText}</small>}
+        {helperText && (
+          <label className="">
+            {" "}
+            <small>{helperText}</small>
+          </label>
+        )}
       </Col>
     </FormGroup>
   );

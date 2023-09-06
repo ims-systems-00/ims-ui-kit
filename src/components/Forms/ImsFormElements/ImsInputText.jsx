@@ -14,7 +14,7 @@ const ImsInputText = ({
   mandatory = false,
   error = "",
   feedbackText = "",
-  helperText="",
+  helperText = "",
   ...rest
 }) => {
   return (
@@ -36,13 +36,16 @@ const ImsInputText = ({
           <Input invalid={error} {...rest} />
 
           {error && (
-            <p>
-              <label className="text-danger">
-                <small>{error}</small>
-              </label>
-            </p>
+            <label className="text-danger">
+              <small>{error}</small>
+            </label>
           )}
-          {helperText && <small>{helperText}</small>}
+          {helperText && (
+            <label>
+              {" "}
+              <small>{helperText}</small>
+            </label>
+          )}
         </Col>
       </FormGroup>
     </>
