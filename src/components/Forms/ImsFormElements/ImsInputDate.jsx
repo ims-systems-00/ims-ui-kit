@@ -9,6 +9,7 @@ const ImsInputDate = ({
   error,
   mandatory = false,
   disabled,
+  helperText,
 }) => {
   return (
     <FormGroup row>
@@ -44,9 +45,15 @@ const ImsInputDate = ({
           timeFormat={false}
           dateFormat={"D/M/YYYY"}
         />
+
         {error && (
           <label className="text-danger">
             <small>{error}</small>
+          </label>
+        )}
+        {helperText && (
+          <label className="">
+            <small>{helperText}</small>
           </label>
         )}
       </Col>

@@ -10,6 +10,8 @@ const ImsInputRadio = ({
   unselected,
   defaultChecked,
   verticalAlign = false,
+  error,
+  helperText,
   ...rest
 }) => {
   return (
@@ -52,6 +54,19 @@ const ImsInputRadio = ({
                 </span>
               ))}
           </div>
+        </Col>
+        <Col sm="12">
+          {error && (
+            <label className="text-danger">
+              <small>{error}</small>
+            </label>
+          )}
+          {helperText && (
+            <label>
+              {" "}
+              <small>{helperText}</small>
+            </label>
+          )}
         </Col>
       </FormGroup>
     </React.Fragment>
