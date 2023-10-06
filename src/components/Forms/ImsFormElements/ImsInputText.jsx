@@ -14,6 +14,7 @@ const ImsInputText = ({
   mandatory = false,
   error = "",
   feedbackText = "",
+  helperText = "",
   ...rest
 }) => {
   return (
@@ -33,9 +34,16 @@ const ImsInputText = ({
         )}
         <Col sm="12">
           <Input invalid={error} {...rest} />
+
           {error && (
             <label className="text-danger">
               <small>{error}</small>
+            </label>
+          )}
+          {helperText && (
+            <label>
+              {" "}
+              <small>{helperText}</small>
             </label>
           )}
         </Col>
@@ -63,6 +71,8 @@ ImsInputText.propTypes = {
   /** Error */
   error: PropTypes.string,
   /** Valid */
+  //** Helper Text */
+  helperText: PropTypes.string,
   valid: PropTypes.bool,
   /** On Change */
   onChange: PropTypes.func,

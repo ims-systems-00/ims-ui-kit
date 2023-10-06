@@ -8,6 +8,7 @@ const ImsTextEditor = ({
   linkGenerator,
   handleUpload,
   onChange = () => {},
+  helperText,
   ...rest
 }) => {
   return (
@@ -33,9 +34,16 @@ const ImsTextEditor = ({
           handleUpload={handleUpload}
           {...rest}
         />
+
         {error && (
           <label className="text-danger">
             <small>{error}</small>
+          </label>
+        )}
+        {helperText && (
+          <label className="">
+            {" "}
+            <small>{helperText}</small>
           </label>
         )}
       </Col>

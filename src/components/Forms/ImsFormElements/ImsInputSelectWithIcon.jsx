@@ -10,6 +10,7 @@ const ImsInputSelectWithIcon = ({
   name,
   onChange = () => {},
   mandatory = false,
+  helperText,
   ...rest
 }) => {
   const handleChange = (changes) => {
@@ -53,9 +54,15 @@ const ImsInputSelectWithIcon = ({
             </InputGroupText>
             <Select {...rest} onChange={handleChange} />
           </InputGroup>
+
           {error && (
             <label className="text-danger">
               <small>{error}</small>
+            </label>
+          )}
+          {helperText && (
+            <label>
+              <small>{helperText}</small>
             </label>
           )}
         </Col>
