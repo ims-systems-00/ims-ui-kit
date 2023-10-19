@@ -1,11 +1,11 @@
 .filter-search {
   .table-search-input {
-    width: 5.625rem !important;
+    width: 14rem !important;
     background-color: transparent !important;
     transition: width 0.4s ease-in-out !important;
   }
   .table-search-input:focus {
-    width: 16rem !important;
+    // width: 16rem !important;
   }
   .table-search-container {
     display: flex;
