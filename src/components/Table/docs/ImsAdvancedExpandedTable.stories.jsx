@@ -11,6 +11,7 @@ import {
 import Badge from "../../Badges/BadgeBase";
 import ImsExpandedTable from "../AdvancedExpandedTable/Index";
 import filters from "../filters";
+import sorts from "../sorts";
 export default {
   title: "components/AdvanceExpandedTable",
   component: ImsExpandedTable,
@@ -179,15 +180,21 @@ Default.args = {
     }),
   }),
   filters: filters,
+  sorts: sorts,
   handleFilter: (e) => {
     console.log(e);
   },
   handleSearch: (e) => {
     console.log(e);
   },
-  title: "Hardware Mangment",
+  handleSort: (e) => {
+    console.log(e);
+  },
+  title: "Hardware Management",
   isFilterable: true,
   isSearchable: true,
+  isSortable: true,
+  hasBulkActions: true,
   tableToolbar: (
     <React.Fragment>
       <Button
@@ -201,6 +208,22 @@ Default.args = {
       >
         <i class="fa-solid fa-edit me-2 p-0" />
         Create
+      </Button>
+    </React.Fragment>
+  ),
+  filterToolbar: (
+    <React.Fragment>
+      <Button
+        color="secondary"
+        outline
+        size="md"
+        className="shadow-sm--hover"
+        onClick={() => {
+          alert("Create A filter component");
+        }}
+      >
+        <i class="fa-solid fa-filter me-2 p-0"/>
+        Filter
       </Button>
     </React.Fragment>
   ),
