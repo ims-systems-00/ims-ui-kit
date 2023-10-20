@@ -211,4 +211,20 @@ Default.args = {
       </Button>
     </React.Fragment>
   ),
+  filterToolbar: (
+    <React.Fragment>
+      <Button
+        color="secondary"
+        outline
+        size="md"
+        className="shadow-sm--hover"
+        onClick={() => {
+          alert("Create A filter component");
+        }}
+      >
+        <i class="fa-solid fa-filter me-2 p-0"/>
+        Filter
+      </Button>
+    </React.Fragment>
+  ),
 };
