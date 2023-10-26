@@ -8,6 +8,7 @@ const ImsInputSelect = ({
   onChange = () => {},
   mandatory = false,
   helperText,
+  sideBtn,
   ...rest
 }) => {
   const handleChange = (changes) => {
@@ -34,14 +35,15 @@ const ImsInputSelect = ({
   return (
     <>
       <FormGroup row>
-        <Col sm="12">
+        <Col sm="12" className="d-flex">
           <Label
             style={{
               fontSize: "16px",
             }}
             className="text-dark"
           >
-            {label} {mandatory ? <span className="text-danger">*</span> : ""}
+            {label} {mandatory ? <span className="text-danger">*</span> : ""}{" "}
+            {sideBtn && sideBtn}
           </Label>
         </Col>
         <Col sm="12">
