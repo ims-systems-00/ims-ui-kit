@@ -44,6 +44,7 @@ const ImsInputDate = ({
           }}
           timeFormat={false}
           dateFormat={"D/M/YYYY"}
+          closeOnSelect
         />
 
         {error && (
