@@ -130,6 +130,7 @@ export { useDrawer } from "./components/Drawer/index";
  * utility hooks for ims systems UI stack
  */
 export { default as useAPIError } from "./hooks/error/index";
+export { default as useError } from "./hooks/error/index";
 export { default as useQuery } from "./hooks/useQuery/index";
 export { default as useForm } from "./hooks/useForm";
 export { default as useDualStateController } from "./hooks/useDualStateController";
