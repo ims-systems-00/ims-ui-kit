@@ -98,10 +98,10 @@ const useForm = (initdataModel, schema) => {
   }, [dataModel, validationErrors]);
   /** validation runner is required the first time the form renders. */
   useEffect(() => {
-    (async function () {
-      const errors = await validate();
-      if (errors) return setValidationErrors(errors);
-    })();
+    // (async function () {
+    //   const errors = await validate();
+    //   if (errors) return setValidationErrors(errors);
+    // })();
   }, []);
   return {
     dataModel,
