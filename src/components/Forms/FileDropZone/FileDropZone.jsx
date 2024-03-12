@@ -76,7 +76,6 @@ export default function FileDropZone({
     );
   return (
     <section>
-      <input type="file" name="" id="" />
       <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
         <p>{hint}</p>
