@@ -109,6 +109,7 @@ export { default as ImsInputRadio } from "./components/Forms/ImsFormElements/Ims
 export { default as ImsInputSelect } from "./components/Forms/ImsFormElements/ImsInputSelect";
 export { default as ImsInputSelectWithIcon } from "./components/Forms/ImsFormElements/ImsInputSelectWithIcon";
 export { default as ImsInputText } from "./components/Forms/ImsFormElements/ImsInputText";
+export { default as ImsInputDateAndTime } from "./components/Forms/ImsFormElements/ImsInputDateAndTime";
 export { default as ImsInputTextWithIcon } from "./components/Forms/ImsFormElements/ImsInputTextWithIcon";
 export { default as ImsInputTime } from "./components/Forms/ImsFormElements/ImsInputTime";
 export { default as ImsTextEditor } from "./components/Forms/ImsFormElements/ImsTextEditor";
