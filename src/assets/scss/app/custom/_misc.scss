@@ -287,3 +287,26 @@ code {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+.white-space-pre-wrap {
+  white-space: pre-wrap;
+}
+.scrollbar-primary {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+.bar-sticky {
+  position: sticky;
+  top: 0;
+}
