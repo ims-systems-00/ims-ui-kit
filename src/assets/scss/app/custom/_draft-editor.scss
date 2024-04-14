@@ -6,6 +6,7 @@ $guide-height: 75px;
   border: 1px solid $input-border-color;
   transition: 0.1s ease;
   color: $type-medium;
+  overflow: hidden;
   .toolbar {
     border-bottom: 1px solid $input-border-color !important;
     background-color: $secondary-extra-light !important;

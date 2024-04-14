@@ -15,39 +15,46 @@ export default function ToolBar(props) {
   return (
     <>
       <FilePicker {...getFileInputProps()} />
-      {Object.keys(toolTypes).map((type, index) => {
-        return (
-          <React.Fragment key={type}>
-            {toolTypes[type]?.map((tool) => {
-              return (
-                <Button
-                  title={tool?.label}
-                  type="button"
-                  color="link"
-                  className={classNames("text-toolbar-btn", {
-                    "text-muted": !focusedForEditing,
-                    "text-secondary": focusedForEditing,
-                    "text-primary": isToolActive(tool) && focusedForEditing,
-                  })}
-                  key={tool?.style}
-                  onMouseDown={(e) => handleToolClick(tool, e)}
-                >
-                  {tool.icon ? (
-                    <i
-                      className={classNames(tool.icon, {
-                        "text-primary": isToolActive(tool),
-                      })}
-                    />
-                  ) : (
-                    tool?.label
-                  )}
-                </Button>
-              );
-            })}
-            {index < Object.keys(toolTypes).length - 1 && <ButtonSeparator />}
-          </React.Fragment>
-        );
-      })}
+      {Object.keys(toolTypes)
+        .filter((item) => {
+          if (props.minimal) {
+            return item != "ENTITY_TYPES";
+          }
+          return true;
+        })
+        .map((type, index) => {
+          return (
+            <React.Fragment key={type}>
+              {toolTypes[type]?.map((tool) => {
+                return (
+                  <Button
+                    title={tool?.label}
+                    type="button"
+                    color="link"
+                    className={classNames("text-toolbar-btn", {
+                      "text-muted": !focusedForEditing,
+                      "text-secondary": focusedForEditing,
+                      "text-primary": isToolActive(tool) && focusedForEditing,
+                    })}
+                    key={tool?.style}
+                    onMouseDown={(e) => handleToolClick(tool, e)}
+                  >
+                    {tool.icon ? (
+                      <i
+                        className={classNames(tool.icon, {
+                          "text-primary": isToolActive(tool),
+                        })}
+                      />
+                    ) : (
+                      tool?.label
+                    )}
+                  </Button>
+                );
+              })}
+              {index < Object.keys(toolTypes).length - 1 && <ButtonSeparator />}
+            </React.Fragment>
+          );
+        })}
     </>
   );
 }

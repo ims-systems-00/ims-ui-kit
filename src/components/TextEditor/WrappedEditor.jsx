@@ -15,13 +15,14 @@ export default function WrappedEditor(props) {
     >
       {!props.readOnly && (
         <div className="bg-light toolbar">
-          <ToolBar {...props} />
+          <ToolBar {...props} minimal={props.minimal} />
           {/* <hr></hr> */}
         </div>
       )}
       <div
         className={classnames("", {
-          "d-flex flex-column input-area bg-light m-3": !props.readOnly,
+          "d-flex flex-column input-area": !props.readOnly, // removed
+          "bg-light m-3": props.mimimal,
         })}
       >
         <div
