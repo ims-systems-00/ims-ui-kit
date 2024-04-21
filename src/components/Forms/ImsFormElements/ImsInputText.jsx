@@ -9,14 +9,14 @@ let ImsInputTextProps = Object.assign({}, Input.prototype.props);
  * @returns
  */
 
-const ImsInputText = ({
+function ImsInputText({
   label,
   mandatory = false,
   error = "",
   feedbackText = "",
   helperText = "",
   ...rest
-}) => {
+}) {
   return (
     <>
       <FormGroup row>
@@ -50,7 +50,7 @@ const ImsInputText = ({
       </FormGroup>
     </>
   );
-};
+}
 
 ImsInputText.propTypes = {
   ...(ImsInputTextProps && ImsInputTextProps),

@@ -32,13 +32,13 @@ let ImsCardProps = Object.assign(
  * @returns
  */
 
-const ImsCard = ({
+function ImsCard({
   children,
   cardProps,
   cardHeaderProps,
   cardFooterProps,
   cardBodyProps,
-}) => {
+}) {
   return (
     <Card {...cardProps}>
       {cardHeaderProps?.children && (
@@ -54,7 +54,7 @@ const ImsCard = ({
       )}
     </Card>
   );
-};
+}
 
 ImsCard.propTypes = {
   ...(Card.propTypes && Card.propTypes),
