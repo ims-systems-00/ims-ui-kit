@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Col, FormGroup, Label } from "reactstrap";
-import Input from "../TextInput/InputBase";
+import Input from "../Inputs/InputBase";
 
 let ImsInputTextProps = Object.assign({}, Input.prototype.props);
 
