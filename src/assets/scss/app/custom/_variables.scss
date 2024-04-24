@@ -24,13 +24,13 @@ $success-dark: #218838 !default;
 $danger: #ed3447 !default;
 $danger-dark: #c82333 !default;
 $permission: #439eed !default;
-$permission-dark: #1D8BF8 !default;
+$permission-dark: #1d8bf8 !default;
 $warning: #ffc107 !default;
-$warning-dark: #E0A800 !default;
-$info: #17A2B8 !default;
+$warning-dark: #e0a800 !default;
+$info: #17a2b8 !default;
 $info-dark: #138496 !default;
 $escalate: #d63384 !default;
-$escalate-dark: #AB296A !default;
+$escalate-dark: #ab296a !default;
 $type-dark: #152536 !default; //typography-heading
 $type-medium: #6c757d !default; //typography-body
 $type-light: #ced4da !default; //typography-light
@@ -199,8 +199,8 @@ $h1-font-size: ($font-size-base * 3.428) !default; //3rem
 $h2-font-size: ($font-size-base * 2.285) !default;
 $h3-font-size: ($font-size-base * 1.714) !default;
 $h4-font-size: ($font-size-base * 1.43) !default;
-$h5-font-size: ($font-size-base * 1.43) !default;
-$h6-font-size: ($font-size-base * 1.43) !default;
+$h5-font-size: ($font-size-base * 1.2) !default;
+$h6-font-size: ($font-size-base * 1) !default;
 
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
@@ -222,7 +222,8 @@ $h1-line-height: 72px !default;
 $h2-line-height: 48px !default;
 $h3-line-height: 36px !default;
 $h4-line-height: 30px !default;
-
+$h5-line-height: 20px !default;
+$h6-line-height: 20px !default;
 
 $heading-letter-spacing: 0.025em !default;
 $heading-font-size: 0.95rem !default;
@@ -426,9 +427,9 @@ $table-hover-bg: rgba($primary, $table-hover-bg-factor) !default;
 // $input-border-width:                    $input-btn-border-width !default;
 // $input-box-shadow:                      $box-shadow-inset !default;
 
-$input-border-radius:                   $border-radius !default;
-$input-border-radius-sm:                $border-radius-sm !default;
-$input-border-radius-lg:                $border-radius-lg !default;
+$input-border-radius: $border-radius !default;
+$input-border-radius-sm: $border-radius-sm !default;
+$input-border-radius-lg: $border-radius-lg !default;
 
 // $input-focus-bg:                        $input-bg !default;
 // $input-focus-border-color:              tint-color($component-active-bg, 50%) !default;

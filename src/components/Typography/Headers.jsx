@@ -5,6 +5,8 @@ const Headers = (props) => {
       <h2>h2. this a iMS Headline </h2>
       <h3>h3. this a iMS Headline </h3>
       <h4>h4. this a iMS Headline </h4>
+      <h5>h5. this a iMS Headline </h5>
+      <h6>h5. this a iMS Headline </h6>
     </>
   );
 };
