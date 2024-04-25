@@ -1,6 +1,8 @@
 .dropdown-menu {
   min-width: 177px !important;
+  padding: 5px;
   .dropdown-item {
+    border-radius: $border-radius;
     white-space: nowrap;
     overflow: hidden;
     color: $type-dark;
