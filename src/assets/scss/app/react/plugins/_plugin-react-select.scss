@@ -56,10 +56,10 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     padding-right: 1.5rem;
     display: block;
     outline: none;
-    color: $type-medium;
+    color: $type-dark;
   }
   .react-select__input {
-    color: $type-medium;
+    color: $type-dark;
     font-size: 0.8571rem !important;
   }
   .react-select__menu {
@@ -137,7 +137,7 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
       }
       .react-select__single-value {
         top: 48%;
-        color: $type-medium;
+        color: $type-dark;
       }
     }
     .react-select__placeholder {
@@ -217,7 +217,7 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
         .react-select__single-value,
         .react-select__multi-value__label {
           font-size: 0.8571rem;
-          color: $type-medium;
+          color: $type-dark;
         }
       }
     }
