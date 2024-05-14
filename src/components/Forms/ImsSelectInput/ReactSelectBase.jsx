@@ -1,11 +1,18 @@
+import classNames from "classnames";
 import PropTypes from "prop-types";
 import ReactSelect from "react-select";
+const variants = {
+  outline: "outline",
+  filled: "filled",
+};
 
-const ReactSelectBase = ({ ...rest }) => {
+const ReactSelectBase = ({ variant = variants.outline, ...rest }) => {
   return (
     <ReactSelect
       classNamePrefix="react-select"
-      className="react-select"
+      className={classNames("react-select", {
+        "react-select-filled": variant === variants.filled,
+      })}
       {...rest}
     />
   );
@@ -37,6 +44,7 @@ ReactSelect.propTypes = {
   isHidden: PropTypes.bool,
   size: PropTypes.oneOf(["sm", "lg"]),
   word: PropTypes.string,
+  variant: PropTypes.oneOf(...Object.values(variants)),
 };
 
 export default ReactSelectBase;

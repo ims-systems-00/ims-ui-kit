@@ -1,7 +1,10 @@
 .form-control-filled.form-control {
   background-color: $secondary-extra-light;
   border: 2px solid transparent;
-  .form-control:focus {
+  &:hover {
+    border: 2px solid $stroke-regular;
+  }
+  &:focus {
     box-shadow: none;
     border: 2px solid $primary;
   }

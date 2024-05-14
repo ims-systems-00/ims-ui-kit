@@ -15,18 +15,16 @@ const variants = {
   filled: "filled",
 };
 function InputBase({ variant = variants.outline, ...props }) {
-  if (variant !== variants.filled)
-    return (
-      <Input
-        className={classNames(props.className || "", {
-          "form-control-filled": true,
-        })}
-        {...props}
-      >
-        {props.children}
-      </Input>
-    );
-  return <Input {...props}>{props.children}</Input>;
+  return (
+    <Input
+      className={classNames(props.className || "", {
+        "form-control-filled": variant !== variants.filled,
+      })}
+      {...props}
+    >
+      {props.children}
+    </Input>
+  );
 }
 
 InputBase.propTypes = {

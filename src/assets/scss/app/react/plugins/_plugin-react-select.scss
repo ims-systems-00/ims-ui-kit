@@ -99,6 +99,12 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
       }
     }
   }
+  &.react-select-filled {
+    .react-select__control {
+      background-color: $secondary-extra-light;
+      border: 1px solid transparent;
+    }
+  }
   .react-select__control {
     border-radius: $input-border-radius;
     min-height: calc(2.25rem + 2px);
@@ -110,7 +116,6 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     &:hover {
       border: 1px solid $stroke-regular;
       box-shadow: none;
-      background-color: transparent;
     }
     &.react-select__control--is-focused {
       .react-select__dropdown-indicator {
