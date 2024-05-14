@@ -1,16 +1,23 @@
-import Input from "../InputBase";
-import InputGroup from "../InputGroupBase";
-import InputGroupText from "../InputGroupTextBase";
+import Input from "../../Inputs/InputBase";
+import InputGroup from "../../Inputs/InputGroupBase";
+import InputGroupText from "../../Inputs/InputGroupTextBase";
 
 const GroupInputText = ({}) => {
   return (
     <>
+      <h4>Filled </h4>
+      <InputGroup>
+        <InputGroupText>
+          <i className="fa-solid fa-house"></i>
+        </InputGroupText>
+        <Input variant="filled" />
+      </InputGroup>
+      <br /> <br />
       <h4>Left Icon </h4>
       <InputGroup>
         <InputGroupText>
           <i className="fa-solid fa-house"></i>
         </InputGroupText>
-
         <Input />
       </InputGroup>
       <br /> <br />

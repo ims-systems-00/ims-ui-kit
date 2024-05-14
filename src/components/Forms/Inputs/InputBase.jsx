@@ -18,7 +18,7 @@ function InputBase({ variant = variants.outline, ...props }) {
   return (
     <Input
       className={classNames(props.className || "", {
-        "form-control-filled": variant !== variants.filled,
+        "form-control-filled": variant === variants.filled,
       })}
       {...props}
     >
