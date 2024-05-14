@@ -1,3 +1,11 @@
+.form-control-filled.form-control {
+  background-color: $secondary-extra-light;
+  border: 2px solid transparent;
+  .form-control:focus {
+    box-shadow: none;
+    border: 2px solid $primary;
+  }
+}
 .form-group {
   margin-bottom: 10px;
 }
