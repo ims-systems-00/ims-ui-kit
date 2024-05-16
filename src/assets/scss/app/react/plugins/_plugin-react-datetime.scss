@@ -2,6 +2,21 @@
 * https://github.com/YouCanBookMe/react-datetime
 */
 .rdt {
+  &.form-control-filled {
+    .form-control {
+      background-color: $secondary-extra-light;
+      border: 2px solid transparent;
+      transition: all 0.15s linear;
+      &:hover {
+        border: 2px solid $stroke-regular;
+      }
+      &:focus {
+        box-shadow: none;
+        border: 2px solid $primary;
+        background-color: transparent;
+      }
+    }
+  }
   .form-control {
     border: 1px solid $stroke-regular;
   }
@@ -325,7 +340,6 @@ td.rdtYear:hover {
 .rdtCounters {
   .rdtCounter:last-child {
     .rdtCount {
-      
       color: $primary;
       border-radius: 50%;
       border: 1px solid $primary;
