@@ -10,7 +10,7 @@ const DateTimeBase = ({ variant = variants.outline, ...rest }) => {
   return (
     <Datetime
       className={classNames(rest.className || "", {
-        "form-control-filled": variant !== variants.filled,
+        "form-control-filled": variant === variants.filled,
       })}
       {...rest}
     />
