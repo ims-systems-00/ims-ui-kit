@@ -5,7 +5,7 @@
   &.form-control-filled {
     .form-control {
       background-color: $secondary-extra-light;
-      border: 2px solid transparent;
+      border: 2px solid $secondary-extra-light;
       transition: all 0.15s linear;
       &:hover {
         border: 2px solid $stroke-regular;
