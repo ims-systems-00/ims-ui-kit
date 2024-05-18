@@ -103,7 +103,7 @@ const useForm = (initdataModel, schema) => {
     //   if (errors) return setValidationErrors(errors);
     // })();
   }, []);
-  function initiateDataMode(dataModel) {
+  function initiateDataModel(dataModel) {
     setDataModel(dataModel);
   }
   return {
@@ -112,7 +112,7 @@ const useForm = (initdataModel, schema) => {
     isBusy,
     handleChange,
     handleSubmit,
-    initiateDataMode,
+    initiateDataModel,
     isFormValid,
     resetForm,
     hasUnsavedData,
