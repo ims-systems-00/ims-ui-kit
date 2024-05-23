@@ -75,7 +75,7 @@ const DrawerRight = ({
                   outline
                   size="sm"
                 >
-                  <i className="ims-icons icon-icon-cross-24"></i>
+                  <i className="tim-icons icon-simple-remove"></i>
                 </Button>
                 {toolbar}
               </div>
