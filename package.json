@@ -1,6 +1,6 @@
 {
   "name": "ims-ui-kit",
-  "version": "2.4.44",
+  "version": "2.4.45",
   "source": "src/index.js",
   "files": [
     "dist",
@@ -69,6 +69,7 @@
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "dpdm": "^3.14.0",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.9",
     "jest-enzyme": "^7.1.2",

@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React from "react";
-import { NavItem, NavLink } from "../../index";
+import NavItem from "../Nav/NavItemBase";
+import NavLink from "../Nav/NavLinkBase";
 
 const PanelTab = ({ children, onClick, active, index, label, ...props }) => {
   return (
