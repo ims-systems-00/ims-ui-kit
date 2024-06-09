@@ -1,11 +1,11 @@
-import { useState } from "react";
+import React from "react";
 
 const useProcessing = (initializers) => {
   let initState = {};
   initializers.forEach((process) => {
     initState[process.action] = { status: process.status, id: null };
   });
-  let [processing, setProcessing] = useState(initState);
+  let [processing, setProcessing] = React.useState(initState);
   let dispatch = (state) => {
     setProcessing((currentProcesses) => {
       let key = Object.keys(state)[0];
