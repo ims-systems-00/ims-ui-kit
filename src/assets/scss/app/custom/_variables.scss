@@ -27,8 +27,8 @@ $permission: #439eed !default;
 $permission-dark: #1d8bf8 !default;
 $warning: #ffc107 !default;
 $warning-dark: #e0a800 !default;
-$info: #17a2b8 !default;
-$info-dark: #138496 !default;
+$info: $primary;
+$info-dark: $primary-dar;
 $escalate: #d63384 !default;
 $escalate-dark: #ab296a !default;
 $type-dark: #152536 !default; //typography-heading
