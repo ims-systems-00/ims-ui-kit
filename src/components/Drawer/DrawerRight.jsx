@@ -71,7 +71,7 @@ const DrawerRight = ({
                     closeDrawer(drawerId);
                     onDrawerClose();
                   }}
-                  color="danger"
+                  color="secondary"
                   outline
                   size="sm"
                 >
@@ -83,9 +83,8 @@ const DrawerRight = ({
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M4 4L21 21M4 21L21 4"
+                      d="M4 4L13 13M4 13L13 4"
                       stroke="#808080"
-                      stroke-width="1.5"
                       stroke-linecap="round"
                     />
                   </svg>
