@@ -75,7 +75,20 @@ const DrawerRight = ({
                   outline
                   size="sm"
                 >
-                  <i className="tim-icons icon-simple-remove"></i>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 4L21 21M4 21L21 4"
+                      stroke="#808080"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
                 </Button>
                 {toolbar}
               </div>
