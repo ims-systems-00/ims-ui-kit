@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 
 function useQuery(initial) {
   const initialQueryState = {
@@ -18,8 +18,8 @@ function useQuery(initial) {
     },
   };
 
-  let [query, setQuery] = useState(initialQueryState);
-  let [toolState, setToolState] = useState(initialQueryState);
+  let [query, setQuery] = React.useState(initialQueryState);
+  let [toolState, setToolState] = React.useState(initialQueryState);
 
   function fullReset() {
     setQuery(initialQueryState);

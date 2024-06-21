@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 const defaultPaginationState = {
   currentPage: 1,
   hasNextPage: false,
@@ -10,7 +10,7 @@ const defaultPaginationState = {
   totalResults: 0,
 };
 const usePaginationState = () => {
-  const [pagination, setPagination] = useState(defaultPaginationState);
+  const [pagination, setPagination] = React.useState(defaultPaginationState);
   function updatePaginaion(pagination = defaultPaginationState) {
     setPagination(pagination);
   }

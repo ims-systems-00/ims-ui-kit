@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
+import React from "react";
 const SUCCESS_TIMEOUT = 2500;
 const useClipboard = () => {
-  const [copySuccess, setCopySuccess] = useState(false);
-  const contentElementReference = useRef(null);
+  const [copySuccess, setCopySuccess] = React.useState(false);
+  const contentElementReference = React.useRef(null);
   async function copyFormatedToClipboard() {
     if (contentElementReference.current) {
       /** create a range to select contents that will be copied. */
