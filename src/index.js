@@ -110,12 +110,12 @@ export { default as ImsInputText } from "./components/Forms/ImsFormElements/ImsI
 export { default as ImsInputDateAndTime } from "./components/Forms/ImsFormElements/ImsInputDateAndTime";
 export { default as ImsInputTextWithIcon } from "./components/Forms/ImsFormElements/ImsInputTextWithIcon";
 export { default as ImsInputTime } from "./components/Forms/ImsFormElements/ImsInputTime";
-export { default as ImsTextEditor } from "./components/Forms/ImsFormElements/ImsTextEditor";
+// export { default as ImsTextEditor } from "./components/Forms/ImsFormElements/ImsTextEditor";
 export { default as RadioCheckbox } from "./components/Forms/RadioInput/ImsInputRadio";
 export { default as TextInput } from "./components/Forms/TextInput/InputBase";
 export { default as InputDate } from "./components/Forms/DateTimePicker/DateTimeBase";
-export { default as TextEditor } from "./components/TextEditor/Index";
-export { default as Activity } from "./components/Activities/ActivityBase";
+// export { default as TextEditor } from "./components/TextEditor/Index";
+// export { default as Activity } from "./components/Activities/ActivityBase";
 export { default as ImsCard } from "./components/Cards/ImsCard";
 export { default as PanelWindow } from "./components/Panel/PanelWindow";
 export { default as PanelTab } from "./components/Panel/PanelTab";
