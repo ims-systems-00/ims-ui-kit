@@ -17,10 +17,10 @@ const variants = {
 function InputBase({ variant = variants.outline, ...props }) {
   return (
     <Input
+      {...props}
       className={classNames(props.className || "", {
         "form-control-filled": variant === variants.filled,
       })}
-      {...props}
     >
       {props.children}
     </Input>
