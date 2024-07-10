@@ -6,14 +6,14 @@ const variants = {
   filled: "filled",
 };
 
-const ReactSelectBase = ({ variant = variants.outline, ...rest }) => {
+const ReactSelectBase = ({ variant = variants.filled, ...rest }) => {
   return (
     <ReactSelect
+      {...rest}
       classNamePrefix="react-select"
-      className={classNames("react-select", {
+      className={classNames("react-select " + rest.className, {
         "react-select-filled": variant === variants.filled,
       })}
-      {...rest}
     />
   );
 };
