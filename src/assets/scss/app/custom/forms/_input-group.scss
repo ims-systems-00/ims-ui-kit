@@ -9,7 +9,8 @@
       cursor: pointer;
     }
   }
-  &:has(.form-control-filled) {
+  &:has(.form-control-filled),
+  &:has(.react-select-filled) {
     .input-group-text:first-child,
     .input-group-text:last-child {
       background-color: $secondary-extra-light;

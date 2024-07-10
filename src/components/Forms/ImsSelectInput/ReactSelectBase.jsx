@@ -6,7 +6,7 @@ const variants = {
   filled: "filled",
 };
 
-const ReactSelectBase = ({ variant = variants.filled, ...rest }) => {
+const ReactSelectBase = ({ variant = variants.outline, ...rest }) => {
   return (
     <ReactSelect
       {...rest}
