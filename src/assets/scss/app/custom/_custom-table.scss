@@ -1,7 +1,6 @@
 .visual-table {
   .ReactTable .rt-thead .rt-tr {
     text-align: center;
-    min-height: 3.1rem;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
     background-color: $secondary-extra-light;
@@ -13,7 +12,7 @@
   }
   .ReactTable .rt-tbody {
     color: $type-dark;
-    font-size: 1rem ;
+    font-size: 0.875rem;
   }
   .ReactTable .rt-tbody .rt-tr,
   .ReactTable .rt-thead.-filters .rt-tr {
