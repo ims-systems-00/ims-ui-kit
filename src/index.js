@@ -112,7 +112,6 @@ export { default as ImsInputTextWithIcon } from "./components/Forms/ImsFormEleme
 export { default as ImsInputTime } from "./components/Forms/ImsFormElements/ImsInputTime";
 export { default as ImsTextEditor } from "./components/Forms/ImsFormElements/ImsTextEditor";
 export { default as RadioCheckbox } from "./components/Forms/RadioInput/ImsInputRadio";
-export { default as TextInput } from "./components/Forms/TextInput/InputBase";
 export { default as InputDate } from "./components/Forms/DateTimePicker/DateTimeBase";
 export { default as TextEditor } from "./components/TextEditor/Index";
 export { default as Activity } from "./components/Activities/ActivityBase";
