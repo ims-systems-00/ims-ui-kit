@@ -13,12 +13,6 @@ export default function WrappedEditor(props) {
         "editor-active": focusedForEditing,
       })}
     >
-      {!props.readOnly && (
-        <div className="bg-light toolbar">
-          <ToolBar {...props} minimal={props.minimal} />
-          {/* <hr></hr> */}
-        </div>
-      )}
       <div
         className={classnames("", {
           "d-flex flex-column input-area": !props.readOnly, // removed
@@ -38,6 +32,11 @@ export default function WrappedEditor(props) {
          */}
         {!props.readOnly && (
           <div className="flex-grow-1" onMouseDown={forceFocusEditorEnd}></div>
+        )}
+        {!props.readOnly && (
+          <div className="toolbar m-2 rounded">
+            <ToolBar {...props} minimal={props.minimal} />
+          </div>
         )}
       </div>
     </div>

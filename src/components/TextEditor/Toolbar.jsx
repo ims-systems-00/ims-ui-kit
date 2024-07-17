@@ -7,6 +7,7 @@ import FilePicker from "./FilePicker";
 import classNames from "classnames";
 export default function ToolBar(props) {
   const {
+    editorState,
     getFileInputProps,
     isToolActive,
     handleToolClick,
@@ -55,6 +56,19 @@ export default function ToolBar(props) {
             </React.Fragment>
           );
         })}
+      {props.enableSubmit && (
+        <Button
+          color="primary"
+          size="sm"
+          className="text-toolbar-btn px-2 pull-right"
+          onClick={() => {
+            if (typeof props.onSubmit === "function")
+              props.onSubmit(editorState);
+          }}
+        >
+          <i className="fa-solid fa-paper-plane"></i>
+        </Button>
+      )}
     </>
   );
 }

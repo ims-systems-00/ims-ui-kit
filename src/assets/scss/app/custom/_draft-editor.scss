@@ -8,18 +8,14 @@ $guide-height: 75px;
   color: $type-medium;
   overflow: hidden;
   .toolbar {
-    border-bottom: 1px solid $input-border-color !important;
     background-color: $secondary-extra-light !important;
   }
   .text-toolbar-btn {
     margin: 6px 8px !important;
-    padding: 6px !important;
-    color: $type-medium !important;
+    padding: 6px;
   }
   .input-area {
     min-height: 170px !important;
-    border: 1px solid $input-border-color;
-    border-radius: $input-border-radius;
   }
   .toolbar-separator {
     border-bottom: 1px solid $input-border-color;
