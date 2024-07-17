@@ -1,5 +1,6 @@
 import "../src/assets/css/nucleo-icons.css";
 import "../src/assets/css/ims-icons.css";
+import "../src/assets/css/font-awesome-icons.css";
 import "react-notifications-component/dist/theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../src/assets/scss/app.scss";
