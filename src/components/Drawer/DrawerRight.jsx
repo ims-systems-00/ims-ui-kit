@@ -85,7 +85,7 @@ const DrawerRight = ({
                     <path
                       d="M4 4L13 13M4 13L13 4"
                       stroke="#808080"
-                      stroke-linecap="round"
+                      strokeLinecap="round"
                     />
                   </svg>
                 </Button>
