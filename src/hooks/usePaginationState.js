@@ -22,15 +22,9 @@ const usePagination = () => {
       throw new Error("currentPage must be a number");
     if (typeof pagination.hasPrevPage !== "boolean")
       throw new Error("hasPrevPage must be a boolean");
-    if (
-      typeof pagination.nextPage !== "number" ||
-      typeof pagination.nextPage !== null
-    )
+    if (typeof pagination.nextPage !== "number" && pagination.nextPage !== null)
       throw new Error("nextPage must be a number or null");
-    if (
-      typeof pagination.prevPage !== "number" ||
-      typeof pagination.nextPage !== null
-    )
+    if (typeof pagination.prevPage !== "number" && pagination.prevPage !== null)
       throw new Error("prevPage must be a number or null");
     if (typeof pagination.size !== "number")
       throw new Error("size must be a number");
