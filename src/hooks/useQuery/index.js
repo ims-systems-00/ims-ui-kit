@@ -69,6 +69,7 @@ function useQuery(initial) {
     return queryBucket.join("&");
   }
   let formatString = (str) => (str ? "&" + str : str);
+  // getQuery function will soon be deprecated. it's renamed to getQueryString
   function getQuery() {
     let processedString = "";
     let keys = Object.keys(query);
@@ -78,6 +79,9 @@ function useQuery(initial) {
         : query[key];
     }
     return processedString;
+  }
+  function getQueryString() {
+    return getQuery();
   }
   function handleRequired(requiredQuery) {
     setQuery((prevState) => {
@@ -188,6 +192,7 @@ function useQuery(initial) {
     toolState,
     fullReset,
     getQuery,
+    getQueryString,
     handleFilter,
     handlePagination,
     handleSearch,
