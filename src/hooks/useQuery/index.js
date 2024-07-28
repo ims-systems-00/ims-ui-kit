@@ -39,7 +39,7 @@ function useQuery(initial) {
       pagination:
         initial && initial.pagination
           ? objectToQuery(initial.pagination.value)
-          : "page=1",
+          : "page=1&size=10",
     };
   }
 
