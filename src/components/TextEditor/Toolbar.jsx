@@ -63,9 +63,9 @@ export default function ToolBar(props) {
         <Button
           color="success"
           className="text-toolbar-btn px-2 pull-right"
-          onClick={() => {
+          onClick={(e) => {
             if (typeof props.onSubmit === "function")
-              props.onSubmit(editorState);
+              props.onSubmit(e, editorState);
           }}
         >
           <GoPaperAirplane />
