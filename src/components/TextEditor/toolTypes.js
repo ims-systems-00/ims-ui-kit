@@ -1,3 +1,16 @@
+import {
+  FaBold,
+  FaUnderline,
+  FaItalic,
+  FaStrikethrough,
+  FaHeading,
+  FaList,
+  FaListOl,
+  FaQuoteLeft,
+  FaCode,
+  FaImages,
+  FaMinus,
+} from "react-icons/fa";
 import { ELEMENT_TYPES } from "./elementTypes";
 import { ENTITY_NAME } from "./entities/entityNames";
 
@@ -5,25 +18,25 @@ export const INLINE_TYPES = [
   {
     label: "Underline",
     style: "UNDERLINE",
-    icon: "fa-solid fa-underline",
+    icon: <FaUnderline />,
     element: ELEMENT_TYPES.INLINE_DEFAULT,
   },
   {
     label: "Bold",
     style: "BOLD",
-    icon: "fa-solid fa-bold",
+    icon: <FaBold />,
     element: ELEMENT_TYPES.INLINE_DEFAULT,
   },
   {
     label: "Italic",
     style: "ITALIC",
-    icon: "fa-solid fa-italic",
+    icon: <FaItalic />,
     element: ELEMENT_TYPES.INLINE_DEFAULT,
   },
   {
     label: "Strike through",
     style: "STRIKETHROUGH",
-    icon: "fa-solid fa-strikethrough",
+    icon: <FaStrikethrough />,
     element: ELEMENT_TYPES.INLINE_DEFAULT,
   },
 ];
@@ -31,31 +44,31 @@ export const BLOCK_TYPES = [
   {
     label: "Header",
     style: "header-three",
-    icon: "fa-solid fa-heading",
+    icon: <FaHeading />,
     element: ELEMENT_TYPES.BLOCK_DEFAULT,
   },
   {
     label: "UL",
     style: "unordered-list-item",
-    icon: "fa-solid fa-list",
+    icon: <FaList />,
     element: ELEMENT_TYPES.BLOCK_DEFAULT,
   },
   {
     label: "OL",
     style: "ordered-list-item",
-    icon: "fa-solid fa-list-ol",
+    icon: <FaListOl />,
     element: ELEMENT_TYPES.BLOCK_DEFAULT,
   },
   {
     label: "Blockquote",
     style: "blockquote",
-    icon: "fa-solid fa-quote-left",
+    icon: <FaQuoteLeft />,
     element: ELEMENT_TYPES.BLOCK_DEFAULT,
   },
   {
     label: "Code block",
     style: "code-block",
-    icon: "fa-solid fa-code",
+    icon: <FaCode />,
     element: ELEMENT_TYPES.BLOCK_DEFAULT,
   },
   // {
@@ -93,7 +106,7 @@ export const ENTITY_TYPES = [
   {
     label: "Image",
     style: ENTITY_NAME.IMAGE,
-    icon: "fa-solid fa-images",
+    icon: <FaImages />,
     element: ELEMENT_TYPES.ATOMIC_ENTITY,
   },
   // {
@@ -111,7 +124,7 @@ export const ENTITY_TYPES = [
   {
     label: "Divider",
     style: ENTITY_NAME.DIVIDER,
-    icon: "fa-solid fa-minus",
+    icon: <FaMinus />,
     element: ELEMENT_TYPES.ATOMIC_ENTITY,
   },
 ];

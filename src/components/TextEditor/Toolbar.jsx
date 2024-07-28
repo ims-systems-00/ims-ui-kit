@@ -41,11 +41,13 @@ export default function ToolBar(props) {
                     onMouseDown={(e) => handleToolClick(tool, e)}
                   >
                     {tool.icon ? (
-                      <i
-                        className={classNames(tool.icon, {
+                      <span
+                        className={classNames("", {
                           "text-primary": isToolActive(tool),
                         })}
-                      />
+                      >
+                        {tool.icon}
+                      </span>
                     ) : (
                       tool?.label
                     )}

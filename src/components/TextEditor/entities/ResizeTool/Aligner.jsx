@@ -2,21 +2,22 @@ import { Button } from "reactstrap";
 import React, { useCallback } from "react";
 import { ENTITY_NAME } from "../entityNames";
 import classNames from "classnames";
+import { FaAlignRight, FaAlignJustify, FaAlignLeft } from "react-icons/fa";
 const alignTools = [
   {
     label: "Align left",
     style: ENTITY_NAME.ALIGN_LEFT,
-    icon: "fa-solid fa-align-left",
+    icon: <FaAlignLeft />,
   },
   {
     label: "Align center",
     style: ENTITY_NAME.ALIGN_CENTER,
-    icon: "fa-solid fa-align-justify",
+    icon: <FaAlignJustify />,
   },
   {
     label: "Align right",
     style: ENTITY_NAME.ALIGN_RIGHT,
-    icon: "fa-solid fa-align-right",
+    icon: <FaAlignRight />,
   },
 ];
 export default function Aligner({ editorRef, onAlignmentChange, ...rest }) {
@@ -39,7 +40,7 @@ export default function Aligner({ editorRef, onAlignmentChange, ...rest }) {
             key={tool?.style}
             onClick={(e) => handleAlignment({ alignment: tool?.style })}
           >
-            {tool.icon ? <i className={tool.icon} /> : tool?.label}
+            {tool.icon || tool?.label}
           </Button>
         );
       })}
