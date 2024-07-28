@@ -64,26 +64,29 @@ export default function useTextEditor(config) {
         );
     }
     if (config.value || currentContent) {
-      return handleEditorStateChange(
-        EditorState.push(
-          editorState,
-          convertFromRaw(currentContent),
-          "change-block-data"
-        )
+      const stateWithContent = EditorState.createWithContent(
+        convertFromRaw(currentContent),
+        compositeDecorator
       );
+      const currentSelection = editorState.getSelection();
+      const stateWithContentAndSelection = EditorState.forceSelection(
+        stateWithContent,
+        currentSelection
+      );
+      return handleEditorStateChange(stateWithContentAndSelection);
     }
     return handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
   }
-  useEffect(() => {
-    stateController();
-  }, []);
   useEffect(() => {
     if (config.readOnly) {
       return stateController();
     }
     if (!config.value) {
-      handleEditorStateChange(EditorState.createEmpty(compositeDecorator));
+      return handleEditorStateChange(
+        EditorState.createEmpty(compositeDecorator)
+      );
     }
+    return stateController();
   }, [config.value]);
   const fileInput = useRef(null);
   const _openFilePrompt = () => fileInput.current.click();
@@ -123,36 +126,9 @@ export default function useTextEditor(config) {
   const handleEditorStateChange = (editorState) => {
     const contentState = editorState.getCurrentContent();
     setEditorState(editorState);
-    console.log(JSON.stringify(convertToRaw(contentState)));
+    // console.log(JSON.stringify(convertToRaw(contentState)));
     // check if contentState has text or entity or block data to decide if we should send data to parent component or not to avoid unnecessary re-rendering
     config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
-    // if (
-    //   convertToRaw(contentState).blocks.every(
-    //     (block) => block.text.trim() === ""
-    //   ) &&
-    //   Object.values(convertToRaw(contentState).entityMap).length === 0
-    // ) {
-    //   config.onDataStructureChange("");
-    // } else {
-    //   config.onDataStructureChange(JSON.stringify(convertToRaw(contentState)));
-    //   //this will set cursor to the end of the editor
-    //   setTimeout(() => {
-    //     const selection = editorState.getSelection();
-    //     const newSelection = selection.merge({
-    //       anchorKey: selection.getAnchorKey(),
-    //       anchorOffset: selection.getAnchorOffset(),
-    //       focusKey: selection.getFocusKey(),
-    //       focusOffset: selection.getFocusOffset(),
-    //       isBackward: false,
-    //       hasFocus: true,
-    //     });
-    //     const newEditorState = EditorState.forceSelection(
-    //       editorState,
-    //       newSelection
-    //     );
-    //     setEditorState(newEditorState);
-    //   }, 0);
-    // }
   };
   const handleKeyCommand = (command, editorState) => {
     let newState = RichUtils.handleKeyCommand(editorState, command);
@@ -272,16 +248,22 @@ export default function useTextEditor(config) {
   const forceFocusEditorEnd = (e) => {
     e?.preventDefault && e.preventDefault();
     editorRef.current.editor?.focus();
-    handleEditorStateChange(EditorState.moveFocusToEnd(editorState));
+    if (editorState)
+      handleEditorStateChange(EditorState.moveFocusToEnd(editorState));
   };
   const isToolActive = (tool) => {
-    return (
-      editorState.getCurrentInlineStyle().has(tool?.style) ||
-      editorState
-        ?.getCurrentContent()
-        .getBlockForKey(editorState?.getSelection().getStartKey())
-        .getType() === tool?.style
-    );
+    try {
+      return (
+        editorState?.getCurrentInlineStyle().has(tool?.style) ||
+        editorState
+          ?.getCurrentContent()
+          .getBlockForKey(editorState?.getSelection().getStartKey())
+          .getType() === tool?.style
+      );
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
   };
   return {
     editorRef,
