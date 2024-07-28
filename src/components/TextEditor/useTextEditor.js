@@ -115,9 +115,9 @@ export default function useTextEditor(config) {
    * @returns {Promise}
    */
   const generateLink = async (metaData) => {
-    if (!config.linkGeneratorFn || typeof config.linkGeneratorFn !== "function")
+    if (!config.mediaLinkGeneratorFn || typeof config.mediaLinkGeneratorFn !== "function")
       return null;
-    return config.linkGeneratorFn(metaData);
+    return config.mediaLinkGeneratorFn(metaData);
   };
   /**
    * this function updates editors state for the current instance of the component
@@ -139,16 +139,18 @@ export default function useTextEditor(config) {
     return "not-handled";
   };
   const _handleFiles = async (files) => {
-    if (!config.handleUpload)
+    if (
+      !config.onEachFileSelection ||
+      typeof config.onEachFileSelection !== "function"
+    )
       return console.log("Uploader function not specified");
     let areImages = files.every((file) => file.type.split("/")[0] === "image");
     /** todo: check file size here */
     if (!areImages) return console.log("All files has to be images");
     try {
       let storageInformations = await Promise.all(
-        files.map((file) => config.handleUpload(file))
+        files.map((file) => config.onEachFileSelection(file))
       );
-      console.log(storageInformations);
       if (!storageInformations.every((storageInfo) => storageInfo))
         console.log("one or mutiple files don't have storage info");
       storageInformations.map((storageInfo) =>

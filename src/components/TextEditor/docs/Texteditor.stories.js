@@ -46,7 +46,7 @@ PrePopulatedContent.args = {
       profileImageSrc: "https://picsum.photos/200/300",
     },
   ],
-  linkGeneratorFn: () => "https://picsum.photos/200/300",
+  mediaLinkGeneratorFn: () => "https://picsum.photos/200/300",
   value: JSON.stringify({
     blocks: [
       {
@@ -170,7 +170,7 @@ ReadOnlyMode.args = {
     },
   ],
   readOnly: true,
-  linkGeneratorFn: () => "https://picsum.photos/200/300",
+  mediaLinkGeneratorFn: () => "https://picsum.photos/200/300",
   value: JSON.stringify({
     blocks: [
       {

@@ -4,7 +4,7 @@ export const TextEditorContext = React.createContext();
 const TextEditorContextProvider = ({ children, ...rest }) => {
   let { ...editorUtils } = useTextEditor({
     handleUpload: rest.handleUpload || async function () {},
-    linkGeneratorFn: rest.linkGeneratorFn || async function () {},
+    mediaLinkGeneratorFn: rest.mediaLinkGeneratorFn || async function () {},
     onDataStructureChange: rest.onDataStructureChange || function () {},
     value: rest.value || null,
     readOnly: rest.readOnly,

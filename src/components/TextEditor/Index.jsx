@@ -13,7 +13,7 @@ Index.propTypes = {
   /** pre populated contents in the editor */
   value: PropTypes.string,
   /** link generator function helps to  get the file links */
-  linkGeneratorFn: PropTypes.func,
+  mediaLinkGeneratorFn: PropTypes.func,
   /** helps to specify where any media resource should be stored */
   handleUpload: PropTypes.func,
 };

@@ -14,7 +14,7 @@ const TextEditorExample = () => {
         onDataStructureChange={(value) => {
           setData({ value });
         }}
-        linkGeneratorFn={() => "https://picsum.photos/200/300"}
+        mediaLinkGeneratorFn={() => "https://picsum.photos/200/300"}
         mentionSuggestions={[
           {
             _id: "182973aSJLsddkhsd",

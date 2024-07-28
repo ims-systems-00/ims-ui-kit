@@ -30,7 +30,7 @@ const ImsTextEditor = ({
           onDataStructureChange={(draftDataStructure) =>
             onChange({ currentTarget: { name, value: draftDataStructure } })
           }
-          linkGeneratorFn={linkGenerator}
+          mediaLinkGeneratorFn={linkGenerator}
           handleUpload={handleUpload}
           {...rest}
         />
