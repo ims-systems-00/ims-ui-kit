@@ -5,6 +5,7 @@ import ButtonSeparator from "./ButtonSeparator";
 import { Button } from "reactstrap";
 import FilePicker from "./FilePicker";
 import classNames from "classnames";
+import { GoPaperAirplane } from "react-icons/go";
 export default function ToolBar(props) {
   const {
     editorState,
@@ -60,15 +61,14 @@ export default function ToolBar(props) {
         })}
       {props.enableSubmit && (
         <Button
-          color="primary"
-          size="sm"
+          color="success"
           className="text-toolbar-btn px-2 pull-right"
           onClick={() => {
             if (typeof props.onSubmit === "function")
               props.onSubmit(editorState);
           }}
         >
-          <i className="fa-solid fa-paper-plane"></i>
+          <GoPaperAirplane />
         </Button>
       )}
     </>
