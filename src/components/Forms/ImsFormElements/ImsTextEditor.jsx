@@ -6,7 +6,7 @@ const ImsTextEditor = ({
   error,
   name,
   linkGenerator,
-  handleUpload,
+  onEachFileSelection,
   onChange = () => {},
   helperText,
   ...rest
@@ -31,7 +31,7 @@ const ImsTextEditor = ({
             onChange({ currentTarget: { name, value: draftDataStructure } })
           }
           mediaLinkGeneratorFn={linkGenerator}
-          handleUpload={handleUpload}
+          onEachFileSelection={onEachFileSelection}
           {...rest}
         />
 
