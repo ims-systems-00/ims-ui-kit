@@ -1,25 +1,20 @@
 import classNames from "classnames";
 import React from "react";
-import { Badge } from "reactstrap";
+import { Badge, BadgeProps } from "reactstrap";
 import PropTypes from "prop-types";
 
-let BadgeBaseProps = Object.assign(
-  {
-    color: "",
-    outline: "",
-    fade: "",
-    icon: "",
-  },
-  Badge.prototype.props
-);
+interface BadgeBaseProps extends BadgeProps {
+  outline: string;
+  fade: string;
+}
 
-/**
- *
- * @param {BadgeBaseProps} props
- * @returns
- */
-
-const BadgeBase = ({ children, color, outline, fade, ...rest }) => {
+const BadgeBase: React.FC<BadgeBaseProps> = ({
+  children,
+  color,
+  outline,
+  fade,
+  ...rest
+}) => {
   return (
     <Badge
       color={color}
@@ -49,11 +44,6 @@ const BadgeBase = ({ children, color, outline, fade, ...rest }) => {
       {children}
     </Badge>
   );
-};
-
-BadgeBase.propTypes = {
-  color: PropTypes.string,
-  ...(Badge.propTypes && Badge.propTypes),
 };
 
 export default BadgeBase;

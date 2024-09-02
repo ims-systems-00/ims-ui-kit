@@ -1,1 +1,9 @@
 export { default as Alert } from "./components/Alert/AlertBase";
+export { default as Badge } from "./components/Badges/BadgeBase";
+export { default as UncontrolledAlert } from "./components/Alert/UncontrolledAlertBase";
+export { default as Button } from "./components/Buttons/ButtonBase";
+export { default as ButtonDropdown } from "./components/Buttons/ButtonDropdownBase";
+export { default as ButtonGroup } from "./components/Buttons/ButtonGroupBase";
+export { default as ButtonToggle } from "./components/Buttons/ButtonToggleBase";
+export { default as ButtonToolbar } from "./components/Buttons/ButtonToolbarBase";
+export { default as CloseButton } from "./components/Buttons/CloseButtonBase";
