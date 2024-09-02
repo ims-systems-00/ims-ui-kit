@@ -1,9 +1,16 @@
+export { default as AccordionBase } from "./components/Accordion/AccordionBase";
+export { default as AccordionBodyBase } from "./components/Accordion/AccordionBodyBase";
+export { default as AccordionHeaderBase } from "./components/Accordion/AccordionHeaderBase";
+export { default as AccordionItemBase } from "./components/Accordion/AccordionItemBase";
 export { default as Alert } from "./components/Alert/AlertBase";
 export { default as Badge } from "./components/Badges/BadgeBase";
-export { default as UncontrolledAlert } from "./components/Alert/UncontrolledAlertBase";
+export { default as Breadcrumb } from "./components/Breadcrumb/BreadcrumbBase";
+export { default as BreadcrumbItem } from "./components/Breadcrumb/BreadcrumbItemBase";
 export { default as Button } from "./components/Buttons/ButtonBase";
 export { default as ButtonDropdown } from "./components/Buttons/ButtonDropdownBase";
 export { default as ButtonGroup } from "./components/Buttons/ButtonGroupBase";
 export { default as ButtonToggle } from "./components/Buttons/ButtonToggleBase";
 export { default as ButtonToolbar } from "./components/Buttons/ButtonToolbarBase";
 export { default as CloseButton } from "./components/Buttons/CloseButtonBase";
+export { default as UncontrolledAlert } from "./components/Alert/UncontrolledAlertBase";
+export { default as UncontrolledAccordion } from "./components/Accordion/UncontrolledAccordionBase";
