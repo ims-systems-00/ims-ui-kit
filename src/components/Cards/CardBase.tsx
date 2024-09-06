@@ -1,14 +1,12 @@
+import React from "react";
 import classNames from "classnames";
-import { Card } from "reactstrap";
+import { Card, CardProps } from "reactstrap";
+export interface CardBaseProps extends CardProps {
+  variant: string;
+  hover: boolean;
+}
 
-let CardBaseProps = Object.assign({}, Card.prototype.props);
-
-/**
- *
- * @param {CardBaseProps} props
- * @returns
- */
-function CardBase(props) {
+const CardBase: React.FC<CardBaseProps> = (props) => {
   return (
     <Card
       className={classNames(props.className, {
@@ -40,10 +38,6 @@ function CardBase(props) {
       {props.children}
     </Card>
   );
-}
-
-CardBase.propTypes = {
-  ...(Card.propTypes && Card.propTypes),
 };
 
 export default CardBase;
