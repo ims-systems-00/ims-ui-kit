@@ -2,8 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import { Card, CardProps } from "reactstrap";
 export interface CardBaseProps extends CardProps {
-  variant: string;
-  hover: boolean;
+  variant?: string;
+  hover?: boolean;
 }
 
 const CardBase: React.FC<CardBaseProps> = (props) => {
