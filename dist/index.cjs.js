@@ -139,7 +139,7 @@ function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
 
-var propTypes$1b = {exports: {}};
+var propTypes$1m = {exports: {}};
 
 var reactIs$1 = {exports: {}};
 
@@ -1312,14 +1312,14 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  propTypes$1b.exports = requireFactoryWithTypeCheckers()(ReactIs.isElement, throwOnDirectAccess);
+  propTypes$1m.exports = requireFactoryWithTypeCheckers()(ReactIs.isElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  propTypes$1b.exports = requireFactoryWithThrowingShims()();
+  propTypes$1m.exports = requireFactoryWithThrowingShims()();
 }
 
-var propTypesExports = propTypes$1b.exports;
+var propTypesExports = propTypes$1m.exports;
 var PropTypes = /*@__PURE__*/getDefaultExportFromCjs(propTypesExports);
 
 var classnames$3 = {exports: {}};
@@ -1666,11 +1666,11 @@ function addMultipleEventListeners(_els, handler, _events, useCapture) {
 }
 var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled]):not([type=hidden])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'object', 'embed', '[tabindex]:not(.modal):not(.offcanvas)', 'audio[controls]', 'video[controls]', '[contenteditable]:not([contenteditable="false"])'];
 
-var _excluded$1b = ["className", "cssModule", "fluid", "tag"];
-function _extends$1n() { _extends$1n = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1n.apply(this, arguments); }
-function _objectWithoutProperties$17(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$17(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$17(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$1a = {
+var _excluded$1m = ["className", "cssModule", "fluid", "tag"];
+function _extends$1y() { _extends$1y = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1y.apply(this, arguments); }
+function _objectWithoutProperties$1i(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1i(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$1i(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$1l = {
   tag: tagPropType,
   fluid: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   className: PropTypes.string,
@@ -1682,7 +1682,7 @@ function Container(props) {
     fluid = props.fluid,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
-    attributes = _objectWithoutProperties$17(props, _excluded$1b);
+    attributes = _objectWithoutProperties$1i(props, _excluded$1m);
   var containerClass = 'container';
   if (fluid === true) {
     containerClass = 'container-fluid';
@@ -1690,19 +1690,19 @@ function Container(props) {
     containerClass = "container-".concat(fluid);
   }
   var classes = mapToCssModules(classNames$1(className, containerClass), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1n({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$1y({}, attributes, {
     className: classes
   }));
 }
-Container.propTypes = propTypes$1a;
+Container.propTypes = propTypes$1l;
 
-var _excluded$1a = ["className", "cssModule", "noGutters", "tag", "widths"];
-function _extends$1m() { _extends$1m = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1m.apply(this, arguments); }
-function _objectWithoutProperties$16(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$16(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$16(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var _excluded$1l = ["className", "cssModule", "noGutters", "tag", "widths"];
+function _extends$1x() { _extends$1x = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1x.apply(this, arguments); }
+function _objectWithoutProperties$1h(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1h(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$1h(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 var rowColWidths = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 var rowColsPropType = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
-var propTypes$19 = {
+var propTypes$1k = {
   tag: tagPropType,
   noGutters: deprecated(PropTypes.bool, 'Please use Bootstrap 5 gutter utility classes. https://getbootstrap.com/docs/5.0/layout/gutters/'),
   className: PropTypes.string,
@@ -1723,7 +1723,7 @@ function Row(props) {
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     _props$widths = props.widths,
     widths = _props$widths === void 0 ? rowColWidths : _props$widths,
-    attributes = _objectWithoutProperties$16(props, _excluded$1a);
+    attributes = _objectWithoutProperties$1h(props, _excluded$1l);
   var colClasses = [];
   widths.forEach(function (colWidth, i) {
     var colSize = props[colWidth];
@@ -1735,16 +1735,16 @@ function Row(props) {
     colClasses.push(isXs ? "row-cols-".concat(colSize) : "row-cols-".concat(colWidth, "-").concat(colSize));
   });
   var classes = mapToCssModules(classNames$1(className, noGutters ? 'gx-0' : null, 'row', colClasses), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1m({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$1x({}, attributes, {
     className: classes
   }));
 }
-Row.propTypes = propTypes$19;
+Row.propTypes = propTypes$1k;
 
-var _excluded$19 = ["className", "cssModule", "widths", "tag"];
-function _extends$1l() { _extends$1l = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1l.apply(this, arguments); }
-function _objectWithoutProperties$15(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$15(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$15(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var _excluded$1k = ["className", "cssModule", "widths", "tag"];
+function _extends$1w() { _extends$1w = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1w.apply(this, arguments); }
+function _objectWithoutProperties$1g(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1g(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$1g(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _defineProperty$t(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 var colWidths$1 = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 var stringOrNumberProp$1 = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
@@ -1753,7 +1753,7 @@ var columnProps$1 = PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropT
   order: stringOrNumberProp$1,
   offset: stringOrNumberProp$1
 })]);
-var propTypes$18 = {
+var propTypes$1j = {
   tag: tagPropType,
   xs: columnProps$1,
   sm: columnProps$1,
@@ -1807,7 +1807,7 @@ function Col(props) {
     widths = _props$widths === void 0 ? colWidths$1 : _props$widths,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
-    attributes = _objectWithoutProperties$15(props, _excluded$19);
+    attributes = _objectWithoutProperties$1g(props, _excluded$1k);
   var _getColumnClasses = getColumnClasses(attributes, cssModule, widths),
     modifiedAttributes = _getColumnClasses.modifiedAttributes,
     colClasses = _getColumnClasses.colClasses;
@@ -1815,18 +1815,18 @@ function Col(props) {
     colClasses.push('col');
   }
   var classes = mapToCssModules(classNames$1(className, colClasses), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1l({}, modifiedAttributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$1w({}, modifiedAttributes, {
     className: classes
   }));
 }
-Col.propTypes = propTypes$18;
+Col.propTypes = propTypes$1j;
 
-var _excluded$18 = ["expand", "className", "cssModule", "light", "dark", "fixed", "sticky", "color", "container", "tag", "children"];
-function _extends$1k() { _extends$1k = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1k.apply(this, arguments); }
+var _excluded$1j = ["expand", "className", "cssModule", "light", "dark", "fixed", "sticky", "color", "container", "tag", "children"];
+function _extends$1v() { _extends$1v = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1v.apply(this, arguments); }
 function _defineProperty$s(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _objectWithoutProperties$14(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$14(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$14(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$17 = {
+function _objectWithoutProperties$1f(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1f(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$1f(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$1i = {
   children: PropTypes.node,
   /** Add custom class */
   className: PropTypes.string,
@@ -1875,25 +1875,25 @@ function Navbar(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'nav' : _props$tag,
     children = props.children,
-    attributes = _objectWithoutProperties$14(props, _excluded$18);
+    attributes = _objectWithoutProperties$1f(props, _excluded$1j);
   var classes = mapToCssModules(classNames$1(className, 'navbar', getExpandClass(expand), (_classNames = {
     'navbar-light': light,
     'navbar-dark': dark
   }, _defineProperty$s(_classNames, "bg-".concat(color), color), _defineProperty$s(_classNames, "fixed-".concat(fixed), fixed), _defineProperty$s(_classNames, "sticky-".concat(sticky), sticky), _classNames)), cssModule);
   var containerClass = container && container === true ? 'container' : "container-".concat(container);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1k({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$1v({}, attributes, {
     className: classes
   }), container ? /*#__PURE__*/React.createElement("div", {
     className: containerClass
   }, children) : children);
 }
-Navbar.propTypes = propTypes$17;
+Navbar.propTypes = propTypes$1i;
 
-var _excluded$17 = ["className", "cssModule", "tag"];
-function _extends$1j() { _extends$1j = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1j.apply(this, arguments); }
-function _objectWithoutProperties$13(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$13(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$13(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$16 = {
+var _excluded$1i = ["className", "cssModule", "tag"];
+function _extends$1u() { _extends$1u = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1u.apply(this, arguments); }
+function _objectWithoutProperties$1e(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1e(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$1e(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$1h = {
   /** Add custom class */
   className: PropTypes.string,
   /** Change underlying component's CSS base class name */
@@ -1906,19 +1906,19 @@ function NavbarBrand(props) {
     cssModule = props.cssModule,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'a' : _props$tag,
-    attributes = _objectWithoutProperties$13(props, _excluded$17);
+    attributes = _objectWithoutProperties$1e(props, _excluded$1i);
   var classes = mapToCssModules(classNames$1(className, 'navbar-brand'), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1j({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$1u({}, attributes, {
     className: classes
   }));
 }
-NavbarBrand.propTypes = propTypes$16;
+NavbarBrand.propTypes = propTypes$1h;
 
-var _excluded$16 = ["className", "cssModule", "active", "tag"];
-function _extends$1i() { _extends$1i = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1i.apply(this, arguments); }
-function _objectWithoutProperties$12(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$12(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$12(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$15 = {
+var _excluded$1h = ["className", "cssModule", "active", "tag"];
+function _extends$1t() { _extends$1t = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1t.apply(this, arguments); }
+function _objectWithoutProperties$1d(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1d(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$1d(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$1g = {
   /** Add custom class */
   className: PropTypes.string,
   /** Change underlying component's CSS base class name */
@@ -1933,22 +1933,22 @@ function NavbarText(props) {
     props.active;
     var _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'span' : _props$tag,
-    attributes = _objectWithoutProperties$12(props, _excluded$16);
+    attributes = _objectWithoutProperties$1d(props, _excluded$1h);
   var classes = mapToCssModules(classNames$1(className, 'navbar-text'), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1i({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$1t({}, attributes, {
     className: classes
   }));
 }
-NavbarText.propTypes = propTypes$15;
+NavbarText.propTypes = propTypes$1g;
 
-var _excluded$15 = ["className", "cssModule", "children", "tag"];
-function _extends$1h() { _extends$1h = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1h.apply(this, arguments); }
+var _excluded$1g = ["className", "cssModule", "children", "tag"];
+function _extends$1s() { _extends$1s = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1s.apply(this, arguments); }
 function ownKeys$n(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread$m(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$n(Object(source), !0).forEach(function (key) { _defineProperty$r(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$n(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty$r(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _objectWithoutProperties$11(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$11(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$11(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$14 = {
+function _objectWithoutProperties$1c(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1c(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$1c(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$1f = {
   /** Add custom class */
   className: PropTypes.string,
   /** Change underlying component's CSS base class name */
@@ -1965,9 +1965,9 @@ function NavbarToggler(props) {
     children = props.children,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'button' : _props$tag,
-    attributes = _objectWithoutProperties$11(props, _excluded$15);
+    attributes = _objectWithoutProperties$1c(props, _excluded$1g);
   var classes = mapToCssModules(classNames$1(className, 'navbar-toggler'), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1h({
+  return /*#__PURE__*/React.createElement(Tag, _extends$1s({
     "aria-label": "Toggle navigation"
   }, _objectSpread$m({
     type: 'button'
@@ -1977,13 +1977,13 @@ function NavbarToggler(props) {
     className: mapToCssModules('navbar-toggler-icon', cssModule)
   }));
 }
-NavbarToggler.propTypes = propTypes$14;
+NavbarToggler.propTypes = propTypes$1f;
 
-var _excluded$14 = ["className", "cssModule", "tabs", "pills", "vertical", "horizontal", "justified", "fill", "navbar", "card", "tag"];
-function _extends$1g() { _extends$1g = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1g.apply(this, arguments); }
-function _objectWithoutProperties$10(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$10(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$10(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$13 = {
+var _excluded$1f = ["className", "cssModule", "tabs", "pills", "vertical", "horizontal", "justified", "fill", "navbar", "card", "tag"];
+function _extends$1r() { _extends$1r = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1r.apply(this, arguments); }
+function _objectWithoutProperties$1b(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1b(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$1b(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$1e = {
   /** Adding card prop adds `.card-header-tabs` or `.card-header-pills` class */
   card: PropTypes.bool,
   /** Add custom class */
@@ -2030,7 +2030,7 @@ function Nav(props) {
     card = props.card,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'ul' : _props$tag,
-    attributes = _objectWithoutProperties$10(props, _excluded$14);
+    attributes = _objectWithoutProperties$1b(props, _excluded$1f);
   var classes = mapToCssModules(classNames$1(className, navbar ? 'navbar-nav' : 'nav', horizontal ? "justify-content-".concat(horizontal) : false, getVerticalClass(vertical), {
     'nav-tabs': tabs,
     'card-header-tabs': card && tabs,
@@ -2039,17 +2039,17 @@ function Nav(props) {
     'nav-justified': justified,
     'nav-fill': fill
   }), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1g({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$1r({}, attributes, {
     className: classes
   }));
 }
-Nav.propTypes = propTypes$13;
+Nav.propTypes = propTypes$1e;
 
-var _excluded$13 = ["className", "cssModule", "active", "tag"];
-function _extends$1f() { _extends$1f = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1f.apply(this, arguments); }
-function _objectWithoutProperties$$(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$$(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$$(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$12 = {
+var _excluded$1e = ["className", "cssModule", "active", "tag"];
+function _extends$1q() { _extends$1q = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1q.apply(this, arguments); }
+function _objectWithoutProperties$1a(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1a(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$1a(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$1d = {
   /** Add active class to element */
   active: PropTypes.bool,
   /** Add custom class */
@@ -2065,19 +2065,19 @@ function NavItem(props) {
     active = props.active,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'li' : _props$tag,
-    attributes = _objectWithoutProperties$$(props, _excluded$13);
+    attributes = _objectWithoutProperties$1a(props, _excluded$1e);
   var classes = mapToCssModules(classNames$1(className, 'nav-item', active ? 'active' : false), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1f({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$1q({}, attributes, {
     className: classes
   }));
 }
-NavItem.propTypes = propTypes$12;
+NavItem.propTypes = propTypes$1d;
 
 function _typeof$n(obj) { "@babel/helpers - typeof"; return _typeof$n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$n(obj); }
-var _excluded$12 = ["className", "cssModule", "active", "tag", "innerRef"];
-function _extends$1e() { _extends$1e = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1e.apply(this, arguments); }
-function _objectWithoutProperties$_(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$_(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$_(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var _excluded$1d = ["className", "cssModule", "active", "tag", "innerRef"];
+function _extends$1p() { _extends$1p = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1p.apply(this, arguments); }
+function _objectWithoutProperties$19(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$19(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$19(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _classCallCheck$n(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties$n(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass$n(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$n(Constructor.prototype, protoProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -2088,7 +2088,7 @@ function _possibleConstructorReturn$n(self, call) { if (call && (_typeof$n(call)
 function _assertThisInitialized$n(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function _isNativeReflectConstruct$n() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf$n(o) { _getPrototypeOf$n = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$n(o); }
-var propTypes$11 = {
+var propTypes$1c = {
   /** Add active class to NavLink */
   active: PropTypes.bool,
   /** Add custom class */
@@ -2138,12 +2138,12 @@ var NavLink = /*#__PURE__*/function (_React$Component) {
         _this$props$tag = _this$props.tag,
         Tag = _this$props$tag === void 0 ? 'a' : _this$props$tag,
         innerRef = _this$props.innerRef,
-        attributes = _objectWithoutProperties$_(_this$props, _excluded$12);
+        attributes = _objectWithoutProperties$19(_this$props, _excluded$1d);
       var classes = mapToCssModules(classNames$1(className, 'nav-link', {
         disabled: attributes.disabled,
         active: active
       }), cssModule);
-      return /*#__PURE__*/React.createElement(Tag, _extends$1e({}, attributes, {
+      return /*#__PURE__*/React.createElement(Tag, _extends$1p({}, attributes, {
         ref: innerRef,
         onClick: this.onClick,
         className: classes
@@ -2152,13 +2152,13 @@ var NavLink = /*#__PURE__*/function (_React$Component) {
   }]);
   return NavLink;
 }(React.Component);
-NavLink.propTypes = propTypes$11;
+NavLink.propTypes = propTypes$1c;
 
-var _excluded$11 = ["className", "listClassName", "cssModule", "children", "tag", "listTag", "aria-label"];
-function _extends$1d() { _extends$1d = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1d.apply(this, arguments); }
-function _objectWithoutProperties$Z(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$Z(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$Z(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$10 = {
+var _excluded$1c = ["className", "listClassName", "cssModule", "children", "tag", "listTag", "aria-label"];
+function _extends$1o() { _extends$1o = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1o.apply(this, arguments); }
+function _objectWithoutProperties$18(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$18(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$18(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$1b = {
   /** Aria label */
   'aria-label': PropTypes.string,
   /** Pass children so this component can wrap them */
@@ -2185,23 +2185,23 @@ function Breadcrumb(props) {
     ListTag = _props$listTag === void 0 ? 'ol' : _props$listTag,
     _props$ariaLabel = props['aria-label'],
     label = _props$ariaLabel === void 0 ? 'breadcrumb' : _props$ariaLabel,
-    attributes = _objectWithoutProperties$Z(props, _excluded$11);
+    attributes = _objectWithoutProperties$18(props, _excluded$1c);
   var classes = mapToCssModules(classNames$1(className), cssModule);
   var listClasses = mapToCssModules(classNames$1('breadcrumb', listClassName), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1d({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$1o({}, attributes, {
     className: classes,
     "aria-label": label
   }), /*#__PURE__*/React.createElement(ListTag, {
     className: listClasses
   }, children));
 }
-Breadcrumb.propTypes = propTypes$10;
+Breadcrumb.propTypes = propTypes$1b;
 
-var _excluded$10 = ["className", "cssModule", "active", "tag"];
-function _extends$1c() { _extends$1c = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1c.apply(this, arguments); }
-function _objectWithoutProperties$Y(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$Y(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$Y(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$$ = {
+var _excluded$1b = ["className", "cssModule", "active", "tag"];
+function _extends$1n() { _extends$1n = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1n.apply(this, arguments); }
+function _objectWithoutProperties$17(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$17(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$17(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$1a = {
   /** Adds a visual "active" state to a Breadcrumb Item */
   active: PropTypes.bool,
   /** Add custom class to the element */
@@ -2217,23 +2217,23 @@ function BreadcrumbItem(props) {
     active = props.active,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'li' : _props$tag,
-    attributes = _objectWithoutProperties$Y(props, _excluded$10);
+    attributes = _objectWithoutProperties$17(props, _excluded$1b);
   var classes = mapToCssModules(classNames$1(className, active ? 'active' : false, 'breadcrumb-item'), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$1c({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$1n({}, attributes, {
     className: classes,
     "aria-current": active ? 'page' : undefined
   }));
 }
-BreadcrumbItem.propTypes = propTypes$$;
+BreadcrumbItem.propTypes = propTypes$1a;
 
-var _excluded$$ = ["className", "cssModule", "variant", "innerRef"];
-function _extends$1b() { _extends$1b = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1b.apply(this, arguments); }
+var _excluded$1a = ["className", "cssModule", "variant", "innerRef"];
+function _extends$1m() { _extends$1m = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1m.apply(this, arguments); }
 function ownKeys$m(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread$l(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$m(Object(source), !0).forEach(function (key) { _defineProperty$q(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$m(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty$q(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _objectWithoutProperties$X(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$X(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$X(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$_ = {
+function _objectWithoutProperties$16(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$16(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$16(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$19 = {
   /** Disable the button if needed */
   active: PropTypes.bool,
   /** Aria label */
@@ -2251,9 +2251,9 @@ function CloseButton(props) {
     props.cssModule;
     var variant = props.variant,
     innerRef = props.innerRef,
-    attributes = _objectWithoutProperties$X(props, _excluded$$);
+    attributes = _objectWithoutProperties$16(props, _excluded$1a);
   var classes = mapToCssModules(classNames$1(className, 'btn-close', variant && "btn-close-".concat(variant)));
-  return /*#__PURE__*/React.createElement("button", _extends$1b({
+  return /*#__PURE__*/React.createElement("button", _extends$1m({
     ref: innerRef,
     type: "button",
     className: classes
@@ -2261,13 +2261,13 @@ function CloseButton(props) {
     'aria-label': 'close'
   }, attributes)));
 }
-CloseButton.propTypes = propTypes$_;
+CloseButton.propTypes = propTypes$19;
 
-var _excluded$_ = ["active", "aria-label", "block", "className", "close", "cssModule", "color", "outline", "size", "tag", "innerRef"];
-function _extends$1a() { _extends$1a = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1a.apply(this, arguments); }
-function _objectWithoutProperties$W(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$W(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$W(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$Z = {
+var _excluded$19 = ["active", "aria-label", "block", "className", "close", "cssModule", "color", "outline", "size", "tag", "innerRef"];
+function _extends$1l() { _extends$1l = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1l.apply(this, arguments); }
+function _objectWithoutProperties$15(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$15(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$15(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$18 = {
   /** Manually set the visual state of the button to active */
   active: PropTypes.bool,
   /** Aria label */
@@ -2318,7 +2318,7 @@ function Button(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'button' : _props$tag,
     innerRef = props.innerRef,
-    attributes = _objectWithoutProperties$W(props, _excluded$_);
+    attributes = _objectWithoutProperties$15(props, _excluded$19);
   if (close) {
     return /*#__PURE__*/React.createElement(CloseButton, attributes);
   }
@@ -2330,7 +2330,7 @@ function Button(props) {
   if (attributes.href && Tag === 'button') {
     Tag = 'a';
   }
-  return /*#__PURE__*/React.createElement(Tag, _extends$1a({
+  return /*#__PURE__*/React.createElement(Tag, _extends$1l({
     type: Tag === 'button' && attributes.onClick ? 'button' : undefined
   }, attributes, {
     className: classes,
@@ -2339,19 +2339,19 @@ function Button(props) {
     "aria-label": ariaLabel
   }));
 }
-Button.propTypes = propTypes$Z;
+Button.propTypes = propTypes$18;
 
-var _excluded$Z = ["className"];
-function _extends$19() { _extends$19 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$19.apply(this, arguments); }
-function _objectWithoutProperties$V(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$V(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$V(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var _excluded$18 = ["className"];
+function _extends$1k() { _extends$1k = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1k.apply(this, arguments); }
+function _objectWithoutProperties$14(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$14(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$14(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _slicedToArray$4(arr, i) { return _arrayWithHoles$4(arr) || _iterableToArrayLimit$4(arr, i) || _unsupportedIterableToArray$6(arr, i) || _nonIterableRest$4(); }
 function _nonIterableRest$4() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray$6(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray$6(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray$6(o, minLen); }
 function _arrayLikeToArray$6(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 function _iterableToArrayLimit$4(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 function _arrayWithHoles$4(arr) { if (Array.isArray(arr)) return arr; }
-var propTypes$Y = {
+var propTypes$17 = {
   onClick: PropTypes.func,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
@@ -2388,11 +2388,11 @@ function ButtonToggle(props) {
     setToggled(!toggled);
   }, [props.onClick]);
   var className = props.className,
-    attributes = _objectWithoutProperties$V(props, _excluded$Z);
+    attributes = _objectWithoutProperties$14(props, _excluded$18);
   var classes = mapToCssModules(classNames$1(className, {
     focus: focus
   }), props.cssModule);
-  return /*#__PURE__*/React.createElement(Button, _extends$19({
+  return /*#__PURE__*/React.createElement(Button, _extends$1k({
     active: toggled,
     onBlur: onBlur,
     onFocus: onFocus,
@@ -2400,7 +2400,7 @@ function ButtonToggle(props) {
     className: classes
   }, attributes));
 }
-ButtonToggle.propTypes = propTypes$Y;
+ButtonToggle.propTypes = propTypes$17;
 
 var ManagerReferenceNodeContext = React__namespace.createContext();
 var ManagerReferenceNodeSetterContext = React__namespace.createContext();
@@ -4685,11 +4685,11 @@ var DropdownContext = /*#__PURE__*/React.createContext({});
 var InputGroupContext = /*#__PURE__*/React.createContext({});
 
 function _typeof$m(obj) { "@babel/helpers - typeof"; return _typeof$m = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$m(obj); }
-var _excluded$Y = ["className", "cssModule", "direction", "isOpen", "group", "size", "nav", "setActiveFromChild", "active", "tag", "menuRole"];
-function _extends$18() { _extends$18 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$18.apply(this, arguments); }
+var _excluded$17 = ["className", "cssModule", "direction", "isOpen", "group", "size", "nav", "setActiveFromChild", "active", "tag", "menuRole"];
+function _extends$1j() { _extends$1j = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1j.apply(this, arguments); }
 function _defineProperty$p(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _objectWithoutProperties$U(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$U(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$U(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function _objectWithoutProperties$13(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$13(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$13(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _classCallCheck$m(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties$m(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass$m(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$m(Constructor.prototype, protoProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -4700,7 +4700,7 @@ function _possibleConstructorReturn$m(self, call) { if (call && (_typeof$m(call)
 function _assertThisInitialized$m(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function _isNativeReflectConstruct$m() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf$m(o) { _getPrototypeOf$m = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$m(o); }
-var propTypes$X = {
+var propTypes$16 = {
   a11y: PropTypes.bool,
   disabled: PropTypes.bool,
   direction: PropTypes.oneOf(['up', 'down', 'start', 'end', 'left', 'right']),
@@ -4976,7 +4976,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         active = _omit.active,
         tag = _omit.tag;
         _omit.menuRole;
-        var attrs = _objectWithoutProperties$U(_omit, _excluded$Y);
+        var attrs = _objectWithoutProperties$13(_omit, _excluded$17);
       var Tag = tag || (nav ? 'li' : 'div');
       var subItemIsActive = false;
       if (setActiveFromChild) {
@@ -4998,7 +4998,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       }
       return /*#__PURE__*/React.createElement(DropdownContext.Provider, {
         value: this.getContextValue()
-      }, /*#__PURE__*/React.createElement(Manager, null, /*#__PURE__*/React.createElement(Tag, _extends$18({}, attrs, _defineProperty$p({}, typeof Tag === 'string' ? 'ref' : 'innerRef', this.containerRef), {
+      }, /*#__PURE__*/React.createElement(Manager, null, /*#__PURE__*/React.createElement(Tag, _extends$1j({}, attrs, _defineProperty$p({}, typeof Tag === 'string' ? 'ref' : 'innerRef', this.containerRef), {
         onKeyDown: this.handleKeyDown,
         className: classes
       }))));
@@ -5006,29 +5006,29 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
   }]);
   return Dropdown;
 }(React.Component);
-Dropdown.propTypes = propTypes$X;
+Dropdown.propTypes = propTypes$16;
 Dropdown.defaultProps = defaultProps$d;
 Dropdown.contextType = InputGroupContext;
 
-function _extends$17() { _extends$17 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$17.apply(this, arguments); }
-var propTypes$W = {
+function _extends$1i() { _extends$1i = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1i.apply(this, arguments); }
+var propTypes$15 = {
   children: PropTypes.node
 };
 function ButtonDropdown(props) {
-  return /*#__PURE__*/React.createElement(Dropdown, _extends$17({
+  return /*#__PURE__*/React.createElement(Dropdown, _extends$1i({
     group: true
   }, props));
 }
-ButtonDropdown.propTypes = propTypes$W;
+ButtonDropdown.propTypes = propTypes$15;
 
-var _excluded$X = ["className", "cssModule", "size", "vertical", "tag"];
-function _extends$16() { _extends$16 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$16.apply(this, arguments); }
+var _excluded$16 = ["className", "cssModule", "size", "vertical", "tag"];
+function _extends$1h() { _extends$1h = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1h.apply(this, arguments); }
 function ownKeys$l(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread$k(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$l(Object(source), !0).forEach(function (key) { _defineProperty$o(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$l(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty$o(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _objectWithoutProperties$T(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$T(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$T(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$V = {
+function _objectWithoutProperties$12(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$12(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$12(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$14 = {
   /** Aria label */
   'aria-label': PropTypes.string,
   /** Add custom class */
@@ -5051,24 +5051,24 @@ function ButtonGroup(props) {
     vertical = props.vertical,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
-    attributes = _objectWithoutProperties$T(props, _excluded$X);
+    attributes = _objectWithoutProperties$12(props, _excluded$16);
   var classes = mapToCssModules(classNames$1(className, size ? 'btn-group-' + size : false, vertical ? 'btn-group-vertical' : 'btn-group'), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$16({}, _objectSpread$k({
+  return /*#__PURE__*/React.createElement(Tag, _extends$1h({}, _objectSpread$k({
     role: 'group'
   }, attributes), {
     className: classes
   }));
 }
-ButtonGroup.propTypes = propTypes$V;
+ButtonGroup.propTypes = propTypes$14;
 
-var _excluded$W = ["className", "cssModule", "tag"];
-function _extends$15() { _extends$15 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$15.apply(this, arguments); }
+var _excluded$15 = ["className", "cssModule", "tag"];
+function _extends$1g() { _extends$1g = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1g.apply(this, arguments); }
 function ownKeys$k(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread$j(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$k(Object(source), !0).forEach(function (key) { _defineProperty$n(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$k(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty$n(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _objectWithoutProperties$S(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$S(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$S(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$U = {
+function _objectWithoutProperties$11(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$11(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$11(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$13 = {
   /** Aria label */
   'aria-label': PropTypes.string,
   /** Add custom class */
@@ -5085,21 +5085,21 @@ function ButtonToolbar(props) {
     cssModule = props.cssModule,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
-    attributes = _objectWithoutProperties$S(props, _excluded$W);
+    attributes = _objectWithoutProperties$11(props, _excluded$15);
   var classes = mapToCssModules(classNames$1(className, 'btn-toolbar'), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$15({}, _objectSpread$j({
+  return /*#__PURE__*/React.createElement(Tag, _extends$1g({}, _objectSpread$j({
     role: 'toolbar'
   }, attributes), {
     className: classes
   }));
 }
-ButtonToolbar.propTypes = propTypes$U;
+ButtonToolbar.propTypes = propTypes$13;
 
 function _typeof$l(obj) { "@babel/helpers - typeof"; return _typeof$l = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$l(obj); }
-var _excluded$V = ["className", "cssModule", "divider", "tag", "header", "active", "text"];
-function _extends$14() { _extends$14 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$14.apply(this, arguments); }
-function _objectWithoutProperties$R(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$R(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$R(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var _excluded$14 = ["className", "cssModule", "divider", "tag", "header", "active", "text"];
+function _extends$1f() { _extends$1f = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1f.apply(this, arguments); }
+function _objectWithoutProperties$10(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$10(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$10(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _classCallCheck$l(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties$l(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass$l(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$l(Constructor.prototype, protoProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -5110,7 +5110,7 @@ function _possibleConstructorReturn$l(self, call) { if (call && (_typeof$l(call)
 function _assertThisInitialized$l(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function _isNativeReflectConstruct$l() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf$l(o) { _getPrototypeOf$l = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$l(o); }
-var propTypes$T = {
+var propTypes$12 = {
   children: PropTypes.node,
   active: PropTypes.bool,
   disabled: PropTypes.bool,
@@ -5189,7 +5189,7 @@ var DropdownItem = /*#__PURE__*/function (_React$Component) {
         header = _omit.header,
         active = _omit.active,
         text = _omit.text,
-        props = _objectWithoutProperties$R(_omit, _excluded$V);
+        props = _objectWithoutProperties$10(_omit, _excluded$14);
       var classes = mapToCssModules(classNames$1(className, {
         disabled: props.disabled,
         'dropdown-item': !divider && !header && !text,
@@ -5209,7 +5209,7 @@ var DropdownItem = /*#__PURE__*/function (_React$Component) {
           Tag = 'span';
         }
       }
-      return /*#__PURE__*/React.createElement(Tag, _extends$14({
+      return /*#__PURE__*/React.createElement(Tag, _extends$1f({
         type: Tag === 'button' && (props.onClick || this.props.toggle) ? 'button' : undefined
       }, props, {
         tabIndex: tabIndex,
@@ -5221,12 +5221,12 @@ var DropdownItem = /*#__PURE__*/function (_React$Component) {
   }]);
   return DropdownItem;
 }(React.Component);
-DropdownItem.propTypes = propTypes$T;
+DropdownItem.propTypes = propTypes$12;
 DropdownItem.contextType = DropdownContext;
 
 function _typeof$k(obj) { "@babel/helpers - typeof"; return _typeof$k = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$k(obj); }
-var _excluded$U = ["className", "cssModule", "dark", "end", "right", "tag", "flip", "modifiers", "persist", "strategy", "container", "updateOnSelect"];
-function _extends$13() { _extends$13 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$13.apply(this, arguments); }
+var _excluded$13 = ["className", "cssModule", "dark", "end", "right", "tag", "flip", "modifiers", "persist", "strategy", "container", "updateOnSelect"];
+function _extends$1e() { _extends$1e = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1e.apply(this, arguments); }
 function ownKeys$j(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread$i(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$j(Object(source), !0).forEach(function (key) { _defineProperty$m(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$j(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty$m(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -5236,8 +5236,8 @@ function _unsupportedIterableToArray$5(o, minLen) { if (!o) return; if (typeof o
 function _iterableToArray$5(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 function _arrayWithoutHoles$5(arr) { if (Array.isArray(arr)) return _arrayLikeToArray$5(arr); }
 function _arrayLikeToArray$5(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-function _objectWithoutProperties$Q(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$Q(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$Q(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function _objectWithoutProperties$$(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$$(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$$(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _classCallCheck$k(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties$k(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass$k(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$k(Constructor.prototype, protoProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -5248,7 +5248,7 @@ function _possibleConstructorReturn$k(self, call) { if (call && (_typeof$k(call)
 function _assertThisInitialized$k(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function _isNativeReflectConstruct$k() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf$k(o) { _getPrototypeOf$k = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$k(o); }
-var propTypes$S = {
+var propTypes$11 = {
   tag: tagPropType,
   children: PropTypes.node.isRequired,
   dark: PropTypes.bool,
@@ -5309,7 +5309,7 @@ var DropdownMenu = /*#__PURE__*/function (_React$Component) {
         strategy = _this$props.strategy,
         container = _this$props.container,
         updateOnSelect = _this$props.updateOnSelect,
-        attrs = _objectWithoutProperties$Q(_this$props, _excluded$U);
+        attrs = _objectWithoutProperties$$(_this$props, _excluded$13);
       var classes = mapToCssModules(classNames$1(className, 'dropdown-menu', {
         'dropdown-menu-dark': dark,
         'dropdown-menu-end': end || right,
@@ -5347,7 +5347,7 @@ var DropdownMenu = /*#__PURE__*/function (_React$Component) {
             var onMenuRef = _this.context.onMenuRef;
             if (onMenuRef) onMenuRef(tagRef);
           };
-          return /*#__PURE__*/React.createElement(Tag, _extends$13({
+          return /*#__PURE__*/React.createElement(Tag, _extends$1e({
             tabIndex: "-1",
             role: _this.getRole(),
             ref: handleRef
@@ -5367,7 +5367,7 @@ var DropdownMenu = /*#__PURE__*/function (_React$Component) {
         return popper;
       }
       var onMenuRef = this.context.onMenuRef;
-      return /*#__PURE__*/React.createElement(Tag, _extends$13({
+      return /*#__PURE__*/React.createElement(Tag, _extends$1e({
         tabIndex: "-1",
         role: this.getRole()
       }, attrs, {
@@ -5381,15 +5381,15 @@ var DropdownMenu = /*#__PURE__*/function (_React$Component) {
   }]);
   return DropdownMenu;
 }(React.Component);
-DropdownMenu.propTypes = propTypes$S;
+DropdownMenu.propTypes = propTypes$11;
 DropdownMenu.contextType = DropdownContext;
 
 function _typeof$j(obj) { "@babel/helpers - typeof"; return _typeof$j = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$j(obj); }
-var _excluded$T = ["className", "color", "cssModule", "caret", "split", "nav", "tag", "innerRef"];
-function _extends$12() { _extends$12 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$12.apply(this, arguments); }
+var _excluded$12 = ["className", "color", "cssModule", "caret", "split", "nav", "tag", "innerRef"];
+function _extends$1d() { _extends$1d = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1d.apply(this, arguments); }
 function _defineProperty$l(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _objectWithoutProperties$P(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$P(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$P(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function _objectWithoutProperties$_(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$_(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$_(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _classCallCheck$j(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties$j(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass$j(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$j(Constructor.prototype, protoProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -5400,7 +5400,7 @@ function _possibleConstructorReturn$j(self, call) { if (call && (_typeof$j(call)
 function _assertThisInitialized$j(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function _isNativeReflectConstruct$j() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf$j(o) { _getPrototypeOf$j = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$j(o); }
-var propTypes$R = {
+var propTypes$10 = {
   caret: PropTypes.bool,
   color: PropTypes.string,
   children: PropTypes.node,
@@ -5461,7 +5461,7 @@ var DropdownToggle = /*#__PURE__*/function (_React$Component) {
         nav = _this$props.nav,
         tag = _this$props.tag,
         innerRef = _this$props.innerRef,
-        props = _objectWithoutProperties$P(_this$props, _excluded$T);
+        props = _objectWithoutProperties$_(_this$props, _excluded$12);
       var ariaLabel = props['aria-label'] || 'Toggle Dropdown';
       var classes = mapToCssModules(classNames$1(className, {
         'dropdown-toggle': caret || split,
@@ -5491,7 +5491,7 @@ var DropdownToggle = /*#__PURE__*/function (_React$Component) {
           var onToggleRef = _this2.context.onToggleRef;
           if (onToggleRef) onToggleRef(tagRef);
         };
-        return /*#__PURE__*/React.createElement(Tag, _extends$12({}, props, _defineProperty$l({}, typeof Tag === 'string' ? 'ref' : 'innerRef', handleRef), {
+        return /*#__PURE__*/React.createElement(Tag, _extends$1d({}, props, _defineProperty$l({}, typeof Tag === 'string' ? 'ref' : 'innerRef', handleRef), {
           className: classes,
           onClick: _this2.onClick,
           "aria-expanded": _this2.context.isOpen,
@@ -5515,21 +5515,21 @@ var DropdownToggle = /*#__PURE__*/function (_React$Component) {
   }]);
   return DropdownToggle;
 }(React.Component);
-DropdownToggle.propTypes = propTypes$R;
+DropdownToggle.propTypes = propTypes$10;
 DropdownToggle.defaultProps = defaultProps$c;
 DropdownToggle.contextType = DropdownContext;
 
-function _extends$11() {
-  return _extends$11 = Object.assign ? Object.assign.bind() : function (n) {
+function _extends$1c() {
+  return _extends$1c = Object.assign ? Object.assign.bind() : function (n) {
     for (var e = 1; e < arguments.length; e++) {
       var t = arguments[e];
       for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
     }
     return n;
-  }, _extends$11.apply(null, arguments);
+  }, _extends$1c.apply(null, arguments);
 }
 
-function _objectWithoutPropertiesLoose$O(r, e) {
+function _objectWithoutPropertiesLoose$Z(r, e) {
   if (null == r) return {};
   var t = {};
   for (var n in r) if ({}.hasOwnProperty.call(r, n)) {
@@ -5968,7 +5968,7 @@ var Transition = /*#__PURE__*/function (_React$Component) {
         _this$props.onExiting;
         _this$props.onExited;
         _this$props.nodeRef;
-        var childProps = _objectWithoutPropertiesLoose$O(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
+        var childProps = _objectWithoutPropertiesLoose$Z(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
 
     return (
       /*#__PURE__*/
@@ -6198,14 +6198,14 @@ function _assertThisInitialized$i(e) {
   return e;
 }
 
-var _excluded$S = ["tag", "baseClass", "baseClassActive", "className", "cssModule", "children", "innerRef"];
-function _extends$10() { _extends$10 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$10.apply(this, arguments); }
-function _objectWithoutProperties$O(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$N(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$N(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var _excluded$11 = ["tag", "baseClass", "baseClassActive", "className", "cssModule", "children", "innerRef"];
+function _extends$1b() { _extends$1b = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1b.apply(this, arguments); }
+function _objectWithoutProperties$Z(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$Y(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$Y(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function ownKeys$i(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread$h(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$i(Object(source), !0).forEach(function (key) { _defineProperty$k(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$i(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty$k(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-var propTypes$Q = _objectSpread$h(_objectSpread$h({}, Transition.propTypes), {}, {
+var propTypes$$ = _objectSpread$h(_objectSpread$h({}, Transition.propTypes), {}, {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   tag: tagPropType,
   baseClass: PropTypes.string,
@@ -6234,24 +6234,24 @@ function Fade(props) {
     children = props.children,
     _props$innerRef = props.innerRef,
     innerRef = _props$innerRef === void 0 ? ref : _props$innerRef,
-    otherProps = _objectWithoutProperties$O(props, _excluded$S);
+    otherProps = _objectWithoutProperties$Z(props, _excluded$11);
   var transitionProps = pick(_objectSpread$h({
     defaultProps: defaultProps$b
   }, otherProps), TransitionPropTypeKeys);
   var childProps = omit(otherProps, TransitionPropTypeKeys);
-  return /*#__PURE__*/React.createElement(Transition, _extends$10({
+  return /*#__PURE__*/React.createElement(Transition, _extends$1b({
     nodeRef: innerRef
   }, transitionProps), function (status) {
     var isActive = status === 'entered';
     var classes = mapToCssModules(classNames$1(className, baseClass, isActive && baseClassActive), cssModule);
-    return /*#__PURE__*/React.createElement(Tag, _extends$10({
+    return /*#__PURE__*/React.createElement(Tag, _extends$1b({
       className: classes
     }, childProps, {
       ref: innerRef
     }), children);
   });
 }
-Fade.propTypes = propTypes$Q;
+Fade.propTypes = propTypes$$;
 Fade.defaultProps = defaultProps$b;
 
 /**
@@ -6263,11 +6263,11 @@ Fade.defaultProps = defaultProps$b;
  */
 var AccordionContext = /*#__PURE__*/React.createContext({});
 
-var _excluded$R = ["flush", "open", "toggle", "className", "cssModule", "tag", "innerRef"];
-function _extends$$() { _extends$$ = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$$.apply(this, arguments); }
-function _objectWithoutProperties$N(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$M(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$M(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$P = {
+var _excluded$10 = ["flush", "open", "toggle", "className", "cssModule", "tag", "innerRef"];
+function _extends$1a() { _extends$1a = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1a.apply(this, arguments); }
+function _objectWithoutProperties$Y(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$X(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$X(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$_ = {
   children: PropTypes.node,
   /** Add custom class */
   className: PropTypes.string,
@@ -6292,7 +6292,7 @@ function Accordion(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     innerRef = props.innerRef,
-    attributes = _objectWithoutProperties$N(props, _excluded$R);
+    attributes = _objectWithoutProperties$Y(props, _excluded$10);
   var classes = mapToCssModules(classNames$1(className, 'accordion', {
     'accordion-flush': flush
   }), cssModule);
@@ -6304,15 +6304,15 @@ function Accordion(props) {
   });
   return /*#__PURE__*/React.createElement(AccordionContext.Provider, {
     value: accordionContext
-  }, /*#__PURE__*/React.createElement(Tag, _extends$$({}, attributes, {
+  }, /*#__PURE__*/React.createElement(Tag, _extends$1a({}, attributes, {
     className: classes,
     ref: innerRef
   })));
 }
-Accordion.propTypes = propTypes$P;
+Accordion.propTypes = propTypes$_;
 
-var _excluded$Q = ["defaultOpen", "stayOpen"];
-function _extends$_() { _extends$_ = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$_.apply(this, arguments); }
+var _excluded$$ = ["defaultOpen", "stayOpen"];
+function _extends$19() { _extends$19 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$19.apply(this, arguments); }
 function ownKeys$h(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread$g(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$h(Object(source), !0).forEach(function (key) { _defineProperty$j(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$h(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty$j(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -6326,9 +6326,9 @@ function _unsupportedIterableToArray$4(o, minLen) { if (!o) return; if (typeof o
 function _arrayLikeToArray$4(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 function _iterableToArrayLimit$3(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 function _arrayWithHoles$3(arr) { if (Array.isArray(arr)) return arr; }
-function _objectWithoutProperties$M(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$L(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$L(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$O = {
+function _objectWithoutProperties$X(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$W(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$W(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$Z = {
   tag: tagPropType,
   className: PropTypes.string,
   cssModule: PropTypes.object,
@@ -6340,7 +6340,7 @@ var propTypes$O = {
 function UncontrolledAccordion(_ref) {
   var defaultOpen = _ref.defaultOpen,
     stayOpen = _ref.stayOpen,
-    props = _objectWithoutProperties$M(_ref, _excluded$Q);
+    props = _objectWithoutProperties$X(_ref, _excluded$$);
   var _useState = React.useState(defaultOpen || (stayOpen ? [] : undefined)),
     _useState2 = _slicedToArray$3(_useState, 2),
     open = _useState2[0],
@@ -6360,20 +6360,20 @@ function UncontrolledAccordion(_ref) {
       setOpen(id);
     }
   };
-  return /*#__PURE__*/React.createElement(Accordion, _extends$_({}, _objectSpread$g({
+  return /*#__PURE__*/React.createElement(Accordion, _extends$19({}, _objectSpread$g({
     tag: 'div'
   }, props), {
     open: open,
     toggle: toggle
   }));
 }
-UncontrolledAccordion.propTypes = propTypes$O;
+UncontrolledAccordion.propTypes = propTypes$Z;
 
-var _excluded$P = ["className", "cssModule", "tag", "innerRef", "children", "targetId"];
-function _extends$Z() { _extends$Z = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$Z.apply(this, arguments); }
-function _objectWithoutProperties$L(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$K(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$K(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$N = {
+var _excluded$_ = ["className", "cssModule", "tag", "innerRef", "children", "targetId"];
+function _extends$18() { _extends$18 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$18.apply(this, arguments); }
+function _objectWithoutProperties$W(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$V(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$V(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$Y = {
   children: PropTypes.node,
   /** Add custom class */
   className: PropTypes.string,
@@ -6393,7 +6393,7 @@ function AccordionHeader(props) {
     innerRef = props.innerRef,
     children = props.children,
     targetId = props.targetId,
-    attributes = _objectWithoutProperties$L(props, _excluded$P);
+    attributes = _objectWithoutProperties$W(props, _excluded$_);
   var _useContext = React.useContext(AccordionContext),
     open = _useContext.open,
     toggle = _useContext.toggle;
@@ -6401,7 +6401,7 @@ function AccordionHeader(props) {
   var buttonClasses = mapToCssModules(classNames$1('accordion-button', {
     collapsed: !(Array.isArray(open) ? open.includes(targetId) : open === targetId)
   }), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$Z({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$18({}, attributes, {
     className: classes,
     ref: innerRef
   }), /*#__PURE__*/React.createElement("button", {
@@ -6412,13 +6412,13 @@ function AccordionHeader(props) {
     }
   }, children));
 }
-AccordionHeader.propTypes = propTypes$N;
+AccordionHeader.propTypes = propTypes$Y;
 
-var _excluded$O = ["className", "cssModule", "tag", "innerRef"];
-function _extends$Y() { _extends$Y = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$Y.apply(this, arguments); }
-function _objectWithoutProperties$K(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$J(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$J(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$M = {
+var _excluded$Z = ["className", "cssModule", "tag", "innerRef"];
+function _extends$17() { _extends$17 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$17.apply(this, arguments); }
+function _objectWithoutProperties$V(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$U(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$U(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$X = {
   children: PropTypes.node,
   /** To add custom class */
   className: PropTypes.string,
@@ -6434,21 +6434,21 @@ function AccordionItem(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     innerRef = props.innerRef,
-    attributes = _objectWithoutProperties$K(props, _excluded$O);
+    attributes = _objectWithoutProperties$V(props, _excluded$Z);
   var classes = mapToCssModules(classNames$1(className, 'accordion-item'), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$Y({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$17({}, attributes, {
     className: classes,
     ref: innerRef
   }));
 }
-AccordionItem.propTypes = propTypes$M;
+AccordionItem.propTypes = propTypes$X;
 
 function _typeof$i(obj) { "@babel/helpers - typeof"; return _typeof$i = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$i(obj); }
-var _excluded$N = ["tag", "horizontal", "isOpen", "className", "navbar", "cssModule", "children", "innerRef"];
+var _excluded$Y = ["tag", "horizontal", "isOpen", "className", "navbar", "cssModule", "children", "innerRef"];
 var _transitionStatusToCl;
-function _extends$X() { _extends$X = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$X.apply(this, arguments); }
-function _objectWithoutProperties$J(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$I(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$I(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function _extends$16() { _extends$16 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$16.apply(this, arguments); }
+function _objectWithoutProperties$U(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$T(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$T(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _classCallCheck$i(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties$i(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass$i(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$i(Constructor.prototype, protoProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -6462,7 +6462,7 @@ function _getPrototypeOf$i(o) { _getPrototypeOf$i = Object.setPrototypeOf ? Obje
 function ownKeys$g(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread$f(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$g(Object(source), !0).forEach(function (key) { _defineProperty$i(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$g(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty$i(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-var propTypes$L = _objectSpread$f(_objectSpread$f({}, Transition.propTypes), {}, {
+var propTypes$W = _objectSpread$f(_objectSpread$f({}, Transition.propTypes), {}, {
   /** Make content animation appear horizontally */
   horizontal: PropTypes.bool,
   /** Set if Collapse is open or closed */
@@ -6578,11 +6578,11 @@ var Collapse = /*#__PURE__*/function (_Component) {
         cssModule = _this$props.cssModule,
         children = _this$props.children;
         _this$props.innerRef;
-        var otherProps = _objectWithoutProperties$J(_this$props, _excluded$N);
+        var otherProps = _objectWithoutProperties$U(_this$props, _excluded$Y);
       var dimension = this.state.dimension;
       var transitionProps = pick(otherProps, TransitionPropTypeKeys);
       var childProps = omit(otherProps, TransitionPropTypeKeys);
-      return /*#__PURE__*/React.createElement(Transition, _extends$X({}, transitionProps, {
+      return /*#__PURE__*/React.createElement(Transition, _extends$16({}, transitionProps, {
         "in": isOpen,
         nodeRef: this.nodeRef,
         onEntering: this.onEntering,
@@ -6594,7 +6594,7 @@ var Collapse = /*#__PURE__*/function (_Component) {
         var collapseClass = getTransitionClass(status);
         var classes = mapToCssModules(classNames$1(className, horizontal && 'collapse-horizontal', collapseClass, navbar && 'navbar-collapse'), cssModule);
         var style = dimension === null ? null : _defineProperty$i({}, horizontal ? 'width' : 'height', dimension);
-        return /*#__PURE__*/React.createElement(Tag, _extends$X({}, childProps, {
+        return /*#__PURE__*/React.createElement(Tag, _extends$16({}, childProps, {
           style: _objectSpread$f(_objectSpread$f({}, childProps.style), style),
           className: classes,
           ref: _this2.nodeRef
@@ -6604,14 +6604,14 @@ var Collapse = /*#__PURE__*/function (_Component) {
   }]);
   return Collapse;
 }(React.Component);
-Collapse.propTypes = propTypes$L;
+Collapse.propTypes = propTypes$W;
 Collapse.defaultProps = defaultProps$a;
 
-var _excluded$M = ["className", "cssModule", "tag", "innerRef", "children", "accordionId"];
-function _extends$W() { _extends$W = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$W.apply(this, arguments); }
-function _objectWithoutProperties$I(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$H(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$H(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$K = {
+var _excluded$X = ["className", "cssModule", "tag", "innerRef", "children", "accordionId"];
+function _extends$15() { _extends$15 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$15.apply(this, arguments); }
+function _objectWithoutProperties$T(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$S(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$S(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$V = {
   /** Unique key used to control item's collapse/expand */
   accordionId: PropTypes.string.isRequired,
   /** To add custom class */
@@ -6632,11 +6632,11 @@ function AccordionBody(props) {
     innerRef = props.innerRef,
     children = props.children,
     accordionId = props.accordionId,
-    attributes = _objectWithoutProperties$I(props, _excluded$M);
+    attributes = _objectWithoutProperties$T(props, _excluded$X);
   var _useContext = React.useContext(AccordionContext),
     open = _useContext.open;
   var classes = mapToCssModules(classNames$1(className, 'accordion-collapse'), cssModule);
-  return /*#__PURE__*/React.createElement(Collapse, _extends$W({}, attributes, {
+  return /*#__PURE__*/React.createElement(Collapse, _extends$15({}, attributes, {
     className: classes,
     ref: innerRef,
     isOpen: Array.isArray(open) ? open.includes(accordionId) : open === accordionId
@@ -6644,13 +6644,13 @@ function AccordionBody(props) {
     className: "accordion-body"
   }, children));
 }
-AccordionBody.propTypes = propTypes$K;
+AccordionBody.propTypes = propTypes$V;
 
-var _excluded$L = ["className", "cssModule", "color", "innerRef", "pill", "tag"];
-function _extends$V() { _extends$V = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$V.apply(this, arguments); }
-function _objectWithoutProperties$H(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$G(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$G(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$J = {
+var _excluded$W = ["className", "cssModule", "color", "innerRef", "pill", "tag"];
+function _extends$14() { _extends$14 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$14.apply(this, arguments); }
+function _objectWithoutProperties$S(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$R(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$R(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$U = {
   /** Pass children so this component can wrap the child elements */
   children: PropTypes.node,
   /** Add custom class */
@@ -6675,23 +6675,23 @@ function Badge(props) {
     pill = _props$pill === void 0 ? false : _props$pill,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'span' : _props$tag,
-    attributes = _objectWithoutProperties$H(props, _excluded$L);
+    attributes = _objectWithoutProperties$S(props, _excluded$W);
   var classes = mapToCssModules(classNames$1(className, 'badge', 'bg-' + color, pill ? 'rounded-pill' : false), cssModule);
   if (attributes.href && Tag === 'span') {
     Tag = 'a';
   }
-  return /*#__PURE__*/React.createElement(Tag, _extends$V({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$14({}, attributes, {
     className: classes,
     ref: innerRef
   }));
 }
-Badge.propTypes = propTypes$J;
+Badge.propTypes = propTypes$U;
 
-var _excluded$K = ["className", "cssModule", "color", "body", "inverse", "outline", "tag", "innerRef"];
-function _extends$U() { _extends$U = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$U.apply(this, arguments); }
-function _objectWithoutProperties$G(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$F(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$F(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$I = {
+var _excluded$V = ["className", "cssModule", "color", "body", "inverse", "outline", "tag", "innerRef"];
+function _extends$13() { _extends$13 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$13.apply(this, arguments); }
+function _objectWithoutProperties$R(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$Q(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$Q(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$T = {
   /** Toggles card padding using `.card-body` */
   body: PropTypes.bool,
   /** Add custom class */
@@ -6718,20 +6718,86 @@ function Card(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     innerRef = props.innerRef,
-    attributes = _objectWithoutProperties$G(props, _excluded$K);
+    attributes = _objectWithoutProperties$R(props, _excluded$V);
   var classes = mapToCssModules(classNames$1(className, 'card', inverse ? 'text-white' : false, body ? 'card-body' : false, color ? "".concat(outline ? 'border' : 'bg', "-").concat(color) : false), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$U({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$13({}, attributes, {
     className: classes,
     ref: innerRef
   }));
 }
-Card.propTypes = propTypes$I;
+Card.propTypes = propTypes$T;
 
-var _excluded$J = ["className", "cssModule", "innerRef", "tag"];
-function _extends$T() { _extends$T = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$T.apply(this, arguments); }
-function _objectWithoutProperties$F(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$E(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$E(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var propTypes$H = {
+var _excluded$U = ["className", "cssModule", "tag"];
+function _extends$12() { _extends$12 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$12.apply(this, arguments); }
+function _objectWithoutProperties$Q(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$P(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$P(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$S = {
+  tag: tagPropType,
+  className: PropTypes.string,
+  cssModule: PropTypes.object
+};
+function CardGroup(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'div' : _props$tag,
+    attributes = _objectWithoutProperties$Q(props, _excluded$U);
+  var classes = mapToCssModules(classNames$1(className, 'card-group'), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$12({}, attributes, {
+    className: classes
+  }));
+}
+CardGroup.propTypes = propTypes$S;
+
+var _excluded$T = ["className", "cssModule", "tag"];
+function _extends$11() { _extends$11 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$11.apply(this, arguments); }
+function _objectWithoutProperties$P(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$O(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$O(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$R = {
+  tag: tagPropType,
+  className: PropTypes.string,
+  cssModule: PropTypes.object
+};
+function CardDeck(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'div' : _props$tag,
+    attributes = _objectWithoutProperties$P(props, _excluded$T);
+  var classes = mapToCssModules(classNames$1(className, 'card-deck'), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$11({}, attributes, {
+    className: classes
+  }));
+}
+CardDeck.propTypes = propTypes$R;
+
+var _excluded$S = ["className", "cssModule", "tag"];
+function _extends$10() { _extends$10 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$10.apply(this, arguments); }
+function _objectWithoutProperties$O(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$N(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$N(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$Q = {
+  tag: tagPropType,
+  className: PropTypes.string,
+  cssModule: PropTypes.object
+};
+function CardColumns(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'div' : _props$tag,
+    attributes = _objectWithoutProperties$O(props, _excluded$S);
+  var classes = mapToCssModules(classNames$1(className, 'card-columns'), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$10({}, attributes, {
+    className: classes
+  }));
+}
+CardColumns.propTypes = propTypes$Q;
+
+var _excluded$R = ["className", "cssModule", "innerRef", "tag"];
+function _extends$$() { _extends$$ = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$$.apply(this, arguments); }
+function _objectWithoutProperties$N(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$M(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$M(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$P = {
   /** Add custom class */
   className: PropTypes.string,
   /** Change underlying component's CSS base class name */
@@ -6746,14 +6812,149 @@ function CardBody(props) {
     innerRef = props.innerRef,
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
-    attributes = _objectWithoutProperties$F(props, _excluded$J);
+    attributes = _objectWithoutProperties$N(props, _excluded$R);
   var classes = mapToCssModules(classNames$1(className, 'card-body'), cssModule);
-  return /*#__PURE__*/React.createElement(Tag, _extends$T({}, attributes, {
+  return /*#__PURE__*/React.createElement(Tag, _extends$$({}, attributes, {
     className: classes,
     ref: innerRef
   }));
 }
-CardBody.propTypes = propTypes$H;
+CardBody.propTypes = propTypes$P;
+
+var _excluded$Q = ["className", "cssModule", "tag", "innerRef"];
+function _extends$_() { _extends$_ = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$_.apply(this, arguments); }
+function _objectWithoutProperties$M(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$L(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$L(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$O = {
+  tag: tagPropType,
+  innerRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
+  className: PropTypes.string,
+  cssModule: PropTypes.object
+};
+function CardLink(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'a' : _props$tag,
+    innerRef = props.innerRef,
+    attributes = _objectWithoutProperties$M(props, _excluded$Q);
+  var classes = mapToCssModules(classNames$1(className, 'card-link'), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$_({}, attributes, {
+    ref: innerRef,
+    className: classes
+  }));
+}
+CardLink.propTypes = propTypes$O;
+
+var _excluded$P = ["className", "cssModule", "tag"];
+function _extends$Z() { _extends$Z = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$Z.apply(this, arguments); }
+function _objectWithoutProperties$L(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$K(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$K(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$N = {
+  /** Add custom class */
+  className: PropTypes.string,
+  /** Change underlying component's CSS base class name */
+  cssModule: PropTypes.object,
+  /** Set a custom element for this component */
+  tag: tagPropType
+};
+function CardFooter(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'div' : _props$tag,
+    attributes = _objectWithoutProperties$L(props, _excluded$P);
+  var classes = mapToCssModules(classNames$1(className, 'card-footer'), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$Z({}, attributes, {
+    className: classes
+  }));
+}
+CardFooter.propTypes = propTypes$N;
+
+var _excluded$O = ["className", "cssModule", "tag"];
+function _extends$Y() { _extends$Y = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$Y.apply(this, arguments); }
+function _objectWithoutProperties$K(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$J(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$J(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$M = {
+  /** Add custom class */
+  className: PropTypes.string,
+  /** Change underlying component's CSS base class name */
+  cssModule: PropTypes.object,
+  /** Set a custom element for this component */
+  tag: tagPropType
+};
+function CardHeader(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'div' : _props$tag,
+    attributes = _objectWithoutProperties$K(props, _excluded$O);
+  var classes = mapToCssModules(classNames$1(className, 'card-header'), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$Y({}, attributes, {
+    className: classes
+  }));
+}
+CardHeader.propTypes = propTypes$M;
+
+var _excluded$N = ["className", "cssModule", "top", "bottom", "tag"];
+function _extends$X() { _extends$X = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$X.apply(this, arguments); }
+function _objectWithoutProperties$J(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$I(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$I(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$L = {
+  /** Add `bottom` prop if image is at bottom of card */
+  bottom: PropTypes.bool,
+  /** Add custom class */
+  className: PropTypes.string,
+  /** Change existing className with a new className */
+  cssModule: PropTypes.object,
+  /** Set a custom element for this component */
+  tag: tagPropType,
+  /** Add `top` prop if image is at top of card */
+  top: PropTypes.bool
+};
+function CardImg(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    top = props.top,
+    bottom = props.bottom,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'img' : _props$tag,
+    attributes = _objectWithoutProperties$J(props, _excluded$N);
+  var cardImgClassName = 'card-img';
+  if (top) {
+    cardImgClassName = 'card-img-top';
+  }
+  if (bottom) {
+    cardImgClassName = 'card-img-bottom';
+  }
+  var classes = mapToCssModules(classNames$1(className, cardImgClassName), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$X({}, attributes, {
+    className: classes
+  }));
+}
+CardImg.propTypes = propTypes$L;
+
+var _excluded$M = ["className", "cssModule", "tag"];
+function _extends$W() { _extends$W = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$W.apply(this, arguments); }
+function _objectWithoutProperties$I(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$H(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$H(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$K = {
+  tag: tagPropType,
+  className: PropTypes.string,
+  cssModule: PropTypes.object
+};
+function CardImgOverlay(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'div' : _props$tag,
+    attributes = _objectWithoutProperties$I(props, _excluded$M);
+  var classes = mapToCssModules(classNames$1(className, 'card-img-overlay'), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$W({}, attributes, {
+    className: classes
+  }));
+}
+CardImgOverlay.propTypes = propTypes$K;
 
 /**
  * CarouselContext
@@ -6764,13 +6965,13 @@ CardBody.propTypes = propTypes$H;
 var CarouselContext = /*#__PURE__*/React.createContext({});
 
 function _typeof$h(obj) { "@babel/helpers - typeof"; return _typeof$h = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$h(obj); }
-var _excluded$I = ["in", "children", "cssModule", "slide", "tag", "className"];
+var _excluded$L = ["in", "children", "cssModule", "slide", "tag", "className"];
 function ownKeys$f(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread$e(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$f(Object(source), !0).forEach(function (key) { _defineProperty$h(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$f(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty$h(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _extends$S() { _extends$S = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$S.apply(this, arguments); }
-function _objectWithoutProperties$E(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$D(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$D(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+function _extends$V() { _extends$V = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$V.apply(this, arguments); }
+function _objectWithoutProperties$H(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$G(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$G(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _classCallCheck$h(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties$h(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass$h(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$h(Constructor.prototype, protoProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -6853,8 +7054,8 @@ var CarouselItem = /*#__PURE__*/function (_React$Component) {
         _this$props$tag = _this$props.tag,
         Tag = _this$props$tag === void 0 ? 'div' : _this$props$tag,
         className = _this$props.className,
-        transitionProps = _objectWithoutProperties$E(_this$props, _excluded$I);
-      return /*#__PURE__*/React.createElement(Transition, _extends$S({}, transitionProps, {
+        transitionProps = _objectWithoutProperties$H(_this$props, _excluded$L);
+      return /*#__PURE__*/React.createElement(Transition, _extends$V({}, transitionProps, {
         enter: slide,
         exit: slide,
         "in": isIn,
@@ -6895,7 +7096,7 @@ CarouselItem.defaultProps = _objectSpread$e(_objectSpread$e({}, Transition.defau
 CarouselItem.contextType = CarouselContext;
 
 function _typeof$g(obj) { "@babel/helpers - typeof"; return _typeof$g = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$g(obj); }
-function _extends$R() { _extends$R = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$R.apply(this, arguments); }
+function _extends$U() { _extends$U = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$U.apply(this, arguments); }
 function _classCallCheck$g(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties$g(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass$g(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$g(Constructor.prototype, protoProps); if (staticProps) _defineProperties$g(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -6907,7 +7108,7 @@ function _assertThisInitialized$f(self) { if (self === void 0) { throw new Refer
 function _isNativeReflectConstruct$g() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf$g(o) { _getPrototypeOf$g = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$g(o); }
 var SWIPE_THRESHOLD = 40;
-var propTypes$G = {
+var propTypes$J = {
   /** the current active slide of the carousel */
   activeIndex: PropTypes.number,
   /** a function which should advance the carousel to the next slide (via activeIndex) */
@@ -6941,7 +7142,7 @@ var propTypes$G = {
   /** Enable touch support */
   enableTouch: PropTypes.bool
 };
-var propsToOmit$2 = Object.keys(propTypes$G);
+var propsToOmit$2 = Object.keys(propTypes$J);
 var defaultProps$9 = {
   interval: 5000,
   pause: 'hover',
@@ -7140,7 +7341,7 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
 
       // Rendering only slides
       if (slidesOnly) {
-        return /*#__PURE__*/React.createElement("div", _extends$R({}, attributes, {
+        return /*#__PURE__*/React.createElement("div", _extends$U({}, attributes, {
           className: outerClasses,
           onMouseEnter: this.hoverStart,
           onMouseLeave: this.hoverEnd
@@ -7154,7 +7355,7 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
         var _carouselItems = children[0];
         var _controlLeft = children[1];
         var _controlRight = children[2];
-        return /*#__PURE__*/React.createElement("div", _extends$R({}, attributes, {
+        return /*#__PURE__*/React.createElement("div", _extends$U({}, attributes, {
           className: outerClasses,
           onMouseEnter: this.hoverStart,
           onMouseLeave: this.hoverEnd
@@ -7180,7 +7381,7 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
       var carouselItems = children[1];
       var controlLeft = children[2];
       var controlRight = children[3];
-      return /*#__PURE__*/React.createElement("div", _extends$R({}, attributes, {
+      return /*#__PURE__*/React.createElement("div", _extends$U({}, attributes, {
         className: outerClasses,
         onMouseEnter: this.hoverStart,
         onMouseLeave: this.hoverEnd,
@@ -7219,20 +7420,20 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
   }]);
   return Carousel;
 }(React.Component);
-Carousel.propTypes = propTypes$G;
+Carousel.propTypes = propTypes$J;
 Carousel.defaultProps = defaultProps$9;
 
-var _excluded$H = ["direction", "onClickHandler", "cssModule", "directionText", "className"];
-function _extends$Q() { _extends$Q = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$Q.apply(this, arguments); }
-function _objectWithoutProperties$D(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$C(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$C(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var _excluded$K = ["direction", "onClickHandler", "cssModule", "directionText", "className"];
+function _extends$T() { _extends$T = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$T.apply(this, arguments); }
+function _objectWithoutProperties$G(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$F(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$F(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function CarouselControl(props) {
   var direction = props.direction,
     onClickHandler = props.onClickHandler,
     cssModule = props.cssModule,
     directionText = props.directionText,
     className = props.className,
-    attributes = _objectWithoutProperties$D(props, _excluded$H);
+    attributes = _objectWithoutProperties$G(props, _excluded$K);
   var anchorClasses = mapToCssModules(classNames$1(className, "carousel-control-".concat(direction)), cssModule);
   var iconClasses = mapToCssModules(classNames$1("carousel-control-".concat(direction, "-icon")), cssModule);
   var screenReaderClasses = mapToCssModules(classNames$1('visually-hidden'), cssModule);
@@ -7242,7 +7443,7 @@ function CarouselControl(props) {
     // `<button>` because that's what the Bootstrap examples require:
     // https://getbootstrap.com/docs/4.5/components/carousel/#with-controls
     // eslint-disable-next-line jsx-a11y/anchor-is-valid
-    React.createElement("a", _extends$Q({}, attributes, {
+    React.createElement("a", _extends$T({}, attributes, {
       className: anchorClasses,
       style: {
         cursor: 'pointer'
@@ -7274,17 +7475,17 @@ CarouselControl.propTypes = {
   className: PropTypes.string
 };
 
-var _excluded$G = ["items", "activeIndex", "cssModule", "onClickHandler", "className"];
-function _extends$P() { _extends$P = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$P.apply(this, arguments); }
-function _objectWithoutProperties$C(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$B(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$B(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var _excluded$J = ["items", "activeIndex", "cssModule", "onClickHandler", "className"];
+function _extends$S() { _extends$S = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$S.apply(this, arguments); }
+function _objectWithoutProperties$F(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$E(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$E(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function CarouselIndicators(props) {
   var items = props.items,
     activeIndex = props.activeIndex,
     cssModule = props.cssModule,
     onClickHandler = props.onClickHandler,
     className = props.className,
-    attributes = _objectWithoutProperties$C(props, _excluded$G);
+    attributes = _objectWithoutProperties$F(props, _excluded$J);
   var listClasses = mapToCssModules(classNames$1(className, 'carousel-indicators'), cssModule);
   var indicators = items.map(function (item, idx) {
     var indicatorClasses = mapToCssModules(classNames$1({
@@ -7302,7 +7503,7 @@ function CarouselIndicators(props) {
       className: indicatorClasses
     });
   });
-  return /*#__PURE__*/React.createElement("div", _extends$P({
+  return /*#__PURE__*/React.createElement("div", _extends$S({
     className: listClasses
   }, attributes), indicators);
 }
@@ -7341,10 +7542,10 @@ CarouselCaption.propTypes = {
 };
 
 function _typeof$f(obj) { "@babel/helpers - typeof"; return _typeof$f = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$f(obj); }
-var _excluded$F = ["defaultActiveIndex", "autoPlay", "indicators", "controls", "items", "goToIndex"];
-function _extends$O() { _extends$O = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$O.apply(this, arguments); }
-function _objectWithoutProperties$B(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$A(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$A(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var _excluded$I = ["defaultActiveIndex", "autoPlay", "indicators", "controls", "items", "goToIndex"];
+function _extends$R() { _extends$R = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$R.apply(this, arguments); }
+function _objectWithoutProperties$E(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$D(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$D(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _classCallCheck$f(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties$f(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass$f(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$f(Constructor.prototype, protoProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -7355,7 +7556,7 @@ function _possibleConstructorReturn$f(self, call) { if (call && (_typeof$f(call)
 function _assertThisInitialized$e(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function _isNativeReflectConstruct$f() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf$f(o) { _getPrototypeOf$f = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$f(o); }
-var propTypes$F = {
+var propTypes$I = {
   items: PropTypes.array.isRequired,
   indicators: PropTypes.bool,
   controls: PropTypes.bool,
@@ -7440,7 +7641,7 @@ var UncontrolledCarousel = /*#__PURE__*/function (_Component) {
         controls = _this$props$controls === void 0 ? true : _this$props$controls,
         items = _this$props.items,
         goToIndex = _this$props.goToIndex,
-        props = _objectWithoutProperties$B(_this$props, _excluded$F);
+        props = _objectWithoutProperties$E(_this$props, _excluded$I);
       var activeIndex = this.state.activeIndex;
       var slides = items.map(function (item) {
         var key = item.key || item.src;
@@ -7457,7 +7658,7 @@ var UncontrolledCarousel = /*#__PURE__*/function (_Component) {
           captionHeader: item.header || item.caption
         }));
       });
-      return /*#__PURE__*/React.createElement(Carousel, _extends$O({
+      return /*#__PURE__*/React.createElement(Carousel, _extends$R({
         activeIndex: activeIndex,
         next: this.next,
         previous: this.previous,
@@ -7479,7 +7680,82 @@ var UncontrolledCarousel = /*#__PURE__*/function (_Component) {
   }]);
   return UncontrolledCarousel;
 }(React.Component);
-UncontrolledCarousel.propTypes = propTypes$F;
+UncontrolledCarousel.propTypes = propTypes$I;
+
+var _excluded$H = ["className", "cssModule", "tag"];
+function _extends$Q() { _extends$Q = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$Q.apply(this, arguments); }
+function _objectWithoutProperties$D(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$C(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$C(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$H = {
+  /** Add custom class */
+  className: PropTypes.string,
+  /** Change underlying component's CSS base class name */
+  cssModule: PropTypes.object,
+  /** Set a custom element for this component */
+  tag: tagPropType
+};
+function CardSubtitle(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'div' : _props$tag,
+    attributes = _objectWithoutProperties$D(props, _excluded$H);
+  var classes = mapToCssModules(classNames$1(className, 'card-subtitle'), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$Q({}, attributes, {
+    className: classes
+  }));
+}
+CardSubtitle.propTypes = propTypes$H;
+
+var _excluded$G = ["className", "cssModule", "tag"];
+function _extends$P() { _extends$P = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$P.apply(this, arguments); }
+function _objectWithoutProperties$C(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$B(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$B(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$G = {
+  /** Add custom class */
+  className: PropTypes.string,
+  /** Change underlying component's CSS base class name */
+  cssModule: PropTypes.object,
+  /** Set a custom element for this component */
+  tag: tagPropType
+};
+function CardText(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'p' : _props$tag,
+    attributes = _objectWithoutProperties$C(props, _excluded$G);
+  var classes = mapToCssModules(classNames$1(className, 'card-text'), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$P({}, attributes, {
+    className: classes
+  }));
+}
+CardText.propTypes = propTypes$G;
+
+var _excluded$F = ["className", "cssModule", "tag"];
+function _extends$O() { _extends$O = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$O.apply(this, arguments); }
+function _objectWithoutProperties$B(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$A(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$A(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var propTypes$F = {
+  /** Add custom class */
+  className: PropTypes.string,
+  /** Change underlying component's CSS base class name */
+  cssModule: PropTypes.object,
+  /** Set a custom element for this component */
+  tag: tagPropType
+};
+function CardTitle(props) {
+  var className = props.className,
+    cssModule = props.cssModule,
+    _props$tag = props.tag,
+    Tag = _props$tag === void 0 ? 'div' : _props$tag,
+    attributes = _objectWithoutProperties$B(props, _excluded$F);
+  var classes = mapToCssModules(classNames$1(className, 'card-title'), cssModule);
+  return /*#__PURE__*/React.createElement(Tag, _extends$O({}, attributes, {
+    className: classes
+  }));
+}
+CardTitle.propTypes = propTypes$F;
 
 function _typeof$e(obj) { "@babel/helpers - typeof"; return _typeof$e = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$e(obj); }
 var _excluded$E = ["cssModule", "children", "isOpen", "flip", "target", "offset", "fallbackPlacements", "placementPrefix", "arrowClassName", "hideArrow", "popperClassName", "tag", "container", "modifiers", "strategy", "boundariesElement", "onClosed", "fade", "transition", "placement"];
@@ -11144,6 +11420,73 @@ var ButtonToolbarBase = function (_a) {
     return React.createElement(ButtonToolbar, __assign({}, rest), children);
 };
 
+var CardBase = function (props) {
+    return (React.createElement(Card, __assign({ className: classnames$1(props.className, {
+            "card-variant-list ": props.variant === "list",
+            "card-variant-active": props.variant === "active",
+            "card-variant-active card-hover-none": props.variant === "active" && props.hover === false,
+            "card-variant-outline": props.variant === "outline",
+            "card-variant-outline card-hover-none": props.variant === "outline" && props.hover === false,
+            "card-variant-primary": props.variant === "primary",
+            "card-variant-primary card-hover-none": props.variant === "primary" && props.hover === false,
+            "card-variant-secondary": props.variant === "secondary",
+            "card-variant-secondary card-hover-none": props.variant === "secondary" && props.hover === false,
+            "card-variant-light": props.variant === "light",
+            "card-variant-light card-hover-none": props.variant === "light" && props.hover === false,
+            "card-gradient card-gradient-success": props.variant === "gradient" && props.color === "success",
+            "card-gradient card-gradient-primary": props.variant === "gradient" && props.color === "primary",
+            "card-gradient card-gradient-danger": props.variant === "gradient" && props.color === "danger",
+        }) }, props), props.children));
+};
+
+var CardBodyBase = function (props) {
+    return React.createElement(CardBody, __assign({}, props), props.children);
+};
+
+var CardColumnsBase = function (props) {
+    return React.createElement(CardColumns, __assign({}, props), props.children);
+};
+
+var CardDeckBase = function (props) {
+    return React.createElement(CardDeck, __assign({}, props), props.children);
+};
+
+var CardFooterBase = function (props) {
+    return React.createElement(CardFooter, __assign({}, props), props.children);
+};
+
+var CardGroupBase = function (props) {
+    return React.createElement(CardGroup, __assign({}, props), props.children);
+};
+
+var CardHeaderBase = function (props) {
+    return React.createElement(CardHeader, __assign({}, props), props.children);
+};
+
+var CardImgBase = function (props) {
+    return React.createElement(CardImg, __assign({}, props), props.children);
+};
+
+var CardImgOverlayBase = function (props) {
+    return React.createElement(CardImgOverlay, __assign({}, props), props.children);
+};
+
+var CardLinkBase = function (props) {
+    return React.createElement(CardLink, __assign({}, props), props.children);
+};
+
+var CardSubtitleBase = function (props) {
+    return React.createElement(CardSubtitle, __assign({}, props), props.children);
+};
+
+var CardTextBase = function (props) {
+    return React.createElement(CardText, __assign({}, props), props.children);
+};
+
+var CardTitleBase = function (props) {
+    return React.createElement(CardTitle, __assign({}, props), props.children);
+};
+
 var CarouselBase = function (_a) {
     var children = _a.children, rest = __rest(_a, ["children"]);
     return React.createElement(Carousel, __assign({}, rest), children);
@@ -13953,7 +14296,7 @@ function _objectWithoutProperties$1(e, t) {
   if (null == e) return {};
   var o,
     r,
-    i = _objectWithoutPropertiesLoose$O(e, t);
+    i = _objectWithoutPropertiesLoose$Z(e, t);
   if (Object.getOwnPropertySymbols) {
     var n = Object.getOwnPropertySymbols(e);
     for (r = 0; r < n.length; r++) o = n[r], t.indexOf(o) >= 0 || {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]);
@@ -14910,7 +15253,7 @@ var Menu = function Menu(props) {
   var children = props.children,
     innerRef = props.innerRef,
     innerProps = props.innerProps;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'menu', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'menu', {
     menu: true
   }), {
     ref: innerRef
@@ -14940,7 +15283,7 @@ var MenuList = function MenuList(props) {
     innerProps = props.innerProps,
     innerRef = props.innerRef,
     isMulti = props.isMulti;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'menuList', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'menuList', {
     'menu-list': true,
     'menu-list--is-multi': isMulti
   }), {
@@ -14968,7 +15311,7 @@ var loadingMessageCSS = noticeCSS;
 var NoOptionsMessage = function NoOptionsMessage(props) {
   var children = props.children,
     innerProps = props.innerProps;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'noOptionsMessage', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'noOptionsMessage', {
     'menu-notice': true,
     'menu-notice--no-options': true
   }), innerProps), children);
@@ -14979,7 +15322,7 @@ NoOptionsMessage.defaultProps = {
 var LoadingMessage = function LoadingMessage(props) {
   var children = props.children,
     innerProps = props.innerProps;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'loadingMessage', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'loadingMessage', {
     'menu-notice': true,
     'menu-notice--loading': true
   }), innerProps), children);
@@ -15064,7 +15407,7 @@ var MenuPortal = function MenuPortal(props) {
   if (!appendTo && menuPosition !== 'fixed' || !computedPosition) return null;
 
   // same wrapper element whether fixed or portalled
-  var menuWrapper = jsx("div", _extends$11({
+  var menuWrapper = jsx("div", _extends$1c({
     ref: setMenuPortalElement
   }, getStyleProps(_objectSpread2(_objectSpread2({}, props), {}, {
     offset: computedPosition.offset,
@@ -15098,7 +15441,7 @@ var SelectContainer = function SelectContainer(props) {
     innerProps = props.innerProps,
     isDisabled = props.isDisabled,
     isRtl = props.isRtl;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'container', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'container', {
     '--is-disabled': isDisabled,
     '--is-rtl': isRtl
   }), innerProps), children);
@@ -15130,7 +15473,7 @@ var ValueContainer = function ValueContainer(props) {
     innerProps = props.innerProps,
     isMulti = props.isMulti,
     hasValue = props.hasValue;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'valueContainer', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'valueContainer', {
     'value-container': true,
     'value-container--is-multi': isMulti,
     'value-container--has-value': hasValue
@@ -15152,7 +15495,7 @@ var indicatorsContainerCSS = function indicatorsContainerCSS() {
 var IndicatorsContainer = function IndicatorsContainer(props) {
   var children = props.children,
     innerProps = props.innerProps;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'indicatorsContainer', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'indicatorsContainer', {
     indicators: true
   }), innerProps), children);
 };
@@ -15176,7 +15519,7 @@ var _ref2$2 = process.env.NODE_ENV === "production" ? {
 var Svg = function Svg(_ref) {
   var size = _ref.size,
     props = _objectWithoutProperties$1(_ref, _excluded$2$1);
-  return jsx("svg", _extends$11({
+  return jsx("svg", _extends$1c({
     height: size,
     width: size,
     viewBox: "0 0 20 20",
@@ -15186,14 +15529,14 @@ var Svg = function Svg(_ref) {
   }, props));
 };
 var CrossIcon = function CrossIcon(props) {
-  return jsx(Svg, _extends$11({
+  return jsx(Svg, _extends$1c({
     size: 20
   }, props), jsx("path", {
     d: "M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
   }));
 };
 var DownChevron = function DownChevron(props) {
-  return jsx(Svg, _extends$11({
+  return jsx(Svg, _extends$1c({
     size: 20
   }, props), jsx("path", {
     d: "M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
@@ -15225,7 +15568,7 @@ var dropdownIndicatorCSS = baseCSS;
 var DropdownIndicator = function DropdownIndicator(props) {
   var children = props.children,
     innerProps = props.innerProps;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'dropdownIndicator', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'dropdownIndicator', {
     indicator: true,
     'dropdown-indicator': true
   }), innerProps), children || jsx(DownChevron, null));
@@ -15234,7 +15577,7 @@ var clearIndicatorCSS = baseCSS;
 var ClearIndicator = function ClearIndicator(props) {
   var children = props.children,
     innerProps = props.innerProps;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'clearIndicator', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'clearIndicator', {
     indicator: true,
     'clear-indicator': true
   }), innerProps), children || jsx(CrossIcon, null));
@@ -15261,7 +15604,7 @@ var indicatorSeparatorCSS = function indicatorSeparatorCSS(_ref4, unstyled) {
 };
 var IndicatorSeparator = function IndicatorSeparator(props) {
   var innerProps = props.innerProps;
-  return jsx("span", _extends$11({}, innerProps, getStyleProps(props, 'indicatorSeparator', {
+  return jsx("span", _extends$1c({}, innerProps, getStyleProps(props, 'indicatorSeparator', {
     'indicator-separator': true
   })));
 };
@@ -15311,7 +15654,7 @@ var LoadingDot = function LoadingDot(_ref6) {
 var LoadingIndicator = function LoadingIndicator(props) {
   var innerProps = props.innerProps,
     isRtl = props.isRtl;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'loadingIndicator', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'loadingIndicator', {
     indicator: true,
     'loading-indicator': true
   }), innerProps), jsx(LoadingDot, {
@@ -15366,7 +15709,7 @@ var Control = function Control(props) {
     innerRef = props.innerRef,
     innerProps = props.innerProps,
     menuIsOpen = props.menuIsOpen;
-  return jsx("div", _extends$11({
+  return jsx("div", _extends$1c({
     ref: innerRef
   }, getStyleProps(props, 'control', {
     control: true,
@@ -15395,9 +15738,9 @@ var Group = function Group(props) {
     label = props.label,
     theme = props.theme,
     selectProps = props.selectProps;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'group', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'group', {
     group: true
-  }), innerProps), jsx(Heading, _extends$11({}, headingProps, {
+  }), innerProps), jsx(Heading, _extends$1c({}, headingProps, {
     selectProps: selectProps,
     theme: theme,
     getStyles: getStyles,
@@ -15427,7 +15770,7 @@ var GroupHeading = function GroupHeading(props) {
   var _cleanCommonProps = cleanCommonProps(props);
     _cleanCommonProps.data;
     var innerProps = _objectWithoutProperties$1(_cleanCommonProps, _excluded$1$1);
-  return jsx("div", _extends$11({}, getStyleProps(props, 'groupHeading', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'groupHeading', {
     'group-heading': true
   }), innerProps));
 };
@@ -15489,11 +15832,11 @@ var Input = function Input(props) {
     isHidden = _cleanCommonProps.isHidden,
     inputClassName = _cleanCommonProps.inputClassName,
     innerProps = _objectWithoutProperties$1(_cleanCommonProps, _excluded$5);
-  return jsx("div", _extends$11({}, getStyleProps(props, 'input', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'input', {
     'input-container': true
   }), {
     "data-value": value || ''
-  }), jsx("input", _extends$11({
+  }), jsx("input", _extends$1c({
     className: cx({
       input: true
     }, inputClassName),
@@ -15565,7 +15908,7 @@ var MultiValueLabel = MultiValueGeneric;
 function MultiValueRemove(_ref5) {
   var children = _ref5.children,
     innerProps = _ref5.innerProps;
-  return jsx("div", _extends$11({
+  return jsx("div", _extends$1c({
     role: "button"
   }, innerProps), children || jsx(CrossIcon, {
     size: 14
@@ -15638,7 +15981,7 @@ var Option = function Option(props) {
     isSelected = props.isSelected,
     innerRef = props.innerRef,
     innerProps = props.innerProps;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'option', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'option', {
     option: true,
     'option--is-disabled': isDisabled,
     'option--is-focused': isFocused,
@@ -15665,7 +16008,7 @@ var placeholderCSS = function placeholderCSS(_ref, unstyled) {
 var Placeholder = function Placeholder(props) {
   var children = props.children,
     innerProps = props.innerProps;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'placeholder', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'placeholder', {
     placeholder: true
   }), innerProps), children);
 };
@@ -15692,7 +16035,7 @@ var SingleValue = function SingleValue(props) {
   var children = props.children,
     isDisabled = props.isDisabled,
     innerProps = props.innerProps;
-  return jsx("div", _extends$11({}, getStyleProps(props, 'singleValue', {
+  return jsx("div", _extends$1c({}, getStyleProps(props, 'singleValue', {
     'single-value': true,
     'single-value--is-disabled': isDisabled
   }), innerProps), children);
@@ -15792,7 +16135,7 @@ var _ref = process.env.NODE_ENV === "production" ? {
   toString: _EMOTION_STRINGIFIED_CSS_ERROR__$2
 };
 var A11yText = function A11yText(props) {
-  return jsx("span", _extends$11({
+  return jsx("span", _extends$1c({
     css: _ref
   }, props));
 };
@@ -16298,7 +16641,7 @@ function DummyInput(_ref) {
     props = _objectWithoutProperties$1(_ref, _excluded$4);
   // Remove animation props not meant for HTML elements
   var filteredProps = removeProps(props, 'onExited', 'in', 'enter', 'exit', 'appear');
-  return jsx("input", _extends$11({
+  return jsx("input", _extends$1c({
     ref: innerRef
   }, filteredProps, {
     css: /*#__PURE__*/css$2({
@@ -17804,7 +18147,7 @@ var Select = /*#__PURE__*/function (_Component) {
       });
       if (!isSearchable) {
         // use a dummy input to maintain focus/blur functionality
-        return /*#__PURE__*/React__namespace.createElement(DummyInput, _extends$11({
+        return /*#__PURE__*/React__namespace.createElement(DummyInput, _extends$1c({
           id: id,
           innerRef: this.getInputRef,
           onBlur: this.onInputBlur,
@@ -17817,7 +18160,7 @@ var Select = /*#__PURE__*/function (_Component) {
           value: ""
         }, ariaAttributes));
       }
-      return /*#__PURE__*/React__namespace.createElement(Input, _extends$11({}, commonProps, {
+      return /*#__PURE__*/React__namespace.createElement(Input, _extends$1c({}, commonProps, {
         autoCapitalize: "none",
         autoComplete: "off",
         autoCorrect: "off",
@@ -17858,7 +18201,7 @@ var Select = /*#__PURE__*/function (_Component) {
         focusedValue = _this$state5.focusedValue,
         isFocused = _this$state5.isFocused;
       if (!this.hasValue() || !controlShouldRenderValue) {
-        return inputValue ? null : /*#__PURE__*/React__namespace.createElement(Placeholder, _extends$11({}, commonProps, {
+        return inputValue ? null : /*#__PURE__*/React__namespace.createElement(Placeholder, _extends$1c({}, commonProps, {
           key: "placeholder",
           isDisabled: isDisabled,
           isFocused: isFocused,
@@ -17871,7 +18214,7 @@ var Select = /*#__PURE__*/function (_Component) {
         return selectValue.map(function (opt, index) {
           var isOptionFocused = opt === focusedValue;
           var key = "".concat(_this3.getOptionLabel(opt), "-").concat(_this3.getOptionValue(opt));
-          return /*#__PURE__*/React__namespace.createElement(MultiValue, _extends$11({}, commonProps, {
+          return /*#__PURE__*/React__namespace.createElement(MultiValue, _extends$1c({}, commonProps, {
             components: {
               Container: MultiValueContainer,
               Label: MultiValueLabel,
@@ -17900,7 +18243,7 @@ var Select = /*#__PURE__*/function (_Component) {
         return null;
       }
       var singleValue = selectValue[0];
-      return /*#__PURE__*/React__namespace.createElement(SingleValue, _extends$11({}, commonProps, {
+      return /*#__PURE__*/React__namespace.createElement(SingleValue, _extends$1c({}, commonProps, {
         data: singleValue,
         isDisabled: isDisabled
       }), this.formatOptionLabel(singleValue, 'value'));
@@ -17923,7 +18266,7 @@ var Select = /*#__PURE__*/function (_Component) {
         onTouchEnd: this.onClearIndicatorTouchEnd,
         'aria-hidden': 'true'
       };
-      return /*#__PURE__*/React__namespace.createElement(ClearIndicator, _extends$11({}, commonProps, {
+      return /*#__PURE__*/React__namespace.createElement(ClearIndicator, _extends$1c({}, commonProps, {
         innerProps: innerProps,
         isFocused: isFocused
       }));
@@ -17942,7 +18285,7 @@ var Select = /*#__PURE__*/function (_Component) {
       var innerProps = {
         'aria-hidden': 'true'
       };
-      return /*#__PURE__*/React__namespace.createElement(LoadingIndicator, _extends$11({}, commonProps, {
+      return /*#__PURE__*/React__namespace.createElement(LoadingIndicator, _extends$1c({}, commonProps, {
         innerProps: innerProps,
         isDisabled: isDisabled,
         isFocused: isFocused
@@ -17960,7 +18303,7 @@ var Select = /*#__PURE__*/function (_Component) {
       var commonProps = this.commonProps;
       var isDisabled = this.props.isDisabled;
       var isFocused = this.state.isFocused;
-      return /*#__PURE__*/React__namespace.createElement(IndicatorSeparator, _extends$11({}, commonProps, {
+      return /*#__PURE__*/React__namespace.createElement(IndicatorSeparator, _extends$1c({}, commonProps, {
         isDisabled: isDisabled,
         isFocused: isFocused
       }));
@@ -17979,7 +18322,7 @@ var Select = /*#__PURE__*/function (_Component) {
         onTouchEnd: this.onDropdownIndicatorTouchEnd,
         'aria-hidden': 'true'
       };
-      return /*#__PURE__*/React__namespace.createElement(DropdownIndicator, _extends$11({}, commonProps, {
+      return /*#__PURE__*/React__namespace.createElement(DropdownIndicator, _extends$1c({}, commonProps, {
         innerProps: innerProps,
         isDisabled: isDisabled,
         isFocused: isFocused
@@ -18041,7 +18384,7 @@ var Select = /*#__PURE__*/function (_Component) {
           onMouseOver: onHover,
           tabIndex: -1
         };
-        return /*#__PURE__*/React__namespace.createElement(Option, _extends$11({}, commonProps, {
+        return /*#__PURE__*/React__namespace.createElement(Option, _extends$1c({}, commonProps, {
           innerProps: innerProps,
           data: data,
           isDisabled: isDisabled,
@@ -18063,7 +18406,7 @@ var Select = /*#__PURE__*/function (_Component) {
               groupIndex = item.index;
             var groupId = "".concat(_this4.getElementId('group'), "-").concat(groupIndex);
             var headingId = "".concat(groupId, "-heading");
-            return /*#__PURE__*/React__namespace.createElement(Group, _extends$11({}, commonProps, {
+            return /*#__PURE__*/React__namespace.createElement(Group, _extends$1c({}, commonProps, {
               key: groupId,
               data: _data,
               options: options,
@@ -18100,12 +18443,12 @@ var Select = /*#__PURE__*/function (_Component) {
         menuPosition: menuPosition,
         menuShouldScrollIntoView: menuShouldScrollIntoView
       };
-      var menuElement = /*#__PURE__*/React__namespace.createElement(MenuPlacer, _extends$11({}, commonProps, menuPlacementProps), function (_ref4) {
+      var menuElement = /*#__PURE__*/React__namespace.createElement(MenuPlacer, _extends$1c({}, commonProps, menuPlacementProps), function (_ref4) {
         var ref = _ref4.ref,
           _ref4$placerProps = _ref4.placerProps,
           placement = _ref4$placerProps.placement,
           maxHeight = _ref4$placerProps.maxHeight;
-        return /*#__PURE__*/React__namespace.createElement(Menu, _extends$11({}, commonProps, menuPlacementProps, {
+        return /*#__PURE__*/React__namespace.createElement(Menu, _extends$1c({}, commonProps, menuPlacementProps, {
           innerRef: ref,
           innerProps: {
             onMouseDown: _this4.onMenuMouseDown,
@@ -18120,7 +18463,7 @@ var Select = /*#__PURE__*/function (_Component) {
           onBottomArrive: onMenuScrollToBottom,
           lockEnabled: menuShouldBlockScroll
         }, function (scrollTargetRef) {
-          return /*#__PURE__*/React__namespace.createElement(MenuList, _extends$11({}, commonProps, {
+          return /*#__PURE__*/React__namespace.createElement(MenuList, _extends$1c({}, commonProps, {
             innerRef: function innerRef(instance) {
               _this4.getMenuListRef(instance);
               scrollTargetRef(instance);
@@ -18135,7 +18478,7 @@ var Select = /*#__PURE__*/function (_Component) {
       // positioning behaviour is almost identical for portalled and fixed,
       // so we use the same component. the actual portalling logic is forked
       // within the component based on `menuPosition`
-      return menuPortalTarget || menuPosition === 'fixed' ? /*#__PURE__*/React__namespace.createElement(MenuPortal, _extends$11({}, commonProps, {
+      return menuPortalTarget || menuPosition === 'fixed' ? /*#__PURE__*/React__namespace.createElement(MenuPortal, _extends$1c({}, commonProps, {
         appendTo: menuPortalTarget,
         controlElement: this.controlRef,
         menuPlacement: menuPlacement,
@@ -18205,7 +18548,7 @@ var Select = /*#__PURE__*/function (_Component) {
         isFocused = _this$state6.isFocused,
         selectValue = _this$state6.selectValue;
       var focusableOptions = this.getFocusableOptions();
-      return /*#__PURE__*/React__namespace.createElement(LiveRegion, _extends$11({}, commonProps, {
+      return /*#__PURE__*/React__namespace.createElement(LiveRegion, _extends$1c({}, commonProps, {
         id: this.getElementId('live-region'),
         ariaSelection: ariaSelection,
         focusedOption: focusedOption,
@@ -18230,7 +18573,7 @@ var Select = /*#__PURE__*/function (_Component) {
         menuIsOpen = _this$props14.menuIsOpen;
       var isFocused = this.state.isFocused;
       var commonProps = this.commonProps = this.getCommonProps();
-      return /*#__PURE__*/React__namespace.createElement(SelectContainer, _extends$11({}, commonProps, {
+      return /*#__PURE__*/React__namespace.createElement(SelectContainer, _extends$1c({}, commonProps, {
         className: className,
         innerProps: {
           id: id,
@@ -18238,7 +18581,7 @@ var Select = /*#__PURE__*/function (_Component) {
         },
         isDisabled: isDisabled,
         isFocused: isFocused
-      }), this.renderLiveRegion(), /*#__PURE__*/React__namespace.createElement(Control, _extends$11({}, commonProps, {
+      }), this.renderLiveRegion(), /*#__PURE__*/React__namespace.createElement(Control, _extends$1c({}, commonProps, {
         innerRef: this.getControlRef,
         innerProps: {
           onMouseDown: this.onControlMouseDown,
@@ -18247,9 +18590,9 @@ var Select = /*#__PURE__*/function (_Component) {
         isDisabled: isDisabled,
         isFocused: isFocused,
         menuIsOpen: menuIsOpen
-      }), /*#__PURE__*/React__namespace.createElement(ValueContainer, _extends$11({}, commonProps, {
+      }), /*#__PURE__*/React__namespace.createElement(ValueContainer, _extends$1c({}, commonProps, {
         isDisabled: isDisabled
-      }), this.renderPlaceholderOrValue(), this.renderInput()), /*#__PURE__*/React__namespace.createElement(IndicatorsContainer, _extends$11({}, commonProps, {
+      }), this.renderPlaceholderOrValue(), this.renderInput()), /*#__PURE__*/React__namespace.createElement(IndicatorsContainer, _extends$1c({}, commonProps, {
         isDisabled: isDisabled
       }), this.renderClearIndicator(), this.renderLoadingIndicator(), this.renderIndicatorSeparator(), this.renderDropdownIndicator())), this.renderMenu(), this.renderFormField());
     }
@@ -18472,7 +18815,7 @@ function useCreatable(_ref) {
 var CreatableSelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var creatableProps = useStateManager(props);
   var selectProps = useCreatable(creatableProps);
-  return /*#__PURE__*/React__namespace.createElement(Select, _extends$11({
+  return /*#__PURE__*/React__namespace.createElement(Select, _extends$1c({
     ref: ref
   }, selectProps));
 });
@@ -20379,25 +20722,6 @@ function reducer(state, action) {
 
 function noop() {}
 
-var CardBase = function (props) {
-    return (React.createElement(Card, __assign({ className: classnames$1(props.className, {
-            "card-variant-list ": props.variant === "list",
-            "card-variant-active": props.variant === "active",
-            "card-variant-active card-hover-none": props.variant === "active" && props.hover === false,
-            "card-variant-outline": props.variant === "outline",
-            "card-variant-outline card-hover-none": props.variant === "outline" && props.hover === false,
-            "card-variant-primary": props.variant === "primary",
-            "card-variant-primary card-hover-none": props.variant === "primary" && props.hover === false,
-            "card-variant-secondary": props.variant === "secondary",
-            "card-variant-secondary card-hover-none": props.variant === "secondary" && props.hover === false,
-            "card-variant-light": props.variant === "light",
-            "card-variant-light card-hover-none": props.variant === "light" && props.hover === false,
-            "card-gradient card-gradient-success": props.variant === "gradient" && props.color === "success",
-            "card-gradient card-gradient-primary": props.variant === "gradient" && props.color === "primary",
-            "card-gradient card-gradient-danger": props.variant === "gradient" && props.color === "danger",
-        }) }, props), props.children));
-};
-
 var ProgressBase = function (props) {
     return React.createElement(Progress, __assign({}, props));
 };
@@ -20405,10 +20729,6 @@ var ProgressBase = function (props) {
 var SpinnerBase = function (_a) {
     var children = _a.children, rest = __rest(_a, ["children"]);
     return React.createElement(Spinner, __assign({}, rest), children);
-};
-
-var CardBodyBase = function (props) {
-    return React.createElement(CardBody, __assign({}, props), props.children);
 };
 
 function bytesToSize(bytes) {
@@ -31452,7 +31772,7 @@ var ImsInputDropZone = function (_a) {
 
 var StateManagedSelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var baseSelectProps = useStateManager(props);
-  return /*#__PURE__*/React__namespace.createElement(Select, _extends$11({
+  return /*#__PURE__*/React__namespace.createElement(Select, _extends$1c({
     ref: ref
   }, baseSelectProps));
 });
@@ -32178,7 +32498,7 @@ function useAsync(_ref) {
 var AsyncSelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var stateManagedProps = useAsync(props);
   var selectProps = useStateManager(stateManagedProps);
-  return /*#__PURE__*/React__namespace.createElement(Select, _extends$11({
+  return /*#__PURE__*/React__namespace.createElement(Select, _extends$1c({
     ref: ref
   }, selectProps));
 });
@@ -32311,6 +32631,19 @@ exports.ButtonDropdown = ButtonDropdownBase;
 exports.ButtonGroup = ButtonGroupBase;
 exports.ButtonToggle = ButtonToggleBase;
 exports.ButtonToolbar = ButtonToolbarBase;
+exports.Card = CardBase;
+exports.CardColumns = CardColumnsBase;
+exports.CardDeck = CardDeckBase;
+exports.CardFooter = CardFooterBase;
+exports.CardGroup = CardGroupBase;
+exports.CardHeader = CardHeaderBase;
+exports.CardImg = CardImgBase;
+exports.CardImgOverlay = CardImgOverlayBase;
+exports.CardLink = CardLinkBase;
+exports.CardSubtitle = CardSubtitleBase;
+exports.CardText = CardTextBase;
+exports.CardTitle = CardTitleBase;
+exports.CaroBody = CardBodyBase;
 exports.Carousel = CarouselBase;
 exports.CarouselCaption = CarouselCaptionBase;
 exports.CarouselControl = CarouselControlBase;
