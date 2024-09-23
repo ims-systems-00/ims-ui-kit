@@ -1,2 +1,129 @@
-@import "overridable";
-@import "non_overridable";
+// Option B: Include parts of Bootstrap
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+// 2. Include any default variable overrides here
+@import "app/custom/variables";
+@import "app/custom/mixins";
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+// 4. Include any optional Bootstrap components as you like
+
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/accordion";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/offcanvas";
+@import "~bootstrap/scss/placeholders";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/utilities/api";
+
+// Custom components
+@import "app/custom/mixins";
+
+@import "app/custom/reboot.scss";
+@import "app/custom/global.scss";
+@import "app/custom/utilities.scss";
+@import "app/custom/alerts.scss";
+@import "app/custom/avatars.scss";
+@import "app/custom/accordion";
+@import "app/custom/badge.scss";
+@import "app/custom/buttons.scss";
+@import "app/custom/close.scss";
+@import "app/custom/custom-forms.scss";
+@import "app/custom/draft-editor";
+@import "app/custom/dropdown.scss";
+@import "app/custom/filter-search.scss";
+@import "app/custom/footer.scss";
+@import "app/custom/forms.scss";
+@import "app/custom/grid.scss";
+@import "app/custom/icons.scss";
+@import "app/custom/images.scss";
+@import "app/custom/image-placeholders";
+@import "app/custom/rejection";
+@import "app/custom/list-group";
+@import "app/custom/info-areas.scss";
+@import "app/custom/link";
+@import "app/custom/modal.scss";
+@import "app/custom/nav.scss";
+@import "app/custom/loader.scss";
+@import "app/custom/navbar.scss";
+@import "app/custom/pagination.scss";
+@import "app/custom/tabs.scss";
+@import "app/custom/pills.scss";
+@import "app/custom/popover.scss";
+@import "app/custom/progress.scss";
+@import "app/custom/type.scss";
+@import "app/custom/tables";
+@import "app/custom/custom-table";
+@import "app/custom/checkboxes-radio";
+@import "app/custom/fixed-plugin";
+@import "app/custom/sidebar-and-main-panel";
+@import "app/custom/sizing";
+@import "app/custom/misc.scss";
+@import "app/custom/rtl.scss";
+@import "app/custom/compilanceTable.scss";
+@import "app/custom/maps.scss";
+@import "app/custom/pdf-viewer";
+
+// Vendor / Plugins
+
+@import "app/custom/vendor/plugin-datetimepicker.scss";
+@import "app/custom/vendor/plugin-dropzone.scss";
+@import "~swiper/swiper-bundle.min.css";
+@import "~react-circular-progressbar/dist/styles.css";
+@import "~react-modern-drawer/dist/index.css";
+@import "~react-datetime/css/react-datetime.css";
+
+// Cards
+
+@import "app/custom/card";
+@import "app/custom/cards/card-chart";
+@import "app/custom/cards/card-map";
+@import "app/custom/cards/card-auth";
+@import "app/custom/cards/card-user";
+@import "app/custom/cards/card-task";
+@import "app/custom/cards/card-animation-on-hover";
+@import "app/custom/cards/card-collapse";
+@import "app/custom/cards/card-contributions";
+@import "app/custom/cards/card-lock";
+@import "app/custom/cards/card-plain";
+@import "app/custom/cards/card-register";
+@import "app/custom/cards/card-stats";
+@import "app/custom/cards/card-subcategories";
+@import "app/custom/cards/card-wizard";
+@import "app/custom/cards/card-notification";
+@import "app/custom/cards/card-attachments";
+@import "app/custom/cards/card-timeline";
+@import "app/custom/cards/card-invoice";
+
+// React Differences
+@import "app/react/react-differences";
