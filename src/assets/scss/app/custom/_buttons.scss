@@ -86,15 +86,6 @@
   }
 }
 
-.btn-permission {
-  @include btn-bg($permission, $permission-dark);
-  @include btn-border($permission);
-  &.disabled {
-    background-color: $permission;
-    border-color: $permission;
-  }
-}
-
 .btn-escalate {
   @include btn-bg($escalate, $escalate-dark);
   @include btn-border($escalate);
@@ -146,14 +137,6 @@
   &.disabled {
     border-color: $warning;
     color: $warning;
-  }
-}
-
-.btn-outline-permission {
-  @include btn-outline($permission);
-  &.disabled {
-    border-color: $permission;
-    color: $permission;
   }
 }
 

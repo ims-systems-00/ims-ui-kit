@@ -14,21 +14,28 @@ $black: #000000 !default;
 $white: #ffffff !default;
 $primary: #1d8bf8 !default;
 $primary-dark: #1e66d2 !default;
-$primary-light: #bcdfff !default;
+$primary-light: #bbdcfd !default;
+$primary-extra-light: #e4f4ff !default;
 $secondary: #6c757d !default;
 $secondary-dark: #54595e !default;
 $secondary-light: #dee2e6 !default;
 $secondary-extra-light: #f6f8fa !default;
 $success: #28a745 !default;
 $success-dark: #218838 !default;
+$success-light: #93d3a2 !default;
+$success-extra-light: #c9e9d0 !default;
 $danger: #ed3447 !default;
 $danger-dark: #c82333 !default;
-$permission: #439eed !default;
-$permission-dark: #1d8bf8 !default;
+$danger-light: #f699a3 !default;
+$danger-extra-light: #faccd1 !default;
 $warning: #ffc107 !default;
 $warning-dark: #e0a800 !default;
-$info: $primary;
-$info-dark: $primary-dark;
+$warning-light: #ffe083 !default;
+$warning-extra-light: #ffefc1 !default;
+$info: #1d8bf8 !default;
+$info-dark: #1e66d2 !default;
+$info-light: #bbdcfd !default;
+$info-extra-light: #e4f4ff !default;
 $escalate: #d63384 !default;
 $escalate-dark: #ab296a !default;
 $type-dark: #152536 !default; //typography-heading
@@ -40,8 +47,8 @@ $stroke-light: #dee2e6 !default;
 $background-primary: #ffffff !default;
 $background-secondary: #ced4da !default;
 // bootstrap colors
-$blue: $primary !default;
-$indigo: $permission !default;
+$blue: $primary-dark !default;
+$indigo: $primary !default;
 $purple: $primary-dark !default;
 $pink: $danger !default;
 $red: $danger !default;
@@ -49,7 +56,7 @@ $orange: $warning !default;
 $yellow: $warning !default;
 $green: $success !default;
 $teal: $success !default;
-$cyan: $permission !default;
+$cyan: $success !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
