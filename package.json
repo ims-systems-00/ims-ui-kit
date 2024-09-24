@@ -1,6 +1,6 @@
 {
   "name": "@ims-systems-00/ims-ui-kit",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "source": "src/index.js",
   "files": [
     "dist",
@@ -16,7 +16,7 @@
     "@react-google-maps/api": "^2.17.1",
     "assert": "^2.0.0",
     "axios": "^1.5.1",
-    "bootstrap": "5.2.0",
+    "bootstrap": "^5.3.3",
     "chart.js": "4.2.0",
     "classnames": "2.3.2",
     "date-fns": "^2.29.3",
