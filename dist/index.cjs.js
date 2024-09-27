@@ -38036,6 +38036,21 @@ var DataTable = function (_a) {
                     className: "dt-td" }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); }))))));
 };
 
+var UncontrolledDropdownBase = function (_a) {
+    var children = _a.children, rest = __rest(_a, ["children"]);
+    return React.createElement(UncontrolledDropdown, __assign({}, rest), children);
+};
+
+var DTRowActionsDropdown = function (_a) {
+    var children = _a.children, className = _a.className, rest = __rest(_a, ["children", "className"]);
+    return (React.createElement(UncontrolledDropdownBase, __assign({ className: classNames$1("dt-row-actions", className) }, rest), children));
+};
+
+var DTRowActionsToggle = function (_a) {
+    var children = _a.children, className = _a.className; __rest(_a, ["children", "className"]);
+    return (React.createElement(DropdownToggleBase, { size: "sm", outline: true, className: classNames$1("border-0", className) }, children));
+};
+
 var TabPaneBase = function (_a) {
     var children = _a.children, rest = __rest(_a, ["children"]);
     return React.createElement(TabPane, __assign({}, rest), children);
@@ -38079,11 +38094,6 @@ var UncontrolledCollapseBase = function (_a) {
 var UncontrolledButtonDropdownBase = function (_a) {
     var children = _a.children, rest = __rest(_a, ["children"]);
     return (React.createElement(UncontrolledButtonDropdown, __assign({}, rest), children));
-};
-
-var UncontrolledDropdownBase = function (_a) {
-    var children = _a.children, rest = __rest(_a, ["children"]);
-    return React.createElement(UncontrolledDropdown, __assign({}, rest), children);
 };
 
 var UncontrolledPopoverBase = function (_a) {
@@ -38132,6 +38142,10 @@ exports.Col = ColBase;
 exports.Collapse = CollapseBase;
 exports.Container = ContainerBase;
 exports.CreatableSelect = CreatableSelectBase;
+exports.DTRowAction = DropdownItemBase;
+exports.DTRowActionsDropdown = DTRowActionsDropdown;
+exports.DTRowActionsMenu = DropdownMenuBase;
+exports.DTRowActionsToggle = DTRowActionsToggle;
 exports.DataTable = DataTable;
 exports.DrawerContextProvider = DrawerContextProvider;
 exports.DrawerOpener = DrawerOpener;
