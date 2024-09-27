@@ -1,0 +1,154 @@
+.data-table {
+  width: 100%;
+  * {
+    box-sizing: border-box;
+  }
+  .dt-table {
+    position: relative;
+    border-collapse: collapse;
+    &::-webkit-scrollbar {
+      height: 7px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: gray;
+      border: 1px solid transparent;
+    }
+  }
+  .dt-thead {
+    background: $secondary-extra-light;
+    .dt-tr {
+      &:last-child {
+        border-bottom: 1px solid $stroke-regular;
+      }
+    }
+  }
+  .col-resizer {
+    cursor: e-resize;
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 100%;
+    right: 0px;
+    top: 0;
+    transform: translateX(100%);
+    transition: 0.1s ease-in-out;
+    // background-color: red;
+    margin: 0 20px;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      .col-sepration-indicator {
+        width: 3px;
+        background-color: $primary;
+      }
+    }
+  }
+  .col-sepration-indicator {
+    background-color: $secondary-light;
+    width: 2px;
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+  }
+  .dt-tbody {
+    .dt-tr {
+      transition: 0.2s ease-in-out;
+      border-bottom: 1px solid $stroke-regular;
+      .dt-td {
+        transition: 0.1s ease-in-out;
+        padding: $padding-base-vertical * 1.5 $padding-base-horizontal * 1.5;
+        color: $type-dark;
+        &:hover {
+          border: 1px solid $primary;
+        }
+      }
+      &:hover {
+        background: rgba($primary, $table-hover-bg-factor);
+        color: $primary;
+      }
+    }
+  }
+  .dt-tr {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    min-width: min-content !important;
+    .dt-th,
+    .dt-td {
+      position: relative;
+      padding: $padding-base-vertical * 1.5 $padding-base-horizontal * 1.5;
+      color: $type-dark;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &:has(.react-select),
+      &:has(.dt-row-actions) {
+        overflow: visible;
+      }
+      &:has(.mt-row-selector),
+      &:has(.dt-row-actions) {
+        border: none !important;
+        .col-resizer {
+          display: none !important;
+        }
+      }
+      input[type="text"],
+      input[type="number"] {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        color: $type-dark;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        // &:active,
+        // &:focus {
+        //   background-color: white;
+        // }
+      }
+      .react-select__control {
+        min-height: auto;
+        border: 0;
+        .react-select__value-container {
+          padding: 0;
+          .react-select__single-value {
+            margin: 0;
+          }
+          .react-select__input-container {
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .react-select__indicators {
+          width: 15px;
+        }
+      }
+      &:last-child {
+        position: sticky;
+        right: 0;
+        &:has(.dropdown.show) {
+          z-index: 1000;
+        }
+      }
+      .dt-row-actions {
+      }
+    }
+    .dt-th {
+      &:has(.dt-row-actions) {
+        background: $secondary-extra-light;
+      }
+    }
+    .dt-td {
+      &:has(.dt-row-actions) {
+        background: $white;
+      }
+    }
+  }
+}

@@ -104,6 +104,7 @@ export { default as SearchSelect } from "./components/Forms/Inputs/SearchBase";
 export { default as Select } from "./components/Forms/Inputs/SelectBase";
 export { default as SimpleTable } from "./components/Table/ImsSimpleTable";
 export { default as Table } from "./components/Table/TableBase";
+export { default as DataTable } from "./components/Table/DataTable";
 export { default as TabContent } from "./components/TabPane/TabContentBase";
 export { default as TabPane } from "./components/TabPane/TabPaneBase";
 export { default as Toast } from "./components/Toast/ToastBase";
