@@ -1,8 +1,7 @@
 import React from "react";
 import { UncontrolledDropdown, UncontrolledDropdownProps } from "reactstrap";
-
-interface UncontrolledDropdownBaseProps extends UncontrolledDropdownProps {}
-
+export interface UncontrolledDropdownBaseProps
+  extends UncontrolledDropdownProps {}
 const UncontrolledDropdownBase: React.FC<UncontrolledDropdownBaseProps> = ({
   children,
   ...rest

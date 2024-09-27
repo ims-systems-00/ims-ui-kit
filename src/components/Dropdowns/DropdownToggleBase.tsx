@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { DropdownToggle, DropdownToggleProps } from "reactstrap";
 
-interface DropdownToggleBaseProps extends DropdownToggleProps {
+export interface DropdownToggleBaseProps extends DropdownToggleProps {
   startIcon?: string | undefined;
 }
 

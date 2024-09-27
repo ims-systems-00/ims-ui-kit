@@ -115,7 +115,7 @@
       }
       .react-select__control {
         min-height: auto;
-        border: 0;
+        border: 0 !important;
         .react-select__value-container {
           padding: 0;
           .react-select__single-value {
