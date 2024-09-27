@@ -139,6 +139,31 @@ function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
 
+function getAugmentedNamespace(n) {
+  if (n.__esModule) return n;
+  var f = n.default;
+	if (typeof f == "function") {
+		var a = function a () {
+			if (this instanceof a) {
+        return Reflect.construct(f, arguments, this.constructor);
+			}
+			return f.apply(this, arguments);
+		};
+		a.prototype = f.prototype;
+  } else a = {};
+  Object.defineProperty(a, '__esModule', {value: true});
+	Object.keys(n).forEach(function (k) {
+		var d = Object.getOwnPropertyDescriptor(n, k);
+		Object.defineProperty(a, k, d.get ? d : {
+			enumerable: true,
+			get: function () {
+				return n[k];
+			}
+		});
+	});
+	return a;
+}
+
 var propTypes$1m = {exports: {}};
 
 var reactIs$1 = {exports: {}};
@@ -1322,7 +1347,7 @@ if (process.env.NODE_ENV !== 'production') {
 var propTypesExports = propTypes$1m.exports;
 var PropTypes = /*@__PURE__*/getDefaultExportFromCjs(propTypesExports);
 
-var classnames$3 = {exports: {}};
+var classnames$2 = {exports: {}};
 
 /*!
 	Copyright (c) 2018 Jed Watson.
@@ -1397,10 +1422,10 @@ var classnames$3 = {exports: {}};
 			window.classNames = classNames;
 		}
 	}()); 
-} (classnames$3));
+} (classnames$2));
 
-var classnamesExports$1 = classnames$3.exports;
-var classNames$1 = /*@__PURE__*/getDefaultExportFromCjs(classnamesExports$1);
+var classnamesExports$1 = classnames$2.exports;
+var classNames$2 = /*@__PURE__*/getDefaultExportFromCjs(classnamesExports$1);
 
 function _typeof$o(obj) { "@babel/helpers - typeof"; return _typeof$o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof$o(obj); }
 
@@ -1590,7 +1615,7 @@ function toNumber(value) {
   var isBinary = /^0b[01]+$/i.test(value);
   return isBinary || /^0o[0-7]+$/i.test(value) ? parseInt(value.slice(2), isBinary ? 2 : 8) : /^[-+]0x[0-9a-f]+$/i.test(value) ? NAN : +value;
 }
-function isFunction(value) {
+function isFunction$1(value) {
   if (!isObject$4(value)) {
     return false;
   }
@@ -1601,7 +1626,7 @@ function findDOMElements(target) {
   if (isReactRefObj(target)) {
     return target.current;
   }
-  if (isFunction(target)) {
+  if (isFunction$1(target)) {
     return target();
   }
   if (typeof target === 'string' && canUseDOM$1) {
@@ -1622,7 +1647,7 @@ function isArrayOrNodeList(els) {
   }
   return Array.isArray(els) || canUseDOM$1 && typeof els.length === 'number';
 }
-function getTarget(target, allElements) {
+function getTarget$1(target, allElements) {
   var els = findDOMElements(target);
   if (allElements) {
     if (isArrayOrNodeList(els)) {
@@ -1689,7 +1714,7 @@ function Container(props) {
   } else if (fluid) {
     containerClass = "container-".concat(fluid);
   }
-  var classes = mapToCssModules(classNames$1(className, containerClass), cssModule);
+  var classes = mapToCssModules(classNames$2(className, containerClass), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1y({}, attributes, {
     className: classes
   }));
@@ -1734,7 +1759,7 @@ function Row(props) {
     var isXs = !i;
     colClasses.push(isXs ? "row-cols-".concat(colSize) : "row-cols-".concat(colWidth, "-").concat(colSize));
   });
-  var classes = mapToCssModules(classNames$1(className, noGutters ? 'gx-0' : null, 'row', colClasses), cssModule);
+  var classes = mapToCssModules(classNames$2(className, noGutters ? 'gx-0' : null, 'row', colClasses), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1x({}, attributes, {
     className: classes
   }));
@@ -1789,7 +1814,7 @@ var getColumnClasses = function getColumnClasses(attributes, cssModule) {
       var _classNames;
       var colSizeInterfix = isXs ? '-' : "-".concat(colWidth, "-");
       var colClass = getColumnSizeClass$1(isXs, colWidth, columnProp.size);
-      colClasses.push(mapToCssModules(classNames$1((_classNames = {}, _defineProperty$t(_classNames, colClass, columnProp.size || columnProp.size === ''), _defineProperty$t(_classNames, "order".concat(colSizeInterfix).concat(columnProp.order), columnProp.order || columnProp.order === 0), _defineProperty$t(_classNames, "offset".concat(colSizeInterfix).concat(columnProp.offset), columnProp.offset || columnProp.offset === 0), _classNames)), cssModule));
+      colClasses.push(mapToCssModules(classNames$2((_classNames = {}, _defineProperty$t(_classNames, colClass, columnProp.size || columnProp.size === ''), _defineProperty$t(_classNames, "order".concat(colSizeInterfix).concat(columnProp.order), columnProp.order || columnProp.order === 0), _defineProperty$t(_classNames, "offset".concat(colSizeInterfix).concat(columnProp.offset), columnProp.offset || columnProp.offset === 0), _classNames)), cssModule));
     } else {
       var _colClass = getColumnSizeClass$1(isXs, colWidth, columnProp);
       colClasses.push(_colClass);
@@ -1814,7 +1839,7 @@ function Col(props) {
   if (!colClasses.length) {
     colClasses.push('col');
   }
-  var classes = mapToCssModules(classNames$1(className, colClasses), cssModule);
+  var classes = mapToCssModules(classNames$2(className, colClasses), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1w({}, modifiedAttributes, {
     className: classes
   }));
@@ -1876,7 +1901,7 @@ function Navbar(props) {
     Tag = _props$tag === void 0 ? 'nav' : _props$tag,
     children = props.children,
     attributes = _objectWithoutProperties$1f(props, _excluded$1j);
-  var classes = mapToCssModules(classNames$1(className, 'navbar', getExpandClass(expand), (_classNames = {
+  var classes = mapToCssModules(classNames$2(className, 'navbar', getExpandClass(expand), (_classNames = {
     'navbar-light': light,
     'navbar-dark': dark
   }, _defineProperty$s(_classNames, "bg-".concat(color), color), _defineProperty$s(_classNames, "fixed-".concat(fixed), fixed), _defineProperty$s(_classNames, "sticky-".concat(sticky), sticky), _classNames)), cssModule);
@@ -1907,7 +1932,7 @@ function NavbarBrand(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'a' : _props$tag,
     attributes = _objectWithoutProperties$1e(props, _excluded$1i);
-  var classes = mapToCssModules(classNames$1(className, 'navbar-brand'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'navbar-brand'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1u({}, attributes, {
     className: classes
   }));
@@ -1934,7 +1959,7 @@ function NavbarText(props) {
     var _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'span' : _props$tag,
     attributes = _objectWithoutProperties$1d(props, _excluded$1h);
-  var classes = mapToCssModules(classNames$1(className, 'navbar-text'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'navbar-text'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1t({}, attributes, {
     className: classes
   }));
@@ -1966,7 +1991,7 @@ function NavbarToggler(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'button' : _props$tag,
     attributes = _objectWithoutProperties$1c(props, _excluded$1g);
-  var classes = mapToCssModules(classNames$1(className, 'navbar-toggler'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'navbar-toggler'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1s({
     "aria-label": "Toggle navigation"
   }, _objectSpread$m({
@@ -2031,7 +2056,7 @@ function Nav(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'ul' : _props$tag,
     attributes = _objectWithoutProperties$1b(props, _excluded$1f);
-  var classes = mapToCssModules(classNames$1(className, navbar ? 'navbar-nav' : 'nav', horizontal ? "justify-content-".concat(horizontal) : false, getVerticalClass(vertical), {
+  var classes = mapToCssModules(classNames$2(className, navbar ? 'navbar-nav' : 'nav', horizontal ? "justify-content-".concat(horizontal) : false, getVerticalClass(vertical), {
     'nav-tabs': tabs,
     'card-header-tabs': card && tabs,
     'nav-pills': pills,
@@ -2066,7 +2091,7 @@ function NavItem(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'li' : _props$tag,
     attributes = _objectWithoutProperties$1a(props, _excluded$1e);
-  var classes = mapToCssModules(classNames$1(className, 'nav-item', active ? 'active' : false), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'nav-item', active ? 'active' : false), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1q({}, attributes, {
     className: classes
   }));
@@ -2139,7 +2164,7 @@ var NavLink = /*#__PURE__*/function (_React$Component) {
         Tag = _this$props$tag === void 0 ? 'a' : _this$props$tag,
         innerRef = _this$props.innerRef,
         attributes = _objectWithoutProperties$19(_this$props, _excluded$1d);
-      var classes = mapToCssModules(classNames$1(className, 'nav-link', {
+      var classes = mapToCssModules(classNames$2(className, 'nav-link', {
         disabled: attributes.disabled,
         active: active
       }), cssModule);
@@ -2186,8 +2211,8 @@ function Breadcrumb(props) {
     _props$ariaLabel = props['aria-label'],
     label = _props$ariaLabel === void 0 ? 'breadcrumb' : _props$ariaLabel,
     attributes = _objectWithoutProperties$18(props, _excluded$1c);
-  var classes = mapToCssModules(classNames$1(className), cssModule);
-  var listClasses = mapToCssModules(classNames$1('breadcrumb', listClassName), cssModule);
+  var classes = mapToCssModules(classNames$2(className), cssModule);
+  var listClasses = mapToCssModules(classNames$2('breadcrumb', listClassName), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1o({}, attributes, {
     className: classes,
     "aria-label": label
@@ -2218,7 +2243,7 @@ function BreadcrumbItem(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'li' : _props$tag,
     attributes = _objectWithoutProperties$17(props, _excluded$1b);
-  var classes = mapToCssModules(classNames$1(className, active ? 'active' : false, 'breadcrumb-item'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, active ? 'active' : false, 'breadcrumb-item'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1n({}, attributes, {
     className: classes,
     "aria-current": active ? 'page' : undefined
@@ -2252,7 +2277,7 @@ function CloseButton(props) {
     var variant = props.variant,
     innerRef = props.innerRef,
     attributes = _objectWithoutProperties$16(props, _excluded$1a);
-  var classes = mapToCssModules(classNames$1(className, 'btn-close', variant && "btn-close-".concat(variant)));
+  var classes = mapToCssModules(classNames$2(className, 'btn-close', variant && "btn-close-".concat(variant)));
   return /*#__PURE__*/React.createElement("button", _extends$1m({
     ref: innerRef,
     type: "button",
@@ -2323,7 +2348,7 @@ function Button(props) {
     return /*#__PURE__*/React.createElement(CloseButton, attributes);
   }
   var btnOutlineColor = "btn".concat(outline ? '-outline' : '', "-").concat(color);
-  var classes = mapToCssModules(classNames$1(className, 'btn', btnOutlineColor, size ? "btn-".concat(size) : false, block ? 'd-block w-100' : false, {
+  var classes = mapToCssModules(classNames$2(className, 'btn', btnOutlineColor, size ? "btn-".concat(size) : false, block ? 'd-block w-100' : false, {
     active: active,
     disabled: props.disabled
   }), cssModule);
@@ -2389,7 +2414,7 @@ function ButtonToggle(props) {
   }, [props.onClick]);
   var className = props.className,
     attributes = _objectWithoutProperties$14(props, _excluded$18);
-  var classes = mapToCssModules(classNames$1(className, {
+  var classes = mapToCssModules(classNames$2(className, {
     focus: focus
   }), props.cssModule);
   return /*#__PURE__*/React.createElement(Button, _extends$1k({
@@ -2637,8 +2662,8 @@ function getBasePlacement(placement) {
   return placement.split('-')[0];
 }
 
-var max$1 = Math.max;
-var min$1 = Math.min;
+var max$2 = Math.max;
+var min$2 = Math.min;
 var round$1 = Math.round;
 
 function getUAString() {
@@ -2841,7 +2866,7 @@ function getMainAxisFromPlacement(placement) {
 }
 
 function within(min, value, max) {
-  return max$1(min, min$1(value, max));
+  return max$2(min, min$2(value, max));
 }
 function withinMaxClamp(min, value, max) {
   var v = within(min, value, max);
@@ -3241,13 +3266,13 @@ function getDocumentRect(element) {
   var html = getDocumentElement$1(element);
   var winScroll = getWindowScroll(element);
   var body = (_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body;
-  var width = max$1(html.scrollWidth, html.clientWidth, body ? body.scrollWidth : 0, body ? body.clientWidth : 0);
-  var height = max$1(html.scrollHeight, html.clientHeight, body ? body.scrollHeight : 0, body ? body.clientHeight : 0);
+  var width = max$2(html.scrollWidth, html.clientWidth, body ? body.scrollWidth : 0, body ? body.clientWidth : 0);
+  var height = max$2(html.scrollHeight, html.clientHeight, body ? body.scrollHeight : 0, body ? body.clientHeight : 0);
   var x = -winScroll.scrollLeft + getWindowScrollBarX(element);
   var y = -winScroll.scrollTop;
 
   if (getComputedStyle$3(body || html).direction === 'rtl') {
-    x += max$1(html.clientWidth, body ? body.clientWidth : 0) - width;
+    x += max$2(html.clientWidth, body ? body.clientWidth : 0) - width;
   }
 
   return {
@@ -3356,10 +3381,10 @@ function getClippingRect(element, boundary, rootBoundary, strategy) {
   var firstClippingParent = clippingParents[0];
   var clippingRect = clippingParents.reduce(function (accRect, clippingParent) {
     var rect = getClientRectFromMixedType(element, clippingParent, strategy);
-    accRect.top = max$1(rect.top, accRect.top);
-    accRect.right = min$1(rect.right, accRect.right);
-    accRect.bottom = min$1(rect.bottom, accRect.bottom);
-    accRect.left = max$1(rect.left, accRect.left);
+    accRect.top = max$2(rect.top, accRect.top);
+    accRect.right = min$2(rect.right, accRect.right);
+    accRect.bottom = min$2(rect.bottom, accRect.bottom);
+    accRect.left = max$2(rect.left, accRect.left);
     return accRect;
   }, getClientRectFromMixedType(element, firstClippingParent, strategy));
   clippingRect.width = clippingRect.right - clippingRect.left;
@@ -3894,7 +3919,7 @@ function preventOverflow(_ref) {
     var offsetModifierValue = (_offsetModifierState$ = offsetModifierState == null ? void 0 : offsetModifierState[mainAxis]) != null ? _offsetModifierState$ : 0;
     var tetherMin = offset + minOffset - offsetModifierValue - clientOffset;
     var tetherMax = offset + maxOffset - offsetModifierValue;
-    var preventedOffset = within(tether ? min$1(min, tetherMin) : min, offset, tether ? max$1(max, tetherMax) : max);
+    var preventedOffset = within(tether ? min$2(min, tetherMin) : min, offset, tether ? max$2(max, tetherMax) : max);
     popperOffsets[mainAxis] = preventedOffset;
     data[mainAxis] = preventedOffset - offset;
   }
@@ -4984,7 +5009,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
           if (dropdownItem && dropdownItem.props.active) subItemIsActive = true;
         });
       }
-      var classes = mapToCssModules(classNames$1(className, nav && active ? 'active' : false, setActiveFromChild && subItemIsActive ? 'active' : false, (_classNames = {
+      var classes = mapToCssModules(classNames$2(className, nav && active ? 'active' : false, setActiveFromChild && subItemIsActive ? 'active' : false, (_classNames = {
         'btn-group': group
       }, _defineProperty$p(_classNames, "btn-group-".concat(size), !!size), _defineProperty$p(_classNames, "dropdown", !group), _defineProperty$p(_classNames, "dropup", direction === 'up'), _defineProperty$p(_classNames, "dropstart", direction === 'start' || direction === 'left'), _defineProperty$p(_classNames, "dropend", direction === 'end' || direction === 'right'), _defineProperty$p(_classNames, "show", isOpen), _defineProperty$p(_classNames, 'nav-item', nav), _classNames)), cssModule);
       if (this.context.insideInputGroup) {
@@ -5052,7 +5077,7 @@ function ButtonGroup(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$12(props, _excluded$16);
-  var classes = mapToCssModules(classNames$1(className, size ? 'btn-group-' + size : false, vertical ? 'btn-group-vertical' : 'btn-group'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, size ? 'btn-group-' + size : false, vertical ? 'btn-group-vertical' : 'btn-group'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1h({}, _objectSpread$k({
     role: 'group'
   }, attributes), {
@@ -5086,7 +5111,7 @@ function ButtonToolbar(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$11(props, _excluded$15);
-  var classes = mapToCssModules(classNames$1(className, 'btn-toolbar'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'btn-toolbar'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$1g({}, _objectSpread$j({
     role: 'toolbar'
   }, attributes), {
@@ -5190,7 +5215,7 @@ var DropdownItem = /*#__PURE__*/function (_React$Component) {
         active = _omit.active,
         text = _omit.text,
         props = _objectWithoutProperties$10(_omit, _excluded$14);
-      var classes = mapToCssModules(classNames$1(className, {
+      var classes = mapToCssModules(classNames$2(className, {
         disabled: props.disabled,
         'dropdown-item': !divider && !header && !text,
         active: active,
@@ -5310,7 +5335,7 @@ var DropdownMenu = /*#__PURE__*/function (_React$Component) {
         container = _this$props.container,
         updateOnSelect = _this$props.updateOnSelect,
         attrs = _objectWithoutProperties$$(_this$props, _excluded$13);
-      var classes = mapToCssModules(classNames$1(className, 'dropdown-menu', {
+      var classes = mapToCssModules(classNames$2(className, 'dropdown-menu', {
         'dropdown-menu-dark': dark,
         'dropdown-menu-end': end || right,
         show: this.context.isOpen
@@ -5362,7 +5387,7 @@ var DropdownMenu = /*#__PURE__*/function (_React$Component) {
           }));
         });
         if (container) {
-          return /*#__PURE__*/ReactDOM.createPortal(popper, getTarget(container));
+          return /*#__PURE__*/ReactDOM.createPortal(popper, getTarget$1(container));
         }
         return popper;
       }
@@ -5463,7 +5488,7 @@ var DropdownToggle = /*#__PURE__*/function (_React$Component) {
         innerRef = _this$props.innerRef,
         props = _objectWithoutProperties$_(_this$props, _excluded$12);
       var ariaLabel = props['aria-label'] || 'Toggle Dropdown';
-      var classes = mapToCssModules(classNames$1(className, {
+      var classes = mapToCssModules(classNames$2(className, {
         'dropdown-toggle': caret || split,
         'dropdown-toggle-split': split,
         'nav-link': nav
@@ -6243,7 +6268,7 @@ function Fade(props) {
     nodeRef: innerRef
   }, transitionProps), function (status) {
     var isActive = status === 'entered';
-    var classes = mapToCssModules(classNames$1(className, baseClass, isActive && baseClassActive), cssModule);
+    var classes = mapToCssModules(classNames$2(className, baseClass, isActive && baseClassActive), cssModule);
     return /*#__PURE__*/React.createElement(Tag, _extends$1b({
       className: classes
     }, childProps, {
@@ -6293,7 +6318,7 @@ function Accordion(props) {
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     innerRef = props.innerRef,
     attributes = _objectWithoutProperties$Y(props, _excluded$10);
-  var classes = mapToCssModules(classNames$1(className, 'accordion', {
+  var classes = mapToCssModules(classNames$2(className, 'accordion', {
     'accordion-flush': flush
   }), cssModule);
   var accordionContext = React.useMemo(function () {
@@ -6397,8 +6422,8 @@ function AccordionHeader(props) {
   var _useContext = React.useContext(AccordionContext),
     open = _useContext.open,
     toggle = _useContext.toggle;
-  var classes = mapToCssModules(classNames$1(className, 'accordion-header'), cssModule);
-  var buttonClasses = mapToCssModules(classNames$1('accordion-button', {
+  var classes = mapToCssModules(classNames$2(className, 'accordion-header'), cssModule);
+  var buttonClasses = mapToCssModules(classNames$2('accordion-button', {
     collapsed: !(Array.isArray(open) ? open.includes(targetId) : open === targetId)
   }), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$18({}, attributes, {
@@ -6435,7 +6460,7 @@ function AccordionItem(props) {
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     innerRef = props.innerRef,
     attributes = _objectWithoutProperties$V(props, _excluded$Z);
-  var classes = mapToCssModules(classNames$1(className, 'accordion-item'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'accordion-item'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$17({}, attributes, {
     className: classes,
     ref: innerRef
@@ -6592,7 +6617,7 @@ var Collapse = /*#__PURE__*/function (_Component) {
         onExited: this.onExited
       }), function (status) {
         var collapseClass = getTransitionClass(status);
-        var classes = mapToCssModules(classNames$1(className, horizontal && 'collapse-horizontal', collapseClass, navbar && 'navbar-collapse'), cssModule);
+        var classes = mapToCssModules(classNames$2(className, horizontal && 'collapse-horizontal', collapseClass, navbar && 'navbar-collapse'), cssModule);
         var style = dimension === null ? null : _defineProperty$i({}, horizontal ? 'width' : 'height', dimension);
         return /*#__PURE__*/React.createElement(Tag, _extends$16({}, childProps, {
           style: _objectSpread$f(_objectSpread$f({}, childProps.style), style),
@@ -6635,7 +6660,7 @@ function AccordionBody(props) {
     attributes = _objectWithoutProperties$T(props, _excluded$X);
   var _useContext = React.useContext(AccordionContext),
     open = _useContext.open;
-  var classes = mapToCssModules(classNames$1(className, 'accordion-collapse'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'accordion-collapse'), cssModule);
   return /*#__PURE__*/React.createElement(Collapse, _extends$15({}, attributes, {
     className: classes,
     ref: innerRef,
@@ -6676,7 +6701,7 @@ function Badge(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'span' : _props$tag,
     attributes = _objectWithoutProperties$S(props, _excluded$W);
-  var classes = mapToCssModules(classNames$1(className, 'badge', 'bg-' + color, pill ? 'rounded-pill' : false), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'badge', 'bg-' + color, pill ? 'rounded-pill' : false), cssModule);
   if (attributes.href && Tag === 'span') {
     Tag = 'a';
   }
@@ -6719,7 +6744,7 @@ function Card(props) {
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     innerRef = props.innerRef,
     attributes = _objectWithoutProperties$R(props, _excluded$V);
-  var classes = mapToCssModules(classNames$1(className, 'card', inverse ? 'text-white' : false, body ? 'card-body' : false, color ? "".concat(outline ? 'border' : 'bg', "-").concat(color) : false), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card', inverse ? 'text-white' : false, body ? 'card-body' : false, color ? "".concat(outline ? 'border' : 'bg', "-").concat(color) : false), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$13({}, attributes, {
     className: classes,
     ref: innerRef
@@ -6742,7 +6767,7 @@ function CardGroup(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$Q(props, _excluded$U);
-  var classes = mapToCssModules(classNames$1(className, 'card-group'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-group'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$12({}, attributes, {
     className: classes
   }));
@@ -6764,7 +6789,7 @@ function CardDeck(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$P(props, _excluded$T);
-  var classes = mapToCssModules(classNames$1(className, 'card-deck'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-deck'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$11({}, attributes, {
     className: classes
   }));
@@ -6786,7 +6811,7 @@ function CardColumns(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$O(props, _excluded$S);
-  var classes = mapToCssModules(classNames$1(className, 'card-columns'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-columns'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$10({}, attributes, {
     className: classes
   }));
@@ -6813,7 +6838,7 @@ function CardBody(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$N(props, _excluded$R);
-  var classes = mapToCssModules(classNames$1(className, 'card-body'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-body'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$$({}, attributes, {
     className: classes,
     ref: innerRef
@@ -6838,7 +6863,7 @@ function CardLink(props) {
     Tag = _props$tag === void 0 ? 'a' : _props$tag,
     innerRef = props.innerRef,
     attributes = _objectWithoutProperties$M(props, _excluded$Q);
-  var classes = mapToCssModules(classNames$1(className, 'card-link'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-link'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$_({}, attributes, {
     ref: innerRef,
     className: classes
@@ -6864,7 +6889,7 @@ function CardFooter(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$L(props, _excluded$P);
-  var classes = mapToCssModules(classNames$1(className, 'card-footer'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-footer'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$Z({}, attributes, {
     className: classes
   }));
@@ -6889,7 +6914,7 @@ function CardHeader(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$K(props, _excluded$O);
-  var classes = mapToCssModules(classNames$1(className, 'card-header'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-header'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$Y({}, attributes, {
     className: classes
   }));
@@ -6927,7 +6952,7 @@ function CardImg(props) {
   if (bottom) {
     cardImgClassName = 'card-img-bottom';
   }
-  var classes = mapToCssModules(classNames$1(className, cardImgClassName), cssModule);
+  var classes = mapToCssModules(classNames$2(className, cardImgClassName), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$X({}, attributes, {
     className: classes
   }));
@@ -6949,7 +6974,7 @@ function CardImgOverlay(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$I(props, _excluded$M);
-  var classes = mapToCssModules(classNames$1(className, 'card-img-overlay'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-img-overlay'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$W({}, attributes, {
     className: classes
   }));
@@ -7069,7 +7094,7 @@ var CarouselItem = /*#__PURE__*/function (_React$Component) {
         var isActive = status === TransitionStatuses.ENTERED || status === TransitionStatuses.EXITING;
         var directionClassName = (status === TransitionStatuses.ENTERING || status === TransitionStatuses.EXITING) && _this2.state.startAnimation && (direction === 'end' ? 'carousel-item-start' : 'carousel-item-end');
         var orderClassName = status === TransitionStatuses.ENTERING && (direction === 'end' ? 'carousel-item-next' : 'carousel-item-prev');
-        var itemClasses = mapToCssModules(classNames$1(className, 'carousel-item', isActive && 'active', directionClassName, orderClassName), cssModule);
+        var itemClasses = mapToCssModules(classNames$2(className, 'carousel-item', isActive && 'active', directionClassName, orderClassName), cssModule);
         return /*#__PURE__*/React.createElement(Tag, {
           className: itemClasses
         }, children);
@@ -7328,8 +7353,8 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
         dark = _this$props3.dark,
         fade = _this$props3.fade;
       var attributes = omit(this.props, propsToOmit$2);
-      var outerClasses = mapToCssModules(classNames$1(className, 'carousel', fade && 'carousel-fade', slide && 'slide', dark && 'carousel-dark'), cssModule);
-      var innerClasses = mapToCssModules(classNames$1('carousel-inner'), cssModule);
+      var outerClasses = mapToCssModules(classNames$2(className, 'carousel', fade && 'carousel-fade', slide && 'slide', dark && 'carousel-dark'), cssModule);
+      var innerClasses = mapToCssModules(classNames$2('carousel-inner'), cssModule);
 
       // filter out booleans, null, or undefined
       var children = this.props.children.filter(function (child) {
@@ -7434,9 +7459,9 @@ function CarouselControl(props) {
     directionText = props.directionText,
     className = props.className,
     attributes = _objectWithoutProperties$G(props, _excluded$K);
-  var anchorClasses = mapToCssModules(classNames$1(className, "carousel-control-".concat(direction)), cssModule);
-  var iconClasses = mapToCssModules(classNames$1("carousel-control-".concat(direction, "-icon")), cssModule);
-  var screenReaderClasses = mapToCssModules(classNames$1('visually-hidden'), cssModule);
+  var anchorClasses = mapToCssModules(classNames$2(className, "carousel-control-".concat(direction)), cssModule);
+  var iconClasses = mapToCssModules(classNames$2("carousel-control-".concat(direction, "-icon")), cssModule);
+  var screenReaderClasses = mapToCssModules(classNames$2('visually-hidden'), cssModule);
   return (
     /*#__PURE__*/
     // We need to disable this linting rule to use an `<a>` instead of
@@ -7486,9 +7511,9 @@ function CarouselIndicators(props) {
     onClickHandler = props.onClickHandler,
     className = props.className,
     attributes = _objectWithoutProperties$F(props, _excluded$J);
-  var listClasses = mapToCssModules(classNames$1(className, 'carousel-indicators'), cssModule);
+  var listClasses = mapToCssModules(classNames$2(className, 'carousel-indicators'), cssModule);
   var indicators = items.map(function (item, idx) {
-    var indicatorClasses = mapToCssModules(classNames$1({
+    var indicatorClasses = mapToCssModules(classNames$2({
       active: activeIndex === idx
     }), cssModule);
     return /*#__PURE__*/React.createElement("button", {
@@ -7525,7 +7550,7 @@ function CarouselCaption(props) {
     captionText = props.captionText,
     cssModule = props.cssModule,
     className = props.className;
-  var classes = mapToCssModules(classNames$1(className, 'carousel-caption', 'd-none', 'd-md-block'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'carousel-caption', 'd-none', 'd-md-block'), cssModule);
   return /*#__PURE__*/React.createElement("div", {
     className: classes
   }, /*#__PURE__*/React.createElement("h3", null, captionHeader), /*#__PURE__*/React.createElement("p", null, captionText));
@@ -7700,7 +7725,7 @@ function CardSubtitle(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$D(props, _excluded$H);
-  var classes = mapToCssModules(classNames$1(className, 'card-subtitle'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-subtitle'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$Q({}, attributes, {
     className: classes
   }));
@@ -7725,7 +7750,7 @@ function CardText(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'p' : _props$tag,
     attributes = _objectWithoutProperties$C(props, _excluded$G);
-  var classes = mapToCssModules(classNames$1(className, 'card-text'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-text'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$P({}, attributes, {
     className: classes
   }));
@@ -7750,7 +7775,7 @@ function CardTitle(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$B(props, _excluded$F);
-  var classes = mapToCssModules(classNames$1(className, 'card-title'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'card-title'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$O({}, attributes, {
     className: classes
   }));
@@ -7856,7 +7881,7 @@ var PopperContent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "getContainerNode",
     value: function getContainerNode() {
-      return getTarget(this.props.container);
+      return getTarget$1(this.props.container);
     }
   }, {
     key: "getRef",
@@ -7866,7 +7891,7 @@ var PopperContent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "setTargetNode",
     value: function setTargetNode(node) {
-      this.targetNode = typeof node === 'string' ? getTarget(node) : node;
+      this.targetNode = typeof node === 'string' ? getTarget$1(node) : node;
     }
   }, {
     key: "renderChildren",
@@ -7893,8 +7918,8 @@ var PopperContent = /*#__PURE__*/function (_React$Component) {
         transition = _this$props.transition,
         placement = _this$props.placement,
         attrs = _objectWithoutProperties$A(_this$props, _excluded$E);
-      var arrowClassName = mapToCssModules(classNames$1('arrow', _arrowClassName), cssModule);
-      var popperClassName = mapToCssModules(classNames$1(_popperClassName, placementPrefix ? "".concat(placementPrefix, "-auto") : ''), this.props.cssModule);
+      var arrowClassName = mapToCssModules(classNames$2('arrow', _arrowClassName), cssModule);
+      var popperClassName = mapToCssModules(classNames$2(_popperClassName, placementPrefix ? "".concat(placementPrefix, "-auto") : ''), this.props.cssModule);
       var modifierNames = modifiers.map(function (m) {
         return m.name;
       });
@@ -8271,7 +8296,7 @@ var TooltipPopoverWrapper = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "updateTarget",
     value: function updateTarget() {
-      var newTarget = getTarget(this.props.target, true);
+      var newTarget = getTarget$1(this.props.target, true);
       if (newTarget !== this._targets) {
         this.removeTargetEvents();
         this._targets = newTarget ? Array.from(newTarget) : [];
@@ -8374,9 +8399,9 @@ var defaultProps$6 = {
   offset: [0, 8]
 };
 function Popover(props) {
-  var arrowClasses = classNames$1('popover-arrow', props.arrowClassName);
-  var popperClasses = classNames$1('popover', 'show', props.popperClassName);
-  var classes = classNames$1('popover-inner', props.innerClassName);
+  var arrowClasses = classNames$2('popover-arrow', props.arrowClassName);
+  var popperClasses = classNames$2('popover', 'show', props.popperClassName);
+  var classes = classNames$2('popover-inner', props.innerClassName);
   return /*#__PURE__*/React.createElement(TooltipPopoverWrapper, _extends$L({}, props, {
     arrowClassName: arrowClasses,
     popperClassName: popperClasses,
@@ -8454,7 +8479,7 @@ function PopoverHeader(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'h3' : _props$tag,
     attributes = _objectWithoutProperties$z(props, _excluded$D);
-  var classes = mapToCssModules(classNames$1(className, 'popover-header'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'popover-header'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$J({}, attributes, {
     className: classes
   }));
@@ -8476,7 +8501,7 @@ function PopoverBody(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$y(props, _excluded$C);
-  var classes = mapToCssModules(classNames$1(className, 'popover-body'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'popover-body'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$I({}, attributes, {
     className: classes
   }));
@@ -8544,8 +8569,8 @@ function Progress(props) {
     barAriaLabelledBy = props.barAriaLabelledBy,
     attributes = _objectWithoutProperties$x(props, _excluded$B);
   var percent = toNumber(value) / toNumber(max) * 100;
-  var progressClasses = mapToCssModules(classNames$1(className, 'progress'), cssModule);
-  var progressBarClasses = mapToCssModules(classNames$1('progress-bar', bar ? className || barClassName : barClassName, animated ? 'progress-bar-animated' : null, color ? "bg-".concat(color) : null, striped || animated ? 'progress-bar-striped' : null), cssModule);
+  var progressClasses = mapToCssModules(classNames$2(className, 'progress'), cssModule);
+  var progressBarClasses = mapToCssModules(classNames$2('progress-bar', bar ? className || barClassName : barClassName, animated ? 'progress-bar-animated' : null, color ? "bg-".concat(color) : null, striped || animated ? 'progress-bar-striped' : null), cssModule);
   var progressBarProps = {
     className: progressBarClasses,
     style: _objectSpread$b(_objectSpread$b(_objectSpread$b({}, bar ? style : {}), barStyle), {}, {
@@ -8966,7 +8991,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
         this._element.setAttribute('tabindex', '-1');
         this._element.style.position = 'relative';
         this._element.style.zIndex = this.props.zIndex;
-        this._mountContainer = getTarget(this.props.container);
+        this._mountContainer = getTarget$1(this.props.container);
         this._mountContainer.appendChild(this._element);
       }
       this._originalBodyPadding = getOriginalBodyPadding();
@@ -8975,7 +9000,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       }
       conditionallyUpdateScrollbar();
       if (Modal.openCount === 0) {
-        document.body.className = classNames$1(document.body.className, mapToCssModules('modal-open', this.props.cssModule));
+        document.body.className = classNames$2(document.body.className, mapToCssModules('modal-open', this.props.cssModule));
         document.body.style.overflow = 'hidden';
       }
       this.modalIndex = Modal.openCount;
@@ -9029,13 +9054,13 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       var attributes = omit(this.props, propsToOmit$1);
       var dialogBaseClass = 'modal-dialog';
       return /*#__PURE__*/React.createElement("div", _extends$G({}, attributes, {
-        className: mapToCssModules(classNames$1(dialogBaseClass, this.props.className, (_classNames = {}, _defineProperty$d(_classNames, "modal-".concat(this.props.size), this.props.size), _defineProperty$d(_classNames, "".concat(dialogBaseClass, "-centered"), this.props.centered), _defineProperty$d(_classNames, "".concat(dialogBaseClass, "-scrollable"), this.props.scrollable), _defineProperty$d(_classNames, 'modal-fullscreen', this.props.fullscreen === true), _defineProperty$d(_classNames, "modal-fullscreen-".concat(this.props.fullscreen, "-down"), typeof this.props.fullscreen === 'string'), _classNames)), this.props.cssModule),
+        className: mapToCssModules(classNames$2(dialogBaseClass, this.props.className, (_classNames = {}, _defineProperty$d(_classNames, "modal-".concat(this.props.size), this.props.size), _defineProperty$d(_classNames, "".concat(dialogBaseClass, "-centered"), this.props.centered), _defineProperty$d(_classNames, "".concat(dialogBaseClass, "-scrollable"), this.props.scrollable), _defineProperty$d(_classNames, 'modal-fullscreen', this.props.fullscreen === true), _defineProperty$d(_classNames, "modal-fullscreen-".concat(this.props.fullscreen, "-down"), typeof this.props.fullscreen === 'string'), _classNames)), this.props.cssModule),
         role: "document",
         ref: function ref(c) {
           _this3._dialog = c;
         }
       }), /*#__PURE__*/React.createElement("div", {
-        className: mapToCssModules(classNames$1('modal-content', this.props.contentClassName), this.props.cssModule)
+        className: mapToCssModules(classNames$2('modal-content', this.props.contentClassName), this.props.cssModule)
       }, this.props.children));
     }
   }, {
@@ -9081,9 +9106,9 @@ var Modal = /*#__PURE__*/function (_React$Component) {
         var Backdrop = backdrop && (hasTransition ? /*#__PURE__*/React.createElement(Fade, _extends$G({}, backdropTransition, {
           "in": isOpen && !!backdrop,
           cssModule: cssModule,
-          className: mapToCssModules(classNames$1('modal-backdrop', backdropClassName), cssModule)
+          className: mapToCssModules(classNames$2('modal-backdrop', backdropClassName), cssModule)
         })) : /*#__PURE__*/React.createElement("div", {
-          className: mapToCssModules(classNames$1('modal-backdrop', 'show', backdropClassName), cssModule)
+          className: mapToCssModules(classNames$2('modal-backdrop', 'show', backdropClassName), cssModule)
         }));
         return /*#__PURE__*/React.createElement(Portal, {
           node: this._element
@@ -9094,7 +9119,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
           onEntered: this.onOpened,
           onExited: this.onClosed,
           cssModule: cssModule,
-          className: mapToCssModules(classNames$1('modal', modalClassName, this.state.showStaticBackdropAnimation && 'modal-static'), cssModule),
+          className: mapToCssModules(classNames$2('modal', modalClassName, this.state.showStaticBackdropAnimation && 'modal-static'), cssModule),
           innerRef: innerRef
         }), external, this.renderModalDialog()), Backdrop));
       }
@@ -9141,7 +9166,7 @@ function ModalHeader(props) {
     closeAriaLabel = _props$closeAriaLabel === void 0 ? 'Close' : _props$closeAriaLabel,
     close = props.close,
     attributes = _objectWithoutProperties$w(props, _excluded$A);
-  var classes = mapToCssModules(classNames$1(className, 'modal-header'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'modal-header'), cssModule);
   if (!close && toggle) {
     closeButton = /*#__PURE__*/React.createElement("button", {
       type: "button",
@@ -9176,7 +9201,7 @@ function ModalBody(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$v(props, _excluded$z);
-  var classes = mapToCssModules(classNames$1(className, 'modal-body'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'modal-body'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$E({}, attributes, {
     className: classes
   }));
@@ -9201,7 +9226,7 @@ function ModalFooter(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$u(props, _excluded$y);
-  var classes = mapToCssModules(classNames$1(className, 'modal-footer'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'modal-footer'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$D({}, attributes, {
     className: classes
   }));
@@ -9216,9 +9241,9 @@ var defaultProps$4 = {
   trigger: 'hover focus'
 };
 function Tooltip(props) {
-  var arrowClasses = classNames$1('tooltip-arrow', props.arrowClassName);
-  var popperClasses = classNames$1('tooltip', 'show', props.popperClassName);
-  var classes = classNames$1('tooltip-inner', props.innerClassName);
+  var arrowClasses = classNames$2('tooltip-arrow', props.arrowClassName);
+  var popperClasses = classNames$2('tooltip', 'show', props.popperClassName);
+  var classes = classNames$2('tooltip-inner', props.innerClassName);
   return /*#__PURE__*/React.createElement(TooltipPopoverWrapper, _extends$C({}, props, {
     arrowClassName: arrowClasses,
     popperClassName: popperClasses,
@@ -9272,7 +9297,7 @@ function Table(props) {
     ResponsiveTag = _props$responsiveTag === void 0 ? 'div' : _props$responsiveTag,
     innerRef = props.innerRef,
     attributes = _objectWithoutProperties$t(props, _excluded$x);
-  var classes = mapToCssModules(classNames$1(className, 'table', size ? 'table-' + size : false, bordered ? 'table-bordered' : false, borderless ? 'table-borderless' : false, striped ? 'table-striped' : false, dark ? 'table-dark' : false, hover ? 'table-hover' : false), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'table', size ? 'table-' + size : false, bordered ? 'table-bordered' : false, borderless ? 'table-borderless' : false, striped ? 'table-striped' : false, dark ? 'table-dark' : false, hover ? 'table-hover' : false), cssModule);
   var table = /*#__PURE__*/React.createElement(Tag, _extends$B({}, attributes, {
     ref: innerRef,
     className: classes
@@ -9325,7 +9350,7 @@ function ListGroup(props) {
     _props$numbered = props.numbered,
     numbered = _props$numbered === void 0 ? false : _props$numbered,
     attributes = _objectWithoutProperties$s(props, _excluded$w);
-  var classes = mapToCssModules(classNames$1(className, 'list-group',
+  var classes = mapToCssModules(classNames$2(className, 'list-group',
   // list-group-horizontal cannot currently be mixed with list-group-flush
   // we only try to apply horizontal classes if flush is false
   flush ? 'list-group-flush' : getHorizontalClass(horizontal), {
@@ -9428,7 +9453,7 @@ function FormFeedback(props) {
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$q(props, _excluded$u);
   var validMode = tooltip ? 'tooltip' : 'feedback';
-  var classes = mapToCssModules(classNames$1(className, valid ? "valid-".concat(validMode) : "invalid-".concat(validMode)), cssModule);
+  var classes = mapToCssModules(classNames$2(className, valid ? "valid-".concat(validMode) : "invalid-".concat(validMode)), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$y({}, attributes, {
     className: classes
   }));
@@ -9466,7 +9491,7 @@ function FormGroup(props) {
     switchProp = props["switch"],
     attributes = _objectWithoutProperties$p(props, _excluded$t);
   var formCheck = check || switchProp;
-  var classes = mapToCssModules(classNames$1(className, row ? 'row' : false, formCheck ? 'form-check' : false, switchProp ? 'form-switch' : false, formCheck || noMargin ? false : 'mb-3', formCheck && inline ? 'form-check-inline' : false, formCheck && disabled ? 'disabled' : false, floating && 'form-floating'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, row ? 'row' : false, formCheck ? 'form-check' : false, switchProp ? 'form-switch' : false, formCheck || noMargin ? false : 'mb-3', formCheck && inline ? 'form-check-inline' : false, formCheck && disabled ? 'disabled' : false, floating && 'form-floating'), cssModule);
   if (Tag === 'fieldset') {
     attributes.disabled = disabled;
   }
@@ -9497,7 +9522,7 @@ function FormText(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'small' : _props$tag,
     attributes = _objectWithoutProperties$o(props, _excluded$s);
-  var classes = mapToCssModules(classNames$1(className, !inline ? 'form-text' : false, color ? "text-".concat(color) : false), cssModule);
+  var classes = mapToCssModules(classNames$2(className, !inline ? 'form-text' : false, color ? "text-".concat(color) : false), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$w({}, attributes, {
     className: classes
   }));
@@ -9601,7 +9626,7 @@ var Input$1 = /*#__PURE__*/function (_React$Component) {
         bsSize = attributes.size;
         delete attributes.size;
       }
-      var classes = mapToCssModules(classNames$1(className, invalid && 'is-invalid', valid && 'is-valid', bsSize ? selectInput ? "form-select-".concat(bsSize) : "form-control-".concat(bsSize) : false, formControlClass), cssModule);
+      var classes = mapToCssModules(classNames$2(className, invalid && 'is-invalid', valid && 'is-valid', bsSize ? selectInput ? "form-select-".concat(bsSize) : "form-control-".concat(bsSize) : false, formControlClass), cssModule);
       if (Tag === 'input' || tag && typeof tag === 'function') {
         attributes.type = type === 'switch' ? 'checkbox' : type;
       }
@@ -9643,7 +9668,7 @@ function InputGroup(props) {
     props.type;
     var size = props.size,
     attributes = _objectWithoutProperties$m(props, _excluded$q);
-  var classes = mapToCssModules(classNames$1(className, 'input-group', size ? "input-group-".concat(size) : null), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'input-group', size ? "input-group-".concat(size) : null), cssModule);
   if (props.type === 'dropdown') {
     return /*#__PURE__*/React.createElement(Dropdown, _extends$u({}, attributes, {
       className: classes
@@ -9677,7 +9702,7 @@ function InputGroupText(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'span' : _props$tag,
     attributes = _objectWithoutProperties$l(props, _excluded$p);
-  var classes = mapToCssModules(classNames$1(className, 'input-group-text'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'input-group-text'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$t({}, attributes, {
     className: classes
   }));
@@ -9747,7 +9772,7 @@ function Label(props) {
       var _classNames;
       var colSizeInterfix = isXs ? '-' : "-".concat(colWidth, "-");
       colClass = getColumnSizeClass(isXs, colWidth, columnProp.size);
-      colClasses.push(mapToCssModules(classNames$1((_classNames = {}, _defineProperty$c(_classNames, colClass, columnProp.size || columnProp.size === ''), _defineProperty$c(_classNames, "order".concat(colSizeInterfix).concat(columnProp.order), columnProp.order || columnProp.order === 0), _defineProperty$c(_classNames, "offset".concat(colSizeInterfix).concat(columnProp.offset), columnProp.offset || columnProp.offset === 0), _classNames))), cssModule);
+      colClasses.push(mapToCssModules(classNames$2((_classNames = {}, _defineProperty$c(_classNames, colClass, columnProp.size || columnProp.size === ''), _defineProperty$c(_classNames, "order".concat(colSizeInterfix).concat(columnProp.order), columnProp.order || columnProp.order === 0), _defineProperty$c(_classNames, "offset".concat(colSizeInterfix).concat(columnProp.offset), columnProp.offset || columnProp.offset === 0), _classNames))), cssModule);
     } else {
       colClass = getColumnSizeClass(isXs, colWidth, columnProp);
       colClasses.push(colClass);
@@ -9755,7 +9780,7 @@ function Label(props) {
   });
   var colFormLabel = size || colClasses.length;
   var formLabel = !(check || colFormLabel);
-  var classes = mapToCssModules(classNames$1(className, hidden ? 'visually-hidden' : false, check ? 'form-check-label' : false, size ? "col-form-label-".concat(size) : false, colClasses, colFormLabel ? 'col-form-label' : false, formLabel ? 'form-label' : false), cssModule);
+  var classes = mapToCssModules(classNames$2(className, hidden ? 'visually-hidden' : false, check ? 'form-check-label' : false, size ? "col-form-label-".concat(size) : false, colClasses, colFormLabel ? 'col-form-label' : false, formLabel ? 'form-label' : false), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$s({
     htmlFor: htmlFor
   }, attributes, {
@@ -9810,7 +9835,7 @@ function Media(props) {
     defaultTag = 'div';
   }
   var Tag = tag || defaultTag;
-  var classes = mapToCssModules(classNames$1(className, {
+  var classes = mapToCssModules(classNames$2(className, {
     'media-body': body,
     'media-heading': heading,
     'media-left': left,
@@ -10130,7 +10155,7 @@ var Offcanvas = /*#__PURE__*/function (_React$Component) {
         this._element.setAttribute('tabindex', '-1');
         this._element.style.position = 'relative';
         this._element.style.zIndex = this.props.zIndex;
-        this._mountContainer = getTarget(this.props.container);
+        this._mountContainer = getTarget$1(this.props.container);
         this._mountContainer.appendChild(this._element);
       }
       this._originalBodyPadding = getOriginalBodyPadding();
@@ -10213,11 +10238,11 @@ var Offcanvas = /*#__PURE__*/function (_React$Component) {
           "in": isOpen && !!backdrop,
           innerRef: this._backdrop,
           cssModule: cssModule,
-          className: mapToCssModules(classNames$1('offcanvas-backdrop', backdropClassName), cssModule),
+          className: mapToCssModules(classNames$2('offcanvas-backdrop', backdropClassName), cssModule),
           onClick: this.handleBackdropClick,
           onMouseDown: this.handleBackdropMouseDown
         })) : /*#__PURE__*/React.createElement("div", {
-          className: mapToCssModules(classNames$1('offcanvas-backdrop', 'show', backdropClassName), cssModule),
+          className: mapToCssModules(classNames$2('offcanvas-backdrop', 'show', backdropClassName), cssModule),
           ref: this._backdrop,
           onClick: this.handleBackdropClick,
           onMouseDown: this.handleBackdropMouseDown
@@ -10230,7 +10255,7 @@ var Offcanvas = /*#__PURE__*/function (_React$Component) {
           onEntered: this.onOpened,
           onExited: this.onClosed,
           cssModule: cssModule,
-          className: mapToCssModules(classNames$1('offcanvas', className, "offcanvas-".concat(direction)), cssModule),
+          className: mapToCssModules(classNames$2('offcanvas', className, "offcanvas-".concat(direction)), cssModule),
           innerRef: this._dialog,
           style: _objectSpread$9(_objectSpread$9({}, style), {}, {
             visibility: isOpen ? 'visible' : 'hidden'
@@ -10261,7 +10286,7 @@ function OffcanvasBody(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$i(props, _excluded$m);
-  var classes = mapToCssModules(classNames$1(className, 'offcanvas-body'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'offcanvas-body'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$p({}, attributes, {
     className: classes
   }));
@@ -10296,7 +10321,7 @@ function OffcanvasHeader(props) {
     _props$wrapTag = props.wrapTag,
     WrapTag = _props$wrapTag === void 0 ? 'div' : _props$wrapTag,
     attributes = _objectWithoutProperties$h(props, _excluded$l);
-  var classes = mapToCssModules(classNames$1(className, 'offcanvas-header'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'offcanvas-header'), cssModule);
   if (!close && toggle) {
     closeButton = /*#__PURE__*/React.createElement("button", {
       type: "button",
@@ -10346,8 +10371,8 @@ function Pagination(props) {
     _props$ariaLabel = props['aria-label'],
     label = _props$ariaLabel === void 0 ? 'pagination' : _props$ariaLabel,
     attributes = _objectWithoutProperties$g(props, _excluded$k);
-  var classes = mapToCssModules(classNames$1(className), cssModule);
-  var listClasses = mapToCssModules(classNames$1(listClassName, 'pagination', _defineProperty$a({}, "pagination-".concat(size), !!size)), cssModule);
+  var classes = mapToCssModules(classNames$2(className), cssModule);
+  var listClasses = mapToCssModules(classNames$2(listClassName, 'pagination', _defineProperty$a({}, "pagination-".concat(size), !!size)), cssModule);
   return /*#__PURE__*/React.createElement(Tag, {
     className: classes,
     "aria-label": label
@@ -10382,7 +10407,7 @@ function PaginationItem(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'li' : _props$tag,
     attributes = _objectWithoutProperties$f(props, _excluded$j);
-  var classes = mapToCssModules(classNames$1(className, 'page-item', {
+  var classes = mapToCssModules(classNames$2(className, 'page-item', {
     active: active,
     disabled: disabled
   }), cssModule);
@@ -10439,7 +10464,7 @@ var TabContent = /*#__PURE__*/function (_Component) {
         _this$props$tag = _this$props.tag,
         Tag = _this$props$tag === void 0 ? 'div' : _this$props$tag;
       var attributes = omit(this.props, Object.keys(propTypes$e));
-      var classes = mapToCssModules(classNames$1('tab-content', className), cssModule);
+      var classes = mapToCssModules(classNames$2('tab-content', className), cssModule);
       return /*#__PURE__*/React.createElement(TabContext.Provider, {
         value: {
           activeTabId: this.state.activeTab
@@ -10481,7 +10506,7 @@ function TabPane(props) {
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$e(props, _excluded$i);
   var getClasses = function getClasses(activeTabId) {
-    return mapToCssModules(classNames$1('tab-pane', className, {
+    return mapToCssModules(classNames$2('tab-pane', className, {
       active: tabId === activeTabId
     }), cssModule);
   };
@@ -10548,10 +10573,10 @@ function Alert(props) {
     fade = _props$fade === void 0 ? true : _props$fade,
     innerRef = props.innerRef,
     attributes = _objectWithoutProperties$d(props, _excluded$h);
-  var classes = mapToCssModules(classNames$1(className, 'alert', "alert-".concat(color), {
+  var classes = mapToCssModules(classNames$2(className, 'alert', "alert-".concat(color), {
     'alert-dismissible': toggle
   }), cssModule);
-  var closeClasses = mapToCssModules(classNames$1('btn-close', closeClassName), cssModule);
+  var closeClasses = mapToCssModules(classNames$2('btn-close', closeClassName), cssModule);
   var alertTransition = _objectSpread$8(_objectSpread$8(_objectSpread$8({}, Fade.defaultProps), transition), {}, {
     baseClass: fade ? transition.baseClass : '',
     timeout: fade ? transition.timeout : 0
@@ -10604,7 +10629,7 @@ function Toast(props) {
     fade = _props$fade === void 0 ? true : _props$fade,
     innerRef = props.innerRef,
     attributes = _objectWithoutProperties$c(props, _excluded$g);
-  var classes = mapToCssModules(classNames$1(className, 'toast'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'toast'), cssModule);
   var toastTransition = _objectSpread$7(_objectSpread$7(_objectSpread$7({}, Fade.defaultProps), transition), {}, {
     baseClass: fade ? transition.baseClass : '',
     timeout: fade ? transition.timeout : 0
@@ -10636,7 +10661,7 @@ function ToastBody(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$b(props, _excluded$f);
-  var classes = mapToCssModules(classNames$1(className, 'toast-body'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'toast-body'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$h({}, attributes, {
     className: classes,
     ref: innerRef
@@ -10679,7 +10704,7 @@ function ToastHeader(props) {
     tagClassName = _props$tagClassName === void 0 ? 'me-auto' : _props$tagClassName,
     iconProp = props.icon,
     attributes = _objectWithoutProperties$a(props, _excluded$e);
-  var classes = mapToCssModules(classNames$1(className, 'toast-header'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'toast-header'), cssModule);
   if (!close && toggle) {
     closeButton = /*#__PURE__*/React.createElement("button", {
       type: "button",
@@ -10708,7 +10733,7 @@ function ToastHeader(props) {
   return /*#__PURE__*/React.createElement(WrapTag, _extends$g({}, attributes, {
     className: classes
   }), icon, /*#__PURE__*/React.createElement(Tag, {
-    className: mapToCssModules(classNames$1(tagClassName, {
+    className: mapToCssModules(classNames$2(tagClassName, {
       'ms-2': icon != null
     }), cssModule)
   }, children), close || closeButton);
@@ -10748,7 +10773,7 @@ function ListGroupItem(props) {
     action = props.action,
     color = props.color,
     attributes = _objectWithoutProperties$9(props, _excluded$d);
-  var classes = mapToCssModules(classNames$1(className, active ? 'active' : false, disabled ? 'disabled' : false, action ? 'list-group-item-action' : false, color ? "list-group-item-".concat(color) : false, 'list-group-item'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, active ? 'active' : false, disabled ? 'disabled' : false, action ? 'list-group-item-action' : false, color ? "list-group-item-".concat(color) : false, 'list-group-item'), cssModule);
 
   // Prevent click event when disabled.
   if (disabled) {
@@ -10778,7 +10803,7 @@ function ListGroupItemHeading(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'h5' : _props$tag,
     attributes = _objectWithoutProperties$8(props, _excluded$c);
-  var classes = mapToCssModules(classNames$1(className, 'list-group-item-heading'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'list-group-item-heading'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$e({}, attributes, {
     className: classes
   }));
@@ -10803,7 +10828,7 @@ function ListGroupItemText(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'p' : _props$tag,
     attributes = _objectWithoutProperties$7(props, _excluded$b);
-  var classes = mapToCssModules(classNames$1(className, 'list-group-item-text'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'list-group-item-text'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$d({}, attributes, {
     className: classes
   }));
@@ -10831,7 +10856,7 @@ var List = /*#__PURE__*/React.forwardRef(function (props, ref) {
     Tag = _props$tag === void 0 ? 'ul' : _props$tag,
     type = props.type,
     attributes = _objectWithoutProperties$6(props, _excluded$a);
-  var classes = mapToCssModules(classNames$1(className, type ? "list-".concat(type) : false), cssModule);
+  var classes = mapToCssModules(classNames$2(className, type ? "list-".concat(type) : false), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$c({}, attributes, {
     className: classes,
     ref: ref
@@ -10858,7 +10883,7 @@ var ListInlineItem = /*#__PURE__*/React.forwardRef(function (props, ref) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'li' : _props$tag,
     attributes = _objectWithoutProperties$5(props, _excluded$9);
-  var classes = mapToCssModules(classNames$1(className, 'list-inline-item'), cssModule);
+  var classes = mapToCssModules(classNames$2(className, 'list-inline-item'), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$b({}, attributes, {
     className: classes,
     ref: ref
@@ -11188,7 +11213,7 @@ function Spinner(props) {
     _props$tag = props.tag,
     Tag = _props$tag === void 0 ? 'div' : _props$tag,
     attributes = _objectWithoutProperties$4(props, _excluded$8);
-  var classes = mapToCssModules(classNames$1(className, size ? "spinner-".concat(type, "-").concat(size) : false, "spinner-".concat(type), color ? "text-".concat(color) : false), cssModule);
+  var classes = mapToCssModules(classNames$2(className, size ? "spinner-".concat(type, "-").concat(size) : false, "spinner-".concat(type), color ? "text-".concat(color) : false), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$5({
     role: "status"
   }, attributes, {
@@ -11231,7 +11256,7 @@ function Placeholder$1(props) {
   var _getColumnClasses = getColumnClasses(attributes, cssModule, widths),
     modifiedAttributes = _getColumnClasses.modifiedAttributes,
     colClasses = _getColumnClasses.colClasses;
-  var classes = mapToCssModules(classNames$1(className, colClasses, 'placeholder' + (animation ? '-' + animation : ''), size ? 'placeholder-' + size : false, color ? 'bg-' + color : false), cssModule);
+  var classes = mapToCssModules(classNames$2(className, colClasses, 'placeholder' + (animation ? '-' + animation : ''), size ? 'placeholder-' + size : false, color ? 'bg-' + color : false), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$4({}, modifiedAttributes, {
     className: classes,
     ref: innerRef
@@ -11265,7 +11290,7 @@ function PlaceholderButton(props) {
     }, attributes), cssModule),
     modifiedAttributes = _getColumnClasses.attributes,
     colClasses = _getColumnClasses.colClasses;
-  var classes = mapToCssModules(classNames$1('placeholder', className, colClasses), cssModule);
+  var classes = mapToCssModules(classNames$2('placeholder', className, colClasses), cssModule);
   return /*#__PURE__*/React.createElement(Tag, _extends$3({}, modifiedAttributes, {
     className: classes,
     disabled: true
@@ -11298,7 +11323,7 @@ var AlertBase = function (_a) {
     return React.createElement(Alert, __assign({}, rest), children);
 };
 
-var classnames$2 = {exports: {}};
+var classnames$1 = {exports: {}};
 
 /*!
 	Copyright (c) 2018 Jed Watson.
@@ -11355,14 +11380,14 @@ var classnames$2 = {exports: {}};
 			window.classNames = classNames;
 		}
 	}()); 
-} (classnames$2));
+} (classnames$1));
 
-var classnamesExports = classnames$2.exports;
-var classnames$1 = /*@__PURE__*/getDefaultExportFromCjs(classnamesExports);
+var classnamesExports = classnames$1.exports;
+var classNames$1 = /*@__PURE__*/getDefaultExportFromCjs(classnamesExports);
 
 var BadgeBase = function (_a) {
     var children = _a.children, color = _a.color, outline = _a.outline, fade = _a.fade, rest = __rest(_a, ["children", "color", "outline", "fade"]);
-    return (React.createElement(Badge, __assign({ color: color, className: classnames$1(rest.className, {
+    return (React.createElement(Badge, __assign({ color: color, className: classNames$1(rest.className, {
             "bg-secondary bg-pending": color === "pending",
             "badge-outline-primary": outline === "primary",
             "badge-outline-info": outline === "info",
@@ -11421,7 +11446,7 @@ var ButtonToolbarBase = function (_a) {
 };
 
 var CardBase = function (props) {
-    return (React.createElement(Card, __assign({ className: classnames$1(props.className, {
+    return (React.createElement(Card, __assign({ className: classNames$1(props.className, {
             "card-variant-list ": props.variant === "list",
             "card-variant-active": props.variant === "active",
             "card-variant-active card-hover-none": props.variant === "active" && props.hover === false,
@@ -14317,8 +14342,8 @@ function _taggedTemplateLiteral(e, t) {
  * @see https://floating-ui.com/docs/virtual-elements
  */
 
-const min = Math.min;
-const max = Math.max;
+const min$1 = Math.min;
+const max$1 = Math.max;
 const round = Math.round;
 const floor = Math.floor;
 const createCoords = v => ({
@@ -14592,7 +14617,7 @@ function observeMove(element, onMove) {
     const rootMargin = -insetTop + "px " + -insetRight + "px " + -insetBottom + "px " + -insetLeft + "px";
     const options = {
       rootMargin,
-      threshold: max(0, min(1, threshold)) || 1
+      threshold: max$1(0, min$1(1, threshold)) || 1
     };
     let isFirstUpdate = true;
     function handleObserve(entries) {
@@ -14970,7 +14995,7 @@ function isMobileDevice() {
 
 // https://github.com/rafgraph/detect-it/blob/main/src/index.ts#L19-L36
 var passiveOptionAccessed = false;
-var options = {
+var options$1 = {
   get passive() {
     return passiveOptionAccessed = true;
   }
@@ -14978,7 +15003,7 @@ var options = {
 // check for SSR
 var w = typeof window !== 'undefined' ? window : {};
 if (w.addEventListener && w.removeEventListener) {
-  w.addEventListener('p', noop$1, options);
+  w.addEventListener('p', noop$1, options$1);
   w.removeEventListener('p', noop$1, false);
 }
 var supportsPassiveEvents = passiveOptionAccessed;
@@ -18851,7 +18876,7 @@ var DropdownToggleBase = function (_a) {
     var children = _a.children, startIcon = _a.startIcon, rest = __rest(_a, ["children", "startIcon"]);
     return (React.createElement(React.Fragment, null,
         React.createElement(DropdownToggle, __assign({}, rest),
-            startIcon && React.createElement("i", { className: classnames$1(startIcon, "me-2") }),
+            startIcon && React.createElement("i", { className: classNames$1(startIcon, "me-2") }),
             children)));
 };
 
@@ -25971,7 +25996,7 @@ var variants$2 = {
 };
 var InputBase = function (_a) {
     var _b = _a.variant, variant = _b === void 0 ? variants$2.outline : _b, props = __rest(_a, ["variant"]);
-    return (React.createElement(Input$1, __assign({}, props, { className: classnames$1(props.className || "", {
+    return (React.createElement(Input$1, __assign({}, props, { className: classNames$1(props.className || "", {
             "form-control-filled": variant === variants$2.filled,
         }) }), props.children));
 };
@@ -31687,7 +31712,7 @@ var variants$1 = {
 };
 var DateTimeBase = function (_a) {
     var _b = _a.variant, variant = _b === void 0 ? variants$1.outline : _b, rest = __rest(_a, ["variant"]);
-    return (React.createElement(Datetime, __assign({ className: classnames$1(rest.className || "", {
+    return (React.createElement(Datetime, __assign({ className: classNames$1(rest.className || "", {
             "form-control-filled": variant === variants$1.filled,
         }) }, rest)));
 };
@@ -31700,7 +31725,7 @@ var LabelBase = function (_a) {
 var ImsInputCheck = function (_a) {
     var label = _a.label, _b = _a.mandatory, mandatory = _b === void 0 ? false : _b, _c = _a.unselected, unselected = _c === void 0 ? false : _c, error = _a.error, helperText = _a.helperText, rest = __rest(_a, ["label", "mandatory", "unselected", "error", "helperText"]);
     return (React.createElement(React.Fragment, null,
-        React.createElement(FormGroupBase, { check: true, className: classnames$1("", {
+        React.createElement(FormGroupBase, { check: true, className: classNames$1("", {
                 "unselected-checkbox": unselected,
             }) },
             React.createElement(ColBase, { md: "12" },
@@ -31783,7 +31808,7 @@ var variants = {
 };
 var SelectBase = function (_a) {
     var _b = _a.variant, variant = _b === void 0 ? variants.outline : _b, rest = __rest(_a, ["variant"]);
-    return (React.createElement(StateManagedSelect, __assign({}, rest, { classNamePrefix: "react-select", className: classnames$1("react-select " + rest.className, {
+    return (React.createElement(StateManagedSelect, __assign({}, rest, { classNamePrefix: "react-select", className: classNames$1("react-select " + rest.className, {
             "react-select-filled": variant === variants.filled,
         }) })));
 };
@@ -32047,7 +32072,7 @@ var ModalHeaderBase = function (_a) {
 
 var NavBase = function (_a) {
     var children = _a.children, _b = _a.variant, variant = _b === void 0 ? "primary" : _b, rest = __rest(_a, ["children", "variant"]);
-    return (React.createElement(Nav, __assign({ className: classnames$1("".concat(rest.className || ""), {
+    return (React.createElement(Nav, __assign({ className: classNames$1("".concat(rest.className || ""), {
             "nav-tabs-primary": variant === "primary",
             "nav-tabs-secondary": variant === "secondary",
             "nav-tabs-outline": variant === "outline",
@@ -32081,7 +32106,7 @@ var NavItemBase = function (_a) {
 
 var NavLinkBase = function (_a) {
     var children = _a.children, rest = __rest(_a, ["children"]);
-    return (React.createElement(NavLink, __assign({ className: classnames$1(rest.className, {
+    return (React.createElement(NavLink, __assign({ className: classNames$1(rest.className, {
             active: rest.active,
         }) }, rest), children));
 };
@@ -32103,7 +32128,7 @@ var OffcanvasHeaderBase = function (_a) {
 
 var PaginationBase = function (_a) {
     var children = _a.children, _b = _a.separated, separated = _b === void 0 ? true : _b, rest = __rest(_a, ["children", "separated"]);
-    return (React.createElement(Pagination, __assign({ className: classnames$1(rest.className, {
+    return (React.createElement(Pagination, __assign({ className: classNames$1(rest.className, {
             "pagination-separated": separated,
         }) }, rest), children));
 };
@@ -32115,7 +32140,7 @@ var PaginationItemBase = function (_a) {
 
 var PaginationLinkBase = function (_a) {
     var children = _a.children, rest = __rest(_a, ["children"]);
-    return (React.createElement(ButtonBase, __assign({ className: classnames$1("page-link ".concat(rest.className), {}) }, rest), children));
+    return (React.createElement(ButtonBase, __assign({ className: classNames$1("page-link ".concat(rest.className), {}) }, rest), children));
 };
 
 var PanelWindow = function (_a) {
@@ -32128,7 +32153,7 @@ var PanelTab = function (_a) {
     var children = _a.children, onClick = _a.onClick, active = _a.active, index = _a.index; _a.label; var props = __rest(_a, ["children", "onClick", "active", "index", "label"]);
     return (React.createElement(React.Fragment, null,
         React.createElement(NavItemBase, __assign({}, props),
-            React.createElement(NavLinkBase, __assign({ "data-toggle": "tab", href: "#", className: classnames$1("nav-link", {
+            React.createElement(NavLinkBase, __assign({ "data-toggle": "tab", href: "#", className: classNames$1("nav-link", {
                     " active": active,
                 }), onClick: onClick, id: "ims-tab-".concat(index), "aria-controls": "ims-tabpanel-".concat(index) }, props), children))));
 };
@@ -32351,7 +32376,7 @@ var RadialProgressBar = function (_a) {
 var RadioCheckboxBase = function (_a) {
     var label = _a.label, _b = _a.mandatory, mandatory = _b === void 0 ? false : _b, _c = _a.unselected, unselected = _c === void 0 ? false : _c, rest = __rest(_a, ["label", "mandatory", "unselected"]);
     return (React.createElement(React.Fragment, null,
-        React.createElement(FormGroupBase, { check: true, className: classnames$1("", {
+        React.createElement(FormGroupBase, { check: true, className: classNames$1("", {
                 "unselected-radio": unselected,
             }) },
             React.createElement(InputBase, __assign({ type: "radio" }, rest)),
@@ -32530,12 +32555,12 @@ var ImsSimpleTable = function (_a) {
         var index = e.currentTarget.rowIndex - 1;
         setSelectedRow(index);
     };
-    return (React.createElement(TableBase, __assign({ hover: true }, props, { className: classnames$1(props.className, {
+    return (React.createElement(TableBase, __assign({ hover: true }, props, { className: classNames$1(props.className, {
             "table-linear": linear,
         }) }),
         React.createElement("thead", null,
             React.createElement("tr", null, props.thead.map(function (prop, key) {
-                return (React.createElement("th", { className: classnames$1("", {
+                return (React.createElement("th", { className: classNames$1("", {
                         "text-right": props.thead.length - 1 === key,
                     }), key: key }, prop.text));
             }))),
@@ -32544,18 +32569,5471 @@ var ImsSimpleTable = function (_a) {
             return (React.createElement("tr", { onClick: function (e) {
                     handleActiveRow(e);
                     onRowClick(e);
-                }, className: classnames$1({
+                }, className: classNames$1({
                     /** allow row active feature only if sepcified in the prop */
                     "table-active": active && selectedRow === key,
                 }), key: key },
                 prop.data.map(function (data, k) {
                     var _a;
-                    return (React.createElement("td", { className: classnames$1((_a = {},
+                    return (React.createElement("td", { className: classNames$1((_a = {},
                             _a[data.className] = data.className !== undefined,
                             _a)), key: k }, data.item));
                 }),
                 prop.actions && React.createElement("td", { className: "text-right" }, prop.actions)));
         }))));
+};
+
+/**
+ * A set of all the parents currently being observe. This is the only non weak
+ * registry.
+ */
+const parents = new Set();
+/**
+ * Element coordinates that is constantly kept up to date.
+ */
+const coords = new WeakMap();
+/**
+ * Siblings of elements that have been removed from the dom.
+ */
+const siblings = new WeakMap();
+/**
+ * Animations that are currently running.
+ */
+const animations = new WeakMap();
+/**
+ * A map of existing intersection observers used to track element movements.
+ */
+const intersections = new WeakMap();
+/**
+ * Intervals for automatically checking the position of elements occasionally.
+ */
+const intervals = new WeakMap();
+/**
+ * The configuration options for each group of elements.
+ */
+const options = new WeakMap();
+/**
+ * Debounce counters by id, used to debounce calls to update positions.
+ */
+const debounces = new WeakMap();
+/**
+ * All parents that are currently enabled are tracked here.
+ */
+const enabled = new WeakSet();
+/**
+ * The document used to calculate transitions.
+ */
+let root;
+/**
+ * The root’s XY scroll positions.
+ */
+let scrollX = 0;
+let scrollY = 0;
+/**
+ * Used to sign an element as the target.
+ */
+const TGT = "__aa_tgt";
+/**
+ * Used to sign an element as being part of a removal.
+ */
+const DEL = "__aa_del";
+/**
+ * Used to sign an element as being "new". When an element is removed from the
+ * dom, but may cycle back in we can sign it with new to ensure the next time
+ * it is recognized we consider it new.
+ */
+const NEW = "__aa_new";
+/**
+ * Callback for handling all mutations.
+ * @param mutations - A mutation list
+ */
+const handleMutations = (mutations) => {
+    const elements = getElements(mutations);
+    // If elements is "false" that means this mutation that should be ignored.
+    if (elements) {
+        elements.forEach((el) => animate(el));
+    }
+};
+/**
+ *
+ * @param entries - Elements that have been resized.
+ */
+const handleResizes = (entries) => {
+    entries.forEach((entry) => {
+        if (entry.target === root)
+            updateAllPos();
+        if (coords.has(entry.target))
+            updatePos(entry.target);
+    });
+};
+/**
+ * Observe this elements position.
+ * @param el - The element to observe the position of.
+ */
+function observePosition(el) {
+    const oldObserver = intersections.get(el);
+    oldObserver === null || oldObserver === void 0 ? void 0 : oldObserver.disconnect();
+    let rect = coords.get(el);
+    let invocations = 0;
+    const buffer = 5;
+    if (!rect) {
+        rect = getCoords(el);
+        coords.set(el, rect);
+    }
+    const { offsetWidth, offsetHeight } = root;
+    const rootMargins = [
+        rect.top - buffer,
+        offsetWidth - (rect.left + buffer + rect.width),
+        offsetHeight - (rect.top + buffer + rect.height),
+        rect.left - buffer,
+    ];
+    const rootMargin = rootMargins
+        .map((px) => `${-1 * Math.floor(px)}px`)
+        .join(" ");
+    const observer = new IntersectionObserver(() => {
+        ++invocations > 1 && updatePos(el);
+    }, {
+        root,
+        threshold: 1,
+        rootMargin,
+    });
+    observer.observe(el);
+    intersections.set(el, observer);
+}
+/**
+ * Update the exact position of a given element.
+ * @param el - An element to update the position of.
+ */
+function updatePos(el) {
+    clearTimeout(debounces.get(el));
+    const optionsOrPlugin = getOptions(el);
+    const delay = isPlugin(optionsOrPlugin) ? 500 : optionsOrPlugin.duration;
+    debounces.set(el, setTimeout(async () => {
+        const currentAnimation = animations.get(el);
+        try {
+            await (currentAnimation === null || currentAnimation === void 0 ? void 0 : currentAnimation.finished);
+            coords.set(el, getCoords(el));
+            observePosition(el);
+        }
+        catch {
+            // ignore errors as the `.finished` promise is rejected when animations were cancelled
+        }
+    }, delay));
+}
+/**
+ * Updates all positions that are currently being tracked.
+ */
+function updateAllPos() {
+    clearTimeout(debounces.get(root));
+    debounces.set(root, setTimeout(() => {
+        parents.forEach((parent) => forEach(parent, (el) => lowPriority(() => updatePos(el))));
+    }, 100));
+}
+/**
+ * Its possible for a quick scroll or other fast events to get past the
+ * intersection observer, so occasionally we need want "cold-poll" for the
+ * latests and greatest position. We try to do this in the most non-disruptive
+ * fashion possible. First we only do this ever couple seconds, staggard by a
+ * random offset.
+ * @param el - Element
+ */
+function poll(el) {
+    setTimeout(() => {
+        intervals.set(el, setInterval(() => lowPriority(updatePos.bind(null, el)), 2000));
+    }, Math.round(2000 * Math.random()));
+}
+/**
+ * Perform some operation that is non critical at some point.
+ * @param callback
+ */
+function lowPriority(callback) {
+    if (typeof requestIdleCallback === "function") {
+        requestIdleCallback(() => callback());
+    }
+    else {
+        requestAnimationFrame(() => callback());
+    }
+}
+/**
+ * The mutation observer responsible for watching each root element.
+ */
+let mutations;
+/**
+ * A resize observer, responsible for recalculating elements on resize.
+ */
+let resize;
+/**
+ * Ensure the browser is supported.
+ */
+const supportedBrowser = typeof window !== "undefined" && "ResizeObserver" in window;
+/**
+ * If this is in a browser, initialize our Web APIs
+ */
+if (supportedBrowser) {
+    root = document.documentElement;
+    mutations = new MutationObserver(handleMutations);
+    resize = new ResizeObserver(handleResizes);
+    window.addEventListener("scroll", () => {
+        scrollY = window.scrollY;
+        scrollX = window.scrollX;
+    });
+    resize.observe(root);
+}
+/**
+ * Retrieves all the elements that may have been affected by the last mutation
+ * including ones that have been removed and are no longer in the DOM.
+ * @param mutations - A mutation list.
+ * @returns
+ */
+function getElements(mutations) {
+    const observedNodes = mutations.reduce((nodes, mutation) => {
+        return [
+            ...nodes,
+            ...Array.from(mutation.addedNodes),
+            ...Array.from(mutation.removedNodes),
+        ];
+    }, []);
+    // Short circuit if _only_ comment nodes are observed
+    const onlyCommentNodesObserved = observedNodes.every((node) => node.nodeName === "#comment");
+    if (onlyCommentNodesObserved)
+        return false;
+    return mutations.reduce((elements, mutation) => {
+        // Short circuit if we find a purposefully deleted node.
+        if (elements === false)
+            return false;
+        if (mutation.target instanceof Element) {
+            target(mutation.target);
+            if (!elements.has(mutation.target)) {
+                elements.add(mutation.target);
+                for (let i = 0; i < mutation.target.children.length; i++) {
+                    const child = mutation.target.children.item(i);
+                    if (!child)
+                        continue;
+                    if (DEL in child) {
+                        return false;
+                    }
+                    target(mutation.target, child);
+                    elements.add(child);
+                }
+            }
+            if (mutation.removedNodes.length) {
+                for (let i = 0; i < mutation.removedNodes.length; i++) {
+                    const child = mutation.removedNodes[i];
+                    if (DEL in child) {
+                        return false;
+                    }
+                    if (child instanceof Element) {
+                        elements.add(child);
+                        target(mutation.target, child);
+                        siblings.set(child, [
+                            mutation.previousSibling,
+                            mutation.nextSibling,
+                        ]);
+                    }
+                }
+            }
+        }
+        return elements;
+    }, new Set());
+}
+/**
+ * Assign the target to an element.
+ * @param el - The root element
+ * @param child
+ */
+function target(el, child) {
+    if (!child && !(TGT in el))
+        Object.defineProperty(el, TGT, { value: el });
+    else if (child && !(TGT in child))
+        Object.defineProperty(child, TGT, { value: el });
+}
+/**
+ * Determines what kind of change took place on the given element and then
+ * performs the proper animation based on that.
+ * @param el - The specific element to animate.
+ */
+function animate(el) {
+    var _a;
+    const isMounted = el.isConnected;
+    const preExisting = coords.has(el);
+    if (isMounted && siblings.has(el))
+        siblings.delete(el);
+    if (animations.has(el)) {
+        (_a = animations.get(el)) === null || _a === void 0 ? void 0 : _a.cancel();
+    }
+    if (NEW in el) {
+        add(el);
+    }
+    else if (preExisting && isMounted) {
+        remain(el);
+    }
+    else if (preExisting && !isMounted) {
+        remove$1(el);
+    }
+    else {
+        add(el);
+    }
+}
+/**
+ * Removes all non-digits from a string and casts to a number.
+ * @param str - A string containing a pixel value.
+ * @returns
+ */
+function raw(str) {
+    return Number(str.replace(/[^0-9.\-]/g, ""));
+}
+/**
+ * Get the scroll offset of elements
+ * @param el - Element
+ * @returns
+ */
+function getScrollOffset(el) {
+    let p = el.parentElement;
+    while (p) {
+        if (p.scrollLeft || p.scrollTop) {
+            return { x: p.scrollLeft, y: p.scrollTop };
+        }
+        p = p.parentElement;
+    }
+    return { x: 0, y: 0 };
+}
+/**
+ * Get the coordinates of elements adjusted for scroll position.
+ * @param el - Element
+ * @returns
+ */
+function getCoords(el) {
+    const rect = el.getBoundingClientRect();
+    const { x, y } = getScrollOffset(el);
+    return {
+        top: rect.top + y,
+        left: rect.left + x,
+        width: rect.width,
+        height: rect.height,
+    };
+}
+/**
+ * Returns the width/height that the element should be transitioned between.
+ * This takes into account box-sizing.
+ * @param el - Element being animated
+ * @param oldCoords - Old set of Coordinates coordinates
+ * @param newCoords - New set of Coordinates coordinates
+ * @returns
+ */
+function getTransitionSizes(el, oldCoords, newCoords) {
+    let widthFrom = oldCoords.width;
+    let heightFrom = oldCoords.height;
+    let widthTo = newCoords.width;
+    let heightTo = newCoords.height;
+    const styles = getComputedStyle(el);
+    const sizing = styles.getPropertyValue("box-sizing");
+    if (sizing === "content-box") {
+        const paddingY = raw(styles.paddingTop) +
+            raw(styles.paddingBottom) +
+            raw(styles.borderTopWidth) +
+            raw(styles.borderBottomWidth);
+        const paddingX = raw(styles.paddingLeft) +
+            raw(styles.paddingRight) +
+            raw(styles.borderRightWidth) +
+            raw(styles.borderLeftWidth);
+        widthFrom -= paddingX;
+        widthTo -= paddingX;
+        heightFrom -= paddingY;
+        heightTo -= paddingY;
+    }
+    return [widthFrom, widthTo, heightFrom, heightTo].map(Math.round);
+}
+/**
+ * Retrieves animation options for the current element.
+ * @param el - Element to retrieve options for.
+ * @returns
+ */
+function getOptions(el) {
+    return TGT in el && options.has(el[TGT])
+        ? options.get(el[TGT])
+        : { duration: 250, easing: "ease-in-out" };
+}
+/**
+ * Returns the target of a given animation (generally the parent).
+ * @param el - An element to check for a target
+ * @returns
+ */
+function getTarget(el) {
+    if (TGT in el)
+        return el[TGT];
+    return undefined;
+}
+/**
+ * Checks if animations are enabled or disabled for a given element.
+ * @param el - Any element
+ * @returns
+ */
+function isEnabled(el) {
+    const target = getTarget(el);
+    return target ? enabled.has(target) : false;
+}
+/**
+ * Iterate over the children of a given parent.
+ * @param parent - A parent element
+ * @param callback - A callback
+ */
+function forEach(parent, ...callbacks) {
+    callbacks.forEach((callback) => callback(parent, options.has(parent)));
+    for (let i = 0; i < parent.children.length; i++) {
+        const child = parent.children.item(i);
+        if (child) {
+            callbacks.forEach((callback) => callback(child, options.has(child)));
+        }
+    }
+}
+/**
+ * Always return tuple to provide consistent interface
+ */
+function getPluginTuple(pluginReturn) {
+    if (Array.isArray(pluginReturn))
+        return pluginReturn;
+    return [pluginReturn];
+}
+/**
+ * Determine if config is plugin
+ */
+function isPlugin(config) {
+    return typeof config === "function";
+}
+/**
+ * The element in question is remaining in the DOM.
+ * @param el - Element to flip
+ * @returns
+ */
+function remain(el) {
+    const oldCoords = coords.get(el);
+    const newCoords = getCoords(el);
+    if (!isEnabled(el))
+        return coords.set(el, newCoords);
+    let animation;
+    if (!oldCoords)
+        return;
+    const pluginOrOptions = getOptions(el);
+    if (typeof pluginOrOptions !== "function") {
+        const deltaX = oldCoords.left - newCoords.left;
+        const deltaY = oldCoords.top - newCoords.top;
+        const [widthFrom, widthTo, heightFrom, heightTo] = getTransitionSizes(el, oldCoords, newCoords);
+        const start = {
+            transform: `translate(${deltaX}px, ${deltaY}px)`,
+        };
+        const end = {
+            transform: `translate(0, 0)`,
+        };
+        if (widthFrom !== widthTo) {
+            start.width = `${widthFrom}px`;
+            end.width = `${widthTo}px`;
+        }
+        if (heightFrom !== heightTo) {
+            start.height = `${heightFrom}px`;
+            end.height = `${heightTo}px`;
+        }
+        animation = el.animate([start, end], {
+            duration: pluginOrOptions.duration,
+            easing: pluginOrOptions.easing,
+        });
+    }
+    else {
+        const [keyframes] = getPluginTuple(pluginOrOptions(el, "remain", oldCoords, newCoords));
+        animation = new Animation(keyframes);
+        animation.play();
+    }
+    animations.set(el, animation);
+    coords.set(el, newCoords);
+    animation.addEventListener("finish", updatePos.bind(null, el));
+}
+/**
+ * Adds the element with a transition.
+ * @param el - Animates the element being added.
+ */
+function add(el) {
+    if (NEW in el)
+        delete el[NEW];
+    const newCoords = getCoords(el);
+    coords.set(el, newCoords);
+    const pluginOrOptions = getOptions(el);
+    if (!isEnabled(el))
+        return;
+    let animation;
+    if (typeof pluginOrOptions !== "function") {
+        animation = el.animate([
+            { transform: "scale(.98)", opacity: 0 },
+            { transform: "scale(0.98)", opacity: 0, offset: 0.5 },
+            { transform: "scale(1)", opacity: 1 },
+        ], {
+            duration: pluginOrOptions.duration * 1.5,
+            easing: "ease-in",
+        });
+    }
+    else {
+        const [keyframes] = getPluginTuple(pluginOrOptions(el, "add", newCoords));
+        animation = new Animation(keyframes);
+        animation.play();
+    }
+    animations.set(el, animation);
+    animation.addEventListener("finish", updatePos.bind(null, el));
+}
+/**
+ * Clean up after removing an element from the dom.
+ * @param el - Element being removed
+ * @param styles - Optional styles that should be removed from the element.
+ */
+function cleanUp(el, styles) {
+    var _a;
+    el.remove();
+    coords.delete(el);
+    siblings.delete(el);
+    animations.delete(el);
+    (_a = intersections.get(el)) === null || _a === void 0 ? void 0 : _a.disconnect();
+    setTimeout(() => {
+        if (DEL in el)
+            delete el[DEL];
+        Object.defineProperty(el, NEW, { value: true, configurable: true });
+        if (styles && el instanceof HTMLElement) {
+            for (const style in styles) {
+                el.style[style] = "";
+            }
+        }
+    }, 0);
+}
+/**
+ * Animates the removal of an element.
+ * @param el - Element to remove
+ */
+function remove$1(el) {
+    var _a;
+    if (!siblings.has(el) || !coords.has(el))
+        return;
+    const [prev, next] = siblings.get(el);
+    Object.defineProperty(el, DEL, { value: true, configurable: true });
+    const finalX = window.scrollX;
+    const finalY = window.scrollY;
+    if (next && next.parentNode && next.parentNode instanceof Element) {
+        next.parentNode.insertBefore(el, next);
+    }
+    else if (prev && prev.parentNode) {
+        prev.parentNode.appendChild(el);
+    }
+    else {
+        (_a = getTarget(el)) === null || _a === void 0 ? void 0 : _a.appendChild(el);
+    }
+    if (!isEnabled(el))
+        return cleanUp(el);
+    const [top, left, width, height] = deletePosition(el);
+    const optionsOrPlugin = getOptions(el);
+    const oldCoords = coords.get(el);
+    if (finalX !== scrollX || finalY !== scrollY) {
+        adjustScroll(el, finalX, finalY, optionsOrPlugin);
+    }
+    let animation;
+    let styleReset = {
+        position: "absolute",
+        top: `${top}px`,
+        left: `${left}px`,
+        width: `${width}px`,
+        height: `${height}px`,
+        margin: "0",
+        pointerEvents: "none",
+        transformOrigin: "center",
+        zIndex: "100",
+    };
+    if (!isPlugin(optionsOrPlugin)) {
+        Object.assign(el.style, styleReset);
+        animation = el.animate([
+            {
+                transform: "scale(1)",
+                opacity: 1,
+            },
+            {
+                transform: "scale(.98)",
+                opacity: 0,
+            },
+        ], { duration: optionsOrPlugin.duration, easing: "ease-out" });
+    }
+    else {
+        const [keyframes, options] = getPluginTuple(optionsOrPlugin(el, "remove", oldCoords));
+        if ((options === null || options === void 0 ? void 0 : options.styleReset) !== false) {
+            styleReset = (options === null || options === void 0 ? void 0 : options.styleReset) || styleReset;
+            Object.assign(el.style, styleReset);
+        }
+        animation = new Animation(keyframes);
+        animation.play();
+    }
+    animations.set(el, animation);
+    animation.addEventListener("finish", cleanUp.bind(null, el, styleReset));
+}
+/**
+ * If the element being removed is at the very bottom of the page, and the
+ * the page was scrolled into a space being "made available" by the element
+ * that was removed, the page scroll will have jumped up some amount. We need
+ * to offset the jump by the amount that the page was "automatically" scrolled
+ * up. We can do this by comparing the scroll position before and after the
+ * element was removed, and then offsetting by that amount.
+ *
+ * @param el - The element being deleted
+ * @param finalX - The final X scroll position
+ * @param finalY - The final Y scroll position
+ * @param optionsOrPlugin - The options or plugin
+ * @returns
+ */
+function adjustScroll(el, finalX, finalY, optionsOrPlugin) {
+    const scrollDeltaX = scrollX - finalX;
+    const scrollDeltaY = scrollY - finalY;
+    const scrollBefore = document.documentElement.style.scrollBehavior;
+    const scrollBehavior = getComputedStyle(root).scrollBehavior;
+    if (scrollBehavior === "smooth") {
+        document.documentElement.style.scrollBehavior = "auto";
+    }
+    window.scrollTo(window.scrollX + scrollDeltaX, window.scrollY + scrollDeltaY);
+    if (!el.parentElement)
+        return;
+    const parent = el.parentElement;
+    let lastHeight = parent.clientHeight;
+    let lastWidth = parent.clientWidth;
+    const startScroll = performance.now();
+    // Here we use a manual scroll animation to keep the element using the same
+    // easing and timing as the parent’s scroll animation.
+    function smoothScroll() {
+        requestAnimationFrame(() => {
+            if (!isPlugin(optionsOrPlugin)) {
+                const deltaY = lastHeight - parent.clientHeight;
+                const deltaX = lastWidth - parent.clientWidth;
+                if (startScroll + optionsOrPlugin.duration > performance.now()) {
+                    window.scrollTo({
+                        left: window.scrollX - deltaX,
+                        top: window.scrollY - deltaY,
+                    });
+                    lastHeight = parent.clientHeight;
+                    lastWidth = parent.clientWidth;
+                    smoothScroll();
+                }
+                else {
+                    document.documentElement.style.scrollBehavior = scrollBefore;
+                }
+            }
+        });
+    }
+    smoothScroll();
+}
+/**
+ * Determines the position of the element being removed.
+ * @param el - The element being deleted
+ * @returns
+ */
+function deletePosition(el) {
+    const oldCoords = coords.get(el);
+    const [width, , height] = getTransitionSizes(el, oldCoords, getCoords(el));
+    let offsetParent = el.parentElement;
+    while (offsetParent &&
+        (getComputedStyle(offsetParent).position === "static" ||
+            offsetParent instanceof HTMLBodyElement)) {
+        offsetParent = offsetParent.parentElement;
+    }
+    if (!offsetParent)
+        offsetParent = document.body;
+    const parentStyles = getComputedStyle(offsetParent);
+    const parentCoords = coords.get(offsetParent) || getCoords(offsetParent);
+    const top = Math.round(oldCoords.top - parentCoords.top) -
+        raw(parentStyles.borderTopWidth);
+    const left = Math.round(oldCoords.left - parentCoords.left) -
+        raw(parentStyles.borderLeftWidth);
+    return [top, left, width, height];
+}
+/**
+ * A function that automatically adds animation effects to itself and its
+ * immediate children. Specifically it adds effects for adding, moving, and
+ * removing DOM elements.
+ * @param el - A parent element to add animations to.
+ * @param options - An optional object of options.
+ */
+function autoAnimate(el, config = {}) {
+    if (mutations && resize) {
+        const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const isDisabledDueToReduceMotion = mediaQuery.matches &&
+            !isPlugin(config) &&
+            !config.disrespectUserMotionPreference;
+        if (!isDisabledDueToReduceMotion) {
+            enabled.add(el);
+            if (getComputedStyle(el).position === "static") {
+                Object.assign(el.style, { position: "relative" });
+            }
+            forEach(el, updatePos, poll, (element) => resize === null || resize === void 0 ? void 0 : resize.observe(element));
+            if (isPlugin(config)) {
+                options.set(el, config);
+            }
+            else {
+                options.set(el, { duration: 250, easing: "ease-in-out", ...config });
+            }
+            mutations.observe(el, { childList: true });
+            parents.add(el);
+        }
+    }
+    return Object.freeze({
+        parent: el,
+        enable: () => {
+            enabled.add(el);
+        },
+        disable: () => {
+            enabled.delete(el);
+        },
+        isEnabled: () => enabled.has(el),
+    });
+}
+
+/**
+ * AutoAnimate hook for adding dead-simple transitions and animations to react.
+ * @param options - Auto animate options or a plugin
+ * @returns
+ */
+function useAutoAnimate(options) {
+    const [controller, setController] = React.useState();
+    const memoizedOptions = React.useMemo(() => options, []);
+    const element = React.useCallback((node) => {
+        if (node instanceof HTMLElement) {
+            setController(autoAnimate(node, memoizedOptions));
+        }
+        else {
+            setController(undefined);
+        }
+    }, [memoizedOptions]);
+    const setEnabled = React.useCallback((enabled) => {
+        if (controller) {
+            enabled ? controller.enable() : controller.disable();
+        }
+    }, [controller]);
+    return [element, setEnabled];
+}
+
+/**
+   * table-core
+   *
+   * Copyright (c) TanStack
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE.md file in the root directory of this source tree.
+   *
+   * @license MIT
+   */
+// type Person = {
+//   firstName: string
+//   lastName: string
+//   age: number
+//   visits: number
+//   status: string
+//   progress: number
+//   createdAt: Date
+//   nested: {
+//     foo: [
+//       {
+//         bar: 'bar'
+//       }
+//     ]
+//     bar: { subBar: boolean }[]
+//     baz: {
+//       foo: 'foo'
+//       bar: {
+//         baz: 'baz'
+//       }
+//     }
+//   }
+// }
+
+// const test: DeepKeys<Person> = 'nested.foo.0.bar'
+// const test2: DeepKeys<Person> = 'nested.bar'
+
+// const helper = createColumnHelper<Person>()
+
+// helper.accessor('nested.foo', {
+//   cell: info => info.getValue(),
+// })
+
+// helper.accessor('nested.foo.0.bar', {
+//   cell: info => info.getValue(),
+// })
+
+// helper.accessor('nested.bar', {
+//   cell: info => info.getValue(),
+// })
+
+function createColumnHelper() {
+  return {
+    accessor: (accessor, column) => {
+      return typeof accessor === 'function' ? {
+        ...column,
+        accessorFn: accessor
+      } : {
+        ...column,
+        accessorKey: accessor
+      };
+    },
+    display: column => column,
+    group: column => column
+  };
+}
+
+// Is this type a tuple?
+
+// If this type is a tuple, what indices are allowed?
+
+///
+
+function functionalUpdate(updater, input) {
+  return typeof updater === 'function' ? updater(input) : updater;
+}
+function makeStateUpdater(key, instance) {
+  return updater => {
+    instance.setState(old => {
+      return {
+        ...old,
+        [key]: functionalUpdate(updater, old[key])
+      };
+    });
+  };
+}
+function isFunction(d) {
+  return d instanceof Function;
+}
+function isNumberArray(d) {
+  return Array.isArray(d) && d.every(val => typeof val === 'number');
+}
+function flattenBy(arr, getChildren) {
+  const flat = [];
+  const recurse = subArr => {
+    subArr.forEach(item => {
+      flat.push(item);
+      const children = getChildren(item);
+      if (children != null && children.length) {
+        recurse(children);
+      }
+    });
+  };
+  recurse(arr);
+  return flat;
+}
+function memo(getDeps, fn, opts) {
+  let deps = [];
+  let result;
+  return depArgs => {
+    let depTime;
+    if (opts.key && opts.debug) depTime = Date.now();
+    const newDeps = getDeps(depArgs);
+    const depsChanged = newDeps.length !== deps.length || newDeps.some((dep, index) => deps[index] !== dep);
+    if (!depsChanged) {
+      return result;
+    }
+    deps = newDeps;
+    let resultTime;
+    if (opts.key && opts.debug) resultTime = Date.now();
+    result = fn(...newDeps);
+    opts == null || opts.onChange == null || opts.onChange(result);
+    if (opts.key && opts.debug) {
+      if (opts != null && opts.debug()) {
+        const depEndTime = Math.round((Date.now() - depTime) * 100) / 100;
+        const resultEndTime = Math.round((Date.now() - resultTime) * 100) / 100;
+        const resultFpsPercentage = resultEndTime / 16;
+        const pad = (str, num) => {
+          str = String(str);
+          while (str.length < num) {
+            str = ' ' + str;
+          }
+          return str;
+        };
+        console.info(`%c⏱ ${pad(resultEndTime, 5)} /${pad(depEndTime, 5)} ms`, `
+            font-size: .6rem;
+            font-weight: bold;
+            color: hsl(${Math.max(0, Math.min(120 - 120 * resultFpsPercentage, 120))}deg 100% 31%);`, opts == null ? void 0 : opts.key);
+      }
+    }
+    return result;
+  };
+}
+function getMemoOptions(tableOptions, debugLevel, key, onChange) {
+  return {
+    debug: () => {
+      var _tableOptions$debugAl;
+      return (_tableOptions$debugAl = tableOptions == null ? void 0 : tableOptions.debugAll) != null ? _tableOptions$debugAl : tableOptions[debugLevel];
+    },
+    key: process.env.NODE_ENV === 'development' && key,
+    onChange
+  };
+}
+
+function createCell(table, row, column, columnId) {
+  const getRenderValue = () => {
+    var _cell$getValue;
+    return (_cell$getValue = cell.getValue()) != null ? _cell$getValue : table.options.renderFallbackValue;
+  };
+  const cell = {
+    id: `${row.id}_${column.id}`,
+    row,
+    column,
+    getValue: () => row.getValue(columnId),
+    renderValue: getRenderValue,
+    getContext: memo(() => [table, column, row, cell], (table, column, row, cell) => ({
+      table,
+      column,
+      row,
+      cell: cell,
+      getValue: cell.getValue,
+      renderValue: cell.renderValue
+    }), getMemoOptions(table.options, 'debugCells', 'cell.getContext'))
+  };
+  table._features.forEach(feature => {
+    feature.createCell == null || feature.createCell(cell, column, row, table);
+  }, {});
+  return cell;
+}
+
+function createColumn(table, columnDef, depth, parent) {
+  var _ref, _resolvedColumnDef$id;
+  const defaultColumn = table._getDefaultColumnDef();
+  const resolvedColumnDef = {
+    ...defaultColumn,
+    ...columnDef
+  };
+  const accessorKey = resolvedColumnDef.accessorKey;
+  let id = (_ref = (_resolvedColumnDef$id = resolvedColumnDef.id) != null ? _resolvedColumnDef$id : accessorKey ? typeof String.prototype.replaceAll === 'function' ? accessorKey.replaceAll('.', '_') : accessorKey.replace(/\./g, '_') : undefined) != null ? _ref : typeof resolvedColumnDef.header === 'string' ? resolvedColumnDef.header : undefined;
+  let accessorFn;
+  if (resolvedColumnDef.accessorFn) {
+    accessorFn = resolvedColumnDef.accessorFn;
+  } else if (accessorKey) {
+    // Support deep accessor keys
+    if (accessorKey.includes('.')) {
+      accessorFn = originalRow => {
+        let result = originalRow;
+        for (const key of accessorKey.split('.')) {
+          var _result;
+          result = (_result = result) == null ? void 0 : _result[key];
+          if (process.env.NODE_ENV !== 'production' && result === undefined) {
+            console.warn(`"${key}" in deeply nested key "${accessorKey}" returned undefined.`);
+          }
+        }
+        return result;
+      };
+    } else {
+      accessorFn = originalRow => originalRow[resolvedColumnDef.accessorKey];
+    }
+  }
+  if (!id) {
+    if (process.env.NODE_ENV !== 'production') {
+      throw new Error(resolvedColumnDef.accessorFn ? `Columns require an id when using an accessorFn` : `Columns require an id when using a non-string header`);
+    }
+    throw new Error();
+  }
+  let column = {
+    id: `${String(id)}`,
+    accessorFn,
+    parent: parent,
+    depth,
+    columnDef: resolvedColumnDef,
+    columns: [],
+    getFlatColumns: memo(() => [true], () => {
+      var _column$columns;
+      return [column, ...((_column$columns = column.columns) == null ? void 0 : _column$columns.flatMap(d => d.getFlatColumns()))];
+    }, getMemoOptions(table.options, 'debugColumns', 'column.getFlatColumns')),
+    getLeafColumns: memo(() => [table._getOrderColumnsFn()], orderColumns => {
+      var _column$columns2;
+      if ((_column$columns2 = column.columns) != null && _column$columns2.length) {
+        let leafColumns = column.columns.flatMap(column => column.getLeafColumns());
+        return orderColumns(leafColumns);
+      }
+      return [column];
+    }, getMemoOptions(table.options, 'debugColumns', 'column.getLeafColumns'))
+  };
+  for (const feature of table._features) {
+    feature.createColumn == null || feature.createColumn(column, table);
+  }
+
+  // Yes, we have to convert table to unknown, because we know more than the compiler here.
+  return column;
+}
+
+const debug = 'debugHeaders';
+//
+
+function createHeader(table, column, options) {
+  var _options$id;
+  const id = (_options$id = options.id) != null ? _options$id : column.id;
+  let header = {
+    id,
+    column,
+    index: options.index,
+    isPlaceholder: !!options.isPlaceholder,
+    placeholderId: options.placeholderId,
+    depth: options.depth,
+    subHeaders: [],
+    colSpan: 0,
+    rowSpan: 0,
+    headerGroup: null,
+    getLeafHeaders: () => {
+      const leafHeaders = [];
+      const recurseHeader = h => {
+        if (h.subHeaders && h.subHeaders.length) {
+          h.subHeaders.map(recurseHeader);
+        }
+        leafHeaders.push(h);
+      };
+      recurseHeader(header);
+      return leafHeaders;
+    },
+    getContext: () => ({
+      table,
+      header: header,
+      column
+    })
+  };
+  table._features.forEach(feature => {
+    feature.createHeader == null || feature.createHeader(header, table);
+  });
+  return header;
+}
+const Headers = {
+  createTable: table => {
+    // Header Groups
+
+    table.getHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allColumns, leafColumns, left, right) => {
+      var _left$map$filter, _right$map$filter;
+      const leftColumns = (_left$map$filter = left == null ? void 0 : left.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _left$map$filter : [];
+      const rightColumns = (_right$map$filter = right == null ? void 0 : right.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _right$map$filter : [];
+      const centerColumns = leafColumns.filter(column => !(left != null && left.includes(column.id)) && !(right != null && right.includes(column.id)));
+      const headerGroups = buildHeaderGroups(allColumns, [...leftColumns, ...centerColumns, ...rightColumns], table);
+      return headerGroups;
+    }, getMemoOptions(table.options, debug, 'getHeaderGroups'));
+    table.getCenterHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allColumns, leafColumns, left, right) => {
+      leafColumns = leafColumns.filter(column => !(left != null && left.includes(column.id)) && !(right != null && right.includes(column.id)));
+      return buildHeaderGroups(allColumns, leafColumns, table, 'center');
+    }, getMemoOptions(table.options, debug, 'getCenterHeaderGroups'));
+    table.getLeftHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.left], (allColumns, leafColumns, left) => {
+      var _left$map$filter2;
+      const orderedLeafColumns = (_left$map$filter2 = left == null ? void 0 : left.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _left$map$filter2 : [];
+      return buildHeaderGroups(allColumns, orderedLeafColumns, table, 'left');
+    }, getMemoOptions(table.options, debug, 'getLeftHeaderGroups'));
+    table.getRightHeaderGroups = memo(() => [table.getAllColumns(), table.getVisibleLeafColumns(), table.getState().columnPinning.right], (allColumns, leafColumns, right) => {
+      var _right$map$filter2;
+      const orderedLeafColumns = (_right$map$filter2 = right == null ? void 0 : right.map(columnId => leafColumns.find(d => d.id === columnId)).filter(Boolean)) != null ? _right$map$filter2 : [];
+      return buildHeaderGroups(allColumns, orderedLeafColumns, table, 'right');
+    }, getMemoOptions(table.options, debug, 'getRightHeaderGroups'));
+
+    // Footer Groups
+
+    table.getFooterGroups = memo(() => [table.getHeaderGroups()], headerGroups => {
+      return [...headerGroups].reverse();
+    }, getMemoOptions(table.options, debug, 'getFooterGroups'));
+    table.getLeftFooterGroups = memo(() => [table.getLeftHeaderGroups()], headerGroups => {
+      return [...headerGroups].reverse();
+    }, getMemoOptions(table.options, debug, 'getLeftFooterGroups'));
+    table.getCenterFooterGroups = memo(() => [table.getCenterHeaderGroups()], headerGroups => {
+      return [...headerGroups].reverse();
+    }, getMemoOptions(table.options, debug, 'getCenterFooterGroups'));
+    table.getRightFooterGroups = memo(() => [table.getRightHeaderGroups()], headerGroups => {
+      return [...headerGroups].reverse();
+    }, getMemoOptions(table.options, debug, 'getRightFooterGroups'));
+
+    // Flat Headers
+
+    table.getFlatHeaders = memo(() => [table.getHeaderGroups()], headerGroups => {
+      return headerGroups.map(headerGroup => {
+        return headerGroup.headers;
+      }).flat();
+    }, getMemoOptions(table.options, debug, 'getFlatHeaders'));
+    table.getLeftFlatHeaders = memo(() => [table.getLeftHeaderGroups()], left => {
+      return left.map(headerGroup => {
+        return headerGroup.headers;
+      }).flat();
+    }, getMemoOptions(table.options, debug, 'getLeftFlatHeaders'));
+    table.getCenterFlatHeaders = memo(() => [table.getCenterHeaderGroups()], left => {
+      return left.map(headerGroup => {
+        return headerGroup.headers;
+      }).flat();
+    }, getMemoOptions(table.options, debug, 'getCenterFlatHeaders'));
+    table.getRightFlatHeaders = memo(() => [table.getRightHeaderGroups()], left => {
+      return left.map(headerGroup => {
+        return headerGroup.headers;
+      }).flat();
+    }, getMemoOptions(table.options, debug, 'getRightFlatHeaders'));
+
+    // Leaf Headers
+
+    table.getCenterLeafHeaders = memo(() => [table.getCenterFlatHeaders()], flatHeaders => {
+      return flatHeaders.filter(header => {
+        var _header$subHeaders;
+        return !((_header$subHeaders = header.subHeaders) != null && _header$subHeaders.length);
+      });
+    }, getMemoOptions(table.options, debug, 'getCenterLeafHeaders'));
+    table.getLeftLeafHeaders = memo(() => [table.getLeftFlatHeaders()], flatHeaders => {
+      return flatHeaders.filter(header => {
+        var _header$subHeaders2;
+        return !((_header$subHeaders2 = header.subHeaders) != null && _header$subHeaders2.length);
+      });
+    }, getMemoOptions(table.options, debug, 'getLeftLeafHeaders'));
+    table.getRightLeafHeaders = memo(() => [table.getRightFlatHeaders()], flatHeaders => {
+      return flatHeaders.filter(header => {
+        var _header$subHeaders3;
+        return !((_header$subHeaders3 = header.subHeaders) != null && _header$subHeaders3.length);
+      });
+    }, getMemoOptions(table.options, debug, 'getRightLeafHeaders'));
+    table.getLeafHeaders = memo(() => [table.getLeftHeaderGroups(), table.getCenterHeaderGroups(), table.getRightHeaderGroups()], (left, center, right) => {
+      var _left$0$headers, _left$, _center$0$headers, _center$, _right$0$headers, _right$;
+      return [...((_left$0$headers = (_left$ = left[0]) == null ? void 0 : _left$.headers) != null ? _left$0$headers : []), ...((_center$0$headers = (_center$ = center[0]) == null ? void 0 : _center$.headers) != null ? _center$0$headers : []), ...((_right$0$headers = (_right$ = right[0]) == null ? void 0 : _right$.headers) != null ? _right$0$headers : [])].map(header => {
+        return header.getLeafHeaders();
+      }).flat();
+    }, getMemoOptions(table.options, debug, 'getLeafHeaders'));
+  }
+};
+function buildHeaderGroups(allColumns, columnsToGroup, table, headerFamily) {
+  var _headerGroups$0$heade, _headerGroups$;
+  // Find the max depth of the columns:
+  // build the leaf column row
+  // build each buffer row going up
+  //    placeholder for non-existent level
+  //    real column for existing level
+
+  let maxDepth = 0;
+  const findMaxDepth = function (columns, depth) {
+    if (depth === void 0) {
+      depth = 1;
+    }
+    maxDepth = Math.max(maxDepth, depth);
+    columns.filter(column => column.getIsVisible()).forEach(column => {
+      var _column$columns;
+      if ((_column$columns = column.columns) != null && _column$columns.length) {
+        findMaxDepth(column.columns, depth + 1);
+      }
+    }, 0);
+  };
+  findMaxDepth(allColumns);
+  let headerGroups = [];
+  const createHeaderGroup = (headersToGroup, depth) => {
+    // The header group we are creating
+    const headerGroup = {
+      depth,
+      id: [headerFamily, `${depth}`].filter(Boolean).join('_'),
+      headers: []
+    };
+
+    // The parent columns we're going to scan next
+    const pendingParentHeaders = [];
+
+    // Scan each column for parents
+    headersToGroup.forEach(headerToGroup => {
+      // What is the latest (last) parent column?
+
+      const latestPendingParentHeader = [...pendingParentHeaders].reverse()[0];
+      const isLeafHeader = headerToGroup.column.depth === headerGroup.depth;
+      let column;
+      let isPlaceholder = false;
+      if (isLeafHeader && headerToGroup.column.parent) {
+        // The parent header is new
+        column = headerToGroup.column.parent;
+      } else {
+        // The parent header is repeated
+        column = headerToGroup.column;
+        isPlaceholder = true;
+      }
+      if (latestPendingParentHeader && (latestPendingParentHeader == null ? void 0 : latestPendingParentHeader.column) === column) {
+        // This column is repeated. Add it as a sub header to the next batch
+        latestPendingParentHeader.subHeaders.push(headerToGroup);
+      } else {
+        // This is a new header. Let's create it
+        const header = createHeader(table, column, {
+          id: [headerFamily, depth, column.id, headerToGroup == null ? void 0 : headerToGroup.id].filter(Boolean).join('_'),
+          isPlaceholder,
+          placeholderId: isPlaceholder ? `${pendingParentHeaders.filter(d => d.column === column).length}` : undefined,
+          depth,
+          index: pendingParentHeaders.length
+        });
+
+        // Add the headerToGroup as a subHeader of the new header
+        header.subHeaders.push(headerToGroup);
+        // Add the new header to the pendingParentHeaders to get grouped
+        // in the next batch
+        pendingParentHeaders.push(header);
+      }
+      headerGroup.headers.push(headerToGroup);
+      headerToGroup.headerGroup = headerGroup;
+    });
+    headerGroups.push(headerGroup);
+    if (depth > 0) {
+      createHeaderGroup(pendingParentHeaders, depth - 1);
+    }
+  };
+  const bottomHeaders = columnsToGroup.map((column, index) => createHeader(table, column, {
+    depth: maxDepth,
+    index
+  }));
+  createHeaderGroup(bottomHeaders, maxDepth - 1);
+  headerGroups.reverse();
+
+  // headerGroups = headerGroups.filter(headerGroup => {
+  //   return !headerGroup.headers.every(header => header.isPlaceholder)
+  // })
+
+  const recurseHeadersForSpans = headers => {
+    const filteredHeaders = headers.filter(header => header.column.getIsVisible());
+    return filteredHeaders.map(header => {
+      let colSpan = 0;
+      let rowSpan = 0;
+      let childRowSpans = [0];
+      if (header.subHeaders && header.subHeaders.length) {
+        childRowSpans = [];
+        recurseHeadersForSpans(header.subHeaders).forEach(_ref => {
+          let {
+            colSpan: childColSpan,
+            rowSpan: childRowSpan
+          } = _ref;
+          colSpan += childColSpan;
+          childRowSpans.push(childRowSpan);
+        });
+      } else {
+        colSpan = 1;
+      }
+      const minChildRowSpan = Math.min(...childRowSpans);
+      rowSpan = rowSpan + minChildRowSpan;
+      header.colSpan = colSpan;
+      header.rowSpan = rowSpan;
+      return {
+        colSpan,
+        rowSpan
+      };
+    });
+  };
+  recurseHeadersForSpans((_headerGroups$0$heade = (_headerGroups$ = headerGroups[0]) == null ? void 0 : _headerGroups$.headers) != null ? _headerGroups$0$heade : []);
+  return headerGroups;
+}
+
+const createRow = (table, id, original, rowIndex, depth, subRows, parentId) => {
+  let row = {
+    id,
+    index: rowIndex,
+    original,
+    depth,
+    parentId,
+    _valuesCache: {},
+    _uniqueValuesCache: {},
+    getValue: columnId => {
+      if (row._valuesCache.hasOwnProperty(columnId)) {
+        return row._valuesCache[columnId];
+      }
+      const column = table.getColumn(columnId);
+      if (!(column != null && column.accessorFn)) {
+        return undefined;
+      }
+      row._valuesCache[columnId] = column.accessorFn(row.original, rowIndex);
+      return row._valuesCache[columnId];
+    },
+    getUniqueValues: columnId => {
+      if (row._uniqueValuesCache.hasOwnProperty(columnId)) {
+        return row._uniqueValuesCache[columnId];
+      }
+      const column = table.getColumn(columnId);
+      if (!(column != null && column.accessorFn)) {
+        return undefined;
+      }
+      if (!column.columnDef.getUniqueValues) {
+        row._uniqueValuesCache[columnId] = [row.getValue(columnId)];
+        return row._uniqueValuesCache[columnId];
+      }
+      row._uniqueValuesCache[columnId] = column.columnDef.getUniqueValues(row.original, rowIndex);
+      return row._uniqueValuesCache[columnId];
+    },
+    renderValue: columnId => {
+      var _row$getValue;
+      return (_row$getValue = row.getValue(columnId)) != null ? _row$getValue : table.options.renderFallbackValue;
+    },
+    subRows: [],
+    getLeafRows: () => flattenBy(row.subRows, d => d.subRows),
+    getParentRow: () => row.parentId ? table.getRow(row.parentId, true) : undefined,
+    getParentRows: () => {
+      let parentRows = [];
+      let currentRow = row;
+      while (true) {
+        const parentRow = currentRow.getParentRow();
+        if (!parentRow) break;
+        parentRows.push(parentRow);
+        currentRow = parentRow;
+      }
+      return parentRows.reverse();
+    },
+    getAllCells: memo(() => [table.getAllLeafColumns()], leafColumns => {
+      return leafColumns.map(column => {
+        return createCell(table, row, column, column.id);
+      });
+    }, getMemoOptions(table.options, 'debugRows', 'getAllCells')),
+    _getAllCellsByColumnId: memo(() => [row.getAllCells()], allCells => {
+      return allCells.reduce((acc, cell) => {
+        acc[cell.column.id] = cell;
+        return acc;
+      }, {});
+    }, getMemoOptions(table.options, 'debugRows', 'getAllCellsByColumnId'))
+  };
+  for (let i = 0; i < table._features.length; i++) {
+    const feature = table._features[i];
+    feature == null || feature.createRow == null || feature.createRow(row, table);
+  }
+  return row;
+};
+
+//
+
+const ColumnFaceting = {
+  createColumn: (column, table) => {
+    column._getFacetedRowModel = table.options.getFacetedRowModel && table.options.getFacetedRowModel(table, column.id);
+    column.getFacetedRowModel = () => {
+      if (!column._getFacetedRowModel) {
+        return table.getPreFilteredRowModel();
+      }
+      return column._getFacetedRowModel();
+    };
+    column._getFacetedUniqueValues = table.options.getFacetedUniqueValues && table.options.getFacetedUniqueValues(table, column.id);
+    column.getFacetedUniqueValues = () => {
+      if (!column._getFacetedUniqueValues) {
+        return new Map();
+      }
+      return column._getFacetedUniqueValues();
+    };
+    column._getFacetedMinMaxValues = table.options.getFacetedMinMaxValues && table.options.getFacetedMinMaxValues(table, column.id);
+    column.getFacetedMinMaxValues = () => {
+      if (!column._getFacetedMinMaxValues) {
+        return undefined;
+      }
+      return column._getFacetedMinMaxValues();
+    };
+  }
+};
+
+const includesString = (row, columnId, filterValue) => {
+  var _filterValue$toString, _row$getValue;
+  const search = filterValue == null || (_filterValue$toString = filterValue.toString()) == null ? void 0 : _filterValue$toString.toLowerCase();
+  return Boolean((_row$getValue = row.getValue(columnId)) == null || (_row$getValue = _row$getValue.toString()) == null || (_row$getValue = _row$getValue.toLowerCase()) == null ? void 0 : _row$getValue.includes(search));
+};
+includesString.autoRemove = val => testFalsey(val);
+const includesStringSensitive = (row, columnId, filterValue) => {
+  var _row$getValue2;
+  return Boolean((_row$getValue2 = row.getValue(columnId)) == null || (_row$getValue2 = _row$getValue2.toString()) == null ? void 0 : _row$getValue2.includes(filterValue));
+};
+includesStringSensitive.autoRemove = val => testFalsey(val);
+const equalsString = (row, columnId, filterValue) => {
+  var _row$getValue3;
+  return ((_row$getValue3 = row.getValue(columnId)) == null || (_row$getValue3 = _row$getValue3.toString()) == null ? void 0 : _row$getValue3.toLowerCase()) === (filterValue == null ? void 0 : filterValue.toLowerCase());
+};
+equalsString.autoRemove = val => testFalsey(val);
+const arrIncludes = (row, columnId, filterValue) => {
+  var _row$getValue4;
+  return (_row$getValue4 = row.getValue(columnId)) == null ? void 0 : _row$getValue4.includes(filterValue);
+};
+arrIncludes.autoRemove = val => testFalsey(val) || !(val != null && val.length);
+const arrIncludesAll = (row, columnId, filterValue) => {
+  return !filterValue.some(val => {
+    var _row$getValue5;
+    return !((_row$getValue5 = row.getValue(columnId)) != null && _row$getValue5.includes(val));
+  });
+};
+arrIncludesAll.autoRemove = val => testFalsey(val) || !(val != null && val.length);
+const arrIncludesSome = (row, columnId, filterValue) => {
+  return filterValue.some(val => {
+    var _row$getValue6;
+    return (_row$getValue6 = row.getValue(columnId)) == null ? void 0 : _row$getValue6.includes(val);
+  });
+};
+arrIncludesSome.autoRemove = val => testFalsey(val) || !(val != null && val.length);
+const equals = (row, columnId, filterValue) => {
+  return row.getValue(columnId) === filterValue;
+};
+equals.autoRemove = val => testFalsey(val);
+const weakEquals = (row, columnId, filterValue) => {
+  return row.getValue(columnId) == filterValue;
+};
+weakEquals.autoRemove = val => testFalsey(val);
+const inNumberRange = (row, columnId, filterValue) => {
+  let [min, max] = filterValue;
+  const rowValue = row.getValue(columnId);
+  return rowValue >= min && rowValue <= max;
+};
+inNumberRange.resolveFilterValue = val => {
+  let [unsafeMin, unsafeMax] = val;
+  let parsedMin = typeof unsafeMin !== 'number' ? parseFloat(unsafeMin) : unsafeMin;
+  let parsedMax = typeof unsafeMax !== 'number' ? parseFloat(unsafeMax) : unsafeMax;
+  let min = unsafeMin === null || Number.isNaN(parsedMin) ? -Infinity : parsedMin;
+  let max = unsafeMax === null || Number.isNaN(parsedMax) ? Infinity : parsedMax;
+  if (min > max) {
+    const temp = min;
+    min = max;
+    max = temp;
+  }
+  return [min, max];
+};
+inNumberRange.autoRemove = val => testFalsey(val) || testFalsey(val[0]) && testFalsey(val[1]);
+
+// Export
+
+const filterFns = {
+  includesString,
+  includesStringSensitive,
+  equalsString,
+  arrIncludes,
+  arrIncludesAll,
+  arrIncludesSome,
+  equals,
+  weakEquals,
+  inNumberRange
+};
+// Utils
+
+function testFalsey(val) {
+  return val === undefined || val === null || val === '';
+}
+
+//
+
+const ColumnFiltering = {
+  getDefaultColumnDef: () => {
+    return {
+      filterFn: 'auto'
+    };
+  },
+  getInitialState: state => {
+    return {
+      columnFilters: [],
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onColumnFiltersChange: makeStateUpdater('columnFilters', table),
+      filterFromLeafRows: false,
+      maxLeafRowFilterDepth: 100
+    };
+  },
+  createColumn: (column, table) => {
+    column.getAutoFilterFn = () => {
+      const firstRow = table.getCoreRowModel().flatRows[0];
+      const value = firstRow == null ? void 0 : firstRow.getValue(column.id);
+      if (typeof value === 'string') {
+        return filterFns.includesString;
+      }
+      if (typeof value === 'number') {
+        return filterFns.inNumberRange;
+      }
+      if (typeof value === 'boolean') {
+        return filterFns.equals;
+      }
+      if (value !== null && typeof value === 'object') {
+        return filterFns.equals;
+      }
+      if (Array.isArray(value)) {
+        return filterFns.arrIncludes;
+      }
+      return filterFns.weakEquals;
+    };
+    column.getFilterFn = () => {
+      var _table$options$filter, _table$options$filter2;
+      return isFunction(column.columnDef.filterFn) ? column.columnDef.filterFn : column.columnDef.filterFn === 'auto' ? column.getAutoFilterFn() : // @ts-ignore
+      (_table$options$filter = (_table$options$filter2 = table.options.filterFns) == null ? void 0 : _table$options$filter2[column.columnDef.filterFn]) != null ? _table$options$filter : filterFns[column.columnDef.filterFn];
+    };
+    column.getCanFilter = () => {
+      var _column$columnDef$ena, _table$options$enable, _table$options$enable2;
+      return ((_column$columnDef$ena = column.columnDef.enableColumnFilter) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableColumnFilters) != null ? _table$options$enable : true) && ((_table$options$enable2 = table.options.enableFilters) != null ? _table$options$enable2 : true) && !!column.accessorFn;
+    };
+    column.getIsFiltered = () => column.getFilterIndex() > -1;
+    column.getFilterValue = () => {
+      var _table$getState$colum;
+      return (_table$getState$colum = table.getState().columnFilters) == null || (_table$getState$colum = _table$getState$colum.find(d => d.id === column.id)) == null ? void 0 : _table$getState$colum.value;
+    };
+    column.getFilterIndex = () => {
+      var _table$getState$colum2, _table$getState$colum3;
+      return (_table$getState$colum2 = (_table$getState$colum3 = table.getState().columnFilters) == null ? void 0 : _table$getState$colum3.findIndex(d => d.id === column.id)) != null ? _table$getState$colum2 : -1;
+    };
+    column.setFilterValue = value => {
+      table.setColumnFilters(old => {
+        const filterFn = column.getFilterFn();
+        const previousFilter = old == null ? void 0 : old.find(d => d.id === column.id);
+        const newFilter = functionalUpdate(value, previousFilter ? previousFilter.value : undefined);
+
+        //
+        if (shouldAutoRemoveFilter(filterFn, newFilter, column)) {
+          var _old$filter;
+          return (_old$filter = old == null ? void 0 : old.filter(d => d.id !== column.id)) != null ? _old$filter : [];
+        }
+        const newFilterObj = {
+          id: column.id,
+          value: newFilter
+        };
+        if (previousFilter) {
+          var _old$map;
+          return (_old$map = old == null ? void 0 : old.map(d => {
+            if (d.id === column.id) {
+              return newFilterObj;
+            }
+            return d;
+          })) != null ? _old$map : [];
+        }
+        if (old != null && old.length) {
+          return [...old, newFilterObj];
+        }
+        return [newFilterObj];
+      });
+    };
+  },
+  createRow: (row, _table) => {
+    row.columnFilters = {};
+    row.columnFiltersMeta = {};
+  },
+  createTable: table => {
+    table.setColumnFilters = updater => {
+      const leafColumns = table.getAllLeafColumns();
+      const updateFn = old => {
+        var _functionalUpdate;
+        return (_functionalUpdate = functionalUpdate(updater, old)) == null ? void 0 : _functionalUpdate.filter(filter => {
+          const column = leafColumns.find(d => d.id === filter.id);
+          if (column) {
+            const filterFn = column.getFilterFn();
+            if (shouldAutoRemoveFilter(filterFn, filter.value, column)) {
+              return false;
+            }
+          }
+          return true;
+        });
+      };
+      table.options.onColumnFiltersChange == null || table.options.onColumnFiltersChange(updateFn);
+    };
+    table.resetColumnFilters = defaultState => {
+      var _table$initialState$c, _table$initialState;
+      table.setColumnFilters(defaultState ? [] : (_table$initialState$c = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.columnFilters) != null ? _table$initialState$c : []);
+    };
+    table.getPreFilteredRowModel = () => table.getCoreRowModel();
+    table.getFilteredRowModel = () => {
+      if (!table._getFilteredRowModel && table.options.getFilteredRowModel) {
+        table._getFilteredRowModel = table.options.getFilteredRowModel(table);
+      }
+      if (table.options.manualFiltering || !table._getFilteredRowModel) {
+        return table.getPreFilteredRowModel();
+      }
+      return table._getFilteredRowModel();
+    };
+  }
+};
+function shouldAutoRemoveFilter(filterFn, value, column) {
+  return (filterFn && filterFn.autoRemove ? filterFn.autoRemove(value, column) : false) || typeof value === 'undefined' || typeof value === 'string' && !value;
+}
+
+const sum = (columnId, _leafRows, childRows) => {
+  // It's faster to just add the aggregations together instead of
+  // process leaf nodes individually
+  return childRows.reduce((sum, next) => {
+    const nextValue = next.getValue(columnId);
+    return sum + (typeof nextValue === 'number' ? nextValue : 0);
+  }, 0);
+};
+const min = (columnId, _leafRows, childRows) => {
+  let min;
+  childRows.forEach(row => {
+    const value = row.getValue(columnId);
+    if (value != null && (min > value || min === undefined && value >= value)) {
+      min = value;
+    }
+  });
+  return min;
+};
+const max = (columnId, _leafRows, childRows) => {
+  let max;
+  childRows.forEach(row => {
+    const value = row.getValue(columnId);
+    if (value != null && (max < value || max === undefined && value >= value)) {
+      max = value;
+    }
+  });
+  return max;
+};
+const extent = (columnId, _leafRows, childRows) => {
+  let min;
+  let max;
+  childRows.forEach(row => {
+    const value = row.getValue(columnId);
+    if (value != null) {
+      if (min === undefined) {
+        if (value >= value) min = max = value;
+      } else {
+        if (min > value) min = value;
+        if (max < value) max = value;
+      }
+    }
+  });
+  return [min, max];
+};
+const mean = (columnId, leafRows) => {
+  let count = 0;
+  let sum = 0;
+  leafRows.forEach(row => {
+    let value = row.getValue(columnId);
+    if (value != null && (value = +value) >= value) {
+      ++count, sum += value;
+    }
+  });
+  if (count) return sum / count;
+  return;
+};
+const median = (columnId, leafRows) => {
+  if (!leafRows.length) {
+    return;
+  }
+  const values = leafRows.map(row => row.getValue(columnId));
+  if (!isNumberArray(values)) {
+    return;
+  }
+  if (values.length === 1) {
+    return values[0];
+  }
+  const mid = Math.floor(values.length / 2);
+  const nums = values.sort((a, b) => a - b);
+  return values.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+};
+const unique = (columnId, leafRows) => {
+  return Array.from(new Set(leafRows.map(d => d.getValue(columnId))).values());
+};
+const uniqueCount = (columnId, leafRows) => {
+  return new Set(leafRows.map(d => d.getValue(columnId))).size;
+};
+const count = (_columnId, leafRows) => {
+  return leafRows.length;
+};
+const aggregationFns = {
+  sum,
+  min,
+  max,
+  extent,
+  mean,
+  median,
+  unique,
+  uniqueCount,
+  count
+};
+
+//
+
+const ColumnGrouping = {
+  getDefaultColumnDef: () => {
+    return {
+      aggregatedCell: props => {
+        var _toString, _props$getValue;
+        return (_toString = (_props$getValue = props.getValue()) == null || _props$getValue.toString == null ? void 0 : _props$getValue.toString()) != null ? _toString : null;
+      },
+      aggregationFn: 'auto'
+    };
+  },
+  getInitialState: state => {
+    return {
+      grouping: [],
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onGroupingChange: makeStateUpdater('grouping', table),
+      groupedColumnMode: 'reorder'
+    };
+  },
+  createColumn: (column, table) => {
+    column.toggleGrouping = () => {
+      table.setGrouping(old => {
+        // Find any existing grouping for this column
+        if (old != null && old.includes(column.id)) {
+          return old.filter(d => d !== column.id);
+        }
+        return [...(old != null ? old : []), column.id];
+      });
+    };
+    column.getCanGroup = () => {
+      var _column$columnDef$ena, _table$options$enable;
+      return ((_column$columnDef$ena = column.columnDef.enableGrouping) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableGrouping) != null ? _table$options$enable : true) && (!!column.accessorFn || !!column.columnDef.getGroupingValue);
+    };
+    column.getIsGrouped = () => {
+      var _table$getState$group;
+      return (_table$getState$group = table.getState().grouping) == null ? void 0 : _table$getState$group.includes(column.id);
+    };
+    column.getGroupedIndex = () => {
+      var _table$getState$group2;
+      return (_table$getState$group2 = table.getState().grouping) == null ? void 0 : _table$getState$group2.indexOf(column.id);
+    };
+    column.getToggleGroupingHandler = () => {
+      const canGroup = column.getCanGroup();
+      return () => {
+        if (!canGroup) return;
+        column.toggleGrouping();
+      };
+    };
+    column.getAutoAggregationFn = () => {
+      const firstRow = table.getCoreRowModel().flatRows[0];
+      const value = firstRow == null ? void 0 : firstRow.getValue(column.id);
+      if (typeof value === 'number') {
+        return aggregationFns.sum;
+      }
+      if (Object.prototype.toString.call(value) === '[object Date]') {
+        return aggregationFns.extent;
+      }
+    };
+    column.getAggregationFn = () => {
+      var _table$options$aggreg, _table$options$aggreg2;
+      if (!column) {
+        throw new Error();
+      }
+      return isFunction(column.columnDef.aggregationFn) ? column.columnDef.aggregationFn : column.columnDef.aggregationFn === 'auto' ? column.getAutoAggregationFn() : (_table$options$aggreg = (_table$options$aggreg2 = table.options.aggregationFns) == null ? void 0 : _table$options$aggreg2[column.columnDef.aggregationFn]) != null ? _table$options$aggreg : aggregationFns[column.columnDef.aggregationFn];
+    };
+  },
+  createTable: table => {
+    table.setGrouping = updater => table.options.onGroupingChange == null ? void 0 : table.options.onGroupingChange(updater);
+    table.resetGrouping = defaultState => {
+      var _table$initialState$g, _table$initialState;
+      table.setGrouping(defaultState ? [] : (_table$initialState$g = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.grouping) != null ? _table$initialState$g : []);
+    };
+    table.getPreGroupedRowModel = () => table.getFilteredRowModel();
+    table.getGroupedRowModel = () => {
+      if (!table._getGroupedRowModel && table.options.getGroupedRowModel) {
+        table._getGroupedRowModel = table.options.getGroupedRowModel(table);
+      }
+      if (table.options.manualGrouping || !table._getGroupedRowModel) {
+        return table.getPreGroupedRowModel();
+      }
+      return table._getGroupedRowModel();
+    };
+  },
+  createRow: (row, table) => {
+    row.getIsGrouped = () => !!row.groupingColumnId;
+    row.getGroupingValue = columnId => {
+      if (row._groupingValuesCache.hasOwnProperty(columnId)) {
+        return row._groupingValuesCache[columnId];
+      }
+      const column = table.getColumn(columnId);
+      if (!(column != null && column.columnDef.getGroupingValue)) {
+        return row.getValue(columnId);
+      }
+      row._groupingValuesCache[columnId] = column.columnDef.getGroupingValue(row.original);
+      return row._groupingValuesCache[columnId];
+    };
+    row._groupingValuesCache = {};
+  },
+  createCell: (cell, column, row, table) => {
+    cell.getIsGrouped = () => column.getIsGrouped() && column.id === row.groupingColumnId;
+    cell.getIsPlaceholder = () => !cell.getIsGrouped() && column.getIsGrouped();
+    cell.getIsAggregated = () => {
+      var _row$subRows;
+      return !cell.getIsGrouped() && !cell.getIsPlaceholder() && !!((_row$subRows = row.subRows) != null && _row$subRows.length);
+    };
+  }
+};
+function orderColumns(leafColumns, grouping, groupedColumnMode) {
+  if (!(grouping != null && grouping.length) || !groupedColumnMode) {
+    return leafColumns;
+  }
+  const nonGroupingColumns = leafColumns.filter(col => !grouping.includes(col.id));
+  if (groupedColumnMode === 'remove') {
+    return nonGroupingColumns;
+  }
+  const groupingColumns = grouping.map(g => leafColumns.find(col => col.id === g)).filter(Boolean);
+  return [...groupingColumns, ...nonGroupingColumns];
+}
+
+//
+
+const ColumnOrdering = {
+  getInitialState: state => {
+    return {
+      columnOrder: [],
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onColumnOrderChange: makeStateUpdater('columnOrder', table)
+    };
+  },
+  createColumn: (column, table) => {
+    column.getIndex = memo(position => [_getVisibleLeafColumns(table, position)], columns => columns.findIndex(d => d.id === column.id), getMemoOptions(table.options, 'debugColumns', 'getIndex'));
+    column.getIsFirstColumn = position => {
+      var _columns$;
+      const columns = _getVisibleLeafColumns(table, position);
+      return ((_columns$ = columns[0]) == null ? void 0 : _columns$.id) === column.id;
+    };
+    column.getIsLastColumn = position => {
+      var _columns;
+      const columns = _getVisibleLeafColumns(table, position);
+      return ((_columns = columns[columns.length - 1]) == null ? void 0 : _columns.id) === column.id;
+    };
+  },
+  createTable: table => {
+    table.setColumnOrder = updater => table.options.onColumnOrderChange == null ? void 0 : table.options.onColumnOrderChange(updater);
+    table.resetColumnOrder = defaultState => {
+      var _table$initialState$c;
+      table.setColumnOrder(defaultState ? [] : (_table$initialState$c = table.initialState.columnOrder) != null ? _table$initialState$c : []);
+    };
+    table._getOrderColumnsFn = memo(() => [table.getState().columnOrder, table.getState().grouping, table.options.groupedColumnMode], (columnOrder, grouping, groupedColumnMode) => columns => {
+      // Sort grouped columns to the start of the column list
+      // before the headers are built
+      let orderedColumns = [];
+
+      // If there is no order, return the normal columns
+      if (!(columnOrder != null && columnOrder.length)) {
+        orderedColumns = columns;
+      } else {
+        const columnOrderCopy = [...columnOrder];
+
+        // If there is an order, make a copy of the columns
+        const columnsCopy = [...columns];
+
+        // And make a new ordered array of the columns
+
+        // Loop over the columns and place them in order into the new array
+        while (columnsCopy.length && columnOrderCopy.length) {
+          const targetColumnId = columnOrderCopy.shift();
+          const foundIndex = columnsCopy.findIndex(d => d.id === targetColumnId);
+          if (foundIndex > -1) {
+            orderedColumns.push(columnsCopy.splice(foundIndex, 1)[0]);
+          }
+        }
+
+        // If there are any columns left, add them to the end
+        orderedColumns = [...orderedColumns, ...columnsCopy];
+      }
+      return orderColumns(orderedColumns, grouping, groupedColumnMode);
+    }, getMemoOptions(table.options, 'debugTable', '_getOrderColumnsFn'));
+  }
+};
+
+//
+
+const getDefaultColumnPinningState = () => ({
+  left: [],
+  right: []
+});
+const ColumnPinning = {
+  getInitialState: state => {
+    return {
+      columnPinning: getDefaultColumnPinningState(),
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onColumnPinningChange: makeStateUpdater('columnPinning', table)
+    };
+  },
+  createColumn: (column, table) => {
+    column.pin = position => {
+      const columnIds = column.getLeafColumns().map(d => d.id).filter(Boolean);
+      table.setColumnPinning(old => {
+        var _old$left3, _old$right3;
+        if (position === 'right') {
+          var _old$left, _old$right;
+          return {
+            left: ((_old$left = old == null ? void 0 : old.left) != null ? _old$left : []).filter(d => !(columnIds != null && columnIds.includes(d))),
+            right: [...((_old$right = old == null ? void 0 : old.right) != null ? _old$right : []).filter(d => !(columnIds != null && columnIds.includes(d))), ...columnIds]
+          };
+        }
+        if (position === 'left') {
+          var _old$left2, _old$right2;
+          return {
+            left: [...((_old$left2 = old == null ? void 0 : old.left) != null ? _old$left2 : []).filter(d => !(columnIds != null && columnIds.includes(d))), ...columnIds],
+            right: ((_old$right2 = old == null ? void 0 : old.right) != null ? _old$right2 : []).filter(d => !(columnIds != null && columnIds.includes(d)))
+          };
+        }
+        return {
+          left: ((_old$left3 = old == null ? void 0 : old.left) != null ? _old$left3 : []).filter(d => !(columnIds != null && columnIds.includes(d))),
+          right: ((_old$right3 = old == null ? void 0 : old.right) != null ? _old$right3 : []).filter(d => !(columnIds != null && columnIds.includes(d)))
+        };
+      });
+    };
+    column.getCanPin = () => {
+      const leafColumns = column.getLeafColumns();
+      return leafColumns.some(d => {
+        var _d$columnDef$enablePi, _ref, _table$options$enable;
+        return ((_d$columnDef$enablePi = d.columnDef.enablePinning) != null ? _d$columnDef$enablePi : true) && ((_ref = (_table$options$enable = table.options.enableColumnPinning) != null ? _table$options$enable : table.options.enablePinning) != null ? _ref : true);
+      });
+    };
+    column.getIsPinned = () => {
+      const leafColumnIds = column.getLeafColumns().map(d => d.id);
+      const {
+        left,
+        right
+      } = table.getState().columnPinning;
+      const isLeft = leafColumnIds.some(d => left == null ? void 0 : left.includes(d));
+      const isRight = leafColumnIds.some(d => right == null ? void 0 : right.includes(d));
+      return isLeft ? 'left' : isRight ? 'right' : false;
+    };
+    column.getPinnedIndex = () => {
+      var _table$getState$colum, _table$getState$colum2;
+      const position = column.getIsPinned();
+      return position ? (_table$getState$colum = (_table$getState$colum2 = table.getState().columnPinning) == null || (_table$getState$colum2 = _table$getState$colum2[position]) == null ? void 0 : _table$getState$colum2.indexOf(column.id)) != null ? _table$getState$colum : -1 : 0;
+    };
+  },
+  createRow: (row, table) => {
+    row.getCenterVisibleCells = memo(() => [row._getAllVisibleCells(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allCells, left, right) => {
+      const leftAndRight = [...(left != null ? left : []), ...(right != null ? right : [])];
+      return allCells.filter(d => !leftAndRight.includes(d.column.id));
+    }, getMemoOptions(table.options, 'debugRows', 'getCenterVisibleCells'));
+    row.getLeftVisibleCells = memo(() => [row._getAllVisibleCells(), table.getState().columnPinning.left], (allCells, left) => {
+      const cells = (left != null ? left : []).map(columnId => allCells.find(cell => cell.column.id === columnId)).filter(Boolean).map(d => ({
+        ...d,
+        position: 'left'
+      }));
+      return cells;
+    }, getMemoOptions(table.options, 'debugRows', 'getLeftVisibleCells'));
+    row.getRightVisibleCells = memo(() => [row._getAllVisibleCells(), table.getState().columnPinning.right], (allCells, right) => {
+      const cells = (right != null ? right : []).map(columnId => allCells.find(cell => cell.column.id === columnId)).filter(Boolean).map(d => ({
+        ...d,
+        position: 'right'
+      }));
+      return cells;
+    }, getMemoOptions(table.options, 'debugRows', 'getRightVisibleCells'));
+  },
+  createTable: table => {
+    table.setColumnPinning = updater => table.options.onColumnPinningChange == null ? void 0 : table.options.onColumnPinningChange(updater);
+    table.resetColumnPinning = defaultState => {
+      var _table$initialState$c, _table$initialState;
+      return table.setColumnPinning(defaultState ? getDefaultColumnPinningState() : (_table$initialState$c = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.columnPinning) != null ? _table$initialState$c : getDefaultColumnPinningState());
+    };
+    table.getIsSomeColumnsPinned = position => {
+      var _pinningState$positio;
+      const pinningState = table.getState().columnPinning;
+      if (!position) {
+        var _pinningState$left, _pinningState$right;
+        return Boolean(((_pinningState$left = pinningState.left) == null ? void 0 : _pinningState$left.length) || ((_pinningState$right = pinningState.right) == null ? void 0 : _pinningState$right.length));
+      }
+      return Boolean((_pinningState$positio = pinningState[position]) == null ? void 0 : _pinningState$positio.length);
+    };
+    table.getLeftLeafColumns = memo(() => [table.getAllLeafColumns(), table.getState().columnPinning.left], (allColumns, left) => {
+      return (left != null ? left : []).map(columnId => allColumns.find(column => column.id === columnId)).filter(Boolean);
+    }, getMemoOptions(table.options, 'debugColumns', 'getLeftLeafColumns'));
+    table.getRightLeafColumns = memo(() => [table.getAllLeafColumns(), table.getState().columnPinning.right], (allColumns, right) => {
+      return (right != null ? right : []).map(columnId => allColumns.find(column => column.id === columnId)).filter(Boolean);
+    }, getMemoOptions(table.options, 'debugColumns', 'getRightLeafColumns'));
+    table.getCenterLeafColumns = memo(() => [table.getAllLeafColumns(), table.getState().columnPinning.left, table.getState().columnPinning.right], (allColumns, left, right) => {
+      const leftAndRight = [...(left != null ? left : []), ...(right != null ? right : [])];
+      return allColumns.filter(d => !leftAndRight.includes(d.id));
+    }, getMemoOptions(table.options, 'debugColumns', 'getCenterLeafColumns'));
+  }
+};
+
+//
+
+//
+
+const defaultColumnSizing = {
+  size: 150,
+  minSize: 20,
+  maxSize: Number.MAX_SAFE_INTEGER
+};
+const getDefaultColumnSizingInfoState = () => ({
+  startOffset: null,
+  startSize: null,
+  deltaOffset: null,
+  deltaPercentage: null,
+  isResizingColumn: false,
+  columnSizingStart: []
+});
+const ColumnSizing = {
+  getDefaultColumnDef: () => {
+    return defaultColumnSizing;
+  },
+  getInitialState: state => {
+    return {
+      columnSizing: {},
+      columnSizingInfo: getDefaultColumnSizingInfoState(),
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      columnResizeMode: 'onEnd',
+      columnResizeDirection: 'ltr',
+      onColumnSizingChange: makeStateUpdater('columnSizing', table),
+      onColumnSizingInfoChange: makeStateUpdater('columnSizingInfo', table)
+    };
+  },
+  createColumn: (column, table) => {
+    column.getSize = () => {
+      var _column$columnDef$min, _ref, _column$columnDef$max;
+      const columnSize = table.getState().columnSizing[column.id];
+      return Math.min(Math.max((_column$columnDef$min = column.columnDef.minSize) != null ? _column$columnDef$min : defaultColumnSizing.minSize, (_ref = columnSize != null ? columnSize : column.columnDef.size) != null ? _ref : defaultColumnSizing.size), (_column$columnDef$max = column.columnDef.maxSize) != null ? _column$columnDef$max : defaultColumnSizing.maxSize);
+    };
+    column.getStart = memo(position => [position, _getVisibleLeafColumns(table, position), table.getState().columnSizing], (position, columns) => columns.slice(0, column.getIndex(position)).reduce((sum, column) => sum + column.getSize(), 0), getMemoOptions(table.options, 'debugColumns', 'getStart'));
+    column.getAfter = memo(position => [position, _getVisibleLeafColumns(table, position), table.getState().columnSizing], (position, columns) => columns.slice(column.getIndex(position) + 1).reduce((sum, column) => sum + column.getSize(), 0), getMemoOptions(table.options, 'debugColumns', 'getAfter'));
+    column.resetSize = () => {
+      table.setColumnSizing(_ref2 => {
+        let {
+          [column.id]: _,
+          ...rest
+        } = _ref2;
+        return rest;
+      });
+    };
+    column.getCanResize = () => {
+      var _column$columnDef$ena, _table$options$enable;
+      return ((_column$columnDef$ena = column.columnDef.enableResizing) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableColumnResizing) != null ? _table$options$enable : true);
+    };
+    column.getIsResizing = () => {
+      return table.getState().columnSizingInfo.isResizingColumn === column.id;
+    };
+  },
+  createHeader: (header, table) => {
+    header.getSize = () => {
+      let sum = 0;
+      const recurse = header => {
+        if (header.subHeaders.length) {
+          header.subHeaders.forEach(recurse);
+        } else {
+          var _header$column$getSiz;
+          sum += (_header$column$getSiz = header.column.getSize()) != null ? _header$column$getSiz : 0;
+        }
+      };
+      recurse(header);
+      return sum;
+    };
+    header.getStart = () => {
+      if (header.index > 0) {
+        const prevSiblingHeader = header.headerGroup.headers[header.index - 1];
+        return prevSiblingHeader.getStart() + prevSiblingHeader.getSize();
+      }
+      return 0;
+    };
+    header.getResizeHandler = _contextDocument => {
+      const column = table.getColumn(header.column.id);
+      const canResize = column == null ? void 0 : column.getCanResize();
+      return e => {
+        if (!column || !canResize) {
+          return;
+        }
+        e.persist == null || e.persist();
+        if (isTouchStartEvent(e)) {
+          // lets not respond to multiple touches (e.g. 2 or 3 fingers)
+          if (e.touches && e.touches.length > 1) {
+            return;
+          }
+        }
+        const startSize = header.getSize();
+        const columnSizingStart = header ? header.getLeafHeaders().map(d => [d.column.id, d.column.getSize()]) : [[column.id, column.getSize()]];
+        const clientX = isTouchStartEvent(e) ? Math.round(e.touches[0].clientX) : e.clientX;
+        const newColumnSizing = {};
+        const updateOffset = (eventType, clientXPos) => {
+          if (typeof clientXPos !== 'number') {
+            return;
+          }
+          table.setColumnSizingInfo(old => {
+            var _old$startOffset, _old$startSize;
+            const deltaDirection = table.options.columnResizeDirection === 'rtl' ? -1 : 1;
+            const deltaOffset = (clientXPos - ((_old$startOffset = old == null ? void 0 : old.startOffset) != null ? _old$startOffset : 0)) * deltaDirection;
+            const deltaPercentage = Math.max(deltaOffset / ((_old$startSize = old == null ? void 0 : old.startSize) != null ? _old$startSize : 0), -0.999999);
+            old.columnSizingStart.forEach(_ref3 => {
+              let [columnId, headerSize] = _ref3;
+              newColumnSizing[columnId] = Math.round(Math.max(headerSize + headerSize * deltaPercentage, 0) * 100) / 100;
+            });
+            return {
+              ...old,
+              deltaOffset,
+              deltaPercentage
+            };
+          });
+          if (table.options.columnResizeMode === 'onChange' || eventType === 'end') {
+            table.setColumnSizing(old => ({
+              ...old,
+              ...newColumnSizing
+            }));
+          }
+        };
+        const onMove = clientXPos => updateOffset('move', clientXPos);
+        const onEnd = clientXPos => {
+          updateOffset('end', clientXPos);
+          table.setColumnSizingInfo(old => ({
+            ...old,
+            isResizingColumn: false,
+            startOffset: null,
+            startSize: null,
+            deltaOffset: null,
+            deltaPercentage: null,
+            columnSizingStart: []
+          }));
+        };
+        const contextDocument = _contextDocument || typeof document !== 'undefined' ? document : null;
+        const mouseEvents = {
+          moveHandler: e => onMove(e.clientX),
+          upHandler: e => {
+            contextDocument == null || contextDocument.removeEventListener('mousemove', mouseEvents.moveHandler);
+            contextDocument == null || contextDocument.removeEventListener('mouseup', mouseEvents.upHandler);
+            onEnd(e.clientX);
+          }
+        };
+        const touchEvents = {
+          moveHandler: e => {
+            if (e.cancelable) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+            onMove(e.touches[0].clientX);
+            return false;
+          },
+          upHandler: e => {
+            var _e$touches$;
+            contextDocument == null || contextDocument.removeEventListener('touchmove', touchEvents.moveHandler);
+            contextDocument == null || contextDocument.removeEventListener('touchend', touchEvents.upHandler);
+            if (e.cancelable) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+            onEnd((_e$touches$ = e.touches[0]) == null ? void 0 : _e$touches$.clientX);
+          }
+        };
+        const passiveIfSupported = passiveEventSupported() ? {
+          passive: false
+        } : false;
+        if (isTouchStartEvent(e)) {
+          contextDocument == null || contextDocument.addEventListener('touchmove', touchEvents.moveHandler, passiveIfSupported);
+          contextDocument == null || contextDocument.addEventListener('touchend', touchEvents.upHandler, passiveIfSupported);
+        } else {
+          contextDocument == null || contextDocument.addEventListener('mousemove', mouseEvents.moveHandler, passiveIfSupported);
+          contextDocument == null || contextDocument.addEventListener('mouseup', mouseEvents.upHandler, passiveIfSupported);
+        }
+        table.setColumnSizingInfo(old => ({
+          ...old,
+          startOffset: clientX,
+          startSize,
+          deltaOffset: 0,
+          deltaPercentage: 0,
+          columnSizingStart,
+          isResizingColumn: column.id
+        }));
+      };
+    };
+  },
+  createTable: table => {
+    table.setColumnSizing = updater => table.options.onColumnSizingChange == null ? void 0 : table.options.onColumnSizingChange(updater);
+    table.setColumnSizingInfo = updater => table.options.onColumnSizingInfoChange == null ? void 0 : table.options.onColumnSizingInfoChange(updater);
+    table.resetColumnSizing = defaultState => {
+      var _table$initialState$c;
+      table.setColumnSizing(defaultState ? {} : (_table$initialState$c = table.initialState.columnSizing) != null ? _table$initialState$c : {});
+    };
+    table.resetHeaderSizeInfo = defaultState => {
+      var _table$initialState$c2;
+      table.setColumnSizingInfo(defaultState ? getDefaultColumnSizingInfoState() : (_table$initialState$c2 = table.initialState.columnSizingInfo) != null ? _table$initialState$c2 : getDefaultColumnSizingInfoState());
+    };
+    table.getTotalSize = () => {
+      var _table$getHeaderGroup, _table$getHeaderGroup2;
+      return (_table$getHeaderGroup = (_table$getHeaderGroup2 = table.getHeaderGroups()[0]) == null ? void 0 : _table$getHeaderGroup2.headers.reduce((sum, header) => {
+        return sum + header.getSize();
+      }, 0)) != null ? _table$getHeaderGroup : 0;
+    };
+    table.getLeftTotalSize = () => {
+      var _table$getLeftHeaderG, _table$getLeftHeaderG2;
+      return (_table$getLeftHeaderG = (_table$getLeftHeaderG2 = table.getLeftHeaderGroups()[0]) == null ? void 0 : _table$getLeftHeaderG2.headers.reduce((sum, header) => {
+        return sum + header.getSize();
+      }, 0)) != null ? _table$getLeftHeaderG : 0;
+    };
+    table.getCenterTotalSize = () => {
+      var _table$getCenterHeade, _table$getCenterHeade2;
+      return (_table$getCenterHeade = (_table$getCenterHeade2 = table.getCenterHeaderGroups()[0]) == null ? void 0 : _table$getCenterHeade2.headers.reduce((sum, header) => {
+        return sum + header.getSize();
+      }, 0)) != null ? _table$getCenterHeade : 0;
+    };
+    table.getRightTotalSize = () => {
+      var _table$getRightHeader, _table$getRightHeader2;
+      return (_table$getRightHeader = (_table$getRightHeader2 = table.getRightHeaderGroups()[0]) == null ? void 0 : _table$getRightHeader2.headers.reduce((sum, header) => {
+        return sum + header.getSize();
+      }, 0)) != null ? _table$getRightHeader : 0;
+    };
+  }
+};
+let passiveSupported = null;
+function passiveEventSupported() {
+  if (typeof passiveSupported === 'boolean') return passiveSupported;
+  let supported = false;
+  try {
+    const options = {
+      get passive() {
+        supported = true;
+        return false;
+      }
+    };
+    const noop = () => {};
+    window.addEventListener('test', noop, options);
+    window.removeEventListener('test', noop);
+  } catch (err) {
+    supported = false;
+  }
+  passiveSupported = supported;
+  return passiveSupported;
+}
+function isTouchStartEvent(e) {
+  return e.type === 'touchstart';
+}
+
+//
+
+const ColumnVisibility = {
+  getInitialState: state => {
+    return {
+      columnVisibility: {},
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onColumnVisibilityChange: makeStateUpdater('columnVisibility', table)
+    };
+  },
+  createColumn: (column, table) => {
+    column.toggleVisibility = value => {
+      if (column.getCanHide()) {
+        table.setColumnVisibility(old => ({
+          ...old,
+          [column.id]: value != null ? value : !column.getIsVisible()
+        }));
+      }
+    };
+    column.getIsVisible = () => {
+      var _ref, _table$getState$colum;
+      const childColumns = column.columns;
+      return (_ref = childColumns.length ? childColumns.some(c => c.getIsVisible()) : (_table$getState$colum = table.getState().columnVisibility) == null ? void 0 : _table$getState$colum[column.id]) != null ? _ref : true;
+    };
+    column.getCanHide = () => {
+      var _column$columnDef$ena, _table$options$enable;
+      return ((_column$columnDef$ena = column.columnDef.enableHiding) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableHiding) != null ? _table$options$enable : true);
+    };
+    column.getToggleVisibilityHandler = () => {
+      return e => {
+        column.toggleVisibility == null || column.toggleVisibility(e.target.checked);
+      };
+    };
+  },
+  createRow: (row, table) => {
+    row._getAllVisibleCells = memo(() => [row.getAllCells(), table.getState().columnVisibility], cells => {
+      return cells.filter(cell => cell.column.getIsVisible());
+    }, getMemoOptions(table.options, 'debugRows', '_getAllVisibleCells'));
+    row.getVisibleCells = memo(() => [row.getLeftVisibleCells(), row.getCenterVisibleCells(), row.getRightVisibleCells()], (left, center, right) => [...left, ...center, ...right], getMemoOptions(table.options, 'debugRows', 'getVisibleCells'));
+  },
+  createTable: table => {
+    const makeVisibleColumnsMethod = (key, getColumns) => {
+      return memo(() => [getColumns(), getColumns().filter(d => d.getIsVisible()).map(d => d.id).join('_')], columns => {
+        return columns.filter(d => d.getIsVisible == null ? void 0 : d.getIsVisible());
+      }, getMemoOptions(table.options, 'debugColumns', key));
+    };
+    table.getVisibleFlatColumns = makeVisibleColumnsMethod('getVisibleFlatColumns', () => table.getAllFlatColumns());
+    table.getVisibleLeafColumns = makeVisibleColumnsMethod('getVisibleLeafColumns', () => table.getAllLeafColumns());
+    table.getLeftVisibleLeafColumns = makeVisibleColumnsMethod('getLeftVisibleLeafColumns', () => table.getLeftLeafColumns());
+    table.getRightVisibleLeafColumns = makeVisibleColumnsMethod('getRightVisibleLeafColumns', () => table.getRightLeafColumns());
+    table.getCenterVisibleLeafColumns = makeVisibleColumnsMethod('getCenterVisibleLeafColumns', () => table.getCenterLeafColumns());
+    table.setColumnVisibility = updater => table.options.onColumnVisibilityChange == null ? void 0 : table.options.onColumnVisibilityChange(updater);
+    table.resetColumnVisibility = defaultState => {
+      var _table$initialState$c;
+      table.setColumnVisibility(defaultState ? {} : (_table$initialState$c = table.initialState.columnVisibility) != null ? _table$initialState$c : {});
+    };
+    table.toggleAllColumnsVisible = value => {
+      var _value;
+      value = (_value = value) != null ? _value : !table.getIsAllColumnsVisible();
+      table.setColumnVisibility(table.getAllLeafColumns().reduce((obj, column) => ({
+        ...obj,
+        [column.id]: !value ? !(column.getCanHide != null && column.getCanHide()) : value
+      }), {}));
+    };
+    table.getIsAllColumnsVisible = () => !table.getAllLeafColumns().some(column => !(column.getIsVisible != null && column.getIsVisible()));
+    table.getIsSomeColumnsVisible = () => table.getAllLeafColumns().some(column => column.getIsVisible == null ? void 0 : column.getIsVisible());
+    table.getToggleAllColumnsVisibilityHandler = () => {
+      return e => {
+        var _target;
+        table.toggleAllColumnsVisible((_target = e.target) == null ? void 0 : _target.checked);
+      };
+    };
+  }
+};
+function _getVisibleLeafColumns(table, position) {
+  return !position ? table.getVisibleLeafColumns() : position === 'center' ? table.getCenterVisibleLeafColumns() : position === 'left' ? table.getLeftVisibleLeafColumns() : table.getRightVisibleLeafColumns();
+}
+
+//
+
+const GlobalFaceting = {
+  createTable: table => {
+    table._getGlobalFacetedRowModel = table.options.getFacetedRowModel && table.options.getFacetedRowModel(table, '__global__');
+    table.getGlobalFacetedRowModel = () => {
+      if (table.options.manualFiltering || !table._getGlobalFacetedRowModel) {
+        return table.getPreFilteredRowModel();
+      }
+      return table._getGlobalFacetedRowModel();
+    };
+    table._getGlobalFacetedUniqueValues = table.options.getFacetedUniqueValues && table.options.getFacetedUniqueValues(table, '__global__');
+    table.getGlobalFacetedUniqueValues = () => {
+      if (!table._getGlobalFacetedUniqueValues) {
+        return new Map();
+      }
+      return table._getGlobalFacetedUniqueValues();
+    };
+    table._getGlobalFacetedMinMaxValues = table.options.getFacetedMinMaxValues && table.options.getFacetedMinMaxValues(table, '__global__');
+    table.getGlobalFacetedMinMaxValues = () => {
+      if (!table._getGlobalFacetedMinMaxValues) {
+        return;
+      }
+      return table._getGlobalFacetedMinMaxValues();
+    };
+  }
+};
+
+//
+
+const GlobalFiltering = {
+  getInitialState: state => {
+    return {
+      globalFilter: undefined,
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onGlobalFilterChange: makeStateUpdater('globalFilter', table),
+      globalFilterFn: 'auto',
+      getColumnCanGlobalFilter: column => {
+        var _table$getCoreRowMode;
+        const value = (_table$getCoreRowMode = table.getCoreRowModel().flatRows[0]) == null || (_table$getCoreRowMode = _table$getCoreRowMode._getAllCellsByColumnId()[column.id]) == null ? void 0 : _table$getCoreRowMode.getValue();
+        return typeof value === 'string' || typeof value === 'number';
+      }
+    };
+  },
+  createColumn: (column, table) => {
+    column.getCanGlobalFilter = () => {
+      var _column$columnDef$ena, _table$options$enable, _table$options$enable2, _table$options$getCol;
+      return ((_column$columnDef$ena = column.columnDef.enableGlobalFilter) != null ? _column$columnDef$ena : true) && ((_table$options$enable = table.options.enableGlobalFilter) != null ? _table$options$enable : true) && ((_table$options$enable2 = table.options.enableFilters) != null ? _table$options$enable2 : true) && ((_table$options$getCol = table.options.getColumnCanGlobalFilter == null ? void 0 : table.options.getColumnCanGlobalFilter(column)) != null ? _table$options$getCol : true) && !!column.accessorFn;
+    };
+  },
+  createTable: table => {
+    table.getGlobalAutoFilterFn = () => {
+      return filterFns.includesString;
+    };
+    table.getGlobalFilterFn = () => {
+      var _table$options$filter, _table$options$filter2;
+      const {
+        globalFilterFn: globalFilterFn
+      } = table.options;
+      return isFunction(globalFilterFn) ? globalFilterFn : globalFilterFn === 'auto' ? table.getGlobalAutoFilterFn() : (_table$options$filter = (_table$options$filter2 = table.options.filterFns) == null ? void 0 : _table$options$filter2[globalFilterFn]) != null ? _table$options$filter : filterFns[globalFilterFn];
+    };
+    table.setGlobalFilter = updater => {
+      table.options.onGlobalFilterChange == null || table.options.onGlobalFilterChange(updater);
+    };
+    table.resetGlobalFilter = defaultState => {
+      table.setGlobalFilter(defaultState ? undefined : table.initialState.globalFilter);
+    };
+  }
+};
+
+//
+
+const RowExpanding = {
+  getInitialState: state => {
+    return {
+      expanded: {},
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onExpandedChange: makeStateUpdater('expanded', table),
+      paginateExpandedRows: true
+    };
+  },
+  createTable: table => {
+    let registered = false;
+    let queued = false;
+    table._autoResetExpanded = () => {
+      var _ref, _table$options$autoRe;
+      if (!registered) {
+        table._queue(() => {
+          registered = true;
+        });
+        return;
+      }
+      if ((_ref = (_table$options$autoRe = table.options.autoResetAll) != null ? _table$options$autoRe : table.options.autoResetExpanded) != null ? _ref : !table.options.manualExpanding) {
+        if (queued) return;
+        queued = true;
+        table._queue(() => {
+          table.resetExpanded();
+          queued = false;
+        });
+      }
+    };
+    table.setExpanded = updater => table.options.onExpandedChange == null ? void 0 : table.options.onExpandedChange(updater);
+    table.toggleAllRowsExpanded = expanded => {
+      if (expanded != null ? expanded : !table.getIsAllRowsExpanded()) {
+        table.setExpanded(true);
+      } else {
+        table.setExpanded({});
+      }
+    };
+    table.resetExpanded = defaultState => {
+      var _table$initialState$e, _table$initialState;
+      table.setExpanded(defaultState ? {} : (_table$initialState$e = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.expanded) != null ? _table$initialState$e : {});
+    };
+    table.getCanSomeRowsExpand = () => {
+      return table.getPrePaginationRowModel().flatRows.some(row => row.getCanExpand());
+    };
+    table.getToggleAllRowsExpandedHandler = () => {
+      return e => {
+        e.persist == null || e.persist();
+        table.toggleAllRowsExpanded();
+      };
+    };
+    table.getIsSomeRowsExpanded = () => {
+      const expanded = table.getState().expanded;
+      return expanded === true || Object.values(expanded).some(Boolean);
+    };
+    table.getIsAllRowsExpanded = () => {
+      const expanded = table.getState().expanded;
+
+      // If expanded is true, save some cycles and return true
+      if (typeof expanded === 'boolean') {
+        return expanded === true;
+      }
+      if (!Object.keys(expanded).length) {
+        return false;
+      }
+
+      // If any row is not expanded, return false
+      if (table.getRowModel().flatRows.some(row => !row.getIsExpanded())) {
+        return false;
+      }
+
+      // They must all be expanded :shrug:
+      return true;
+    };
+    table.getExpandedDepth = () => {
+      let maxDepth = 0;
+      const rowIds = table.getState().expanded === true ? Object.keys(table.getRowModel().rowsById) : Object.keys(table.getState().expanded);
+      rowIds.forEach(id => {
+        const splitId = id.split('.');
+        maxDepth = Math.max(maxDepth, splitId.length);
+      });
+      return maxDepth;
+    };
+    table.getPreExpandedRowModel = () => table.getSortedRowModel();
+    table.getExpandedRowModel = () => {
+      if (!table._getExpandedRowModel && table.options.getExpandedRowModel) {
+        table._getExpandedRowModel = table.options.getExpandedRowModel(table);
+      }
+      if (table.options.manualExpanding || !table._getExpandedRowModel) {
+        return table.getPreExpandedRowModel();
+      }
+      return table._getExpandedRowModel();
+    };
+  },
+  createRow: (row, table) => {
+    row.toggleExpanded = expanded => {
+      table.setExpanded(old => {
+        var _expanded;
+        const exists = old === true ? true : !!(old != null && old[row.id]);
+        let oldExpanded = {};
+        if (old === true) {
+          Object.keys(table.getRowModel().rowsById).forEach(rowId => {
+            oldExpanded[rowId] = true;
+          });
+        } else {
+          oldExpanded = old;
+        }
+        expanded = (_expanded = expanded) != null ? _expanded : !exists;
+        if (!exists && expanded) {
+          return {
+            ...oldExpanded,
+            [row.id]: true
+          };
+        }
+        if (exists && !expanded) {
+          const {
+            [row.id]: _,
+            ...rest
+          } = oldExpanded;
+          return rest;
+        }
+        return old;
+      });
+    };
+    row.getIsExpanded = () => {
+      var _table$options$getIsR;
+      const expanded = table.getState().expanded;
+      return !!((_table$options$getIsR = table.options.getIsRowExpanded == null ? void 0 : table.options.getIsRowExpanded(row)) != null ? _table$options$getIsR : expanded === true || (expanded == null ? void 0 : expanded[row.id]));
+    };
+    row.getCanExpand = () => {
+      var _table$options$getRow, _table$options$enable, _row$subRows;
+      return (_table$options$getRow = table.options.getRowCanExpand == null ? void 0 : table.options.getRowCanExpand(row)) != null ? _table$options$getRow : ((_table$options$enable = table.options.enableExpanding) != null ? _table$options$enable : true) && !!((_row$subRows = row.subRows) != null && _row$subRows.length);
+    };
+    row.getIsAllParentsExpanded = () => {
+      let isFullyExpanded = true;
+      let currentRow = row;
+      while (isFullyExpanded && currentRow.parentId) {
+        currentRow = table.getRow(currentRow.parentId, true);
+        isFullyExpanded = currentRow.getIsExpanded();
+      }
+      return isFullyExpanded;
+    };
+    row.getToggleExpandedHandler = () => {
+      const canExpand = row.getCanExpand();
+      return () => {
+        if (!canExpand) return;
+        row.toggleExpanded();
+      };
+    };
+  }
+};
+
+//
+
+const defaultPageIndex = 0;
+const defaultPageSize = 10;
+const getDefaultPaginationState = () => ({
+  pageIndex: defaultPageIndex,
+  pageSize: defaultPageSize
+});
+const RowPagination = {
+  getInitialState: state => {
+    return {
+      ...state,
+      pagination: {
+        ...getDefaultPaginationState(),
+        ...(state == null ? void 0 : state.pagination)
+      }
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onPaginationChange: makeStateUpdater('pagination', table)
+    };
+  },
+  createTable: table => {
+    let registered = false;
+    let queued = false;
+    table._autoResetPageIndex = () => {
+      var _ref, _table$options$autoRe;
+      if (!registered) {
+        table._queue(() => {
+          registered = true;
+        });
+        return;
+      }
+      if ((_ref = (_table$options$autoRe = table.options.autoResetAll) != null ? _table$options$autoRe : table.options.autoResetPageIndex) != null ? _ref : !table.options.manualPagination) {
+        if (queued) return;
+        queued = true;
+        table._queue(() => {
+          table.resetPageIndex();
+          queued = false;
+        });
+      }
+    };
+    table.setPagination = updater => {
+      const safeUpdater = old => {
+        let newState = functionalUpdate(updater, old);
+        return newState;
+      };
+      return table.options.onPaginationChange == null ? void 0 : table.options.onPaginationChange(safeUpdater);
+    };
+    table.resetPagination = defaultState => {
+      var _table$initialState$p;
+      table.setPagination(defaultState ? getDefaultPaginationState() : (_table$initialState$p = table.initialState.pagination) != null ? _table$initialState$p : getDefaultPaginationState());
+    };
+    table.setPageIndex = updater => {
+      table.setPagination(old => {
+        let pageIndex = functionalUpdate(updater, old.pageIndex);
+        const maxPageIndex = typeof table.options.pageCount === 'undefined' || table.options.pageCount === -1 ? Number.MAX_SAFE_INTEGER : table.options.pageCount - 1;
+        pageIndex = Math.max(0, Math.min(pageIndex, maxPageIndex));
+        return {
+          ...old,
+          pageIndex
+        };
+      });
+    };
+    table.resetPageIndex = defaultState => {
+      var _table$initialState$p2, _table$initialState;
+      table.setPageIndex(defaultState ? defaultPageIndex : (_table$initialState$p2 = (_table$initialState = table.initialState) == null || (_table$initialState = _table$initialState.pagination) == null ? void 0 : _table$initialState.pageIndex) != null ? _table$initialState$p2 : defaultPageIndex);
+    };
+    table.resetPageSize = defaultState => {
+      var _table$initialState$p3, _table$initialState2;
+      table.setPageSize(defaultState ? defaultPageSize : (_table$initialState$p3 = (_table$initialState2 = table.initialState) == null || (_table$initialState2 = _table$initialState2.pagination) == null ? void 0 : _table$initialState2.pageSize) != null ? _table$initialState$p3 : defaultPageSize);
+    };
+    table.setPageSize = updater => {
+      table.setPagination(old => {
+        const pageSize = Math.max(1, functionalUpdate(updater, old.pageSize));
+        const topRowIndex = old.pageSize * old.pageIndex;
+        const pageIndex = Math.floor(topRowIndex / pageSize);
+        return {
+          ...old,
+          pageIndex,
+          pageSize
+        };
+      });
+    };
+    //deprecated
+    table.setPageCount = updater => table.setPagination(old => {
+      var _table$options$pageCo;
+      let newPageCount = functionalUpdate(updater, (_table$options$pageCo = table.options.pageCount) != null ? _table$options$pageCo : -1);
+      if (typeof newPageCount === 'number') {
+        newPageCount = Math.max(-1, newPageCount);
+      }
+      return {
+        ...old,
+        pageCount: newPageCount
+      };
+    });
+    table.getPageOptions = memo(() => [table.getPageCount()], pageCount => {
+      let pageOptions = [];
+      if (pageCount && pageCount > 0) {
+        pageOptions = [...new Array(pageCount)].fill(null).map((_, i) => i);
+      }
+      return pageOptions;
+    }, getMemoOptions(table.options, 'debugTable', 'getPageOptions'));
+    table.getCanPreviousPage = () => table.getState().pagination.pageIndex > 0;
+    table.getCanNextPage = () => {
+      const {
+        pageIndex
+      } = table.getState().pagination;
+      const pageCount = table.getPageCount();
+      if (pageCount === -1) {
+        return true;
+      }
+      if (pageCount === 0) {
+        return false;
+      }
+      return pageIndex < pageCount - 1;
+    };
+    table.previousPage = () => {
+      return table.setPageIndex(old => old - 1);
+    };
+    table.nextPage = () => {
+      return table.setPageIndex(old => {
+        return old + 1;
+      });
+    };
+    table.firstPage = () => {
+      return table.setPageIndex(0);
+    };
+    table.lastPage = () => {
+      return table.setPageIndex(table.getPageCount() - 1);
+    };
+    table.getPrePaginationRowModel = () => table.getExpandedRowModel();
+    table.getPaginationRowModel = () => {
+      if (!table._getPaginationRowModel && table.options.getPaginationRowModel) {
+        table._getPaginationRowModel = table.options.getPaginationRowModel(table);
+      }
+      if (table.options.manualPagination || !table._getPaginationRowModel) {
+        return table.getPrePaginationRowModel();
+      }
+      return table._getPaginationRowModel();
+    };
+    table.getPageCount = () => {
+      var _table$options$pageCo2;
+      return (_table$options$pageCo2 = table.options.pageCount) != null ? _table$options$pageCo2 : Math.ceil(table.getRowCount() / table.getState().pagination.pageSize);
+    };
+    table.getRowCount = () => {
+      var _table$options$rowCou;
+      return (_table$options$rowCou = table.options.rowCount) != null ? _table$options$rowCou : table.getPrePaginationRowModel().rows.length;
+    };
+  }
+};
+
+//
+
+const getDefaultRowPinningState = () => ({
+  top: [],
+  bottom: []
+});
+const RowPinning = {
+  getInitialState: state => {
+    return {
+      rowPinning: getDefaultRowPinningState(),
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onRowPinningChange: makeStateUpdater('rowPinning', table)
+    };
+  },
+  createRow: (row, table) => {
+    row.pin = (position, includeLeafRows, includeParentRows) => {
+      const leafRowIds = includeLeafRows ? row.getLeafRows().map(_ref => {
+        let {
+          id
+        } = _ref;
+        return id;
+      }) : [];
+      const parentRowIds = includeParentRows ? row.getParentRows().map(_ref2 => {
+        let {
+          id
+        } = _ref2;
+        return id;
+      }) : [];
+      const rowIds = new Set([...parentRowIds, row.id, ...leafRowIds]);
+      table.setRowPinning(old => {
+        var _old$top3, _old$bottom3;
+        if (position === 'bottom') {
+          var _old$top, _old$bottom;
+          return {
+            top: ((_old$top = old == null ? void 0 : old.top) != null ? _old$top : []).filter(d => !(rowIds != null && rowIds.has(d))),
+            bottom: [...((_old$bottom = old == null ? void 0 : old.bottom) != null ? _old$bottom : []).filter(d => !(rowIds != null && rowIds.has(d))), ...Array.from(rowIds)]
+          };
+        }
+        if (position === 'top') {
+          var _old$top2, _old$bottom2;
+          return {
+            top: [...((_old$top2 = old == null ? void 0 : old.top) != null ? _old$top2 : []).filter(d => !(rowIds != null && rowIds.has(d))), ...Array.from(rowIds)],
+            bottom: ((_old$bottom2 = old == null ? void 0 : old.bottom) != null ? _old$bottom2 : []).filter(d => !(rowIds != null && rowIds.has(d)))
+          };
+        }
+        return {
+          top: ((_old$top3 = old == null ? void 0 : old.top) != null ? _old$top3 : []).filter(d => !(rowIds != null && rowIds.has(d))),
+          bottom: ((_old$bottom3 = old == null ? void 0 : old.bottom) != null ? _old$bottom3 : []).filter(d => !(rowIds != null && rowIds.has(d)))
+        };
+      });
+    };
+    row.getCanPin = () => {
+      var _ref3;
+      const {
+        enableRowPinning,
+        enablePinning
+      } = table.options;
+      if (typeof enableRowPinning === 'function') {
+        return enableRowPinning(row);
+      }
+      return (_ref3 = enableRowPinning != null ? enableRowPinning : enablePinning) != null ? _ref3 : true;
+    };
+    row.getIsPinned = () => {
+      const rowIds = [row.id];
+      const {
+        top,
+        bottom
+      } = table.getState().rowPinning;
+      const isTop = rowIds.some(d => top == null ? void 0 : top.includes(d));
+      const isBottom = rowIds.some(d => bottom == null ? void 0 : bottom.includes(d));
+      return isTop ? 'top' : isBottom ? 'bottom' : false;
+    };
+    row.getPinnedIndex = () => {
+      var _ref4, _visiblePinnedRowIds$;
+      const position = row.getIsPinned();
+      if (!position) return -1;
+      const visiblePinnedRowIds = (_ref4 = position === 'top' ? table.getTopRows() : table.getBottomRows()) == null ? void 0 : _ref4.map(_ref5 => {
+        let {
+          id
+        } = _ref5;
+        return id;
+      });
+      return (_visiblePinnedRowIds$ = visiblePinnedRowIds == null ? void 0 : visiblePinnedRowIds.indexOf(row.id)) != null ? _visiblePinnedRowIds$ : -1;
+    };
+  },
+  createTable: table => {
+    table.setRowPinning = updater => table.options.onRowPinningChange == null ? void 0 : table.options.onRowPinningChange(updater);
+    table.resetRowPinning = defaultState => {
+      var _table$initialState$r, _table$initialState;
+      return table.setRowPinning(defaultState ? getDefaultRowPinningState() : (_table$initialState$r = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.rowPinning) != null ? _table$initialState$r : getDefaultRowPinningState());
+    };
+    table.getIsSomeRowsPinned = position => {
+      var _pinningState$positio;
+      const pinningState = table.getState().rowPinning;
+      if (!position) {
+        var _pinningState$top, _pinningState$bottom;
+        return Boolean(((_pinningState$top = pinningState.top) == null ? void 0 : _pinningState$top.length) || ((_pinningState$bottom = pinningState.bottom) == null ? void 0 : _pinningState$bottom.length));
+      }
+      return Boolean((_pinningState$positio = pinningState[position]) == null ? void 0 : _pinningState$positio.length);
+    };
+    table._getPinnedRows = (visibleRows, pinnedRowIds, position) => {
+      var _table$options$keepPi;
+      const rows = ((_table$options$keepPi = table.options.keepPinnedRows) != null ? _table$options$keepPi : true) ?
+      //get all rows that are pinned even if they would not be otherwise visible
+      //account for expanded parent rows, but not pagination or filtering
+      (pinnedRowIds != null ? pinnedRowIds : []).map(rowId => {
+        const row = table.getRow(rowId, true);
+        return row.getIsAllParentsExpanded() ? row : null;
+      }) :
+      //else get only visible rows that are pinned
+      (pinnedRowIds != null ? pinnedRowIds : []).map(rowId => visibleRows.find(row => row.id === rowId));
+      return rows.filter(Boolean).map(d => ({
+        ...d,
+        position
+      }));
+    };
+    table.getTopRows = memo(() => [table.getRowModel().rows, table.getState().rowPinning.top], (allRows, topPinnedRowIds) => table._getPinnedRows(allRows, topPinnedRowIds, 'top'), getMemoOptions(table.options, 'debugRows', 'getTopRows'));
+    table.getBottomRows = memo(() => [table.getRowModel().rows, table.getState().rowPinning.bottom], (allRows, bottomPinnedRowIds) => table._getPinnedRows(allRows, bottomPinnedRowIds, 'bottom'), getMemoOptions(table.options, 'debugRows', 'getBottomRows'));
+    table.getCenterRows = memo(() => [table.getRowModel().rows, table.getState().rowPinning.top, table.getState().rowPinning.bottom], (allRows, top, bottom) => {
+      const topAndBottom = new Set([...(top != null ? top : []), ...(bottom != null ? bottom : [])]);
+      return allRows.filter(d => !topAndBottom.has(d.id));
+    }, getMemoOptions(table.options, 'debugRows', 'getCenterRows'));
+  }
+};
+
+//
+
+const RowSelection = {
+  getInitialState: state => {
+    return {
+      rowSelection: {},
+      ...state
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onRowSelectionChange: makeStateUpdater('rowSelection', table),
+      enableRowSelection: true,
+      enableMultiRowSelection: true,
+      enableSubRowSelection: true
+      // enableGroupingRowSelection: false,
+      // isAdditiveSelectEvent: (e: unknown) => !!e.metaKey,
+      // isInclusiveSelectEvent: (e: unknown) => !!e.shiftKey,
+    };
+  },
+  createTable: table => {
+    table.setRowSelection = updater => table.options.onRowSelectionChange == null ? void 0 : table.options.onRowSelectionChange(updater);
+    table.resetRowSelection = defaultState => {
+      var _table$initialState$r;
+      return table.setRowSelection(defaultState ? {} : (_table$initialState$r = table.initialState.rowSelection) != null ? _table$initialState$r : {});
+    };
+    table.toggleAllRowsSelected = value => {
+      table.setRowSelection(old => {
+        value = typeof value !== 'undefined' ? value : !table.getIsAllRowsSelected();
+        const rowSelection = {
+          ...old
+        };
+        const preGroupedFlatRows = table.getPreGroupedRowModel().flatRows;
+
+        // We don't use `mutateRowIsSelected` here for performance reasons.
+        // All of the rows are flat already, so it wouldn't be worth it
+        if (value) {
+          preGroupedFlatRows.forEach(row => {
+            if (!row.getCanSelect()) {
+              return;
+            }
+            rowSelection[row.id] = true;
+          });
+        } else {
+          preGroupedFlatRows.forEach(row => {
+            delete rowSelection[row.id];
+          });
+        }
+        return rowSelection;
+      });
+    };
+    table.toggleAllPageRowsSelected = value => table.setRowSelection(old => {
+      const resolvedValue = typeof value !== 'undefined' ? value : !table.getIsAllPageRowsSelected();
+      const rowSelection = {
+        ...old
+      };
+      table.getRowModel().rows.forEach(row => {
+        mutateRowIsSelected(rowSelection, row.id, resolvedValue, true, table);
+      });
+      return rowSelection;
+    });
+
+    // addRowSelectionRange: rowId => {
+    //   const {
+    //     rows,
+    //     rowsById,
+    //     options: { selectGroupingRows, selectSubRows },
+    //   } = table
+
+    //   const findSelectedRow = (rows: Row[]) => {
+    //     let found
+    //     rows.find(d => {
+    //       if (d.getIsSelected()) {
+    //         found = d
+    //         return true
+    //       }
+    //       const subFound = findSelectedRow(d.subRows || [])
+    //       if (subFound) {
+    //         found = subFound
+    //         return true
+    //       }
+    //       return false
+    //     })
+    //     return found
+    //   }
+
+    //   const firstRow = findSelectedRow(rows) || rows[0]
+    //   const lastRow = rowsById[rowId]
+
+    //   let include = false
+    //   const selectedRowIds = {}
+
+    //   const addRow = (row: Row) => {
+    //     mutateRowIsSelected(selectedRowIds, row.id, true, {
+    //       rowsById,
+    //       selectGroupingRows: selectGroupingRows!,
+    //       selectSubRows: selectSubRows!,
+    //     })
+    //   }
+
+    //   table.rows.forEach(row => {
+    //     const isFirstRow = row.id === firstRow.id
+    //     const isLastRow = row.id === lastRow.id
+
+    //     if (isFirstRow || isLastRow) {
+    //       if (!include) {
+    //         include = true
+    //       } else if (include) {
+    //         addRow(row)
+    //         include = false
+    //       }
+    //     }
+
+    //     if (include) {
+    //       addRow(row)
+    //     }
+    //   })
+
+    //   table.setRowSelection(selectedRowIds)
+    // },
+    table.getPreSelectedRowModel = () => table.getCoreRowModel();
+    table.getSelectedRowModel = memo(() => [table.getState().rowSelection, table.getCoreRowModel()], (rowSelection, rowModel) => {
+      if (!Object.keys(rowSelection).length) {
+        return {
+          rows: [],
+          flatRows: [],
+          rowsById: {}
+        };
+      }
+      return selectRowsFn(table, rowModel);
+    }, getMemoOptions(table.options, 'debugTable', 'getSelectedRowModel'));
+    table.getFilteredSelectedRowModel = memo(() => [table.getState().rowSelection, table.getFilteredRowModel()], (rowSelection, rowModel) => {
+      if (!Object.keys(rowSelection).length) {
+        return {
+          rows: [],
+          flatRows: [],
+          rowsById: {}
+        };
+      }
+      return selectRowsFn(table, rowModel);
+    }, getMemoOptions(table.options, 'debugTable', 'getFilteredSelectedRowModel'));
+    table.getGroupedSelectedRowModel = memo(() => [table.getState().rowSelection, table.getSortedRowModel()], (rowSelection, rowModel) => {
+      if (!Object.keys(rowSelection).length) {
+        return {
+          rows: [],
+          flatRows: [],
+          rowsById: {}
+        };
+      }
+      return selectRowsFn(table, rowModel);
+    }, getMemoOptions(table.options, 'debugTable', 'getGroupedSelectedRowModel'));
+
+    ///
+
+    // getGroupingRowCanSelect: rowId => {
+    //   const row = table.getRow(rowId)
+
+    //   if (!row) {
+    //     throw new Error()
+    //   }
+
+    //   if (typeof table.options.enableGroupingRowSelection === 'function') {
+    //     return table.options.enableGroupingRowSelection(row)
+    //   }
+
+    //   return table.options.enableGroupingRowSelection ?? false
+    // },
+
+    table.getIsAllRowsSelected = () => {
+      const preGroupedFlatRows = table.getFilteredRowModel().flatRows;
+      const {
+        rowSelection
+      } = table.getState();
+      let isAllRowsSelected = Boolean(preGroupedFlatRows.length && Object.keys(rowSelection).length);
+      if (isAllRowsSelected) {
+        if (preGroupedFlatRows.some(row => row.getCanSelect() && !rowSelection[row.id])) {
+          isAllRowsSelected = false;
+        }
+      }
+      return isAllRowsSelected;
+    };
+    table.getIsAllPageRowsSelected = () => {
+      const paginationFlatRows = table.getPaginationRowModel().flatRows.filter(row => row.getCanSelect());
+      const {
+        rowSelection
+      } = table.getState();
+      let isAllPageRowsSelected = !!paginationFlatRows.length;
+      if (isAllPageRowsSelected && paginationFlatRows.some(row => !rowSelection[row.id])) {
+        isAllPageRowsSelected = false;
+      }
+      return isAllPageRowsSelected;
+    };
+    table.getIsSomeRowsSelected = () => {
+      var _table$getState$rowSe;
+      const totalSelected = Object.keys((_table$getState$rowSe = table.getState().rowSelection) != null ? _table$getState$rowSe : {}).length;
+      return totalSelected > 0 && totalSelected < table.getFilteredRowModel().flatRows.length;
+    };
+    table.getIsSomePageRowsSelected = () => {
+      const paginationFlatRows = table.getPaginationRowModel().flatRows;
+      return table.getIsAllPageRowsSelected() ? false : paginationFlatRows.filter(row => row.getCanSelect()).some(d => d.getIsSelected() || d.getIsSomeSelected());
+    };
+    table.getToggleAllRowsSelectedHandler = () => {
+      return e => {
+        table.toggleAllRowsSelected(e.target.checked);
+      };
+    };
+    table.getToggleAllPageRowsSelectedHandler = () => {
+      return e => {
+        table.toggleAllPageRowsSelected(e.target.checked);
+      };
+    };
+  },
+  createRow: (row, table) => {
+    row.toggleSelected = (value, opts) => {
+      const isSelected = row.getIsSelected();
+      table.setRowSelection(old => {
+        var _opts$selectChildren;
+        value = typeof value !== 'undefined' ? value : !isSelected;
+        if (row.getCanSelect() && isSelected === value) {
+          return old;
+        }
+        const selectedRowIds = {
+          ...old
+        };
+        mutateRowIsSelected(selectedRowIds, row.id, value, (_opts$selectChildren = opts == null ? void 0 : opts.selectChildren) != null ? _opts$selectChildren : true, table);
+        return selectedRowIds;
+      });
+    };
+    row.getIsSelected = () => {
+      const {
+        rowSelection
+      } = table.getState();
+      return isRowSelected(row, rowSelection);
+    };
+    row.getIsSomeSelected = () => {
+      const {
+        rowSelection
+      } = table.getState();
+      return isSubRowSelected(row, rowSelection) === 'some';
+    };
+    row.getIsAllSubRowsSelected = () => {
+      const {
+        rowSelection
+      } = table.getState();
+      return isSubRowSelected(row, rowSelection) === 'all';
+    };
+    row.getCanSelect = () => {
+      var _table$options$enable;
+      if (typeof table.options.enableRowSelection === 'function') {
+        return table.options.enableRowSelection(row);
+      }
+      return (_table$options$enable = table.options.enableRowSelection) != null ? _table$options$enable : true;
+    };
+    row.getCanSelectSubRows = () => {
+      var _table$options$enable2;
+      if (typeof table.options.enableSubRowSelection === 'function') {
+        return table.options.enableSubRowSelection(row);
+      }
+      return (_table$options$enable2 = table.options.enableSubRowSelection) != null ? _table$options$enable2 : true;
+    };
+    row.getCanMultiSelect = () => {
+      var _table$options$enable3;
+      if (typeof table.options.enableMultiRowSelection === 'function') {
+        return table.options.enableMultiRowSelection(row);
+      }
+      return (_table$options$enable3 = table.options.enableMultiRowSelection) != null ? _table$options$enable3 : true;
+    };
+    row.getToggleSelectedHandler = () => {
+      const canSelect = row.getCanSelect();
+      return e => {
+        var _target;
+        if (!canSelect) return;
+        row.toggleSelected((_target = e.target) == null ? void 0 : _target.checked);
+      };
+    };
+  }
+};
+const mutateRowIsSelected = (selectedRowIds, id, value, includeChildren, table) => {
+  var _row$subRows;
+  const row = table.getRow(id, true);
+
+  // const isGrouped = row.getIsGrouped()
+
+  // if ( // TODO: enforce grouping row selection rules
+  //   !isGrouped ||
+  //   (isGrouped && table.options.enableGroupingRowSelection)
+  // ) {
+  if (value) {
+    if (!row.getCanMultiSelect()) {
+      Object.keys(selectedRowIds).forEach(key => delete selectedRowIds[key]);
+    }
+    if (row.getCanSelect()) {
+      selectedRowIds[id] = true;
+    }
+  } else {
+    delete selectedRowIds[id];
+  }
+  // }
+
+  if (includeChildren && (_row$subRows = row.subRows) != null && _row$subRows.length && row.getCanSelectSubRows()) {
+    row.subRows.forEach(row => mutateRowIsSelected(selectedRowIds, row.id, value, includeChildren, table));
+  }
+};
+function selectRowsFn(table, rowModel) {
+  const rowSelection = table.getState().rowSelection;
+  const newSelectedFlatRows = [];
+  const newSelectedRowsById = {};
+
+  // Filters top level and nested rows
+  const recurseRows = function (rows, depth) {
+    return rows.map(row => {
+      var _row$subRows2;
+      const isSelected = isRowSelected(row, rowSelection);
+      if (isSelected) {
+        newSelectedFlatRows.push(row);
+        newSelectedRowsById[row.id] = row;
+      }
+      if ((_row$subRows2 = row.subRows) != null && _row$subRows2.length) {
+        row = {
+          ...row,
+          subRows: recurseRows(row.subRows)
+        };
+      }
+      if (isSelected) {
+        return row;
+      }
+    }).filter(Boolean);
+  };
+  return {
+    rows: recurseRows(rowModel.rows),
+    flatRows: newSelectedFlatRows,
+    rowsById: newSelectedRowsById
+  };
+}
+function isRowSelected(row, selection) {
+  var _selection$row$id;
+  return (_selection$row$id = selection[row.id]) != null ? _selection$row$id : false;
+}
+function isSubRowSelected(row, selection, table) {
+  var _row$subRows3;
+  if (!((_row$subRows3 = row.subRows) != null && _row$subRows3.length)) return false;
+  let allChildrenSelected = true;
+  let someSelected = false;
+  row.subRows.forEach(subRow => {
+    // Bail out early if we know both of these
+    if (someSelected && !allChildrenSelected) {
+      return;
+    }
+    if (subRow.getCanSelect()) {
+      if (isRowSelected(subRow, selection)) {
+        someSelected = true;
+      } else {
+        allChildrenSelected = false;
+      }
+    }
+
+    // Check row selection of nested subrows
+    if (subRow.subRows && subRow.subRows.length) {
+      const subRowChildrenSelected = isSubRowSelected(subRow, selection);
+      if (subRowChildrenSelected === 'all') {
+        someSelected = true;
+      } else if (subRowChildrenSelected === 'some') {
+        someSelected = true;
+        allChildrenSelected = false;
+      } else {
+        allChildrenSelected = false;
+      }
+    }
+  });
+  return allChildrenSelected ? 'all' : someSelected ? 'some' : false;
+}
+
+const reSplitAlphaNumeric = /([0-9]+)/gm;
+const alphanumeric = (rowA, rowB, columnId) => {
+  return compareAlphanumeric(toString(rowA.getValue(columnId)).toLowerCase(), toString(rowB.getValue(columnId)).toLowerCase());
+};
+const alphanumericCaseSensitive = (rowA, rowB, columnId) => {
+  return compareAlphanumeric(toString(rowA.getValue(columnId)), toString(rowB.getValue(columnId)));
+};
+
+// The text filter is more basic (less numeric support)
+// but is much faster
+const text = (rowA, rowB, columnId) => {
+  return compareBasic(toString(rowA.getValue(columnId)).toLowerCase(), toString(rowB.getValue(columnId)).toLowerCase());
+};
+
+// The text filter is more basic (less numeric support)
+// but is much faster
+const textCaseSensitive = (rowA, rowB, columnId) => {
+  return compareBasic(toString(rowA.getValue(columnId)), toString(rowB.getValue(columnId)));
+};
+const datetime = (rowA, rowB, columnId) => {
+  const a = rowA.getValue(columnId);
+  const b = rowB.getValue(columnId);
+
+  // Can handle nullish values
+  // Use > and < because == (and ===) doesn't work with
+  // Date objects (would require calling getTime()).
+  return a > b ? 1 : a < b ? -1 : 0;
+};
+const basic = (rowA, rowB, columnId) => {
+  return compareBasic(rowA.getValue(columnId), rowB.getValue(columnId));
+};
+
+// Utils
+
+function compareBasic(a, b) {
+  return a === b ? 0 : a > b ? 1 : -1;
+}
+function toString(a) {
+  if (typeof a === 'number') {
+    if (isNaN(a) || a === Infinity || a === -Infinity) {
+      return '';
+    }
+    return String(a);
+  }
+  if (typeof a === 'string') {
+    return a;
+  }
+  return '';
+}
+
+// Mixed sorting is slow, but very inclusive of many edge cases.
+// It handles numbers, mixed alphanumeric combinations, and even
+// null, undefined, and Infinity
+function compareAlphanumeric(aStr, bStr) {
+  // Split on number groups, but keep the delimiter
+  // Then remove falsey split values
+  const a = aStr.split(reSplitAlphaNumeric).filter(Boolean);
+  const b = bStr.split(reSplitAlphaNumeric).filter(Boolean);
+
+  // While
+  while (a.length && b.length) {
+    const aa = a.shift();
+    const bb = b.shift();
+    const an = parseInt(aa, 10);
+    const bn = parseInt(bb, 10);
+    const combo = [an, bn].sort();
+
+    // Both are string
+    if (isNaN(combo[0])) {
+      if (aa > bb) {
+        return 1;
+      }
+      if (bb > aa) {
+        return -1;
+      }
+      continue;
+    }
+
+    // One is a string, one is a number
+    if (isNaN(combo[1])) {
+      return isNaN(an) ? -1 : 1;
+    }
+
+    // Both are numbers
+    if (an > bn) {
+      return 1;
+    }
+    if (bn > an) {
+      return -1;
+    }
+  }
+  return a.length - b.length;
+}
+
+// Exports
+
+const sortingFns = {
+  alphanumeric,
+  alphanumericCaseSensitive,
+  text,
+  textCaseSensitive,
+  datetime,
+  basic
+};
+
+//
+
+const RowSorting = {
+  getInitialState: state => {
+    return {
+      sorting: [],
+      ...state
+    };
+  },
+  getDefaultColumnDef: () => {
+    return {
+      sortingFn: 'auto',
+      sortUndefined: 1
+    };
+  },
+  getDefaultOptions: table => {
+    return {
+      onSortingChange: makeStateUpdater('sorting', table),
+      isMultiSortEvent: e => {
+        return e.shiftKey;
+      }
+    };
+  },
+  createColumn: (column, table) => {
+    column.getAutoSortingFn = () => {
+      const firstRows = table.getFilteredRowModel().flatRows.slice(10);
+      let isString = false;
+      for (const row of firstRows) {
+        const value = row == null ? void 0 : row.getValue(column.id);
+        if (Object.prototype.toString.call(value) === '[object Date]') {
+          return sortingFns.datetime;
+        }
+        if (typeof value === 'string') {
+          isString = true;
+          if (value.split(reSplitAlphaNumeric).length > 1) {
+            return sortingFns.alphanumeric;
+          }
+        }
+      }
+      if (isString) {
+        return sortingFns.text;
+      }
+      return sortingFns.basic;
+    };
+    column.getAutoSortDir = () => {
+      const firstRow = table.getFilteredRowModel().flatRows[0];
+      const value = firstRow == null ? void 0 : firstRow.getValue(column.id);
+      if (typeof value === 'string') {
+        return 'asc';
+      }
+      return 'desc';
+    };
+    column.getSortingFn = () => {
+      var _table$options$sortin, _table$options$sortin2;
+      if (!column) {
+        throw new Error();
+      }
+      return isFunction(column.columnDef.sortingFn) ? column.columnDef.sortingFn : column.columnDef.sortingFn === 'auto' ? column.getAutoSortingFn() : (_table$options$sortin = (_table$options$sortin2 = table.options.sortingFns) == null ? void 0 : _table$options$sortin2[column.columnDef.sortingFn]) != null ? _table$options$sortin : sortingFns[column.columnDef.sortingFn];
+    };
+    column.toggleSorting = (desc, multi) => {
+      // if (column.columns.length) {
+      //   column.columns.forEach((c, i) => {
+      //     if (c.id) {
+      //       table.toggleColumnSorting(c.id, undefined, multi || !!i)
+      //     }
+      //   })
+      //   return
+      // }
+
+      // this needs to be outside of table.setSorting to be in sync with rerender
+      const nextSortingOrder = column.getNextSortingOrder();
+      const hasManualValue = typeof desc !== 'undefined' && desc !== null;
+      table.setSorting(old => {
+        // Find any existing sorting for this column
+        const existingSorting = old == null ? void 0 : old.find(d => d.id === column.id);
+        const existingIndex = old == null ? void 0 : old.findIndex(d => d.id === column.id);
+        let newSorting = [];
+
+        // What should we do with this sort action?
+        let sortAction;
+        let nextDesc = hasManualValue ? desc : nextSortingOrder === 'desc';
+
+        // Multi-mode
+        if (old != null && old.length && column.getCanMultiSort() && multi) {
+          if (existingSorting) {
+            sortAction = 'toggle';
+          } else {
+            sortAction = 'add';
+          }
+        } else {
+          // Normal mode
+          if (old != null && old.length && existingIndex !== old.length - 1) {
+            sortAction = 'replace';
+          } else if (existingSorting) {
+            sortAction = 'toggle';
+          } else {
+            sortAction = 'replace';
+          }
+        }
+
+        // Handle toggle states that will remove the sorting
+        if (sortAction === 'toggle') {
+          // If we are "actually" toggling (not a manual set value), should we remove the sorting?
+          if (!hasManualValue) {
+            // Is our intention to remove?
+            if (!nextSortingOrder) {
+              sortAction = 'remove';
+            }
+          }
+        }
+        if (sortAction === 'add') {
+          var _table$options$maxMul;
+          newSorting = [...old, {
+            id: column.id,
+            desc: nextDesc
+          }];
+          // Take latest n columns
+          newSorting.splice(0, newSorting.length - ((_table$options$maxMul = table.options.maxMultiSortColCount) != null ? _table$options$maxMul : Number.MAX_SAFE_INTEGER));
+        } else if (sortAction === 'toggle') {
+          // This flips (or sets) the
+          newSorting = old.map(d => {
+            if (d.id === column.id) {
+              return {
+                ...d,
+                desc: nextDesc
+              };
+            }
+            return d;
+          });
+        } else if (sortAction === 'remove') {
+          newSorting = old.filter(d => d.id !== column.id);
+        } else {
+          newSorting = [{
+            id: column.id,
+            desc: nextDesc
+          }];
+        }
+        return newSorting;
+      });
+    };
+    column.getFirstSortDir = () => {
+      var _ref, _column$columnDef$sor;
+      const sortDescFirst = (_ref = (_column$columnDef$sor = column.columnDef.sortDescFirst) != null ? _column$columnDef$sor : table.options.sortDescFirst) != null ? _ref : column.getAutoSortDir() === 'desc';
+      return sortDescFirst ? 'desc' : 'asc';
+    };
+    column.getNextSortingOrder = multi => {
+      var _table$options$enable, _table$options$enable2;
+      const firstSortDirection = column.getFirstSortDir();
+      const isSorted = column.getIsSorted();
+      if (!isSorted) {
+        return firstSortDirection;
+      }
+      if (isSorted !== firstSortDirection && ((_table$options$enable = table.options.enableSortingRemoval) != null ? _table$options$enable : true) && (
+      // If enableSortRemove, enable in general
+      multi ? (_table$options$enable2 = table.options.enableMultiRemove) != null ? _table$options$enable2 : true : true) // If multi, don't allow if enableMultiRemove))
+      ) {
+        return false;
+      }
+      return isSorted === 'desc' ? 'asc' : 'desc';
+    };
+    column.getCanSort = () => {
+      var _column$columnDef$ena, _table$options$enable3;
+      return ((_column$columnDef$ena = column.columnDef.enableSorting) != null ? _column$columnDef$ena : true) && ((_table$options$enable3 = table.options.enableSorting) != null ? _table$options$enable3 : true) && !!column.accessorFn;
+    };
+    column.getCanMultiSort = () => {
+      var _ref2, _column$columnDef$ena2;
+      return (_ref2 = (_column$columnDef$ena2 = column.columnDef.enableMultiSort) != null ? _column$columnDef$ena2 : table.options.enableMultiSort) != null ? _ref2 : !!column.accessorFn;
+    };
+    column.getIsSorted = () => {
+      var _table$getState$sorti;
+      const columnSort = (_table$getState$sorti = table.getState().sorting) == null ? void 0 : _table$getState$sorti.find(d => d.id === column.id);
+      return !columnSort ? false : columnSort.desc ? 'desc' : 'asc';
+    };
+    column.getSortIndex = () => {
+      var _table$getState$sorti2, _table$getState$sorti3;
+      return (_table$getState$sorti2 = (_table$getState$sorti3 = table.getState().sorting) == null ? void 0 : _table$getState$sorti3.findIndex(d => d.id === column.id)) != null ? _table$getState$sorti2 : -1;
+    };
+    column.clearSorting = () => {
+      //clear sorting for just 1 column
+      table.setSorting(old => old != null && old.length ? old.filter(d => d.id !== column.id) : []);
+    };
+    column.getToggleSortingHandler = () => {
+      const canSort = column.getCanSort();
+      return e => {
+        if (!canSort) return;
+        e.persist == null || e.persist();
+        column.toggleSorting == null || column.toggleSorting(undefined, column.getCanMultiSort() ? table.options.isMultiSortEvent == null ? void 0 : table.options.isMultiSortEvent(e) : false);
+      };
+    };
+  },
+  createTable: table => {
+    table.setSorting = updater => table.options.onSortingChange == null ? void 0 : table.options.onSortingChange(updater);
+    table.resetSorting = defaultState => {
+      var _table$initialState$s, _table$initialState;
+      table.setSorting(defaultState ? [] : (_table$initialState$s = (_table$initialState = table.initialState) == null ? void 0 : _table$initialState.sorting) != null ? _table$initialState$s : []);
+    };
+    table.getPreSortedRowModel = () => table.getGroupedRowModel();
+    table.getSortedRowModel = () => {
+      if (!table._getSortedRowModel && table.options.getSortedRowModel) {
+        table._getSortedRowModel = table.options.getSortedRowModel(table);
+      }
+      if (table.options.manualSorting || !table._getSortedRowModel) {
+        return table.getPreSortedRowModel();
+      }
+      return table._getSortedRowModel();
+    };
+  }
+};
+
+const builtInFeatures = [Headers, ColumnVisibility, ColumnOrdering, ColumnPinning, ColumnFaceting, ColumnFiltering, GlobalFaceting,
+//depends on ColumnFaceting
+GlobalFiltering,
+//depends on ColumnFiltering
+RowSorting, ColumnGrouping,
+//depends on RowSorting
+RowExpanding, RowPagination, RowPinning, RowSelection, ColumnSizing];
+
+//
+
+function createTable(options) {
+  var _options$_features, _options$initialState;
+  if (process.env.NODE_ENV !== 'production' && (options.debugAll || options.debugTable)) {
+    console.info('Creating Table Instance...');
+  }
+  const _features = [...builtInFeatures, ...((_options$_features = options._features) != null ? _options$_features : [])];
+  let table = {
+    _features
+  };
+  const defaultOptions = table._features.reduce((obj, feature) => {
+    return Object.assign(obj, feature.getDefaultOptions == null ? void 0 : feature.getDefaultOptions(table));
+  }, {});
+  const mergeOptions = options => {
+    if (table.options.mergeOptions) {
+      return table.options.mergeOptions(defaultOptions, options);
+    }
+    return {
+      ...defaultOptions,
+      ...options
+    };
+  };
+  const coreInitialState = {};
+  let initialState = {
+    ...coreInitialState,
+    ...((_options$initialState = options.initialState) != null ? _options$initialState : {})
+  };
+  table._features.forEach(feature => {
+    var _feature$getInitialSt;
+    initialState = (_feature$getInitialSt = feature.getInitialState == null ? void 0 : feature.getInitialState(initialState)) != null ? _feature$getInitialSt : initialState;
+  });
+  const queued = [];
+  let queuedTimeout = false;
+  const coreInstance = {
+    _features,
+    options: {
+      ...defaultOptions,
+      ...options
+    },
+    initialState,
+    _queue: cb => {
+      queued.push(cb);
+      if (!queuedTimeout) {
+        queuedTimeout = true;
+
+        // Schedule a microtask to run the queued callbacks after
+        // the current call stack (render, etc) has finished.
+        Promise.resolve().then(() => {
+          while (queued.length) {
+            queued.shift()();
+          }
+          queuedTimeout = false;
+        }).catch(error => setTimeout(() => {
+          throw error;
+        }));
+      }
+    },
+    reset: () => {
+      table.setState(table.initialState);
+    },
+    setOptions: updater => {
+      const newOptions = functionalUpdate(updater, table.options);
+      table.options = mergeOptions(newOptions);
+    },
+    getState: () => {
+      return table.options.state;
+    },
+    setState: updater => {
+      table.options.onStateChange == null || table.options.onStateChange(updater);
+    },
+    _getRowId: (row, index, parent) => {
+      var _table$options$getRow;
+      return (_table$options$getRow = table.options.getRowId == null ? void 0 : table.options.getRowId(row, index, parent)) != null ? _table$options$getRow : `${parent ? [parent.id, index].join('.') : index}`;
+    },
+    getCoreRowModel: () => {
+      if (!table._getCoreRowModel) {
+        table._getCoreRowModel = table.options.getCoreRowModel(table);
+      }
+      return table._getCoreRowModel();
+    },
+    // The final calls start at the bottom of the model,
+    // expanded rows, which then work their way up
+
+    getRowModel: () => {
+      return table.getPaginationRowModel();
+    },
+    //in next version, we should just pass in the row model as the optional 2nd arg
+    getRow: (id, searchAll) => {
+      let row = (searchAll ? table.getPrePaginationRowModel() : table.getRowModel()).rowsById[id];
+      if (!row) {
+        row = table.getCoreRowModel().rowsById[id];
+        if (!row) {
+          if (process.env.NODE_ENV !== 'production') {
+            throw new Error(`getRow could not find row with ID: ${id}`);
+          }
+          throw new Error();
+        }
+      }
+      return row;
+    },
+    _getDefaultColumnDef: memo(() => [table.options.defaultColumn], defaultColumn => {
+      var _defaultColumn;
+      defaultColumn = (_defaultColumn = defaultColumn) != null ? _defaultColumn : {};
+      return {
+        header: props => {
+          const resolvedColumnDef = props.header.column.columnDef;
+          if (resolvedColumnDef.accessorKey) {
+            return resolvedColumnDef.accessorKey;
+          }
+          if (resolvedColumnDef.accessorFn) {
+            return resolvedColumnDef.id;
+          }
+          return null;
+        },
+        // footer: props => props.header.column.id,
+        cell: props => {
+          var _props$renderValue$to, _props$renderValue;
+          return (_props$renderValue$to = (_props$renderValue = props.renderValue()) == null || _props$renderValue.toString == null ? void 0 : _props$renderValue.toString()) != null ? _props$renderValue$to : null;
+        },
+        ...table._features.reduce((obj, feature) => {
+          return Object.assign(obj, feature.getDefaultColumnDef == null ? void 0 : feature.getDefaultColumnDef());
+        }, {}),
+        ...defaultColumn
+      };
+    }, getMemoOptions(options, 'debugColumns', '_getDefaultColumnDef')),
+    _getColumnDefs: () => table.options.columns,
+    getAllColumns: memo(() => [table._getColumnDefs()], columnDefs => {
+      const recurseColumns = function (columnDefs, parent, depth) {
+        if (depth === void 0) {
+          depth = 0;
+        }
+        return columnDefs.map(columnDef => {
+          const column = createColumn(table, columnDef, depth, parent);
+          const groupingColumnDef = columnDef;
+          column.columns = groupingColumnDef.columns ? recurseColumns(groupingColumnDef.columns, column, depth + 1) : [];
+          return column;
+        });
+      };
+      return recurseColumns(columnDefs);
+    }, getMemoOptions(options, 'debugColumns', 'getAllColumns')),
+    getAllFlatColumns: memo(() => [table.getAllColumns()], allColumns => {
+      return allColumns.flatMap(column => {
+        return column.getFlatColumns();
+      });
+    }, getMemoOptions(options, 'debugColumns', 'getAllFlatColumns')),
+    _getAllFlatColumnsById: memo(() => [table.getAllFlatColumns()], flatColumns => {
+      return flatColumns.reduce((acc, column) => {
+        acc[column.id] = column;
+        return acc;
+      }, {});
+    }, getMemoOptions(options, 'debugColumns', 'getAllFlatColumnsById')),
+    getAllLeafColumns: memo(() => [table.getAllColumns(), table._getOrderColumnsFn()], (allColumns, orderColumns) => {
+      let leafColumns = allColumns.flatMap(column => column.getLeafColumns());
+      return orderColumns(leafColumns);
+    }, getMemoOptions(options, 'debugColumns', 'getAllLeafColumns')),
+    getColumn: columnId => {
+      const column = table._getAllFlatColumnsById()[columnId];
+      if (process.env.NODE_ENV !== 'production' && !column) {
+        console.error(`[Table] Column with id '${columnId}' does not exist.`);
+      }
+      return column;
+    }
+  };
+  Object.assign(table, coreInstance);
+  for (let index = 0; index < table._features.length; index++) {
+    const feature = table._features[index];
+    feature == null || feature.createTable == null || feature.createTable(table);
+  }
+  return table;
+}
+
+function getCoreRowModel() {
+  return table => memo(() => [table.options.data], data => {
+    const rowModel = {
+      rows: [],
+      flatRows: [],
+      rowsById: {}
+    };
+    const accessRows = function (originalRows, depth, parentRow) {
+      if (depth === void 0) {
+        depth = 0;
+      }
+      const rows = [];
+      for (let i = 0; i < originalRows.length; i++) {
+        // This could be an expensive check at scale, so we should move it somewhere else, but where?
+        // if (!id) {
+        //   if (process.env.NODE_ENV !== 'production') {
+        //     throw new Error(`getRowId expected an ID, but got ${id}`)
+        //   }
+        // }
+
+        // Make the row
+        const row = createRow(table, table._getRowId(originalRows[i], i, parentRow), originalRows[i], i, depth, undefined, parentRow == null ? void 0 : parentRow.id);
+
+        // Keep track of every row in a flat array
+        rowModel.flatRows.push(row);
+        // Also keep track of every row by its ID
+        rowModel.rowsById[row.id] = row;
+        // Push table row into parent
+        rows.push(row);
+
+        // Get the original subrows
+        if (table.options.getSubRows) {
+          var _row$originalSubRows;
+          row.originalSubRows = table.options.getSubRows(originalRows[i], i);
+
+          // Then recursively access them
+          if ((_row$originalSubRows = row.originalSubRows) != null && _row$originalSubRows.length) {
+            row.subRows = accessRows(row.originalSubRows, depth + 1, row);
+          }
+        }
+      }
+      return rows;
+    };
+    rowModel.rows = accessRows(data);
+    return rowModel;
+  }, getMemoOptions(table.options, 'debugTable', 'getRowModel', () => table._autoResetPageIndex()));
+}
+
+/**
+   * react-table
+   *
+   * Copyright (c) TanStack
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE.md file in the root directory of this source tree.
+   *
+   * @license MIT
+   */
+
+//
+
+/**
+ * If rendering headers, cells, or footers with custom markup, use flexRender instead of `cell.getValue()` or `cell.renderValue()`.
+ */
+function flexRender(Comp, props) {
+  return !Comp ? null : isReactComponent(Comp) ? /*#__PURE__*/React__namespace.createElement(Comp, props) : Comp;
+}
+function isReactComponent(component) {
+  return isClassComponent(component) || typeof component === 'function' || isExoticComponent(component);
+}
+function isClassComponent(component) {
+  return typeof component === 'function' && (() => {
+    const proto = Object.getPrototypeOf(component);
+    return proto.prototype && proto.prototype.isReactComponent;
+  })();
+}
+function isExoticComponent(component) {
+  return typeof component === 'object' && typeof component.$$typeof === 'symbol' && ['react.memo', 'react.forward_ref'].includes(component.$$typeof.description);
+}
+function useReactTable(options) {
+  // Compose in the generic options to the user options
+  const resolvedOptions = {
+    state: {},
+    // Dummy state
+    onStateChange: () => {},
+    // noop
+    renderFallbackValue: null,
+    ...options
+  };
+
+  // Create a new table and store it in state
+  const [tableRef] = React__namespace.useState(() => ({
+    current: createTable(resolvedOptions)
+  }));
+
+  // By default, manage table state here using the table's initial state
+  const [state, setState] = React__namespace.useState(() => tableRef.current.initialState);
+
+  // Compose the default state above with any user state. This will allow the user
+  // to only control a subset of the state if desired.
+  tableRef.current.setOptions(prev => ({
+    ...prev,
+    ...options,
+    state: {
+      ...state,
+      ...options.state
+    },
+    // Similarly, we'll maintain both our internal state and any user-provided
+    // state.
+    onStateChange: updater => {
+      setState(updater);
+      options.onStateChange == null || options.onStateChange(updater);
+    }
+  }));
+  return tableRef.current;
+}
+
+var lib = {exports: {}};
+
+var scrollbar = {exports: {}};
+
+/*!
+ * perfect-scrollbar v1.5.3
+ * Copyright 2021 Hyunje Jun, MDBootstrap and Contributors
+ * Licensed under MIT
+ */
+
+function get(element) {
+  return getComputedStyle(element);
+}
+
+function set(element, obj) {
+  for (var key in obj) {
+    var val = obj[key];
+    if (typeof val === 'number') {
+      val = val + "px";
+    }
+    element.style[key] = val;
+  }
+  return element;
+}
+
+function div(className) {
+  var div = document.createElement('div');
+  div.className = className;
+  return div;
+}
+
+var elMatches =
+  typeof Element !== 'undefined' &&
+  (Element.prototype.matches ||
+    Element.prototype.webkitMatchesSelector ||
+    Element.prototype.mozMatchesSelector ||
+    Element.prototype.msMatchesSelector);
+
+function matches(element, query) {
+  if (!elMatches) {
+    throw new Error('No element matching method supported');
+  }
+
+  return elMatches.call(element, query);
+}
+
+function remove(element) {
+  if (element.remove) {
+    element.remove();
+  } else {
+    if (element.parentNode) {
+      element.parentNode.removeChild(element);
+    }
+  }
+}
+
+function queryChildren(element, selector) {
+  return Array.prototype.filter.call(element.children, function (child) { return matches(child, selector); }
+  );
+}
+
+var cls = {
+  main: 'ps',
+  rtl: 'ps__rtl',
+  element: {
+    thumb: function (x) { return ("ps__thumb-" + x); },
+    rail: function (x) { return ("ps__rail-" + x); },
+    consuming: 'ps__child--consume',
+  },
+  state: {
+    focus: 'ps--focus',
+    clicking: 'ps--clicking',
+    active: function (x) { return ("ps--active-" + x); },
+    scrolling: function (x) { return ("ps--scrolling-" + x); },
+  },
+};
+
+/*
+ * Helper methods
+ */
+var scrollingClassTimeout = { x: null, y: null };
+
+function addScrollingClass(i, x) {
+  var classList = i.element.classList;
+  var className = cls.state.scrolling(x);
+
+  if (classList.contains(className)) {
+    clearTimeout(scrollingClassTimeout[x]);
+  } else {
+    classList.add(className);
+  }
+}
+
+function removeScrollingClass(i, x) {
+  scrollingClassTimeout[x] = setTimeout(
+    function () { return i.isAlive && i.element.classList.remove(cls.state.scrolling(x)); },
+    i.settings.scrollingThreshold
+  );
+}
+
+function setScrollingClassInstantly(i, x) {
+  addScrollingClass(i, x);
+  removeScrollingClass(i, x);
+}
+
+var EventElement = function EventElement(element) {
+  this.element = element;
+  this.handlers = {};
+};
+
+var prototypeAccessors = { isEmpty: { configurable: true } };
+
+EventElement.prototype.bind = function bind (eventName, handler) {
+  if (typeof this.handlers[eventName] === 'undefined') {
+    this.handlers[eventName] = [];
+  }
+  this.handlers[eventName].push(handler);
+  this.element.addEventListener(eventName, handler, false);
+};
+
+EventElement.prototype.unbind = function unbind (eventName, target) {
+    var this$1$1 = this;
+
+  this.handlers[eventName] = this.handlers[eventName].filter(function (handler) {
+    if (target && handler !== target) {
+      return true;
+    }
+    this$1$1.element.removeEventListener(eventName, handler, false);
+    return false;
+  });
+};
+
+EventElement.prototype.unbindAll = function unbindAll () {
+  for (var name in this.handlers) {
+    this.unbind(name);
+  }
+};
+
+prototypeAccessors.isEmpty.get = function () {
+    var this$1$1 = this;
+
+  return Object.keys(this.handlers).every(
+    function (key) { return this$1$1.handlers[key].length === 0; }
+  );
+};
+
+Object.defineProperties( EventElement.prototype, prototypeAccessors );
+
+var EventManager = function EventManager() {
+  this.eventElements = [];
+};
+
+EventManager.prototype.eventElement = function eventElement (element) {
+  var ee = this.eventElements.filter(function (ee) { return ee.element === element; })[0];
+  if (!ee) {
+    ee = new EventElement(element);
+    this.eventElements.push(ee);
+  }
+  return ee;
+};
+
+EventManager.prototype.bind = function bind (element, eventName, handler) {
+  this.eventElement(element).bind(eventName, handler);
+};
+
+EventManager.prototype.unbind = function unbind (element, eventName, handler) {
+  var ee = this.eventElement(element);
+  ee.unbind(eventName, handler);
+
+  if (ee.isEmpty) {
+    // remove
+    this.eventElements.splice(this.eventElements.indexOf(ee), 1);
+  }
+};
+
+EventManager.prototype.unbindAll = function unbindAll () {
+  this.eventElements.forEach(function (e) { return e.unbindAll(); });
+  this.eventElements = [];
+};
+
+EventManager.prototype.once = function once (element, eventName, handler) {
+  var ee = this.eventElement(element);
+  var onceHandler = function (evt) {
+    ee.unbind(eventName, onceHandler);
+    handler(evt);
+  };
+  ee.bind(eventName, onceHandler);
+};
+
+function createEvent(name) {
+  if (typeof window.CustomEvent === 'function') {
+    return new CustomEvent(name);
+  } else {
+    var evt = document.createEvent('CustomEvent');
+    evt.initCustomEvent(name, false, false, undefined);
+    return evt;
+  }
+}
+
+function processScrollDiff(
+  i,
+  axis,
+  diff,
+  useScrollingClass,
+  forceFireReachEvent
+) {
+  if ( useScrollingClass === void 0 ) useScrollingClass = true;
+  if ( forceFireReachEvent === void 0 ) forceFireReachEvent = false;
+
+  var fields;
+  if (axis === 'top') {
+    fields = [
+      'contentHeight',
+      'containerHeight',
+      'scrollTop',
+      'y',
+      'up',
+      'down' ];
+  } else if (axis === 'left') {
+    fields = [
+      'contentWidth',
+      'containerWidth',
+      'scrollLeft',
+      'x',
+      'left',
+      'right' ];
+  } else {
+    throw new Error('A proper axis should be provided');
+  }
+
+  processScrollDiff$1(i, diff, fields, useScrollingClass, forceFireReachEvent);
+}
+
+function processScrollDiff$1(
+  i,
+  diff,
+  ref,
+  useScrollingClass,
+  forceFireReachEvent
+) {
+  var contentHeight = ref[0];
+  var containerHeight = ref[1];
+  var scrollTop = ref[2];
+  var y = ref[3];
+  var up = ref[4];
+  var down = ref[5];
+  if ( useScrollingClass === void 0 ) useScrollingClass = true;
+  if ( forceFireReachEvent === void 0 ) forceFireReachEvent = false;
+
+  var element = i.element;
+
+  // reset reach
+  i.reach[y] = null;
+
+  // 1 for subpixel rounding
+  if (element[scrollTop] < 1) {
+    i.reach[y] = 'start';
+  }
+
+  // 1 for subpixel rounding
+  if (element[scrollTop] > i[contentHeight] - i[containerHeight] - 1) {
+    i.reach[y] = 'end';
+  }
+
+  if (diff) {
+    element.dispatchEvent(createEvent(("ps-scroll-" + y)));
+
+    if (diff < 0) {
+      element.dispatchEvent(createEvent(("ps-scroll-" + up)));
+    } else if (diff > 0) {
+      element.dispatchEvent(createEvent(("ps-scroll-" + down)));
+    }
+
+    if (useScrollingClass) {
+      setScrollingClassInstantly(i, y);
+    }
+  }
+
+  if (i.reach[y] && (diff || forceFireReachEvent)) {
+    element.dispatchEvent(createEvent(("ps-" + y + "-reach-" + (i.reach[y]))));
+  }
+}
+
+function toInt(x) {
+  return parseInt(x, 10) || 0;
+}
+
+function isEditable(el) {
+  return (
+    matches(el, 'input,[contenteditable]') ||
+    matches(el, 'select,[contenteditable]') ||
+    matches(el, 'textarea,[contenteditable]') ||
+    matches(el, 'button,[contenteditable]')
+  );
+}
+
+function outerWidth(element) {
+  var styles = get(element);
+  return (
+    toInt(styles.width) +
+    toInt(styles.paddingLeft) +
+    toInt(styles.paddingRight) +
+    toInt(styles.borderLeftWidth) +
+    toInt(styles.borderRightWidth)
+  );
+}
+
+var env = {
+  isWebKit:
+    typeof document !== 'undefined' &&
+    'WebkitAppearance' in document.documentElement.style,
+  supportsTouch:
+    typeof window !== 'undefined' &&
+    ('ontouchstart' in window ||
+      ('maxTouchPoints' in window.navigator &&
+        window.navigator.maxTouchPoints > 0) ||
+      (window.DocumentTouch && document instanceof window.DocumentTouch)),
+  supportsIePointer:
+    typeof navigator !== 'undefined' && navigator.msMaxTouchPoints,
+  isChrome:
+    typeof navigator !== 'undefined' &&
+    /Chrome/i.test(navigator && navigator.userAgent),
+};
+
+function updateGeometry(i) {
+  var element = i.element;
+  var roundedScrollTop = Math.floor(element.scrollTop);
+  var rect = element.getBoundingClientRect();
+
+  i.containerWidth = Math.round(rect.width);
+  i.containerHeight = Math.round(rect.height);
+
+  i.contentWidth = element.scrollWidth;
+  i.contentHeight = element.scrollHeight;
+
+  if (!element.contains(i.scrollbarXRail)) {
+    // clean up and append
+    queryChildren(element, cls.element.rail('x')).forEach(function (el) { return remove(el); }
+    );
+    element.appendChild(i.scrollbarXRail);
+  }
+  if (!element.contains(i.scrollbarYRail)) {
+    // clean up and append
+    queryChildren(element, cls.element.rail('y')).forEach(function (el) { return remove(el); }
+    );
+    element.appendChild(i.scrollbarYRail);
+  }
+
+  if (
+    !i.settings.suppressScrollX &&
+    i.containerWidth + i.settings.scrollXMarginOffset < i.contentWidth
+  ) {
+    i.scrollbarXActive = true;
+    i.railXWidth = i.containerWidth - i.railXMarginWidth;
+    i.railXRatio = i.containerWidth / i.railXWidth;
+    i.scrollbarXWidth = getThumbSize(
+      i,
+      toInt((i.railXWidth * i.containerWidth) / i.contentWidth)
+    );
+    i.scrollbarXLeft = toInt(
+      ((i.negativeScrollAdjustment + element.scrollLeft) *
+        (i.railXWidth - i.scrollbarXWidth)) /
+        (i.contentWidth - i.containerWidth)
+    );
+  } else {
+    i.scrollbarXActive = false;
+  }
+
+  if (
+    !i.settings.suppressScrollY &&
+    i.containerHeight + i.settings.scrollYMarginOffset < i.contentHeight
+  ) {
+    i.scrollbarYActive = true;
+    i.railYHeight = i.containerHeight - i.railYMarginHeight;
+    i.railYRatio = i.containerHeight / i.railYHeight;
+    i.scrollbarYHeight = getThumbSize(
+      i,
+      toInt((i.railYHeight * i.containerHeight) / i.contentHeight)
+    );
+    i.scrollbarYTop = toInt(
+      (roundedScrollTop * (i.railYHeight - i.scrollbarYHeight)) /
+        (i.contentHeight - i.containerHeight)
+    );
+  } else {
+    i.scrollbarYActive = false;
+  }
+
+  if (i.scrollbarXLeft >= i.railXWidth - i.scrollbarXWidth) {
+    i.scrollbarXLeft = i.railXWidth - i.scrollbarXWidth;
+  }
+  if (i.scrollbarYTop >= i.railYHeight - i.scrollbarYHeight) {
+    i.scrollbarYTop = i.railYHeight - i.scrollbarYHeight;
+  }
+
+  updateCss(element, i);
+
+  if (i.scrollbarXActive) {
+    element.classList.add(cls.state.active('x'));
+  } else {
+    element.classList.remove(cls.state.active('x'));
+    i.scrollbarXWidth = 0;
+    i.scrollbarXLeft = 0;
+    element.scrollLeft = i.isRtl === true ? i.contentWidth : 0;
+  }
+  if (i.scrollbarYActive) {
+    element.classList.add(cls.state.active('y'));
+  } else {
+    element.classList.remove(cls.state.active('y'));
+    i.scrollbarYHeight = 0;
+    i.scrollbarYTop = 0;
+    element.scrollTop = 0;
+  }
+}
+
+function getThumbSize(i, thumbSize) {
+  if (i.settings.minScrollbarLength) {
+    thumbSize = Math.max(thumbSize, i.settings.minScrollbarLength);
+  }
+  if (i.settings.maxScrollbarLength) {
+    thumbSize = Math.min(thumbSize, i.settings.maxScrollbarLength);
+  }
+  return thumbSize;
+}
+
+function updateCss(element, i) {
+  var xRailOffset = { width: i.railXWidth };
+  var roundedScrollTop = Math.floor(element.scrollTop);
+
+  if (i.isRtl) {
+    xRailOffset.left =
+      i.negativeScrollAdjustment +
+      element.scrollLeft +
+      i.containerWidth -
+      i.contentWidth;
+  } else {
+    xRailOffset.left = element.scrollLeft;
+  }
+  if (i.isScrollbarXUsingBottom) {
+    xRailOffset.bottom = i.scrollbarXBottom - roundedScrollTop;
+  } else {
+    xRailOffset.top = i.scrollbarXTop + roundedScrollTop;
+  }
+  set(i.scrollbarXRail, xRailOffset);
+
+  var yRailOffset = { top: roundedScrollTop, height: i.railYHeight };
+  if (i.isScrollbarYUsingRight) {
+    if (i.isRtl) {
+      yRailOffset.right =
+        i.contentWidth -
+        (i.negativeScrollAdjustment + element.scrollLeft) -
+        i.scrollbarYRight -
+        i.scrollbarYOuterWidth -
+        9;
+    } else {
+      yRailOffset.right = i.scrollbarYRight - element.scrollLeft;
+    }
+  } else {
+    if (i.isRtl) {
+      yRailOffset.left =
+        i.negativeScrollAdjustment +
+        element.scrollLeft +
+        i.containerWidth * 2 -
+        i.contentWidth -
+        i.scrollbarYLeft -
+        i.scrollbarYOuterWidth;
+    } else {
+      yRailOffset.left = i.scrollbarYLeft + element.scrollLeft;
+    }
+  }
+  set(i.scrollbarYRail, yRailOffset);
+
+  set(i.scrollbarX, {
+    left: i.scrollbarXLeft,
+    width: i.scrollbarXWidth - i.railBorderXWidth,
+  });
+  set(i.scrollbarY, {
+    top: i.scrollbarYTop,
+    height: i.scrollbarYHeight - i.railBorderYWidth,
+  });
+}
+
+function clickRail(i) {
+  i.element;
+
+  i.event.bind(i.scrollbarY, 'mousedown', function (e) { return e.stopPropagation(); });
+  i.event.bind(i.scrollbarYRail, 'mousedown', function (e) {
+    var positionTop =
+      e.pageY -
+      window.pageYOffset -
+      i.scrollbarYRail.getBoundingClientRect().top;
+    var direction = positionTop > i.scrollbarYTop ? 1 : -1;
+
+    i.element.scrollTop += direction * i.containerHeight;
+    updateGeometry(i);
+
+    e.stopPropagation();
+  });
+
+  i.event.bind(i.scrollbarX, 'mousedown', function (e) { return e.stopPropagation(); });
+  i.event.bind(i.scrollbarXRail, 'mousedown', function (e) {
+    var positionLeft =
+      e.pageX -
+      window.pageXOffset -
+      i.scrollbarXRail.getBoundingClientRect().left;
+    var direction = positionLeft > i.scrollbarXLeft ? 1 : -1;
+
+    i.element.scrollLeft += direction * i.containerWidth;
+    updateGeometry(i);
+
+    e.stopPropagation();
+  });
+}
+
+function dragThumb(i) {
+  bindMouseScrollHandler(i, [
+    'containerWidth',
+    'contentWidth',
+    'pageX',
+    'railXWidth',
+    'scrollbarX',
+    'scrollbarXWidth',
+    'scrollLeft',
+    'x',
+    'scrollbarXRail' ]);
+  bindMouseScrollHandler(i, [
+    'containerHeight',
+    'contentHeight',
+    'pageY',
+    'railYHeight',
+    'scrollbarY',
+    'scrollbarYHeight',
+    'scrollTop',
+    'y',
+    'scrollbarYRail' ]);
+}
+
+function bindMouseScrollHandler(
+  i,
+  ref
+) {
+  var containerHeight = ref[0];
+  var contentHeight = ref[1];
+  var pageY = ref[2];
+  var railYHeight = ref[3];
+  var scrollbarY = ref[4];
+  var scrollbarYHeight = ref[5];
+  var scrollTop = ref[6];
+  var y = ref[7];
+  var scrollbarYRail = ref[8];
+
+  var element = i.element;
+
+  var startingScrollTop = null;
+  var startingMousePageY = null;
+  var scrollBy = null;
+
+  function mouseMoveHandler(e) {
+    if (e.touches && e.touches[0]) {
+      e[pageY] = e.touches[0].pageY;
+    }
+    element[scrollTop] =
+      startingScrollTop + scrollBy * (e[pageY] - startingMousePageY);
+    addScrollingClass(i, y);
+    updateGeometry(i);
+
+    e.stopPropagation();
+    if (e.type.startsWith('touch') && e.changedTouches.length > 1) {
+      e.preventDefault();
+    }
+  }
+
+  function mouseUpHandler() {
+    removeScrollingClass(i, y);
+    i[scrollbarYRail].classList.remove(cls.state.clicking);
+    i.event.unbind(i.ownerDocument, 'mousemove', mouseMoveHandler);
+  }
+
+  function bindMoves(e, touchMode) {
+    startingScrollTop = element[scrollTop];
+    if (touchMode && e.touches) {
+      e[pageY] = e.touches[0].pageY;
+    }
+    startingMousePageY = e[pageY];
+    scrollBy =
+      (i[contentHeight] - i[containerHeight]) /
+      (i[railYHeight] - i[scrollbarYHeight]);
+    if (!touchMode) {
+      i.event.bind(i.ownerDocument, 'mousemove', mouseMoveHandler);
+      i.event.once(i.ownerDocument, 'mouseup', mouseUpHandler);
+      e.preventDefault();
+    } else {
+      i.event.bind(i.ownerDocument, 'touchmove', mouseMoveHandler);
+    }
+
+    i[scrollbarYRail].classList.add(cls.state.clicking);
+
+    e.stopPropagation();
+  }
+
+  i.event.bind(i[scrollbarY], 'mousedown', function (e) {
+    bindMoves(e);
+  });
+  i.event.bind(i[scrollbarY], 'touchstart', function (e) {
+    bindMoves(e, true);
+  });
+}
+
+function keyboard(i) {
+  var element = i.element;
+
+  var elementHovered = function () { return matches(element, ':hover'); };
+  var scrollbarFocused = function () { return matches(i.scrollbarX, ':focus') || matches(i.scrollbarY, ':focus'); };
+
+  function shouldPreventDefault(deltaX, deltaY) {
+    var scrollTop = Math.floor(element.scrollTop);
+    if (deltaX === 0) {
+      if (!i.scrollbarYActive) {
+        return false;
+      }
+      if (
+        (scrollTop === 0 && deltaY > 0) ||
+        (scrollTop >= i.contentHeight - i.containerHeight && deltaY < 0)
+      ) {
+        return !i.settings.wheelPropagation;
+      }
+    }
+
+    var scrollLeft = element.scrollLeft;
+    if (deltaY === 0) {
+      if (!i.scrollbarXActive) {
+        return false;
+      }
+      if (
+        (scrollLeft === 0 && deltaX < 0) ||
+        (scrollLeft >= i.contentWidth - i.containerWidth && deltaX > 0)
+      ) {
+        return !i.settings.wheelPropagation;
+      }
+    }
+    return true;
+  }
+
+  i.event.bind(i.ownerDocument, 'keydown', function (e) {
+    if (
+      (e.isDefaultPrevented && e.isDefaultPrevented()) ||
+      e.defaultPrevented
+    ) {
+      return;
+    }
+
+    if (!elementHovered() && !scrollbarFocused()) {
+      return;
+    }
+
+    var activeElement = document.activeElement
+      ? document.activeElement
+      : i.ownerDocument.activeElement;
+    if (activeElement) {
+      if (activeElement.tagName === 'IFRAME') {
+        activeElement = activeElement.contentDocument.activeElement;
+      } else {
+        // go deeper if element is a webcomponent
+        while (activeElement.shadowRoot) {
+          activeElement = activeElement.shadowRoot.activeElement;
+        }
+      }
+      if (isEditable(activeElement)) {
+        return;
+      }
+    }
+
+    var deltaX = 0;
+    var deltaY = 0;
+
+    switch (e.which) {
+      case 37: // left
+        if (e.metaKey) {
+          deltaX = -i.contentWidth;
+        } else if (e.altKey) {
+          deltaX = -i.containerWidth;
+        } else {
+          deltaX = -30;
+        }
+        break;
+      case 38: // up
+        if (e.metaKey) {
+          deltaY = i.contentHeight;
+        } else if (e.altKey) {
+          deltaY = i.containerHeight;
+        } else {
+          deltaY = 30;
+        }
+        break;
+      case 39: // right
+        if (e.metaKey) {
+          deltaX = i.contentWidth;
+        } else if (e.altKey) {
+          deltaX = i.containerWidth;
+        } else {
+          deltaX = 30;
+        }
+        break;
+      case 40: // down
+        if (e.metaKey) {
+          deltaY = -i.contentHeight;
+        } else if (e.altKey) {
+          deltaY = -i.containerHeight;
+        } else {
+          deltaY = -30;
+        }
+        break;
+      case 32: // space bar
+        if (e.shiftKey) {
+          deltaY = i.containerHeight;
+        } else {
+          deltaY = -i.containerHeight;
+        }
+        break;
+      case 33: // page up
+        deltaY = i.containerHeight;
+        break;
+      case 34: // page down
+        deltaY = -i.containerHeight;
+        break;
+      case 36: // home
+        deltaY = i.contentHeight;
+        break;
+      case 35: // end
+        deltaY = -i.contentHeight;
+        break;
+      default:
+        return;
+    }
+
+    if (i.settings.suppressScrollX && deltaX !== 0) {
+      return;
+    }
+    if (i.settings.suppressScrollY && deltaY !== 0) {
+      return;
+    }
+
+    element.scrollTop -= deltaY;
+    element.scrollLeft += deltaX;
+    updateGeometry(i);
+
+    if (shouldPreventDefault(deltaX, deltaY)) {
+      e.preventDefault();
+    }
+  });
+}
+
+function wheel(i) {
+  var element = i.element;
+
+  function shouldPreventDefault(deltaX, deltaY) {
+    var roundedScrollTop = Math.floor(element.scrollTop);
+    var isTop = element.scrollTop === 0;
+    var isBottom =
+      roundedScrollTop + element.offsetHeight === element.scrollHeight;
+    var isLeft = element.scrollLeft === 0;
+    var isRight =
+      element.scrollLeft + element.offsetWidth === element.scrollWidth;
+
+    var hitsBound;
+
+    // pick axis with primary direction
+    if (Math.abs(deltaY) > Math.abs(deltaX)) {
+      hitsBound = isTop || isBottom;
+    } else {
+      hitsBound = isLeft || isRight;
+    }
+
+    return hitsBound ? !i.settings.wheelPropagation : true;
+  }
+
+  function getDeltaFromEvent(e) {
+    var deltaX = e.deltaX;
+    var deltaY = -1 * e.deltaY;
+
+    if (typeof deltaX === 'undefined' || typeof deltaY === 'undefined') {
+      // OS X Safari
+      deltaX = (-1 * e.wheelDeltaX) / 6;
+      deltaY = e.wheelDeltaY / 6;
+    }
+
+    if (e.deltaMode && e.deltaMode === 1) {
+      // Firefox in deltaMode 1: Line scrolling
+      deltaX *= 10;
+      deltaY *= 10;
+    }
+
+    if (deltaX !== deltaX && deltaY !== deltaY /* NaN checks */) {
+      // IE in some mouse drivers
+      deltaX = 0;
+      deltaY = e.wheelDelta;
+    }
+
+    if (e.shiftKey) {
+      // reverse axis with shift key
+      return [-deltaY, -deltaX];
+    }
+    return [deltaX, deltaY];
+  }
+
+  function shouldBeConsumedByChild(target, deltaX, deltaY) {
+    // FIXME: this is a workaround for <select> issue in FF and IE #571
+    if (!env.isWebKit && element.querySelector('select:focus')) {
+      return true;
+    }
+
+    if (!element.contains(target)) {
+      return false;
+    }
+
+    var cursor = target;
+
+    while (cursor && cursor !== element) {
+      if (cursor.classList.contains(cls.element.consuming)) {
+        return true;
+      }
+
+      var style = get(cursor);
+
+      // if deltaY && vertical scrollable
+      if (deltaY && style.overflowY.match(/(scroll|auto)/)) {
+        var maxScrollTop = cursor.scrollHeight - cursor.clientHeight;
+        if (maxScrollTop > 0) {
+          if (
+            (cursor.scrollTop > 0 && deltaY < 0) ||
+            (cursor.scrollTop < maxScrollTop && deltaY > 0)
+          ) {
+            return true;
+          }
+        }
+      }
+      // if deltaX && horizontal scrollable
+      if (deltaX && style.overflowX.match(/(scroll|auto)/)) {
+        var maxScrollLeft = cursor.scrollWidth - cursor.clientWidth;
+        if (maxScrollLeft > 0) {
+          if (
+            (cursor.scrollLeft > 0 && deltaX < 0) ||
+            (cursor.scrollLeft < maxScrollLeft && deltaX > 0)
+          ) {
+            return true;
+          }
+        }
+      }
+
+      cursor = cursor.parentNode;
+    }
+
+    return false;
+  }
+
+  function mousewheelHandler(e) {
+    var ref = getDeltaFromEvent(e);
+    var deltaX = ref[0];
+    var deltaY = ref[1];
+
+    if (shouldBeConsumedByChild(e.target, deltaX, deltaY)) {
+      return;
+    }
+
+    var shouldPrevent = false;
+    if (!i.settings.useBothWheelAxes) {
+      // deltaX will only be used for horizontal scrolling and deltaY will
+      // only be used for vertical scrolling - this is the default
+      element.scrollTop -= deltaY * i.settings.wheelSpeed;
+      element.scrollLeft += deltaX * i.settings.wheelSpeed;
+    } else if (i.scrollbarYActive && !i.scrollbarXActive) {
+      // only vertical scrollbar is active and useBothWheelAxes option is
+      // active, so let's scroll vertical bar using both mouse wheel axes
+      if (deltaY) {
+        element.scrollTop -= deltaY * i.settings.wheelSpeed;
+      } else {
+        element.scrollTop += deltaX * i.settings.wheelSpeed;
+      }
+      shouldPrevent = true;
+    } else if (i.scrollbarXActive && !i.scrollbarYActive) {
+      // useBothWheelAxes and only horizontal bar is active, so use both
+      // wheel axes for horizontal bar
+      if (deltaX) {
+        element.scrollLeft += deltaX * i.settings.wheelSpeed;
+      } else {
+        element.scrollLeft -= deltaY * i.settings.wheelSpeed;
+      }
+      shouldPrevent = true;
+    }
+
+    updateGeometry(i);
+
+    shouldPrevent = shouldPrevent || shouldPreventDefault(deltaX, deltaY);
+    if (shouldPrevent && !e.ctrlKey) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }
+
+  if (typeof window.onwheel !== 'undefined') {
+    i.event.bind(element, 'wheel', mousewheelHandler);
+  } else if (typeof window.onmousewheel !== 'undefined') {
+    i.event.bind(element, 'mousewheel', mousewheelHandler);
+  }
+}
+
+function touch(i) {
+  if (!env.supportsTouch && !env.supportsIePointer) {
+    return;
+  }
+
+  var element = i.element;
+
+  function shouldPrevent(deltaX, deltaY) {
+    var scrollTop = Math.floor(element.scrollTop);
+    var scrollLeft = element.scrollLeft;
+    var magnitudeX = Math.abs(deltaX);
+    var magnitudeY = Math.abs(deltaY);
+
+    if (magnitudeY > magnitudeX) {
+      // user is perhaps trying to swipe up/down the page
+
+      if (
+        (deltaY < 0 && scrollTop === i.contentHeight - i.containerHeight) ||
+        (deltaY > 0 && scrollTop === 0)
+      ) {
+        // set prevent for mobile Chrome refresh
+        return window.scrollY === 0 && deltaY > 0 && env.isChrome;
+      }
+    } else if (magnitudeX > magnitudeY) {
+      // user is perhaps trying to swipe left/right across the page
+
+      if (
+        (deltaX < 0 && scrollLeft === i.contentWidth - i.containerWidth) ||
+        (deltaX > 0 && scrollLeft === 0)
+      ) {
+        return true;
+      }
+    }
+
+    return true;
+  }
+
+  function applyTouchMove(differenceX, differenceY) {
+    element.scrollTop -= differenceY;
+    element.scrollLeft -= differenceX;
+
+    updateGeometry(i);
+  }
+
+  var startOffset = {};
+  var startTime = 0;
+  var speed = {};
+  var easingLoop = null;
+
+  function getTouch(e) {
+    if (e.targetTouches) {
+      return e.targetTouches[0];
+    } else {
+      // Maybe IE pointer
+      return e;
+    }
+  }
+
+  function shouldHandle(e) {
+    if (e.pointerType && e.pointerType === 'pen' && e.buttons === 0) {
+      return false;
+    }
+    if (e.targetTouches && e.targetTouches.length === 1) {
+      return true;
+    }
+    if (
+      e.pointerType &&
+      e.pointerType !== 'mouse' &&
+      e.pointerType !== e.MSPOINTER_TYPE_MOUSE
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  function touchStart(e) {
+    if (!shouldHandle(e)) {
+      return;
+    }
+
+    var touch = getTouch(e);
+
+    startOffset.pageX = touch.pageX;
+    startOffset.pageY = touch.pageY;
+
+    startTime = new Date().getTime();
+
+    if (easingLoop !== null) {
+      clearInterval(easingLoop);
+    }
+  }
+
+  function shouldBeConsumedByChild(target, deltaX, deltaY) {
+    if (!element.contains(target)) {
+      return false;
+    }
+
+    var cursor = target;
+
+    while (cursor && cursor !== element) {
+      if (cursor.classList.contains(cls.element.consuming)) {
+        return true;
+      }
+
+      var style = get(cursor);
+
+      // if deltaY && vertical scrollable
+      if (deltaY && style.overflowY.match(/(scroll|auto)/)) {
+        var maxScrollTop = cursor.scrollHeight - cursor.clientHeight;
+        if (maxScrollTop > 0) {
+          if (
+            (cursor.scrollTop > 0 && deltaY < 0) ||
+            (cursor.scrollTop < maxScrollTop && deltaY > 0)
+          ) {
+            return true;
+          }
+        }
+      }
+      // if deltaX && horizontal scrollable
+      if (deltaX && style.overflowX.match(/(scroll|auto)/)) {
+        var maxScrollLeft = cursor.scrollWidth - cursor.clientWidth;
+        if (maxScrollLeft > 0) {
+          if (
+            (cursor.scrollLeft > 0 && deltaX < 0) ||
+            (cursor.scrollLeft < maxScrollLeft && deltaX > 0)
+          ) {
+            return true;
+          }
+        }
+      }
+
+      cursor = cursor.parentNode;
+    }
+
+    return false;
+  }
+
+  function touchMove(e) {
+    if (shouldHandle(e)) {
+      var touch = getTouch(e);
+
+      var currentOffset = { pageX: touch.pageX, pageY: touch.pageY };
+
+      var differenceX = currentOffset.pageX - startOffset.pageX;
+      var differenceY = currentOffset.pageY - startOffset.pageY;
+
+      if (shouldBeConsumedByChild(e.target, differenceX, differenceY)) {
+        return;
+      }
+
+      applyTouchMove(differenceX, differenceY);
+      startOffset = currentOffset;
+
+      var currentTime = new Date().getTime();
+
+      var timeGap = currentTime - startTime;
+      if (timeGap > 0) {
+        speed.x = differenceX / timeGap;
+        speed.y = differenceY / timeGap;
+        startTime = currentTime;
+      }
+
+      if (shouldPrevent(differenceX, differenceY)) {
+        e.preventDefault();
+      }
+    }
+  }
+  function touchEnd() {
+    if (i.settings.swipeEasing) {
+      clearInterval(easingLoop);
+      easingLoop = setInterval(function() {
+        if (i.isInitialized) {
+          clearInterval(easingLoop);
+          return;
+        }
+
+        if (!speed.x && !speed.y) {
+          clearInterval(easingLoop);
+          return;
+        }
+
+        if (Math.abs(speed.x) < 0.01 && Math.abs(speed.y) < 0.01) {
+          clearInterval(easingLoop);
+          return;
+        }
+
+        if (!i.element) {
+          clearInterval(easingLoop);
+          return;
+        }
+
+        applyTouchMove(speed.x * 30, speed.y * 30);
+
+        speed.x *= 0.8;
+        speed.y *= 0.8;
+      }, 10);
+    }
+  }
+
+  if (env.supportsTouch) {
+    i.event.bind(element, 'touchstart', touchStart);
+    i.event.bind(element, 'touchmove', touchMove);
+    i.event.bind(element, 'touchend', touchEnd);
+  } else if (env.supportsIePointer) {
+    if (window.PointerEvent) {
+      i.event.bind(element, 'pointerdown', touchStart);
+      i.event.bind(element, 'pointermove', touchMove);
+      i.event.bind(element, 'pointerup', touchEnd);
+    } else if (window.MSPointerEvent) {
+      i.event.bind(element, 'MSPointerDown', touchStart);
+      i.event.bind(element, 'MSPointerMove', touchMove);
+      i.event.bind(element, 'MSPointerUp', touchEnd);
+    }
+  }
+}
+
+var defaultSettings = function () { return ({
+  handlers: ['click-rail', 'drag-thumb', 'keyboard', 'wheel', 'touch'],
+  maxScrollbarLength: null,
+  minScrollbarLength: null,
+  scrollingThreshold: 1000,
+  scrollXMarginOffset: 0,
+  scrollYMarginOffset: 0,
+  suppressScrollX: false,
+  suppressScrollY: false,
+  swipeEasing: true,
+  useBothWheelAxes: false,
+  wheelPropagation: true,
+  wheelSpeed: 1,
+}); };
+
+var handlers = {
+  'click-rail': clickRail,
+  'drag-thumb': dragThumb,
+  keyboard: keyboard,
+  wheel: wheel,
+  touch: touch,
+};
+
+var PerfectScrollbar$1 = function PerfectScrollbar(element, userSettings) {
+  var this$1$1 = this;
+  if ( userSettings === void 0 ) userSettings = {};
+
+  if (typeof element === 'string') {
+    element = document.querySelector(element);
+  }
+
+  if (!element || !element.nodeName) {
+    throw new Error('no element is specified to initialize PerfectScrollbar');
+  }
+
+  this.element = element;
+
+  element.classList.add(cls.main);
+
+  this.settings = defaultSettings();
+  for (var key in userSettings) {
+    this.settings[key] = userSettings[key];
+  }
+
+  this.containerWidth = null;
+  this.containerHeight = null;
+  this.contentWidth = null;
+  this.contentHeight = null;
+
+  var focus = function () { return element.classList.add(cls.state.focus); };
+  var blur = function () { return element.classList.remove(cls.state.focus); };
+
+  this.isRtl = get(element).direction === 'rtl';
+  if (this.isRtl === true) {
+    element.classList.add(cls.rtl);
+  }
+  this.isNegativeScroll = (function () {
+    var originalScrollLeft = element.scrollLeft;
+    var result = null;
+    element.scrollLeft = -1;
+    result = element.scrollLeft < 0;
+    element.scrollLeft = originalScrollLeft;
+    return result;
+  })();
+  this.negativeScrollAdjustment = this.isNegativeScroll
+    ? element.scrollWidth - element.clientWidth
+    : 0;
+  this.event = new EventManager();
+  this.ownerDocument = element.ownerDocument || document;
+
+  this.scrollbarXRail = div(cls.element.rail('x'));
+  element.appendChild(this.scrollbarXRail);
+  this.scrollbarX = div(cls.element.thumb('x'));
+  this.scrollbarXRail.appendChild(this.scrollbarX);
+  this.scrollbarX.setAttribute('tabindex', 0);
+  this.event.bind(this.scrollbarX, 'focus', focus);
+  this.event.bind(this.scrollbarX, 'blur', blur);
+  this.scrollbarXActive = null;
+  this.scrollbarXWidth = null;
+  this.scrollbarXLeft = null;
+  var railXStyle = get(this.scrollbarXRail);
+  this.scrollbarXBottom = parseInt(railXStyle.bottom, 10);
+  if (isNaN(this.scrollbarXBottom)) {
+    this.isScrollbarXUsingBottom = false;
+    this.scrollbarXTop = toInt(railXStyle.top);
+  } else {
+    this.isScrollbarXUsingBottom = true;
+  }
+  this.railBorderXWidth =
+    toInt(railXStyle.borderLeftWidth) + toInt(railXStyle.borderRightWidth);
+  // Set rail to display:block to calculate margins
+  set(this.scrollbarXRail, { display: 'block' });
+  this.railXMarginWidth =
+    toInt(railXStyle.marginLeft) + toInt(railXStyle.marginRight);
+  set(this.scrollbarXRail, { display: '' });
+  this.railXWidth = null;
+  this.railXRatio = null;
+
+  this.scrollbarYRail = div(cls.element.rail('y'));
+  element.appendChild(this.scrollbarYRail);
+  this.scrollbarY = div(cls.element.thumb('y'));
+  this.scrollbarYRail.appendChild(this.scrollbarY);
+  this.scrollbarY.setAttribute('tabindex', 0);
+  this.event.bind(this.scrollbarY, 'focus', focus);
+  this.event.bind(this.scrollbarY, 'blur', blur);
+  this.scrollbarYActive = null;
+  this.scrollbarYHeight = null;
+  this.scrollbarYTop = null;
+  var railYStyle = get(this.scrollbarYRail);
+  this.scrollbarYRight = parseInt(railYStyle.right, 10);
+  if (isNaN(this.scrollbarYRight)) {
+    this.isScrollbarYUsingRight = false;
+    this.scrollbarYLeft = toInt(railYStyle.left);
+  } else {
+    this.isScrollbarYUsingRight = true;
+  }
+  this.scrollbarYOuterWidth = this.isRtl ? outerWidth(this.scrollbarY) : null;
+  this.railBorderYWidth =
+    toInt(railYStyle.borderTopWidth) + toInt(railYStyle.borderBottomWidth);
+  set(this.scrollbarYRail, { display: 'block' });
+  this.railYMarginHeight =
+    toInt(railYStyle.marginTop) + toInt(railYStyle.marginBottom);
+  set(this.scrollbarYRail, { display: '' });
+  this.railYHeight = null;
+  this.railYRatio = null;
+
+  this.reach = {
+    x:
+      element.scrollLeft <= 0
+        ? 'start'
+        : element.scrollLeft >= this.contentWidth - this.containerWidth
+        ? 'end'
+        : null,
+    y:
+      element.scrollTop <= 0
+        ? 'start'
+        : element.scrollTop >= this.contentHeight - this.containerHeight
+        ? 'end'
+        : null,
+  };
+
+  this.isAlive = true;
+
+  this.settings.handlers.forEach(function (handlerName) { return handlers[handlerName](this$1$1); });
+
+  this.lastScrollTop = Math.floor(element.scrollTop); // for onScroll only
+  this.lastScrollLeft = element.scrollLeft; // for onScroll only
+  this.event.bind(this.element, 'scroll', function (e) { return this$1$1.onScroll(e); });
+  updateGeometry(this);
+};
+
+PerfectScrollbar$1.prototype.update = function update () {
+  if (!this.isAlive) {
+    return;
+  }
+
+  // Recalcuate negative scrollLeft adjustment
+  this.negativeScrollAdjustment = this.isNegativeScroll
+    ? this.element.scrollWidth - this.element.clientWidth
+    : 0;
+
+  // Recalculate rail margins
+  set(this.scrollbarXRail, { display: 'block' });
+  set(this.scrollbarYRail, { display: 'block' });
+  this.railXMarginWidth =
+    toInt(get(this.scrollbarXRail).marginLeft) +
+    toInt(get(this.scrollbarXRail).marginRight);
+  this.railYMarginHeight =
+    toInt(get(this.scrollbarYRail).marginTop) +
+    toInt(get(this.scrollbarYRail).marginBottom);
+
+  // Hide scrollbars not to affect scrollWidth and scrollHeight
+  set(this.scrollbarXRail, { display: 'none' });
+  set(this.scrollbarYRail, { display: 'none' });
+
+  updateGeometry(this);
+
+  processScrollDiff(this, 'top', 0, false, true);
+  processScrollDiff(this, 'left', 0, false, true);
+
+  set(this.scrollbarXRail, { display: '' });
+  set(this.scrollbarYRail, { display: '' });
+};
+
+PerfectScrollbar$1.prototype.onScroll = function onScroll (e) {
+  if (!this.isAlive) {
+    return;
+  }
+
+  updateGeometry(this);
+  processScrollDiff(this, 'top', this.element.scrollTop - this.lastScrollTop);
+  processScrollDiff(
+    this,
+    'left',
+    this.element.scrollLeft - this.lastScrollLeft
+  );
+
+  this.lastScrollTop = Math.floor(this.element.scrollTop);
+  this.lastScrollLeft = this.element.scrollLeft;
+};
+
+PerfectScrollbar$1.prototype.destroy = function destroy () {
+  if (!this.isAlive) {
+    return;
+  }
+
+  this.event.unbindAll();
+  remove(this.scrollbarX);
+  remove(this.scrollbarY);
+  remove(this.scrollbarXRail);
+  remove(this.scrollbarYRail);
+  this.removePsClasses();
+
+  // unset elements
+  this.element = null;
+  this.scrollbarX = null;
+  this.scrollbarY = null;
+  this.scrollbarXRail = null;
+  this.scrollbarYRail = null;
+
+  this.isAlive = false;
+};
+
+PerfectScrollbar$1.prototype.removePsClasses = function removePsClasses () {
+  this.element.className = this.element.className
+    .split(' ')
+    .filter(function (name) { return !name.match(/^ps([-_].+|)$/); })
+    .join(' ');
+};
+
+var perfectScrollbar_esm = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: PerfectScrollbar$1
+});
+
+var require$$2 = /*@__PURE__*/getAugmentedNamespace(perfectScrollbar_esm);
+
+(function (module, exports) {
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = React;
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _propTypes = propTypesExports;
+
+	var _perfectScrollbar = require$$2;
+
+	var _perfectScrollbar2 = _interopRequireDefault(_perfectScrollbar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var handlerNameByEvent = {
+	  'ps-scroll-y': 'onScrollY',
+	  'ps-scroll-x': 'onScrollX',
+	  'ps-scroll-up': 'onScrollUp',
+	  'ps-scroll-down': 'onScrollDown',
+	  'ps-scroll-left': 'onScrollLeft',
+	  'ps-scroll-right': 'onScrollRight',
+	  'ps-y-reach-start': 'onYReachStart',
+	  'ps-y-reach-end': 'onYReachEnd',
+	  'ps-x-reach-start': 'onXReachStart',
+	  'ps-x-reach-end': 'onXReachEnd'
+	};
+	Object.freeze(handlerNameByEvent);
+
+	var ScrollBar = function (_Component) {
+	  _inherits(ScrollBar, _Component);
+
+	  function ScrollBar(props) {
+	    _classCallCheck(this, ScrollBar);
+
+	    var _this = _possibleConstructorReturn(this, (ScrollBar.__proto__ || Object.getPrototypeOf(ScrollBar)).call(this, props));
+
+	    _this.handleRef = _this.handleRef.bind(_this);
+	    _this._handlerByEvent = {};
+	    return _this;
+	  }
+
+	  _createClass(ScrollBar, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      if (this.props.option) {
+	        console.warn('react-perfect-scrollbar: the "option" prop has been deprecated in favor of "options"');
+	      }
+
+	      this._ps = new _perfectScrollbar2.default(this._container, this.props.options || this.props.option);
+	      // hook up events
+	      this._updateEventHook();
+	      this._updateClassName();
+	    }
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate(prevProps) {
+	      this._updateEventHook(prevProps);
+
+	      this.updateScroll();
+
+	      if (prevProps.className !== this.props.className) {
+	        this._updateClassName();
+	      }
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      var _this2 = this;
+
+	      // unhook up evens
+	      Object.keys(this._handlerByEvent).forEach(function (key) {
+	        var value = _this2._handlerByEvent[key];
+
+	        if (value) {
+	          _this2._container.removeEventListener(key, value, false);
+	        }
+	      });
+	      this._handlerByEvent = {};
+	      this._ps.destroy();
+	      this._ps = null;
+	    }
+	  }, {
+	    key: '_updateEventHook',
+	    value: function _updateEventHook() {
+	      var _this3 = this;
+
+	      var prevProps = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+	      // hook up events
+	      Object.keys(handlerNameByEvent).forEach(function (key) {
+	        var callback = _this3.props[handlerNameByEvent[key]];
+	        var prevCallback = prevProps[handlerNameByEvent[key]];
+	        if (callback !== prevCallback) {
+	          if (prevCallback) {
+	            var prevHandler = _this3._handlerByEvent[key];
+	            _this3._container.removeEventListener(key, prevHandler, false);
+	            _this3._handlerByEvent[key] = null;
+	          }
+	          if (callback) {
+	            var handler = function handler() {
+	              return callback(_this3._container);
+	            };
+	            _this3._container.addEventListener(key, handler, false);
+	            _this3._handlerByEvent[key] = handler;
+	          }
+	        }
+	      });
+	    }
+	  }, {
+	    key: '_updateClassName',
+	    value: function _updateClassName() {
+	      var className = this.props.className;
+
+
+	      var psClassNames = this._container.className.split(' ').filter(function (name) {
+	        return name.match(/^ps([-_].+|)$/);
+	      }).join(' ');
+
+	      if (this._container) {
+	        this._container.className = 'scrollbar-container' + (className ? ' ' + className : '') + (psClassNames ? ' ' + psClassNames : '');
+	      }
+	    }
+	  }, {
+	    key: 'updateScroll',
+	    value: function updateScroll() {
+	      this.props.onSync(this._ps);
+	    }
+	  }, {
+	    key: 'handleRef',
+	    value: function handleRef(ref) {
+	      this._container = ref;
+	      this.props.containerRef(ref);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	          _props.className;
+	          var style = _props.style;
+	          _props.option;
+	          _props.options;
+	          _props.containerRef;
+	          _props.onScrollY;
+	          _props.onScrollX;
+	          _props.onScrollUp;
+	          _props.onScrollDown;
+	          _props.onScrollLeft;
+	          _props.onScrollRight;
+	          _props.onYReachStart;
+	          _props.onYReachEnd;
+	          _props.onXReachStart;
+	          _props.onXReachEnd;
+	          var component = _props.component;
+	          _props.onSync;
+	          var children = _props.children,
+	          remainProps = _objectWithoutProperties(_props, ['className', 'style', 'option', 'options', 'containerRef', 'onScrollY', 'onScrollX', 'onScrollUp', 'onScrollDown', 'onScrollLeft', 'onScrollRight', 'onYReachStart', 'onYReachEnd', 'onXReachStart', 'onXReachEnd', 'component', 'onSync', 'children']);
+
+	      var Comp = component;
+
+	      return _react2.default.createElement(
+	        Comp,
+	        _extends({ style: style, ref: this.handleRef }, remainProps),
+	        children
+	      );
+	    }
+	  }]);
+
+	  return ScrollBar;
+	}(_react.Component);
+
+	exports.default = ScrollBar;
+
+
+	ScrollBar.defaultProps = {
+	  className: '',
+	  style: undefined,
+	  option: undefined,
+	  options: undefined,
+	  containerRef: function containerRef() {},
+	  onScrollY: undefined,
+	  onScrollX: undefined,
+	  onScrollUp: undefined,
+	  onScrollDown: undefined,
+	  onScrollLeft: undefined,
+	  onScrollRight: undefined,
+	  onYReachStart: undefined,
+	  onYReachEnd: undefined,
+	  onXReachStart: undefined,
+	  onXReachEnd: undefined,
+	  onSync: function onSync(ps) {
+	    return ps.update();
+	  },
+	  component: 'div'
+	};
+
+	ScrollBar.propTypes = {
+	  children: _propTypes.PropTypes.node.isRequired,
+	  className: _propTypes.PropTypes.string,
+	  style: _propTypes.PropTypes.object,
+	  option: _propTypes.PropTypes.object,
+	  options: _propTypes.PropTypes.object,
+	  containerRef: _propTypes.PropTypes.func,
+	  onScrollY: _propTypes.PropTypes.func,
+	  onScrollX: _propTypes.PropTypes.func,
+	  onScrollUp: _propTypes.PropTypes.func,
+	  onScrollDown: _propTypes.PropTypes.func,
+	  onScrollLeft: _propTypes.PropTypes.func,
+	  onScrollRight: _propTypes.PropTypes.func,
+	  onYReachStart: _propTypes.PropTypes.func,
+	  onYReachEnd: _propTypes.PropTypes.func,
+	  onXReachStart: _propTypes.PropTypes.func,
+	  onXReachEnd: _propTypes.PropTypes.func,
+	  onSync: _propTypes.PropTypes.func,
+	  component: _propTypes.PropTypes.string
+	};
+	module.exports = exports['default']; 
+} (scrollbar, scrollbar.exports));
+
+var scrollbarExports = scrollbar.exports;
+
+(function (module, exports) {
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _scrollbar = scrollbarExports;
+
+	var _scrollbar2 = _interopRequireDefault(_scrollbar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _scrollbar2.default;
+	module.exports = exports['default']; 
+} (lib, lib.exports));
+
+var libExports = lib.exports;
+var PerfectScrollbar = /*@__PURE__*/getDefaultExportFromCjs(libExports);
+
+var columnHelper = createColumnHelper();
+function IndeterminateCheckbox(_a) {
+    var indeterminate = _a.indeterminate; _a.className; var rest = __rest(_a, ["indeterminate", "className"]);
+    var ref = React.useRef(null);
+    React.useEffect(function () {
+        if (ref.current && typeof indeterminate === "boolean") {
+            ref.current.indeterminate = !rest.checked && indeterminate;
+        }
+    }, [ref, indeterminate, rest.checked]);
+    return (React.createElement(InputBase, __assign({ className: "mt-row-selector", type: "checkbox", innerRef: ref }, rest)));
+}
+var selectionColumn = columnHelper.accessor("", {
+    id: "select",
+    maxSize: 50, // has to be exactly 50
+    header: function (_a) {
+        var table = _a.table;
+        return (React.createElement(IndeterminateCheckbox, { checked: table.getIsAllRowsSelected(),
+            indeterminate: table.getIsSomeRowsSelected(),
+            onChange: table.getToggleAllRowsSelectedHandler() }));
+    },
+    cell: function (_a) {
+        var row = _a.row;
+        return (React.createElement(IndeterminateCheckbox, { checked: row.getIsSelected(),
+            disabled: !row.getCanSelect(),
+            indeterminate: row.getIsSomeSelected(),
+            onChange: row.getToggleSelectedHandler() }));
+    },
+});
+var DataTable = function (_a) {
+    var _b = _a.data, data = _b === void 0 ? [] : _b, _c = _a.columns, columns = _c === void 0 ? [] : _c, _d = _a.disableMultiSelection, disableMultiSelection = _d === void 0 ? true : _d, _e = _a.disableColumnResize, disableColumnResize = _e === void 0 ? false : _e, _f = _a.defaultSize, defaultSize = _f === void 0 ? 300 : _f, _g = _a.minSize, minSize = _g === void 0 ? 150 : _g, columnVisibility = _a.columnVisibility, _h = _a.rowSelection, rowSelection = _h === void 0 ? {} : _h, _j = _a.onRowSelectionChange, onRowSelectionChange = _j === void 0 ? function () { } : _j;
+    columns = disableMultiSelection
+        ? __spreadArray([], columns, true) : __spreadArray([selectionColumn], columns, true);
+    var table = useReactTable({
+        data: data,
+        columns: columns,
+        state: {
+            rowSelection: rowSelection,
+            columnVisibility: columnVisibility,
+        },
+        getRowId: function (row) { return row.id; }, // if deves provide id key in row data it will be picked here
+        columnResizeMode: "onChange",
+        columnResizeDirection: "ltr",
+        enableRowSelection: true,
+        onRowSelectionChange: onRowSelectionChange,
+        getCoreRowModel: getCoreRowModel(),
+        defaultColumn: {
+            size: defaultSize,
+            minSize: minSize,
+        },
+    });
+    var tbodyRef = useAutoAnimate()[0];
+    return (React.createElement("div", { className: "data-table " },
+        React.createElement(PerfectScrollbar, null,
+            React.createElement("table", { className: "dt-table",
+                style: {
+                    width: table.getCenterTotalSize(),
+                } },
+                React.createElement("thead", { className: "dt-thead -header" }, table.getHeaderGroups().map(function (headerGroup) { return (React.createElement("tr", { key: headerGroup.id, className: "dt-tr" }, headerGroup.headers.map(function (header) { return (React.createElement("th", { key: header.id, colSpan: header.colSpan,
+                    className: classNames$1("dt-th", {
+                        "-cursor-pointer": header.column.getCanSort(),
+                    }),
+                    style: {
+                        width: header.getSize(),
+                    } },
+                    React.createElement("div", { className: "" }, header.isPlaceholder
+                        ? null
+                        : flexRender(header.column.columnDef.header, header.getContext())),
+                    !disableColumnResize && (React.createElement("div", { onDoubleClick: function () { },
+                        onMouseDown: header.getResizeHandler(),
+                        onTouchStart: header.getResizeHandler(),
+                        className: "col-resizer" },
+                        React.createElement("div", { className: "h-100 col-sepration-indicator" }))))); }))); })),
+                React.createElement("tbody", { className: "dt-tbody", ref: tbodyRef }, table.getRowModel().rows.map(function (row, i) { return (React.createElement("tr", { key: row.id, className: "dt-tr" }, row.getVisibleCells().map(function (cell) { return (React.createElement("td", { key: cell.id, style: {
+                        width: cell.column.getSize(),
+                    },
+                    className: "dt-td" }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); }))))));
 };
 
 var TabPaneBase = function (_a) {
@@ -32654,6 +38132,7 @@ exports.Col = ColBase;
 exports.Collapse = CollapseBase;
 exports.Container = ContainerBase;
 exports.CreatableSelect = CreatableSelectBase;
+exports.DataTable = DataTable;
 exports.DrawerContextProvider = DrawerContextProvider;
 exports.DrawerOpener = DrawerOpener;
 exports.DrawerRight = DrawerRight;
