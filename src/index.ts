@@ -61,7 +61,6 @@ export { default as ImsInputText } from "./components/Forms/ImsFormElements/ImsI
 export { default as ImsInputDateAndTime } from "./components/Forms/ImsFormElements/ImsInputDateAndTime";
 export { default as ImsInputTextWithIcon } from "./components/Forms/ImsFormElements/ImsInputTextWithIcon";
 export { default as ImsInputTime } from "./components/Forms/ImsFormElements/ImsInputTime";
-// export { default as ImsTextEditor } from "./components/Forms/ImsFormElements/ImsTextEditor";
 export { default as Label } from "./components/Forms/Inputs/LabelBase";
 export { default as List } from "./components/List/ListBase";
 export { default as ListGroup } from "./components/List/ListGroupBase";

@@ -2,7 +2,16 @@ import React, { useContext } from "react";
 import usePreRenderProcessing from "./usePreRenderProcessing";
 import { TextEditorContext } from "../Context";
 import Media from "./Media";
-export const editorMediaBlockRenderer = (block) => {
+import { ContentState, Block } from "draft-js"; // Assuming you are using Draft.js types
+
+// Define the props type for ProcessedMedia
+interface ProcessedMediaProps {
+  block: Block; // Type of the block
+  contentState: ContentState; // Type of the content state
+}
+
+// Renderer function for media blocks
+export const editorMediaBlockRenderer = (block: Block) => {
   if (block.getType() === "atomic") {
     return {
       component: ProcessedMedia,
@@ -11,15 +20,21 @@ export const editorMediaBlockRenderer = (block) => {
   }
   return null;
 };
-const ProcessedMedia = (props) => {
+
+// ProcessedMedia functional component
+const ProcessedMedia: React.FC<ProcessedMediaProps> = (props) => {
   const entityKey = props.block.getEntityAt(0);
   const entity = entityKey && props.contentState.getEntity(entityKey);
   const type = entity?.getType();
+
   const { generateLink, ...rest } = useContext(TextEditorContext);
+
+  // Process the entity data
   let processedResults = usePreRenderProcessing({
     generateLink,
     ...entity?.getData(),
   });
+
   return (
     <Media
       type={type}
@@ -32,3 +47,5 @@ const ProcessedMedia = (props) => {
     />
   );
 };
+
+export default ProcessedMedia;

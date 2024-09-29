@@ -1,48 +1,65 @@
-import { useEffect, useContext, useCallback, useRef } from "react";
+import React, { useEffect, useContext, useCallback, useRef } from "react";
 import { TextEditorContext } from "../../Context";
 import MentionSuggestions from "./Suggestions/Index";
-export default function Mention(props) {
-  let mentionInputRef = useRef(null);
-  let {
+
+// Define the props type for the Mention component
+interface MentionProps {
+  entityKey?: string; // Optional entity key
+  contentState: any; // Type for contentState; adjust as needed based on actual type
+  blockKey: string; // Required block key
+  decoratedText: string; // Required decorated text
+  start: number; // Required start position
+  end: number; // Required end position
+  children: React.ReactNode; // Children nodes
+}
+
+const Mention: React.FC<MentionProps> = (props) => {
+  const mentionInputRef = useRef<HTMLSpanElement | null>(null);
+  const {
     editorRef,
     mentionSuggestions,
     updateComputedPosForMentionSuggestions,
     handleMentionSelect,
   } = useContext(TextEditorContext);
+
   const computeStylePos = useCallback(() => {
     const editorRect = editorRef.current?.editor?.getBoundingClientRect();
     let leftSpace =
-      editorRect.width - mentionInputRef.current.offsetLeft < 240
-        ? mentionInputRef.current.offsetLeft - 230
-        : mentionInputRef.current.offsetLeft;
+      editorRect.width - (mentionInputRef.current?.offsetLeft ?? 0) < 240
+        ? (mentionInputRef.current?.offsetLeft ?? 0) - 230
+        : mentionInputRef.current?.offsetLeft ?? 0;
     return {
       left: leftSpace,
-      top: mentionInputRef.current.offsetTop,
+      top: mentionInputRef.current?.offsetTop ?? 0,
       display: "block",
     };
-  }, []);
+  }, [editorRef]);
+
   const hideSuggestions = useCallback(() => {
     return {
       display: "none",
     };
   }, []);
+
   useEffect(() => {
-    if (mentionInputRef.current)
+    if (mentionInputRef.current) {
       updateComputedPosForMentionSuggestions(computeStylePos());
-  }, []);
+    }
+  }, [computeStylePos, updateComputedPosForMentionSuggestions]);
+
   function retriveEntityData() {
     if (!props.entityKey) return null;
     const entity = props.contentState.getEntity(props.entityKey);
     return { ...entity?.getData() };
   }
+
+  const entityData = retriveEntityData();
+
   return (
     <>
-      {retriveEntityData() ? (
-        <a
-          href={"/admin/users/" + retriveEntityData()._id}
-          className="text-primary"
-        >
-          {retriveEntityData().name}
+      {entityData ? (
+        <a href={"/admin/users/" + entityData._id} className="text-primary">
+          {entityData.name}
         </a>
       ) : (
         <span ref={mentionInputRef} className="">
@@ -55,12 +72,12 @@ export default function Mention(props) {
             .toLowerCase()
             .includes(
               props.decoratedText
-                .slice(1, props?.decoratedText?.length)
+                .slice(1, props.decoratedText.length)
                 .toLowerCase()
             )
         )}
         onSelect={({ name, profileImageSrc, _id }) => {
-          let userName = "@" + name.split(" ").join("_");
+          const userName = "@" + name.split(" ").join("_");
           handleMentionSelect(
             props.contentState,
             props.blockKey,
@@ -72,4 +89,6 @@ export default function Mention(props) {
       />
     </>
   );
-}
+};
+
+export default Mention;
