@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import TextEditor, { TextEditorProps } from "./TextEditor";
 import { TextEditorContext } from "./Context";
-import ToolBar from "./Toolbar";
+import ToolBar, { ToolBarProps } from "./Toolbar";
 import classnames from "classnames";
 
 // Define the props type for WrappedEditor
-export interface WrappedEditorProps extends TextEditorProps {
+export interface WrappedEditorProps extends TextEditorProps, ToolBarProps {
   minimal?: boolean;
 }
 

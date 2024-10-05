@@ -8,7 +8,7 @@ import classNames from "classnames";
 import { GoPaperAirplane } from "react-icons/go";
 type ToolTypeKey = keyof typeof toolTypes;
 const toolGroups: ToolTypeKey[] = Object.keys(toolTypes) as ToolTypeKey[];
-interface ToolBarProps {
+export interface ToolBarProps {
   minimal?: boolean; // Optional prop to control minimal mode
   enableSubmit?: boolean; // Optional prop to enable/disable submit button
   onSubmit?: (e: MouseEvent<HTMLButtonElement>, editorState: any) => void; // Callback function when submitting

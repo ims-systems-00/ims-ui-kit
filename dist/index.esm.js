@@ -60301,52 +60301,71 @@ var CheckListItem = function (_a) {
     return React__default.createElement(React__default.Fragment, null, text);
 };
 
-// Functional component using the defined props type
-var Media = function (_a) {
-    var type = _a.type, data = _a.data, editorControllers = _a.editorControllers, rest = __rest(_a, ["type", "data", "editorControllers"]);
-    var media = null;
-    __assign(__assign(__assign({}, data), editorControllers), rest);
-    if (type === ENTITY_NAME.IMAGE) {
-        media = (
-        // <Resizer {...toolProperties}>
-        //   <Image {...data} />
-        // </Resizer>
-        React__default.createElement(Image, __assign({}, data)));
-    }
-    if (type === ENTITY_NAME.DIVIDER) {
-        media = React__default.createElement(Divider, __assign({}, data));
-    }
-    if (type === ENTITY_NAME.CHECKLIST) {
-        media = React__default.createElement(CheckListItem, { text: data.text });
-    }
-    return media;
-};
-
-// Renderer function for media blocks
-var editorMediaBlockRenderer = function (block) {
-    if (block.getType() === "atomic") {
-        return {
-            component: ProcessedMedia,
-            editable: false,
+var partitions = [
+    0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95,
+    100,
+];
+var StretchBar = function (_a) {
+    var _b, _c;
+    var editorRef = _a.editorRef, onResizeEnd = _a.onResizeEnd, _d = _a.reference, reference = _d === void 0 ? "start" : _d, _e = _a.currentSize, currentSize = _e === void 0 ? 10 : _e, rest = __rest(_a, ["editorRef", "onResizeEnd", "reference", "currentSize"]);
+    var _f = useState(false), isDragging = _f[0], setIsDragging = _f[1];
+    var _g = useState(currentSize), currentlyHovering = _g[0], setCurrentlyHovering = _g[1];
+    var editorRect = (_c = (_b = editorRef.current) === null || _b === void 0 ? void 0 : _b.editor) === null || _c === void 0 ? void 0 : _c.getBoundingClientRect();
+    var getGuidePositions = function () {
+        parseInt(window
+            .getComputedStyle(document.querySelector(".draft-editor-container"), null)
+            .getPropertyValue("padding-left"));
+        return partitions.map(function (part) {
+            var offset = (editorRect.width * part) / 100;
+            return {
+                percentage: part,
+                pixels: Math.ceil(offset),
+            };
+        });
+    };
+    var handleMouseDown = useCallback(function (e) {
+        e.preventDefault();
+        var doDrag = function (e) {
+            var partitionsCopy = __spreadArray([], partitions, true);
+            setIsDragging(true);
+            var fullLength = reference === "center" ? editorRect.width / 2 : editorRect.width;
+            var refLine = reference === "center"
+                ? editorRect.left + editorRect.width / 2
+                : reference === "end"
+                    ? editorRect.left + editorRect.width
+                    : editorRect.left;
+            var calculatedOffsetX = parseInt(Math.abs(e.clientX - refLine).toString());
+            var needle = parseInt(((calculatedOffsetX / fullLength) * 100).toString());
+            partitionsCopy.sort(function (a, b) {
+                return Math.abs(needle - a) - Math.abs(needle - b);
+            });
+            var resizedTo = partitionsCopy[0];
+            setCurrentlyHovering(resizedTo);
+            var createdEvent = { partition: resizedTo };
+            if (onResizeEnd)
+                onResizeEnd(createdEvent);
+            var entityKey = rest.block.getEntityAt(0);
+            rest.contentState.mergeEntityData(entityKey, { size: resizedTo });
         };
-    }
-    return null;
-};
-// ProcessedMedia functional component
-var ProcessedMedia = function (props) {
-    var entityKey = props.block.getEntityAt(0);
-    var entity = entityKey && props.contentState.getEntity(entityKey);
-    var type = entity === null || entity === void 0 ? void 0 : entity.getType();
-    var _a = useContext(TextEditorContext), generateLink = _a.generateLink, rest = __rest(_a, ["generateLink"]);
-    // Process the entity data
-    var processedResults = usePreRenderProcessing(__assign({ generateLink: generateLink }, entity === null || entity === void 0 ? void 0 : entity.getData()));
-    return (React__default.createElement(Media, __assign({ type: type, data: __assign(__assign({}, entity === null || entity === void 0 ? void 0 : entity.getData()), processedResults), editorControllers: __assign({}, rest) }, props)));
-};
-
-var TextEditor = function (_a) {
-    var _b = _a.readOnly, readOnly = _b === void 0 ? false : _b, props = __rest(_a, ["readOnly"]);
-    var _c = useContext(TextEditorContext), editorRef = _c.editorRef, editorState = _c.editorState, handleEditorStateChange = _c.handleEditorStateChange, handleDroppedFiles = _c.handleDroppedFiles, handlePastedFiles = _c.handlePastedFiles, handleKeyCommand = _c.handleKeyCommand, activateEditor = _c.activateEditor, deactivateEditor = _c.deactivateEditor;
-    return (React__default.createElement(Draft.Editor, { ref: editorRef, blockRendererFn: editorMediaBlockRenderer, placeholder: props.placeholder, onChange: handleEditorStateChange, editorState: editorState, spellCheck: true, handleKeyCommand: handleKeyCommand, handleDroppedFiles: handleDroppedFiles, handlePastedFiles: handlePastedFiles, readOnly: readOnly, onFocus: activateEditor, onBlur: deactivateEditor }));
+        var stopDrag = function () {
+            setIsDragging(false);
+            document.removeEventListener("mousemove", doDrag, false);
+            document.removeEventListener("mouseup", stopDrag, false);
+        };
+        document.addEventListener("mousemove", doDrag, false);
+        document.addEventListener("mouseup", stopDrag, false);
+    }, [onResizeEnd, editorRect, reference, rest.block, rest.contentState]);
+    return (React__default.createElement(React__default.Fragment, null,
+        React__default.createElement("div", { className: "d-inline-block p-2 unselectable", style: { cursor: "col-resize" }, onMouseDown: handleMouseDown },
+            React__default.createElement("div", { className: "bg-primary rounded resize-bar" })),
+        isDragging && (React__default.createElement("div", { className: "resize-guides-container position-absolute" }, getGuidePositions().map(function (guide) { return (React__default.createElement("div", { key: guide.pixels, className: classnames$1("resize-guide position-absolute rounded", {
+                "bg-info": (reference === "start" &&
+                    guide.percentage === currentlyHovering) ||
+                    (reference === "end" &&
+                        100 - guide.percentage === currentlyHovering),
+            }), style: {
+                left: "".concat(guide.pixels, "px"),
+            } })); })))));
 };
 
 var DefaultContext = {
@@ -60408,7 +60427,13 @@ function IconBase(props) {
 }
 
 // THIS FILE IS AUTO GENERATED
-function FaBold (props) {
+function FaAlignJustify (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 448 512"},"child":[{"tag":"path","attr":{"d":"M432 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"},"child":[]}]})(props);
+}function FaAlignLeft (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 448 512"},"child":[{"tag":"path","attr":{"d":"M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96zM432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"},"child":[]}]})(props);
+}function FaAlignRight (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 448 512"},"child":[{"tag":"path","attr":{"d":"M16 224h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16zm416 192H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm3.17-384H172.83A12.82 12.82 0 0 0 160 44.83v38.34A12.82 12.82 0 0 0 172.83 96h262.34A12.82 12.82 0 0 0 448 83.17V44.83A12.82 12.82 0 0 0 435.17 32zm0 256H172.83A12.82 12.82 0 0 0 160 300.83v38.34A12.82 12.82 0 0 0 172.83 352h262.34A12.82 12.82 0 0 0 448 339.17v-38.34A12.82 12.82 0 0 0 435.17 288z"},"child":[]}]})(props);
+}function FaBold (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 384 512"},"child":[{"tag":"path","attr":{"d":"M333.49 238a122 122 0 0 0 27-65.21C367.87 96.49 308 32 233.42 32H34a16 16 0 0 0-16 16v48a16 16 0 0 0 16 16h31.87v288H34a16 16 0 0 0-16 16v48a16 16 0 0 0 16 16h209.32c70.8 0 134.14-51.75 141-122.4 4.74-48.45-16.39-92.06-50.83-119.6zM145.66 112h87.76a48 48 0 0 1 0 96h-87.76zm87.76 288h-87.76V288h87.76a56 56 0 0 1 0 112z"},"child":[]}]})(props);
 }function FaCode (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 640 512"},"child":[{"tag":"path","attr":{"d":"M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"},"child":[]}]})(props);
@@ -60431,6 +60456,122 @@ function FaBold (props) {
 }function FaUnderline (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 448 512"},"child":[{"tag":"path","attr":{"d":"M32 64h32v160c0 88.22 71.78 160 160 160s160-71.78 160-160V64h32a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16H272a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32v160a80 80 0 0 1-160 0V64h32a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16H32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16zm400 384H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"},"child":[]}]})(props);
 }
+
+var alignTools = [
+    {
+        label: "Align left",
+        style: ENTITY_NAME.ALIGN_LEFT,
+        icon: React__default.createElement(FaAlignLeft, null),
+    },
+    {
+        label: "Align center",
+        style: ENTITY_NAME.ALIGN_CENTER,
+        icon: React__default.createElement(FaAlignJustify, null),
+    },
+    {
+        label: "Align right",
+        style: ENTITY_NAME.ALIGN_RIGHT,
+        icon: React__default.createElement(FaAlignRight, null),
+    },
+];
+var Aligner = function (_a) {
+    _a.editorRef; var onAlignmentChange = _a.onAlignmentChange, rest = __rest(_a, ["editorRef", "onAlignmentChange"]);
+    var handleAlignment = useCallback(function (_a) {
+        var alignment = _a.alignment;
+        if (onAlignmentChange) {
+            onAlignmentChange({ alignment: alignment });
+        }
+        var entityKey = rest.block.getEntityAt(0);
+        rest.contentState.mergeEntityData(entityKey, { alignment: alignment });
+    }, [onAlignmentChange, rest.block, rest.contentState]);
+    return (React__default.createElement("div", { className: "d-inline-block shadow-md rounded mb-1" }, alignTools.map(function (tool) { return (React__default.createElement(Button, { title: tool.label, type: "button", className: classnames$1("btn btn-icon m-0 text-muted"), key: tool.style, onClick: function () { return handleAlignment({ alignment: tool.style }); } }, tool.icon || tool.label)); })));
+};
+
+var Resizer = function (_a) {
+    var children = _a.children, rest = __rest(_a, ["children"]);
+    var _b = useState(false), isActive = _b[0], setIsActive = _b[1];
+    var _c = useState(rest.size || 30), currentSize = _c[0], setCurrentSize = _c[1];
+    var _d = useState(rest.alignment || "start"), alignment = _d[0], setAlignment = _d[1];
+    var toggleIsActive = useCallback(function () { return setIsActive(function (current) { return !current; }); }, []);
+    var alignementClasses = useCallback(function () { return ({
+        "justify-content-start": alignment === "start",
+        "justify-content-center": alignment === "center",
+        "justify-content-end": alignment === "end",
+    }); }, [alignment]);
+    return (React__default.createElement(React__default.Fragment, null,
+        isActive && alignment && (React__default.createElement("div", { className: classnames$1("d-flex", alignementClasses()) },
+            React__default.createElement(Aligner, __assign({ onAlignmentChange: function (e) { return setAlignment(e.alignment); } }, rest)))),
+        React__default.createElement("div", { className: classnames$1("d-flex align-items-center position-relative", alignementClasses()) },
+            isActive && alignment !== "start" && (React__default.createElement(StretchBar, __assign({}, rest, { reference: alignment, onResizeEnd: function (e) { return setCurrentSize(e.partition); } }))),
+            React__default.createElement("div", { className: classnames$1("d-inline-block rounded resize-container unselectable", {
+                    "resize-focused": isActive,
+                    "w-10": currentSize === 10,
+                    "w-15": currentSize === 15,
+                    "w-20": currentSize === 20,
+                    "w-25": currentSize === 25,
+                    "w-30": currentSize === 30,
+                    "w-35": currentSize === 35,
+                    "w-40": currentSize === 40,
+                    "w-45": currentSize === 45,
+                    "w-50": currentSize === 50,
+                    "w-55": currentSize === 55,
+                    "w-60": currentSize === 60,
+                    "w-65": currentSize === 65,
+                    "w-70": currentSize === 70,
+                    "w-75": currentSize === 75,
+                    "w-80": currentSize === 80,
+                    "w-85": currentSize === 85,
+                    "w-90": currentSize === 90,
+                    "w-95": currentSize === 95,
+                    "w-100": currentSize === 100,
+                }), onClick: toggleIsActive }, children),
+            isActive && alignment !== "end" && (React__default.createElement(StretchBar, __assign({}, rest, { reference: alignment, currentSize: currentSize, onResizeEnd: function (e) { return setCurrentSize(e.partition); } }))))));
+};
+
+// Functional component using the defined props type
+var Media = function (_a) {
+    var type = _a.type, data = _a.data, editorControllers = _a.editorControllers, rest = __rest(_a, ["type", "data", "editorControllers"]);
+    var media = null;
+    var toolProperties = __assign(__assign(__assign({}, data), editorControllers), rest);
+    if (type === ENTITY_NAME.IMAGE) {
+        media = (React__default.createElement(Resizer, { editorRef: toolProperties.editorRef, block: toolProperties.contentState, contentState: toolProperties.contentState },
+            React__default.createElement(Image, __assign({}, data))));
+    }
+    if (type === ENTITY_NAME.DIVIDER) {
+        media = React__default.createElement(Divider, __assign({}, data));
+    }
+    if (type === ENTITY_NAME.CHECKLIST) {
+        media = React__default.createElement(CheckListItem, { text: data.text });
+    }
+    return media;
+};
+
+// Renderer function for media blocks
+var editorMediaBlockRenderer = function (block) {
+    if (block.getType() === "atomic") {
+        return {
+            component: ProcessedMedia,
+            editable: false,
+        };
+    }
+    return null;
+};
+// ProcessedMedia functional component
+var ProcessedMedia = function (props) {
+    var entityKey = props.block.getEntityAt(0);
+    var entity = entityKey && props.contentState.getEntity(entityKey);
+    var type = entity === null || entity === void 0 ? void 0 : entity.getType();
+    var _a = useContext(TextEditorContext), generateLink = _a.generateLink, rest = __rest(_a, ["generateLink"]);
+    // Process the entity data
+    var processedResults = usePreRenderProcessing(__assign({ generateLink: generateLink }, entity === null || entity === void 0 ? void 0 : entity.getData()));
+    return (React__default.createElement(Media, __assign({ type: type, data: __assign(__assign({}, entity === null || entity === void 0 ? void 0 : entity.getData()), processedResults), editorControllers: __assign({}, rest) }, props)));
+};
+
+var TextEditor = function (_a) {
+    var _b = _a.readOnly, readOnly = _b === void 0 ? false : _b, props = __rest(_a, ["readOnly"]);
+    var _c = useContext(TextEditorContext), editorRef = _c.editorRef, editorState = _c.editorState, handleEditorStateChange = _c.handleEditorStateChange, handleDroppedFiles = _c.handleDroppedFiles, handlePastedFiles = _c.handlePastedFiles, handleKeyCommand = _c.handleKeyCommand, activateEditor = _c.activateEditor, deactivateEditor = _c.deactivateEditor;
+    return (React__default.createElement(Draft.Editor, { ref: editorRef, blockRendererFn: editorMediaBlockRenderer, placeholder: props.placeholder, onChange: handleEditorStateChange, editorState: editorState, spellCheck: true, handleKeyCommand: handleKeyCommand, handleDroppedFiles: handleDroppedFiles, handlePastedFiles: handlePastedFiles, readOnly: readOnly, onFocus: activateEditor, onBlur: deactivateEditor }));
+};
 
 var INLINE_TYPES = [
     {
