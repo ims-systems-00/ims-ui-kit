@@ -9,7 +9,7 @@ import Resizer from "./ResizeTool/Index";
 interface MediaProps {
   type: string; // The type of media (e.g., ENTITY_NAME.IMAGE)
   data: Record<string, any>; // Data related to the media item
-  editorControllers: Record<string, any>; // Editor controllers passed to the component
+  editorControllers: Record<string, any>;
   [key: string]: any; // Allow additional props
 }
 
@@ -25,10 +25,13 @@ const Media: React.FC<MediaProps> = ({
 
   if (type === ENTITY_NAME.IMAGE) {
     media = (
-      // <Resizer {...toolProperties}>
-      //   <Image {...data} />
-      // </Resizer>
-      <Image {...data} />
+      <Resizer
+        editorRef={toolProperties.editorRef}
+        block={toolProperties.contentState}
+        contentState={toolProperties.contentState}
+      >
+        <Image {...data} />
+      </Resizer>
     );
   }
   if (type === ENTITY_NAME.DIVIDER) {

@@ -1,5 +1,5 @@
 import { EditorState, EditorCommand, DraftHandleValue, SelectionState } from "draft-js";
-import React, { SyntheticEvent } from "react";
+import { SyntheticEvent } from "react";
 export interface MentionSuggestion {
     name: string;
     profileImageSrc: string;
@@ -12,7 +12,6 @@ export interface TextEditorContextProps {
     value?: string | object;
     readOnly?: boolean;
     mentionSuggestions?: MentionSuggestion[];
-    children: React.ReactNode;
 }
 export interface TextEditorUtils {
     editorRef: any;
