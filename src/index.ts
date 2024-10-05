@@ -12,7 +12,7 @@ export { default as ButtonGroup } from "./components/Buttons/ButtonGroupBase";
 export { default as ButtonToggle } from "./components/Buttons/ButtonToggleBase";
 export { default as ButtonToolbar } from "./components/Buttons/ButtonToolbarBase";
 export { default as Card } from "./components/Cards/CardBase";
-export { default as CaroBody } from "./components/Cards/CardBodyBase";
+export { default as CardBody } from "./components/Cards/CardBodyBase";
 export { default as CardColumns } from "./components/Cards/CardColumnsBase";
 export { default as CardDeck } from "./components/Cards/CardDeckBase";
 export { default as CardFooter } from "./components/Cards/CardFooterBase";
@@ -110,6 +110,7 @@ export { default as DTRowActionsMenu } from "./components/Table/DTRowActionsMenu
 export { default as DTRowActionsToggle } from "./components/Table/DTRowActionsToggle";
 export { default as TabContent } from "./components/TabPane/TabContentBase";
 export { default as TabPane } from "./components/TabPane/TabPaneBase";
+export { default as TextEditor } from "./components/TextEditor/Index";
 export { default as Toast } from "./components/Toast/ToastBase";
 export { default as ToastBody } from "./components/Toast/ToastBodyBase";
 export { default as ToastHeader } from "./components/Toast/ToastHeaderBase";

@@ -9,6 +9,8 @@ import {
   CompositeDecorator,
   Modifier,
   SelectionState,
+  DraftHandleValue,
+  Editor,
 } from "draft-js";
 import { ELEMENT_TYPES } from "./elementTypes";
 import { ENTITY_NAME } from "./entities/entityNames";
@@ -20,7 +22,7 @@ const compositeDecorator = new CompositeDecorator([
   httpsLinkDecorator,
 ]);
 export default function useTextEditor(config: any): TextEditorUtils {
-  const editorRef = useRef(null);
+  const editorRef = useRef<Editor | null>(null);
   const [editorState, setEditorState] = useState(
     EditorState.createEmpty(compositeDecorator)
   );
@@ -87,8 +89,12 @@ export default function useTextEditor(config: any): TextEditorUtils {
     }
     return stateController();
   }, [config.value]);
-  const fileInput = useRef(null);
-  const _openFilePrompt = () => fileInput.current.click();
+  const fileInput = useRef<HTMLInputElement | null>(null);
+  const _openFilePrompt = () => {
+    if (fileInput.current) {
+      fileInput.current.click();
+    }
+  };
   const _createAtomicBlockEntity = (command: any, data: any) => {
     const contentState = editorState.getCurrentContent();
     const contentStateWithEntity = contentState.createEntity(
@@ -138,17 +144,22 @@ export default function useTextEditor(config: any): TextEditorUtils {
     }
     return "not-handled";
   };
-  const _handleFiles = async (files: any) => {
+  const _handleFiles = async (files: Blob[]): Promise<DraftHandleValue> => {
     if (
       !config.onEachFileSelection ||
       typeof config.onEachFileSelection !== "function"
-    )
-      return console.log("Uploader function not specified");
+    ) {
+      console.log("Uploader function not specified");
+      return "not-handled";
+    }
     let areImages = files.every(
       (file: any) => file.type.split("/")[0] === "image"
     );
     /** todo: check file size here */
-    if (!areImages) return console.log("All files has to be images");
+    if (!areImages) {
+      console.log("All files has to be images");
+      return "not-handled";
+    }
     try {
       let storageInformations = await Promise.all(
         files.map((file: any) => config.onEachFileSelection(file))
@@ -160,8 +171,10 @@ export default function useTextEditor(config: any): TextEditorUtils {
           storageInfo,
         })
       );
+      return "handled";
     } catch (err) {
-      return console.log(err);
+      console.log(err);
+      return "not-handled";
     }
   };
   const _handleFileInputChange = (e: any) => {
@@ -200,9 +213,17 @@ export default function useTextEditor(config: any): TextEditorUtils {
     if (!tool?.element) return null;
     _buttonHandlers[tool.element](tool.style);
   };
-  const handleDroppedFiles = (selection: any, files: any) =>
+  const handleDroppedFiles = (
+    selection: SelectionState,
+    files: Blob[]
+  ): DraftHandleValue => {
     _handleFiles(files);
-  const handlePastedFiles = (files: any) => _handleFiles(files);
+    return "handled";
+  };
+  const handlePastedFiles = (files: Blob[]): DraftHandleValue => {
+    _handleFiles(files);
+    return "handled";
+  };
   const handleMentionSelect = (
     contentState: any,
     blockKey: any,
@@ -251,7 +272,9 @@ export default function useTextEditor(config: any): TextEditorUtils {
   };
   const forceFocusEditorEnd = (e: any) => {
     e?.preventDefault && e.preventDefault();
-    editorRef.current.editor?.focus();
+    if (editorRef.current) {
+      editorRef.current.editor?.focus();
+    }
     if (editorState)
       handleEditorStateChange(EditorState.moveFocusToEnd(editorState));
   };

@@ -25,9 +25,10 @@ const Media: React.FC<MediaProps> = ({
 
   if (type === ENTITY_NAME.IMAGE) {
     media = (
-      <Resizer {...toolProperties}>
-        <Image {...data} />
-      </Resizer>
+      // <Resizer {...toolProperties}>
+      //   <Image {...data} />
+      // </Resizer>
+      <Image {...data} />
     );
   }
   if (type === ENTITY_NAME.DIVIDER) {

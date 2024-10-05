@@ -8,10 +8,10 @@ export const TextEditorContext = React.createContext<TextEditorContextData>({
   focusedForEditing: null,
   getFileInputProps: () => {},
   generateLink: () => {},
-  handleDroppedFiles: () => {},
-  handlePastedFiles: () => {},
+  handleDroppedFiles: () => "not-handled",
+  handlePastedFiles: () => "not-handled",
   handleEditorStateChange: () => {},
-  handleKeyCommand: () => {},
+  handleKeyCommand: () => "not-handled",
   handleToolClick: () => {},
   forceFocusEditorEnd: () => {},
   updateComputedPosForMentionSuggestions: () => {},
@@ -21,7 +21,12 @@ export const TextEditorContext = React.createContext<TextEditorContextData>({
   isToolActive: () => {},
   mentionSuggestions: [],
 });
-const TextEditorContextProvider: React.FC<TextEditorContextProps> = ({
+
+interface TextEditorProviderProps extends TextEditorContextProps {
+  children: React.ReactNode;
+}
+
+const TextEditorContextProvider: React.FC<TextEditorProviderProps> = ({
   children,
   ...rest
 }) => {

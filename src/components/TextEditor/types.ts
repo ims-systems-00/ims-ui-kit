@@ -1,4 +1,11 @@
-import React from "react";
+import {
+  EditorState,
+  EditorCommand,
+  DraftHandleValue,
+  SelectionState,
+} from "draft-js";
+import React, { SyntheticEvent } from "react";
+
 export interface MentionSuggestion {
   name: string;
   profileImageSrc: string;
@@ -11,7 +18,6 @@ export interface TextEditorContextProps {
   value?: string | object;
   readOnly?: boolean;
   mentionSuggestions?: MentionSuggestion[];
-  children: React.ReactNode;
 }
 export interface TextEditorUtils {
   editorRef: any;
@@ -20,16 +26,23 @@ export interface TextEditorUtils {
   focusedForEditing: any;
   getFileInputProps: Function;
   generateLink: Function;
-  handleDroppedFiles: Function;
-  handlePastedFiles: Function;
-  handleEditorStateChange: Function;
-  handleKeyCommand: Function;
+  handleDroppedFiles(
+    selection: SelectionState,
+    files: Blob[]
+  ): DraftHandleValue;
+  handlePastedFiles(files: Blob[]): DraftHandleValue;
+  handleEditorStateChange(editorState: EditorState): void;
+  handleKeyCommand(
+    command: EditorCommand,
+    editorState: EditorState,
+    eventTimeStamp: number
+  ): DraftHandleValue;
   handleToolClick: Function;
   forceFocusEditorEnd: Function;
   updateComputedPosForMentionSuggestions: Function;
   handleMentionSelect: Function;
-  activateEditor: Function;
-  deactivateEditor: Function;
+  activateEditor(e: SyntheticEvent): void;
+  deactivateEditor(e: SyntheticEvent): void;
   isToolActive: Function;
 }
 export interface TextEditorContextData extends TextEditorUtils {

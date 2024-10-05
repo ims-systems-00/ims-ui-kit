@@ -1,5 +1,5 @@
 import React from "react";
-interface MentionProps {
+export interface MentionProps {
     entityKey?: string;
     contentState: any;
     blockKey: string;

@@ -3,7 +3,7 @@ import { TextEditorContext } from "../../Context";
 import MentionSuggestions from "./Suggestions/Index";
 
 // Define the props type for the Mention component
-interface MentionProps {
+export interface MentionProps {
   entityKey?: string; // Optional entity key
   contentState: any; // Type for contentState; adjust as needed based on actual type
   blockKey: string; // Required block key

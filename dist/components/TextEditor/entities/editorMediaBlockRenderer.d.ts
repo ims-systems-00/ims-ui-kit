@@ -1,10 +1,10 @@
 import React from "react";
-import { ContentState, Block } from "draft-js";
+import { ContentState } from "draft-js";
 interface ProcessedMediaProps {
-    block: Block;
+    block: any;
     contentState: ContentState;
 }
-export declare const editorMediaBlockRenderer: (block: Block) => {
+export declare const editorMediaBlockRenderer: (block: any) => {
     component: React.FC<ProcessedMediaProps>;
     editable: boolean;
 } | null;

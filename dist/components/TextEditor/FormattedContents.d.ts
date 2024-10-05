@@ -1,3 +1,6 @@
 import React from "react";
-declare const FormatedContents: (props: any) => React.JSX.Element;
+interface FormatedContentsProps {
+    [key: string]: any;
+}
+declare const FormatedContents: React.FC<FormatedContentsProps>;
 export default FormatedContents;

@@ -3,7 +3,7 @@ import classnames from "classnames";
 import StretchBar from "./StretchBar";
 import Aligner from "./Aligner";
 
-interface ResizerProps {
+export interface ResizerProps {
   editorRef: React.RefObject<any>;
   children?: React.ReactNode;
   size?: number;

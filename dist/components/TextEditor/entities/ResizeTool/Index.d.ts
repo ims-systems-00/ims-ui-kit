@@ -1,5 +1,5 @@
 import React from "react";
-interface ResizerProps {
+export interface ResizerProps {
     editorRef: React.RefObject<any>;
     children?: React.ReactNode;
     size?: number;
