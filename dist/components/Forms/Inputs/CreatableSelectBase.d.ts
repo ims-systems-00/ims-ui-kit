@@ -1,0 +1,31 @@
+import React from "react";
+import { CreatableProps } from "react-select/creatable";
+export interface CreatableSelectBaseProps extends CreatableProps<any, any, any> {
+    leftPhrase?: string;
+    isClearable?: boolean;
+    isSearchable?: boolean;
+    isDisabled?: boolean;
+    isMulti?: boolean;
+    isRtl?: boolean;
+    isOptionDisabled?: any;
+    isOptionSelected?: any;
+    isOptionFocused?: any;
+    isFocused?: boolean;
+    isLoading?: boolean;
+    isInvalid?: boolean;
+    isRequired?: boolean;
+    isCreatable?: boolean;
+    isMenuOpen?: boolean;
+    isMenuFixed?: boolean;
+    isMenuPortal?: boolean;
+    isMenuPositioned?: boolean;
+    isMenuPositionFixed?: boolean;
+    isMenuAutoFocused?: boolean;
+    isControlled?: boolean;
+    isFocusedOption?: boolean;
+    isHidden?: boolean;
+    size?: "sm" | "lg";
+    word?: string;
+}
+declare const CreatableSelectBase: React.FC<CreatableSelectBaseProps>;
+export default CreatableSelectBase;
