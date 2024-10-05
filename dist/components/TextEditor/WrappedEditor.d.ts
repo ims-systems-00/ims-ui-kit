@@ -1,6 +1,7 @@
 import React from "react";
 import { TextEditorProps } from "./TextEditor";
-export interface WrappedEditorProps extends TextEditorProps {
+import { ToolBarProps } from "./Toolbar";
+export interface WrappedEditorProps extends TextEditorProps, ToolBarProps {
     minimal?: boolean;
 }
 declare const WrappedEditor: React.FC<WrappedEditorProps>;

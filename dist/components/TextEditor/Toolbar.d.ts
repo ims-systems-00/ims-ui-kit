@@ -1,5 +1,5 @@
 import React, { MouseEvent } from "react";
-interface ToolBarProps {
+export interface ToolBarProps {
     minimal?: boolean;
     enableSubmit?: boolean;
     onSubmit?: (e: MouseEvent<HTMLButtonElement>, editorState: any) => void;
