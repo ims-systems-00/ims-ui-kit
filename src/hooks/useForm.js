@@ -13,7 +13,6 @@ const useForm = (initdataModel, schema) => {
       await schema.validate(dataModel, options);
       return null;
     } catch (err) {
-      console.log(err);
       err?.inner?.forEach((item) => {
         errors[item.path] = item.message;
       });
