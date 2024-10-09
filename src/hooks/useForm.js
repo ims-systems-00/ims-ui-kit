@@ -7,13 +7,13 @@ const useForm = (initdataModel, schema) => {
   const [validationErrors, setValidationErrors] = React.useState({});
   const [isBusy, setIsBusy] = React.useState(false);
   const validate = async () => {
-    const options = { abortEarly: false };
+    const options = { abortEarly: false, context: schema.cast(dataModel) };
     const errors = {};
     try {
       await schema.validate(dataModel, options);
       return null;
     } catch (err) {
-      console.log(err)
+      console.log(err);
       err?.inner?.forEach((item) => {
         errors[item.path] = item.message;
       });
