@@ -1,6 +1,6 @@
 {
   "name": "@ims-systems-00/ims-ui-kit",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "source": "src/index.js",
   "files": [
     "dist",
@@ -36,7 +36,7 @@
     "react-bootstrap-sweetalert": "5.2.0",
     "react-chartjs-2": "5.2.0",
     "react-circular-progressbar": "^2.1.0",
-    "react-datetime": "3.2.0",
+    
     "react-draft-wysiwyg": "^1.15.0",
     "react-dropzone": "^14.2.3",
     "react-icons": "5.1.0",
@@ -79,13 +79,15 @@
     "react": "^18.3.1",
     "react-dom": "18.2.0",
     "node-sass": "^8.0.0",
-    "node-sass-package-importer": "5.3.2"
+    "node-sass-package-importer": "5.3.2",
+    "react-datetime": "3.2.0",
   },
   "peerDependencies": {
     "react": ">=^18.3.1",
     "react-dom": ">=18.2.0",
     "node-sass": "^8.0.0",
-    "node-sass-package-importer": "5.3.2"
+    "node-sass-package-importer": "5.3.2",
+    "react-datetime": "3.2.0",
   },
   "optionalDependencies": {
     "eslint-plugin-flowtype": "8.0.3",
