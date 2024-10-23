@@ -37978,7 +37978,7 @@ var selectionColumn = columnHelper.accessor("", {
     },
 });
 var DataTable = function (_a) {
-    var _b = _a.data, data = _b === void 0 ? [] : _b, _c = _a.columns, columns = _c === void 0 ? [] : _c, _d = _a.disableMultiSelection, disableMultiSelection = _d === void 0 ? true : _d, _e = _a.disableColumnResize, disableColumnResize = _e === void 0 ? false : _e, _f = _a.defaultSize, defaultSize = _f === void 0 ? 300 : _f, _g = _a.minSize, minSize = _g === void 0 ? 150 : _g, columnVisibility = _a.columnVisibility, _h = _a.rowSelection, rowSelection = _h === void 0 ? {} : _h, _j = _a.onRowSelectionChange, onRowSelectionChange = _j === void 0 ? function () { } : _j;
+    var _b = _a.data, data = _b === void 0 ? [] : _b, _c = _a.columns, columns = _c === void 0 ? [] : _c, _d = _a.disableMultiSelection, disableMultiSelection = _d === void 0 ? true : _d, _e = _a.disableColumnResize, disableColumnResize = _e === void 0 ? false : _e, _f = _a.defaultSize, defaultSize = _f === void 0 ? 300 : _f, _g = _a.minSize, minSize = _g === void 0 ? 150 : _g, columnVisibility = _a.columnVisibility, _h = _a.rowSelection, rowSelection = _h === void 0 ? {} : _h, _j = _a.onRowClick, onRowClick = _j === void 0 ? function () { } : _j, _k = _a.onRowSelectionChange, onRowSelectionChange = _k === void 0 ? function () { } : _k;
     columns = disableMultiSelection
         ? __spreadArray([], columns, true) : __spreadArray([selectionColumn], columns, true);
     var table = useReactTable({
@@ -38021,7 +38021,14 @@ var DataTable = function (_a) {
                         onTouchStart: header.getResizeHandler(),
                         className: "col-resizer" },
                         React$6.createElement("div", { className: "h-100 col-sepration-indicator" }))))); }))); })),
-                React$6.createElement("tbody", { className: "dt-tbody", ref: tbodyRef }, table.getRowModel().rows.map(function (row, i) { return (React$6.createElement("tr", { key: row.id, className: "dt-tr" }, row.getVisibleCells().map(function (cell) { return (React$6.createElement("td", { key: cell.id, style: {
+                React$6.createElement("tbody", { className: "dt-tbody", ref: tbodyRef }, table.getRowModel().rows.map(function (row, i) { return (React$6.createElement("tr", { key: row.id, className: "dt-tr" }, row.getVisibleCells().map(function (cell) { return (React$6.createElement("td", { key: cell.id, onClick: function (event) {
+                        var _a, _b;
+                        if (((_a = cell.column) === null || _a === void 0 ? void 0 : _a.id) === "select-row" ||
+                            ((_b = cell.column) === null || _b === void 0 ? void 0 : _b.id) === "actions") {
+                            return;
+                        }
+                        onRowClick(row, event);
+                    }, style: {
                         width: cell.column.getSize(),
                     },
                     className: "dt-td" }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); }))))));

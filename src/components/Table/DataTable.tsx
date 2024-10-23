@@ -71,6 +71,7 @@ export interface TableProps {
   rowSelection: RowSelectionState;
   onRowSelectionChange: OnChangeFn<RowSelectionState>;
   onRowClick?: Function;
+  containerClass?: string;
 }
 const DataTable: React.FC<TableProps> = ({
   data = [],
@@ -83,6 +84,7 @@ const DataTable: React.FC<TableProps> = ({
   rowSelection = {},
   onRowClick = function () {},
   onRowSelectionChange = function () {},
+  containerClass = "",
 }) => {
   columns = disableMultiSelection
     ? [...columns]
@@ -107,7 +109,7 @@ const DataTable: React.FC<TableProps> = ({
   });
   const [tbodyRef] = useAutoAnimate();
   return (
-    <div className={"data-table "}>
+    <div className={classNames("data-table", containerClass)}>
       <PerfectScrollbar>
         <table
           {...{

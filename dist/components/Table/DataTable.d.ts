@@ -10,6 +10,7 @@ export interface TableProps {
     columnVisibility: VisibilityState;
     rowSelection: RowSelectionState;
     onRowSelectionChange: OnChangeFn<RowSelectionState>;
+    onRowClick?: Function;
 }
 declare const DataTable: React.FC<TableProps>;
 export default DataTable;
