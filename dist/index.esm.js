@@ -37958,7 +37958,7 @@ var selectionColumn = columnHelper.accessor("", {
     },
 });
 var DataTable = function (_a) {
-    var _b = _a.data, data = _b === void 0 ? [] : _b, _c = _a.columns, columns = _c === void 0 ? [] : _c, _d = _a.disableMultiSelection, disableMultiSelection = _d === void 0 ? true : _d, _e = _a.disableColumnResize, disableColumnResize = _e === void 0 ? false : _e, _f = _a.defaultSize, defaultSize = _f === void 0 ? 300 : _f, _g = _a.minSize, minSize = _g === void 0 ? 150 : _g, columnVisibility = _a.columnVisibility, _h = _a.rowSelection, rowSelection = _h === void 0 ? {} : _h, _j = _a.onRowClick, onRowClick = _j === void 0 ? function () { } : _j, _k = _a.onRowSelectionChange, onRowSelectionChange = _k === void 0 ? function () { } : _k;
+    var _b = _a.data, data = _b === void 0 ? [] : _b, _c = _a.columns, columns = _c === void 0 ? [] : _c, _d = _a.disableMultiSelection, disableMultiSelection = _d === void 0 ? true : _d, _e = _a.disableColumnResize, disableColumnResize = _e === void 0 ? false : _e, _f = _a.defaultSize, defaultSize = _f === void 0 ? 300 : _f, _g = _a.minSize, minSize = _g === void 0 ? 150 : _g, columnVisibility = _a.columnVisibility, _h = _a.rowSelection, rowSelection = _h === void 0 ? {} : _h, _j = _a.onRowClick, onRowClick = _j === void 0 ? function () { } : _j, _k = _a.onRowSelectionChange, onRowSelectionChange = _k === void 0 ? function () { } : _k, _l = _a.containerClass, containerClass = _l === void 0 ? "" : _l;
     columns = disableMultiSelection
         ? __spreadArray([], columns, true) : __spreadArray([selectionColumn], columns, true);
     var table = useReactTable({
@@ -37980,7 +37980,7 @@ var DataTable = function (_a) {
         },
     });
     var tbodyRef = useAutoAnimate()[0];
-    return (React__default.createElement("div", { className: "data-table " },
+    return (React__default.createElement("div", { className: classnames$1("data-table", containerClass) },
         React__default.createElement(PerfectScrollbar, null,
             React__default.createElement("table", { className: "dt-table",
                 style: {

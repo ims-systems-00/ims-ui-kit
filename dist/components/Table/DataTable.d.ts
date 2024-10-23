@@ -11,6 +11,7 @@ export interface TableProps {
     rowSelection: RowSelectionState;
     onRowSelectionChange: OnChangeFn<RowSelectionState>;
     onRowClick?: Function;
+    containerClass?: string;
 }
 declare const DataTable: React.FC<TableProps>;
 export default DataTable;
