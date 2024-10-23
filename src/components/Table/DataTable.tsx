@@ -70,6 +70,7 @@ export interface TableProps {
   columnVisibility: VisibilityState;
   rowSelection: RowSelectionState;
   onRowSelectionChange: OnChangeFn<RowSelectionState>;
+  onRowClick?: Function;
 }
 const DataTable: React.FC<TableProps> = ({
   data = [],
@@ -80,6 +81,7 @@ const DataTable: React.FC<TableProps> = ({
   minSize = 150,
   columnVisibility,
   rowSelection = {},
+  onRowClick = function () {},
   onRowSelectionChange = function () {},
 }) => {
   columns = disableMultiSelection
@@ -162,6 +164,15 @@ const DataTable: React.FC<TableProps> = ({
                 {row.getVisibleCells().map((cell) => (
                   <td
                     key={cell.id}
+                    onClick={function (event) {
+                      if (
+                        cell.column?.id === "select-row" ||
+                        cell.column?.id === "actions"
+                      ) {
+                        return;
+                      }
+                      onRowClick(row, event);
+                    }}
                     {...{
                       style: {
                         width: cell.column.getSize(),
