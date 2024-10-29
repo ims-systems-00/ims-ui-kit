@@ -4,8 +4,9 @@ declare const variants: {
     outline: string;
     filled: string;
 };
+export type VariantType = typeof variants[keyof typeof variants];
 export interface SelectBaseProps extends ReactSelectProps {
-    variant?: typeof variants;
+    variant?: VariantType;
     isClearable?: boolean;
     isSearchable?: boolean;
     isDisabled?: boolean;
