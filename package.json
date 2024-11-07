@@ -98,7 +98,8 @@
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "compile-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss src/assets/css/app.css",
     "minify-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss src/assets/css/app.min.css --output-style compressed",
-    "map-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss src/assets/css/app.css --source-map true"
+    "map-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss src/assets/css/app.css --source-map true",
+    "css-playground": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/playground/play.scss  src/assets/scss/playground/play.css"
   },
   "browserslist": [
     ">0.2%",
