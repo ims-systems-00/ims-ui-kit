@@ -14,6 +14,10 @@ import Input, { InputBaseProps } from "../Forms/Inputs/InputBase";
 import PerfectScrollbar from "react-perfect-scrollbar";
 
 const columnHelper = createColumnHelper();
+const VoidSpace = ({ minVoidspace = 3 }) => (
+  <div style={{ height: minVoidspace * 100 }}></div>
+);
+const MIN_DATA_LIMIT_FOR_VOID_SPACE = 3;
 interface IndeterminateCheckboxProps extends InputBaseProps {
   indeterminate: boolean;
 }
@@ -108,6 +112,13 @@ const DataTable: React.FC<TableProps> = ({
     },
   });
   const [tbodyRef] = useAutoAnimate();
+  let voidSpace = null;
+  if (data.length < MIN_DATA_LIMIT_FOR_VOID_SPACE)
+    voidSpace = (
+      <VoidSpace
+        minVoidspace={Math.abs(MIN_DATA_LIMIT_FOR_VOID_SPACE - data.length)}
+      />
+    );
   return (
     <div className={classNames("data-table", containerClass)}>
       <PerfectScrollbar>
@@ -189,6 +200,7 @@ const DataTable: React.FC<TableProps> = ({
             ))}
           </tbody>
         </table>
+        {voidSpace}
       </PerfectScrollbar>
     </div>
   );
