@@ -4,8 +4,8 @@ import { Badge, BadgeProps } from "reactstrap";
 import PropTypes from "prop-types";
 
 interface BadgeBaseProps extends BadgeProps {
-  outline: string;
-  fade: string;
+  outline?: string;
+  fade?: string;
 }
 
 const BadgeBase: React.FC<BadgeBaseProps> = ({
