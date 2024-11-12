@@ -37950,6 +37950,11 @@ var libExports = lib.exports;
 var PerfectScrollbar = /*@__PURE__*/getDefaultExportFromCjs(libExports);
 
 var columnHelper = createColumnHelper();
+var VoidSpace = function (_a) {
+    var _b = _a.minVoidspace, minVoidspace = _b === void 0 ? 3 : _b;
+    return (React$6.createElement("div", { style: { height: minVoidspace * 100 } }));
+};
+var MIN_DATA_LIMIT_FOR_VOID_SPACE = 3;
 function IndeterminateCheckbox(_a) {
     var indeterminate = _a.indeterminate; _a.className; var rest = __rest(_a, ["indeterminate", "className"]);
     var ref = React$6.useRef(null);
@@ -38000,6 +38005,9 @@ var DataTable = function (_a) {
         },
     });
     var tbodyRef = useAutoAnimate()[0];
+    var voidSpace = null;
+    if (data.length < MIN_DATA_LIMIT_FOR_VOID_SPACE)
+        voidSpace = (React$6.createElement(VoidSpace, { minVoidspace: Math.abs(MIN_DATA_LIMIT_FOR_VOID_SPACE - data.length) }));
     return (React$6.createElement("div", { className: classnames$1("data-table", containerClass) },
         React$6.createElement(PerfectScrollbar, null,
             React$6.createElement("table", { className: "dt-table",
@@ -38031,7 +38039,8 @@ var DataTable = function (_a) {
                     }, style: {
                         width: cell.column.getSize(),
                     },
-                    className: "dt-td" }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); }))))));
+                    className: "dt-td" }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); }))),
+            voidSpace)));
 };
 
 var UncontrolledDropdownBase = function (_a) {
