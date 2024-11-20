@@ -63,7 +63,9 @@
         padding: $padding-base-vertical * 1.5 $padding-base-horizontal * 1.5;
         color: $type-dark;
         &:hover {
-          border: 1px solid $primary;
+          &:has(input[type="text"], input[type="number"], .react-select) {
+            border: 1px solid $primary;
+          }
         }
       }
       &:hover {
