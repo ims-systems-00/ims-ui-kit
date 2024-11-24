@@ -9,7 +9,7 @@ let AlertBaseProps = Object.assign({}, Alert.prototype?.props);
  * */
 
 const AlertBase = ({ children, ...rest }) => {
-  return <Alert>{children}</Alert>;
+  return <Alert {...rest}>{children}</Alert>;
 };
 
 AlertBase.propTypes = {
