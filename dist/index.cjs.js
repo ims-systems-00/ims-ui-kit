@@ -37954,6 +37954,11 @@ var VoidSpace = function (_a) {
     var _b = _a.minVoidspace, minVoidspace = _b === void 0 ? 3 : _b;
     return (React$6.createElement("div", { style: { height: minVoidspace * 100 } }));
 };
+var EmptyDataFallback = function () {
+    return (React$6.createElement("div", { className: "p-5 d-flex justify-content-center align-items-center flex-column" },
+        React$6.createElement("h4", { className: "mb-2" }, "No results found."),
+        React$6.createElement("p", null, "Try adding some data or change filters.")));
+};
 var MIN_DATA_LIMIT_FOR_VOID_SPACE = 3;
 function IndeterminateCheckbox(_a) {
     var indeterminate = _a.indeterminate; _a.className; var rest = __rest(_a, ["indeterminate", "className"]);
@@ -37983,7 +37988,7 @@ var selectionColumn = columnHelper.accessor("", {
     },
 });
 var DataTable = function (_a) {
-    var _b = _a.data, data = _b === void 0 ? [] : _b, _c = _a.columns, columns = _c === void 0 ? [] : _c, _d = _a.disableMultiSelection, disableMultiSelection = _d === void 0 ? true : _d, _e = _a.disableColumnResize, disableColumnResize = _e === void 0 ? false : _e, _f = _a.defaultSize, defaultSize = _f === void 0 ? 300 : _f, _g = _a.minSize, minSize = _g === void 0 ? 150 : _g, columnVisibility = _a.columnVisibility, _h = _a.rowSelection, rowSelection = _h === void 0 ? {} : _h, _j = _a.onRowClick, onRowClick = _j === void 0 ? function () { } : _j, _k = _a.onRowSelectionChange, onRowSelectionChange = _k === void 0 ? function () { } : _k, _l = _a.containerClass, containerClass = _l === void 0 ? "" : _l;
+    var _b = _a.data, data = _b === void 0 ? [] : _b, _c = _a.columns, columns = _c === void 0 ? [] : _c, _d = _a.disableMultiSelection, disableMultiSelection = _d === void 0 ? true : _d, _e = _a.disableColumnResize, disableColumnResize = _e === void 0 ? false : _e, _f = _a.defaultSize, defaultSize = _f === void 0 ? 300 : _f, _g = _a.minSize, minSize = _g === void 0 ? 150 : _g, columnVisibility = _a.columnVisibility, _h = _a.rowSelection, rowSelection = _h === void 0 ? {} : _h, _j = _a.onRowClick, onRowClick = _j === void 0 ? function () { } : _j, _k = _a.onRowSelectionChange, onRowSelectionChange = _k === void 0 ? function () { } : _k, _l = _a.containerClass, containerClass = _l === void 0 ? "" : _l, _m = _a.emptyResultsFallback, emptyResultsFallback = _m === void 0 ? null : _m;
     columns = disableMultiSelection
         ? __spreadArray([], columns, true) : __spreadArray([selectionColumn], columns, true);
     var table = useReactTable({
@@ -38008,6 +38013,8 @@ var DataTable = function (_a) {
     var voidSpace = null;
     if (data.length < MIN_DATA_LIMIT_FOR_VOID_SPACE)
         voidSpace = (React$6.createElement(VoidSpace, { minVoidspace: Math.abs(MIN_DATA_LIMIT_FOR_VOID_SPACE - data.length) }));
+    if (!data.length && !emptyResultsFallback)
+        emptyResultsFallback = React$6.createElement(EmptyDataFallback, null);
     return (React$6.createElement("div", { className: classnames$1("data-table", containerClass) },
         React$6.createElement(PerfectScrollbar, null,
             React$6.createElement("table", { className: "dt-table",
@@ -38040,6 +38047,7 @@ var DataTable = function (_a) {
                         width: cell.column.getSize(),
                     },
                     className: "dt-td" }, flexRender(cell.column.columnDef.cell, cell.getContext()))); }))); }))),
+            emptyResultsFallback,
             voidSpace)));
 };
 
