@@ -17,6 +17,14 @@ const columnHelper = createColumnHelper();
 const VoidSpace = ({ minVoidspace = 3 }) => (
   <div style={{ height: minVoidspace * 100 }}></div>
 );
+const EmptyDataFallback = () => {
+  return (
+    <div className="p-5 d-flex justify-content-center align-items-center flex-column">
+      <h4 className="mb-2">No results found.</h4>
+      <p>Try adding some data or change filters.</p>
+    </div>
+  );
+};
 const MIN_DATA_LIMIT_FOR_VOID_SPACE = 3;
 interface IndeterminateCheckboxProps extends InputBaseProps {
   indeterminate: boolean;
@@ -76,6 +84,7 @@ export interface TableProps {
   onRowSelectionChange: OnChangeFn<RowSelectionState>;
   onRowClick?: Function;
   containerClass?: string;
+  emptyResultsFallback?: React.ReactNode | null;
 }
 const DataTable: React.FC<TableProps> = ({
   data = [],
@@ -89,6 +98,7 @@ const DataTable: React.FC<TableProps> = ({
   onRowClick = function () {},
   onRowSelectionChange = function () {},
   containerClass = "",
+  emptyResultsFallback = null,
 }) => {
   columns = disableMultiSelection
     ? [...columns]
@@ -119,6 +129,8 @@ const DataTable: React.FC<TableProps> = ({
         minVoidspace={Math.abs(MIN_DATA_LIMIT_FOR_VOID_SPACE - data.length)}
       />
     );
+  if (!data.length && !emptyResultsFallback)
+    emptyResultsFallback = <EmptyDataFallback />;
   return (
     <div className={classNames("data-table", containerClass)}>
       <PerfectScrollbar>
@@ -200,6 +212,7 @@ const DataTable: React.FC<TableProps> = ({
             ))}
           </tbody>
         </table>
+        {emptyResultsFallback}
         {voidSpace}
       </PerfectScrollbar>
     </div>
