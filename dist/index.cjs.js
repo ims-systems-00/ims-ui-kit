@@ -11309,11 +11309,6 @@ var AccordionItemBase = function (_a) {
     return React$6.createElement(AccordionItem, __assign({}, rest), children);
 };
 
-var AlertBase = function (_a) {
-    var children = _a.children, rest = __rest(_a, ["children"]);
-    return React$6.createElement(Alert, __assign({}, rest), children);
-};
-
 var classnames$2 = {exports: {}};
 
 /*!
@@ -11376,6 +11371,56 @@ var classnames$2 = {exports: {}};
 var classnamesExports = classnames$2.exports;
 var classnames$1 = /*@__PURE__*/getDefaultExportFromCjs(classnamesExports);
 
+var CardBase = function (props) {
+    return (React$6.createElement(Card, __assign({ className: classnames$1(props.className, {
+            "card-variant-list ": props.variant === "list",
+            "card-variant-active": props.variant === "active",
+            "card-variant-active card-hover-none": props.variant === "active" && props.hover === false,
+            "card-variant-outline": props.variant === "outline",
+            "card-variant-outline card-hover-none": props.variant === "outline" && props.hover === false,
+            "card-variant-primary": props.variant === "primary",
+            "card-variant-primary card-hover-none": props.variant === "primary" && props.hover === false,
+            "card-variant-secondary": props.variant === "secondary",
+            "card-variant-secondary card-hover-none": props.variant === "secondary" && props.hover === false,
+            "card-variant-light": props.variant === "light",
+            "card-variant-light card-hover-none": props.variant === "light" && props.hover === false,
+            "card-gradient card-gradient-success": props.variant === "gradient" && props.color === "success",
+            "card-gradient card-gradient-primary": props.variant === "gradient" && props.color === "primary",
+            "card-gradient card-gradient-danger": props.variant === "gradient" && props.color === "danger",
+        }) }, props), props.children));
+};
+
+var CardBodyBase = function (props) {
+    return React$6.createElement(CardBody, __assign({}, props), props.children);
+};
+
+var CardFooterBase = function (props) {
+    return React$6.createElement(CardFooter, __assign({}, props), props.children);
+};
+
+var CardHeaderBase = function (props) {
+    return React$6.createElement(CardHeader, __assign({}, props), props.children);
+};
+
+var ActivityBase = function (_a) {
+    var avatar = _a.avatar, name = _a.name, subHeading = _a.subHeading, activity = _a.activity, footer = _a.footer;
+    return (React$6.createElement(CardBase, { className: "bg-transparent border-0 shadow-none activity ms-5 ml-5 mb-0" },
+        React$6.createElement(CardHeaderBase, { className: "bg-transparent border-0 shadow-none " },
+            React$6.createElement("div", { className: "d-flex" },
+                React$6.createElement("div", { className: "avatar-container" },
+                    React$6.createElement("img", { src: avatar, alt: "avatar", className: "avatar mt-1 ms-3 ml-3" })),
+                React$6.createElement("div", null,
+                    React$6.createElement("p", { className: "m-0 font-size-body-2 text-type-dark" }, name),
+                    subHeading && (React$6.createElement("h6", { className: "mb-1  font-size-caption text-type-medium" }, subHeading))))),
+        React$6.createElement(CardBodyBase, { className: "bg-transparent border-0 shadow-none p-0 " }, activity),
+        React$6.createElement(CardFooterBase, { className: "bg-transparent border-0 shadow-none pt-2" }, footer)));
+};
+
+var AlertBase = function (_a) {
+    var children = _a.children, rest = __rest(_a, ["children"]);
+    return React$6.createElement(Alert, __assign({}, rest), children);
+};
+
 var BadgeBase = function (_a) {
     var children = _a.children, color = _a.color, outline = _a.outline, fade = _a.fade, rest = __rest(_a, ["children", "color", "outline", "fade"]);
     return (React$6.createElement(Badge, __assign({ color: color, className: classnames$1(rest.className, {
@@ -11436,29 +11481,6 @@ var ButtonToolbarBase = function (_a) {
     return React$6.createElement(ButtonToolbar, __assign({}, rest), children);
 };
 
-var CardBase = function (props) {
-    return (React$6.createElement(Card, __assign({ className: classnames$1(props.className, {
-            "card-variant-list ": props.variant === "list",
-            "card-variant-active": props.variant === "active",
-            "card-variant-active card-hover-none": props.variant === "active" && props.hover === false,
-            "card-variant-outline": props.variant === "outline",
-            "card-variant-outline card-hover-none": props.variant === "outline" && props.hover === false,
-            "card-variant-primary": props.variant === "primary",
-            "card-variant-primary card-hover-none": props.variant === "primary" && props.hover === false,
-            "card-variant-secondary": props.variant === "secondary",
-            "card-variant-secondary card-hover-none": props.variant === "secondary" && props.hover === false,
-            "card-variant-light": props.variant === "light",
-            "card-variant-light card-hover-none": props.variant === "light" && props.hover === false,
-            "card-gradient card-gradient-success": props.variant === "gradient" && props.color === "success",
-            "card-gradient card-gradient-primary": props.variant === "gradient" && props.color === "primary",
-            "card-gradient card-gradient-danger": props.variant === "gradient" && props.color === "danger",
-        }) }, props), props.children));
-};
-
-var CardBodyBase = function (props) {
-    return React$6.createElement(CardBody, __assign({}, props), props.children);
-};
-
 var CardColumnsBase = function (props) {
     return React$6.createElement(CardColumns, __assign({}, props), props.children);
 };
@@ -11467,16 +11489,8 @@ var CardDeckBase = function (props) {
     return React$6.createElement(CardDeck, __assign({}, props), props.children);
 };
 
-var CardFooterBase = function (props) {
-    return React$6.createElement(CardFooter, __assign({}, props), props.children);
-};
-
 var CardGroupBase = function (props) {
     return React$6.createElement(CardGroup, __assign({}, props), props.children);
-};
-
-var CardHeaderBase = function (props) {
-    return React$6.createElement(CardHeader, __assign({}, props), props.children);
 };
 
 var CardImgBase = function (props) {
@@ -60862,6 +60876,7 @@ exports.Accordion = AccordionBase;
 exports.AccordionBody = AccordionBodyBase;
 exports.AccordionHeader = AccordionHeaderBase;
 exports.AccordionItem = AccordionItemBase;
+exports.Activity = ActivityBase;
 exports.Alert = AlertBase;
 exports.Badge = BadgeBase;
 exports.Breadcrumb = BreadcrumbBase;

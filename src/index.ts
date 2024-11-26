@@ -2,6 +2,7 @@ export { default as Accordion } from "./components/Accordion/AccordionBase";
 export { default as AccordionBody } from "./components/Accordion/AccordionBodyBase";
 export { default as AccordionHeader } from "./components/Accordion/AccordionHeaderBase";
 export { default as AccordionItem } from "./components/Accordion/AccordionItemBase";
+export { default as Activity } from "./components/Activities/ActivityBase";
 export { default as Alert } from "./components/Alert/AlertBase";
 export { default as Badge } from "./components/Badges/BadgeBase";
 export { default as Breadcrumb } from "./components/Breadcrumb/BreadcrumbBase";

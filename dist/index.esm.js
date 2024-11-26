@@ -11289,11 +11289,6 @@ var AccordionItemBase = function (_a) {
     return React__default.createElement(AccordionItem, __assign({}, rest), children);
 };
 
-var AlertBase = function (_a) {
-    var children = _a.children, rest = __rest(_a, ["children"]);
-    return React__default.createElement(Alert, __assign({}, rest), children);
-};
-
 var classnames$2 = {exports: {}};
 
 /*!
@@ -11356,6 +11351,56 @@ var classnames$2 = {exports: {}};
 var classnamesExports = classnames$2.exports;
 var classnames$1 = /*@__PURE__*/getDefaultExportFromCjs(classnamesExports);
 
+var CardBase = function (props) {
+    return (React__default.createElement(Card, __assign({ className: classnames$1(props.className, {
+            "card-variant-list ": props.variant === "list",
+            "card-variant-active": props.variant === "active",
+            "card-variant-active card-hover-none": props.variant === "active" && props.hover === false,
+            "card-variant-outline": props.variant === "outline",
+            "card-variant-outline card-hover-none": props.variant === "outline" && props.hover === false,
+            "card-variant-primary": props.variant === "primary",
+            "card-variant-primary card-hover-none": props.variant === "primary" && props.hover === false,
+            "card-variant-secondary": props.variant === "secondary",
+            "card-variant-secondary card-hover-none": props.variant === "secondary" && props.hover === false,
+            "card-variant-light": props.variant === "light",
+            "card-variant-light card-hover-none": props.variant === "light" && props.hover === false,
+            "card-gradient card-gradient-success": props.variant === "gradient" && props.color === "success",
+            "card-gradient card-gradient-primary": props.variant === "gradient" && props.color === "primary",
+            "card-gradient card-gradient-danger": props.variant === "gradient" && props.color === "danger",
+        }) }, props), props.children));
+};
+
+var CardBodyBase = function (props) {
+    return React__default.createElement(CardBody, __assign({}, props), props.children);
+};
+
+var CardFooterBase = function (props) {
+    return React__default.createElement(CardFooter, __assign({}, props), props.children);
+};
+
+var CardHeaderBase = function (props) {
+    return React__default.createElement(CardHeader, __assign({}, props), props.children);
+};
+
+var ActivityBase = function (_a) {
+    var avatar = _a.avatar, name = _a.name, subHeading = _a.subHeading, activity = _a.activity, footer = _a.footer;
+    return (React__default.createElement(CardBase, { className: "bg-transparent border-0 shadow-none activity ms-5 ml-5 mb-0" },
+        React__default.createElement(CardHeaderBase, { className: "bg-transparent border-0 shadow-none " },
+            React__default.createElement("div", { className: "d-flex" },
+                React__default.createElement("div", { className: "avatar-container" },
+                    React__default.createElement("img", { src: avatar, alt: "avatar", className: "avatar mt-1 ms-3 ml-3" })),
+                React__default.createElement("div", null,
+                    React__default.createElement("p", { className: "m-0 font-size-body-2 text-type-dark" }, name),
+                    subHeading && (React__default.createElement("h6", { className: "mb-1  font-size-caption text-type-medium" }, subHeading))))),
+        React__default.createElement(CardBodyBase, { className: "bg-transparent border-0 shadow-none p-0 " }, activity),
+        React__default.createElement(CardFooterBase, { className: "bg-transparent border-0 shadow-none pt-2" }, footer)));
+};
+
+var AlertBase = function (_a) {
+    var children = _a.children, rest = __rest(_a, ["children"]);
+    return React__default.createElement(Alert, __assign({}, rest), children);
+};
+
 var BadgeBase = function (_a) {
     var children = _a.children, color = _a.color, outline = _a.outline, fade = _a.fade, rest = __rest(_a, ["children", "color", "outline", "fade"]);
     return (React__default.createElement(Badge, __assign({ color: color, className: classnames$1(rest.className, {
@@ -11416,29 +11461,6 @@ var ButtonToolbarBase = function (_a) {
     return React__default.createElement(ButtonToolbar, __assign({}, rest), children);
 };
 
-var CardBase = function (props) {
-    return (React__default.createElement(Card, __assign({ className: classnames$1(props.className, {
-            "card-variant-list ": props.variant === "list",
-            "card-variant-active": props.variant === "active",
-            "card-variant-active card-hover-none": props.variant === "active" && props.hover === false,
-            "card-variant-outline": props.variant === "outline",
-            "card-variant-outline card-hover-none": props.variant === "outline" && props.hover === false,
-            "card-variant-primary": props.variant === "primary",
-            "card-variant-primary card-hover-none": props.variant === "primary" && props.hover === false,
-            "card-variant-secondary": props.variant === "secondary",
-            "card-variant-secondary card-hover-none": props.variant === "secondary" && props.hover === false,
-            "card-variant-light": props.variant === "light",
-            "card-variant-light card-hover-none": props.variant === "light" && props.hover === false,
-            "card-gradient card-gradient-success": props.variant === "gradient" && props.color === "success",
-            "card-gradient card-gradient-primary": props.variant === "gradient" && props.color === "primary",
-            "card-gradient card-gradient-danger": props.variant === "gradient" && props.color === "danger",
-        }) }, props), props.children));
-};
-
-var CardBodyBase = function (props) {
-    return React__default.createElement(CardBody, __assign({}, props), props.children);
-};
-
 var CardColumnsBase = function (props) {
     return React__default.createElement(CardColumns, __assign({}, props), props.children);
 };
@@ -11447,16 +11469,8 @@ var CardDeckBase = function (props) {
     return React__default.createElement(CardDeck, __assign({}, props), props.children);
 };
 
-var CardFooterBase = function (props) {
-    return React__default.createElement(CardFooter, __assign({}, props), props.children);
-};
-
 var CardGroupBase = function (props) {
     return React__default.createElement(CardGroup, __assign({}, props), props.children);
-};
-
-var CardHeaderBase = function (props) {
-    return React__default.createElement(CardHeader, __assign({}, props), props.children);
 };
 
 var CardImgBase = function (props) {
@@ -60838,5 +60852,5 @@ var UncontrolledTooltipBase = function (_a) {
     return React__default.createElement(UncontrolledTooltip, __assign({}, rest), children);
 };
 
-export { AccordionBase as Accordion, AccordionBodyBase as AccordionBody, AccordionHeaderBase as AccordionHeader, AccordionItemBase as AccordionItem, AlertBase as Alert, BadgeBase as Badge, BreadcrumbBase as Breadcrumb, BreadcrumbItemBase as BreadcrumbItem, ButtonBase as Button, ButtonDropdownBase as ButtonDropdown, ButtonGroupBase as ButtonGroup, ButtonToggleBase as ButtonToggle, ButtonToolbarBase as ButtonToolbar, CardBase as Card, CardBodyBase as CardBody, CardColumnsBase as CardColumns, CardDeckBase as CardDeck, CardFooterBase as CardFooter, CardGroupBase as CardGroup, CardHeaderBase as CardHeader, CardImgBase as CardImg, CardImgOverlayBase as CardImgOverlay, CardLinkBase as CardLink, CardSubtitleBase as CardSubtitle, CardTextBase as CardText, CardTitleBase as CardTitle, CarouselBase as Carousel, CarouselCaptionBase as CarouselCaption, CarouselControlBase as CarouselControl, CarouselIndicatorsBase as CarouselIndicators, CarouselItemBase as CarouselItem, CloseButtonBase as CloseButton, ColBase as Col, CollapseBase as Collapse, ContainerBase as Container, CreatableSelectBase as CreatableSelect, DropdownItemBase as DTRowAction, DTRowActionsDropdown, DropdownMenuBase as DTRowActionsMenu, DTRowActionsToggle, DataTable, DrawerContextProvider, DrawerOpener, DrawerRight, DropdownBase as Dropdown, DropdownItemBase as DropdownItem, DropdownMenuBase as DropdownMenu, DropdownToggleBase as DropdownToggle, FadeBase as Fade, FileDropZoneBase as FileDropZone, FormBase as Form, FormFeedbackBase as FormFeedback, FormGroupBase as FormGroup, FormTextBase as FormText, ImsCarousel, ImsInputCheck, ImsInputDate, ImsInputDateAndTime, ImsInputDropZone, ImsInputSelect, ImsInputSelectWithIcon, ImsInputText, ImsInputTextWithIcon, ImsInputTime, InputBase as Input, DateTimeBase as InputDate, InputGroupBase as InputGroup, InputGroupTextBase as InputGroupText, LabelBase as Label, ListBase as List, ListGroupBase as ListGroup, ListGroupItemBase as ListGroupItem, ListGroupItemHeadingBase as ListGroupItemHeading, ListGroupItemTextBase as ListGroupItemText, ListInlineItemBase as ListInlineItem, MediaBase as Media, ModalBase as Modal, ModalBodyBase as ModalBody, ModalFooterBase as ModalFooter, ModalHeaderBase as ModalHeader, NavBase as Nav, NavItemBase as NavItem, NavLinkBase as NavLink, NavBarBase as Navbar, NavbarBrandBase as NavbarBrand, NavbarTextBase as NavbarText, NavbarTogglerBase as NavbarToggler, OffcanvasBase as Offcanvas, OffcanvasBodyBase as OffcanvasBody, OffcanvasHeaderBase as OffcanvasHeader, PaginationBase as Pagination, PaginationItemBase as PaginationItem, PaginationLinkBase as PaginationLink, PanelTab, PanelTabs, PanelWindow, PlaceholderBase as Placeholder, PlaceholderButtonBase as PlaceholderButton, PopoverBase as Popover, PopoverBodyBase as PopoverBody, PopoverHeaderBase as PopoverHeader, ProgressBase as Progress, RadialProgressBar, RadioCheckboxBase as RadioCheckbox, RowBase as Row, SearchBase as SearchSelect, SelectBase as Select, ImsSimpleTable as SimpleTable, SpinnerBase as Spinner, TabContentBase as TabContent, TabPaneBase as TabPane, TableBase as Table, Index as TextEditor, ToastBase as Toast, ToastBodyBase as ToastBody, ToastHeaderBase as ToastHeader, UncontrolledAccordionBase as UncontrolledAccordion, UncontrolledAlertBase as UncontrolledAlert, UncontrolledButtonDropdownBase as UncontrolledButtonDropdown, UncontrolledCarouselBase as UncontrolledCarousel, UncontrolledCollapseBase as UncontrolledCollapse, UncontrolledDropdownBase as UncontrolledDropdown, UncontrolledPopoverBase as UncontrolledPopover, UncontrolledTooltipBase as UncontrolledTooltip, useDrawer };
+export { AccordionBase as Accordion, AccordionBodyBase as AccordionBody, AccordionHeaderBase as AccordionHeader, AccordionItemBase as AccordionItem, ActivityBase as Activity, AlertBase as Alert, BadgeBase as Badge, BreadcrumbBase as Breadcrumb, BreadcrumbItemBase as BreadcrumbItem, ButtonBase as Button, ButtonDropdownBase as ButtonDropdown, ButtonGroupBase as ButtonGroup, ButtonToggleBase as ButtonToggle, ButtonToolbarBase as ButtonToolbar, CardBase as Card, CardBodyBase as CardBody, CardColumnsBase as CardColumns, CardDeckBase as CardDeck, CardFooterBase as CardFooter, CardGroupBase as CardGroup, CardHeaderBase as CardHeader, CardImgBase as CardImg, CardImgOverlayBase as CardImgOverlay, CardLinkBase as CardLink, CardSubtitleBase as CardSubtitle, CardTextBase as CardText, CardTitleBase as CardTitle, CarouselBase as Carousel, CarouselCaptionBase as CarouselCaption, CarouselControlBase as CarouselControl, CarouselIndicatorsBase as CarouselIndicators, CarouselItemBase as CarouselItem, CloseButtonBase as CloseButton, ColBase as Col, CollapseBase as Collapse, ContainerBase as Container, CreatableSelectBase as CreatableSelect, DropdownItemBase as DTRowAction, DTRowActionsDropdown, DropdownMenuBase as DTRowActionsMenu, DTRowActionsToggle, DataTable, DrawerContextProvider, DrawerOpener, DrawerRight, DropdownBase as Dropdown, DropdownItemBase as DropdownItem, DropdownMenuBase as DropdownMenu, DropdownToggleBase as DropdownToggle, FadeBase as Fade, FileDropZoneBase as FileDropZone, FormBase as Form, FormFeedbackBase as FormFeedback, FormGroupBase as FormGroup, FormTextBase as FormText, ImsCarousel, ImsInputCheck, ImsInputDate, ImsInputDateAndTime, ImsInputDropZone, ImsInputSelect, ImsInputSelectWithIcon, ImsInputText, ImsInputTextWithIcon, ImsInputTime, InputBase as Input, DateTimeBase as InputDate, InputGroupBase as InputGroup, InputGroupTextBase as InputGroupText, LabelBase as Label, ListBase as List, ListGroupBase as ListGroup, ListGroupItemBase as ListGroupItem, ListGroupItemHeadingBase as ListGroupItemHeading, ListGroupItemTextBase as ListGroupItemText, ListInlineItemBase as ListInlineItem, MediaBase as Media, ModalBase as Modal, ModalBodyBase as ModalBody, ModalFooterBase as ModalFooter, ModalHeaderBase as ModalHeader, NavBase as Nav, NavItemBase as NavItem, NavLinkBase as NavLink, NavBarBase as Navbar, NavbarBrandBase as NavbarBrand, NavbarTextBase as NavbarText, NavbarTogglerBase as NavbarToggler, OffcanvasBase as Offcanvas, OffcanvasBodyBase as OffcanvasBody, OffcanvasHeaderBase as OffcanvasHeader, PaginationBase as Pagination, PaginationItemBase as PaginationItem, PaginationLinkBase as PaginationLink, PanelTab, PanelTabs, PanelWindow, PlaceholderBase as Placeholder, PlaceholderButtonBase as PlaceholderButton, PopoverBase as Popover, PopoverBodyBase as PopoverBody, PopoverHeaderBase as PopoverHeader, ProgressBase as Progress, RadialProgressBar, RadioCheckboxBase as RadioCheckbox, RowBase as Row, SearchBase as SearchSelect, SelectBase as Select, ImsSimpleTable as SimpleTable, SpinnerBase as Spinner, TabContentBase as TabContent, TabPaneBase as TabPane, TableBase as Table, Index as TextEditor, ToastBase as Toast, ToastBodyBase as ToastBody, ToastHeaderBase as ToastHeader, UncontrolledAccordionBase as UncontrolledAccordion, UncontrolledAlertBase as UncontrolledAlert, UncontrolledButtonDropdownBase as UncontrolledButtonDropdown, UncontrolledCarouselBase as UncontrolledCarousel, UncontrolledCollapseBase as UncontrolledCollapse, UncontrolledDropdownBase as UncontrolledDropdown, UncontrolledPopoverBase as UncontrolledPopover, UncontrolledTooltipBase as UncontrolledTooltip, useDrawer };
 //# sourceMappingURL=index.esm.js.map
