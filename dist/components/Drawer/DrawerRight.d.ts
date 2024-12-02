@@ -3,6 +3,7 @@ interface DrawerRightProps {
     drawerId?: string;
     children: React.ReactNode;
     size?: number;
+    zIndex?: number;
     toolbar?: React.ReactNode;
     containerRef?: React.RefObject<HTMLDivElement>;
     onDrawerClose?: () => void;

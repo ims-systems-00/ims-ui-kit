@@ -19108,13 +19108,13 @@ function useInternalState() {
     };
 }
 var DrawerRight = function (_a) {
-    var _b = _a.drawerId, drawerId = _b === void 0 ? "" : _b, children = _a.children, _c = _a.size, size = _c === void 0 ? 40 : _c, _d = _a.toolbar, toolbar = _d === void 0 ? null : _d, containerRef = _a.containerRef, _e = _a.onDrawerClose, onDrawerClose = _e === void 0 ? function () { } : _e, _f = _a.onScroll, onScroll = _f === void 0 ? function () { } : _f;
+    var _b = _a.drawerId, drawerId = _b === void 0 ? "" : _b, children = _a.children, _c = _a.size, size = _c === void 0 ? 40 : _c, zIndex = _a.zIndex, _d = _a.toolbar, toolbar = _d === void 0 ? null : _d, containerRef = _a.containerRef, _e = _a.onDrawerClose, onDrawerClose = _e === void 0 ? function () { } : _e, _f = _a.onScroll, onScroll = _f === void 0 ? function () { } : _f;
     var _g = useInternalState(), isOpen = _g.isOpen, _getSize = _g._getSize, closeDrawer = _g.closeDrawer;
     return (React$6.createElement(React$6.Fragment, null,
         React$6.createElement(EZDrawer, { lockBackgroundScroll: true, open: isOpen(drawerId), onClose: function () {
                 closeDrawer(drawerId);
                 onDrawerClose();
-            }, direction: "right", size: _getSize(size), zIndex: 1040 },
+            }, direction: "right", size: _getSize(size), zIndex: zIndex || 1040 },
             React$6.createElement("div", { ref: containerRef, onScroll: onScroll, className: "p-4 h-100 overflow-y-scroll scrollbar-primary" },
                 React$6.createElement(RowBase, null,
                     React$6.createElement(ColBase, { md: "12" },
