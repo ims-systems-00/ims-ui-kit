@@ -1,27 +1,27 @@
-.form-check-input[type="checkbox"] {
-  border-radius: 2px;
-  box-shadow: none;
-}
-.form-check-input:checked[type="checkbox"] {
-  background-color: $primary;
-}
+// .form-check-input[type="checkbox"] {
+//   border-radius: 2px;
+//   box-shadow: none;
+// }
+// .form-check-input:checked[type="checkbox"] {
+//   background-color: $primary;
+// }
 
-.unselected-checkbox {
-  .form-check-input:checked[type="checkbox"] {
-    background-color: transparent;
-  }
-}
+// .unselected-checkbox {
+//   .form-check-input:checked[type="checkbox"] {
+//     background-color: transparent;
+//   }
+// }
 
-.form-check-input[type="radio"] {
-  border-radius: 50%;
-  box-shadow: none;
-}
-.form-check-input:checked[type="radio"] {
-  background-color: transparent;
-}
+// .form-check-input[type="radio"] {
+//   border-radius: 50%;
+//   box-shadow: none;
+// }
+// .form-check-input:checked[type="radio"] {
+//   background-color: transparent;
+// }
 
-.unselected-radio {
-  .form-check-input:checked[type="radio"] {
-    background-color: transparent;
-  }
-}
+// .unselected-radio {
+//   .form-check-input:checked[type="radio"] {
+//     background-color: transparent;
+//   }
+// }
