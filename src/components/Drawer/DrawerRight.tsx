@@ -41,6 +41,7 @@ interface DrawerRightProps {
   drawerId?: string;
   children: React.ReactNode;
   size?: number;
+  zIndex?: number;
   toolbar?: React.ReactNode;
   containerRef?: React.RefObject<HTMLDivElement>;
   onDrawerClose?: () => void;
@@ -51,6 +52,7 @@ const DrawerRight: React.FC<DrawerRightProps> = ({
   drawerId = "",
   children,
   size = 40,
+  zIndex,
   toolbar = null,
   containerRef,
   onDrawerClose = () => {},
@@ -68,7 +70,7 @@ const DrawerRight: React.FC<DrawerRightProps> = ({
         }}
         direction="right"
         size={_getSize(size)}
-        zIndex={1040}
+        zIndex={zIndex || 1040}
       >
         <div
           ref={containerRef}
