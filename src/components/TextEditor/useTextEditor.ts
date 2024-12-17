@@ -50,7 +50,7 @@ export default function useTextEditor(config: any): TextEditorUtils {
         currentContent = config.value;
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       /**
        * here we are handling if the content parsing failes because if preexisting
        * plain text, we are converting that into a draft data structure for future
