@@ -288,7 +288,7 @@ export default function useTextEditor(config: any): TextEditorUtils {
           .getType() === tool?.style
       );
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return false;
     }
   };
