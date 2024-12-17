@@ -60034,7 +60034,7 @@ function useTextEditor(config) {
             }
         }
         catch (err) {
-            console.log(err);
+            // console.log(err);
             /**
              * here we are handling if the content parsing failes because if preexisting
              * plain text, we are converting that into a draft data structure for future
