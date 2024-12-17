@@ -60233,7 +60233,7 @@ function useTextEditor(config) {
                 (editorState === null || editorState === void 0 ? void 0 : editorState.getCurrentContent().getBlockForKey(editorState === null || editorState === void 0 ? void 0 : editorState.getSelection().getStartKey()).getType()) === (tool === null || tool === void 0 ? void 0 : tool.style));
         }
         catch (err) {
-            console.log(err);
+            // console.log(err);
             return false;
         }
     };
