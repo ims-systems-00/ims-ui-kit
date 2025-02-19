@@ -16,7 +16,7 @@
   box-shadow: none;
 }
 .form-check-input:checked[type="radio"] {
-  background-color: transparent;
+  background-color: $primary;
 }
 
 .unselected-radio {
