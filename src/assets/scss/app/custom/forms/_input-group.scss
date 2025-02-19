@@ -18,14 +18,14 @@
     }
   }
   .input-group-text:first-child {
-    background-color: transparent;
+    background-color: $input-bg;
     padding-right: 2px;
   }
   .input-group-text:first-child {
     border-right: none;
   }
   .input-group-text:last-child {
-    background-color: transparent;
+    background-color: $input-bg;
     border-left: none;
   }
   .form-control:not(:first-child) {
@@ -47,7 +47,7 @@
     color: $primary;
     &:first-child,
     &:last-child {
-      background-color: transparent !important;
+      background-color: $input-bg !important;
     }
   }
 }
