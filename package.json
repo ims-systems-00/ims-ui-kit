@@ -94,7 +94,7 @@
   },
   "scripts": {
     "build": "rollup -c && node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss dist/css/app.min.css --output-style compressed",
-    "storybook": "storybook dev -p 6006 -s public",
+    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "compile-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss src/assets/css/app.css",

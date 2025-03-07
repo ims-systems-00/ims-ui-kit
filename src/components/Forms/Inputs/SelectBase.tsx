@@ -6,7 +6,7 @@ const variants = {
   outline: "outline",
   filled: "filled",
 };
-export type VariantType = typeof variants[keyof typeof variants];
+export type VariantType = (typeof variants)[keyof typeof variants];
 export interface SelectBaseProps extends ReactSelectProps {
   variant?: VariantType;
   isClearable?: boolean;
