@@ -1,4 +1,4 @@
-import PopperContent from "../PopperContentBase"
+import PopperContent from "../PopperContentBase";
 export default {
   title: "components/PopperContent",
   component: PopperContent,

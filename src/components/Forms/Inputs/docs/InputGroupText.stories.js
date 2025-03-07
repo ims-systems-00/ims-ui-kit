@@ -1,4 +1,4 @@
-import InputGroupText from "../InputGroupTextBase"
+import InputGroupText from "../InputGroupTextBase";
 export default {
   title: "components/InputGroupText",
   component: InputGroupText,

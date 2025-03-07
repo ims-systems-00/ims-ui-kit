@@ -1,4 +1,4 @@
-import FormText from "../FormTextBase"
+import FormText from "../FormTextBase";
 export default {
   title: "components/FormText",
   component: FormText,

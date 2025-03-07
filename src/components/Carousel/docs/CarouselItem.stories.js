@@ -1,4 +1,4 @@
-import CarouselItem from "../CarouselItemBase"
+import CarouselItem from "../CarouselItemBase";
 export default {
   title: "components/CarouselItem",
   component: CarouselItem,

@@ -1,4 +1,4 @@
-import Form from "../FormBase"
+import Form from "../FormBase";
 export default {
   title: "components/Form",
   component: Form,

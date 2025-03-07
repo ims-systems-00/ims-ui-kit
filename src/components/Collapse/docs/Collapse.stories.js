@@ -1,4 +1,4 @@
-import Collapse from "../CollapseBase"
+import Collapse from "../CollapseBase";
 export default {
   title: "components/Collapse",
   component: Collapse,

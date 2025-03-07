@@ -1,4 +1,4 @@
-import ToastHeader from "../ToastHeaderBase"
+import ToastHeader from "../ToastHeaderBase";
 export default {
   title: "components/ToastHeader",
   component: ToastHeader,

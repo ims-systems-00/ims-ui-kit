@@ -1,4 +1,4 @@
-import ListGroupItemText from "../ListGroupItemTextBase"
+import ListGroupItemText from "../ListGroupItemTextBase";
 export default {
   title: "components/ListGroupItemText",
   component: ListGroupItemText,

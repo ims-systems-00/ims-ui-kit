@@ -1,4 +1,4 @@
-import ListGroupItemHeading from "../ListGroupItemHeadingBase"
+import ListGroupItemHeading from "../ListGroupItemHeadingBase";
 export default {
   title: "components/ListGroupItemHeading",
   component: ListGroupItemHeading,

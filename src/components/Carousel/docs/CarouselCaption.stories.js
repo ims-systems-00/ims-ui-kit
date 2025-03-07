@@ -1,4 +1,4 @@
-import CarouselCaption from "../CarouselCaptionBase"
+import CarouselCaption from "../CarouselCaptionBase";
 export default {
   title: "components/CarouselCaption",
   component: CarouselCaption,

@@ -1,4 +1,4 @@
-import AccordionHeader from "../AccordionHeaderBase"
+import AccordionHeader from "../AccordionHeaderBase";
 export default {
   title: "components/AccordionHeader",
   component: AccordionHeader,

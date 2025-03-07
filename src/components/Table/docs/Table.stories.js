@@ -1,4 +1,4 @@
-import Table from "../TableBase"
+import Table from "../TableBase";
 export default {
   title: "components/Table",
   component: Table,

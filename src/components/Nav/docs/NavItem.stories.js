@@ -1,4 +1,4 @@
-import NavItem from "../NavItemBase"
+import NavItem from "../NavItemBase";
 export default {
   title: "components/NavItem",
   component: NavItem,

@@ -1,4 +1,4 @@
-import CardSubtitle from "../CardSubtitleBase"
+import CardSubtitle from "../CardSubtitleBase";
 export default {
   title: "components/CardSubtitle",
   component: CardSubtitle,

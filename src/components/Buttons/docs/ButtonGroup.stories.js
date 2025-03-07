@@ -1,4 +1,4 @@
-import ButtonGroup from "../ButtonGroupBase"
+import ButtonGroup from "../ButtonGroupBase";
 export default {
   title: "components/ButtonGroup",
   component: ButtonGroup,

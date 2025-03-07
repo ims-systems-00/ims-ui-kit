@@ -1,4 +1,4 @@
-import PopoverHeader from "../PopoverHeaderBase"
+import PopoverHeader from "../PopoverHeaderBase";
 export default {
   title: "components/PopoverHeader",
   component: PopoverHeader,

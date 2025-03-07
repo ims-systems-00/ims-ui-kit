@@ -1,4 +1,4 @@
-import CardImg from "../CardImgBase"
+import CardImg from "../CardImgBase";
 export default {
   title: "components/CardImg",
   component: CardImg,

@@ -1,4 +1,4 @@
-import PaginationLink from "../PaginationLinkBase"
+import PaginationLink from "../PaginationLinkBase";
 export default {
   title: "components/PaginationLink",
   component: PaginationLink,

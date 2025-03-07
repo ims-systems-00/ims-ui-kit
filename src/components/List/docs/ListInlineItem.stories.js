@@ -1,4 +1,4 @@
-import LisInlineItem from "../ListInlineItemBase"
+import LisInlineItem from "../ListInlineItemBase";
 export default {
   title: "components/LisInlineItem",
   component: LisInlineItem,

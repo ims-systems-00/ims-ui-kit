@@ -1,4 +1,4 @@
-import CardImgOverlay from "../CardBase"
+import CardImgOverlay from "../CardBase";
 export default {
   title: "components/CardImgOverlay",
   component: CardImgOverlay,

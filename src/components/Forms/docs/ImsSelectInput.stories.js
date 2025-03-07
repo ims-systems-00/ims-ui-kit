@@ -20,7 +20,7 @@ ImsSelect.args = {
   isSearchable: true,
   isMulti: true,
   isRtl: false,
-  variant:"filled",
+  variant: "filled",
   // isOptionDisabled: false,
   isOptionSelected: false,
   isFocused: false,

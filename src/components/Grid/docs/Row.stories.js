@@ -1,4 +1,4 @@
-import Row from "../RowBase"
+import Row from "../RowBase";
 export default {
   title: "components/Row",
   component: Row,

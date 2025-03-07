@@ -1,4 +1,4 @@
-import ToastBody from "../ToastBodyBase"
+import ToastBody from "../ToastBodyBase";
 export default {
   title: "components/ToastBody",
   component: ToastBody,

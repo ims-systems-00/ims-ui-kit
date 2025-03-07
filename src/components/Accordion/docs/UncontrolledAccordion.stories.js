@@ -1,4 +1,4 @@
-import UncontrolledAccordion from "../UncontrolledAccordionBase"
+import UncontrolledAccordion from "../UncontrolledAccordionBase";
 export default {
   title: "components/UncontrolledAccordion",
   component: UncontrolledAccordion,

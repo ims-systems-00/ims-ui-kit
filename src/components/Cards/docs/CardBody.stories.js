@@ -1,4 +1,4 @@
-import CardBody from "../CardBodyBase"
+import CardBody from "../CardBodyBase";
 export default {
   title: "components/CardBody",
   component: CardBody,

@@ -1,4 +1,4 @@
-import ListGroupItem from "../ListGroupItemBase"
+import ListGroupItem from "../ListGroupItemBase";
 export default {
   title: "components/ListGroupItem",
   component: ListGroupItem,

@@ -1,4 +1,4 @@
-import UncontrolledAlert from "../UncontrolledAlertBase"
+import UncontrolledAlert from "../UncontrolledAlertBase";
 export default {
   title: "components/UncontrolledAlert",
   component: UncontrolledAlert,

@@ -1,4 +1,4 @@
-import Container from "../ContainerBase"
+import Container from "../ContainerBase";
 export default {
   title: "components/Container",
   component: Container,

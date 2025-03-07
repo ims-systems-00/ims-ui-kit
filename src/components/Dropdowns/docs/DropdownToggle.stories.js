@@ -1,4 +1,4 @@
-import DropdownToggle from "../DropdownToggleBase"
+import DropdownToggle from "../DropdownToggleBase";
 export default {
   title: "components/DropdownToggle",
   component: DropdownToggle,

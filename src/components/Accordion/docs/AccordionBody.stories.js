@@ -1,4 +1,4 @@
-import AccordionBody from "../AccordionBodyBase"
+import AccordionBody from "../AccordionBodyBase";
 export default {
   title: "components/AccordionBody",
   component: AccordionBody,

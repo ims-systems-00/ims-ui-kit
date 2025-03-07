@@ -1,4 +1,4 @@
-import CardColumns from "../CardColumnsBase"
+import CardColumns from "../CardColumnsBase";
 export default {
   title: "components/CardColumns",
   component: CardColumns,

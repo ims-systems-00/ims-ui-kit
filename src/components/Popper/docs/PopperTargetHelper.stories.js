@@ -1,4 +1,4 @@
-import PopperTargetHelper from "../PopperTargetHelperBase"
+import PopperTargetHelper from "../PopperTargetHelperBase";
 export default {
   title: "components/PopperTargetHelper",
   component: PopperTargetHelper,

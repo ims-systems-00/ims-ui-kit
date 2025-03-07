@@ -1,4 +1,4 @@
-import NavbarToggler from "../NavbarTogglerBase"
+import NavbarToggler from "../NavbarTogglerBase";
 export default {
   title: "components/NavbarToggler",
   component: NavbarToggler,

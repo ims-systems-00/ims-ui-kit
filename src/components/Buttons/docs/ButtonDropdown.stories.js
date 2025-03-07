@@ -1,4 +1,4 @@
-import ButtonDropdown from "../ButtonDropdownBase"
+import ButtonDropdown from "../ButtonDropdownBase";
 export default {
   title: "components/ButtonDropdown",
   component: ButtonDropdown,

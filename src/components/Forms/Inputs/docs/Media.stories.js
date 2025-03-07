@@ -1,4 +1,4 @@
-import Media from "../MediaBase"
+import Media from "../MediaBase";
 export default {
   title: "components/Media",
   component: Media,

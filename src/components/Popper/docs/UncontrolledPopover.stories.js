@@ -1,4 +1,4 @@
-import UncontrolledPopover from "../UncontrolledPopoverBase"
+import UncontrolledPopover from "../UncontrolledPopoverBase";
 export default {
   title: "components/UncontrolledPopover",
   component: UncontrolledPopover,

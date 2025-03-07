@@ -1,4 +1,4 @@
-import UncontrolledButtonDropdown from "../UncontrolledButtonDropdownBase"
+import UncontrolledButtonDropdown from "../UncontrolledButtonDropdownBase";
 export default {
   title: "components/UncontrolledButtonDropdown",
   component: UncontrolledButtonDropdown,

@@ -1,4 +1,4 @@
-import CardGroup from "../CardBase"
+import CardGroup from "../CardBase";
 export default {
   title: "components/CardGroup",
   component: CardGroup,

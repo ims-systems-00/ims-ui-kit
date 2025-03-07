@@ -1,4 +1,4 @@
-import AccordionItem from "../AccordionItemBase"
+import AccordionItem from "../AccordionItemBase";
 export default {
   title: "components/AccordionItem",
   component: AccordionItem,

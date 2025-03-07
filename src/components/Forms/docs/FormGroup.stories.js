@@ -1,4 +1,4 @@
-import FormGroup from "../FormGroupBase"
+import FormGroup from "../FormGroupBase";
 export default {
   title: "components/FormGroup",
   component: FormGroup,

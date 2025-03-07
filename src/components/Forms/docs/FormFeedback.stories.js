@@ -1,4 +1,4 @@
-import FormFeedback from "../FormFeedbackBase"
+import FormFeedback from "../FormFeedbackBase";
 export default {
   title: "components/FormFeedback",
   component: FormFeedback,

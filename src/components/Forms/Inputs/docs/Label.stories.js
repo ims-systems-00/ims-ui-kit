@@ -1,4 +1,4 @@
-import Label from "../LabelBase"
+import Label from "../LabelBase";
 export default {
   title: "components/Label",
   component: Label,

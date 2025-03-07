@@ -1,4 +1,4 @@
-import ButtonToolbar from "../ButtonToolbarBase"
+import ButtonToolbar from "../ButtonToolbarBase";
 export default {
   title: "components/ButtonToolbar",
   component: ButtonToolbar,

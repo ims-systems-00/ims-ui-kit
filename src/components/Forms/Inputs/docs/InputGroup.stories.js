@@ -1,4 +1,4 @@
-import InputGroup from "../InputGroupBase"
+import InputGroup from "../InputGroupBase";
 export default {
   title: "components/InputGroup",
   component: InputGroup,

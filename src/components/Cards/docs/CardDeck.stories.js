@@ -1,4 +1,4 @@
-import CardDeck from "../CardDeckBase"
+import CardDeck from "../CardDeckBase";
 export default {
   title: "components/CardDeck",
   component: CardDeck,

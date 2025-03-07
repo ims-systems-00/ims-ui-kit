@@ -1,4 +1,4 @@
-import ButtonToggle from "../ButtonToggleBase"
+import ButtonToggle from "../ButtonToggleBase";
 export default {
   title: "components/ButtonToggle",
   component: ButtonToggle,

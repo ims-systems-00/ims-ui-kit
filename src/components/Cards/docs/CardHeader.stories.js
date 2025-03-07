@@ -1,4 +1,4 @@
-import CardHeader from "../CardHeaderBase"
+import CardHeader from "../CardHeaderBase";
 export default {
   title: "components/CardHeader",
   component: CardHeader,

@@ -1,4 +1,4 @@
-import Placeholder from "../PlaceholderBase"
+import Placeholder from "../PlaceholderBase";
 export default {
   title: "components/Placeholder",
   component: Placeholder,

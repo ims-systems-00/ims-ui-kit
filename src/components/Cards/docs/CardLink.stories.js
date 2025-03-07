@@ -1,4 +1,4 @@
-import CardLink from "../CardLinkBase"
+import CardLink from "../CardLinkBase";
 export default {
   title: "components/CardLink",
   component: CardLink,

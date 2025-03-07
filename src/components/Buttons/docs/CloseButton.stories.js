@@ -1,4 +1,4 @@
-import CloseButton from "../CloseButtonBase"
+import CloseButton from "../CloseButtonBase";
 export default {
   title: "components/CloseButton",
   component: CloseButton,

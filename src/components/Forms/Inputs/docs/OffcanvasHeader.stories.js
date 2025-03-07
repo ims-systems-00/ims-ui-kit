@@ -1,4 +1,4 @@
-import OffcanvasHeader from "../OffcanvasHeaderBase"
+import OffcanvasHeader from "../OffcanvasHeaderBase";
 export default {
   title: "components/OffcanvasHeader",
   component: OffcanvasHeader,

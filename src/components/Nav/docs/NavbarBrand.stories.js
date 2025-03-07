@@ -1,4 +1,4 @@
-import NavbarBrand from "../NavbarBrandBase"
+import NavbarBrand from "../NavbarBrandBase";
 export default {
   title: "components/NavbarBrand",
   component: NavbarBrand,

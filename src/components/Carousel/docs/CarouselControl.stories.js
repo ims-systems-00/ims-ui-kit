@@ -1,4 +1,4 @@
-import CarouselControl from "../CarouselControlBase"
+import CarouselControl from "../CarouselControlBase";
 export default {
   title: "components/CarouselControl",
   component: CarouselControl,

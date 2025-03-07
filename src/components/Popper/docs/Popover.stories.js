@@ -1,4 +1,4 @@
-import Popover from "../PopoverBase"
+import Popover from "../PopoverBase";
 export default {
   title: "components/Popover",
   component: Popover,

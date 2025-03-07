@@ -1,4 +1,4 @@
-import UncontrolledCarousel from "../UncontrolledCarouselBase"
+import UncontrolledCarousel from "../UncontrolledCarouselBase";
 export default {
   title: "components/UncontrolledCarousel",
   component: UncontrolledCarousel,

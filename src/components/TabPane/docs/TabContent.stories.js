@@ -1,4 +1,4 @@
-import TabContent from "../TabContentBase"
+import TabContent from "../TabContentBase";
 export default {
   title: "components/TabContent",
   component: TabContent,

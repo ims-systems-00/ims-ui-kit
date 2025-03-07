@@ -1,4 +1,4 @@
-import PlaceholderButton from "../PlaceholderButtonBase"
+import PlaceholderButton from "../PlaceholderButtonBase";
 export default {
   title: "components/PlaceholderButton",
   component: PlaceholderButton,

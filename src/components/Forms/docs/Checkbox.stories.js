@@ -14,4 +14,3 @@ CheckboxInput.args = {
 export { default as ControlledCheckbox } from "../CheckboxInput/Examples/ControlledCheckbox";
 export { default as DefaultCheckbox } from "../CheckboxInput/Examples/DefaultCheckbox";
 export { default as UnselectedCheckbox } from "../CheckboxInput/Examples/UnselectedCheckbox";
-

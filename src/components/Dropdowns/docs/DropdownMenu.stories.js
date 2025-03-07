@@ -1,4 +1,4 @@
-import DropdownMenu from "../DropdownMenuBase"
+import DropdownMenu from "../DropdownMenuBase";
 export default {
   title: "components/DropdownMenu",
   component: DropdownMenu,

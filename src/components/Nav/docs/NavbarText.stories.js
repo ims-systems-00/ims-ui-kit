@@ -1,4 +1,4 @@
-import NavbarText from "../NavbarTextBase"
+import NavbarText from "../NavbarTextBase";
 export default {
   title: "components/NavbarText",
   component: NavbarText,

@@ -1,4 +1,4 @@
-import CardFooter from "../CardFooterBase"
+import CardFooter from "../CardFooterBase";
 export default {
   title: "components/CardFooter",
   component: CardFooter,

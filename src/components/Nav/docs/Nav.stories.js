@@ -1,4 +1,4 @@
-import Nav from "../NavBase"
+import Nav from "../NavBase";
 export default {
   title: "components/Nav",
   component: Nav,

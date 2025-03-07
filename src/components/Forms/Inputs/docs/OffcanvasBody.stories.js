@@ -1,4 +1,4 @@
-import OffcanvasBody from "../OffcanvasBodyBase"
+import OffcanvasBody from "../OffcanvasBodyBase";
 export default {
   title: "components/OffcanvasBody",
   component: OffcanvasBody,

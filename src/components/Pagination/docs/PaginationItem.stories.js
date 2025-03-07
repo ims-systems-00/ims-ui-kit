@@ -1,4 +1,4 @@
-import PaginationItem from "../PaginationItemBase"
+import PaginationItem from "../PaginationItemBase";
 export default {
   title: "components/PaginationItem",
   component: PaginationItem,

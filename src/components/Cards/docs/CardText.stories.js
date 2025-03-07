@@ -1,4 +1,4 @@
-import CardText from "../CardTextBase"
+import CardText from "../CardTextBase";
 export default {
   title: "components/CardText",
   component: CardText,

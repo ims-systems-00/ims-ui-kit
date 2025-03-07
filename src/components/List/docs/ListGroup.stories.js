@@ -1,4 +1,4 @@
-import ListGroup from "../ListGroupBase"
+import ListGroup from "../ListGroupBase";
 export default {
   title: "components/ListGroup",
   component: ListGroup,

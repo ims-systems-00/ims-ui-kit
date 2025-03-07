@@ -18,4 +18,3 @@ export const Tooltip = (args) => <DefaultTooltip {...args} />;
 Tooltip.args = {};
 
 export { default as UncontrolledTooltip } from "../Examples/UncontrolledTooltips";
-

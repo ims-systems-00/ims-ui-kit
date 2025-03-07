@@ -1,4 +1,4 @@
-import DropdownItem from "../DropdownItemBase"
+import DropdownItem from "../DropdownItemBase";
 export default {
   title: "components/DropdownItem",
   component: DropdownItem,

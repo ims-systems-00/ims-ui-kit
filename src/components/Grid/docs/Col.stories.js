@@ -1,4 +1,4 @@
-import Col from "../ColBase"
+import Col from "../ColBase";
 export default {
   title: "components/Col",
   component: Col,

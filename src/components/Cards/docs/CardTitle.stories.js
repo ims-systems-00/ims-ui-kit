@@ -1,4 +1,4 @@
-import CardTitle from "../CardTitleBase"
+import CardTitle from "../CardTitleBase";
 export default {
   title: "components/CardTitle",
   component: CardTitle,

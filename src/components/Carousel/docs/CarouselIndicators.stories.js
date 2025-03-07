@@ -1,4 +1,4 @@
-import CarouselIndicators from "../CarouselIndicatorsBase"
+import CarouselIndicators from "../CarouselIndicatorsBase";
 export default {
   title: "components/CarouselIndicators",
   component: CarouselIndicators,
