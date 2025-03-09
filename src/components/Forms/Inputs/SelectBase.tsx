@@ -9,6 +9,7 @@ const variants = {
 export type VariantType = (typeof variants)[keyof typeof variants];
 export interface SelectBaseProps extends ReactSelectProps {
   variant?: VariantType;
+  className?: string;
   isClearable?: boolean;
   isSearchable?: boolean;
   isDisabled?: boolean;
@@ -33,6 +34,7 @@ export interface SelectBaseProps extends ReactSelectProps {
   isHidden?: boolean;
   size?: "sm" | "lg";
   word?: string;
+  onChange?: (value: unknown) => void;
 }
 
 const SelectBase: React.FC<SelectBaseProps> = ({

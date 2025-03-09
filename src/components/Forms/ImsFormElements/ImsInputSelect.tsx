@@ -11,7 +11,6 @@ interface ImsInputSelectProps extends SelectBaseProps {
   mandatory?: boolean;
   helperText?: string;
   sideBtn?: React.ReactNode;
-  onChange: (e: any) => void;
 }
 
 const ImsInputSelect: React.FC<ImsInputSelectProps> = ({

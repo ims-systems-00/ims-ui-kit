@@ -14,11 +14,9 @@ import {
 } from "draft-js";
 import { ELEMENT_TYPES } from "./elementTypes";
 import { ENTITY_NAME } from "./entities/entityNames";
-import { mentionDecorator } from "./entities/Mentions";
 import { httpsLinkDecorator } from "./entities/HttpsLink";
 import { TextEditorUtils } from "./types";
 const compositeDecorator = new CompositeDecorator([
-  mentionDecorator,
   httpsLinkDecorator,
 ]);
 export default function useTextEditor(config: any): TextEditorUtils {
@@ -188,10 +186,10 @@ export default function useTextEditor(config: any): TextEditorUtils {
   });
   const _atomicEntityController = {
     [ENTITY_NAME.IMAGE]: _openFilePrompt,
-    [ENTITY_NAME.LINK]: () => {},
+    [ENTITY_NAME.LINK]: () => { },
     [ENTITY_NAME.DIVIDER]: () =>
       _createAtomicBlockEntity(ENTITY_NAME.DIVIDER, {}),
-    [ENTITY_NAME.MENTION]: () => {},
+    [ENTITY_NAME.MENTION]: () => { },
     [ENTITY_NAME.CHECKLIST]: () => {
       _createAtomicBlockEntity(ENTITY_NAME.CHECKLIST, {});
     },

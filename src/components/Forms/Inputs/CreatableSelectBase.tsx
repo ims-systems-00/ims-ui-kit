@@ -40,7 +40,7 @@ const CreatableSelectBase: React.FC<CreatableSelectBaseProps> = ({
       <CreatableSelect
         className="react-select"
         classNamePrefix="react-select"
-        formatCreateLabel={(inputValue) =>
+        formatCreateLabel={(inputValue: any) =>
           formatCreateLabel(leftPhrase, inputValue)
         }
         {...rest}
