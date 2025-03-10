@@ -1,4 +1,5 @@
-import Spinner from "./SpinnerBase"
+import React from "react";
+import Spinner from "../SpinnerBase"
 
 const Loading = ({ color = "primary", text = "Loading..." }) => {
     return (
