@@ -1,4 +1,6 @@
-import Badge from "../BadgeBase";
+import type { Meta, StoryFn } from "@storybook/react";
+import Badge from "../Examples/DefaultBadge";
+import React from "react";
 
 export default {
   title: "components/Badges",
@@ -8,19 +10,22 @@ export default {
       description: {
         component: `
 [Bootstrap Text](https://getbootstrap.com/docs/5.3/utilities/text/)
-All our text are customised from the default bootstrap texts. Only the customised portions are listed here.
+All our text are customized from the default bootstrap texts. Only the customized portions are listed here.
         `,
       },
     },
   },
-};
-export const Badges = Badge;
+} as Meta<typeof Badge>;
 
-Badges.args = {
+// Define the type for the story
+const Template: StoryFn<typeof Badge> = (args: any) => <Badge {...args} />;
+
+Template.args = {
   children: "Default",
 };
 
-export { default as DefaultBadge } from "../Examples/DefaultBadge";
+export { Template as Badge };
+
 export { default as BadgeVariants } from "../Examples/BadgeVariants";
 export { default as PillBadge } from "../Examples/PillBadges";
 export { default as LinkBadges } from "../Examples/LinkBadges";

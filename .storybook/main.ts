@@ -1,6 +1,8 @@
 module.exports = {
   // stories: ["../src/**/*.mdx", "../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))"],
-  stories: ["../src/components/Alert/docs/Alert.stories.jsx"],
+  stories: ["../src/components/Alert/docs/Alert.stories.tsx",
+    "../src/components/Badges/docs/Badge.stories.tsx"
+  ],
   staticDirs: ["public"],
 
   addons: [

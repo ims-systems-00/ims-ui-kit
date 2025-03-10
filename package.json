@@ -67,6 +67,7 @@
     "@storybook/react": "^8.6.4",
     "@storybook/react-webpack5": "^8.6.4",
     "@storybook/test": "^8.6.4",
+    "@types/reactstrap": "^8.7.1",
     "babel-plugin-named-exports-order": "^0.0.2",
     "dpdm": "^3.14.0",
     "eslint-config-react-app": "^7.0.1",
