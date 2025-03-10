@@ -9,7 +9,8 @@ module.exports = {
     "../src/components/Breadcrumb/docs/Breadcrumb.stories.tsx",
     "../src/components/Typography/docs/Typography.stories.tsx",
     "../src/components/Tooltip/docs/Tooltip.stories.tsx",
-    "../src/components/Toast/docs/Toast.stories.tsx"
+    "../src/components/Toast/docs/Toast.stories.tsx",
+    "../src/components/TabPane/docs/Tabpane.stories.tsx",
   ],
   staticDirs: ["public"],
 

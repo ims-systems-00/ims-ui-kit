@@ -7,11 +7,12 @@ import NavItem from "../../Nav/NavItemBase";
 import NavLink from "../../Nav/NavLinkBase";
 import TabContent from "../TabContentBase";
 import TabPane from "../TabPaneBase";
+import React from "react";
 
-function DefaultTabpane(props) {
+function DefaultTabpane(props: any) {
   const [activeTab, setActiveTab] = useState("1");
 
-  const toggle = (tab) => {
+  const toggle = (tab: string) => {
     if (activeTab !== tab) setActiveTab(tab);
   };
 
