@@ -8,7 +8,6 @@ const UncontrolledTooltips = ({}) => {
         Somewhere in here is a{" "}
         <span
           style={{ textDecoration: "underline", color: "blue" }}
-          href="#"
           id="UncontrolledTooltipExample"
         >
           tooltip

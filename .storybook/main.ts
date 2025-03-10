@@ -7,7 +7,9 @@ module.exports = {
     "../src/components/Activities/docs/Activity.stories.tsx",
     "../src/components/Badges/docs/Badge.stories.tsx",
     "../src/components/Breadcrumb/docs/Breadcrumb.stories.tsx",
-    "../src/components/Typography/docs/Typography.stories.tsx"
+    "../src/components/Typography/docs/Typography.stories.tsx",
+    "../src/components/Tooltip/docs/Tooltip.stories.tsx",
+    "../src/components/Toast/docs/Toast.stories.tsx"
   ],
   staticDirs: ["public"],
 
