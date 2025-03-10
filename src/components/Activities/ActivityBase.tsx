@@ -1,13 +1,13 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Card from "../Cards/CardBase";
 import CardBody from "../Cards/CardBodyBase";
 import CardFooter from "../Cards/CardFooterBase";
 import CardHeader from "../Cards/CardHeaderBase";
 export interface ActivityBaseProps {
   avatar: string;
-  name: string;
+  name: string | React.ReactNode;
   subHeading?: string;
-  activity: React.ReactNode | string | null;
+  activity?: React.ReactNode | string | null;
   footer?: React.ReactNode | string | null;
 }
 const ActivityBase: React.FC<ActivityBaseProps> = ({

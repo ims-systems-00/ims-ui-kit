@@ -4,7 +4,8 @@ module.exports = {
     "../src/components/Alert/docs/UncontrolledAlert.stories.tsx",
     "../src/components/Badges/docs/Badge.stories.tsx",
     "../src/components/Accordion/docs/Accordion.stories.tsx",
-    "../src/components/Accordion/docs/AccordionBody.stories.tsx"
+    "../src/components/Accordion/docs/AccordionBody.stories.tsx",
+    "../src/components/Activities/docs/Activity.stories.tsx",
   ],
   staticDirs: ["public"],
 
