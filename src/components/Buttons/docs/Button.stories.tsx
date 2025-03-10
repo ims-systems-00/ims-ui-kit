@@ -1,3 +1,5 @@
+import type { Meta, StoryFn } from "@storybook/react";
+import React from "react";
 import Button from "../ButtonBase";
 export default {
   title: "components/Buttons",
@@ -7,17 +9,22 @@ export default {
       description: {
         component: `
 [Bootstrap Text](https://getbootstrap.com/docs/5.3/utilities/text/)
-All our text are customised from the default bootstrap texts. Only the customised portions are listed here.
+All our text are customized from the default bootstrap texts. Only the customized portions are listed here.
         `,
       },
     },
   },
-};
-export const Buttons = Button;
+} as Meta<typeof Button>;
 
-Buttons.args = {
+// Define the type for the story
+const Template: StoryFn<typeof Button> = (args: any) => <Button {...args} />;
+
+Template.args = {
   children: "Click Here",
 };
+
+export { Template as Button };
+
 export { default as ButtonSizes } from "../Examples/BtnsSize";
 export { default as DangerButton } from "../Examples/DangerBtn";
 export { default as DarkButton } from "../Examples/DarkBtn";

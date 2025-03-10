@@ -1,7 +1,8 @@
 import DarkBtn from "./DarkBtn";
-import LinkBtn from "./LinkBtn";
+import LinkBtn from "./LightBtn";
 import PrimaryBtn from "./PrimaryBtn";
 import SecondaryBtn from "./SecondaryBtn";
+import React from "react";
 
 const Examples = ({}) => {
   return (
