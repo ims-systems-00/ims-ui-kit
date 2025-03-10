@@ -1,4 +1,6 @@
+import { Meta, StoryFn } from "@storybook/react/*";
 import BreadcrumbItem from "../BreadcrumbItemBase";
+import React from "react";
 
 export default {
   title: "components/BreadcrumbItem",
@@ -13,7 +15,13 @@ All our dropdowns are customised from the default bootstrap dropdowns. Only the 
       },
     },
   },
-};
-export const Breadcrumb = BreadcrumbItem;
+} as Meta<typeof BreadcrumbItem>;
 
-Breadcrumb.args = {};
+// Define the type for the story
+const Template: StoryFn<typeof BreadcrumbItem> = (args: any) => (
+  <BreadcrumbItem {...args} />
+);
+
+Template.args = {};
+
+export { Template as BreadcrumbItem };
