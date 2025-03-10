@@ -1,5 +1,6 @@
-import BodyText from "./BodyText";
-import Headers from "./Headers";
+import React from "react";
+import BodyText from "../BodyText";
+import Headers from "../Headers";
 const Typography = ({}) => {
   return (
     <>

@@ -1,4 +1,6 @@
-const BodyText = (props) => {
+import React from "react";
+
+const BodyText = ({}) => {
   return (
     <>
       <p>
@@ -41,6 +43,7 @@ const BodyText = (props) => {
   );
 };
 export default BodyText;
+
 BodyText.parameters = {
   docs: {
     description: {

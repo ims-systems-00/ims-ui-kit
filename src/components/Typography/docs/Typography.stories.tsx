@@ -1,4 +1,7 @@
-import Examples from "../Examples";
+import type { Meta, StoryFn } from "@storybook/react";
+import React from "react";
+
+// Define the type for the component meta
 export default {
   title: "components/Typography",
   parameters: {
@@ -6,12 +9,12 @@ export default {
       description: {
         component: `
 [Bootstrap Text](https://getbootstrap.com/docs/5.3/utilities/text/)
-All our text are customised from the default bootstrap texts. Only the customised portions are listed here.
+All our text are customized from the default bootstrap texts. Only the customized portions are listed here.
         `,
       },
     },
   },
 };
-export const Typography = Examples;
+
 export { default as Headers } from "../Headers";
 export { default as BodyText } from "../BodyText";
