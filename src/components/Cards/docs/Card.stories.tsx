@@ -1,4 +1,6 @@
+import { Meta, StoryFn } from "@storybook/react/*";
 import Card from "../CardBase";
+import React from "react";
 export default {
   title: "components/Card",
   component: Card,
@@ -9,11 +11,15 @@ export default {
       },
     },
   },
-};
-export const Default = Card;
+} as Meta<typeof Card>;
 
-Default.args = {
+// Define the type for the story
+const Template: StoryFn<typeof Card> = (args: any) => <Card {...args} />;
+
+Template.args = {
   children: "Click Here",
 };
+
+export { Template as Card };
 
 export { default as DashboardCards } from "../Examples/DashboardCards";

@@ -5,10 +5,10 @@ import CardFooter, { CardFooterBaseProps } from "./CardFooterBase";
 import CardHeader, { CardHeaderBaseProps } from "./CardHeaderBase";
 
 export interface ImsCardProps extends CardBaseProps {
-  cardProps: CardBaseProps;
-  cardHeaderProps: CardHeaderBaseProps;
-  cardBodyProps: CardBodyBaseProps;
-  cardFooterProps: CardFooterBaseProps;
+  cardProps?: CardBaseProps;
+  cardHeaderProps?: CardHeaderBaseProps;
+  cardBodyProps?: CardBodyBaseProps;
+  cardFooterProps?: CardFooterBaseProps;
 }
 
 const ImsCard: React.FC<ImsCardProps> = ({
