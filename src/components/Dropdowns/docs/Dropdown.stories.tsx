@@ -1,4 +1,7 @@
+import { Meta, StoryFn } from "@storybook/react/*";
 import Example from "../Example";
+import React from "react";
+
 export default {
   title: "components/Dropdowns",
   component: Example,
@@ -7,14 +10,17 @@ export default {
       description: {
         component: `
 [Bootstrap Dropdown](https://getbootstrap.com/docs/5.3/components/dropdowns/#overview)
-All our dropdowns are customised from the default bootstrap dropdowns. Only the customised portions are listed here.
+All our dropdowns are customized from the default bootstrap dropdowns. Only the customized portions are listed here.
         `,
       },
     },
   },
-};
-export const Dropdowns = Example;
-Dropdowns.args = {
+} as Meta<typeof Example>;
+
+// Define the type for the story
+const Template: StoryFn<typeof Example> = (args: any) => <Example {...args} />;
+
+Template.args = {
   children: <></>,
   isOpen: false,
   toggle: () => {},
@@ -25,6 +31,8 @@ Dropdowns.args = {
   startIcon: "fa-solid fa-home",
   endIcon: "fa-solid fa-home",
 };
+
+export { Template as Dropdown };
 
 export { default as DropdownRegularButton } from "../DropdownBtnVariants/DropdownBtnsRegular";
 export { default as DropdownIconButton } from "../DropdownBtnVariants/DropdownBtnIcon";

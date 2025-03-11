@@ -5,7 +5,7 @@ import DropdownToggle from "../DropdownToggleBase";
 const DropdownBtnIcon = ({}) => {
   return (
     <>
-      <Dropdown isOpen="false" toggle={() => {}}>
+      <Dropdown isOpen={false} toggle={() => {}}>
         <DropdownToggle outline className="border border-0 rounded-pill">
           <i className="fa-solid fa-home" />
         </DropdownToggle>
@@ -15,6 +15,7 @@ const DropdownBtnIcon = ({}) => {
 };
 
 export default DropdownBtnIcon;
+
 DropdownBtnIcon.parameters = {
   docs: {
     description: {
@@ -24,4 +25,3 @@ It is dropdown button which will have only icon like three dots.
     },
   },
 };
-

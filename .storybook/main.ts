@@ -11,6 +11,8 @@ module.exports = {
     "../src/components/Cards/docs/Card.stories.tsx",
     "../src/components/Carousel/docs/Carousel.stories.tsx",
     "../src/components/Collapse/docs/Collapse.stories.tsx",
+    "../src/components/Drawer/docs/Drawer.stories.tsx",
+    "../src/components/Dropdowns/docs/Dropdown.stories.tsx",
     "../src/components/Collapse/docs/UncontrolledCollapse.stories.tsx",
     "../src/components/Container/docs/Container.stories.tsx",
     "../src/components/Progress/docs/Progress.stories.tsx",

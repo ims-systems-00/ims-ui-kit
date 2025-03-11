@@ -7,13 +7,13 @@ const DropdownBtnWithIcon = ({}) => {
     <>
       <div className="d-flex">
         <div>
-          <Dropdown isOpen="false" toggle={() => {}}>
+          <Dropdown isOpen={false} toggle={() => {}}>
             <DropdownToggle startIcon={"fa-solid fa-home"}>
               Default
             </DropdownToggle>
           </Dropdown>
           <br /> <br />
-          <Dropdown isOpen="false" toggle={() => {}}>
+          <Dropdown isOpen={false} toggle={() => {}}>
             <DropdownToggle
               startIcon={"fa-solid fa-home"}
               endIcon={"fa-solid fa-home"}
@@ -23,20 +23,20 @@ const DropdownBtnWithIcon = ({}) => {
             </DropdownToggle>
           </Dropdown>
           <br /> <br />
-          <Dropdown isOpen="false" toggle={() => {}}>
+          <Dropdown isOpen={false} toggle={() => {}}>
             <DropdownToggle endIcon={"fa-solid fa-home"} color="secondary">
               Regular
             </DropdownToggle>
           </Dropdown>
           <br /> <br />
-          <Dropdown isOpen="false" toggle={() => {}}>
+          <Dropdown isOpen={false} toggle={() => {}}>
             <DropdownToggle caret startIcon={"fa-solid fa-home"} color="dark">
               Regular
             </DropdownToggle>
           </Dropdown>
         </div>
         <div className="ms-5">
-          <Dropdown isOpen="false" toggle={() => {}}>
+          <Dropdown isOpen={false} toggle={() => {}}>
             <DropdownToggle
               caret
               startIcon={"fa-solid fa-home"}
@@ -47,7 +47,7 @@ const DropdownBtnWithIcon = ({}) => {
             </DropdownToggle>
           </Dropdown>
           <br /> <br />
-          <Dropdown isOpen="false" toggle={() => {}}>
+          <Dropdown isOpen={false} toggle={() => {}}>
             <DropdownToggle
               endIcon={"fa-solid fa-home"}
               outline
@@ -57,7 +57,7 @@ const DropdownBtnWithIcon = ({}) => {
             </DropdownToggle>
           </Dropdown>
           <br /> <br />
-          <Dropdown isOpen="false" toggle={() => {}}>
+          <Dropdown isOpen={false} toggle={() => {}}>
             <DropdownToggle
               startIcon={"fa-solid fa-home"}
               outline
@@ -67,7 +67,7 @@ const DropdownBtnWithIcon = ({}) => {
             </DropdownToggle>
           </Dropdown>
           <br /> <br />
-          <Dropdown isOpen="false" toggle={() => {}}>
+          <Dropdown isOpen={false} toggle={() => {}}>
             <DropdownToggle
               startIcon={"fa-solid fa-home"}
               endIcon={"fa-solid fa-home"}
