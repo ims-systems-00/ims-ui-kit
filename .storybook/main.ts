@@ -24,6 +24,7 @@ module.exports = {
     "../src/components/Panel/docs/Panel.stories.tsx",
     "../src/components/Placeholder/docs/Placheholder.stories.tsx",
     "../src/components/Progress/docs/Progress.stories.tsx",
+    "../src/components/Pagination/docs/Pagination.stories.tsx",
     "../src/components/Spinner/docs/Spinner.stories.tsx",
     "../src/components/Typography/docs/Typography.stories.tsx",
     "../src/components/Tooltip/docs/Tooltip.stories.tsx",
