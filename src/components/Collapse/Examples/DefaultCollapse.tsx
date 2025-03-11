@@ -3,13 +3,14 @@ import { Collapse } from "reactstrap";
 import Button from "../../Buttons/ButtonBase";
 import Card from "../../Cards/CardBase";
 import CardBody from "../../Cards/CardBodyBase";
+import React from "react";
 
 const DefaultCollase = ({}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
   return (
-    <div>
+    <>
       <Button color="primary" onClick={toggle} style={{ marginBottom: "1rem" }}>
         Toggle
       </Button>
@@ -22,7 +23,7 @@ const DefaultCollase = ({}) => {
           </CardBody>
         </Card>
       </Collapse>
-    </div>
+    </>
   );
 };
 

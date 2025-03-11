@@ -1,10 +1,11 @@
 import { Card, CardBody } from "reactstrap";
 import Button from "../../Buttons/ButtonBase";
 import UncontrolledCollapse from "../UncontrolledCollapseBase";
+import React from "react";
 
 const UncontrolledCollapses = ({}) => {
   return (
-    <div>
+    <>
       <Button color="primary" id="toggler" style={{ marginBottom: "1rem" }}>
         Toggle
       </Button>
@@ -18,7 +19,7 @@ const UncontrolledCollapses = ({}) => {
           </CardBody>
         </Card>
       </UncontrolledCollapse>
-    </div>
+    </>
   );
 };
 

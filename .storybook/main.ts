@@ -10,6 +10,8 @@ module.exports = {
     "../src/components/Buttons/docs/Button.stories.tsx",
     "../src/components/Cards/docs/Card.stories.tsx",
     "../src/components/Carousel/docs/Carousel.stories.tsx",
+    "../src/components/Collapse/docs/Collapse.stories.tsx",
+    "../src/components/Collapse/docs/UncontrolledCollapse.stories.tsx",
     "../src/components/Progress/docs/Progress.stories.tsx",
     "../src/components/Spinner/docs/Spinner.stories.tsx",
     "../src/components/Typography/docs/Typography.stories.tsx",
