@@ -5,7 +5,12 @@ import ModalBody from "../ModalBodyBase";
 import ModalFooter from "../ModalFooterBase";
 import Button from "../../Buttons/ButtonBase";
 
-const DefaultModal = ({ children, ...rest }) => {
+const DefaultModal = ({
+  children,
+  ...rest
+}: {
+  children?: React.ReactNode;
+}) => {
   const [modal, setModal] = React.useState(false);
   const toggle = () => setModal(!modal);
 

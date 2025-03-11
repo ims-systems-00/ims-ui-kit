@@ -1,4 +1,6 @@
+import { Meta, StoryFn } from "@storybook/react/*";
 import DefaultModal from "../Examples/DefaultModal";
+import React from "react";
 
 export default {
   title: "components/Modal",
@@ -10,8 +12,11 @@ export default {
       },
     },
   },
-};
+} as Meta<typeof DefaultModal>;
 
-const Template = (args) => <DefaultModal {...args} />;
-export const Default = Template.bind({});
-Default.args = {};
+// Define the type for the story
+const Template: StoryFn<typeof DefaultModal> = (args: any) => <DefaultModal {...args} />;
+
+Template.args = {};
+
+export { Template as Modal };
