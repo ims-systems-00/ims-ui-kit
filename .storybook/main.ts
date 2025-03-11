@@ -20,6 +20,7 @@ module.exports = {
     "../src/components/Grid/docs/Col.stories.tsx",
     "../src/components/List/docs/List.stories.tsx",
     "../src/components/Modal/docs/Modal.stories.tsx",
+    "../src/components/Nav/docs/Nav.stories.tsx",
     "../src/components/Progress/docs/Progress.stories.tsx",
     "../src/components/Spinner/docs/Spinner.stories.tsx",
     "../src/components/Typography/docs/Typography.stories.tsx",
