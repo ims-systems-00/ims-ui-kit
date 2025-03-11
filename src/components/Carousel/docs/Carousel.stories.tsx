@@ -1,4 +1,6 @@
+import { Meta, StoryFn } from "@storybook/react/*";
 import DefaultCarousel from "../Example/DefaultCarousel";
+import React from "react";
 
 export default {
   title: "components/Carousel",
@@ -10,9 +12,15 @@ export default {
       },
     },
   },
-};
-export const Default = DefaultCarousel;
+} as Meta<typeof DefaultCarousel>;
 
-Default.args = {};
+// Define the type for the story
+const Template: StoryFn<typeof DefaultCarousel> = (args: any) => (
+  <DefaultCarousel {...args} />
+);
+
+Template.args = {};
+
+export { Template as Carousel };
 
 export { default as ImsCarousel } from "../Example/ImsCarouselExample";

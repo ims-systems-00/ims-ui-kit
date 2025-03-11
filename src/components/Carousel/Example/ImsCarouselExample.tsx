@@ -15,16 +15,14 @@ const DashboardCarouselExample = ({}) => {
       </Card>
       {true && (
         <Card>
-          <CardBody>
-            Rafee
-          </CardBody>
+          <CardBody>Rafee</CardBody>
         </Card>
       )}
-      {isShowAble && <Card>
-        <CardBody>
-         test
-        </CardBody>
-      </Card>}
+      {isShowAble && (
+        <Card>
+          <CardBody>test</CardBody>
+        </Card>
+      )}
       <Card>
         <CardBody>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
