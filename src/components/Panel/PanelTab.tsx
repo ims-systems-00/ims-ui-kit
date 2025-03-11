@@ -4,11 +4,11 @@ import NavItem from "../Nav/NavItemBase";
 import NavLink from "../Nav/NavLinkBase";
 
 interface PanelTabProps {
-  children: React.ReactNode;
-  onClick: (e: React.MouseEvent) => void;
-  active: boolean;
-  index: number;
-  label: string;
+  children?: React.ReactNode;
+  onClick?: (e: React.MouseEvent) => void;
+  active?: boolean;
+  index?: number;
+  label?: string;
   [key: string]: any;
 }
 
