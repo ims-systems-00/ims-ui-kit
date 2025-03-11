@@ -12,6 +12,7 @@ module.exports = {
     "../src/components/Carousel/docs/Carousel.stories.tsx",
     "../src/components/Collapse/docs/Collapse.stories.tsx",
     "../src/components/Collapse/docs/UncontrolledCollapse.stories.tsx",
+    "../src/components/Container/docs/Container.stories.tsx",
     "../src/components/Progress/docs/Progress.stories.tsx",
     "../src/components/Spinner/docs/Spinner.stories.tsx",
     "../src/components/Typography/docs/Typography.stories.tsx",
