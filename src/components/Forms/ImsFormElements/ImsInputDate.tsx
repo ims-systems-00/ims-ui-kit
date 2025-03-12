@@ -12,14 +12,14 @@ type OnChangeParams =
   | Moment;
 
 interface ImsInputDateProps extends DateTimeBaseProps {
-  label: string;
-  name: string;
-  value: string;
+  label?: string;
+  name?: string;
+  value?: string;
   error?: string;
   mandatory?: boolean;
   disabled?: boolean;
   helperText?: string;
-  onChange: (e: OnChangeParams) => void;
+  onChange?: (e: OnChangeParams) => void;
 }
 
 const ImsInputDate: React.FC<ImsInputDateProps> = ({
@@ -62,11 +62,11 @@ const ImsInputDate: React.FC<ImsInputDateProps> = ({
               let formattedDate = e.format("D/M/YYYY");
               let inputElement = document.createElement("input");
               let inputChangeEvent = new Event("change");
-              inputElement.name = name;
+              inputElement.name = name || "";
               inputElement.value = formattedDate;
               inputElement.dispatchEvent(inputChangeEvent);
 
-              onChange(inputChangeEvent);
+              onChange && onChange(inputChangeEvent);
             }
           }}
           timeFormat={false}

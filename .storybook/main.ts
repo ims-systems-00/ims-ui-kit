@@ -30,6 +30,7 @@ module.exports = {
     "../src/components/Tooltip/docs/Tooltip.stories.tsx",
     "../src/components/Toast/docs/Toast.stories.tsx",
     "../src/components/TabPane/docs/Tabpane.stories.tsx",
+    "../src/components/Forms/docs/*.stories.tsx",
   ],
   staticDirs: ["public"],
 

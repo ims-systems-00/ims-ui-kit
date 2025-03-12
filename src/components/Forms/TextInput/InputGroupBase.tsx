@@ -1,7 +1,7 @@
 import React from "react";
 import { InputGroup } from "reactstrap";
 
-let InputGroupBaseProps = Object.assign({}, InputGroup.prototype.props);
+type InputGroupBaseProps = typeof InputGroup.prototype.props;
 
 /**
  *
@@ -9,7 +9,7 @@ let InputGroupBaseProps = Object.assign({}, InputGroup.prototype.props);
  * @returns
  */
 
-const InputGroupBase = ({ children, ...rest }) => {
+const InputGroupBase = ({ children, ...rest }: InputGroupBaseProps) => {
   return <InputGroup {...rest}>{children}</InputGroup>;
 };
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Col, Row } from "reactstrap";
-import ImsInputRadioBase from "../ImsInputRadio";
+import ImsInputRadioBase from "../ImsInputRadioBase";
 
 const ImsInputRadio = ({}) => {
   const [radio, setRadio] = useState("Option 2");
@@ -14,7 +14,7 @@ const ImsInputRadio = ({}) => {
             label="Likelihood"
             name="radio1"
             values={[1, 2, 3, 4, 5]}
-            onChange={(e) => {
+            onChange={(e: any) => {
               setRadio(e.currentTarget.value);
             }}
             defaultChecked={radio}
@@ -25,7 +25,7 @@ const ImsInputRadio = ({}) => {
             label="Consequence"
             name="radio2"
             values={[1, 2, 3, 4, 5]}
-            onChange={(e) => {
+            onChange={(e: any) => {
               setRadio(e.currentTarget.value);
             }}
             defaultChecked={radio}

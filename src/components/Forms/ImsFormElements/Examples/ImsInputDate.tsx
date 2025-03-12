@@ -9,7 +9,7 @@ const ImsInputDate = ({}) => {
       <ImsInputDateBase
         value={date}
         label="Label Text"
-        onChange={(e) => {
+        onChange={(e: any) => {
           setDate(e.currentTarget.value);
         }}
       />

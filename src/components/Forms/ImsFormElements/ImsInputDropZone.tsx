@@ -9,10 +9,11 @@ import FileDropZone, {
 interface ImsInputDropZoneProps extends FileDropZoneBaseProps {
   label: string;
   error?: string;
-  name: string;
+  name?: string;
+  icon?: string;
   onChange: (e: any) => void;
   noMultiple?: boolean;
-  onLoad: (files: any) => void;
+  onLoad?: (files: any) => void;
 }
 
 const ImsInputDropZone: React.FC<ImsInputDropZoneProps> = ({
@@ -41,7 +42,7 @@ const ImsInputDropZone: React.FC<ImsInputDropZoneProps> = ({
           {...rest}
           name={name}
           noMultiple={noMultiple}
-          onSelected={(files) => onLoad(files)}
+          onSelected={(files) => onLoad && onLoad(files)}
         />
       </Col>
     </FormGroup>

@@ -1,3 +1,4 @@
+import React from "react";
 import ImsInputText from "../../ImsFormElements/ImsInputText";
 
 const TextInputSizes = ({}) => {
@@ -7,7 +8,7 @@ const TextInputSizes = ({}) => {
         label="Size Variants Large"
         placeholder="Placeholder"
         onChange={(e) => console.log(e.target.value)}
-        size="lg"
+        size={2}
       />
       <ImsInputText
         label="Size Variants Regular"
@@ -18,7 +19,7 @@ const TextInputSizes = ({}) => {
         label="Size Variants Small"
         placeholder="Placeholder"
         onChange={(e) => console.log(e.target.value)}
-        size="sm"
+        size={3}
       />
     </>
   );

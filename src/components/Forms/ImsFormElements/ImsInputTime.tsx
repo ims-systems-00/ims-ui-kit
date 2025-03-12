@@ -6,7 +6,7 @@ import Label from "../Inputs/LabelBase";
 
 interface ImsInputTimeProps extends DateTimeBaseProps {
   label: string;
-  name: string;
+  name?: string;
   value: string;
   onChange: (e: any) => void;
   error?: string;

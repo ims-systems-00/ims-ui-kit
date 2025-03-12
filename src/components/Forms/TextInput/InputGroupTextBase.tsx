@@ -10,7 +10,7 @@ let InputGroupTextBaseProps = Object.assign({}, InputGroupText.prototype.props);
  * @returns
  */
 
-const InputGroupTextBase = ({ children, onClick, ...rest }) => {
+const InputGroupTextBase = ({ children, onClick, ...rest }: typeof InputGroupTextBaseProps) => {
   return (
     <InputGroupText
       onClick={(e) => {

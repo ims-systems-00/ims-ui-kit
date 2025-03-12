@@ -21,7 +21,7 @@ const ImsInputSelect = ({}) => {
               alert("Create A New Ticket");
             }}
           >
-            <i class="fa-solid fa-plus" style={{ fontSize: "16px" }} />
+            <i className="fa-solid fa-plus" style={{ fontSize: "16px" }} />
           </Button>
         }
         defaultOpt="Select Option"

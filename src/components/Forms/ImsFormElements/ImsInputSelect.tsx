@@ -7,10 +7,12 @@ import Select, { SelectBaseProps } from "../Inputs/SelectBase";
 interface ImsInputSelectProps extends SelectBaseProps {
   label: string;
   error?: string;
-  name: string;
+  name?: string;
+  options: any[];
   mandatory?: boolean;
   helperText?: string;
   sideBtn?: React.ReactNode;
+  defaultOpt?: string;
 }
 
 const ImsInputSelect: React.FC<ImsInputSelectProps> = ({

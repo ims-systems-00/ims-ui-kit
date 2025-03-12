@@ -1,4 +1,4 @@
-const handleGroupFocus = (e) => {
+const handleGroupFocus = (e: any) => {
   e.target.parentElement.parentElement.children[1]?.focus();
   if (e.target.parentElement.parentElement.children[0]) {
     e.target.parentElement.parentElement.children[0]?.focus();

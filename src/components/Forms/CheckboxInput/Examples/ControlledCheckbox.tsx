@@ -1,9 +1,9 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import ImsInputCheck from "../../ImsFormElements/ImsInputCheck";
 
 const ControlledCheckbox = ({}) => {
   const [checked, setChecked] = React.useState(true);
-  const handleCheckedChange = (e) => {
+  const handleCheckedChange = (e: any) => {
     setChecked(e.target.checked);
   };
   return (
