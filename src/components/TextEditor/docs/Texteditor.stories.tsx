@@ -1,4 +1,6 @@
+import { Meta, StoryFn } from "@storybook/react/*";
 import Texteditor from "../Index";
+import React from "react";
 export default {
   title: "components/TextEditor",
   component: Texteditor,
@@ -12,11 +14,12 @@ All our text are customised from the default bootstrap texts. Only the customise
       },
     },
   },
-};
-const Template = (args) => <Texteditor {...args} />;
-export const Default = Template.bind({});
+} as Meta<typeof Texteditor>;
 
-Default.args = {
+// Define the type for the story
+const Template: StoryFn<any> = (args: any) => <Texteditor {...args} />;
+
+Template.args = {
   mentionSuggestions: [
     {
       _id: "182973aSJLsddkhsd",
@@ -280,4 +283,6 @@ ReadOnlyMode.args = {
   }),
 };
 
-export { default as RichTextExample } from "../Examples/TextEditorExample";
+export { Template as Texteditor };
+
+// export { default as RichTextExample } from "../Examples/TextEditorExample";

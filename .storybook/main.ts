@@ -32,6 +32,7 @@ module.exports = {
     "../src/components/TabPane/docs/Tabpane.stories.tsx",
     "../src/components/Table/docs/ImsSimpleTable.stories.tsx",
     "../src/components/Table/docs/Table.stories.tsx",
+    "../src/components/TextEditor/docs/Texteditor.stories.tsx",
     "../src/components/Popper/docs/Popover.stories.tsx",
     "../src/components/Forms/docs/*.stories.tsx",
   ],
