@@ -1,49 +1,50 @@
 import React from "react";
-import { Card, CardBody } from "../../../index";
 import ImsCarousel from "../ImsCarousel";
+import CardBodyBase from "../../Cards/CardBodyBase";
+import CardBase from "../../Cards/CardBase";
 
 const DashboardCarouselExample = ({}) => {
   let isShowAble = false;
   return (
     <ImsCarousel>
-      <Card>
-        <CardBody>
+      <CardBase>
+        <CardBodyBase>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
           neque quasi ex, dignissimos accusamus est, itaque, deserunt
           voluptatibus odio praesentium iure? Commodi reiciendis at eveniet.
-        </CardBody>
-      </Card>
+        </CardBodyBase>
+      </CardBase>
       {true && (
-        <Card>
-          <CardBody>Rafee</CardBody>
-        </Card>
+        <CardBase>
+          <CardBodyBase>Rafee</CardBodyBase>
+        </CardBase>
       )}
       {isShowAble && (
-        <Card>
-          <CardBody>test</CardBody>
-        </Card>
+        <CardBase>
+          <CardBodyBase>test</CardBodyBase>
+        </CardBase>
       )}
-      <Card>
-        <CardBody>
+      <CardBase>
+        <CardBodyBase>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
           neque quasi ex, dignissimos accusamus est, itaque, deserunt
           voluptatibus odio praesentium iure? Commodi reiciendis at eveniet.
-        </CardBody>
-      </Card>
-      <Card>
-        <CardBody>
+        </CardBodyBase>
+      </CardBase>
+      <CardBase>
+        <CardBodyBase>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
           neque quasi ex, dignissimos accusamus est, itaque, deserunt
           voluptatibus odio praesentium iure? Commodi reiciendis at eveniet.
-        </CardBody>
-      </Card>
-      <Card>
-        <CardBody>
+        </CardBodyBase>
+      </CardBase>
+      <CardBase>
+        <CardBodyBase>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
           neque quasi ex, dignissimos accusamus est, itaque, deserunt
           voluptatibus odio praesentium iure? Commodi reiciendis at eveniet.
-        </CardBody>
-      </Card>
+        </CardBodyBase>
+      </CardBase>
     </ImsCarousel>
   );
 };

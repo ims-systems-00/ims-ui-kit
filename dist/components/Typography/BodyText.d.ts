@@ -1,5 +1,12 @@
 import React from "react";
-interface BodyTextProps {
-}
-declare const BodyText: React.FC<BodyTextProps>;
+declare const BodyText: {
+    ({}: {}): React.JSX.Element;
+    parameters: {
+        docs: {
+            description: {
+                story: string;
+            };
+        };
+    };
+};
 export default BodyText;

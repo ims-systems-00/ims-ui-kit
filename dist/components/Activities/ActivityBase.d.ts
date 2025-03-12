@@ -1,9 +1,9 @@
 import React from "react";
 export interface ActivityBaseProps {
     avatar: string;
-    name: string;
+    name: string | React.ReactNode;
     subHeading?: string;
-    activity: React.ReactNode | string | null;
+    activity?: React.ReactNode | string | null;
     footer?: React.ReactNode | string | null;
 }
 declare const ActivityBase: React.FC<ActivityBaseProps>;

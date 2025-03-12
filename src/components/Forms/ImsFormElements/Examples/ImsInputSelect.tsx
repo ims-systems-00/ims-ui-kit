@@ -1,4 +1,4 @@
-import { Button } from "../../../../index";
+import ButtonBase from "../../../Buttons/ButtonBase";
 import ImsInputSelectBase from "../ImsInputSelect";
 import React from "react";
 
@@ -14,7 +14,7 @@ const ImsInputSelect = ({}) => {
           { value: "3", label: "Option 3" },
         ]}
         sideBtn={
-          <Button
+          <ButtonBase
             color="link"
             className="btn-link-dark"
             onClick={() => {
@@ -22,7 +22,7 @@ const ImsInputSelect = ({}) => {
             }}
           >
             <i className="fa-solid fa-plus" style={{ fontSize: "16px" }} />
-          </Button>
+          </ButtonBase>
         }
         defaultOpt="Select Option"
       />

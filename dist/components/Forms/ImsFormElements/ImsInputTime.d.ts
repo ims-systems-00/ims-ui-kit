@@ -2,7 +2,7 @@ import React from "react";
 import { DateTimeBaseProps } from "../Inputs/DateTimeBase";
 interface ImsInputTimeProps extends DateTimeBaseProps {
     label: string;
-    name: string;
+    name?: string;
     value: string;
     onChange: (e: any) => void;
     error?: string;

@@ -24,6 +24,7 @@ interface SearchBaseProps extends AsyncProps<any, any, any> {
     isHidden?: boolean;
     size?: "sm" | "lg";
     word?: string;
+    loadOptions?: any;
 }
 declare const SearchBase: React.FC<SearchBaseProps>;
 export default SearchBase;
