@@ -30,6 +30,8 @@ module.exports = {
     "../src/components/Tooltip/docs/Tooltip.stories.tsx",
     "../src/components/Toast/docs/Toast.stories.tsx",
     "../src/components/TabPane/docs/Tabpane.stories.tsx",
+    "../src/components/Table/docs/ImsSimpleTable.stories.tsx",
+    "../src/components/Table/docs/Table.stories.tsx",
     "../src/components/Popper/docs/Popover.stories.tsx",
     "../src/components/Forms/docs/*.stories.tsx",
   ],
