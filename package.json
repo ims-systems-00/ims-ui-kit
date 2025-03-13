@@ -75,17 +75,14 @@
     "gulp-append-prepend": "1.0.9",
     "jest-enzyme": "^7.1.2",
     "microbundle": "^0.15.1",
-    "node-sass": "^8.0.0",
-    "node-sass-package-importer": "5.3.2",
     "react": "^18.3.1",
     "react-dom": "18.2.0",
     "rollup": "^4.21.2",
+    "sass": "^1.85.1",
     "storybook": "^8.6.4",
     "webpack": "^5.75.0"
   },
   "peerDependencies": {
-    "node-sass": "^8.0.0",
-    "node-sass-package-importer": "5.3.2",
     "react": ">=^18.3.1",
     "react-dom": ">=18.2.0"
   },
@@ -94,14 +91,14 @@
     "typescript": "^5.5.4"
   },
   "scripts": {
-    "build": "rollup -c && node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss dist/css/app.min.css --output-style compressed",
+    "build": "rollup -c && sass --load-path=node_modules --silence-deprecation=import --silence-deprecation=global-builtin src/assets/scss/app.scss dist/css/app.min.css --style compressed",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
-    "compile-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss src/assets/css/app.css",
-    "minify-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss src/assets/css/app.min.css --output-style compressed",
-    "map-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/app.scss src/assets/css/app.css --source-map true",
-    "css-playground": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/playground/play.scss  src/assets/scss/playground/play.css"
+    "compile-sass": "sass --load-path=node_modules src/assets/scss/app.scss src/assets/css/app.css",
+    "minify-sass": "sass --load-path=node_modules src/assets/scss/app.scss src/assets/css/app.min.css --style compressed",
+    "map-sass": "sass --load-path=node_modules src/assets/scss/app.scss src/assets/css/app.css --source-map",
+    "css-playground": "sass --load-path=node_modules src/assets/scss/playground/play.scss src/assets/scss/playground/play.css"
   },
   "browserslist": [
     ">0.2%",
