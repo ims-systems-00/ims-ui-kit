@@ -1,0 +1,211 @@
+.white-content {
+  .react-select {
+    .react-select__input {
+      color: $black;
+    }
+    .react-select__control {
+    }
+    &.default {
+      .react-select__control {
+        .react-select__value-container--has-value {
+          .react-select__single-value,
+          .react-select__multi-value__label {
+            color: $black;
+          }
+        }
+      }
+      .react-select__multi-value {
+        border: 1px solid $black;
+        .react-select__multi-value__remove {
+          border-left: 1px solid $black;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    &.react-select--is-disabled {
+      .react-select__multi-value--is-disabled {
+        .react-select__multi-value__remove {
+          display: none;
+        }
+        &.react-select__multi-value {
+          color: #9ca3b0;
+          background-color: $secondary;
+          border: 1px solid #e3e3e3;
+        }
+      }
+      .react-select__control--is-disabled {
+        color: #9ca3b0;
+        background-color: $secondary;
+      }
+    }
+  }
+  .react-select__menu {
+    background-color: $white;
+  }
+  .react-select__option {
+    color: $black;
+  }
+  .react-select__menu {
+    .react-select__option {
+      &,
+      &:active {
+        background-color: transparent;
+      }
+      &.react-select__option--is-selected {
+        &,
+        &.react-select__option--is-focused {
+          &,
+          &:active {
+            // background-color: $opacity-gray-8;
+          }
+        }
+      }
+      &.react-select__option--is-focused {
+        &,
+        &:active {
+          // background-color: $opacity-gray-8;
+        }
+      }
+    }
+  }
+  .react-select__control {
+    &,
+    &:hover {
+      border: 1px solid $stroke-regular;
+    }
+  }
+  .ReactTable .rt-table {
+    &::-webkit-scrollbar-thumb {
+      background-color: #c9c9c9;
+    }
+  }
+  .ReactTable .-pagination input,
+  .ReactTable .-pagination select,
+  .ReactTable .rt-thead.-filters input,
+  .ReactTable .rt-thead.-filters select {
+    color: $black;
+  }
+  .ReactTable .rt-td,
+  .ReactTable .rt-thead .rt-th {
+    color: rgba(34, 42, 66, 0.7) !important;
+  }
+  .ReactTable .rt-tbody .rt-tr,
+  .ReactTable .rt-thead.-filters .rt-tr {
+    border-color: rgba(34, 42, 66, 0.2);
+  }
+  .ReactTable.-striped .rt-tr.-odd {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  .rbc-today {
+    background: darken($light-bg, 10%);
+  }
+  .rbc-day-bg + .rbc-day-bg,
+  .rbc-month-row,
+  .rbc-time-content > * + * > *,
+  .rbc-timeslot-group,
+  .rbc-row.rbc-time-header-cell,
+  .rbc-time-header-content,
+  .rbc-day-slot .rbc-time-slot + .rbc-time-slot,
+  .rbc-agenda-view table.rbc-agenda-table,
+  .rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td,
+  .rbc-agenda-view table.rbc-agenda-table tbody > tr + tr,
+  .rbc-agenda-view table.rbc-agenda-table thead > tr > th {
+    border-color: #9499a7;
+  }
+  .rbc-agenda-time-cell,
+  .rbc-agenda-date-cell,
+  .rbc-date-cell > a,
+  .rbc-date-cell > a:active,
+  .rbc-date-cell > a:visited,
+  .rbc-agenda-event-cell {
+    color: $black;
+  }
+  .rbc-toolbar .rbc-toolbar-label {
+    color: $type-medium;
+  }
+  .rbc-header,
+  .rbc-header > a,
+  .rbc-header > a:active,
+  .rbc-header > a:visited,
+  .rbc-header > a:hover,
+  .rbc-time-gutter.rbc-time-column {
+    color: $type-medium;
+  }
+  .card {
+    .map-title {
+      color: $type-medium;
+    }
+  }
+  .nav-pills .nav-item .nav-link:not(.active) {
+    background: #d3d7e9;
+    color: #1d253b;
+  }
+  .form-group:not(.has-danger):not(.has-success),
+  .input-group-focus:not(.has-danger):not(.has-success) {
+    .input-group-prepend .input-group-text,
+    .input-group-append .input-group-text {
+      border-color: $info;
+    }
+    .form-control {
+      &:focus {
+        border-color: $info;
+        & + .input-group-append .input-group-text,
+        & ~ .input-group-append .input-group-text,
+        & + .input-group-prepend .input-group-text,
+        & ~ .input-group-prepend .input-group-text {
+          border: 1px solid $info;
+        }
+      }
+    }
+  }
+  .form-group.has-danger,
+  .input-group-focus.has-danger {
+    .input-group-prepend .input-group-text,
+    .input-group-append .input-group-text {
+      border-color: $danger;
+    }
+    .form-control {
+      &:focus {
+        border-color: $danger;
+        & + .input-group-append .input-group-text,
+        & ~ .input-group-append .input-group-text,
+        & + .input-group-prepend .input-group-text,
+        & ~ .input-group-prepend .input-group-text {
+          border: 1px solid $danger;
+        }
+      }
+    }
+  }
+  .sweet-alert {
+    background-color: $white !important;
+    h2,
+    h2 * {
+      color: $black !important;
+    }
+    p {
+      color: $black !important;
+    }
+  }
+  .draft-editor-container {
+    border: 1px solid rgba($type-medium, 0.5);
+    color: $black;
+    &.editor-disabled {
+      border-color: none;
+    }
+    hr {
+      border-color: rgba($type-medium, 0.5);
+    }
+    .draft-toolbar-button-separator {
+      color: rgba($type-medium, 0.5);
+    }
+    .resize-guide {
+      background-color: rgba($type-medium, 0.5);
+    }
+    .mention-suggestions {
+      border: 1px solid rgba($type-medium, 0.5);
+      background-color: $white;
+    }
+  }
+}

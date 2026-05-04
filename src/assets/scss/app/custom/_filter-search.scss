@@ -1,0 +1,44 @@
+.filter-search {
+  .table-search-input {
+    width: 14rem !important;
+    background-color: transparent !important;
+    transition: width 0.4s ease-in-out !important;
+  }
+  .table-search-input:focus {
+    // width: 16rem !important;
+  }
+  .table-search-container {
+    display: flex;
+    border: 1px solid $stroke-regular;
+    border-radius: 4px;
+    min-width: 1.25px;
+  }
+  .table-search-input:focus::placeholder {
+    color: $stroke-regular;
+  }
+}
+
+// media query for small screens
+@media (max-width: 576px) {
+  .action-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .filter-search {
+      margin-bottom: 10px;
+    }
+    .filter.create-filer {
+      flex: 1;
+    }
+    .create-filer {
+      flex: 1;
+      padding-right: 0 !important;
+    }
+    .create-filter-wrapper {
+      gap: 10px !important;
+    }
+    .create-filer button {
+      width: 100%;
+    }
+  }
+}

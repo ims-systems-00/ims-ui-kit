@@ -1,0 +1,26 @@
+import { Meta, StoryFn } from "@storybook/react/*";
+import CardFooter from "../CardFooterBase";
+import React from "react";
+
+export default {
+  title: "components/CardFooter",
+  component: CardFooter,
+  parameters: {
+    docs: {
+      description: {
+        component: ``,
+      },
+    },
+  },
+} as Meta<typeof CardFooter>;
+
+// Define the type for the story
+const Template: StoryFn<typeof CardFooter> = (args: any) => (
+  <CardFooter {...args} />
+);
+
+Template.args = {
+  children: "Click Here",
+};
+
+export { Template as CardFooter };

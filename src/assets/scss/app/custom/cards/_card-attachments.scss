@@ -1,0 +1,20 @@
+.card-attachments {
+  .progress {
+    height: 2px;
+    margin: 2px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0px 0px 0px 0px;
+  }
+  .card-body {
+    h5 {
+      padding: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  i {
+    cursor: pointer;
+  }
+}

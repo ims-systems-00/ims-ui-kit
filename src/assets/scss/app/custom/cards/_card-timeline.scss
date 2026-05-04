@@ -1,0 +1,31 @@
+.card-timeline {
+  background: transparent;
+  margin: 0;
+  .card-body {
+    padding-bottom: 0;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    margin-top: 1.4rem;
+    margin-left: -0.35rem;
+    border: 1px solid $primary;
+    background: $primary;
+    border-radius: 50%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    bottom: -0.1rem;
+    margin-top: 3rem;
+    margin-left: -0.0625rem;
+    background-color: $primary;
+  }
+}

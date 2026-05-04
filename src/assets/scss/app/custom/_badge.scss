@@ -1,0 +1,11 @@
+@each $color, $value in $theme-colors {
+  .badge-outline-#{$color} {
+    @include badge-outline-variant($value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .badge-fade-#{$color} {
+    @include badge-fade-variant($value, rgba($value, 0.1));
+  }
+}

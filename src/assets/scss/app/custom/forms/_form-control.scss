@@ -1,0 +1,72 @@
+.form-control-filled.form-control {
+  background-color: $secondary-extra-light;
+  border: 2px solid $secondary-extra-light;
+  transition: all 0.15s linear;
+  &:hover {
+    border: 2px solid $stroke-regular;
+  }
+  &:focus {
+    box-shadow: none;
+    border: 2px solid $primary;
+    background-color: transparent;
+  }
+}
+.form-group {
+  margin-bottom: 10px;
+}
+.form-control:focus {
+  box-shadow: none;
+  border: 2px solid $primary;
+}
+textarea.form-control {
+  &:focus,
+  &:active {
+    border: 2px solid $primary;
+  }
+}
+.signaturearea {
+  textarea {
+    max-width: 100%;
+    font-size: 70px;
+    height: 150px;
+    text-align: center;
+    padding: 10px 10px 0 0;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid $stroke-regular;
+    border-radius: 0;
+    line-height: 2;
+    padding: 0;
+    margin: 0;
+    &:focus,
+    &:active {
+      border-left: none;
+      border-top: none;
+      border-right: none;
+    }
+  }
+  .form-control {
+    border: none;
+    border-bottom: 1px solid $stroke-regular;
+    border-radius: 0;
+  }
+}
+.ims-input.ims-input-focused {
+  border: 2px solid $primary;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.ims-input.ims-input-focused.ims-input-error,
+.ims-input.ims-input-error {
+  border: 2px solid $danger;
+}
+.ims-input.ims-input-focused.ims-input-success,
+.ims-input.ims-input-success {
+  border: 2px solid $success;
+}
+
+.ims-text-input.form-control:focus {
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}

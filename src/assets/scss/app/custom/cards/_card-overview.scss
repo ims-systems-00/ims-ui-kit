@@ -1,0 +1,90 @@
+.details-container {
+  min-height: fit-content;
+  border-radius: 15px;
+  padding: 1rem;
+}
+.fixed-header {
+  background-image: url("https://assets.imssystems.tech/images/system/details-bg.svg");
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: cover;
+  border-radius: 17px 17px 0px 0px !important;
+  padding: 1.5rem;
+  margin-bottom: 0px !important;
+}
+.fixed-cards {
+  height: inherit;
+  border-radius: 0px 0px 20px 20px !important;
+  margin-top: -2px !important;
+  border-top: none !important;
+  padding: 2rem !important;
+  padding-bottom: 0px !important;
+}
+.overview-header {
+}
+.overview-body {
+  border-top: none !important;
+  padding: 6px 6px 0px 6px !important;
+  border-radius: 0px 0px 5px 5px !important;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  white-space: nowrap;
+  line-height: 15px;
+}
+.overview-table > thead > tr > th {
+  padding: 5px 2px 0px 2px !important;
+}
+.overview-table > tbody > tr > td {
+  padding: 5px 2px 5px 2px !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+.overview-body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+  width: 4px;
+  border: 1px solid #d5d5d5;
+}
+.status-body {
+  border-top: none !important;
+  padding: 1px 8px 0px 8px !important;
+  border-radius: 0px 0px 5px 5px !important;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  white-space: nowrap;
+}
+.status-table > thead > tr > th {
+  padding: 5px 2px 0px 1px !important;
+  font-weight: 500;
+  font-size: 10px;
+}
+.status-table > tbody > tr > td {
+  padding: 6px 2px 6px 2px !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.status-body::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.8rem;
+  color: #1e1e2d;
+}
+
+.status-body::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.status-body::-webkit-scrollbar:vertical {
+  display: none;
+}
+.radio-container {
+  display: flex;
+  padding-left: 2px;
+}
+.status-table > thead {
+  border-bottom: 1px solid #1d8cf8 !important;
+  padding-right: 2px !important;
+}

@@ -1,0 +1,85 @@
+@mixin btn-color($btn-color) {
+  color: $btn-color;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &:active:focus,
+  &:active:hover,
+  &.active:focus,
+  &.active:hover {
+    color: $btn-color;
+  }
+}
+
+@mixin btn-border($btn-border) {
+  border-color: $btn-border;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &:active:focus,
+  &:active:hover,
+  &.active:focus,
+  &.active:hover {
+    border-color: $btn-border;
+  }
+}
+
+@mixin btn-outline($btn-color, $btn-states-color: $btn-color) {
+  color: $btn-color;
+  background-color: transparent;
+  background-image: none;
+  border-color: $btn-color;
+
+  &:active,
+  &.active,
+  &:active:focus,
+  &:active:hover,
+  &.active:focus,
+  &.active:hover {
+    color: $white;
+    background-color: $btn-states-color;
+    border-color: $btn-color;
+  }
+
+  &:focus {
+    color: $btn-color;
+    background-color: transparent;
+    background-image: none;
+    border-color: $btn-color;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $btn-states-color;
+    border-color: $btn-color;
+  }
+}
+
+@mixin btn-bg($btn-bg, $btn-state-bg: $btn-bg) {
+  background-color: $btn-bg;
+  background-image: none;
+
+  &:active,
+  &.active,
+  &:active:focus,
+  &:active:hover,
+  &.active:focus,
+  &.active:hover {
+    background-color: $btn-state-bg;
+    background-image: none;
+  }
+
+  &:focus {
+    background-color: $btn-bg;
+    background-image: none;
+  }
+
+  &:hover {
+    background-color: $btn-state-bg;
+    background-image: none;
+  }
+}
+
+

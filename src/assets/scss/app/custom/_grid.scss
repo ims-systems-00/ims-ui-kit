@@ -1,0 +1,59 @@
+@include media-breakpoint-up(xl) {
+  .container-lg {
+    max-width: 1160px;
+  }
+}
+.container-login {
+  min-height: 100vh;
+}
+.circle-container {
+  position: relative;
+}
+.circle-xl {
+  position: absolute;
+  left: -150px;
+  top: -20px;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: #034bc0;
+}
+.circle-md {
+  position: absolute;
+  right: -30px;
+  top: 10px;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  background-color: #034bc0;
+}
+.circle-sm {
+  position: absolute;
+  right: -75px;
+  bottom: -400px;
+  height: 135px;
+  width: 135px;
+  border-radius: 50%;
+  background-color: #034bc0;
+}
+@include media-breakpoint-down(sm) {
+  .container-login {
+    min-height: 100vh;
+  }
+  .circle-container {
+    display: none;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .circle-container {
+    display: none;
+  }
+}
+@media only screen and (max-width: 375px) and (orientation: portrait) {
+  .container-login {
+    // min-height: 130vh;
+    // min-height: fit-content;
+    min-height: 130vh;
+  }
+}

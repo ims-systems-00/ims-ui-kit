@@ -1,0 +1,11 @@
+.badge {
+  padding: 4px 10px !important;
+}
+.badge.bg-secondary.bg-pending {
+  background-color: $escalate !important;
+  color: #fff !important;
+}
+.badge.bg-light,
+.badge.bg-warning {
+  color: $type-dark !important;
+}

@@ -1,0 +1,430 @@
+// Weight and italics
+
+.fw-light {
+  font-weight: $font-weight-light;
+}
+.fw-normal {
+  font-weight: $font-weight-normal;
+}
+.fw-medium {
+  font-weight: $font-weight-medium;
+}
+.fw-bold {
+  font-weight: $font-weight-bold;
+}
+.fw-extra-bold {
+  font-weight: $font-weight-extra-bold;
+}
+
+// Text decorations
+
+.text-underline {
+  text-decoration: underline;
+}
+.text-through {
+  text-decoration: line-through;
+}
+
+// Line heights
+
+.lh-100 {
+  line-height: 1;
+}
+.lh-110 {
+  line-height: 1.1;
+}
+.lh-120 {
+  line-height: 1.2;
+}
+.lh-130 {
+  line-height: 1.3;
+}
+.lh-140 {
+  line-height: 1.4;
+}
+.lh-150 {
+  line-height: 1.5;
+}
+.lh-160 {
+  line-height: 1.6;
+}
+.lh-170 {
+  line-height: 1.7;
+}
+.lh-180 {
+  line-height: 1.8;
+}
+
+// Custom fonts
+
+.text-dobkin-script {
+  font-family: "dobkin-script", "Poppins", sans-serif;
+}
+.text-pinyon-script {
+  font-family: "pinyon-script", "Poppins", sans-serif;
+}
+.text-felix-titling {
+  font-family: "felix-titling", "Poppins", sans-serif;
+}
+
+//font-sizes
+.font-size-subtitle-1 {
+  font-size: 1rem;
+}
+
+.font-size-subtitle-2 {
+  font-size: 0.875rem;
+}
+
+.font-size-body-1 {
+  font-size: 1rem;
+}
+
+.font-size-body-2 {
+  font-size: 0.875rem;
+}
+
+.font-size-caption {
+  font-size: 0.75rem;
+}
+
+.font-size-overline {
+  font-size: 0.625rem;
+}
+
+.font-size-button {
+  font-size: 0.875rem;
+}
+
+//font colors
+
+.text-muted {
+  color: $text-muted !important;
+}
+.text-elipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.text-primary-light {
+  color: $primary-light !important;
+}
+
+.text-primary-dark {
+  color: $primary-dark !important;
+}
+
+.text-secondary {
+  color: $secondary !important;
+}
+
+.text-secondary-light {
+  color: $secondary-light !important;
+}
+
+.text-secondary-extra-light {
+  color: $secondary-light !important;
+}
+
+.text-secondary-dark {
+  color: $secondary-dark !important;
+}
+
+.text-success {
+  color: $success !important;
+}
+
+.text-success-dark {
+  color: $success-dark !important;
+}
+
+.text-danger {
+  color: $danger !important;
+}
+
+.text-danger-dark {
+  color: $danger-dark !important;
+}
+
+.text-warning {
+  color: $warning !important;
+}
+
+.text-warning-dark {
+  color: $warning-dark !important;
+}
+
+.text-info {
+  color: $info !important;
+}
+
+.text-info-dark {
+  color: $info-dark !important;
+}
+
+.text-escalate {
+  color: $escalate !important;
+}
+
+.text-escalate-dark {
+  color: $escalate-dark !important;
+}
+
+.text-type-dark {
+  color: $type-dark !important;
+}
+
+.text-type-medium {
+  color: $type-medium !important;
+}
+
+.text-type-light {
+  color: $type-light !important;
+}
+
+.text-stroke-regular {
+  color: $stroke-regular !important;
+}
+
+.text-stroke-dark {
+  color: $stroke-dark !important;
+}
+
+.text-stroke-light {
+  color: $stroke-light !important;
+}
+
+.text-dark {
+  color: $black !important;
+}
+
+.text-light {
+  color: $white !important;
+}
+
+//background colors
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-primary-light {
+  background-color: $primary-light !important;
+}
+
+.bg-primary-dark {
+  background-color: $primary-dark !important;
+}
+
+.bg-secondary {
+  background-color: $secondary !important;
+}
+
+.bg-secondary-light {
+  background-color: $secondary-light !important;
+}
+
+.bg-secondary-extra-light {
+  background-color: $secondary-extra-light !important;
+}
+
+.bg-secondary-dark {
+  background-color: $secondary-dark !important;
+}
+
+.bg-success {
+  background-color: $success !important;
+}
+
+.bg-success-dark {
+  background-color: $success-dark !important;
+}
+
+.bg-danger {
+  background-color: $danger !important;
+}
+
+.bg-danger-dark {
+  background-color: $danger-dark !important;
+}
+
+.bg-warning {
+  background-color: $warning !important;
+}
+
+.bg-warning-dark {
+  background-color: $warning-dark !important;
+}
+
+.bg-info {
+  background-color: $info !important;
+}
+
+.bg-info-dark {
+  background-color: $info-dark !important;
+}
+
+.bg-escalate {
+  background-color: $escalate !important;
+}
+
+.bg-escalate-dark {
+  background-color: $escalate-dark !important;
+}
+
+.bg-type-dark {
+  background-color: $type-dark !important;
+}
+
+.bg-type-medium {
+  background-color: $type-medium !important;
+}
+
+.bg-type-light {
+  background-color: $type-light !important;
+}
+
+.bg-stroke-regular {
+  background-color: $stroke-regular !important;
+}
+
+.bg-stroke-dark {
+  background-color: $stroke-dark !important;
+}
+
+.bg-stroke-light {
+  background-color: $stroke-light !important;
+}
+
+.bg-dark {
+  background-color: $black !important;
+}
+
+.bg-light {
+  background-color: $white !important;
+}
+
+//border colors
+
+.border-primary {
+  border-color: $primary !important;
+}
+
+.border-primary-light {
+  border-color: $primary-light !important;
+}
+
+.border-primary-dark {
+  border-color: $primary-dark !important;
+}
+
+.border-secondary {
+  border-color: $secondary !important;
+}
+
+.border-secondary-light {
+  border-color: $secondary-light !important;
+}
+
+.border-secondary-extra-light {
+  border-color: $secondary-light !important;
+}
+
+.border-secondary-dark {
+  border-color: $secondary-dark !important;
+}
+
+.border-success {
+  border-color: $success !important;
+}
+
+.border-success-dark {
+  border-color: $success-dark !important;
+}
+
+.border-danger {
+  border-color: $danger !important;
+}
+
+.border-danger-dark {
+  border-color: $danger-dark !important;
+}
+
+.border-warning {
+  border-color: $warning !important;
+}
+
+.border-warning-dark {
+  border-color: $warning-dark !important;
+}
+
+.border-info {
+  border-color: $info !important;
+}
+
+.border-info-dark {
+  border-color: $info-dark !important;
+}
+
+.border-escalate {
+  border-color: $escalate !important;
+}
+
+.border-escalate-dark {
+  border-color: $escalate-dark !important;
+}
+
+.border-type-dark {
+  border-color: $type-dark !important;
+}
+
+.border-type-medium {
+  border-color: $type-medium !important;
+}
+
+.border-type-light {
+  border-color: $type-light !important;
+}
+
+.border-stroke-regular {
+  border-color: $stroke-regular !important;
+}
+
+.border-stroke-dark {
+  border-color: $stroke-dark !important;
+}
+
+.border-stroke-light {
+  border-color: $stroke-light !important;
+}
+
+.border-dark {
+  border-color: $black !important;
+}
+
+.border-light {
+  border-color: $white !important;
+}
+
+//box shadows
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
+.shadow-light {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-regular {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-large {
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.16);
+}

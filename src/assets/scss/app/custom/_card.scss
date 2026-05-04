@@ -1,0 +1,124 @@
+.card {
+  margin-bottom: 20px;
+  box-shadow: $box-shadow-md;
+}
+
+.activity {
+  .card-body {
+    min-height: 25px !important;
+  }
+}
+.activity:after {
+  content: "" !important;
+  position: absolute !important;
+  top: 62px !important;
+  left: -21px !important;
+  width: 3px !important;
+  height: calc(100% - 65px) !important;
+  background-color: $gray-300 !important;
+}
+
+.card-variant-primary.card,
+.card-variant-secondary.card,
+.card-variant-light.card,
+.card-gradient,
+.card-variant-outline.card,
+.card-variant-active.card,
+.card-variant-list.card {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  border: none;
+  padding: 24px;
+  background-color: $secondary-extra-light;
+  transition: all 0.3s ease;
+  .card-header {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+  .card-body {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+  .card-footer {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.card-variant-list.card {
+  background-color: $secondary-extra-light;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-variant-active.card {
+  background-color: $primary-light;
+}
+
+.card-variant-outline.card {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.card-variant-light.card {
+  background-color: $white;
+}
+
+.card-variant-primary.card:hover {
+  background-color: $primary-light;
+}
+
+.card-variant-secondary:hover,
+.card-variant-light:hover {
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.16);
+}
+
+.card-variant-outline.card:hover {
+  background-color: $secondary-light;
+}
+
+.card-variant-active.card:hover {
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.16);
+}
+
+.card-gradient.card-gradient-success {
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    rgba(23, 162, 184, 0.2) 0deg,
+    rgba(23, 162, 184, 0.1) 360deg
+  ) !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+}
+.card-gradient.card-gradient-primary {
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    rgba(67, 158, 237, 0.2) 0deg,
+    rgba(67, 158, 237, 0.1) 360deg
+  ) !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+}
+.card-gradient.card-gradient-danger {
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    rgba(214, 51, 132, 0.2) 0deg,
+    rgba(214, 51, 132, 0.1) 360deg
+  ) !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+}
+.card-hover-none.card-variant-primary.card:hover,
+.card-hover-none.card-variant-secondary:hover,
+.card-hover-none.card-variant-light:hover,
+.card-hover-none.card-variant-outline.card:hover,
+.card-hover-none.card-variant-active.card:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card-hover-none.card-variant-primary.card:hover {
+  background-color: $secondary-extra-light;
+}
+.card-hover-none.card-variant-outline.card:hover {
+  background-color: transparent;
+  box-shadow: none;
+}

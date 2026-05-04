@@ -1,0 +1,177 @@
+.btn {
+  cursor: pointer;
+  &:hover,
+  &:focus:active {
+    box-shadow: $box-shadow-md;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    color: $white;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @if $color == "light" {
+      @include btn-color($type-dark);
+      @include btn-border($stroke-regular);
+    } @else {
+      @include btn-color($white);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-link.btn-link-#{$color} {
+    @if $color == "light" {
+      @include btn-color($type-dark);
+    } @else {
+      @include btn-color($value);
+    }
+  }
+}
+@each $color, $value in $theme-colors {
+  .btn-link.btn-link-#{$color}:hover {
+    @if $color == "light" {
+      @include btn-color(darken($type-dark, 10%));
+    } @else {
+      @include btn-color(darken($value, 10%));
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @if $color == "light" {
+      @include btn-border($stroke-regular);
+      @include btn-color($type-dark);
+    } @else {
+      @include btn-outline($value);
+    }
+  }
+}
+.btn-primary,
+.btn-info,
+.btn-success {
+  @include btn-bg($primary, $primary-dark);
+  @include btn-border($primary);
+  &.disabled {
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+
+.btn-secondary,
+.btn-light {
+  @include btn-bg($secondary-extra-light, $stroke-light);
+  @include btn-color($type-medium);
+  @include btn-border($stroke-regular);
+  &.disabled {
+    background-color: $secondary-extra-light;
+    color: $type-medium;
+    border-color: $stroke-regular;
+  }
+}
+
+.btn-danger {
+  @include btn-bg($danger, $danger-dark);
+  @include btn-border($danger);
+  &.disabled {
+    background-color: $danger;
+    border-color: $danger;
+  }
+}
+
+.btn-escalate {
+  @include btn-bg($escalate, $escalate-dark);
+  @include btn-border($escalate);
+  &.disabled {
+    background-color: $escalate;
+    border-color: $escalate;
+  }
+}
+
+.btn-warning {
+  @include btn-bg($warning, $warning-dark);
+  @include btn-border($warning);
+  &.disabled {
+    background-color: $warning;
+    border-color: $warning;
+  }
+}
+
+.btn-outline-primary,
+.btn-outline-info,
+.btn-outline-success {
+  @include btn-outline($primary, $primary-dark);
+  &.disabled {
+    border-color: $primary;
+    color: $primary;
+  }
+}
+
+.btn-outline-secondary,
+.btn-outline-light {
+  @include btn-outline($stroke-regular, $stroke-light);
+  @include btn-color($type-medium);
+  @include btn-border($stroke-regular);
+  &.disabled {
+    border-color: $stroke-regular;
+    color: $type-medium;
+  }
+}
+
+.btn-outline-danger {
+  @include btn-outline($danger);
+  &.disabled {
+    border-color: $danger;
+    color: $danger;
+  }
+}
+.btn-outline-warning {
+  @include btn-outline($warning);
+  &.disabled {
+    border-color: $warning;
+    color: $warning;
+  }
+}
+
+.btn-outline-escalate {
+  @include btn-outline($escalate);
+  &.disabled {
+    border-color: $escalate;
+    color: $escalate;
+  }
+}
+
+.btn-dark {
+  @include btn-bg($type-dark, $type-dark);
+  @include btn-border($type-dark);
+}
+
+.btn-outline-dark {
+  @include btn-outline($type-dark);
+}
+.btn-link {
+  text-decoration: none;
+}
+.btn-link:hover {
+  text-decoration: none;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.btn-icon {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+// btn-block removed from bootstrap 5 get rid of this class in the project asap
+.btn-block {
+  display: block;
+  width: 100%;
+}

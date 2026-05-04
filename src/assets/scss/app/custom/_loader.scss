@@ -1,0 +1,325 @@
+// .ims-loader {
+//   border: 1px solid transparent;
+//   border-radius: 50%;
+//   border-top: 1px solid #3498db;
+//   width: 50px;
+//   height: 50px;
+//   -webkit-animation: spin .5s linear infinite;
+//   /* Safari */
+//   animation: spin .5s linear infinite;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .ims-loader-img {
+//   vertical-align: auto;
+//   width: 90%;
+// }
+
+// /* Safari */
+// @-webkit-keyframes spin {
+//   0% {
+//     border-top: 2px solid #3498db;
+//     border-right: 2px solid #f3f3f3;
+//     border-bottom: 2px solid #f3f3f3;
+//     border-left: 2px solid #f3f3f3;
+//   }
+
+//   25% {
+//     border-top: 2px solid #f3f3f3;
+//     border-right: 2px solid #3498db;
+//     border-bottom: 2px solid #f3f3f3;
+//     border-left: 2px solid #f3f3f3;
+//   }
+
+//   50% {
+//     border-top: 2px solid #f3f3f3;
+//     border-right: 2px solid #f3f3f3;
+//     border-bottom: 2px solid #3498db;
+//     border-left: 2px solid #f3f3f3;
+//   }
+
+//   75% {
+//     border-top: 2px solid #f3f3f3;
+//     border-right: 2px solid #f3f3f3;
+//     border-bottom: 2px solid #f3f3f3;
+//     border-left: 2px solid #3498db;
+//   }
+
+//   100% {
+//     border-top: 2px solid #3498db;
+//     border-right: 2px solid #f3f3f3;
+//     border-bottom: 2px solid #f3f3f3;
+//     border-left: 2px solid #f3f3f3;
+//   }
+// }
+
+// @keyframes spin {
+//   0% {
+//     border-top: 2px solid #3498db;
+//     border-right: 2px solid #f3f3f3;
+//     border-bottom: 2px solid #f3f3f3;
+//     border-left: 2px solid #f3f3f3;
+//   }
+
+//   25% {
+//     border-top: 2px solid #f3f3f3;
+//     border-right: 2px solid #3498db;
+//     border-bottom: 2px solid #f3f3f3;
+//     border-left: 2px solid #f3f3f3;
+//   }
+
+//   50% {
+//     border-top: 2px solid #f3f3f3;
+//     border-right: 2px solid #f3f3f3;
+//     border-bottom: 2px solid #3498db;
+//     border-left: 2px solid #f3f3f3;
+//   }
+
+//   75% {
+//     border-top: 2px solid #f3f3f3;
+//     border-right: 2px solid #f3f3f3;
+//     border-bottom: 2px solid #f3f3f3;
+//     border-left: 2px solid #3498db;
+//   }
+
+//   100% {
+//     border-top: 2px solid #3498db;
+//     border-right: 2px solid #f3f3f3;
+//     border-bottom: 2px solid #f3f3f3;
+//     border-left: 2px solid #f3f3f3;
+//   }
+// }
+$animation-duration: .35s;
+$animation-duration-total: ($animation-duration * 4) * 2;
+
+// .ims-loader {
+//   background: rgba(0, 0, 0, 0.09);
+//   display: inline-block;
+//   position: relative;
+//   border: none;
+//   color: #fff;
+//   cursor: pointer;
+//   font-size: 18px;
+//   padding: 10px;
+
+//   .ims-loader-img {
+//     vertical-align: auto;
+//     width: 30px;
+//   }
+
+//   &::before,
+//   &::after,
+//   .ims-loader-inner::before,
+//   .ims-loader-inner::after {
+//     animation-fill-mode: forwards;
+//     animation-iteration-count: infinite;
+//     animation-timing-function: ease-in-out;
+//     background: $info;
+//     content: "";
+//     opacity: 0;
+//     position: absolute;
+//     transition: opacity 1s ease;
+//   }
+
+//   &::before,
+//   &::after {
+//     height: 2px;
+//     width: 0%;
+//   }
+
+//   &::before {
+//     right: 0;
+//     top: 0;
+//   }
+
+//   &::after {
+//     bottom: 0;
+//     left: 0;
+//   }
+
+//   .ims-loader-inner::before,
+//   .ims-loader-inner::after {
+//     height: 0%;
+//     width: 2px;
+//   }
+
+//   .ims-loader-inner::before {
+//     left: 0;
+//     top: 0;
+//   }
+
+//   .ims-loader-inner::after {
+//     bottom: 0;
+//     right: 0;
+//   }
+
+//   &::before,
+//   &::after,
+//   .ims-loader-inner::before,
+//   .ims-loader-inner::after {
+//     opacity: 1;
+//   }
+
+//   &::before {
+//     animation-name: animation-border-top;
+//     animation-duration: $animation-duration-total;
+//   }
+
+//   &::after {
+//     animation-name: animation-border-bottom;
+//     animation-delay: $animation-duration * 2;
+//     animation-duration: $animation-duration-total;
+//   }
+
+//   .ims-loader-inner::before {
+//     animation-name: animation-border-span-left;
+//     animation-delay: $animation-duration;
+//     animation-duration: $animation-duration-total;
+//   }
+
+//   .ims-loader-inner::after {
+//     animation-name: animation-border-span-right;
+//     animation-delay: $animation-duration * 3;
+//     animation-duration: $animation-duration-total;
+//   }
+// }
+
+.ims-loader {
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 50%; /* Add this line to make the outline rounded */
+  overflow: hidden; /* Add this line to hide the square animations */
+
+  .ims-loader-img {
+    vertical-align: auto;
+    width: 30px;
+    opacity: 1; /* Initial opacity set to 1 to make the image visible */
+    animation: zoom-in-out $animation-duration-total linear infinite; /* Apply zoom-in-out animation */
+  }
+
+  &::before,
+  &::after,
+  .ims-loader-inner::before,
+  .ims-loader-inner::after {
+    content: "";
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1s ease;
+    background: $info; /* Set your desired background color here */
+    border-radius: 50%; /* Add this line to make the animations rounded */
+  }
+
+  &::before,
+  &::after {
+    height: 2px;
+    width: 0%;
+  }
+
+  &::before {
+    right: 0;
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    left: 0;
+  }
+
+  .ims-loader-inner::before,
+  .ims-loader-inner::after {
+    height: 0%;
+    width: 2px;
+  }
+
+  .ims-loader-inner::before {
+    left: 0;
+    top: 0;
+  }
+
+  .ims-loader-inner::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &::before,
+  &::after,
+  .ims-loader-inner::before,
+  .ims-loader-inner::after {
+    opacity: 1;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation: circular-animation $animation-duration-total linear infinite; /* Apply circular animation */
+  }
+
+  @keyframes zoom-in-out {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2); /* Scale up by 20% */
+    }
+  }
+}
+
+@mixin btnAnimations ($name, $anchor, $edge) {
+  $anchor-op: 'left';
+
+  @if $anchor=='left' {
+    $anchor-op: 'right';
+  }
+
+  @elseif $anchor=='top' {
+    $anchor-op: 'bottom';
+  }
+
+  @elseif $anchor=='bottom' {
+    $anchor-op: 'top';
+  }
+
+  @keyframes #{$name} {
+    0% {
+      #{$anchor-op}: auto;
+      #{$anchor}: 0;
+      #{$edge}: 0%;
+    }
+
+    12.5% {
+      #{$anchor-op}: auto;
+      #{$anchor}: 0;
+      #{$edge}: 100%;
+    }
+
+    12.6% {
+      #{$anchor-op}: 0;
+      #{$anchor}: auto;
+    }
+
+    50% {
+      #{$edge}: 100%;
+    }
+
+    62.5% {
+      #{$edge}: 0%;
+    }
+
+    100% {
+      #{$anchor-op}: 0;
+      #{$anchor}: auto;
+      #{$edge}: 0%;
+    }
+  }
+}
+
+@include btnAnimations(animation-border-top, 'right', 'width');
+@include btnAnimations(animation-border-bottom, 'left', 'width');
+@include btnAnimations(animation-border-span-left, 'top', 'height');
+@include btnAnimations(animation-border-span-right, 'bottom', 'height');

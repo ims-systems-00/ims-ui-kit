@@ -1,0 +1,115 @@
+p {
+  color: $type-medium;
+}
+a {
+  color: $primary;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $primary;
+  }
+}
+.title {
+  font-weight: $font-weight-bold;
+  &.title-up {
+    text-transform: uppercase;
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+  & + .category {
+    margin-top: -10px;
+  }
+}
+blockquote {
+  padding: 2.5rem $btn-padding-x $btn-padding-y $btn-padding-x;
+  font-family: cursive;
+  font-size: $font-size-lg;
+  font-weight: $lead-font-weight;
+  line-height: $paragraph-line-height;
+  border-radius: $border-radius;
+  background: url("https://assets.imssystems.tech/images/system/double-quotes.png");
+  background-size: 3rem 3rem;
+  background-color: $gray-100;
+  background-repeat: no-repeat;
+}
+pre {
+  font-size: $font-size-sm;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+h1 {
+  font-size: $h1-font-size;
+  font-weight: $font-weight-normal;
+  line-height: $h1-line-height;
+}
+h2 {
+  font-size: $h2-font-size;
+  font-weight: $font-weight-normal;
+  line-height: $h2-line-height;
+}
+h3 {
+  font-size: $h3-font-size;
+  font-weight: $font-weight-medium;
+  line-height: $h3-line-height;
+}
+h4 {
+  font-size: $h4-font-size;
+  font-weight: $font-weight-medium;
+  line-height: $h4-line-height;
+}
+h5 {
+  font-size: $h5-font-size;
+  font-weight: $font-weight-bold;
+  line-height: $paragraph-line-height;
+}
+h6 {
+  font-size: $h6-font-size;
+  font-weight: $font-weight-bold;
+  line-height: $paragraph-line-height;
+}
+p {
+  font-size: $paragraph-font-size;
+}
+
+.subtitle-primary {
+  font-size: $subtitle-font-size-primary;
+  font-weight: $font-weight-normal;
+}
+
+.subtitle-secondary {
+  font-size: $subtitle-font-size-secondary;
+  font-weight: $font-weight-medium;
+}
+
+.body-primary {
+  font-size: $body-font-size-primary;
+  font-weight: $font-weight-normal;
+  color: $type-medium;
+}
+
+.body-secondary {
+  font-size: $body-font-size-secondary;
+  font-weight: $font-weight-normal;
+  color: $type-medium;
+}
+.caption {
+  font-weight: $font-weight-normal;
+  font-size: $caption-font-size;
+  color: $type-dark;
+}
+
+.overline {
+  font-weight: $font-weight-normal;
+  font-size: $overline-font-size;
+  color: $type-dark;
+}

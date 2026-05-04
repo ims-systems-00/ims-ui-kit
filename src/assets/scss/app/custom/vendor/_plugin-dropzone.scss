@@ -1,0 +1,10 @@
+.dropzone {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed $input-border-color;
+  border-radius: 0.4285rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,102 @@
+// .nav-tabs::-webkit-scrollbar {
+//   display: none; /* Safari and Chrome */
+// }
+
+.nav.nav-tabs.nav-tabs-primary,
+.nav.nav-tabs.nav-tabs-secondary,
+.nav.nav-tabs.nav-tabs-outline {
+  border: none;
+  // overflow-x: auto;
+  overflow-y: hidden;
+  min-height: 53px !important;
+  // max-width: 100%;
+  // -ms-overflow-style: none; /* Internet Explorer 10+ */
+  // scrollbar-width: none; /* Firefox */
+  .nav-item {
+    cursor: pointer;
+    .nav-link {
+      white-space: nowrap;
+      color: $secondary;
+    }
+    .nav-link:hover {
+      border: 1px solid transparent;
+      color: $primary;
+    }
+    .nav-link.active {
+      border: 1px solid transparent;
+      color: $primary;
+    }
+  }
+}
+
+.nav.nav-tabs.nav-tabs-outline {
+  .nav-item {
+    .nav-link {
+      // border-bottom: 1px solid $secondary;
+      padding: 1px 5px;
+    }
+    .nav-link:hover {
+      border-bottom: 1px solid $primary;
+    }
+    .nav-link.active {
+      border-bottom: 1px solid $primary;
+    }
+  }
+  .nav-item:not(:first-child),
+  .nav-item:not(:last-child) {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  .nav-item:first-child {
+    margin-left: 4px;
+  }
+  .nav-item:last-child {
+    margin-right: 4px;
+  }
+}
+.nav.nav-tabs.nav-tabs-primary,
+.nav.nav-tabs.nav-tabs-secondary {
+  background-color: $secondary-extra-light;
+  padding: 4px;
+  // height: 53px;
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid $stroke-regular;
+  border-radius: 4px;
+  .nav-item {
+    display: flex;
+    align-items: center;
+    .nav-link {
+    }
+    .nav-link:hover {
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+      background-color: $white;
+      border-radius: 4px;
+    }
+    .nav-link.active {
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+      border-radius: 4px;
+    }
+  }
+  .nav-item:not(:first-child),
+  .nav-item:not(:last-child) {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .nav-item:first-child {
+    margin-left: 5px;
+  }
+  .nav-item:last-child {
+    margin-right: 5px;
+  }
+}
+.nav.nav-tabs.nav-tabs-secondary {
+  .nav-item {
+    .nav-link:hover {
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    }
+    .nav-link.active {
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

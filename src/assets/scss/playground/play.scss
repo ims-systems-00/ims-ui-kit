@@ -1,0 +1,105 @@
+// @import "~bootstrap/scss/functions";
+// @import "~bootstrap/scss/variables";
+// @import "~bootstrap/scss/maps";
+// @import "~bootstrap/scss/mixins";
+// // Initialize $utilities as an empty map if it doesn't exist
+// $utilities: () !default;
+
+// // Merge the new utilities with the existing ones
+// $utilities: map-merge(
+//   $utilities,
+//   (
+//     "align": (
+//       property: vertical-align,
+//       class: align,
+//       values: baseline top middle bottom text-bottom text-top,
+//     ),
+//     "float": (
+//       responsive: true,
+//       property: float,
+//       values: (
+//         start: left,
+//         end: right,
+//         none: none,
+//       ),
+//     ),
+//   )
+// );
+
+// // Loop over each breakpoint
+// @each $breakpoint in map-keys($grid-breakpoints) {
+//   // Generate media query if needed
+//   @include media-breakpoint-up($breakpoint) {
+//     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+//     // Loop over each utility property
+//     @each $key, $utility in $utilities {
+//       // The utility can be disabled with `false`, thus check if the utility is a map first
+//       // Only proceed if responsive media queries are enabled or if it's the base media query
+//       @if type-of($utility) ==
+//         "map" and
+//         (map-get($utility, responsive) or $infix == "")
+//       {
+//         @include generate-utility($utility, $infix);
+//       }
+//     }
+//   }
+// }
+
+// // RFS rescaling
+// @media (min-width: $rfs-mq-value) {
+//   @each $breakpoint in map-keys($grid-breakpoints) {
+//     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+//     @if (map-get($grid-breakpoints, $breakpoint) < $rfs-breakpoint) {
+//       // Loop over each utility property
+//       @each $key, $utility in $utilities {
+//         // The utility can be disabled with `false`, thus check if the utility is a map first
+//         // Only proceed if responsive media queries are enabled or if it's the base media query
+//         @if type-of($utility) ==
+//           "map" and
+//           map-get($utility, rfs) and
+//           (map-get($utility, responsive) or $infix == "")
+//         {
+//           @include generate-utility($utility, $infix, true);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // Print utilities
+// @media print {
+//   @each $key, $utility in $utilities {
+//     // The utility can be disabled with `false`, thus check if the utility is a map first
+//     // Then check if the utility needs print styles
+//     @if type-of($utility) == "map" and map-get($utility, print) == true {
+//       @include generate-utility($utility, "-print");
+//     }
+//   }
+// }
+// Utility mixin to generate classes for arbitrary values (like w-[24px], h-[100px], etc.)
+@mixin generate-utility($property, $class, $values) {
+    @each $value in $values {
+      // Check if the value is a string wrapped in brackets (e.g., 'w-[24px]')
+      @if type-of($value) == 'string' and str-index($value, '[') != null {
+        // Clean the value by removing brackets (e.g., 'w-[24px]' becomes '24px')
+        $clean-value: str-slice($value, str-index($value, '[') + 1, str-index($value, ']') - 1);
+  
+        // Generate the class for the given value
+        .#{$class}-#{$clean-value} {
+          #{$property}: #{$clean-value};
+        }
+      } @else {
+        // For regular values (e.g., 5px, 10px), generate the class as usual
+        .#{$class}-#{$value} {
+          #{$property}: #{$value};
+        }
+      }
+    }
+  }
+  
+  // Usage: Define utility classes
+  @include generate-utility(width, w, (24px, 50px, 75px, 100px, auto));
+  @include generate-utility(height, h, (100px, 200px, 300px, auto));
+  

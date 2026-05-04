@@ -1,0 +1,27 @@
+.alert {
+  border: 0;
+  &.alert-success {
+    background-color: lighten($success, 30%);
+  }
+  &.alert-danger {
+    background-color: lighten($danger, 30%);
+  }
+  i.fa,
+  i.tim-icons {
+    font-size: $font-paragraph;
+  }
+  &.alert-with-icon {
+    padding-left: 65px;
+  }
+}
+
+.alert-dismissible {
+  padding-right: $alert-dismissible-padding-r;
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $stretched-link-z-index + 1;
+    padding: $alert-padding-y * 1.25 $alert-padding-x;
+  }
+}
